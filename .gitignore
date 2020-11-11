@@ -1,6 +1,8 @@
 # Secret files
 # -----------------------------
 secrets.yml
+server.yml
+sites.yml
 real_database.yml
 packer_vars.json
 
@@ -39,7 +41,3 @@ killares
 # -----------------------------
 /game/uploads
 /theme_archive
-
-# Game directory
-# -----------------------------
-/game/
