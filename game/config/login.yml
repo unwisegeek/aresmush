@@ -1,0 +1,41 @@
+---
+login:
+  activity_cron:
+    minute:
+    - 0
+  allow_creation: false
+  allow_web_registration: false
+  blacklist_cron:
+    day:
+    - 1
+    - 15
+    hour:
+    - 3
+    minute:
+    - 0
+  creation_not_allowed_message: This game is still under development and creation
+    is not allowed.
+  guest_disabled_message: This game is still under development and is not open to
+    guests at this time.
+  guest_role: guest
+  login_not_allowed_message: ''
+  notice_cleanup_cron:
+    day:
+    - 18
+    hour:
+    - 2
+    minute:
+    - 19
+  notice_timeout_days: 60
+  portal_requires_registration: false
+  shortcuts:
+    logout: quit
+    con: connect
+    newpassword: password/reset
+    conn: connect
+    kick: boot
+    password/change: password/set
+    notice: notices
+  permissions:
+    login: Able to log in.
+    manage_login: Can access login-related admin tools like resetting someone's password.

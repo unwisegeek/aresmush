@@ -1,0 +1,18 @@
+                                                ()
+  ___               _                           )(
+|_   _|__ _ __   ___| |__  _ __ __ _  ___    /==%xr00%xn==\     Test Site for
+  | |/ _ \ '_ \ / _ \ '_ \| '__/ _` |/ _ \      ||     Tenebrae: The Emblem 
+  | |  __/ | | |  __/ |_) | | | (_| |  __/      ||            of Ea
+  |_|\___|_| |_|\___|_.__/|_|  \__,_|\___|      ||
+                                                ||   arestest.tenebraemush.net
+%xh%xb-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=%xn    ||   %xh%xb--=--=--=--=--=--=--=--=-%xn
+                                                \/   
+     connect <name> <password> : connects you to an existing character
+                           who : tells you who is logged in to the game
+                          help : gives help on AresMUSH commands
+   
+     This site is a development site only and is not open to the public. 
+       For the public version of Tenebrae: The Emblem of Ea, visit 
+                     http://www.tenebraemush.net
+  
+%xh%xb-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-%xn

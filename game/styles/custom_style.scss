@@ -1,0 +1,52 @@
+/* Import all fonts to be used by any custom class. */
+
+@import url('https://fonts.googleapis.com/css?family=Philosopher');
+@import url('https://fonts.googleapis.com/css?family=Bilbo');
+
+/* Default font */ 
+
+body {    
+  font-family: 'Philosopher', sans-serif;
+  font-size: 125%;
+} 
+
+/* Quotes and IC exposition should have its own font and classes. */
+
+.icquote {
+   font-family: 'Bilbo', handwriting;
+   text-align: center;
+}
+
+div.icquote {
+   font-family: 'Bilbo', sans-serif;
+   width: 80%;
+   border-style: none none none none;
+   margin: auto; 
+   text-align: left;
+}
+
+/* Job category colors */
+
+.job-category-CRAFT {
+   background-color: DarkSeaGreen;
+   color: black;
+}
+
+.job-category-APP {
+   background-color: Turquoise;
+}
+
+/* Wiki custom classes */
+
+div.wiki-callout {
+   margin: auto;
+   text-align: center;
+   font-style: italic;
+   vertical-align: middle;
+   color: $primary-color;
+   width: 80%;
+   font-size: 150%;
+   border: 3px solid $secondary-color;
+   border-radius: 10px;
+   padding: 5px;
+}

@@ -1,0 +1,13 @@
+<div class="jumbotron-tagline">Ares Test Site for Emblem of Ea MUSH</div>
+
+All pictures and images can readily be changed, as can the color scheme. 
+
+I have added a CSS custom class definition for sections where the commentary is IC, and it looks like this: 
+
+<p class="icquote">"Quotes and IC snippets should look like this."</p>
+
+<div class="icquote">
+<p>A much longer snippet of IC text in a paragraph should look like this. Getting this to play nicely has been a bit of a struggle, but I believe I have finally gotten it to do what I want.</p>
+
+<p>Adding a second paragraph to test play nicely together.</p>
+</div>

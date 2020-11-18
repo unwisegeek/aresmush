@@ -1,0 +1,11 @@
+---
+pf2e:
+  allowed_alignments:
+  - LG
+  - NG
+  - CG
+  - LN
+  - N
+  - CN
+  use_alignment: true
+  use_encumbrance: false
