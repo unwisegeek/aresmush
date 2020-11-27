@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-     module Alttracker
+    module Alttracker
 
     def self.plugin_dir
       File.dirname(__FILE__)
