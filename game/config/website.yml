@@ -13,11 +13,14 @@ website:
   left_sidebar: false
   max_folder_size_kb: 2000
   max_upload_size_kb: 300
+  permissions:
+    manage_theme: Edit web portal CSS and colors.
+    manage_wiki: Create and delete restricted wiki pages.
   restricted_pages:
   - home
   - theme:*
   - policy:*
-  - crunch:*
+  - rules:*
   sitemap_update_cron:
     hour:
     - 2
@@ -127,6 +130,3 @@ website:
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home
-  permissions:
-    manage_theme: Edit web portal CSS and colors.
-    manage_wiki: Create and delete restricted wiki pages.
