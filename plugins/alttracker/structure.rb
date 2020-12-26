@@ -7,6 +7,7 @@ module AresMUSH
       attribute :banned
       collection :characters, "AresMUSH::Character"
     end
+  end
 
   class Character
     reference :player, "AresMUSH::AltTracker::Player"

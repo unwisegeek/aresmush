@@ -10,6 +10,7 @@ module AresMUSH
         @altlist = altlist
         @banned = banned
         super File.dirname(__FILE__) + "/alt_display.erb"
+      end
 
       def player_email
         @email
