@@ -18,7 +18,7 @@ module AresMUSH
       end
 
       def check_email_not_in_use
-        return nil unless Player.find_alts_by_email(self.email)
+        return nil unless self.find_alts_by_email(self.email)
         return t('alttracker.email_in_use')
       end
 
@@ -35,6 +35,8 @@ module AresMUSH
 
     class RegisterAltPlayerCmd
       include CommandHandler
+
+      attr_accessor :alt, :codeword, :player
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
