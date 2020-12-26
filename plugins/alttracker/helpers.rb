@@ -7,7 +7,7 @@ module AresMUSH
       return player
     end
 
-    def find_alts_by_email(email)
+    def self.find_alts_by_email(email)
       player = self.find_player_by_email(email)
       return nil unless player
       alts = player.characters.map { |c| c.name }
