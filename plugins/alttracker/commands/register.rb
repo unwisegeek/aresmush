@@ -3,6 +3,8 @@ module AresMUSH
     class RegisterNewPlayerCmd
       include CommandHandler
 
+      attr_accessor :email, :codeword
+
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
         self.email = downcase_arg(args.arg1)
