@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-    module Alttracker
+    module AltTracker
 
     def self.plugin_dir
       File.dirname(__FILE__)
@@ -12,6 +12,26 @@ module AresMUSH
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
+      case cmd.root
+      when "register"
+        case cmd.switch
+        when "new"
+          return RegisterNewPlayerCmd
+        when "alt"
+          return RegisterAltPlayerCmd
+        end
+      when "alts"
+        return ViewAltsCmd
+      when "alt"
+        case cmd.switch
+        when "add"
+          return AddAltCmd
+        when "remove"
+          return RemoveAltCmd
+        when "ban"
+          return BanAltCmd
+        end
+      end
       nil
     end
 

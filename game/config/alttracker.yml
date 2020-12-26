@@ -1,5 +1,7 @@
 ---
-alttracker: 
+alttracker:
    max_alts_allowed: 1
+   permissions:
+      manage_alts: Determines who may view others' registered alts.     
    shortcuts:
       reg: register

@@ -15,6 +15,7 @@ plugins:
   extras: []
   optional_plugins:
   - achievements
+  - alttracker
   - chargen
   - events
   - fs3combat

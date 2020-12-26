@@ -1,0 +1,12 @@
+%lh
+<%= center( "%x172Alts for #{player_email}%xn", 78) %>
+%ld
+
+<%= left( "%xhCodeword:%xn #{player_codeword}" %>
+
+<%= left( "%xhAlts Associated To This Email:%xn", 3 ) -%>
+<%= "#{player_altlist.join(",")}" if player_altlist -%>
+<%= "(#{player_altlist.size} alt(s) found)" if player_altlist -%>
+
+<%= left( "%xrThis player has previously been banned. Reason: #{banned}%xn%r", 3 ) if banned %>
+%lf

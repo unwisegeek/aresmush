@@ -1,3 +1,17 @@
 ---
 en:
-  alttracker: {}
+  alttracker:
+    alt_title: "Alts for %{email}"
+
+    view_own_alts: "You may only view your own alts."
+    does_not_exist: "That character does not exist. Please try again."
+    invalid_email: "You must provide a valid email address."
+    email_in_use: "That email is already in use. If you have another alt here, please use register/alt."
+    invalid_codeword: "Alt not registered. Invalid codeword."
+    max_alts_exceeded: "You are at the maximum number of alts allowed for this game. Maximum alts on this game: %{max_alts}."
+    command_not_allowed: "You do not have permission to use that command."
+    not_registered: "That alt is not registered."
+    player_not_found: "No player matching %{email}."
+    player_banned: "The owner of that email has previously been asked to leave this game. Sorry."
+
+    register_ok: "You are now successfully registered."
