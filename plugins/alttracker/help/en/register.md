@@ -10,13 +10,13 @@ Each alt must be associated to an email address in order to be approved for play
 
 If you are a new player registering an alt for the first time:
 
-`register/new <email>=<code word>`: Registers your current alt as a new player.
+`register/new <email>=<code word>`: Registers yourself as a new player.
 
 If you already have an alt and want to register another:
 
-`register/alt <name>`: Registers your current alt as an alt of <name>.
+`register/alt <name>=<codeword>`: Registers yourself as an alt of <name>.
 
 You can also change your email address or code word at any time.
 
-`register/email <new email>`: Changes your email for all registered alts.
-`register/word <new code word>`: Changes your code word for all registered alts.
+`email <new email>`: Changes your email for all registered alts.
+`codeword <new code word>`: Changes your code word for all registered alts.
