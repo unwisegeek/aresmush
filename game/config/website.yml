@@ -130,3 +130,7 @@ website:
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home
+  uploadable_extensions:
+  - ".jpg"
+  - ".png"
+  - ".gif"
