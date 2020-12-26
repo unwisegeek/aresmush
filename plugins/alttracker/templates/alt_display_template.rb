@@ -26,6 +26,7 @@ module AresMUSH
       def banned
         @banned
       end
+
     end
   end
 end
