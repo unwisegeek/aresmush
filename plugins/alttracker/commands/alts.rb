@@ -8,7 +8,7 @@ module AresMUSH
         if cmd.args
           valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
           if cmd.args =~ valid_email
-            self.char = Player.find_player_by_email(cmd.args)
+            self.char = AltTracker.find_player_by_email(cmd.args)
           else
             self.char = Character.find_one_by_name(cmd.args)
           end
@@ -93,7 +93,7 @@ module AresMUSH
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
-        self.player = self.find_player_by_email(args.arg1)
+        self.player = AltTracker.find_player_by_email(args.arg1)
         self.reason = args.arg2.to_s
       end
 
