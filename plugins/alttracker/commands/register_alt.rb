@@ -33,7 +33,7 @@ module AresMUSH
       end
 
       def check_number_of_alts
-        max_alts = Global.read_config(alttracker,max_alts_allowed)
+        max_alts = Global.read_config('alttracker','max_alts_allowed')
         return nil if self.player.characters.size < max_alts
         return t('alttracker.max_alts_exceeded', :max_alts => max_alts)
       end
