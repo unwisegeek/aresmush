@@ -11,6 +11,10 @@ module AresMUSH
         self.codeword = args.arg2
       end
 
+      def required_args
+        [ self.email, self.codeword ]
+      end
+
       def check_valid_email
         valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
         return nil if self.email =~ valid_email
@@ -33,6 +37,6 @@ module AresMUSH
       end
 
     end
-    
+
   end
 end
