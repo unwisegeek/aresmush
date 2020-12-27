@@ -10,6 +10,7 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
         self.alt = Character.find_one_by_name(args.arg1)
         self.codeword = args.arg2
+        self.player = self.alt.player
       end
 
       def required_args
@@ -22,12 +23,12 @@ module AresMUSH
       end
 
       def check_player_not_banned
-        return nil unless self.alt.player.banned
+        return nil unless self.player.banned
         return t('alttracker.player_banned')
       end
 
       def check_valid_codeword
-        return nil if self.codeword == self.alt.player.codeword
+        return nil if self.codeword == self.player.codeword
         return t('alttracker.invalid_codeword')
       end
 
