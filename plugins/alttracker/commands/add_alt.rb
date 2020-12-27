@@ -4,6 +4,8 @@ module AresMUSH
     class ViewAltsCmd
       include CommandHandler
 
+      attr_accessor :char
+
       def parse_args
         if cmd.args
           valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
