@@ -4,7 +4,7 @@ module AresMUSH
     class ViewAltsCmd
       include CommandHandler
 
-      attr_accessor :char
+      attr_accessor :char, :email, :codeword, :banned
 
       def parse_args
         if cmd.args
