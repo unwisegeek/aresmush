@@ -13,6 +13,10 @@ module AresMUSH
         self.player = self.alt.player
       end
 
+      def required_args
+        [ self.name, self.codeword ]
+      end
+
       def check_alt_exists
         return nil if self.alt
         return t('alttracker.does_not_exist')
@@ -40,6 +44,6 @@ module AresMUSH
       end
 
     end
-    
+
   end
 end
