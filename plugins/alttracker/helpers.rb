@@ -1,7 +1,7 @@
 module AresMUSH
   module AltTracker
 
-    def find_player_by_email(email)
+    def self.find_player_by_email(email)
       player = Player.all.to_a.find { |p| p.email == email }
       return nil unless player
       return player
@@ -13,7 +13,7 @@ module AresMUSH
       alts = player.characters.map { |c| c.name }
     end
 
-    def find_alts_by_name(name)
+    def self.find_alts_by_name(name)
       char = Character.find_one_by_name(name)
       alts = char.player.characters.map { |c| c.name }
     end
