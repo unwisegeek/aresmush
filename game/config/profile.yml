@@ -1,17 +1,5 @@
 ---
 profile:
-  shortcuts:
-    finger: profile
-    info: profile
-    profile/set: profile/add
-    profile/update: profile/add
-    nfo: profile
-    alts: profile
-    profile/remove: profile/delete
-    relationships: relationship
-    relationship/remove: relationship/delete
-    relationship/update: relationship/add
-    relationship/set: relationship/add
   achievements:
     profile_edit:
       type: portal
@@ -25,3 +13,14 @@ profile:
   - outfits/all
   permissions:
     manage_profiles: Allows editing other characters' profiles.
+  shortcuts:
+    finger: profile
+    info: profile
+    profile/set: profile/add
+    profile/update: profile/add
+    nfo: profile
+    profile/remove: profile/delete
+    relationships: relationship
+    relationship/remove: relationship/delete
+    relationship/update: relationship/add
+    relationship/set: relationship/add

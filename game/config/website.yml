@@ -9,7 +9,7 @@ website:
       message: Edited a wiki page.
   allow_html_in_markdown: true
   character_gallery_group: Faction
-  character_gallery_subgroup: Position
+  character_gallery_subgroup: ''
   left_sidebar: false
   max_folder_size_kb: 2000
   max_upload_size_kb: 300
@@ -127,10 +127,10 @@ website:
     - target: blank
       title: MUSH 101 Tutorial <i class="fa fa-external-link-alt" aria-hidden="true">
       url: https://aresmush.com/mush-101/
-  website_code_path: "/home/ares/ares-webportal"
-  wiki_aliases:
-    main: home
   uploadable_extensions:
   - ".jpg"
   - ".png"
   - ".gif"
+  website_code_path: "/home/ares/ares-webportal"
+  wiki_aliases:
+    main: home

@@ -12,10 +12,6 @@ demographics:
     width: 20
     title: Faction
     value: Faction
-  - field: group
-    width: 20
-    title: Position
-    value: Position
   demographics:
   - full name
   - gender
@@ -57,9 +53,6 @@ demographics:
     Faction:
       desc: Religious or secular affiliation.
       wiki: ''
-      values:
-        Navy: Join the fleet, see the worlds.
-        Marines: Semper fi.
   help_text:
     played by: "%xcplayedby <actor>%xn - Your 'dream casting' for your character."
     physique: "%xcphysique <build/body type>%xn - athletic, wiry, slim, pudgy, etc."
@@ -73,9 +66,10 @@ demographics:
   min_age: 10
   nickname_field: ''
   nickname_format: "%{name} (%{nickname})"
+  permissions:
+    manage_demographics: Edit demographics on other players.
   private_properties: []
   required_properties:
-  - played by
   - hair
   - eyes
   - skin
@@ -92,5 +86,3 @@ demographics:
     actor: demographic/set played by=
     fullname: demographic/set full name=
     playedby: demographic/set played by=
-  permissions:
-    manage_demographics: Edit demographics on other players.

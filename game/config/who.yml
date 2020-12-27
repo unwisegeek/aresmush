@@ -8,14 +8,6 @@ who:
   - field: name
     width: 20
     title: Name
-  - field: group
-    value: department
-    width: 16
-    title: Department
-  - field: group
-    value: position
-    width: 18
-    title: Position
   - field: connected
     width: 7
     title: Conn
