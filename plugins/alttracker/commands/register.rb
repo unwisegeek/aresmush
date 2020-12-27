@@ -18,7 +18,7 @@ module AresMUSH
       end
 
       def check_email_not_in_use
-        return nil unless self.find_alts_by_email(self.email)
+        return nil unless find_player_by_email(self.email)
         return t('alttracker.email_in_use')
       end
 
