@@ -1,6 +1,6 @@
 module AresMUSH
   module AltTracker
-    class AltDisplayTemplate < ErbTemplateRenderer
+    class AltsDisplayTemplate < ErbTemplateRenderer
 
       attr_accessor :email, :codeword, :altlist, :banned
 
@@ -9,7 +9,7 @@ module AresMUSH
         @codeword = codeword
         @altlist = altlist
         @banned = banned
-        super File.dirname(__FILE__) + "/alt_display.erb"
+        super File.dirname(__FILE__) + "/alts_display.erb"
       end
 
       def player_email
