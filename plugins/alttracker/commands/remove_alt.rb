@@ -22,7 +22,7 @@ module AresMUSH
         alt.update(chargen_locked: false)
         Roles.remove_role(alt, "approved")
 
-        client.emit_success t('alttracker.alt_removed,' :name => alt.name)
+        client.emit_success t('alttracker.alt_removed', :name => alt.name)
       end
     end
 
