@@ -15,7 +15,7 @@ module AresMUSH
       end
 
       def required_args
-        [ self.name self.codeword ]
+        [ self.name, self.codeword ]
       end
 
       def check_alt_exists
@@ -43,7 +43,6 @@ module AresMUSH
         enactor.update(player: self.alt.player)
         client.emit_success t('alttracker.register_ok')
       end
-
     end
 
   end

@@ -4,6 +4,8 @@ module AresMUSH
     class AddAltCmd
       include CommandHandler
 
+      attr_accessor :alt, :newchar, :player
+
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
         self.newchar = Character.find_one_by_name(args.arg1)
@@ -24,7 +26,7 @@ module AresMUSH
       def handle
         self.newchar.update(player: self.player)
 
-        client.emit_success "#{self.newchar.name} registered under email #{self.player.email}."
+        client.emit_success t('alttracker.alt_manual_add', :newname => self.newchar.name, :alt => self.alt.name)
       end
     end
 

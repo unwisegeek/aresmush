@@ -4,6 +4,8 @@ module AresMUSH
     class RemoveAltCmd
       include CommandHandler
 
+      attr_accessor :char
+
       def parse_args
         self.char = Character.find_one_by_name(cmd.args)
       end
@@ -20,7 +22,7 @@ module AresMUSH
         alt.update(chargen_locked: false)
         Roles.remove_role(alt, "approved")
 
-        client.emit_success "#{self.char.name} unapproved for play and dissociated from player object."
+        client.emit_success t('alttracker.alt_removed,' :name => alt.name)
       end
     end
 
