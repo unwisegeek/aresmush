@@ -4,17 +4,18 @@ module AresMUSH
     class RegisterAltPlayerCmd
       include CommandHandler
 
-      attr_accessor :alt, :codeword, :player
+      attr_accessor :alt, :codeword, :name, :player
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
-        self.alt = Character.find_one_by_name(args.arg1)
+        self.name = args.arg1
         self.codeword = args.arg2
+        self.alt = Character.find_one_by_name(self.name)
         self.player = self.alt.player
       end
 
       def required_args
-        [ self.codeword ]
+        [ self.name self.codeword ]
       end
 
       def check_alt_exists
