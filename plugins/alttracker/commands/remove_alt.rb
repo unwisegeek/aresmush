@@ -20,6 +20,7 @@ module AresMUSH
           model.update(approval_job: nil)
           model.update(chargen_locked: false)
           Roles.remove_role(model, "approved")
+        end
 
         client.emit_success t('alttracker.alt_removed', :name => alt.name)
       end

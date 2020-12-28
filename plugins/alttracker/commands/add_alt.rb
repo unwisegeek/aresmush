@@ -14,6 +14,7 @@ module AresMUSH
 
       def required_args
         [ self.newchar, self.alt ]
+      end
 
       def check_can_modify
         return nil if enactor.has_permission?("manage_alts")
@@ -37,9 +38,9 @@ module AresMUSH
           client.emit_failure t('alttracker.player_banned')
         else
           new.update(player: player)
-
-          client.emit_success t('alttracker.alt_manual_add', :newname => self.newchar.name, :alt => self.alt.name)
         end
+
+        client.emit_success t('alttracker.alt_manual_add', :newname => self.newchar.name, :alt => self.alt.name)
       end
     end
 
