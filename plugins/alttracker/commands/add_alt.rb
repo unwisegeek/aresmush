@@ -32,6 +32,7 @@ module AresMUSH
 
       def handle
         player = self.char.player
+        email = player.email
         altlist = player.characters.map { |n| n.name }.sort
         banned = player.banned
         template = AltsDisplayTemplate.new(self.email, self.codeword, altlist, banned)
