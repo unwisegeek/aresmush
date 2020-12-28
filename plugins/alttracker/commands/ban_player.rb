@@ -4,6 +4,8 @@ module AresMUSH
     class BanAltCmd
       include CommandHandler
 
+      attr_accessor :player, :reason
+
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
         self.player = AltTracker.find_player_by_email(args.arg1)
@@ -30,7 +32,7 @@ module AresMUSH
         self.player.update(banned: self.reason)
         client.emit_success "Player #{self.player.email} banned from gameplay and all alts unapproved. Reason: #{self.reason}"
       end
-      
+
     end
 
   end

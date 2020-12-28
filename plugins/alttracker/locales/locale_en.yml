@@ -9,7 +9,7 @@ en:
     invalid_codeword: "Alt not registered. Invalid codeword."
     max_alts_exceeded: "You are at the maximum number of alts allowed for this game. Maximum alts on this game: %{max_alts}."
     command_not_allowed: "You do not have permission to use that command."
-    not_registered: "That alt is not registered."
+    not_registered: "%{name} is not registered to an email."
     player_not_found: "No player matching %{email}."
     player_banned: "The owner of that email has previously been asked to leave this game. Sorry."
     register_ok: "You are now successfully registered."
