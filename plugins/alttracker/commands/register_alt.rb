@@ -15,7 +15,7 @@ module AresMUSH
       end
 
       def required_args
-        [ self.name self.codeword ]
+        [ self.name, self.codeword ]
       end
 
       def check_alt_exists

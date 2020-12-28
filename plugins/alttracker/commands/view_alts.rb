@@ -32,7 +32,7 @@ module AresMUSH
 
       def check_alt_registered
         return nil if self.char.player
-        return t('alttracker.not_registered', :name => self.char.name')
+        return t('alttracker.not_registered', :name => self.char.name)
       end
 
       def handle
