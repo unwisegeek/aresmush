@@ -15,7 +15,7 @@ module AresMUSH
       end
 
       def handle
-        ClassTargetFinder.with_a_character(self.char, client) do |model|
+        ClassTargetFinder.with_a_character(self.char, client, enactor) do |model|
           model.update(player: nil)
           model.update(approval_job: nil)
           model.update(chargen_locked: false)

@@ -18,7 +18,7 @@ module AresMUSH
       end
 
       def handle
-        ClassTargetFinder.with_a_character(self.name,client) do |char|
+        ClassTargetFinder.with_a_character(self.name, client, enactor) do |char|
           if char.player
             player = char.player
           else

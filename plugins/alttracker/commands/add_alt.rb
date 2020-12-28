@@ -22,11 +22,11 @@ module AresMUSH
       end
 
       def handle
-        ClassTargetFinder.with_a_character(self.newchar, client) do |new|
+        ClassTargetFinder.with_a_character(self.newchar, client, enactor) do |new|
           new = new.name
         end
 
-        ClassTargetFinder.with_a_character(self.alt, client) do |existing|
+        ClassTargetFinder.with_a_character(self.alt, client, enactor) do |existing|
           existing = existing.name
         end
 
