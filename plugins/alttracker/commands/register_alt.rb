@@ -19,7 +19,7 @@ module AresMUSH
       def handle
         max_alts = Global.read_config('alttracker','max_alts_allowed')
 
-        ClassTargetFinder.with_a_character(self.name) do |model|
+        ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
           player = model.player
         end
 

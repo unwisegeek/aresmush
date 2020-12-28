@@ -28,8 +28,8 @@ module AresMUSH
         elsif self.target == enactor
           player = self.target
         else
-          ClassTargetFinder.with_a_character(self.target) do |model|
-            player = model
+          ClassTargetFinder.with_a_character(self.target, client, enactor) do |model|
+            player = model.player
           end
         end
 
