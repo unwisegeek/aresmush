@@ -11,6 +11,7 @@ en:
     command_not_allowed: "You do not have permission to use that command."
     not_registered: "%{name} is not registered to an email."
     player_not_found: "No player matching %{email}."
-    player_banned: "The owner of that email has previously been asked to leave this game. Sorry."
+    player_banned: "That player has previously been asked to leave this game."
     register_ok: "You are now successfully registered."
     alt_removed: "%{name} has been unregistered and unapproved."
+    alt_manual_add: "%{newname} is now registered as an alt of %{alt}."
