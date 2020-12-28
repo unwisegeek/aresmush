@@ -2,9 +2,9 @@
 <%= center( "%x172Alts for #{player_email}%xn", 78) %>
 %ld
 
-   <%= left( "%xhCodeword:%xn #{player_codeword}" ) %>
+   <%= "%xhCodeword:%xn #{player_codeword}" %>
 
-   <%= left( "%xhAlts Associated To This Email:%xn" ) -%>
+   <%= "%xhAlts Associated To This Email:%xn" -%>
 <%= "#{player_altlist.join(", ")}" if player_altlist -%>
 <%= "(#{player_altlist.size} alt(s) found)" if player_altlist -%>
 
