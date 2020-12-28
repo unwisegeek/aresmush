@@ -13,3 +13,4 @@ en:
     player_not_found: "No player matching %{email}."
     player_banned: "The owner of that email has previously been asked to leave this game. Sorry."
     register_ok: "You are now successfully registered."
+    alt_removed: "%{name} has been unregistered and unapproved."

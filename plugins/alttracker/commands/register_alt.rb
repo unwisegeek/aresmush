@@ -43,7 +43,6 @@ module AresMUSH
         enactor.update(player: self.alt.player)
         client.emit_success t('alttracker.register_ok')
       end
-
     end
 
   end
