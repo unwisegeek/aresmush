@@ -14,6 +14,7 @@ module AresMUSH
 
       def required_args
         [ self.name, self.reason ]
+      end
 
       def check_can_modify
         return nil if enactor.has_permission?("manage_alts")
