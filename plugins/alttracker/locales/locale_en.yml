@@ -14,3 +14,5 @@ en:
     register_ok: "You are now successfully registered."
     alt_removed: "%{name} has been unregistered and unapproved."
     alt_manual_add: "%{newname} is now registered as an alt of %{alt}."
+    email_ok: "You update your email address."
+    codeword_ok: "You update your code word."

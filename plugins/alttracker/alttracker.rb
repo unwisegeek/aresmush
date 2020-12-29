@@ -29,8 +29,12 @@ module AresMUSH
         when "remove"
           return RemoveAltCmd
         when "ban"
-          return BanAltCmd
+          return BanPlayerCmd
         end
+      when "email"
+        return ChangeEmailCmd
+      when "codeword"
+        return ChangeCodeWordCmd
       end
       nil
     end

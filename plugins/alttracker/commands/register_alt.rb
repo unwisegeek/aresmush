@@ -21,6 +21,8 @@ module AresMUSH
         valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
         max_alts = Global.read_config('alttracker','max_alts_allowed')
 
+        # Use safe navigation operator to force player to nil if character
+        # not found.
         if self.target =~ valid_email
           player = AltTracker.find_player_by_email(self.target)
         else
