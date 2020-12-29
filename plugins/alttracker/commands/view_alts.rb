@@ -23,7 +23,7 @@ module AresMUSH
       def handle
         valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
-        if self.target =~ valid email
+        if self.target =~ valid_email
           player = AltTracker.find_player_by_email(self.target)
         elsif self.target == enactor
           player = self.target
@@ -31,15 +31,18 @@ module AresMUSH
           player = Character.find_one_by_name(self.target)&.player
         end
 
-        client.emit_failure t('alttracker.player_not_found', :email => cmd.args) && return nil unless player
+        if !player
+          client.emit_failure t('alttracker.not_registered', :name => cmd.args)
+          return nil
+        else
+          email = player.email
+          codeword = player.codeword
+          altlist = player.characters.map { |n| n.name }.sort
+          banned = player.banned
+          template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
-        email = player.email
-        codeword = player.codeword
-        altlist = player.characters.map { |n| n.name }.sort
-        banned = player.banned
-        template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
-
-        client.emit template.render
+          client.emit template.render
+        end
 
       end
     end
