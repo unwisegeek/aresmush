@@ -21,7 +21,6 @@ module AresMUSH
 
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
           player = model.player
-        end
 
         if player.characters.size >= max_alts
           client.emit_failure t('alttracker.max_alts_exceeded', :max_alts => max_alts)
@@ -32,6 +31,8 @@ module AresMUSH
         else
           enactor.update(player: player)
           client.emit_success t('alttracker.register_ok')
+        end
+
         end
 
       end
