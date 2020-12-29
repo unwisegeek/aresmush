@@ -28,10 +28,10 @@ module AresMUSH
         elsif self.target == enactor
           player = self.target
         else
-          ClassTargetFinder.with_a_character(self.target, client, enactor) do |model|
-            player = model.player
-          end
+          player = Character.find_one_by_name(self.target)&.player
         end
+
+        client.emit_failure t('alttracker.player_not_found', :email => cmd.args) && return nil unless player
 
         email = player.email
         codeword = player.codeword
@@ -40,6 +40,7 @@ module AresMUSH
         template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
         client.emit template.render
+
       end
     end
 
