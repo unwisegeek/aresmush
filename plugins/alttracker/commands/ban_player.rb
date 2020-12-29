@@ -12,6 +12,9 @@ module AresMUSH
         self.reason = trim_arg(args.arg2).to_s
       end
 
+      def required_args
+        [ self.name, self.reason ]
+
       def check_can_modify
         return nil if enactor.has_permission?("manage_alts")
         return t('dispatcher.not_allowed')
@@ -31,7 +34,7 @@ module AresMUSH
             player.update(banned: self.reason)
             client.emit_success "Player #{player.email} banned from gameplay and all alts unapproved. Reason: #{self.reason}"
           else
-            client.emit_failure t('alttracker.player_not_found', :email => self.name)
+            client.emit_failure t('alttracker.not_registered', :name => self.name)
             return nil
           end
         end

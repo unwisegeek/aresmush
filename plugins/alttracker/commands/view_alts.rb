@@ -33,11 +33,11 @@ module AresMUSH
 
         if !player
           if self.target == enactor
-            display_name = "You"
+            display_name = enactor.name
           else
-            display_name = "#{cmd.args}"
+            display_name = cmd.args
           end
-      
+
           client.emit_failure t('alttracker.not_registered', :name => display_name)
           return nil
         else
