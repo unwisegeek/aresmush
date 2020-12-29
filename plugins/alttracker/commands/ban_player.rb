@@ -4,7 +4,7 @@ module AresMUSH
     class BanPlayerCmd
       include CommandHandler
 
-      attr_accessor :player, :reason
+      attr_accessor :name, :reason
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
@@ -21,21 +21,20 @@ module AresMUSH
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |char|
           if char.player
             player = char.player
+
+            player.characters do |alt|
+              alt.update(player: nil)
+              alt.update(approval_job: nil)
+              alt.update(chargen_locked: false)
+            end
+
+            player.update(banned: self.reason)
+            client.emit_success "Player #{player.email} banned from gameplay and all alts unapproved. Reason: #{self.reason}"
           else
-            client.emit_failure t('alttracker.not_registered')
+            client.emit_failure t('alttracker.player_not_found', :email => self.name)
+            return nil
           end
         end
-
-        return nil unless player
-
-        player.characters do |alt|
-          alt.update(player: nil)
-          alt.update(approval_job: nil)
-          alt.update(chargen_locked: false)
-        end
-
-        player.update(banned: self.reason)
-        client.emit_success "Player #{player.email} banned from gameplay and all alts unapproved. Reason: #{self.reason}"
       end
 
     end

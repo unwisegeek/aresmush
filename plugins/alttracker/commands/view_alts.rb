@@ -28,6 +28,8 @@ module AresMUSH
         return t('alttracker.not_registered', :name => self.char.name)
       end
 
+        client.emit_failure t('alttracker.player_not_found', :email => cmd.args) && return nil unless player
+
         email = player.email
         codeword = player.codeword
         altlist = player.characters.map { |n| n.name }.sort
@@ -35,6 +37,7 @@ module AresMUSH
         template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
         client.emit template.render
+
       end
     end
 
