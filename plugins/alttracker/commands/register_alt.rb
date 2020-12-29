@@ -4,7 +4,7 @@ module AresMUSH
     class RegisterAltPlayerCmd
       include CommandHandler
 
-      attr_accessor :alt, :codeword, :name,
+      attr_accessor :codeword, :name
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
@@ -27,7 +27,7 @@ module AresMUSH
           client.emit_failure t('alttracker.max_alts_exceeded', :max_alts => max_alts)
         elsif player.banned
           client.emit_failure t('alttracker.player_banned')
-        elsif !(self.codeword == self.player.codeword)
+        elsif !(self.codeword == player.codeword)
           client.emit_failure t('alttracker.invalid_codeword')
         else
           enactor.update(player: player)
