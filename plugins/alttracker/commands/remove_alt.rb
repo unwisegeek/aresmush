@@ -27,6 +27,7 @@ module AresMUSH
           Roles.remove_role(model, "approved")
 
         client.emit_success t('alttracker.alt_removed', :name => alt.name)
+        end
       end
     end
 
