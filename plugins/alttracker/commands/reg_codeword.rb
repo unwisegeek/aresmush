@@ -4,6 +4,8 @@ module AresMUSH
     class ChangeCodeWordCmd
       include CommandHandler
 
+      attr_accessor :codeword
+
       def parse_args
         self.codeword = trim_arg(cmd.args).to_s
       end

@@ -4,6 +4,8 @@ module AresMUSH
     class ChangeEmailCmd
       include CommandHandler
 
+      attr_accessor :email
+
       def parse_args
         self.email = trim_arg(cmd.args)
       end
