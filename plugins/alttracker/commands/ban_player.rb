@@ -26,17 +26,16 @@ module AresMUSH
           if char.player
             player = char.player
 
-            player.characters do |alt|
+            player.characters.each { |alt|
               alt.update(player: nil)
               alt.update(approval_job: nil)
               alt.update(chargen_locked: false)
-            end
+            }
 
             player.update(banned: self.reason)
             client.emit_success "Player #{player.email} banned from gameplay and all alts unapproved. Reason: #{self.reason}"
           else
             client.emit_failure t('alttracker.not_registered', :name => self.name)
-            return nil
           end
         end
       end
