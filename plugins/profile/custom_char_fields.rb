@@ -14,7 +14,7 @@ module AresMUSH
       #    return { goals: Website.format_markdown_for_html(char.goals) }
       def self.get_fields_for_viewing(char, viewer)
 
-        if viewer == char || viewer.has_permission?("manage_alts")
+        if viewer == char || viewer&.has_permission?("manage_alts")
           if !(char.player)
             return { registration: Website.format_markdown_for_html("Not yet registered.") }
           else
@@ -23,7 +23,7 @@ module AresMUSH
         else
           return {}
         end
-        
+
       end
 
       # Gets custom fields for the character profile editor.

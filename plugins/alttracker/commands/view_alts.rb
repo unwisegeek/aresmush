@@ -45,7 +45,7 @@ module AresMUSH
         else
           email = player.email
           codeword = player.codeword
-          altlist = player.characters.map { |n| n.name }.sort
+          altlist = player.characters.map { |n| n.name }.sort.join(", ")
           banned = player.banned
           template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
