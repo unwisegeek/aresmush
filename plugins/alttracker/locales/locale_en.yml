@@ -14,4 +14,4 @@ en:
     register_ok: "You are now successfully registered."
     email_ok: "You update your email address."
     codeword_ok: "You update your code word."
-    app_registration_ok: Registered. Alts: %{alts}
+    app_registration_ok: "Registered. Alts: %{alts}"
