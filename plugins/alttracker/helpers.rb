@@ -15,7 +15,7 @@ module AresMUSH
 
     def self.find_alts_by_name(name)
       char = Character.find_one_by_name(name)
-      alts = char.player.characters.map { |c| c.name }
+      alts = char&.player.characters.map { |c| c.name }
     end
 
   end
