@@ -28,7 +28,7 @@ module AresMUSH
         if self.target =~ valid_email
           player = AltTracker.find_player_by_email(self.target)
         elsif self.target == enactor
-          player = self.target&.player
+          player = enactor.player
         else
           player = Character.find_one_by_name(self.target)&.player
         end
@@ -45,7 +45,7 @@ module AresMUSH
         else
           email = player.email
           codeword = player.codeword
-          altlist = player.characters.map { |n| n.name }.sort
+          altlist = player.characters.map { |n| n.name }.sort.join(", ")
           banned = player.banned
           template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
