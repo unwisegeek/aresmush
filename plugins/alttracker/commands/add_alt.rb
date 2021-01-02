@@ -23,25 +23,27 @@ module AresMUSH
 
       def handle
 
-        ClassTargetFinder.with_a_character(self.newchar, client, enactor) do |new|
-          self.new = new
-        end
+        new = Character.find_one_by_name(self.newchar)
+        existing = Character.find_one_by_name(self.alt)
 
-        ClassTargetFinder.with_a_character(self.alt, client, enactor) do |existing|
-          self.existing = existing
-        end
-
-        player = existing.player
-
-        if !player
-          client.emit_failure t('alttracker.not_registered', :name => self.existing.name)
-        elsif player.banned
-          client.emit_failure t('alttracker.player_banned')
+        if !(new && existing)
+          client.emit_failure t('alttracker.one_does_not_exist', :new => self.newchar, :existing => self.alt)
+          return nil
         else
-          self.new.update(player: player)
+          player = existing.player
+
+          if !player
+            client.emit_failure t('alttracker.not_registered', :name => existing.name)
+            return nil
+          elsif player.banned
+            client.emit_failure t('alttracker.player_banned')
+            return nil
+          else
+            new.update(player: player)
+            client.emit_success t('alttracker.alt_manual_add', :newname => new.name, :alt => existing.name)
+          end
         end
 
-        client.emit_success t('alttracker.alt_manual_add', :newname => self.new.name, :alt => self.existing.name)
       end
     end
 

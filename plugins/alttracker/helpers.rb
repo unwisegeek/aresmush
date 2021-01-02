@@ -13,9 +13,14 @@ module AresMUSH
       alts = player.characters.map { |c| c.name }
     end
 
-    def self.find_alts_by_name(name)
+    def self.get_altlist_by_name(name)
       char = Character.find_one_by_name(name)
-      alts = char&.player.characters.map { |c| c.name }
+      return false unless char.player
+      alts = char.player.characters.map { |c| c.name }.sort.join(", ")
+    end
+
+    def self.get_altlist_by_object(player)
+      alts = player.characters.map { |c| c.name }.sort.join(", ")
     end
 
   end
