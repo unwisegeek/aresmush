@@ -23,8 +23,6 @@ module AresMUSH
       def handle
         valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
-        # Use safe navigation operator to force player to nil if character
-        # not found.
         if self.target =~ valid_email
           player = AltTracker.find_player_by_email(self.target)
         elsif self.target == enactor

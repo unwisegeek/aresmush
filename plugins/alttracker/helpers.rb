@@ -16,11 +16,15 @@ module AresMUSH
     def self.get_altlist_by_name(name)
       char = Character.find_one_by_name(name)
       return false unless char.player
-      alts = char.player.characters.map { |c| c.name }.sort.join(", ")
+      alts = char.player.characters.map { |c| c.name }.sort
     end
 
     def self.get_altlist_by_object(player)
-      alts = player.characters.map { |c| c.name }.sort.join(", ")
+      alts = player.characters.map { |c| c.name }.sort
+    end
+
+    def self.delete_player(player)
+      player.delete
     end
 
   end
