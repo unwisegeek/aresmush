@@ -4,7 +4,7 @@ module AresMUSH
     class ViewAltsCmd
       include CommandHandler
 
-      attr_accessor :target, :email, :codeword, :banned
+      attr_accessor :altlist, :banned, :codeword, :email, :target
 
       def parse_args
         if cmd.args
@@ -47,7 +47,7 @@ module AresMUSH
           banned = player.banned
 
           # template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
-          template = BorderedDisplayTemplate.new(email codeword altlist banned, "Test of Template")
+          template = BorderedDisplayTemplate.new(email codeword banned, "Test of Template")
 
           client.emit template.render
         end
