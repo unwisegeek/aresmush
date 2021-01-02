@@ -4,7 +4,8 @@
 
    <%= "%xhCodeword:%xn #{player_codeword}" %>
 
-   <%= "%xhAlts Associated To This Email:%xn" -%>
+   <%= "%xhAlts Associated To This Email:%xn " -%>
 <%= "#{player_altlist.join(", ")}" -%>
 <%= " (#{player_altlist.size} alt(s) found)" %>
+   <%= "%xrThis player has previously been banned. Reason: #{banned}%r" if banned %>
 %lf
