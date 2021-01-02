@@ -3,7 +3,7 @@ module AresMUSH
     def self.custom_app_review(char)
 
       if char.player
-        altlist = AltTracker.get_altlist_by_object(char.player)
+        altlist = AltTracker.get_altlist_by_object(char.player).join(", ")
         msg = t('alttracker.app_registration_ok', :alts => altlist)
       else
         msg = t('chargen.oops_missing', :missing => "registration")

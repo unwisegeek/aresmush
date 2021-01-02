@@ -18,7 +18,7 @@ module AresMUSH
           if !(char.player)
             return { registration: Website.format_markdown_for_html("Not yet registered.") }
           else
-            altlist = AltTracker.get_altlist_by_object(char.player)
+            altlist = AltTracker.get_altlist_by_object(char.player).join(", ")
             return { registration: Website.format_markdown_for_html(char.player.email), alts: Website.format_markdown_for_html(altlist) }
           end
         else
