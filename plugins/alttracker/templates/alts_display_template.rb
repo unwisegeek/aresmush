@@ -4,7 +4,7 @@ module AresMUSH
 
       attr_accessor :email, :codeword, :altlist, :banned
 
-      def initialize(email, codeword, altlist, banned=nil)
+      def initialize(email, codeword, altlist=[], banned=nil)
         @email = email
         @codeword = codeword
         @altlist = altlist
