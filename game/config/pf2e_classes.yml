@@ -1,20 +1,20 @@
 ---
 pf2e_classes:
-   alchemist:
-      key_score: Intelligence
-      secondary_scores:
+   Alchemist:
+      Key Score: Intelligence
+      Secondary Scores:
       - Constitution
       - Dexterity
-      perception: trained
-      saves: 
+      Perception: trained
+      Saves:
          Fortitude: expert
          Reflex: expert
          Will: trained
-      class_skills:
+      Class Skills:
          Crafting: trained
          open: 3
-      attacks: 
+      Attacks:
          Simple Weapons: trained
          Alchemical Bombs: trained
          Unarmed: trained
-      class_dc: trained
+      Class DC: trained

@@ -17,5 +17,9 @@ module AresMUSH
       bonus = levels[p]
     end
 
+    def roll_dice(amount=1, sides=20)
+      amount.to_i.times.sum { |t| rand(1..sides.to_i) }
+    end
+
   end
 end

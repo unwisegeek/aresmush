@@ -45,7 +45,7 @@ module AresMUSH
         else
           email = player.email
           codeword = player.codeword
-          altlist = player.characters.map { |n| n.name }.sort.join(", ")
+          altlist = AltTracker.get_altlist_by_object(player)
           banned = player.banned
           template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
