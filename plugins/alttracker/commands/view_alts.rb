@@ -46,10 +46,9 @@ module AresMUSH
           altlist = AltTracker.get_altlist_by_object(player)
           banned = player.banned
 
-          client.emit "Email: #{email} Codeword: #{codeword} Alt List: #{altlist} Banned: #{banned}"
-          # template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
+          template = AltsDisplayTemplate.new(email, codeword, altlist, banned)
 
-          # client.emit template.render
+          client.emit template.render
         end
 
       end
