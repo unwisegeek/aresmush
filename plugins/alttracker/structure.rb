@@ -5,6 +5,7 @@ module AresMUSH
       attribute :email
       attribute :codeword
       attribute :banned
+      attribute :mark_idle
       collection :characters, "AresMUSH::Character"
     end
   end

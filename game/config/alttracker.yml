@@ -1,7 +1,14 @@
 ---
 alttracker:
+   idle_cron:
+      day:
+      - 7
+      hour:
+      - 3
+      minute:
+      - 23
    max_alts_allowed: 1
    permissions:
-      manage_alts: Determines who may view others' registered alts.     
+      manage_alts: Determines who may view others' registered alts.
    shortcuts:
       reg: register
