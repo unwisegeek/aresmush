@@ -31,6 +31,7 @@ module AresMUSH
 
         player.update(email: self.email)
         player.update(codeword: self.codeword)
+        player.update(mark_idle: nil)
         enactor.update(player: player)
 
         client.emit_success t('alttracker.register_ok')

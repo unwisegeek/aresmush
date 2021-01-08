@@ -19,6 +19,8 @@ module AresMUSH
           return RegisterNewPlayerCmd
         when "alt"
           return RegisterAltPlayerCmd
+        when nil
+          return RegisterPlayerCmd
         end
       when "alts"
         return ViewAltsCmd

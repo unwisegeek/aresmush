@@ -42,6 +42,7 @@ module AresMUSH
           return nil
         else
           enactor.update(player: player)
+          player.update(mark_idle: nil)
           client.emit_success t('alttracker.register_ok')
         end
 
