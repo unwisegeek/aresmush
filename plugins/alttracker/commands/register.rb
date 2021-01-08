@@ -54,13 +54,6 @@ module AresMUSH
           client.emit_success t('alttracker.register_ok')
         end
 
-        # ( client.emit_failure t('alttracker.player_banned') && return ) if player.banned
-        # ( client.emit_failure t('alttracker.max_alts_exceeded', :max_alts => max_alts) && return ) if player.characters.size >= max_alts
-        # ( client.emit_failure t('alttracker.invalid_codeword') && return ) unless self.codeword == player.codeword
-
-        enactor.update(player: player)
-        player.update(mark_idle: nil)
-        client.emit_success t('alttracker.register_ok')
       end
     end
 
