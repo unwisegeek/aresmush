@@ -1,0 +1,57 @@
+pf2e_conditions:
+  Blinded:
+    value: false
+    affected_stat:
+      Perception: -4
+    override: "Dazzled"
+  Clumsy:
+    value: true
+    affected_stat:
+    - "Dexterity"
+    override: false
+  Confused:
+    value: false
+    override: false
+  Controlled:
+    value: false
+    override: false
+  Dazzled:
+    value: false
+    override: false
+  Deafened:
+    value: false
+    affected_stat:
+      Perception: -2
+    override: false
+  Doomed:
+    value: true
+    override: false
+    daily: -1
+  Dying:
+    value: true
+    override: false
+  Encumbered:
+    value: false
+    affected_stat:
+      Dexterity: -1
+      Speed: -10
+    override: false
+  Enfeebled:
+    value: true
+    affected_stat:
+    - "Strength"
+    override: false
+  Fascinated:
+    value: false
+    override: false
+  Fatigued:
+    value: false
+    affected_stat:
+      Base AC: -1
+      Fortitude: -1
+      Reflex: -1
+      Will: -1
+    override: false
+  Flat-Footed:
+    value: false
+    override: false
