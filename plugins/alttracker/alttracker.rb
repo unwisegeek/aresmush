@@ -14,14 +14,7 @@ module AresMUSH
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
       when "register"
-        case cmd.switch
-        when "new"
-          return RegisterNewPlayerCmd
-        when "alt"
-          return RegisterAltPlayerCmd
-        when nil
-          return RegisterPlayerCmd
-        end
+        return RegisterPlayerCmd
       when "alts"
         return ViewAltsCmd
       when "alt"

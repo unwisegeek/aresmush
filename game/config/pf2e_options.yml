@@ -7,6 +7,6 @@ pf2e:
   - LN
   - N
   - CN
-  open_sheets: false
+  open_sheets: true
   use_alignment: true
   use_encumbrance: false
