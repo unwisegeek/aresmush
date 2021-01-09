@@ -15,6 +15,8 @@ module AresMUSH
       reference :char, "AresMUSH::Character"
     end
 
+  end
+
   class Character
     reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
   end
