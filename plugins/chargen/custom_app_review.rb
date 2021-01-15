@@ -9,7 +9,7 @@ module AresMUSH
         msg = t('chargen.oops_missing', :missing => "registration")
       end
 
-      return Chargen.format_review_status "Checking registration.", msg
+      return Chargen.format_review_status t('alttracker.reg_check'), msg
 
     end
   end

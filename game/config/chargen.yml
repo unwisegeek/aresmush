@@ -47,19 +47,18 @@ chargen:
     view_bgs: Can view other characters' backgrounds
   post_approval_message: Please make sure they have a profile image for their log
     icon.
-  rank_blurb: Military rank.
+  registration_blurb: This game requires that players disclose their alts privately
+    to game admins. See `help register` for more information.
   rejection_message: Sorry, your character could not be approved at the present time
     for the reasons described below.  Please see %xhhelp app%xn for help making changes
     and resubmitting, and contact the person handling your application if you have
     any questions.
+  sheet_blurb: Your character sheet shows all of your character's innate and learned
+    abilities and skills. `help pf2e chargen` will show you what you need to set, and how.
   shortcuts:
     chargen: cg
     cg/back: cg/prev
     cg/previous: cg/prev
-    bg/approve: app/approve
-    bg/reject: app/reject
-    bg/submit: app/submit
-    bg/unsubmit: app/unsubmit
     hooks: hook
     hook/delete: hook/remove
     hook/add: hook/set
@@ -78,6 +77,12 @@ chargen:
         prevent your character from being approved (like forgetting to set your eye
         color).  %xyYellow%xn issues are warnings; they might actually be OK if it
         fits the character concept.
+    sheet:
+      title: PF2E Character Generation
+      text: This game uses the Pathfinder Second Edition gaming system to resolve combat.
+      For this section, `help pf2e chargen` is your friend. It will describe what
+      you need to set, and in what order. Unlike all of the other sections, what order you
+      do your sheet in matters here, so be sure to follow the instructions carefully.
     demographics:
       help: demographics
     groups:
@@ -88,6 +93,8 @@ chargen:
       help: descriptions
     hooks:
       help: hooks
+    registration:
+      help: register
     handles:
       help: handles
     profile:

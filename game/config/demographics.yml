@@ -22,6 +22,9 @@ demographics:
   - physique
   - played by
   - birthdate
+  - pf2_ancestry
+  - pf2_class
+  - pf2_level
   disable_auto_shortcuts: false
   editable_properties:
   - full name

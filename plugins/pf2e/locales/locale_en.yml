@@ -1,3 +1,7 @@
 ---
 en:
-  pf2e: {}
+  pf2e:
+    cannot_view_sheet: "That character has not granted you permission to view their sheet."
+    char_not_found: "I didn't find a character by that name."
+    sheet_not_found: "That character does not have a sheet yet."
+    bad_section: "Section %{section} is not a valid section."

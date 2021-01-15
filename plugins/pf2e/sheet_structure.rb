@@ -7,13 +7,16 @@ module AresMUSH
       attribute :pf2_background
       attribute :pf2_heritage
       attribute :pf2_class
-      attribute :pf2_level
+      attribute :pf2_level, :type => DataType::Integer
       attribute :pf2_faith
       attribute :pf2_deity
       attribute :pf2_alignment
+      attribute :pf2_xp, :type => DataType::Integer
+      attribute :pf2_conditions, :type => DataType::Array
 
       reference :char, "AresMUSH::Character"
     end
+  end
 
   end
 
