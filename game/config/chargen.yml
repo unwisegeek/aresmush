@@ -18,13 +18,17 @@ chargen:
     to go forth and RP.  You may want to customize your character profile on the web
     portal.
   arrivals_category: New Arrivals
-  bg_blurb: A background is your character's backstory or history.  You don''t need
-    to write a novel. Just cover the basics--who you are, why are you here, and anything
-    noteworthy about you. Be sure to explain any unusual skills.
+  prologue_blurb: Your prologue is your character's backstory. This does not need
+    to be a novel, but should explain how your character got to where they are now, major
+    themes in their life and upbringing, and should tie together their ancestry, heritage,
+    background, and class into a cohesive whole.
   demographics_blurb: Demographics record your basic character info.
   desc_blurb: You can set both your main description, visible when people look at
-    you, and a short description that shows your character at a glance.
-  groups_blurb: Groups determine your character's affiliations.
+    you, and a short description that shows your character at a glance. Like the
+    prologue, this should not be a novel, but should give a general idea of what your
+    character looks like.
+  groups_blurb: Groups determine your character's affiliations. For now, just put
+    `Illuminators`.
   hooks_blurb: RP Hooks are interesting things about your character that others can
     hook into for RP. This could be an odd personality quirk, a reputation your character
     has, or anything else that might inspire someone to connect with you. Looking
@@ -39,19 +43,18 @@ chargen:
     to be killed off, or turned into a NPC, or whatever.
   post_approval_message: Please make sure they have a profile image for their log
     icon.
-  rank_blurb: Military rank.
+  registration_blurb: This game requires that players disclose their alts privately
+    to game admins. See `help register` for more information.
   rejection_message: Sorry, your character could not be approved at the present time
     for the reasons described below.  Please see %xhhelp app%xn for help making changes
     and resubmitting, and contact the person handling your application if you have
     any questions.
+  sheet_blurb: Your character sheet shows all of your character's innate and learned
+    abilities and skills. `help pf2e chargen` will show you what you need to set, and how.
   shortcuts:
     chargen: cg
     cg/back: cg/prev
     cg/previous: cg/prev
-    bg/approve: app/approve
-    bg/reject: app/reject
-    bg/submit: app/submit
-    bg/unsubmit: app/unsubmit
     hooks: hook
     hook/delete: hook/remove
     hook/add: hook/set
@@ -70,16 +73,22 @@ chargen:
         prevent your character from being approved (like forgetting to set your eye
         color).  %xyYellow%xn issues are warnings; they might actually be OK if it
         fits the character concept.
+    sheet:
+      title: PF2E Character Generation
+      text: This game uses the Pathfinder Second Edition gaming system to resolve combat.
+      For this section, `help pf2e chargen` is your friend. It will describe what
+      you need to set, and in what order. Unlike all of the other sections, what order you
+      do your sheet in matters here, so be sure to follow the instructions carefully.
     demographics:
       help: demographics
-    groups:
-      help: groups
-    background:
+    prologue:
       help: backgrounds
     desc:
       help: descriptions
     hooks:
       help: hooks
+    registration:
+      help: register
     handles:
       help: handles
     profile:
