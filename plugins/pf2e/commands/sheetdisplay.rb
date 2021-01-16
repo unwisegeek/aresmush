@@ -20,10 +20,10 @@ module AresMUSH
 
       def handle
         char = self.target ? ClassTargetFinder.find(self.target, Character, enactor) : enactor
-        return && client.emit_failure t('pf2e.char_not_found') if !char
+        client.emit_failure t('pf2e.char_not_found') && return ("Not found.") if !char
 
         sheet = char.pf2sheet
-        return && client.emit_failure t('pf2e.sheet_not_found') if !sheet
+        client.emit_failure t('pf2e.sheet_not_found') && return ("Not found.") if !sheet
 
         case self.section
         when "all"
