@@ -12,6 +12,11 @@ module AresMUSH
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
+      case cmd.root
+      when "sheet"
+        return DisplaySheetCmd
+      end
+
       nil
     end
 

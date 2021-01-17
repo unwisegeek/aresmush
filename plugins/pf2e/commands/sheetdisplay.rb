@@ -31,7 +31,8 @@ module AresMUSH
         when "top", "info"
           template = PF2InfoSheetDisplay.new(char, sheet, enactor)
         else
-          return t('pf2e.bad_section', :section => self.section)
+          client.emit_failure t('pf2e.bad_section', :section => self.section)
+          return
         end
 
         client.emit template.render
