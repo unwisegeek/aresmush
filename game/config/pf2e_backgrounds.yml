@@ -1,0 +1,20 @@
+---
+pf2e_background:
+  Acolyte:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Religion
+    - Scribing Lore
+    feats: Student of the Canon
+  Blessed:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Charisma
+    - Wisdom
+    skills:
+    - open Lore
+    special: Blessing
+    rare: true
