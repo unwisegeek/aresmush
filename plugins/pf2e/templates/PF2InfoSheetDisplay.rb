@@ -3,6 +3,7 @@ module AresMUSH
 
     class SheetInfoTemplate < ErbTemplateRenderer
       include SheetInfoFields
+      include CommonTemplateFields
 
       attr_accessor :char, :enactor, :sheet
 
