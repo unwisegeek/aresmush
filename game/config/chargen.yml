@@ -43,6 +43,7 @@ chargen:
     to be killed off, or turned into a NPC, or whatever.
   post_approval_message: Please make sure they have a profile image for their log
     icon.
+  ranks_blurb: This game does not use ranks.
   registration_blurb: This game requires that players disclose their alts privately
     to game admins. See `help register` for more information.
   rejection_message: Sorry, your character could not be approved at the present time
@@ -73,10 +74,10 @@ chargen:
         fits the character concept.
     demographics:
       help: demographics
-    prologue:
-      help: backgrounds
     sheet_basic:
       help: pf2e_chargen
+    prologue:
+      help: backgrounds
     desc:
       help: descriptions
     hooks:

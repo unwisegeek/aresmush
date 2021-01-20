@@ -15,6 +15,11 @@ module AresMUSH
       case cmd.root
       when "sheet"
         return DisplaySheetCmd
+      when "chargen"
+        case cmd.switch
+        when "set"
+          return PF2SetChargenCmd
+        end
       end
 
       nil
