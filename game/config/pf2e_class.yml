@@ -1,0 +1,25 @@
+---
+pf2e_class:
+  Alchemist:
+    abl_boosts: Intelligence
+    Perception: trained
+    saves:
+      Fortitude: expert
+      Reflex: expert
+      Will: trained
+    class_skills_open: 3
+    class_skills:
+    - Crafting: trained
+    specialties:
+    - Bomber
+    - Chirurgeon
+    - Mutagenist
+    attacks:
+      Simple Weapons: trained
+      Alchemical Bombs: trained
+      Unarmed: trained
+    defenses:
+      Light Armor: trained
+      Unarmored: trained
+    class_dc: trained
+    features:

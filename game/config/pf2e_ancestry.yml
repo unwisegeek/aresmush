@@ -1,0 +1,44 @@
+---
+pf2e_ancestry:
+  Khazad:
+    HP: 10
+    Size: M
+    Speed: 20
+    abl_boosts_open: 1
+    abl_boosts:
+    - Constitution
+    - Wisdom
+    abl_flaw: Charisma
+    languages:
+    - Tradespeak
+    - Khazdul
+    traits:
+    - khazad
+    - humanoid
+    special:
+    - darkvision
+    heritages:
+    - Ancient-Blooded
+    - Rock
+    - Forge
+    # These four are Versatile Heritage and should be in every entry.
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    feats:
+      1:
+      - Dwarven Lore
+      - Dwarven Weapon Familiarity
+      - Rock Runner
+      - Stonecunning
+      - Unburdened Iron
+      - Vengeful Hatred
+      5:
+      - Boulder Roll
+      - Dwarven Weapon Cunning
+      9:
+      - Mountain's Stoutness
+      - Stonewalker
+      13:
+      - Dwarven Weapon Expertise

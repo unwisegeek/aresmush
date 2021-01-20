@@ -5,27 +5,22 @@ order: 2
 ---
 # Pathfinder 2E Chargen - Basics and Ability Scores
 
-`cg/start`: Starts chargen. This command should only ever be used once.
+The first thing you'll need to do is set your basic character information. You will only be able to use this command in chargen, and nothing you set here can be changed after approval. To set a property:
 
-Once you have done that, these commands will set the base information about your character that will drive ability selections and your final ability scores.
+`cg/set <element> = <value>`: Sets basic character information.
 
-`ancestry <ancestry>`: Choose your ancestry.
-`class <class>`: Choose your class.
-`background <background>`: Choose your background. (Shortcut: cg/bg)
-`heritage <heritage>`: Choose your heritage.
-`specialize <specialization>`: Some classes have specializations. If yours does, choose it with this command.
+<element> may be one of:
 
-`faith <faith>`: Choose your faith. More on faiths can be found on the wiki. 
+* ancestry: Genetic racial traits. Choose this before choosing heritage.
+* background: Your character's life before they became an adventurer.
+* class: Your character's class, their field of expertise.
+* heritage: A subset of ancestry, determines what ancestry feats are available.
+* specialty: Some classes have specialties. If yours does, choose it using this element.
 
-Some classes will also require that you choose your deity at this time, and any class can if they want to.
+Once all of these are set, you'll be able to set your ability boosts. Some of these may already be chosen for you, depending on what you selected above. Others will be open.
 
-`deity <deity>`: Choose your deity.
+Remember: No stat may start above an 18, and you must place your ability boosts into a minimum of three different stats. Failing to adhere to this will delay your app approval.
 
-Refer to the game web portal for information on what ancestries, heritages, classes, deities, and backgrounds are available on the game.
+`ability/boost <stat>`: Applies an open ability boost to <stat>.
 
-Setting the above sets the stage for you to direct your ability scores.
-
-`ability <list of abilities>`: Choose which stats get a free ability boost.
-`classabil <ability>`: Choose your secondary class ability boost.
-`bgabil <ability>`: Choose your background ability boost.
-`ancabil <ability>`: Choose free ancestry ability boost.
+Once those are set, type `cg/next` to continue to the next stage.
