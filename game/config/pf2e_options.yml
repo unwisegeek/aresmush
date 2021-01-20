@@ -8,6 +8,6 @@ pf2e:
   - N
   - CN
   open_sheets: true
-  title_color: %x172
+  title_color: '%x172'
   use_alignment: true
   use_encumbrance: false
