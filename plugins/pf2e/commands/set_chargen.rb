@@ -14,6 +14,7 @@ module AresMUSH
 
       def required_args
         [ self.element, self.value ]
+      end
 
       def check_in_chargen
         if enactor.is_approved? || enactor.chargen_locked
