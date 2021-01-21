@@ -21,7 +21,6 @@ pf2e_ancestry:
     - Ancient-Blooded
     - Rock
     - Forge
-    # These four are Versatile Heritage and should be in every entry.
     - Tiefling
     - Aasimar
     - Dar

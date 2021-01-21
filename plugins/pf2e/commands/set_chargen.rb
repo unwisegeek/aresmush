@@ -4,7 +4,8 @@ module AresMUSH
     class PF2SetChargenCmd
       include CommandHandler
 
-      attr_accessor :pf2_ancestry, :pf2_heritage, :pf2_background, :pf2_class, :pf2sheet, :element, :value
+      attr_accessor :pf2_ancestry, :pf2_heritage, :pf2_background, :pf2_class
+      attr_accessor :pf2sheet, :element, :value
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
