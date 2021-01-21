@@ -47,7 +47,7 @@ module AresMUSH
           options = Global.read_config('pf2e_ancestry', ancestry, 'heritages').sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         else
-          file = 'pf2e_' + '#{selected_element}'
+          file = 'pf2e_' + "#{selected_element}"
           section = Global.read_config(file)
           options = section.keys.sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
