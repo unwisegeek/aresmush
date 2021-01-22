@@ -7,10 +7,10 @@ module AresMUSH
 
       attr_accessor :char, :enactor, :sheet
 
-      def initialize(char, sheet, enactor)
+      def initialize(char, sheet, client)
         @char = char
         @sheet = sheet
-        @enactor = enactor
+        @client = client
         super File.dirname(__FILE__) + "/sheet_master.erb"
       end
 

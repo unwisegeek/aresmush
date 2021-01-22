@@ -84,6 +84,8 @@ chargen:
       help: backgrounds
     sheet_basic:
       help: pf2e_chargen
+    sheet_abilities:
+      help: pf2e_chargen_abilities
     prologue:
       help: backgrounds
     desc:

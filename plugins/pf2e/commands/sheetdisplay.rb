@@ -27,9 +27,9 @@ module AresMUSH
 
         case self.section
         when "all"
-          template = MasterSheetTemplate.new(char, sheet, enactor)
+          template = MasterSheetTemplate.new(char, sheet, client)
         when "top", "info"
-          template = SheetInfoTemplate.new(char, sheet, enactor)
+          template = SheetInfoTemplate.new(char, sheet, client)
         else
           client.emit_failure t('pf2e.bad_section', :section => self.section)
           return

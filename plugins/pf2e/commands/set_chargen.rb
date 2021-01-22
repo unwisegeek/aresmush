@@ -4,7 +4,7 @@ module AresMUSH
     class PF2SetChargenCmd
       include CommandHandler
 
-      attr_accessor :pf2_ancestry, :pf2_heritage, :pf2_background, :pf2_class
+      attr_accessor :pf2_ancestry, :pf2_heritage, :pf2_background, :pf2_class, :pf2_lineage
       attr_accessor :pf2sheet, :element, :value
 
       def parse_args
@@ -31,13 +31,11 @@ module AresMUSH
         sheet = enactor.pf2sheet
 
         if !sheet
-          sheet = Pf2eSheet.new
-          enactor.update(pf2sheet, sheet)
-          sheet.update(char, enactor)
+          sheet = Pf2e.create_sheet(enactor)
           client.emit_ooc t('pf2e.creating_sheet')
         end
 
-        chargen_elements = %w{ancestry background class heritage}
+        chargen_elements = %w{ancestry background class heritage lineage}
         selected_element = chargen_elements.find { |o| o.include?(self.element) }
 
         if !selected_element
@@ -47,6 +45,14 @@ module AresMUSH
           section = Global.read_config('pf2e_heritages')
           ancestry = sheet.pf2_ancestry
           options = Global.read_config('pf2e_ancestry', ancestry, 'heritages').sort
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "lineage"
+          heritage = sheet.pf2_heritage
+          options = Global.read_config('pf2e_heritages', heritage, 'lineages').sort
+          if !options
+            client.emit_failure t('pf2e.no_lineages')
+            return
+          end
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         else
           file = 'pf2e_' + "#{selected_element}"
@@ -70,6 +76,11 @@ module AresMUSH
           sheet.update(pf2_class, selected_option)
         when "heritage"
           sheet.update(pf2_heritage, selected_option)
+        when "lineage"
+          char_feats = sheet.pf2_feats
+          lineage_feats = Pf2e.find_feat("traits","lineage")
+          char_feats = (char_feats - lineage_feats) << selected_option
+          sheet.update(pf2_feats, char_feats)
         end
 
         client.emit_success t('pf2e.option_set', :element => selected_element, :option => selected_option)
