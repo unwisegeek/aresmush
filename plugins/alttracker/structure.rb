@@ -7,6 +7,15 @@ module AresMUSH
       attribute :banned
       attribute :mark_idle
       collection :characters, "AresMUSH::Character"
+
+      before_delete :unlink_alts
+
+      def self.unlink_alts
+        self.characters.each { |c|
+          c.update(player, nil)
+        }
+      end
+      
     end
   end
 
