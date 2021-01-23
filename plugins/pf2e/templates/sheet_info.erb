@@ -1,10 +1,10 @@
 <%= header %>
-<%= center ("#{title_color}Information for #{char_name}%xn", 78) %>
+<%= center( "#{title_color}Information for #{char_name}%xn", 78 ) %>
 <%= divider %>
-<%= left ("Ancestry: #{ancestry} (#{size})", 39)  -%>
-<%= left ("Heritage: #{heritage}", 39) %>
-<%= left ("Background: #{background}", 39)  -%>
-<%= left ("Class: #{class} #{level}"), 39) %>
-<%= left ("Faith: #{faith}", 39)  -%>
-<%= left ("Deity: " deity ? deity : "None", 39) %>
+<%= left( "Ancestry: #{ancestry} (#{size})", 39 )  -%>
+<%= left( "Heritage: #{heritage}", 39 ) %>
+<%= left( "Background: #{background}", 39 )  -%>
+<%= left( "Class: #{pf2_class} #{level}", 39 ) %>
+<%= left( "Faith: #{faith}", 39 )  -%>
+<%= left( "Deity: " deity ? "#{deity}" : "None", 39 ) %>
 <%= footer %>

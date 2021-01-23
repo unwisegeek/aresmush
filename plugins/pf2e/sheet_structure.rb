@@ -53,6 +53,6 @@ module AresMUSH
     def self.delete_sheet
       self.pf2sheet.delete
     end
-    
+
   end
 end
