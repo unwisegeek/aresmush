@@ -13,7 +13,7 @@ module AresMUSH
       sheet.pf2_background
     end
 
-    def class
+    def pf2_class
       sheet.pf2_class
     end
 

@@ -38,7 +38,7 @@ module AresMUSH
       attribute :charisma, :type => DataType::Hash, :default => { "base_value"=>10, "mod_value"=>false }
 
       attribute :open_boosts, :type => DataType::Integer, :default => 4
-      attribute :working_boosts, :type => DataType::Hash, :default => { "Strength"=>0, "Dexterity"=>0, "Constitution"=0, "Intelligence"=>0, "Wisdom"=>0, "Charisma"=>0 }
+      attribute :working_boosts, :type => DataType::Hash, :default => { "Strength"=>0, "Dexterity"=>0, "Constitution"=>0, "Intelligence"=>0, "Wisdom"=>0, "Charisma"=>0 }
 
       reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
     end
@@ -53,6 +53,6 @@ module AresMUSH
     def self.delete_sheet
       self.pf2sheet.delete
     end
-    
+
   end
 end
