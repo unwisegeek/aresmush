@@ -20,12 +20,15 @@ module AresMUSH
 
       def handle
         char = self.target ? ClassTargetFinder.find(self.target, Character, enactor) : enactor
-        sheet = char.pf2sheet
 
         if !char
           client.emit_failure t('pf2e.char_not_found')
           return
-        elsif !sheet
+        end
+
+        sheet = char.pf2sheet
+
+        if !sheet
           client.emit_failure t('pf2e.sheet_not_found')
           return
         end
