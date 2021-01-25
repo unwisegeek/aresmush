@@ -5,7 +5,7 @@ en:
     char_not_found: "I didn't find a character by that name."
     sheet_not_found: "That character does not have a sheet yet."
     bad_section: "Section %{section} is not a valid section."
-    set_only_in_chargen: "That option can only be set in chargen."
+    only_in_chargen: "This command can only be used in chargen."
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
     bad_option: "'%{invalid}' is not a valid option for %{element}."
     no_lineages: "That heritage does not have lineages associated to it."
