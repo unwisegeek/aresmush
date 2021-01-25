@@ -55,8 +55,12 @@ module AresMUSH
       end
     end
 
-    def self.has_feat?(char, feat)
-
+    def self.character_has?(array, element)
+      if array.include?(element)
+        return array.index(element)
+      else
+        return false
+      end
     end
 
     def self.find_feat(type,term)

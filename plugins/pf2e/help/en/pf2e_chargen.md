@@ -18,6 +18,6 @@ The first thing you'll need to do is set your basic character information. You w
 * lineage: Some heritages offer optional lineage feats. If yours does, choose it using this element.
 * specialty: Some classes have specialties. If yours does, choose it using this element.
 
-**NOTE**: Resetting any of these options later in chargen will reset your ability boosts, skills, feats, and spells. We recommend that you be satisfied with your options here before moving on.
+`cg/review`: Reviews what you have so far. This command will alert you to missing elements. A missing in red means that this is required, while a missing in yellow might be okay depending on what else you have set.
 
-Once those are set, type `cg/next` to continue to the next stage.
+`cg/commit`: Once you're happy with what you have, type this to finalize it and set up the next phase of chargen. **BEWARE**: If you change your mind on these later, you'll have to `cg/reset` and start over. 

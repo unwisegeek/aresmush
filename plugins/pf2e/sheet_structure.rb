@@ -3,18 +3,17 @@ module AresMUSH
     class Pf2eSheet < Ohm::Model
       include ObjectModel
 
-      attribute :pf2_ancestry
-      attribute :pf2_background
-      attribute :pf2_heritage
-      attribute :pf2_class
+      attribute :pf2_base_info, :type => DataType::Hash, :default => {ancestry:"", heritage:"", background:"", class:""}
       attribute :pf2_level, :type => DataType::Integer, :default => 1
-      attribute :pf2_faith
-      attribute :pf2_deity
-      attribute :pf2_alignment
       attribute :pf2_xp, :type => DataType::Integer, :default => 0
       attribute :pf2_conditions, :type => DataType::Array, :default => []
       attribute :pf2_feats, :type => DataType::Array, :default => []
       attribute :pf2_features, :type => DataType::Array, :default => []
+      attribute :pf2_skills, :type => DataType::Hash, :default => {}
+      attribute :pf2_traits, :type => DataType::Array, :default => []
+      attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "" }
+      attribute :pf2_special, :type => DataType::Array, :default => []
+
 
       reference :char, "AresMUSH::Character"
       reference :abilities, "AresMUSH::Pf2e::Pf2eAbilities"

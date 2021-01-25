@@ -19,6 +19,8 @@ module AresMUSH
         case cmd.switch
         when "set"
           return PF2SetChargenCmd
+        when "review"
+          return PF2ReviewChargenCmd
         end
       end
 
