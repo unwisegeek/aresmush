@@ -23,10 +23,10 @@ module AresMUSH
         self.background_info = @background ? Global.read_config('pf2e_background', @background) : nil
         self.charclass_info = @charclass ? Global.read_config('pf2e_class', @charclass) : nil
 
-        @ancestry_info = @ancestry.blank? ? Global.read_config('pf2e_ancestry', @ancestry) : nil
-        @heritage_info = @heritage.blank? ? Global.read_config('pf2e_heritage', @heritage) : nil
-        @background_info = @background.blank? ? Global.read_config('pf2e_background', @background) : nil
-        @charclass_info = @charclass.blank? ? Global.read_config('pf2e_class', @charclass) : nil
+        @ancestry_info = @ancestry.blank? ? "" : Global.read_config('pf2e_ancestry', @ancestry)
+        @heritage_info = @heritage.blank? ? "" : Global.read_config('pf2e_heritage', @heritage)
+        @background_info = @background.blank? ? "" : Global.read_config('pf2e_background', @background)
+        @charclass_info = @charclass.blank? ? "" : Global.read_config('pf2e_class', @charclass)
       end
 
       def name
@@ -89,12 +89,12 @@ module AresMUSH
 
       def specials
         specials = @ancestry_info["special"] + @heritage_info["special"] + @background_info["special"].flatten!
-        if Pf2e.character_has?(specials, "Low-Light Vision") && @heritage == "Dar"
+        if Pf2e.character_has?(@ancestry_info["special"], "Low-Light Vision") && @heritage == "Dar"
           specials = specials.delete_at specials.index("Low-Light Vision") + [ "Darkvision" ]
         end
         specials.empty? ? "No special abilities or senses." : specials.sort.join(", ")
       end
-
     end
+
   end
 end

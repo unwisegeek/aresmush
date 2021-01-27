@@ -112,7 +112,7 @@ module AresMUSH
         colors = Global.read_config('pf2e', 'condition_colors')
         cond_color = colors[condition.to_s]
         name = "#{cond_color}#{condition.to_s.capitalize}"
-        value = "%b#{value}" ? value : ""
+        value = value ? "%b#{value}" : ""
         "#{name}#{value}%xn"
       end
 
