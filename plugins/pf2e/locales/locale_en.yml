@@ -9,6 +9,7 @@ en:
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
     bad_option: "'%{invalid}' is not a valid option for %{element}."
     no_lineages: "That heritage does not have lineages associated to it."
+    missing_subclass: "Your class requires a specialization, please choose one."
 
     creating_sheet: "You don't have a character sheet yet. Creating a sheet...."
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."

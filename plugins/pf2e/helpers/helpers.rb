@@ -3,11 +3,7 @@ module AresMUSH
 
     def self.get_ability_score(abilities,abil_name)
       stat = abilities.abil_name
-      if stat["mod_value"]
-        return stat["mod_value"]
-      else
-        return stat["base_value"]
-      end
+      stat[:mod_val] ? stat[:mod_val] : stat[:base_val]
     end
 
     def self.get_prof_level(char, target)

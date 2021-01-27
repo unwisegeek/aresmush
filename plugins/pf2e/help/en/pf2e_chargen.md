@@ -20,4 +20,6 @@ The first thing you'll need to do is set your basic character information. You w
 
 `cg/review`: Reviews what you have so far. This command will alert you to missing elements. A missing in red means that this is required, while a missing in yellow might be okay depending on what else you have set.
 
-`cg/commit`: Once you're happy with what you have, type this to finalize it and set up the next phase of chargen. **BEWARE**: If you change your mind on these later, you'll have to `cg/reset` and start over. 
+`cg/commit`: Once you're happy with what you have, type this to finalize it and set up the next phase of chargen. **BEWARE**: If you change your mind on these later, you'll have to `cg/reset` and start over.
+
+When you are ready to continue to ability boosts, type `cg/next`.

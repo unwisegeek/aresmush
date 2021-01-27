@@ -1,5 +1,7 @@
 ---
 pf2e:
+  shortcuts:
+    sheet/top: sheet/info
   allowed_alignments:
   - LG
   - NG
@@ -12,3 +14,19 @@ pf2e:
   title_color: '%x172'
   use_alignment: true
   use_encumbrance: false
+  subclass_names:
+    Alchemist: 'Research Field'
+    Barbarian: 'Instinct'
+    Bard: 'Muse'
+    Champion: 'Cause'
+    Druid: 'Order'
+    Ranger: "Hunter's Edge"
+    Rogue: 'Racket'
+    Sorcerer: 'Bloodline'
+    Wizard: 'School'
+    Investigator: 'Methodology'
+    Oracle: 'Mystery'
+    Witch: 'Patron'
+  condition_colors:
+    Dying: %xr
+    Wounded: %xy

@@ -3,16 +3,18 @@
 <%= divider %>
 <%= left ("%xhAncestry%xn: " ancestry ? ancestry : "%xrMissing!", 39) -%>
 <%= left ("%xhHeritage%xn: " heritage ? heritage : "%xyMissing - may be ok", 39) %>
-<%= left ("%xhClass%xn: " class ? class : "%xrMissing!", 39) -%>
-<%= left ("%xhBackground%xn: " background ? background : "%xrMissing!", 39) -%>
+<%= left ("%xhClass%xn: " charclass ? charclass : "%xrMissing!", 39) -%>
+<%= left ("%xhKit/Specialty%xn: " subclass ? subclass : "%xrMissing!", 39) %>)
+<%= left ("%xhBackground%xn: " background ? background : "%xrMissing!", 39) %>
 <%= section_line("So Far...") %>
 <%= left ("%xhHP%xn: #{hp} + CON mod", 26) -%>
 <%= left ("%xhSize: #{size}", 26) -%>
 <%= left ("%xhSpeed%xn: #{speed} feet"), 26 %>
-<%= "%xhFree Boosts%xn: " open_boosts %>
-<%= "%xhAncestry Boosts%xn: " ancestry_boosts.sort.join(" and ") %>
-<%= "%xhBackground Boosts%xn: " background_boosts %>
-<%= "%xhClass Boosts%xn: " class_boosts %>
+<%= "%xhTraits%xn:" traits %>
+<%= "%xhFree Boosts%xn: 4 (must be spread to four different stats)" %>
+<%= "%xhAncestry Boosts%xn: #{ancestry_boosts.sort.join(" and ")} plus #{free_ancestry_boosts} free"  %>
+<%= "%xhBackground Boosts%xn: #{background_boosts} plus #{free_bg_boosts} free" %>
+<%= "%xhClass Boosts%xn: " charclass_boosts %>
 <%= "%xhSpecial Senses and Abilities%xn: " specials %>
 
 <%= "If you're happy with what you see, type %xccg/commit%xn to finalize it." %>
