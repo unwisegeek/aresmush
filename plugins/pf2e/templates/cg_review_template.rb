@@ -22,7 +22,6 @@ module AresMUSH
         self.heritage_info = @heritage ? Global.read_config('pf2e_heritage', @heritage) : nil
         self.background_info = @background ? Global.read_config('pf2e_background', @background) : nil
         self.charclass_info = @charclass ? Global.read_config('pf2e_class', @charclass) : nil
-      end
 
         @ancestry_info = @ancestry.blank? ? Global.read_config('pf2e_ancestry', @ancestry) : nil
         @heritage_info = @heritage.blank? ? Global.read_config('pf2e_heritage', @heritage) : nil
