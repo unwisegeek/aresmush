@@ -35,7 +35,7 @@ module AresMUSH
           client.emit_ooc t('pf2e.creating_sheet')
         end
 
-        chargen_elements = %w{ancestry background class heritage lineage}
+        chargen_elements = %w{ancestry background charclass heritage lineage specialize}
         selected_element = chargen_elements.find { |o| o.include?(self.element) }
 
         if !selected_element
@@ -67,13 +67,16 @@ module AresMUSH
         end
 
         case selected_element
-        when "ancestry", "background", "class", "heritage"
+        when "ancestry", "background", "charclass", "heritage", "specialize"
           new_info = sheet.pf2_base_info
           new_info[selected_element.to_sym] = selected_option
           if selected_element == "ancestry"
             new_info[:heritage] = nil
+          elsif selected_element == "charclass"
+            new_info[:specialize] = nil
           end
 
+          sheet.update(pf2_feats, [])
           sheet.update(pf2_base_info,new_info)
 
         when "lineage"

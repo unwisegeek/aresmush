@@ -24,8 +24,10 @@ module AresMUSH
         self.charclass_info = @charclass ? Global.read_config('pf2e_class', @charclass) : nil
       end
 
-      def section_line(title)
-        @client.screen_reader ? title : line_with_text(title)
+        @ancestry_info = @ancestry.blank? ? Global.read_config('pf2e_ancestry', @ancestry) : nil
+        @heritage_info = @heritage.blank? ? Global.read_config('pf2e_heritage', @heritage) : nil
+        @background_info = @background.blank? ? Global.read_config('pf2e_background', @background) : nil
+        @charclass_info = @charclass.blank? ? Global.read_config('pf2e_class', @charclass) : nil
       end
 
       def name
@@ -33,15 +35,19 @@ module AresMUSH
       end
 
       def ancestry
-        @ancestry ? @ancestry : nil
+        @ancestry.blank? ? @ancestry : nil
       end
 
       def heritage
-        @heritage ? @heritage : nil
+        @heritage.blank? ? @heritage : nil
       end
 
       def background
-        @background ? @background : nil
+        @background.blank? ? @background : nil
+      end
+
+      def charclass
+        @charclass.blank? ? @charclass : nil
       end
 
       def charclass
@@ -49,23 +55,27 @@ module AresMUSH
       end
 
       def hp
-        self.ancestry_info["HP"] + self.class_info["HP"]
+        @ancestry_info["HP"] + self.charclass_info["HP"]
       end
 
       def size
-        self.ancestry_info["Size"]
+        @ancestry_info["Size"]
       end
 
       def speed
-        self.ancestry_info["Speed"]
+        @ancestry_info["Speed"]
       end
 
-      def open_boosts
-        self.ancestry_info["abl_boosts_open"] + self.background_info["abl_boosts_open"] + 4
+      def traits
+        @ancestry_info["traits"] + @heritage_info["traits"] + [ @charclass ].uniq.sort.join(", ")
       end
 
       def ancestry_boosts
-        self.ancestry_info["abl_boosts"]
+        @ancestry_info["abl_boosts"]
+      end
+
+      def free_ancestry_boosts
+        @ancestry_info["abl_boosts_open"]
       end
 
       def background_boosts
@@ -79,9 +89,9 @@ module AresMUSH
       end
 
       def specials
-        specials = self.ancestry_info["special"] + self.heritage_info["special"] + self.background_info["special"].flatten!
+        specials = @ancestry_info["special"] + @heritage_info["special"] + @background_info["special"].flatten!
         if Pf2e.character_has?(specials, "Low-Light Vision") && @heritage == "Dar"
-          specials = specials.delete_at specials.index("Low-Light Vision") + ["Darkvision"]
+          specials = specials.delete_at specials.index("Low-Light Vision") + [ "Darkvision" ]
         end
         specials.empty? ? "No special abilities or senses." : specials.sort.join(", ")
       end

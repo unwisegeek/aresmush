@@ -26,10 +26,8 @@ module AresMUSH
         # return "Not found." && client.emit_failure t('pf2e.sheet_not_found') if !sheet
 
         case self.section
-        when "all"
-          template = MasterSheetTemplate.new(char, sheet, client)
-        when "top", "info"
-          template = SheetInfoTemplate.new(char, sheet, client)
+        when "all", "info", "ability", "skills", "feats", "combat"
+          template = SheetTemplate.new(char, sheet, self.section, client)
         else
           client.emit_failure t('pf2e.bad_section', :section => self.section)
           return
