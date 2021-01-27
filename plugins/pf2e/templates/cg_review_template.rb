@@ -4,15 +4,15 @@ module AresMUSH
     class PF2CGReviewDisplay < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char, :sheet, :ancestry, :background, :class, :heritage
+      attr_accessor :char, :sheet, :ancestry, :background, :charclass, :heritage
 
-      def initialize(char, sheet, ancestry=nil, heritage=nil, background=nil, class=nil)
+      def initialize(char, sheet, ancestry=nil, heritage=nil, background=nil, charclass=nil)
         @char = char
         @sheet = sheet
         @ancestry = ancestry
         @heritage = heritage
         @background = background
-        @class = class
+        @charclass = charclass
 
         super File.dirname(__FILE__) + "/cg_review.erb"
       end
@@ -21,7 +21,7 @@ module AresMUSH
         self.ancestry_info = @ancestry ? Global.read_config('pf2e_ancestry', @ancestry) : nil
         self.heritage_info = @heritage ? Global.read_config('pf2e_heritage', @heritage) : nil
         self.background_info = @background ? Global.read_config('pf2e_background', @background) : nil
-        self.class_info = @class ? Global.read_config('pf2e_class', @class) : nil
+        self.charclass_info = @charclass ? Global.read_config('pf2e_class', @charclass) : nil
       end
 
       def section_line(title)
@@ -44,8 +44,8 @@ module AresMUSH
         @background ? @background : nil
       end
 
-      def class
-        @class ? @class : nil
+      def charclass
+        @charclass ? @charclass : nil
       end
 
       def hp
@@ -70,11 +70,11 @@ module AresMUSH
 
       def background_boosts
         list = self.background_info["req_abl_boosts"]
-        list.empty? "None required." : list.join(" or ")
+        list.empty? ? "None required." : list.join(" or ")
       end
 
-      def class_boosts
-        list = self.class_info["key_score"]
+      def charclass_boosts
+        list = self.charclass_info["key_score"]
         list.join("or")
       end
 
@@ -83,7 +83,7 @@ module AresMUSH
         if Pf2e.character_has?(specials, "Low-Light Vision") && @heritage == "Dar"
           specials = specials.delete_at specials.index("Low-Light Vision") + ["Darkvision"]
         end
-        specials.empty? "No special abilities or senses." : specials.sort.join(", ")
+        specials.empty? ? "No special abilities or senses." : specials.sort.join(", ")
       end
 
     end
