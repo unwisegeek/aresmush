@@ -27,7 +27,7 @@ module AresMUSH
 
         case self.section
         when "all", "info", "ability", "skills", "feats", "combat"
-          template = SheetTemplate.new(char, sheet, self.section, client)
+          template = Pf2eSheetTemplate.new(char, sheet, self.section, client)
         else
           client.emit_failure t('pf2e.bad_section', :section => self.section)
           return

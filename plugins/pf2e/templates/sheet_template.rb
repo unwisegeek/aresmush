@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    class SheetInfoTemplate < ErbTemplateRenderer
+    class Pf2eSheetTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
       attr_accessor :char, :sheet, :client
