@@ -28,5 +28,5 @@ pf2e:
     Oracle: 'Mystery'
     Witch: 'Patron'
   condition_colors:
-    Dying: %xr
-    Wounded: %xy
+    Dying: '%xr'
+    Wounded: '%xy'

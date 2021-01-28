@@ -1,11 +1,6 @@
 module AresMUSH
   module Pf2e
 
-    def self.get_ability_score(abilities,abil_name)
-      stat = abilities.abil_name
-      stat[:mod_val] ? stat[:mod_val] : stat[:base_val]
-    end
-
     def self.get_prof_level(char, target)
       sheet = char.pf2sheet
     end

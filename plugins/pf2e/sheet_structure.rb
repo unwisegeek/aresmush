@@ -12,6 +12,8 @@ module AresMUSH
     attribute :pf2_traits, :type => DataType::Array, :default => []
     attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "" }
     attribute :pf2_special, :type => DataType::Array, :default => []
+    attribute :pf2_open_boosts, :type => DataType::Integer, :default => 4
+    attribute :pf2_working_boosts, :type => DataType::Hash, :default => { "Strength"=>0, "Dexterity"=>0, "Constitution"=>0, "Intelligence"=>0, "Wisdom"=>0, "Charisma"=>0 }
 
     reference :char, "AresMUSH::Character"
     reference :abilities, "AresMUSH::Pf2eAbilities"
@@ -32,9 +34,6 @@ module AresMUSH
     attribute :intelligence, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
     attribute :wisdom, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
     attribute :charisma, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-
-    attribute :open_boosts, :type => DataType::Integer, :default => 4
-    attribute :working_boosts, :type => DataType::Hash, :default => { "Strength"=>0, "Dexterity"=>0, "Constitution"=>0, "Intelligence"=>0, "Wisdom"=>0, "Charisma"=>0 }
 
     reference :pf2sheet, "AresMUSH::Pf2eSheet"
   end
