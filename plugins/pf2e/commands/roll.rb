@@ -4,8 +4,10 @@ module AresMUSH
     class RollCommand
       include CommandHandler
 
+      attr_accessor :mods
+
       def parse_args
-        mods = cmd.args.sub("-", "+-").split("+")
+        self.mods = cmd.args.gsub!("-", "+-").gsub!("--","-").split("+")
       end
 
       @@keywords = { "haste"=>1,
@@ -15,7 +17,7 @@ module AresMUSH
       }
 
       def handle
-        roll_result = mods.map { |e|
+        roll_result = self.mods.map { |e|
           case
           when e =~ '/([0-9]+)d[0-9]+/'
             dice = e.sub("d"," ").to_a

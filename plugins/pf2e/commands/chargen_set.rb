@@ -31,13 +31,14 @@ module AresMUSH
         sheet = enactor.pf2sheet
 
         if !sheet
+
           sheet = Pf2eSheet.new
           abil_object = Pf2eAbilities.new
 
-          enactor.update(pf2sheet, sheet)
-          sheet.update(char, enactor)
-          sheet.update(abilities, abil_object)
-          abilities.update(pf2sheet, sheet)
+          enactor.update(pf2sheet: sheet)
+          sheet.update(char: enactor)
+          sheet.update(abilities: abil_object)
+          abilities.update(pf2sheet: sheet)
 
           client.emit_ooc t('pf2e.creating_sheet')
         end
@@ -83,14 +84,14 @@ module AresMUSH
             new_info[:specialize] = nil
           end
 
-          sheet.update(pf2_feats, [])
-          sheet.update(pf2_base_info,new_info)
+          sheet.update(pf2_feats: [])
+          sheet.update(pf2_base_info: new_info)
 
         when "lineage"
           char_feats = sheet.pf2_feats
           lineage_feats = Pf2e.find_feat("traits","lineage")
           char_feats = (char_feats - lineage_feats) << selected_option
-          sheet.update(pf2_feats, char_feats)
+          sheet.update(pf2_feats: char_feats)
         end
 
         client.emit_success t('pf2e.option_set', :element => selected_element, :option => selected_option)
