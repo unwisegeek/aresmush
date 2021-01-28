@@ -31,7 +31,14 @@ module AresMUSH
         sheet = enactor.pf2sheet
 
         if !sheet
-          sheet = Pf2e.create_sheet(enactor)
+          sheet = Pf2eSheet.new
+          abil_object = Pf2eAbilities.new
+
+          enactor.update(pf2sheet, sheet)
+          sheet.update(char, enactor)
+          sheet.update(abilities, abil_object)
+          abilities.update(pf2sheet, sheet)
+
           client.emit_ooc t('pf2e.creating_sheet')
         end
 
