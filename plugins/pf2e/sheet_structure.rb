@@ -14,16 +14,7 @@ module AresMUSH
       attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "" }
       attribute :pf2_special, :type => DataType::Array, :default => []
 
-
       reference :char, "AresMUSH::Character"
-      reference :abilities, "AresMUSH::Pf2e::Pf2eAbilities"
-
-      # before_delete :delete_subsheet
-
-      # def delete_subsheet
-        # self.abilities.delete
-      # end
-
     end
 
     class Pf2eAbilities < Ohm::Model
@@ -42,6 +33,16 @@ module AresMUSH
       reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
     end
 
+    class Pf2eSheet
+      reference :abilities, "AresMUSH::Pf2e::Pf2eAbilities"
+
+      before_delete :delete_subsheet
+
+      def delete_subsheet
+        self.abilities.delete
+      end
+    end
+
   end
 
   class Character
@@ -49,11 +50,11 @@ module AresMUSH
 
     reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
 
-    # before_delete :delete_pf2sheet
+    before_delete :delete_pf2sheet
 
-    # def delete_pf2sheet
-      # self.pf2sheet.delete
-    # end
+    def delete_pf2sheet
+      self.pf2sheet.delete
+    end
 
   end
 end
