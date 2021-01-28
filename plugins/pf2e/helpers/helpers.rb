@@ -20,20 +20,16 @@ module AresMUSH
       bonus = levels[p]
     end
 
-    def self.create_sheet(char)
+    def self.create_sheet(model)
       sheet = Pf2eSheet.new
-      abilities = Pf2eAbilities.new
+      abil_object = Pf2eAbilities.new
 
-      char.pf2sheet = sheet
-      sheet.char = char
-      sheet.abilities = abilities
-      abilities.pf2sheet = sheet
+      model.update(pf2sheet, sheet)
+      sheet.update(model, char)
+      sheet.update(abilities,abil_object)
+      abilities.update(pf2sheet, sheet)
 
-      abilities.save
-      char.save
-      sheet.save
-
-      return sheet
+      sheet
     end
 
     def self.roll_dice(amount=1, sides=20)
