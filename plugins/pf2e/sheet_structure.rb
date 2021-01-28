@@ -14,7 +14,7 @@ module AresMUSH
     attribute :pf2_special, :type => DataType::Array, :default => []
 
     reference :char, "AresMUSH::Character"
-    reference :abilities, "AresMUSH::Pf2e::Pf2eAbilities"
+    reference :abilities, "AresMUSH::Pf2eAbilities"
 
     # before_delete :delete_subsheet
 
@@ -36,13 +36,13 @@ module AresMUSH
     attribute :open_boosts, :type => DataType::Integer, :default => 4
     attribute :working_boosts, :type => DataType::Hash, :default => { "Strength"=>0, "Dexterity"=>0, "Constitution"=>0, "Intelligence"=>0, "Wisdom"=>0, "Charisma"=>0 }
 
-    reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
+    reference :pf2sheet, "AresMUSH::Pf2eSheet"
   end
 
   class Character
     attribute :baseinfo_locked, :type => DataType::Boolean
 
-    reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
+    reference :pf2sheet, "AresMUSH::Pf2eSheet"
 
     # before_delete :delete_pf2sheet
 
