@@ -31,8 +31,7 @@ module AresMUSH
         sheet = enactor.pf2sheet
 
         if !sheet
-
-          sheet = Pf2eSheet.new
+          sheet = Pf2eSheet.create
 
           enactor.update(pf2sheet: sheet)
           sheet.update(char: enactor)

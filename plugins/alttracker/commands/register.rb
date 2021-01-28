@@ -25,7 +25,7 @@ module AresMUSH
 
         if !player
           if self.target =~ valid_email
-            player = Player.new
+            player = Player.create
 
             player.update(email: self.target)
             player.update(codeword: self.codeword)
