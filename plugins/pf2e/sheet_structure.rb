@@ -20,7 +20,7 @@ module AresMUSH
 
       before_delete :delete_subsheet
 
-      def self.delete_subsheet
+      def delete_subsheet
         self.abilities.delete
       end
 
@@ -51,7 +51,7 @@ module AresMUSH
 
     before_delete :delete_pf2sheet
 
-    def self.delete_pf2sheet
+    def delete_pf2sheet
       self.pf2sheet.delete
     end
 
