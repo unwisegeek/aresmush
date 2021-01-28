@@ -18,11 +18,11 @@ module AresMUSH
       reference :char, "AresMUSH::Character"
       reference :abilities, "AresMUSH::Pf2e::Pf2eAbilities"
 
-      before_delete :delete_subsheet
+      # before_delete :delete_subsheet
 
-      def delete_subsheet
-        self.abilities.delete
-      end
+      # def delete_subsheet
+        # self.abilities.delete
+      # end
 
     end
 
@@ -49,11 +49,11 @@ module AresMUSH
 
     reference :pf2sheet, "AresMUSH::Pf2e::Pf2eSheet"
 
-    before_delete :delete_pf2sheet
+    # before_delete :delete_pf2sheet
 
-    def delete_pf2sheet
-      self.pf2sheet.delete
-    end
+    # def delete_pf2sheet
+      # self.pf2sheet.delete
+    # end
 
   end
 end
