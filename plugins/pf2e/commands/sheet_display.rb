@@ -29,7 +29,7 @@ module AresMUSH
         valid_sections = %w{all info ability skills feats combat}
 
         if valid_sections.include? self.section
-          template = Pf2eSheetTemplate.new(char, self.section, client)
+          template = Pf2eSheetTemplate.new(char, self.section, client, char.pf2_base_info, char.pf2_faith)
         else
           client.emit_failure t('pf2e.bad_section', :section => self.section)
           return

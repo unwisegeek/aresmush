@@ -6,10 +6,13 @@ module AresMUSH
 
       attr_accessor :char,:client
 
-      def initialize(char, section, client)
+      def initialize(char, section, client, base_info, faith_info)
         @char = char
         @section = section
         @client = client
+        @base_info = base_info
+        @faith_info = faith_info
+
         super File.dirname(__FILE__) + "/sheet_template.erb"
       end
 
@@ -21,11 +24,6 @@ module AresMUSH
         @section
       end
 
-      def base_info
-        self.base_info = @char.pf2_base_info
-        self.faith_info = @char.pf2_faith
-      end
-
       def subclass_list
         Global.read_config('pf2e', 'subclass_names')
       end
@@ -35,23 +33,23 @@ module AresMUSH
       end
 
       def ancestry
-        self.base_info[:ancestry]
+        @base_info[:ancestry]
       end
 
       def heritage
-        self.base_info[:heritage]
+        @base_info[:heritage]
       end
 
       def background
-        self.base_info[:background]
+        @base_info[:background]
       end
 
       def charclass
-        self.base_info[:charclass]
+        @base_info[:charclass]
       end
 
       def subclass
-        self.base_info[:specialize] ? self.base_info[:specialize] : "N/A"
+        @base_info[:specialize] ? @base_info[:specialize] : "N/A"
       end
 
       def subclass_name
@@ -71,11 +69,11 @@ module AresMUSH
       end
 
       def faith
-        self.faith_info[:faith]
+        @faith_info[:faith]
       end
 
       def deity
-        self.faith_info[:deity]
+        @faith_info[:deity]
       end
 
       def abilities
