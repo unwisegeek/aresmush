@@ -19,7 +19,7 @@ module AresMUSH
       end
 
       def handle
-        char = self.target ? ClassTargetFinder.find(self.target, Character, enactor) : enactor
+        char = self.target ? Character.find_one_by_name(self.target) : enactor
 
         case self.section
         when "all", "info", "ability", "skills", "feats", "combat"

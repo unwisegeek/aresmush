@@ -14,10 +14,15 @@
 <%= section_line("Traits") %>
 <%= traits %>
 <% end %>
-<%= section == "all" ? section_line("Abilities") : footer %>
+<% if section == "all" %>
+<%= section_line("Abilities") %>
+<% end %>
 <% if section == "ability" || "all" %>
 <% abilities.each do |a| %>
 <% a -%>
 <% end %>
 <% end %>
-<%= section == "all" ? section_line("Combat") : footer %>
+<% if section == "all" %>
+<%= section_line("Combat") %>
+<% end %>
+<%= footer %>
