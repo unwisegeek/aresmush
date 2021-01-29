@@ -4,7 +4,7 @@ module AresMUSH
     class Pf2eSheetTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char,:client
+      attr_accessor :char, :section, :client, :base_info, :faith_info
 
       def initialize(char, section, client, base_info, faith_info)
         @char = char
