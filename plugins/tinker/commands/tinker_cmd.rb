@@ -9,10 +9,16 @@ module AresMUSH
       end
       
       def handle
-        mod = Pf2e.get_ability_mod(10)
-        
-        client.emit mod
-
+        char = Character.find_one_by_name("Landtest2")
+        base_info = char.pf2_base_info
+        if base_info
+            base_info.each do |k,v|
+                client.emit "#{k.to_s.capitalize} = #{v}"
+            end
+        else
+            client.emit "Base info not grabbed." 
+        end
+            
       end
 
     end
