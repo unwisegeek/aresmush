@@ -9,15 +9,21 @@ module AresMUSH
       end
       
       def handle
-        target = "Landtest2"
-        char = ClassTargetFinder.find(target, Character, enactor)
-        base_info = char.pf2_base_info
-        if base_info
-            base_info.each do |k,v|
-                client.emit "#{k.to_s.capitalize} = #{v}"
-            end
+        target = "sdfsdgs"
+        char = target ? Character.find_one_by_name(target) : enactor
+
+        if !char
+          client.emit_failure t('pf2e.char_not_found')
+          return nil
+        end
+
+        valid_sections = %w{all info ability skills feats combat}
+
+        if valid_sections.include? self.section
+          template = Pf2eSheetTemplate.new(char, self.section, client, char.pf2_base_info, char.pf2_faith)
         else
-            client.emit "Base info not grabbed." 
+          client.emit_failure t('pf2e.bad_section', :section => self.section)
+          return
         end
             
       end
