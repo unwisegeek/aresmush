@@ -1,8 +1,8 @@
 module AresMUSH
   module Pf2e
 
-    def self.get_prof_level(char, target)
-      sheet = char.pf2sheet
+    def self.get_prof_level(char, skill)
+
     end
 
     def self.get_ability_mod(score)
