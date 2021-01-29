@@ -11,14 +11,8 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("Landtest")
         
-        if !char
-            client.emit "Character not found."
-        else
-            char.pf2sheet.abilities.each do |k,v|
-            client.emit k.to_s
-            client.emit v
-            end
-        end
+        client.emit char.pf2sheet
+        client.emit char.pf2sheet.abilities
 
       end
 
