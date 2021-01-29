@@ -21,9 +21,9 @@ module AresMUSH
       def handle
         char = self.target ? Character.find_one_by_name(self.target) : enactor
 
-        if !char
+        if char == nil
           client.emit_failure t('pf2e.char_not_found')
-          return
+          return nil
         end
 
         valid_sections = %w{all info ability skills feats combat}
