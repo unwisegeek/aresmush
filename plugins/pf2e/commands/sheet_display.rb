@@ -26,16 +26,10 @@ module AresMUSH
           return
         end
 
-        sheet = char.pf2sheet
+        valid_sections = %w{all info ability skills feats combat}
 
-        if !sheet
-          client.emit_failure t('pf2e.sheet_not_found')
-          return
-        end
-
-        case self.section
-        when "all", "info", "ability", "skills", "feats", "combat"
-          template = Pf2eSheetTemplate.new(char, sheet, self.section, client)
+        if valid_sections.include? self.section
+          template = Pf2eSheetTemplate.new(char, self.section, client)
         else
           client.emit_failure t('pf2e.bad_section', :section => self.section)
           return

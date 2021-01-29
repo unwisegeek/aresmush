@@ -6,15 +6,15 @@ module AresMUSH
 
       attr_accessor :char, :sheet
 
-      def initialize(char, sheet)
+      def initialize(char, client)
         @char = char
-        @sheet = sheet
+        @client = client
 
         super File.dirname(__FILE__) + "/cg_review.erb"
       end
 
       def elements
-        base_info = @sheet.pf2_base_info
+        base_info = @char.pf2_base_info
         @ancestry = base_info[:ancestry]
         @heritage = base_info[:heritage]
         @background = base_info[:background]
@@ -32,23 +32,23 @@ module AresMUSH
       end
 
       def ancestry
-        @ancestry.blank? ? "" : @ancestry
+        @ancestry.blank? ? nil : @ancestry
       end
 
       def heritage
-        @heritage.blank? ? "" :@heritage
+        @heritage.blank? ? nil :@heritage
       end
 
       def background
-        @background.blank? ? "" :@background
+        @background.blank? ? nil :@background
       end
 
       def charclass
-        @charclass.blank? ? "" :@charclass
+        @charclass.blank? ? nil :@charclass
       end
 
       def subclass
-        @subclass.blank? ? "" :@subclass
+        @subclass.blank? ? nil :@subclass
       end
 
       def hp

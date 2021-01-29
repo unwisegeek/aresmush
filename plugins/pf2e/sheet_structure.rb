@@ -1,6 +1,6 @@
 module AresMUSH
-  class Pf2eSheet < Ohm::Model
-    include ObjectModel
+  class Character
+    attribute :pf2_baseinfo_locked, :type => DataType::Boolean
 
     attribute :pf2_base_info, :type => DataType::Hash, :default => {ancestry:"", heritage:"", background:"", charclass:"", specialize: ""}
     attribute :pf2_level, :type => DataType::Integer, :default => 1
@@ -12,41 +12,37 @@ module AresMUSH
     attribute :pf2_traits, :type => DataType::Array, :default => []
     attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "" }
     attribute :pf2_special, :type => DataType::Array, :default => []
-    attribute :pf2_open_boosts, :type => DataType::Integer, :default => 4
-    attribute :pf2_working_boosts, :type => DataType::Hash, :default => { "Strength"=>0, "Dexterity"=>0, "Constitution"=>0, "Intelligence"=>0, "Wisdom"=>0, "Charisma"=>0 }
+    attribute :pf2_ancestry_boosts, :type => DataType::Array, :default => []
+    attribute :pf2_free_boosts, :type => DataType::Array, :default => []
+    attribute :pf2_background_boosts, :type => DataType::Array, :default => []
+    attribute :pf2_charclass_boosts, :type => DataType::Array, :default => []
 
-    reference :char, "AresMUSH::Character"
-    reference :abilities, "AresMUSH::Pf2eAbilities"
+    collection :abilities, "AresMUSH::Pf2eAbilities"
+    collection :skills, "AresMUSH::Pf2eSkills"
 
-    # before_delete :delete_subsheet
+    before_delete :delete_abilities
 
-    # def delete_subsheet
-      # self.abilities.delete
-    # end
+    def delete_abilities
+      self.abilities.each { |a| a.delete }
+      self.skills.each { |s| s.delete }
+    end
   end
 
-  class Pf2eAbilities < Ohm::Model
-    include ObjectModel
+  class Pf2eAbilities
+    attribute :name
+    attribute :base_val, :type => DataType::Integer, :default => 10
+    attribute :mod_val, :default => false
+    index :name
 
-    attribute :strength, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-    attribute :dexterity, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-    attribute :constitution, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-    attribute :intelligence, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-    attribute :wisdom, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-    attribute :charisma, :type => DataType::Hash, :default => { base_val: 10, mod_val: false }
-
-    reference :pf2sheet, "AresMUSH::Pf2eSheet"
+    reference :character, "AresMUSH::Character"
   end
 
-  class Character
-    attribute :baseinfo_locked, :type => DataType::Boolean
+  class Pf2eSkills
+    attribute :name
+    attribute :proflevel
+    index :name
 
-    reference :pf2sheet, "AresMUSH::Pf2eSheet"
-
-    # before_delete :delete_pf2sheet
-
-    # def delete_pf2sheet
-      # self.pf2sheet.delete
-    # end
+    reference :character, "AresMUSH::Character"
   end
+
 end

@@ -80,11 +80,12 @@ module AresMUSH
       end
 
       def abilities
-        abilities = @char.pf2sheet.abilities
+        abilities = @char.abilities
         list = []
         abilities.each do |a|
-          score = a[:mod_val] ? a[:mod_val] : a[:base_val]
-          list << format_ability(a, score)
+          name = a.name
+          score = a.mod_val ? a.mod_val : a.base_val
+          list << format_ability(name, score)
         end
         list
       end
