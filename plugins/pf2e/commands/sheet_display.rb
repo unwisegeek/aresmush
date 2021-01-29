@@ -20,14 +20,10 @@ module AresMUSH
 
       def handle
         char = self.target ? ClassTargetFinder.find(self.target, Character, enactor) : enactor
-        # return "Not found." && client.emit_faIlure t('pf2e.char_not_found') if !char
-
-        sheet = char.pf2sheet
-        # return "Not found." && client.emit_failure t('pf2e.sheet_not_found') if !sheet
 
         case self.section
         when "all", "info", "ability", "skills", "feats", "combat"
-          template = Pf2eSheetTemplate.new(char, sheet, self.section, client)
+          template = Pf2eSheetTemplate.new(char, self.section, client)
         else
           client.emit_failure t('pf2e.bad_section', :section => self.section)
           return

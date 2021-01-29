@@ -17,6 +17,6 @@
 <%= section == "all" ? section_line("Abilities") : footer %>
 <% if section == "ability" || "all" %>
 <% abilities.each do |a| %>
-<%= a -%>
+<% a -%>
 <% end %>
 <%= section == "all" ? section_line("Combat") : footer %>

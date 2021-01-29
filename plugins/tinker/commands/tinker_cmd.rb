@@ -9,10 +9,7 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Landtest")
-        
-        client.emit char.pf2sheet
-        client.emit char.pf2sheet.abilities
+        mod = Pf2e.get_ability_mod(10)
 
       end
 

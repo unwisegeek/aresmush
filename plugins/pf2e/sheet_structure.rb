@@ -28,7 +28,9 @@ module AresMUSH
     end
   end
 
-  class Pf2eAbilities
+  class Pf2eAbilities < Ohm::Model
+    include ObjectModel
+
     attribute :name
     attribute :base_val, :type => DataType::Integer, :default => 10
     attribute :mod_val, :default => false
@@ -37,7 +39,9 @@ module AresMUSH
     reference :character, "AresMUSH::Character"
   end
 
-  class Pf2eSkills
+  class Pf2eSkills < Ohm::Model
+    include ObjectModel
+
     attribute :name
     attribute :proflevel
     index :name

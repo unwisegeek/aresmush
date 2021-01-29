@@ -4,11 +4,10 @@ module AresMUSH
     class Pf2eSheetTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char, :sheet, :client
+      attr_accessor :char, :section, :client
 
-      def initialize(char, sheet, section, client)
+      def initialize(char, section, client)
         @char = char
-        @sheet = sheet
         @section = section
         @client = client
         super File.dirname(__FILE__) + "/sheet_template.erb"
@@ -23,8 +22,8 @@ module AresMUSH
       end
 
       def base_info
-        self.base_info = @sheet.pf2_base_info
-        self.faith_info = @sheet.pf2_faith
+        self.base_info = @char.pf2_base_info
+        self.faith_info = @char.pf2_faith
       end
 
       def subclass_list
@@ -60,15 +59,15 @@ module AresMUSH
       end
 
       def traits
-        @sheet.pf2_traits.sort.join(", ")
+        @char.pf2_traits.sort.join(", ")
       end
 
       def level
-        @sheet.pf2_level
+        @char.pf2_level
       end
 
       def xp
-        @sheet.pf2_xp
+        @char.pf2_xp
       end
 
       def faith
@@ -91,7 +90,7 @@ module AresMUSH
       end
 
       def conditions
-        cond = @sheet.pf2_conditions
+        cond = @char.pf2_conditions
         if cond.empty?
           list = "None active."
         else
