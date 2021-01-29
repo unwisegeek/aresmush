@@ -10,14 +10,7 @@ module AresMUSH
       end
 
       def handle
-        sheet = enactor.pf2sheet
-
-        if !enactor.pf2sheet
-          client.emit_failure t('pf2e.sheet_not_found')
-          return
-        end
-
-        template = PF2CGReviewDisplay.new(enactor, sheet, client)
+        template = PF2CGReviewDisplay.new(enactor, client)
 
         client.emit template.render
       end

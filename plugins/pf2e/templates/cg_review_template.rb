@@ -34,19 +34,19 @@ module AresMUSH
       end
 
       def ancestry
-        @ancestry.blank? ? "" : @ancestry
+        @ancestry.blank? ? nil : @ancestry
       end
 
       def heritage
-        @heritage.blank? ? "" :@heritage
+        @heritage.blank? ? nil :@heritage
       end
 
       def background
-        @background.blank? ? "" :@background
+        @background.blank? ? nil :@background
       end
 
       def charclass
-        @charclass.blank? ? "" :@charclass
+        @charclass.blank? ? nil :@charclass
       end
 
       def charclass
