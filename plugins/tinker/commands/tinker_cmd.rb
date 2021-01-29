@@ -10,6 +10,8 @@ module AresMUSH
       
       def handle
         mod = Pf2e.get_ability_mod(10)
+        
+        client.emit mod
 
       end
 
