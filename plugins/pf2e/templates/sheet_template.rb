@@ -4,11 +4,10 @@ module AresMUSH
     class Pf2eSheetTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char, :sheet, :client
+      attr_accessor :char,:client
 
-      def initialize(char, sheet, section, client)
+      def initialize(char, section, client)
         @char = char
-        @sheet = sheet
         @section = section
         @client = client
         super File.dirname(__FILE__) + "/sheet_template.erb"

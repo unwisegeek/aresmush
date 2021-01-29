@@ -4,7 +4,7 @@ module AresMUSH
     class PF2CGReviewDisplay < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char, :sheet
+      attr_accessor :char, :client
 
       def initialize(char, client)
         @char = char
