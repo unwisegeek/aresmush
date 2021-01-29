@@ -22,8 +22,8 @@ module AresMUSH
       end
 
       def base_info
-        self.base_info = @sheet.pf2_base_info
-        self.faith_info = @sheet.pf2_faith
+        self.base_info = @char.pf2_base_info
+        self.faith_info = @char.pf2_faith
       end
 
       def subclass_list
@@ -59,15 +59,15 @@ module AresMUSH
       end
 
       def traits
-        @sheet.pf2_traits.sort.join(", ")
+        @char.pf2_traits.sort.join(", ")
       end
 
       def level
-        @sheet.pf2_level
+        @char.pf2_level
       end
 
       def xp
-        @sheet.pf2_xp
+        @char.pf2_xp
       end
 
       def faith
@@ -90,7 +90,7 @@ module AresMUSH
       end
 
       def conditions
-        cond = @sheet.pf2_conditions
+        cond = @char.pf2_conditions
         if cond.empty?
           list = "None active."
         else
@@ -106,7 +106,7 @@ module AresMUSH
         name = "%xh#{abil.capitalize}%xn:"
         linebreak = i % 2 == 1 ? "" : "%r"
         mod = "(#{Pf2e.get_ability_mod(score)})"
-        "#{linebreak}#{left(name, 16)}: #{left(score, 3)} #{left(mod, 20)} "
+        "#{linebreak}#{left(name, 16)}: #{left(score, 3)} #{left(mod, 20)}"
       end
 
       def format_condition(condition, value)
