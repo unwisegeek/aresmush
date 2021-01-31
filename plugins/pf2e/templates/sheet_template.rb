@@ -76,6 +76,10 @@ module AresMUSH
         @faith_info[:deity]
       end
 
+      def alignment
+        @faith_info[:alignment]
+      end
+
       def abilities
         abilities = @char.abilities
         list = []

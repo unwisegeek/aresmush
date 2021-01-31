@@ -21,15 +21,6 @@ module AresMUSH
       return [ result, total ]
     end
 
-    def self.can_take_feat?(char, feat)
-      error = FeatValidator.req_check(char, feat)
-      if error
-        return false
-      else
-        return true
-      end
-    end
-
     def self.character_has?(array, element)
       if array.include?(element)
         return array.index(element)
