@@ -64,6 +64,7 @@ module AresMUSH
 
       def alignment
         @faith_info[:alignment]
+      end
 
       def hp
         @ancestry_info["HP"] + self.charclass_info["HP"]
