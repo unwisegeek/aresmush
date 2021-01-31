@@ -3,7 +3,6 @@ en:
   pf2e:
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     char_not_found: "I didn't find a character by that name."
-    sheet_not_found: "That character does not have a sheet yet."
     bad_section: "Section %{section} is not a valid section."
     only_in_chargen: "This command can only be used in chargen."
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
@@ -11,5 +10,8 @@ en:
     no_lineages: "That heritage does not have lineages associated to it."
     missing_subclass: "Your class requires a specialization, please choose one."
 
-    creating_sheet: "You don't have a character sheet yet. Creating a sheet...."
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
+    cg_options_ok: "%xgNo errors or issues detected with your CG options."
+
+    missing_base_info: "%xrYour base info is not yet complete.%xn"
+    incompatible_alignment: "%xrYour alignment, class, and deity are incompatible."
