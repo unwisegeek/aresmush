@@ -19,25 +19,614 @@ pf2e_ancestry:
     - darkvision
     heritages:
     - Ancient-Blooded
-    - Rock
+    - Anvil
+    - Death Warden
+    - Elemental Heart
     - Forge
+    - Oathkeeper
+    - Rock
+    - Strong-Blooded
     - Tiefling
     - Aasimar
     - Dar
     - Ashen One
+    - Changeling
     feats:
       1:
-      - Dwarven Lore
-      - Dwarven Weapon Familiarity
+      - Avenge In Glory
+      - Clan's Edge
+      - Khazadi Doughtiness
+      - Khazadi Lore
+      - Khazadi Weapon Familiarity
+      - Eye For Treasure
+      - "Forge-Day's Rest"
       - Rock Runner
       - Stonecunning
+      - Surface Culture
       - Unburdened Iron
       - Vengeful Hatred
       5:
       - Boulder Roll
-      - Dwarven Weapon Cunning
+      - Clan Protector
+      - Defy the Darkness
+      - Khazadi Reinforcement
+      - Khazadi Weapon Cunning
+      - Fey Influence
+      - Protective Sheath
+      - Sheltering Slab
+      - "Tomb-Watcher's Glare"
       9:
-      - Mountain's Stoutness
+      - Battleforger
+      - Echoes in Stone
+      - Energy Blessed
+      - "Heroes' Call"
+      - Kneel for No God
+      - "Mountain's Stoutness"
+      - Returning Throw
+      - Stone Bones
       - Stonewalker
       13:
-      - Dwarven Weapon Expertise
+      - Khazadi Weapon Expertise
+      - Telluric Power
+      17:
+      - Stonegate
+  Sildanyar:
+    HP: 6
+    Size: M
+    Speed: 30
+    abl_boosts_open: 1
+    abl_boosts:
+    - Dexterity
+    - Intelligence
+    abl_flaw: Constitution
+    languages:
+    - Common
+    - Sildanyar
+    traits:
+    - sildanyar
+    - humanoid
+    special:
+    - low-light vision
+    heritages:
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    - Ancient
+    - Arctic
+    - Cavern
+    - Desert
+    - Seer
+    - Whisper
+    - Woodland
+    feats:
+      1:
+      - Ancestral Linguistics
+      - Ancestral Longevity
+      - Elemental Wrath
+      - Sildanyar Aloofness
+      - Sildanyar Lore
+      - Sildanyar Verve
+      - Sildanyar Weapon Familiarity
+      - Forlorn
+      - Know Your Own
+      - Nimble Elf
+      - Otherworldly Magic
+      - Share Thoughts
+      - Unwavering Mien
+      - Wildborn Magic
+      - Woodcraft
+      5:
+      - Ageless Patience
+      - Ancestral Suspicion
+      - Defiance Unto Death
+      - Sildanyar Instincts
+      - Sildanyar Weapon Elegance
+      - Fey Influence
+      - Forest Stealth
+      - Martial Experience
+      - Wildborn Adept
+      9:
+      - Brightness Seeker
+      - Elf Step
+      - Expert Longevity
+      - Otherworldly Acumen
+      - Sense Thoughts
+      - Tree Climber (Elf)
+      13:
+      - Avenge Ally
+      - Sildanyar Weapon Expertise
+      - Universal Longevity
+      - Wandering Heart
+      17:
+      - Magic Rider
+  Gnome:
+    HP: 8
+    Size: S
+    Speed: 25
+    abl_boosts_open: 1
+    abl_boosts:
+    - Constitution
+    - Charisma
+    abl_flaw: Strength
+    languages:
+    - Common
+    - Gnomish
+    - Sylvan
+    traits:
+    - gnome
+    - humanoid
+    special:
+    - low-light vision
+    heritages:
+    - Chameleon
+    - Fey-Touched
+    - Sensate
+    - Umbral
+    - Vivacious
+    - Wellspring
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Animal Accomplice
+      - Burrow Elocutionist
+      - Empathetic Plea
+      - Fey Fellowship
+      - First World Magic
+      - Gnome Obsession
+      - Gnome Polyglot
+      - Gnome Weapon Familiarity
+      - Grim Insight
+      - Illusion Sense
+      - Inventive Offensive
+      - Life-Giving Magic
+      - Natural Performer
+      - Razzle-Dazzle
+      - Theoretical Acumen
+      - Unexpected Shift
+      - Vibrant Display
+      5:
+      - Animal Elocutionist
+      - Edlectic Obsession
+      - Energized Font
+      - Fey Influence
+      - Gnome Weapon Innovator
+      - Intuitive Illusions
+      - Natural Illusionist
+      - Project Persona
+      9:
+      - Cautious Curiosity
+      - First World Adept
+      - Fortuitous Shift
+      - Life Leap
+      - Vivacious Conduit
+      13:
+      - Gnome Weapon Expertise
+      - Instinctive Obfuscation
+      17:
+      - Homeward Bound
+  Gobber:
+    HP: 6
+    Size: S
+    Speed: 25
+    abl_boosts_open: 1
+    abl_boosts:
+    - Dexterity
+    - Charisma
+    abl_flaw: Wisdom
+    languages:
+    - Common
+    - Gobber
+    traits:
+    - goblin
+    - humanoid
+    special:
+    - darkvision
+    heritages:
+    - Charhide
+    - Irongut
+    - Razortooth
+    - Snow
+    - Tailed
+    - Treedweller
+    - Inbreakable
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Bouncy Gobber
+      - Burn It!
+      - City Scavenger
+      - Extra Squishy
+      - Fang Sharpener
+      - Gobber Lore
+      - Gobber Shuttle
+      - Gobber Song
+      - Gobber Weapon Familiarity
+      - Hard Tail
+      - Junk Tinker
+      - Rough Rider
+      - Twitchy
+      - Very Sneaky
+      5:
+      - Ankle Bite
+      - Chosen of Lamashtu
+      - Fey Influence
+      - Gobber Weapon Frenzy
+      - Kneecap
+      - Loud Singer
+      - Tail Spin
+      - Torch Gobber
+      - "Tree Climber (Gobber)"
+      - Vandal
+      9:
+      - Cave Climber
+      - Cling
+      - Freeze It!
+      - Hungry Gobber
+      - Roll With It
+      - Scalding Spit
+      - Skittering Scuttle
+      13:
+      - Gobber Weapon Expertise
+      - Unbreakable-er Gobber
+      - "Very, Very Sneaky"
+      17:
+      - Reckless Abandon
+  Lucht Siuil:
+    HP: 6
+    Size: S
+    Speed: 25
+    abl_boosts_open: 1
+    able_boosts:
+    - Dexterity
+    - Wisdom
+    abl_flaw: Strength
+    languages:
+    - Common
+    - Lucht
+    traits:
+    - Lucht
+    - humanoid
+    special:
+    - keen eyes
+    heritages:
+    - Gutsy
+    - Hillock
+    - Jinxed-lucht
+    - Nomadic
+    - Observant
+    - Twilight
+    - Wildwood
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Adroit Manipulation
+      - Distracting Shadows
+      - Folksy Patter
+      - Lucht Lore
+      - Lucht Luck
+      - Lucht Weapon Familiarity
+      - Innocuous
+      - Intuitive Cooperation
+      - Prairie Rider
+      - Sure Feet
+      - Titan Slinger
+      - Unassuming Dedication
+      - Unfettered Lucht
+      - Watchful Lucht
+      5:
+      - Cultural Adaptability
+      - Easily Dismissed
+      - Fey Influence
+      - Lucht Ingenuity
+      - Lucht Weapon Trickster
+      - "Shared Luck (Lucht)"
+      - Step Lively
+      9:
+      - Cunning Climber
+      - Dance Underfoot
+      - Fade Away
+      - Guiding Luck
+      - Helpful Lucht
+      - Irrepressible
+      - Unhampered Passage
+      13:
+      - Ceaseless Shadows
+      - Cobble Dancer
+      - Lucht Weapon Expertise
+      - "Incredible Luck (Lucht)"
+      - Toppling Dance
+      17:
+      - Shadow Self
+  Human:
+    HP: 8
+    Size: M
+    Speed: 25
+    abl_boosts_open: 2
+    abl_boosts: []
+    languages:
+    - Common
+    traits:
+    - human
+    - humanoid
+    heritages:
+    - Skilled
+    - Versatile
+    - Wintertouched
+    - Half-Elf
+    - Half-Oruch
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Adapted Cantrip
+      - Arcane Tattoos
+      - Cooperative Nature
+      - Courteous Comeback
+      - "Devil's Advocate"
+      - Dragon Spit
+      - General Training
+      - Gloomseer
+      - Haughty Obstinacy
+      - Keep Up Appearance
+      - Know Oneselef
+      - Natural Ambition
+      - Natural Skill
+      - Quah Bond
+      - Saoc Astrology
+      - Tupilaq Carver
+      - Unconventional Weaponry
+      - Viking Shieldbearer
+      - Witch Warden
+      5:
+      - Adaptive Adept
+      - Clever Improviser
+      - Darkseer
+      - Fey Influence
+      - Ornate Tattoo
+      - Sense Allies
+      - Wavetouched Paragon
+      9:
+      - Cooperative Soul
+      - Dragon Prince
+      - Group Aid
+      - Hardy Traveler
+      - Heir of the Saoc
+      - Incredible Improvisation
+      - Multitalented
+      - Shory Aeromancer
+      - Virtue-Forged Tattoos
+      13:
+      - Advanced General Training
+      - Bounce Back
+      - Irriseni Ice-Witch
+      - Shadow Pact
+      - Shory Aerialist
+      - Stubborn Persistence
+      - Unonventional Expertise
+      17:
+      - Heroic Presence
+  Oruch:
+    HP: 10
+    Size: M
+    Speed: 25
+    abl_boosts_open: 1
+    abl_boosts:
+    - Strength
+    languages:
+    - Common
+    - Oruch
+    traits:
+    - oruch
+    - humanoid
+    special:
+    - darkvision
+    heritages:
+    - Badlands
+    - Deep
+    - Hold-Scarred
+    - Rainfall
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Beast Trainer
+      - Iron Fists
+      - Oruch Ferocity
+      - Oruch Lore
+      - Oruch Superstition
+      - Oruch Weapon Familiarity
+      - Tusks
+      5:
+      - Athletic Might
+      - Bloody Blows
+      - Fey Influence
+      - Hold Mark
+      - Oruch Weapon Carnage
+      - Victorious Vigor
+      9:
+      - "Death's Drums"
+      - Pervaise Superstition
+      - Undying Ferocity
+      13:
+      - Ferocious Beasts
+      - Incredible Ferocity
+      - Oruch Weapon Expertise
+      - Spell Devourer
+      17:
+      - Rampaging Ferocity
+  Lizardfolk:
+    HP: 8
+    Size: M
+    Speed: 25
+    abl_boosts_open: 1
+    abl_boosts:
+    - Strength
+    - Wisdom
+    abl_flaw: Intelligence
+    languages:
+    - Common
+    - Iruxi
+    traits:
+    - lizardfolk
+    - humanoid
+    attack:
+      Claws:
+        damage: 1d4
+        damage_type: S
+        traits:
+        - agile
+        - finesse
+        - unarmed
+    bonus_feats:
+    - Breath Control
+    heritages:
+    - Cliffscale
+    - Frilled
+    - Sandstrider
+    - Unseen
+    - Sith-Makar
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Lizardfolk Lore
+      - Marsh Runner
+      - Parthenogenic Hatchling
+      - Razor Claws
+      - Reptile Speaker
+      - Sharp Fangs
+      - Tail Whip
+      5:
+      - Envenom Fangs
+      - Fey Influence
+      - "Gecko's Grip"
+      - Iruxi Unarmed Cunning
+      - Shed Tail
+      - Swift Swimmer
+      9:
+      - Terrain Advantage
+      13:
+      - Iruxi Unarmed Expertise
+  Arvek Nar:
+    HP: 8
+    Size: M
+    Speed: 25
+    abl_boosts_open: 1
+    abl_boosts:
+    - Constitution
+    - Intelligence
+    abl_flaws: Wisdom
+    languages:
+    - Common
+    - Gobber
+    traits:
+    - arvek
+    - humanoid
+    special:
+    - darkvision
+    heritages:
+    - Elfbane
+    - Runtboss
+    - Smokeworker
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - Alchemical Scholar
+      - Arvek Lore
+      - Arvek Weapon Familiarity
+      - Leech-Clipper
+      - Remorseless Lash
+      - Vigorous Health
+      5:
+      - Agonizing Rebuke
+      - Expert Drill Sergeant
+      - Fey Influence
+      - Formation Training
+      - Arvek Weapon Discipline
+      9:
+      - Pride In Arms
+      13:
+      - Formation Master
+      - Arvek Weapon Expertise
+      17:
+      - "Azaersi's Roads"
+  Egalrin:
+    HP: 6
+    Size: M
+    abl_boosts_open: 1
+    abl_boosts:
+    - Dexterity
+    languages:
+    - Common
+    - Egalrin
+    traits:
+    - egalrin
+    - humanoid
+    special:
+    - low-light vision
+    attack:
+      Beak:
+        damage: 1d6
+        damage_type: P
+        group: brawling
+        traits:
+        - finesse
+        - unarmed
+    heritages:
+    - Jinxed-egalrin
+    - Mountainkeeper
+    - Skyborn
+    - Stormtossed
+    - Taloned
+    - Tiefling
+    - Aasimar
+    - Dar
+    - Ashen One
+    - Changeling
+    feats:
+      1:
+      - "Scavenger's Search"
+      - Squawk!
+      - "Storm's Lash"
+      - Egalrin Lore
+      - Egalrin Weapon Familiarity
+      5:
+      - Eat Fortune
+      - Fey Influence
+      - Long-Nosed Form
+      - One-Toed Hop
+      - Egalrin Weapon Study
+      9:
+      - Eclectic Sword Training
+      - Soaring Flight
+      13:
+      - Egalrin Weapon Expertise
+      17:
+      - Great Egalrin Form

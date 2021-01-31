@@ -4,8 +4,7 @@ module AresMUSH
     class PF2SetChargenCmd
       include CommandHandler
 
-      attr_accessor :pf2_ancestry, :pf2_heritage, :pf2_background, :pf2_class, :pf2_lineage
-      attr_accessor :pf2enactor, :element, :value
+      attr_accessor :element, :value
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
@@ -28,8 +27,7 @@ module AresMUSH
       end
 
       def handle
-
-        chargen_elements = %w{ancestry background charclass heritage lineage specialize}
+        chargen_elements = %w{ancestry background charclass heritage lineage specialize faith deity alignment}
         selected_element = chargen_elements.find { |o| o.include?(self.element) }
 
         if !selected_element
@@ -47,6 +45,15 @@ module AresMUSH
             client.emit_failure t('pf2e.no_lineages')
             return
           end
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "faith"
+          options = Global.read_config('pf2e', 'faiths')
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "deity"
+          options = Global.read_config('pf2e_deities').keys
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "alignment"
+          options = Global.read_config('pf2e', 'allowed_alignments')
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         else
           file = 'pf2e_' + "#{selected_element}"
@@ -72,12 +79,17 @@ module AresMUSH
 
           enactor.update(pf2_feats: [])
           enactor.update(pf2_base_info: new_info)
-
         when "lineage"
           char_feats = enactor.pf2_feats
           lineage_feats = Pf2e.find_feat("traits","lineage")
           char_feats = (char_feats - lineage_feats) << selected_option
+
           enactor.update(pf2_feats: char_feats)
+        when "faith", "deity", "alignment"
+          info = enactor.pf2_faith
+          info[selected_element.to_sym] = selected_option
+
+          enactor.update(pf2_faith: info)
         end
 
         client.emit_success t('pf2e.option_set', :element => selected_element, :option => selected_option)

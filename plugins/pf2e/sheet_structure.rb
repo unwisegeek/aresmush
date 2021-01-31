@@ -10,12 +10,9 @@ module AresMUSH
     attribute :pf2_features, :type => DataType::Array, :default => []
     attribute :pf2_skills, :type => DataType::Hash, :default => {}
     attribute :pf2_traits, :type => DataType::Array, :default => []
-    attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "" }
+    attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "", alignment: "" }
     attribute :pf2_special, :type => DataType::Array, :default => []
-    attribute :pf2_ancestry_boosts, :type => DataType::Array, :default => []
-    attribute :pf2_free_boosts, :type => DataType::Array, :default => []
-    attribute :pf2_background_boosts, :type => DataType::Array, :default => []
-    attribute :pf2_charclass_boosts, :type => DataType::Array, :default => []
+    attribute :pf2_boosts, :type => DataType::Hash, :default => { free: [], ancestry: [], background: [], charclass: [] }
 
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"

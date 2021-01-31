@@ -7,14 +7,890 @@ pf2e_background:
     - Wisdom
     skills:
     - Religion
+    lores:
     - Scribing Lore
-    feats: Student of the Canon
+    feats:
+    - Student of the Canon
+    special: []
+  Acrobat:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Dexterity
+    skills:
+    - Acrobatics
+    lores:
+    - Circus
+    feats:
+    - Steady Balance
+    special: []
+  Amnesiac:
+    abl_boosts_open: 3
+    req_abl_boosts: []
+    skills: []
+    feats: []
+    special: "Amnesiac: staff see background"
+    rare: true
+  Animal Whisperer:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Intelligence
+    skills:
+    - Society
+    lores:
+    - Architecture
+    feats:
+    - Additional Lore
+  Artisan:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Intelligence
+    skills:
+    - Crafting
+    lores:
+    - Guild Lore
+    feats:
+    - Specialty Crafting
+    special: []
+  Artist:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Charisma
+    skills:
+    - Crafting
+    lores:
+    - Art Lore
+    feats:
+    - Specialty Crafting
+    special: []
+  Bandit:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Charisma
+    skills:
+    - Intimidation
+    lores:
+    - Desert Lore
+    - Plains Lore
+    - Swamp Lore
+    - Winterland Lore
+    - Mountains Lore
+    - Hills Lore
+    - Island Lore
+    feats:
+    - Group Coercion
+    special: []
+  Barber:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Wisdom
+    skills:
+    - Medicine
+    lores:
+    - Surgery Lore
+    feats:
+    - Risky Surgery
+    special: []
+  Barkeep:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Charisma
+    skills:
+    - Diplomacy
+    lores:
+    - Alcohol Lore
+    feats:
+    - Hobnobber
+    special: []
+  Barrister:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Diplomacy
+    lores:
+    - Legal Lore
+    feats:
+    - Group Impression
+    special: []
   Blessed:
     abl_boosts_open: 1
     req_abl_boosts:
+    - Wisdom
     - Charisma
+    skills:
+    - Althean Lore
+    - Angorite Lore
+    - Animusian Lore
+    - Caracorothan Lore
+    - Ceinaran Lore
+    - Daeusite Lore
+    - Danan Lore
+    - Deimosian Lore
+    - Elunan Lore
+    - Gileadean Lore
+    - Gunakharan Lore
+    - Illothan Lore
+    - Korite Lore
+    - Maugrimite Lore
+    - Navosian Lore
+    - Radan Lore
+    - Reosian Lore
+    - Serrielite Lore
+    - Taaran Lore
+    - Tarienite Lore
+    - Thulite Lore
+    feats: []
+    special: "Blessed: 1st level divine innate spell at will"
+    rare: true
+  Bookkeeper:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
     - Wisdom
     skills:
-    - open Lore
-    special: Blessing
+    - Society
+    lores:
+    - Accounting Lore
+    feats:
+    - Eye For Numbers
+    special: []
+  Bounty Hunter:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Legal Lore
+    feats:
+    - Experienced Tracker
+    special: []
+  Charlatan:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Deception
+    lores:
+    - Underworld Lore
+    feats:
+    - Charming Liar
+    special: []
+  Cook:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Intelligence
+    skills:
+    - Survival
+    lores:
+    - Cooking Lore
+    feats:
+    - Seasoned
+    special: []
+  Courier:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Intelligence
+    skills:
+    - Society
+    lores:
+    - Alexandrian Lore
+    - Bryn Myridorn Lore
+    - Dun Mordren Lore
+    - Tashraan Lore
+    - Hextus Lore
+    - Abyss'a Lore
+    feats:
+    - Glean Contents
+    special: []
+  Criminal:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    -Intelligence
+    skills:
+    - Stealth
+    lores:
+    - Underworld Lore
+    feats:
+    - Experienced Smuggler
+    special: []
+  Cultist:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Occultism
+    lores:
+    - Althean Lore
+    - Angorite Lore
+    - Animusian Lore
+    - Caracorothan Lore
+    - Ceinaran Lore
+    - Daeusite Lore
+    - Danan Lore
+    - Deimosian Lore
+    - Elunan Lore
+    - Gileadean Lore
+    - Gunakharan Lore
+    - Illothan Lore
+    - Korite Lore
+    - Maugrimite Lore
+    - Navosian Lore
+    - Radan Lore
+    - Reosian Lore
+    - Serrielite Lore
+    - Taaran Lore
+    - Tarienite Lore
+    - Thulite Lore
+    feats:
+    - Schooled In Secrets
+    special: []
+  Cursed:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Occultism
+    lores:
+    - Curse Lore
+    feats: []
+    reaction:
+    - Warding Sign
     rare: true
+  Detective:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Society
+    lores:
+    - Underworld Lore
+    feats:
+    - Streetwise
+    special: []
+  Emissary:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Society
+    lores:
+    - Alexandrian Lore
+    - Bryn Myridorn Lore
+    - Dun Mordren Lore
+    - Tashraan Lore
+    - Hextus Lore
+    - Abyss'a Lore
+    feats:
+    - Multilingual
+    special: []
+  Entertainer:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Charisma
+    skills:
+    - Performance
+    lores:
+    - Theater Lore
+    feats:
+    - Fascinating Performance
+    special: []
+  Farmhand:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Athletics
+    lores:
+    - Farming Lore
+    feats:
+    - Assurance - Athletics
+    special: []
+  Feral Child:
+    abl_boosts_open: 0
+    req_abl_boosts:
+    - Strength
+    - Dexterity
+    - Constitution
+    skills:
+    - Nature
+    - Survival
+    feats:
+    - Forager
+    special:
+    - Low-Light Vision
+    - Imprecise Scent
+    rare: true
+  Feybound:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Charisma
+    skills:
+    - Nature
+    lores:
+    - Fey Lore
+    feats: []
+    free action:
+    - "Fey's Fortune"
+    rare: true
+  Field Medic:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Medicine
+    lores:
+    - Warfare Lore
+    feats:
+    - Battle Medicine
+    special: []
+  Fortune Teller:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Occultism
+    lores:
+    - Fortune-Telling Lore
+    feats:
+    - Lie To Me
+    special: []
+  Gambler:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Charisma
+    skills:
+    - Deception
+    lores:
+    - Games Lore
+    feats:
+    - Lie To Me
+    special: []
+  Gladiator:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Charisma
+    skills:
+    - Performance
+    lores:
+    - Gladiatorial Lore
+    feats:
+    - Impressive Performance
+    special: []
+  Guard:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Charisma
+    skills:
+    - Intimidation
+    lores:
+    - Legal Lore
+    - Warfare Lore
+    feats
+    - Quick Coercion
+    special: []
+  Harrow-Led:
+    abl_boosts_open: 1
+    req_abl_boost: []
+    skills:
+    - Occultism
+    - Performance
+    - Society
+    lores:
+    - Harrow Lore
+    feats:
+    - Dubious Knowledge
+    special: Harrow
+  Haunted:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Wisdom
+    - Charisma
+    skills:
+    - Occultism
+    feats: []
+    special: "Haunted: free skill + circumstance"
+    rare: true
+  Herbalist:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Nature
+    lores:
+    - Herbalism Lore
+    feats:
+    - Natural Medicine
+    special: []
+  Hermit:
+    abl_boost_open: 1
+    req_abl_boosts
+    - Constitution
+    - Intelligence
+    skills:
+    - Nature
+    - Occultism
+    lores:
+    - Cave Lore
+    - Desert Lore
+    - Plains Lore
+    - Swamp Lore
+    - Winterland Lore
+    - Mountains Lore
+    - Hills Lore
+    - Island Lore
+    feats:
+    - Dubious Knowledge
+    special: []
+  Hunter:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Tanning Lore
+    feats:
+    - Survey Wildlife
+    special: []
+  Insurgent:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Wisdom
+    skills:
+    - Deception
+    lores:
+    - Warfare Lore
+    feats:
+    - Lengthy Diversion
+    special: []
+  Laborer:
+    abl_boosts_open: 1
+    req_abls_boosts:
+    - Strength
+    - Constitution
+    skills:
+    - Athletics
+    lores:
+    - Labor Lore
+    feats:
+    - Hefty Hauler
+  Martial Disciple:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Dexterity
+    skills:
+    - Acrobatics
+    - Athletics
+    lores:
+    - Warfare Lore
+    feats:
+    - Cat Fall
+    - Quick Jump
+    special: []
+  Merchant:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Diplomacy
+    lores:
+    - Mercantile Lore
+    feats:
+    - Bargain Hunter
+    special: []
+  Miner:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Mining Lore
+    feats:
+    - Terrain Expertise - Underground
+    special: []
+  Noble:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Society
+    lores:
+    - Genealogy Lore
+    feats:
+    - Courtly Graces
+    special: []
+  Nomad:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Desert Lore
+    - Plains Lore
+    - Swamp Lore
+    - Winterland Lore
+    - Mountains Lore
+    - Hills Lore
+    - Island Lore
+    feats:
+    - Assurance - Survival
+    special: []
+  Outrider:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Nature
+    lores:
+    - Plains Lore
+    feats:
+    - Express Rider
+    special: []
+  Pilgrim:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Wisdom
+    - Charisma
+    skills:
+    - Religion
+    lores:
+    - Althean Lore
+    - Angorite Lore
+    - Animusian Lore
+    - Caracorothan Lore
+    - Ceinaran Lore
+    - Daeusite Lore
+    - Danan Lore
+    - Deimosian Lore
+    - Elunan Lore
+    - Gileadean Lore
+    - Gunakharan Lore
+    - Illothan Lore
+    - Korite Lore
+    - Maugrimite Lore
+    - Navosian Lore
+    - Radan Lore
+    - Reosian Lore
+    - Serrielite Lore
+    - Taaran Lore
+    - Tarienite Lore
+    - Thulite Lore
+    feats:
+    - "Pilgrim's Token"
+    special: []
+  Prisoner:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Constitution
+    skills:
+    - Stealth
+    lores:
+    - Underworld Lore
+    feats:
+    - Experienced Smuggler
+    special: []
+  Raised By Belief:
+    abl_boosts_open: 1
+    req_abl_boosts: []
+    skills:
+    - DEITY_SKILL
+    lores:
+    - Althean Lore
+    - Angorite Lore
+    - Animusian Lore
+    - Caracorothan Lore
+    - Ceinaran Lore
+    - Daeusite Lore
+    - Danan Lore
+    - Deimosian Lore
+    - Elunan Lore
+    - Gileadean Lore
+    - Gunakharan Lore
+    - Illothan Lore
+    - Korite Lore
+    - Maugrimite Lore
+    - Navosian Lore
+    - Radan Lore
+    - Reosian Lore
+    - Serrielite Lore
+    - Taaran Lore
+    - Tarienite Lore
+    - Thulite Lore
+    feats:
+    - Assurance - DEITY_SKILL
+  Refugee:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Society
+    lores:
+    - SETTLEMENT Lore
+    feats:
+    - Streetwise
+    special: []
+  Returned:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills: []
+    feats:
+    - [ "Diehard", "Additional Lore - Boneyard Lore" ]
+    special: []
+    rare: true
+  Root Worker:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Occultism
+    lores:
+    - Herbalism Lore
+    feats:
+    - Root Magic
+    special: []
+  Sailor:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Dexterity
+    skills:
+    - Athletics
+    - Acrobatics
+    lores:
+    - Sailing Lore
+    feats:
+    - Underwater Marauder
+    - Cat Fall
+    special: []
+  Scavenger:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Alexandrian Lore
+    - Bryn Myridorn Lore
+    - Dun Mordren Lore
+    - Tashraan Lore
+    - Hextus Lore
+    - Abyss'a Lore
+    feats:
+    - Forager
+    special: []
+  Scholar:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Arcana
+    - Nature
+    - Occultism
+    - Religion
+    lores:
+    - Academia Lore
+    feats:
+    - Assurance - SKILL_CHOICE
+    special: []
+  Scout:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Desert Lore
+    - Plains Lore
+    - Swamp Lore
+    - Winterland Lore
+    - Mountains Lore
+    - Hills Lore
+    - Island Lore
+    feats:
+    - Forager
+    special: []
+  Servant:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Charisma
+    skills:
+    - Society
+    lores:
+    - Labor Lore
+    feats:
+    - Read Lips
+    special: []
+  Spell Seeker:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Arcana
+    - Occultism
+    lores:
+    - Library Lore
+    feats:
+    - Recognize Spell
+    special: []
+  Squire:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Constitution
+    skills:
+    - Athletics
+    lores:
+    - Heraldry Lore
+    - Warfare Lore
+    feats:
+    - Armor Assist
+    special: []
+  Street Urchin:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Constitution
+    skills:
+    - Thievery
+    lores:
+    - Alexandrian Lore
+    - Bryn Myridorn Lore
+    - Dun Mordren Lore
+    - Tashraan Lore
+    - Hextus Lore
+    - Abyss'a Lore
+    feats:
+    - Pickpocket
+    special: []
+  Tax Collector:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Charisma
+    skills:
+    - Intimidation
+    lores:
+    - SETTLEMENT Lore
+    feats:
+    - Quick Coercion
+    special: []
+  Teacher:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Wisdom
+    skills:
+    - Performance
+    - Society
+    lores:
+    - Academia Lore
+    feats:
+    - Experienced Professional
+    special: []
+  Tinker:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Dexterity
+    - Intelligence
+    skills:
+    - Crafting
+    lores:
+    - Engineering Lore
+    feats:
+    - Specialty Crafting
+    special: []
+  Trailblazer:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Wisdom
+    skills:
+    - Survival
+    lores:
+    - Cartography Lore
+    feats:
+    - Terrain Expertise - TERRAIN
+    special: []
+  Translator:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Intelligence
+    - Charisma
+    skills:
+    - Society
+    lores:
+    - Scribing Lore
+    feats:
+    - Multilingual
+    special: []
+  Ward:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Constitution
+    - Charisma
+    skills:
+    - Performance
+    lores:
+    - Genealogy Lore
+    feats:
+    - Fascinating Performance
+    special: []
+  Warrior:
+    abl_boosts_open: 1
+    req_abl_boosts:
+    - Strength
+    - Constitution
+    skills:
+    - Intimidation
+    lores:
+    - Warfare Lore
+    feats:
+    - Intimidating Glare
+    special: []
