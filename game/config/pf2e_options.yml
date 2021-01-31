@@ -30,3 +30,4 @@ pf2e:
   condition_colors:
     Dying: '%xr'
     Wounded: '%xy'
+  faiths:
