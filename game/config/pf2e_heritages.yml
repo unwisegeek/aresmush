@@ -24,19 +24,19 @@ pf2e_heritage:
     special:
     - Low-Light Vision
     change_vision: true
-  Badlands:
+  Badlands: {}
   Cavern:
     special:
     - Darkvision
-  Chameleon:
+  Chameleon: {}
   Changeling:
     traits:
     - changeling
     special:
     - Low-Light Vision
     change_vision: true
-  Charhide:
-  Cliffscale:
+  Charhide: {}
+  Cliffscale: {}
   Dar:
     traits:
     - Dar
@@ -46,7 +46,7 @@ pf2e_heritage:
     change_vision: true
   Death Warden:
     circumstance: true
-  Deep:
+  Deep: {}
   Desert:
     resistances:
       fire: 1
@@ -57,8 +57,8 @@ pf2e_heritage:
       - cold
       - fire
       - electricity
-  Elfbane:
-  Fey-Touched:
+  Elfbane: {}
+  Fey-Touched: {}
   Forge:
     resistances:
       fire: 1
@@ -76,23 +76,23 @@ pf2e_heritage:
     - half-oruch
     special:
     - Low-Light Vision
-  Hillock:
-  Hold-Scarred:
-  Inbreakable:
-  Irongut:
-  Jinxed-egalrin:
-  Jinxed-lucht:
-  Mountainkeeper:
-  Nomadic:
+  Hillock: {}
+  Hold-Scarred: {}
+  Inbreakable: {}
+  Irongut: {}
+  Jinxed-egalrin: {}
+  Jinxed-lucht: {}
+  Mountainkeeper: {}
+  Nomadic: {}
   Oathkeeper:
     circumstance: true
-  Observant:
-  Rainfall:
-  Razortooth:
+  Observant: {}
+  Rainfall: {}
+  Razortooth: {}
   Rock:
     circumstance: true
-  Runtboss:
-  Sandstrider:
+  Runtboss: {}
+  Sandstrider: {}
   Seer:
     spell:
       name: 'Detect Magic'
@@ -101,35 +101,35 @@ pf2e_heritage:
       bonus: 1
       - Identify Magic
       - Decipher Writing
-  Sensate:
-  Sith-Makar:
-  Skilled:
-  Skyborn:
-  Smokeworker:
-  Snow:
-  Stormtossed:
+  Sensate: {}
+  Sith-Makar: {}
+  Skilled: {}
+  Skyborn: {}
+  Smokeworker: {}
+  Snow: {}
+  Stormtossed: {}
   Strong-Blooded:
     resistances:
       poison: 1
     circumstance: true
-  Tailed:
-  Taloned:
-  Tiefling:
+  Tailed: {}
+  Taloned: {}
+  Tiefling: {}
     traits:
     - tiefling
     special:
     - Low-Light Vision
     change_vision: true
-  Treedweller:
-  Twilight:
-  Umbral:
-  Unseen:
-  Versatile:
-  Vivacious:
-  Wellspring:
+  Treedweller: {}
+  Twilight: {}
+  Umbral: {}
+  Unseen: {}
+  Versatile: {}
+  Vivacious: {}
+  Wellspring: {}
   Whisper:
     circumstance: true
-  Wildwood:
-  Wintertouched:
+  Wildwood: {}
+  Wintertouched: {}
   Woodland:
     circumstance: true
