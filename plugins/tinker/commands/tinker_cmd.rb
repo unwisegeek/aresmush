@@ -9,22 +9,11 @@ module AresMUSH
       end
       
       def handle
-        target = "sdfsdgs"
-        char = target ? Character.find_one_by_name(target) : enactor
-
-        if !char
-          client.emit_failure t('pf2e.char_not_found')
-          return nil
-        end
-
-        valid_sections = %w{all info ability skills feats combat}
-
-        if valid_sections.include? self.section
-          template = Pf2eSheetTemplate.new(char, self.section, client, char.pf2_base_info, char.pf2_faith)
-        else
-          client.emit_failure t('pf2e.bad_section', :section => self.section)
-          return
-        end
+        selected_element = "ancestry"
+        
+        section = Global.read_config('pf2e_' + selected_element)
+        
+        section
             
       end
 

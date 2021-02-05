@@ -219,7 +219,7 @@ pf2e_background:
     abl_boosts_open: 1
     req_abl_boosts:
     - Dexterity
-    -Intelligence
+    - Intelligence
     skills:
     - Stealth
     lores:
@@ -411,7 +411,7 @@ pf2e_background:
     lores:
     - Legal Lore
     - Warfare Lore
-    feats
+    feats:
     - Quick Coercion
     special: []
   Harrow-Led:
@@ -450,7 +450,7 @@ pf2e_background:
     special: []
   Hermit:
     abl_boost_open: 1
-    req_abl_boosts
+    req_abl_boosts:
     - Constitution
     - Intelligence
     skills:
