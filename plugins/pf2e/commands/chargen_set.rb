@@ -81,14 +81,13 @@ module AresMUSH
           options = Global.read_config('pf2e', 'allowed_alignments')
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         else
-          file = 'pf2e_' + "#{selected_element}"
-          section = Global.read_config(file)
+          section = Global.read_config('pf2e_' + "#{selected_element}")
           options = section.keys.sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         end
 
         if !selected_option
-          client.emit_failure t('pf2e.bad_option', :element => selected_element, :options => options)
+          client.emit_failure t('pf2e.bad_option', :element => selected_element, :options => options.join(", "))
           return
         end
 
