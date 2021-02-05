@@ -52,11 +52,7 @@ pf2e_heritage:
       fire: 1
   Elemental Heart:
     action:
-    - Energy Emanation:
-      - acid
-      - cold
-      - fire
-      - electricity
+    - Energy Emanation
   Elfbane: {}
   Fey-Touched: {}
   Forge:
@@ -98,9 +94,9 @@ pf2e_heritage:
       name: 'Detect Magic'
       per_day: false
     action:
-      bonus: 1
-      - Identify Magic
-      - Decipher Writing
+    - Identify Magic
+    - Decipher Writing
+    action_bonus: 1
   Sensate: {}
   Sith-Makar: {}
   Skilled: {}
