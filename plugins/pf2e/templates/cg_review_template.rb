@@ -112,6 +112,10 @@ module AresMUSH
         msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith)
         msgs ? msgs : t('pf2e.cg_options_ok')
       end
+
+      def section_line(title)
+        @client.screen_reader ? title : line_with_text(title)
+      end
     end
 
   end
