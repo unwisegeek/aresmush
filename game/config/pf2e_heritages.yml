@@ -12,8 +12,8 @@ pf2e_heritage:
     skills:
     - Crafting
     feats:
-    - Specialty Crafting - CHOOSE
-    - Specialty Crafting - CHOOSE
+    - Specialty Crafting
+    - Specialty Crafting
   Arctic:
     resistances:
       cold: 1
@@ -39,9 +39,10 @@ pf2e_heritage:
   Cliffscale:
   Dar:
     traits:
-    - dar
+    - Dar
     special:
     - Low-Light Vision
+    - Negative Healing
     change_vision: true
   Death Warden:
     circumstance: true

@@ -16,7 +16,7 @@ pf2e_ancestry:
     - khazad
     - humanoid
     special:
-    - darkvision
+    - Darkvision
     heritages:
     - Ancient-Blooded
     - Anvil
@@ -86,7 +86,7 @@ pf2e_ancestry:
     - sildanyar
     - humanoid
     special:
-    - low-light vision
+    - Low-Light Vision
     heritages:
     - Tiefling
     - Aasimar
@@ -158,7 +158,7 @@ pf2e_ancestry:
     - gnome
     - humanoid
     special:
-    - low-light vision
+    - Low-Light Vision
     heritages:
     - Chameleon
     - Fey-Touched
@@ -590,7 +590,7 @@ pf2e_ancestry:
     - egalrin
     - humanoid
     special:
-    - low-light vision
+    - Low-Light Vision
     attack:
       Beak:
         damage: 1d6

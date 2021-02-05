@@ -24,6 +24,9 @@ module AresMUSH
         if char == nil
           client.emit_failure t('pf2e.char_not_found')
           return nil
+        elsif char.is_admin?
+          client.emit_ooc t('pf2e.admin_no_sheet')
+          return nil
         end
 
         valid_sections = %w{all info ability skills feats combat}
