@@ -2,7 +2,7 @@ module AresMUSH
   class Character
     attribute :pf2_baseinfo_locked, :type => DataType::Boolean
 
-    attribute :pf2_base_info, :type => DataType::Hash, :default => {ancestry:"", heritage:"", background:"", charclass:"", specialize: ""}
+    attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
     attribute :pf2_level, :type => DataType::Integer, :default => 1
     attribute :pf2_xp, :type => DataType::Integer, :default => 0
     attribute :pf2_conditions, :type => DataType::Hash, :default => {}
@@ -10,7 +10,7 @@ module AresMUSH
     attribute :pf2_skills, :type => DataType::Hash, :default => {}
     attribute :pf2_traits, :type => DataType::Array, :default => []
     attribute :pf2_feats, :type => DataType::Array, :default => []
-    attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "", alignment: "" }
+    attribute :pf2_faith, :type => DataType::Hash, :default => { 'faith'=>"", 'deity'=>"", 'alignment'=>"" }
     attribute :pf2_special, :type => DataType::Array, :default => []
     attribute :pf2_boosts, :type => DataType::Hash, :default => { free: [], ancestry: [], background: [], charclass: [], unspent: 4 }
     collection :abilities, "AresMUSH::Pf2eAbilities"
