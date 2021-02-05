@@ -19,10 +19,12 @@ module AresMUSH
         class_alignments = Global.read_config('pf2e', 'allowed_alignments')
       end
 
-      if requires_deity
-        error = class_alignments & deity_alignments.include?(align) ? nil : "class_deity_mismatch"
+      if requires_deity && (!deity || deity.blank?)
+        error = t('pf2e.class_requires_deity')
+      elsif requires_deity
+        error = class_alignments & deity_alignments.include?(align) ? nil : t('pf2e.class_deity_mismatch')
       else
-        error = class_alignments.include?(align) ? nil : "class_mismatch"
+        error = class_alignments.include?(align) ? nil : t('pf2e.class_mismatch')
       end
 
       return error if error
@@ -32,12 +34,9 @@ module AresMUSH
     def missing_base_info(ancestry, heritage, background, charclass, faith_info)
       if ancestry.blank? || heritage.blank? || background.blank? || charclass.blank?
         error = t('pf2e.missing_base_info')
-      elsif check_alignment(faith_info[:alignment], charclass, faith_info[:deity])
-        error = t('pf2e.incompatible_alignment')
       else
         nil
       end
-
     end
 
     def self.chargen_messages(ancestry, heritage, background, charclass, specialize, faith)
@@ -46,12 +45,14 @@ module AresMUSH
       missing_info = Pf2e.missing_base_info(ancestry, heritage, background, charclass, faith)
       messages << missing_info if missing_info
 
+      bad_alignment = Pf2e.check_alignment(faith[:alignment], charclass, faith[:deity])
+      messages << bad_alignment if bad_alignment
+
       needs_specialty = Global.read_config('pf2e', 'subclass_names').keys
       error = needs_specialty.include?(charclass) && specialize.blank?
       messages << t('pf2e.missing_subclass') if error
 
-
-      return t('pf2e.cg_options_ok') if messages.count == 0
+      return nil if messages.count == 0
       return messages.join("%r")
     end
 

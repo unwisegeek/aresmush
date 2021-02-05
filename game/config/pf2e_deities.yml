@@ -1,2 +1,29 @@
 ---
-pf2e_deities: {}
+pf2e_deities:
+  Deity Name:
+    allowed_alignments:
+    - list
+    - allowed
+    - alignments
+    - in LG/LN/LE
+    - format
+    divine_font: "harm, heal, harm or heal"
+    skill:
+    - skill name
+    weapon: weapon name
+    domains:
+    - list
+    - domains
+    - this
+    - way
+    spells:
+      level number:
+      - list
+      - spells
+      - for
+      - level
+      2nd level number:
+      - list
+      - spells
+      - for
+      - level

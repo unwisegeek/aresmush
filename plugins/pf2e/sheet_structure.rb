@@ -6,14 +6,13 @@ module AresMUSH
     attribute :pf2_level, :type => DataType::Integer, :default => 1
     attribute :pf2_xp, :type => DataType::Integer, :default => 0
     attribute :pf2_conditions, :type => DataType::Hash, :default => {}
-    attribute :pf2_feats, :type => DataType::Array, :default => []
     attribute :pf2_features, :type => DataType::Array, :default => []
     attribute :pf2_skills, :type => DataType::Hash, :default => {}
     attribute :pf2_traits, :type => DataType::Array, :default => []
+    attribute :pf2_feats, :type => DataType::Array, :default => []
     attribute :pf2_faith, :type => DataType::Hash, :default => { faith: "", deity: "", alignment: "" }
     attribute :pf2_special, :type => DataType::Array, :default => []
-    attribute :pf2_boosts, :type => DataType::Hash, :default => { free: [], ancestry: [], background: [], charclass: [] }
-
+    attribute :pf2_boosts, :type => DataType::Hash, :default => { free: [], ancestry: [], background: [], charclass: [], unspent: 4 }
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"
 

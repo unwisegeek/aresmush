@@ -79,7 +79,7 @@ module AresMUSH
       end
 
       def traits
-        @ancestry_info["traits"] + @heritage_info["traits"] + [ @charclass ].uniq.sort.join(", ")
+        @ancestry_info["traits"] + @heritage_info["traits"] + [ @charclass.downcase ].uniq.sort.join(", ")
       end
 
       def ancestry_boosts
@@ -110,6 +110,7 @@ module AresMUSH
 
       def messages
         msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith)
+        msgs ? msgs : t('pf2e.cg_options_ok')
       end
     end
 

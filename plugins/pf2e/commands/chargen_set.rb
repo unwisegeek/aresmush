@@ -30,21 +30,46 @@ module AresMUSH
         chargen_elements = %w{ancestry background charclass heritage lineage specialize faith deity alignment}
         selected_element = chargen_elements.find { |o| o.include?(self.element) }
 
+        base_info = enactor.pf2_base_info
+
         if !selected_element
           client.emit_failure t('pf2e.bad_element', :invalid => self.element, :options => chargen_elements.join(", "))
           return
         elsif selected_element == "heritage"
-          section = Global.read_config('pf2e_heritages')
-          ancestry = enactor.pf2_base_info[:ancestry]
+          ancestry = base_info[:ancestry]
+
+          if ancestry.blank?
+            client.emit_failure t('pf2e.ancestry_not_set')
+            return nil
+          end
+
           options = Global.read_config('pf2e_ancestry', ancestry, 'heritages').sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "lineage"
-          heritage = enactor.pf2_base_info[:heritage]
+          heritage = base_info[:heritage]
+
+          if heritage.blank?
+            client.emit_failure t('pf2e.heritage_not_set')
+            return nil
+          end
+
           options = Global.read_config('pf2e_heritages', heritage, 'lineages').sort
+
           if !options
             client.emit_failure t('pf2e.no_lineages')
             return
           end
+
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "specialize"
+          charclass = base_info[:charclass]
+
+          if charclass.blank?
+            client.emit_failure t('pf2e.charclass_not_set')
+            return nil
+          end
+
+          options = Global.read_config('pf2e_class', charclass, 'specialties').sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "faith"
           options = Global.read_config('pf2e', 'faiths')
@@ -63,28 +88,23 @@ module AresMUSH
         end
 
         if !selected_option
-          client.emit_failure t('pf2e.bad_option', :invalid => self.value, :element => selected_element)
+          client.emit_failure t('pf2e.bad_option', :element => selected_element, :options => options)
           return
         end
 
         case selected_element
         when "ancestry", "background", "charclass", "heritage", "specialize"
-          new_info = enactor.pf2_base_info
-          new_info[selected_element.to_sym] = selected_option
+          base_info[selected_element.to_sym] = selected_option
           if selected_element == "ancestry"
-            new_info[:heritage] = ""
+            base_info[:heritage] = ""
+
           elsif selected_element == "charclass"
-            new_info[:specialize] = ""
+            base_info[:specialize] = ""
           end
 
-          enactor.update(pf2_feats: [])
-          enactor.update(pf2_base_info: new_info)
+          enactor.update(pf2_base_info: base_info)
         when "lineage"
-          char_feats = enactor.pf2_feats
-          lineage_feats = Pf2e.find_feat("traits","lineage")
-          char_feats = (char_feats - lineage_feats) << selected_option
-
-          enactor.update(pf2_feats: char_feats)
+          # This needs to wait until the feats code is written!
         when "faith", "deity", "alignment"
           info = enactor.pf2_faith
           info[selected_element.to_sym] = selected_option
