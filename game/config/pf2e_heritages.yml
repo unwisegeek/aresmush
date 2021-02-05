@@ -62,8 +62,8 @@ pf2e_heritage:
   Forge:
     resistances:
       fire: 1
-  Frilled:
-  Gutsy:
+  Frilled:  {}
+  Gutsy: {}
   Half-Sil:
     traits:
     - half-sil
