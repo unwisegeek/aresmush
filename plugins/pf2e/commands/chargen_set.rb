@@ -46,7 +46,7 @@ module AresMUSH
           options = Global.read_config('pf2e_ancestry', "#{ancestry}", 'heritages').sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "lineage"
-          heritage = base_info[:heritage]
+          heritage = base_info['heritage']
 
           if heritage.blank?
             client.emit_failure t('pf2e.heritage_not_set')
@@ -62,7 +62,7 @@ module AresMUSH
 
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "specialize"
-          charclass = base_info[:charclass]
+          charclass = base_info['charclass']
 
           if charclass.blank?
             client.emit_failure t('pf2e.charclass_not_set')
@@ -94,12 +94,11 @@ module AresMUSH
 
         case selected_element
         when "ancestry", "background", "charclass", "heritage", "specialize"
-          base_info[selected_element.to_sym] = selected_option
+          base_info[selected_element] = selected_option
           if selected_element == "ancestry"
-            base_info[:heritage] = ""
-
+            base_info['heritage'] = ""
           elsif selected_element == "charclass"
-            base_info[:specialize] = ""
+            base_info['specialize'] = ""
           end
 
           enactor.update(pf2_base_info: base_info)
