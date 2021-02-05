@@ -36,7 +36,7 @@ module AresMUSH
           client.emit_failure t('pf2e.bad_element', :invalid => self.element, :options => chargen_elements.join(", "))
           return
         elsif selected_element == "heritage"
-          ancestry = base_info[:ancestry]
+          ancestry = base_info['ancestry']
 
           if ancestry.blank?
             client.emit_failure t('pf2e.ancestry_not_set')

@@ -15,11 +15,11 @@ module AresMUSH
 
       def elements
         base_info = @char.pf2_base_info
-        @ancestry = base_info[:ancestry]
-        @heritage = base_info[:heritage]
-        @background = base_info[:background]
-        @charclass = base_info[:charclass]
-        @subclass = base_info[:specialize]
+        @ancestry = base_info['ancestry']
+        @heritage = base_info['heritage']
+        @background = base_info['background']
+        @charclass = base_info['charclass']
+        @subclass = base_info['specialize']
 
         @ancestry_info = @ancestry.blank? ? "" : Global.read_config('pf2e_ancestry', @ancestry)
         @heritage_info = @heritage.blank? ? "" : Global.read_config('pf2e_heritage', @heritage)
@@ -53,15 +53,15 @@ module AresMUSH
       end
 
       def faith
-        @faith_info[:faith]
+        @faith_info['faith']
       end
 
       def deity
-        @faith_info[:deity]
+        @faith_info['deity']
       end
 
       def alignment
-        @faith_info[:alignment]
+        @faith_info['alignment']
       end
 
       def hp
