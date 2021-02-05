@@ -10,7 +10,7 @@ pf2e_class:
     features:
       1:
         feat:
-        - alchemist
+        - charclass
         charclass:
         - Infused Reagents
         - Advanced Alchemy
@@ -34,7 +34,7 @@ pf2e_class:
         - Alchemical Crafting
       2:
         feat:
-        - alchemist
+        - charclass
         - skill
       3:
         feat:
@@ -43,7 +43,7 @@ pf2e_class:
         - skill
       4:
         feat:
-        - alchemist
+        - charclass
         - skill
       5:
         boost:
@@ -55,7 +55,7 @@ pf2e_class:
         - Field Discovery
       6:
         feat:
-        - alchemist
+        - charclass
         - skill
       7:
         attack:
@@ -71,7 +71,7 @@ pf2e_class:
         - skill
       8:
         feat:
-        - alchemist
+        - charclass
         - skill
       9:
         Class DC: expert
@@ -86,7 +86,7 @@ pf2e_class:
         boost:
         - ability
         feat:
-        - alchemist
+        - charclass
         - skill
       11:
         feat:
@@ -99,7 +99,7 @@ pf2e_class:
         - Perpetual Potency
       12:
         feat:
-        - alchemist
+        - charclass
         - skill
       13:
         feat:
@@ -114,7 +114,7 @@ pf2e_class:
           Unarmored: expert
       14:
         feat:
-        - alchemist
+        - charclass
         - skill
       15:
         boost:
@@ -129,7 +129,7 @@ pf2e_class:
           Reflex: master
       16:
         feat:
-        - alchemist
+        - charclass
         - skill
       17:
         feat:
@@ -141,7 +141,7 @@ pf2e_class:
         - skill
       18:
         feat:
-        - alchemist
+        - charclass
         - skill
       19:
         feat:
@@ -155,7 +155,7 @@ pf2e_class:
         boost:
         - ability
         feat:
-        - alchemist
+        - charclass
         - skill
     Bard:
       key_abil: Charisma
@@ -196,7 +196,7 @@ pf2e_class:
             - Counter Performance
         2:
           feat:
-          - bard
+          - charclass
           - skill
           spells_per_day:
             1: 3
@@ -222,7 +222,7 @@ pf2e_class:
           - skill
         4:
           feat:
-          - bard
+          - charclass
           - skill
           spells_per_day:
             1: 3
@@ -248,15 +248,68 @@ pf2e_class:
             3: 2
         6:
           feat:
-          - bard
+          - charclass
           - skill
           spells_per_day:
             1: 3
             2: 3
-            3: 2
+            3: 3
           spells_known:
             cantrip: 5
             1: 3
             2: 3
-            3: 2
-        7: 
+            3: 3
+        7:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 2
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 2
+          Spells DC: expert
+          feat:
+          - general
+          boost:
+          - skill
+        8:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+          feat:
+          - charclass
+          - skill
+        9:
+          saves:
+            Fortitude: expert
+            Will: master
+          charclass: Resolve
+          boost:
+          - skill
+          feat:
+          - ancestry
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 2
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 2
