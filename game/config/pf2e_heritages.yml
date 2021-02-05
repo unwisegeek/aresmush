@@ -52,11 +52,7 @@ pf2e_heritage:
       fire: 1
   Elemental Heart:
     action:
-    - Energy Emanation:
-      - acid
-      - cold
-      - fire
-      - electricity
+    - Energy Emanation
   Elfbane: {}
   Fey-Touched: {}
   Forge:
