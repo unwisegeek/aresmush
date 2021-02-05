@@ -9,13 +9,13 @@
 <%= section_line("So Far...") %>
 <%= left("%xhHP%xn: #{hp} + CON mod", 26) -%>
 <%= left("%xhSize: #{size}", 26) -%>
-<%= left("%xhSpeed%xn: #{speed} feet"), 26) %>
-<%= "%xhTraits%xn:" traits %>
+<%= left("%xhSpeed%xn: #{speed} feet", 26) %>
+<%= "%xhTraits%xn: #{traits}" %>
 <%= "%xhFree Boosts%xn: 4 (must be spread to four different stats)" %>
 <%= "%xhAncestry Boosts%xn: #{ancestry_boosts.sort.join(" and ")} plus #{free_ancestry_boosts} free"  %>
 <%= "%xhBackground Boosts%xn: #{background_boosts} plus #{free_bg_boosts} free" %>
-<%= "%xhClass Boosts%xn: " charclass_boosts %>
-<%= "%xhSpecial Senses and Abilities%xn: " specials %>
+<%= "%xhClass Boosts%xn: #{charclass_boosts}" %>
+<%= "%xhSpecial Senses and Abilities%xn: #{specials}" %>
 <%= section_line("Quick Check Messages") %>
 <%= messages %>
 <%= divider %>
