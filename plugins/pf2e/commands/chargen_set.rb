@@ -43,7 +43,7 @@ module AresMUSH
             return nil
           end
 
-          options = Global.read_config('pf2e_ancestry', ancestry, 'heritages').sort
+          options = Global.read_config('pf2e_ancestry', "#{ancestry}", 'heritages').sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "lineage"
           heritage = base_info[:heritage]
@@ -81,7 +81,8 @@ module AresMUSH
           options = Global.read_config('pf2e', 'allowed_alignments')
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         else
-          section = Global.read_config('pf2e_' + "#{selected_element}")
+          file = 'pf2e_' + "#{selected_element}"
+          section = Global.read_config(file)
           options = section.keys.sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         end
