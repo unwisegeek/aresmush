@@ -9,11 +9,16 @@ module AresMUSH
       end
       
       def handle
+        
         selected_element = "ancestry"
         
-        section = Global.read_config('pf2e_' + selected_element)
+        file = 'pf2e_' + "#{selected_element}"
+        section = Global.read_config(file)
+        options = section.keys.sort
         
-        section
+        client.emit file
+        client.emit section
+        client.emit options
             
       end
 
