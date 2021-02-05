@@ -55,15 +55,15 @@ module AresMUSH
       end
 
       def faith
-        @faith_info[:faith]
+        @faith_info['faith']
       end
 
       def deity
-        @faith_info[:deity]
+        @faith_info['deity']
       end
 
       def alignment
-        @faith_info[:alignment]
+        @faith_info['alignment']
       end
 
       def hp
