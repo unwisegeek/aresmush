@@ -5,6 +5,9 @@ describe:
   exit_start_bracket: "<%x172"
   glance_format: "%{height_title} height, %{age} year-old %{gender_noun} with %{hair}
     hair and %{eyes} eyes."
+  permissions:
+    desc_anything: Edit descs on any object.
+    desc_places: Edit descs on rooms and exits
   shortcuts:
     l: look
     desc: describe
@@ -27,6 +30,3 @@ describe:
     admin: "%xc"
     beginner: "%x172"
     web: "%xh%xx"
-  permissions:
-    desc_anything: Edit descs on any object.
-    desc_places: Edit descs on rooms and exits
