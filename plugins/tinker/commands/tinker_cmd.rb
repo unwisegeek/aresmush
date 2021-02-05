@@ -12,13 +12,12 @@ module AresMUSH
         
         selected_element = "ancestry"
         
-        file = 'pf2e_' + "#{selected_element}"
-        section = Global.read_config(file)
-        options = section.keys.sort
-        
-        client.emit file
-        client.emit section
-        client.emit options
+        case selected_element
+        when "ancestry" 
+            client.emit "I Got this."
+        when !ancestry
+            client.emit "Wrong!"
+        end
             
       end
 
