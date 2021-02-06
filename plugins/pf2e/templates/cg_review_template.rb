@@ -21,10 +21,10 @@ module AresMUSH
         @charclass = base_info['charclass']
         @subclass = base_info['specialize']
 
-        @ancestry_info = @ancestry.blank? ? "" : Global.read_config('pf2e_ancestry', @ancestry)
-        @heritage_info = @heritage.blank? ? "" : Global.read_config('pf2e_heritage', @heritage)
-        @background_info = @background.blank? ? "" : Global.read_config('pf2e_background', @background)
-        @charclass_info = @charclass.blank? ? "" : Global.read_config('pf2e_class', @charclass)
+        @ancestry_info = @ancestry.blank? ? {} : Global.read_config('pf2e_ancestry', @ancestry)
+        @heritage_info = @heritage.blank? ? {} : Global.read_config('pf2e_heritage', @heritage)
+        @background_info = @background.blank? ? {} : Global.read_config('pf2e_background', @background)
+        @charclass_info = @charclass.blank? ? {} : Global.read_config('pf2e_class', @charclass)
         @faith_info = @char.pf2_faith
 
         super File.dirname(__FILE__) + "/cg_review.erb"
@@ -71,7 +71,7 @@ module AresMUSH
       end
 
       def hp
-        @ancestry_info["HP"] + self.charclass_info["HP"]
+        @ancestry_info["HP"] + @charclass_info["HP"]
       end
 
       def size
