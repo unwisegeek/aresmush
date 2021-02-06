@@ -1,2 +1,131 @@
 ---
-pf2e_heritage: {}
+pf2e_heritage:
+  Aasimar:
+    traits:
+    - aasimar
+    special:
+    - Low-Light Vision
+    change_vision: true
+  Ancient-Blooded:
+    reaction: 'Call On Ancient Blood'
+  Anvil:
+    skills:
+    - Crafting
+    feats:
+    - Specialty Crafting
+    - Specialty Crafting
+  Arctic:
+    resistances:
+      cold: 1
+    circumstance: true
+  Ashen One:
+    traits:
+    - Ashen One
+    special:
+    - Low-Light Vision
+    change_vision: true
+  Badlands: {}
+  Cavern:
+    special:
+    - Darkvision
+  Chameleon: {}
+  Changeling:
+    traits:
+    - changeling
+    special:
+    - Low-Light Vision
+    change_vision: true
+  Charhide: {}
+  Cliffscale: {}
+  Dar:
+    traits:
+    - Dar
+    special:
+    - Low-Light Vision
+    - Negative Healing
+    change_vision: true
+  Death Warden:
+    circumstance: true
+  Deep: {}
+  Desert:
+    resistances:
+      fire: 1
+  Elemental Heart:
+    action:
+    - Energy Emanation
+  Elfbane: {}
+  Fey-Touched: {}
+  Forge:
+    resistances:
+      fire: 1
+  Frilled:  {}
+  Gutsy: {}
+  Half-Sil:
+    traits:
+    - half-sil
+    - sildanyar
+    special:
+    - Low-Light Vision
+  Half-Oruch:
+    traits:
+    - oruch
+    - half-oruch
+    special:
+    - Low-Light Vision
+  Hillock: {}
+  Hold-Scarred: {}
+  Inbreakable: {}
+  Irongut: {}
+  Jinxed-egalrin: {}
+  Jinxed-lucht: {}
+  Mountainkeeper: {}
+  Nomadic: {}
+  Oathkeeper:
+    circumstance: true
+  Observant: {}
+  Rainfall: {}
+  Razortooth: {}
+  Rock:
+    circumstance: true
+  Runtboss: {}
+  Sandstrider: {}
+  Seer:
+    spell:
+      name: 'Detect Magic'
+      per_day: false
+    action:
+    - Identify Magic
+    - Decipher Writing
+    action_bonus: 1
+  Sensate: {}
+  Sith-Makar: {}
+  Skilled: {}
+  Skyborn: {}
+  Smokeworker: {}
+  Snow: {}
+  Stormtossed: {}
+  Strong-Blooded:
+    resistances:
+      poison: 1
+    circumstance: true
+  Tailed: {}
+  Taloned: {}
+  Tiefling: {}
+    traits:
+    - tiefling
+    special:
+    - Low-Light Vision
+    change_vision: true
+  Treedweller: {}
+  Twilight: {}
+  Umbral: {}
+  Unseen: {}
+  Versatile: {}
+  Vivacious: {}
+  Wellspring: {}
+  Whisper:
+    circumstance: true
+  Wildwood: {}
+  Wintertouched: {}
+  Woodland:
+    circumstance: true
