@@ -4,31 +4,15 @@ module AresMUSH
     class PF2CGReviewDisplay < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char, :sheet, :ancestry, :background, :charclass, :heritage
+      attr_accessor :char, :client
 
-      def initialize(char, sheet, ancestry=nil, heritage=nil, background=nil, charclass=nil)
+      def initialize(char, client)
         @char = char
-        @sheet = sheet
-        @ancestry = ancestry
-        @heritage = heritage
-        @background = background
-        @charclass = charclass
+        @client = client
 
         super File.dirname(__FILE__) + "/cg_review.erb"
       end
 
-      def element_info
-        self.ancestry_info = @ancestry ? Global.read_config('pf2e_ancestry', @ancestry) : nil
-        self.heritage_info = @heritage ? Global.read_config('pf2e_heritage', @heritage) : nil
-        self.background_info = @background ? Global.read_config('pf2e_background', @background) : nil
-        self.charclass_info = @charclass ? Global.read_config('pf2e_class', @charclass) : nil
-
-        @ancestry_info = @ancestry.blank? ? "" : Global.read_config('pf2e_ancestry', @ancestry)
-        @heritage_info = @heritage.blank? ? "" : Global.read_config('pf2e_heritage', @heritage)
-        @background_info = @background.blank? ? "" : Global.read_config('pf2e_background', @background)
-        @charclass_info = @charclass.blank? ? "" : Global.read_config('pf2e_class', @charclass)
-        @faith_info = @char.pf2_faith
-      end
 
       def name
         @char.name
