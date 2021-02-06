@@ -10,10 +10,6 @@ module AresMUSH
         @char = char
         @client = client
 
-        super File.dirname(__FILE__) + "/cg_review.erb"
-      end
-
-      def elements
         base_info = @char.pf2_base_info
         @ancestry = base_info['ancestry']
         @heritage = base_info['heritage']
@@ -26,6 +22,8 @@ module AresMUSH
         @background_info = @background.blank? ? "" : Global.read_config('pf2e_background', @background)
         @charclass_info = @charclass.blank? ? "" : Global.read_config('pf2e_class', @charclass)
         @faith_info = @char.pf2_faith
+
+        super File.dirname(__FILE__) + "/cg_review.erb"
       end
 
       def section_line(title)
@@ -118,9 +116,6 @@ module AresMUSH
         msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith)
         msgs ? msgs : t('pf2e.cg_options_ok')
       end
-
-
     end
-
   end
 end
