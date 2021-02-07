@@ -66,24 +66,25 @@ module AresMUSH
         @faith_info['alignment']
       end
 
-      def hp
-        ancestry_hp = @ancestry_info ? @ancestry_info["HP"] : 0
-        class_hp = @charclass_info ? @charclass_info["HP"] : 0
+      def ahp
+        ancestry_hp = @ancestry_info["HP"] ? @ancestry_info["HP"] : 0
+      end
 
-        ancestry_hp + class_hp
+      def chp
+        class_hp = @charclass_info["HP"] ? @charclass_info["HP"] : 0
       end
 
       def size
-        @ancestry_info ? @ancestry_info["Size"] : "M"
+        @ancestry_info["Size"] ? @ancestry_info["Size"] : "M"
       end
 
       def speed
-        @ancestry_info ? @ancestry_info["Speed"] : "?"
+        @ancestry_info["Speed"] ? @ancestry_info["Speed"] : "?"
       end
 
       def traits
-        a_traits = @ancestry_info ? @ancestry_info["traits"] : []
-        h_traits = @heritage_info ? @heritage_info["traits"] : []
+        a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
+        h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
         c_traits = @charclass ? [ @charclass.downcase ] : []
 
         a_traits + h_traits + c_traits.uniq.sort.join(", ")
