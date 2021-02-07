@@ -3,6 +3,8 @@ module AresMUSH
     class PF2ReviewChargenCmd
       include CommandHandler
 
+      attr_accessor :target
+
       def parse_args
         self.target = cmd.args ? Character.find_one_by_name(cmd.args) : enactor
       end

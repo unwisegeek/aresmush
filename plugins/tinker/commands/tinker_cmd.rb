@@ -25,16 +25,15 @@ module AresMUSH
         charclass_info = charclass.blank? ? {} : Global.read_config('pf2e_class', charclass)
         faith_info = char.pf2_faith
         
-        a_traits = ancestry_info["traits"]
-        
-        h_traits = heritage_info["traits"]
-        
-        a_traits << charclass.downcase unless charclass.blank?
-        
-        traits = a_traits + h_traits
+        a_traits = ancestry_info["traits"] ? ancestry_info["traits"] : []
+        h_traits = heritage_info["traits"] ? heritage_info["traits"] : []
+        c_traits = charclass_info ? [ charclass.downcase ] : []
+
+        traits = a_traits + h_traits + c_traits.uniq.sort
         
         client.emit a_traits
         client.emit h_traits
+        client.emit c_traits
         client.emit traits
         client.emit charclass.downcase
         
