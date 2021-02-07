@@ -86,6 +86,10 @@ module AresMUSH
         @ancestry_info["HP"]
       end
 
+      def chp
+        @charclass_info["HP"]
+      end
+
 
     end
   end
