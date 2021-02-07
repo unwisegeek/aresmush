@@ -3,15 +3,15 @@
 <%= divider %>
 <% if section == "info" || "all" %>
 <%= section_line("Basic Information") %>
-<%= left("%xhAncestry%xn: #{ancestry}", 39) -%>
-<%= left("%xhHeritage%xn: #{heritage}", 39) %>
-<%= left("%xhBackground%xn: #{background}", 39) -%>
-<%= left("%xhXP%xn: #{xp}", 39) %>
-<%= left("%xhClass/Level%xn: #{charclass} #{level}", 39) -%>
-<%= left("%xh#{subclass_name}%xn: #{subclass}", 39) %>
-<%= left("%xhFaith%xn: #{faith}", 26) -%>
-<%= left("%xhDeity%xn: #{deity}", 26) -%>
-<%= left("%xhAlignment%xn: #{alignment}", 26) %>
+<%= left("%#{item_color}Ancestry%xn: #{ancestry}", 39) -%>
+<%= left("%#{item_color}Heritage%xn: #{heritage}", 39) %>
+<%= left("%#{item_color}Background%xn: #{background}", 39) -%>
+<%= left("%#{item_color}XP%xn: #{xp}", 39) %>
+<%= left("%#{item_color}Class/Level%xn: #{charclass} #{level}", 39) -%>
+<%= left("%#{item_color}#{subclass_name}%xn: #{subclass}", 39) %>
+<%= left("%#{item_color}Faith%xn: #{faith}", 26) -%>
+<%= left("%#{item_color}Deity%xn: #{deity}", 26) -%>
+<%= left("%#{item_color}Alignment%xn: #{alignment}", 26) %>
 <%= section_line("Traits") %>
 <%= traits %>
 <% end %>

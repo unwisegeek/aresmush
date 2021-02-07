@@ -12,6 +12,7 @@ pf2e:
   open_sheets: true
   open_npc_sheets: false
   title_color: '%x172'
+  list_item: '%x44'
   use_alignment: true
   use_encumbrance: false
   subclass_names:
@@ -46,7 +47,7 @@ pf2e:
       key_abil: Charisma
     Intimidation:
       key_abil: Charisma
-    Medicine: 
+    Medicine:
       key_abil: Wisdom
     Nature:
       key_abil: Wisdom
