@@ -15,14 +15,14 @@
 <%= left("#{item_color}Size%xn: #{size}", 26) -%>
 <%= left("#{item_color}Speed%xn: #{speed} feet", 26) %>
 
-<%= "%xhTraits%xn: #{traits.join(", ")}" %>
+<%= "#{item_color}Traits%xn: #{traits.join(", ")}" %>
 
-<%= "%xhFree Boosts%xn: 4 (must be spread to four different stats)" %>
-<%= "%xhAncestry Boosts%xn: #{ancestry_boosts.sort.join(" and ")} plus #{free_ancestry_boosts} free"  %>
-<%= "%xhBackground Boosts%xn: #{background_boosts} plus #{free_bg_boosts} free" %>
-<%= "%xhClass Boosts%xn: #{charclass_boosts}" %>
+<%= "#{item_color}Free Boosts%xn: 4 (must be spread to four different stats)" %>
+<%= "#{item_color}Ancestry Boosts%xn: #{ancestry_boosts.sort.join(" and ")} plus #{free_ancestry_boosts} free"  %>
+<%= "#{item_color}Background Boosts%xn: #{background_boosts} plus #{free_bg_boosts} free" %>
+<%= "#{item_color}Class Boosts%xn: #{charclass_boosts}" %>
 
-<%= "%xhSpecial Senses and Abilities%xn: #{specials}" %>
+<%= "#{item_color}Special Senses and Abilities%xn: #{specials}" %>
 <%= section_line("Quick Check Messages") %>
 <%= messages %>
 <%= divider %>
