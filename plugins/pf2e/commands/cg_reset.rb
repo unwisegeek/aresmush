@@ -36,6 +36,7 @@ module AresMUSH
         elsif !enactor.pf2_reset && !self.confirm
           client.emit_ooc t('pf2e.are_you_sure')
           enactor.update(pf2_reset: true)
+          return nil
         end
 
         enactor.update(pf2_baseinfo_locked: false)

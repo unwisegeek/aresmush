@@ -91,7 +91,7 @@ module AresMUSH
       end
 
       def ancestry_boosts
-        @ancestry_info["abl_boosts"]? @ancestry_info["abl_boosts"] : "?"
+        @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
       end
 
       def free_ancestry_boosts
