@@ -83,7 +83,7 @@ module AresMUSH
       end
 
       def ahp
-        @ancestry_info["HP"]
+        @ancestry_info["HP"] ? @ancestry_info["HP"] : 0
       end
 
       def chp
