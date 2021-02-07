@@ -1,19 +1,19 @@
 <%= header %>
 <%= center("#{title_color}CG Review: #{name}", 78) %>%xn
 <%= divider %>
-<%= left("%xhAncestry%xn: #{ancestry}", 39) -%>
-<%= left("%xhHeritage%xn: #{heritage}", 39) %>
-<%= left("%xhClass%xn: #{charclass}", 39) -%>
-<%= left("%xhKit/Specialty%xn: #{subclass}", 39) %>
-<%= left("%xhBackground%xn: #{background}", 39) %>
+<%= left("#{item_color}Ancestry%xn: #{ancestry}", 39) -%>
+<%= left("#{item_color}Heritage%xn: #{heritage}", 39) %>
+<%= left("#{item_color}Class%xn: #{charclass}", 39) -%>
+<%= left("#{item_color}Kit/Specialty%xn: #{subclass}", 39) %>
+<%= left("#{item_color}Background%xn: #{background}", 39) %>
 <%= section_line("Faith Info") %>
-<%= left("%xhFaith%xn: #{faith}", 30) -%>
-<%= left("%xhAlignment%xn: #{alignment}", 20) -%>
-<%= left("%xhDeity%xn: #{deity}", 28) %>
+<%= left("#{item_color}Faith%xn: #{faith}", 30) -%>
+<%= left("#{item_color}Alignment%xn: #{alignment}", 20) -%>
+<%= left("#{item_color}Deity%xn: #{deity}", 28) %>
 <%= section_line("So Far...") %>
-<%= left("%xhHP%xn: #{ahp + chp} + CON mod", 26) -%>
-<%= left("%xhSize: #{size}", 26) -%>
-<%= left("%xhSpeed%xn: #{speed} feet", 26) %>
+<%= left("#{item_color}HP%xn: #{ahp + chp} + CON mod", 26) -%>
+<%= left("#{item_color}Size: #{size}", 26) -%>
+<%= left("#{item_color}Speed%xn: #{speed} feet", 26) %>
 
 <%= "%xhTraits%xn: #{traits.join(", ")}" %>
 
