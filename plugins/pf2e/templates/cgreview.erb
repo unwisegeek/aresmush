@@ -10,7 +10,7 @@
 <%= left("%xhHP%xn: #{ahp + chp} + CON mod", 26) -%>
 <%= left("%xhSize: #{size}", 26) -%>
 <%= left("%xhSpeed%xn: #{speed} feet", 26) %>
-<%= "%xhTraits%xn: #{traits}" %>
+<%= "%xhTraits%xn: #{traits.join(", ")}" %>
 <%= "%xhFree Boosts%xn: 4 (must be spread to four different stats)" %>
 <%= "%xhAncestry Boosts%xn: #{ancestry_boosts.sort.join(" and ")} plus #{free_ancestry_boosts} free"  %>
 <%= "%xhBackground Boosts%xn: #{background_boosts} plus #{free_bg_boosts} free" %>
