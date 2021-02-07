@@ -14,14 +14,17 @@ en:
     missing_subclass: "Your class requires a specialization, please choose one."
     admin_no_sheet: "That character is a game admin and does not have a sheet."
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
+    reset_first: "Type cg/reset before using this command."
+    must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
+    are_you_sure: "Are you sure? This command will wipe your entire character sheet. Type 'cg/reset confirm' to confirm that you want to do this."
 
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
     cg_options_ok: "%xgNo errors or issues detected with your CG options."
     bg_options_set: "Your background does not require any choices. Moving on..."
+    cg_reset_ok: "Your sheet has been cleared."
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"
     class_mismatch: "%xrYour alignment is not valid for your class.%xn"
     class_deity_mismatch: "%xrYour alignment is not valid for your deity and class.%xn"
     class_requires_deity: "%xyYour class requires a deity, but none is set.%xn"
     cg_issues: "There is a problem with your current chargen options. Review and resolve the messages in `cg/review` before running this command."
-    remind_bg_options: "Your background offers a choice of %{option}. Be sure to choose which using the appropriate command."

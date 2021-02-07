@@ -21,8 +21,8 @@ module AresMUSH
           return PF2SetChargenCmd
         when "review"
           return PF2ReviewChargenCmd
-        when "test"
-          return PF2TestChargenCmd
+        when "reset"
+          return PF2ResetChargenCmd
         end
       end
 
