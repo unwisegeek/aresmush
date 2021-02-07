@@ -45,7 +45,7 @@ module AresMUSH
       missing_info = Pf2e.missing_base_info(ancestry, heritage, background, charclass, faith)
       messages << missing_info if missing_info
 
-      bad_alignment = Pf2e.check_alignment(faith[:alignment], charclass, faith[:deity])
+      bad_alignment = Pf2e.check_alignment(faith['alignment'], charclass, faith['deity'])
       messages << bad_alignment if bad_alignment
 
       needs_specialty = Global.read_config('pf2e', 'subclass_names').keys

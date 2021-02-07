@@ -100,7 +100,7 @@ module AresMUSH
 
       def background_boosts
         list = @background_info["req_abl_boosts"] ? @background_info["req_abl_boosts"] : []
-        list.empty? ? "None required." : list.join(" or ")
+        list.empty? ? "None required" : list.join(" or ")
       end
 
       def free_bg_boosts
