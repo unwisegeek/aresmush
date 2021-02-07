@@ -108,7 +108,7 @@ module AresMUSH
       end
 
       def charclass_boosts
-        @charclass_info["key_score"] ? @charclass_info["key_score"].join(" or ") : "Class not set."
+        @charclass_info["key_abil"] ? @charclass_info["key_abil"].join(" or ") : "Class not set."
       end
 
       def specials

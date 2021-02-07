@@ -7,14 +7,16 @@ module AresMUSH
     attribute :pf2_xp, :type => DataType::Integer, :default => 0
     attribute :pf2_conditions, :type => DataType::Hash, :default => {}
     attribute :pf2_features, :type => DataType::Array, :default => []
-    attribute :pf2_skills, :type => DataType::Hash, :default => {}
     attribute :pf2_traits, :type => DataType::Array, :default => []
     attribute :pf2_feats, :type => DataType::Array, :default => []
     attribute :pf2_faith, :type => DataType::Hash, :default => { 'faith'=>"", 'deity'=>"", 'alignment'=>"" }
     attribute :pf2_special, :type => DataType::Array, :default => []
-    attribute :pf2_boosts, :type => DataType::Hash, :default => { free: [], ancestry: [], background: [], charclass: [], unspent: 4 }
+    attribute :pf2_boosts, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[], 'unspent'=>4 }
+    attribute :pf2_saves, :type =>DataType::Hash, :default => { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' }
+
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"
+    collection :lores, "AresMUSH::Pf2eLores"
 
     before_delete :delete_abilities
 
@@ -36,6 +38,16 @@ module AresMUSH
   end
 
   class Pf2eSkills < Ohm::Model
+    include ObjectModel
+
+    attribute :name
+    attribute :proflevel
+    index :name
+
+    reference :character, "AresMUSH::Character"
+  end
+
+  class Pf2eLores < Ohm::Model
     include ObjectModel
 
     attribute :name
