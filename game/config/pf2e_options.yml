@@ -1,7 +1,5 @@
 ---
 pf2e:
-  shortcuts:
-    sheet/top: sheet/info
   allowed_alignments:
   - LG
   - NG
@@ -9,29 +7,15 @@ pf2e:
   - LN
   - N
   - CN
-  open_sheets: true
-  open_npc_sheets: false
-  title_color: '%x172'
-  list_item: '%x44'
-  use_alignment: true
-  use_encumbrance: false
-  subclass_names:
-    Alchemist: 'Research Field'
-    Barbarian: 'Instinct'
-    Bard: 'Muse'
-    Champion: 'Cause'
-    Druid: 'Order'
-    Ranger: "Hunter's Edge"
-    Rogue: 'Racket'
-    Sorcerer: 'Bloodline'
-    Wizard: 'School'
-    Investigator: 'Methodology'
-    Oracle: 'Mystery'
-    Witch: 'Patron'
   condition_colors:
-    Dying: '%xr'
-    Wounded: '%xy'
-  faiths:
+    Dying: "%xr"
+    Wounded: "%xy"
+  faiths: 
+  list_item: "%x43"
+  open_npc_sheets: false
+  open_sheets: true
+  shortcuts:
+    sheet/top: sheet/info
   skills:
     Acrobatics:
       key_abil: Dexterity
@@ -65,3 +49,19 @@ pf2e:
       key_abil: Wisdom
     Thievery:
       key_abil: Dexterity
+  subclass_names:
+    Alchemist: Research Field
+    Barbarian: Instinct
+    Bard: Muse
+    Champion: Cause
+    Druid: Order
+    Ranger: Hunter's Edge
+    Rogue: Racket
+    Sorcerer: Bloodline
+    Wizard: School
+    Investigator: Methodology
+    Oracle: Mystery
+    Witch: Patron
+  title_color: "%x172"
+  use_alignment: true
+  use_encumbrance: false
