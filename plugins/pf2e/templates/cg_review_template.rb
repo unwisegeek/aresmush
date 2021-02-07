@@ -67,27 +67,34 @@ module AresMUSH
       end
 
       def hp
-        @ancestry_info["HP"] + @charclass_info["HP"]
+        ancestry_hp = @ancestry_info["HP"] ? @ancestry_info["HP"] : 0
+        class_hp = @charclass_info["HP"] ? @charclass_info["HP"] : 0
+
+        ancestry_hp + class_hp
       end
 
       def size
-        @ancestry_info["Size"]
+        @ancestry_info["Size"] ? @ancestry_info["Size"] : "M"
       end
 
       def speed
-        @ancestry_info["Speed"]
+        @ancestry_info["Speed"] ? @ancestry_info["Speed"] : "?"
       end
 
       def traits
-        @ancestry_info["traits"] + @heritage_info["traits"] + [ @charclass.downcase ].uniq.sort.join(", ")
+        a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
+        h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
+        c_traits = @charclass ? [ @charclass.downcase ] : []
+
+        a_traits + h_traits + c_traits.uniq.sort.join(", ")
       end
 
       def ancestry_boosts
-        @ancestry_info["abl_boosts"]
+        @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
       end
 
       def free_ancestry_boosts
-        @ancestry_info["abl_boosts_open"]
+        @ancestry_info["abl_boosts_open"] ? @ancestry_info["abl_boosts_open"] : 0
       end
 
       def background_boosts
@@ -96,12 +103,11 @@ module AresMUSH
       end
 
       def free_bg_boosts
-        @background_info["abl_boosts_open"]
+        @background_info["abl_boosts_open"] ? @background_info["abl_boosts_open"] : 0
       end
 
       def charclass_boosts
-        list = @charclass_info["key_score"]
-        list.join("or")
+        @charclass_info["key_score"] ? @charclass_info["key_score"].join(" or ") : "Class not set."
       end
 
       def specials
