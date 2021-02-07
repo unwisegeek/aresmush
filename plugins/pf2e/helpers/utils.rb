@@ -22,11 +22,7 @@ module AresMUSH
     end
 
     def self.character_has?(array, element)
-      if array.include?(element)
-        return true
-      else
-        return false
-      end
+      array.include?(element)
     end
 
     def self.character_has_index?(array, element)
