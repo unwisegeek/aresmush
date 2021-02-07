@@ -85,7 +85,7 @@ module AresMUSH
       def traits
         a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
-        c_traits = @charclass ? @charclass.downcase.to_a : []
+        c_traits = @charclass.blank? ? @charclass.downcase.to_ary : []
 
         a_traits + h_traits + c_traits.uniq.sort.join(", ")
       end
@@ -108,7 +108,7 @@ module AresMUSH
       end
 
       def charclass_boosts
-        @charclass_info["key_score"]? @charclass_info["key_score"].join(" or ") : "Class not set."
+        @charclass_info["key_score"] ? @charclass_info["key_score"].join(" or ") : "Class not set."
       end
 
       def specials
