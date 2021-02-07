@@ -88,7 +88,7 @@ module AresMUSH
 
         a_traits << @charclass.downcase unless @charclass.blank?
 
-        a_traits + h_traits.uniq.sort.join(", ")
+        a_traits + h_traits.uniq
       end
 
       def ancestry_boosts
