@@ -70,7 +70,7 @@ module AresMUSH
         @faith_info['alignment']
       end
 
-      def hp
+      def hit_points
         ancestry_hp = @ancestry_info["HP"] ? @ancestry_info["HP"] : 0
         class_hp = @charclass_info["HP"] ? @charclass_info["HP"] : 0
 
