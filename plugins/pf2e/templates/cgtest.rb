@@ -87,7 +87,7 @@ module AresMUSH
       end
 
       def chp
-        @charclass_info["HP"]
+        @charclass_info["HP"] ? @charclass_info["HP"] : 0
       end
 
 
