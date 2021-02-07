@@ -88,7 +88,7 @@ module AresMUSH
 
         a_traits << @charclass.downcase unless @charclass.blank?
 
-        a_traits + h_traits.uniq
+        a_traits + h_traits.uniq.sort
       end
 
       def ancestry_boosts
@@ -113,9 +113,9 @@ module AresMUSH
       end
 
       def specials
-        ainfo = @ancestry_info ? @ancestry_info["special"] : []
-        hinfo = @heritage_info ? @heritage_info["special"] : []
-        binfo = @background_info ? @background_info["special"] : []
+        ainfo = @ancestry_info["special"] ? @ancestry_info["special"] : []
+        hinfo = @heritage_info["special"] ? @heritage_info["special"] : []
+        binfo = @background_info["special"] ? @background_info["special"] : []
         specials = ainfo + hinfo + binfo.flatten
         if Pf2e.character_has?(ainfo, "Low-Light Vision") && @heritage_info["change_vision"]
           specials = specials.delete_at specials.index("Low-Light Vision") + [ "Darkvision" ]
