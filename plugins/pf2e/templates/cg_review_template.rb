@@ -67,52 +67,55 @@ module AresMUSH
       end
 
       def hp
-        ancestry_hp = @ancestry_info["HP"] ? @ancestry_info["HP"] : 0
-        class_hp = @charclass_info["HP"] ? @charclass_info["HP"] : 0
+        ancestry_hp = @ancestry_info ? @ancestry_info["HP"] : 0
+        class_hp = @charclass_info ? @charclass_info["HP"] : 0
 
         ancestry_hp + class_hp
       end
 
       def size
-        @ancestry_info["Size"] ? @ancestry_info["Size"] : "M"
+        @ancestry_info ? @ancestry_info["Size"] : "M"
       end
 
       def speed
-        @ancestry_info["Speed"] ? @ancestry_info["Speed"] : "?"
+        @ancestry_info ? @ancestry_info["Speed"] : "?"
       end
 
       def traits
-        a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
-        h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
+        a_traits = @ancestry_info ? @ancestry_info["traits"] : []
+        h_traits = @heritage_info ? @heritage_info["traits"] : []
         c_traits = @charclass ? [ @charclass.downcase ] : []
 
         a_traits + h_traits + c_traits.uniq.sort.join(", ")
       end
 
       def ancestry_boosts
-        @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
+        @ancestry_info ? @ancestry_info["abl_boosts"] : "?"
       end
 
       def free_ancestry_boosts
-        @ancestry_info["abl_boosts_open"] ? @ancestry_info["abl_boosts_open"] : 0
+        @ancestry_info ? @ancestry_info["abl_boosts_open"] : 0
       end
 
       def background_boosts
-        list = @background_info["req_abl_boosts"]
+        list = @background_info ? @background_info["req_abl_boosts"] : []
         list.empty? "None required." : list.join(" or ")
       end
 
       def free_bg_boosts
-        @background_info["abl_boosts_open"] ? @background_info["abl_boosts_open"] : 0
+        @background_info ? @background_info["abl_boosts_open"] : 0
       end
 
       def charclass_boosts
-        @charclass_info["key_score"] ? @charclass_info["key_score"].join(" or ") : "Class not set."
+        @charclass_info ? @charclass_info["key_score"].join(" or ") : "Class not set."
       end
 
       def specials
-        specials = @ancestry_info["special"] + @heritage_info["special"] + @background_info["special"].flatten
-        if Pf2e.character_has?(@ancestry_info["special"], "Low-Light Vision") && @heritage_info["change_vision"]
+        ainfo = @ancestry_info ? @ancestry_info["special"] : []
+        hinfo = @heritage_info ? @heritage_info["special"] : []
+        binfo = @background_info ? @background_info["special"] : []
+        specials = ainfo + hinfo + binfo.flatten
+        if Pf2e.character_has?(ainfo, "Low-Light Vision") && @heritage_info["change_vision"]
           specials = specials.delete_at specials.index("Low-Light Vision") + [ "Darkvision" ]
         end
         specials.empty? ? "No special abilities or senses." : specials.sort.join(", ")
