@@ -23,6 +23,14 @@ module AresMUSH
 
     def self.character_has?(array, element)
       if array.include?(element)
+        return true
+      else
+        return false
+      end
+    end
+
+    def self.character_has_index?(array, element)
+      if array.include?(element)
         return array.index(element)
       else
         return false
