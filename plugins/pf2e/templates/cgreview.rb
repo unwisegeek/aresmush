@@ -23,7 +23,7 @@ module AresMUSH
         @charclass_info = @charclass.blank? ? {} : Global.read_config('pf2e_class', @charclass)
         @faith_info = @char.pf2_faith
 
-        super File.dirname(__FILE__) + "/cg_review.erb"
+        super File.dirname(__FILE__) + "/cgreview.erb"
       end
 
       def section_line(title)
