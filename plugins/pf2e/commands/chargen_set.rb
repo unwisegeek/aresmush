@@ -80,6 +80,9 @@ module AresMUSH
         elsif selected_element == "alignment"
           options = Global.read_config('pf2e', 'allowed_alignments')
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "charclass"
+          options = Global.read_config('pf2e_class').keys
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         else
           file = 'pf2e_' + "#{selected_element}"
           section = Global.read_config(file)

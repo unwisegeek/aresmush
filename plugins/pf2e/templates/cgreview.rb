@@ -86,7 +86,7 @@ module AresMUSH
         a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
 
-        a_traits << @charclass.downcase if !@charclass.empty?
+        a_traits << @charclass.downcase unless @charclass.blank?
 
         a_traits + h_traits.uniq.sort.join(", ")
       end
