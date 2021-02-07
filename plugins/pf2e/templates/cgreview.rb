@@ -85,30 +85,30 @@ module AresMUSH
       def traits
         a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
-        c_traits = @charclass ? [ @charclass.downcase ] : []
+        c_traits = @charclass ? @charclass.downcase.to_a : []
 
         a_traits + h_traits + c_traits.uniq.sort.join(", ")
       end
 
       def ancestry_boosts
-        @ancestry_info ? @ancestry_info["abl_boosts"] : "?"
+        @ancestry_info["abl_boosts"]? @ancestry_info["abl_boosts"] : "?"
       end
 
       def free_ancestry_boosts
-        @ancestry_info ? @ancestry_info["abl_boosts_open"] : 0
+        @ancestry_info["abl_boosts_open"] ? @ancestry_info["abl_boosts_open"] : 0
       end
 
       def background_boosts
-        list = @background_info ? @background_info["req_abl_boosts"] : []
+        list = @background_info["req_abl_boosts"] ? @background_info["req_abl_boosts"] : []
         list.empty? ? "None required." : list.join(" or ")
       end
 
       def free_bg_boosts
-        @background_info ? @background_info["abl_boosts_open"] : 0
+        @background_info["abl_boosts_open"] ? @background_info["abl_boosts_open"] : 0
       end
 
       def charclass_boosts
-        @charclass_info ? @charclass_info["key_score"].join(" or ") : "Class not set."
+        @charclass_info["key_score"]? @charclass_info["key_score"].join(" or ") : "Class not set."
       end
 
       def specials
