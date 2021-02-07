@@ -85,10 +85,9 @@ module AresMUSH
       def traits
         a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
+        c_traits = @charclass_info ? [ @charclass.downcase ] : []
 
-        a_traits << @charclass.downcase unless @charclass.blank?
-
-        a_traits + h_traits.uniq.sort
+        a_traits + h_traits + c_traits.uniq.sort
       end
 
       def ancestry_boosts
@@ -109,7 +108,7 @@ module AresMUSH
       end
 
       def charclass_boosts
-        @charclass_info["key_score"] ? @charclass_info["key_score"].join(" or ") : "Class not set."
+        @charclass_info["key_abil"] ? @charclass_info["key_abil"].join(" or ") : "Class not set."
       end
 
       def specials
@@ -117,8 +116,8 @@ module AresMUSH
         hinfo = @heritage_info["special"] ? @heritage_info["special"] : []
         binfo = @background_info["special"] ? @background_info["special"] : []
         specials = ainfo + hinfo + binfo.flatten
-        if Pf2e.character_has?(ainfo, "Low-Light Vision") && @heritage_info["change_vision"]
-          specials = specials.delete_at specials.index("Low-Light Vision") + [ "Darkvision" ]
+        if specials.include?("Low-Light Vision") && @heritage_info["change_vision"]
+          specials = specials - [ "Low-Light Vision" ] + [ "Darkvision" ]
         end
         specials.empty? ? "No special abilities or senses." : specials.sort.join(", ")
       end

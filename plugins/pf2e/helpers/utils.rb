@@ -9,9 +9,8 @@ module AresMUSH
       mod = (score - 10) / 2
     end
 
-    def self.get_prof_bonus(p=:untrained)
-      levels = { untrained: 0, trained: 2, expert: 4, master: 6, legendary: 8 }
-      p = p.to_sym
+    def self.get_prof_bonus(p="untrained")
+      levels = { "untrained"=>0, "trained"=>2, "expert"=>4, "master"=>6, "legendary"=>8 }
       bonus = levels[p]
     end
 

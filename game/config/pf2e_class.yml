@@ -27,10 +27,10 @@ pf2e_class:
           Fortitude: expert
           Reflex: expert
           Will: trained
-        class_skills_open: 3
-        class_skills:
+        skills_open: 3
+        skills:
         - Crafting: trained
-        class_feats:
+        feats:
         - Alchemical Crafting
       2:
         feat:
@@ -171,8 +171,8 @@ pf2e_class:
             Fortitude: trained
             Reflex: trained
             Will: expert
-          class_skills_open: 4
-          class_skills:
+          skills_open: 4
+          skills:
           - Occultism
           - Performance
           attack:
