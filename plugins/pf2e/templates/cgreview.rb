@@ -99,7 +99,7 @@ module AresMUSH
 
       def background_boosts
         list = @background_info ? @background_info["req_abl_boosts"] : []
-        list.empty? "None required." : list.join(" or ")
+        list.empty? ? "None required." : list.join(" or ")
       end
 
       def free_bg_boosts
@@ -125,6 +125,7 @@ module AresMUSH
         msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith)
         msgs ? msgs : t('pf2e.cg_options_ok')
       end
+
     end
   end
 end
