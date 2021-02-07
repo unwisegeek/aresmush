@@ -78,27 +78,27 @@ module AresMUSH
       end
 
       def size
-        @ancestry_info["Size"] ? @ancestry_info["Size"] : "M"
+        @ancestry_info ? @ancestry_info["Size"] : "M"
       end
 
       def speed
-        @ancestry_info["Speed"] ? @ancestry_info["Speed"] : "?"
+        @ancestry_info ? @ancestry_info["Speed"] : "?"
       end
 
       def traits
-        a_traits = @ancestry_info["traits"] ? @ancestry_info["traits"] : []
-        h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
+        a_traits = @ancestry_info ? @ancestry_info["traits"] : []
+        h_traits = @heritage_info ? @heritage_info["traits"] : []
         c_traits = @charclass ? [ @charclass.downcase ] : []
 
         a_traits + h_traits + c_traits.uniq.sort.join(", ")
       end
 
       def ancestry_boosts
-        @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
+        @ancestry_info ? @ancestry_info["abl_boosts"] : "?"
       end
 
       def free_ancestry_boosts
-        @ancestry_info["abl_boosts_open"] ? @ancestry_info["abl_boosts_open"] : 0
+        @ancestry_info ? @ancestry_info["abl_boosts_open"] : 0
       end
 
       def background_boosts
@@ -112,8 +112,11 @@ module AresMUSH
       end
 
       def specials
-        specials = @ancestry_info["special"] + @heritage_info["special"] + @background_info["special"].flatten
-        if Pf2e.character_has?(@ancestry_info["special"], "Low-Light Vision") && @heritage_info["change_vision"]
+        ainfo = @ancestry_info ? @ancestry_info["special"] : []
+        hinfo = @heritage_info ? @heritage_info["special"] : []
+        binfo = @background_info ? @background_info["special"] : []
+        specials = ainfo + hinfo + binfo.flatten
+        if Pf2e.character_has?(ainfo, "Low-Light Vision") && @heritage_info["change_vision"]
           specials = specials.delete_at specials.index("Low-Light Vision") + [ "Darkvision" ]
         end
         specials.empty? ? "No special abilities or senses." : specials.sort.join(", ")
