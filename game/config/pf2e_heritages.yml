@@ -110,7 +110,7 @@ pf2e_heritage:
     circumstance: true
   Tailed: {}
   Taloned: {}
-  Tiefling: {}
+  Tiefling:
     traits:
     - tiefling
     special:
