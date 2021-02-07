@@ -1,7 +1,8 @@
 ---
 pf2e_class:
   Alchemist:
-    key_abil: Intelligence
+    key_abil:
+      - Intelligence
     HP: 8
     specialties:
     - Bomber
@@ -158,7 +159,8 @@ pf2e_class:
         - charclass
         - skill
     Bard:
-      key_abil: Charisma
+      key_abil:
+      - Charisma
       HP: 8
       specialties:
       - Enigma
