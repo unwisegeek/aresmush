@@ -98,6 +98,10 @@ module AresMUSH
         @ancestry_info["abl_boosts_open"] ? @ancestry_info["abl_boosts_open"] : 0
       end
 
+      def ancestry_flaw
+        @ancestry_info["abl_flaw"] ? @ancestry_info["abl_flaw"] : "None."
+      end
+
       def background_boosts
         list = @background_info["req_abl_boosts"] ? @background_info["req_abl_boosts"] : []
         list.empty? ? "None required" : list.join(" or ")
