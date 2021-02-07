@@ -29,11 +29,14 @@ module AresMUSH
         
         h_traits = heritage_info["traits"]
         
-        a_traits << @charclass.downcase unless @charclass.blank?
+        a_traits << charclass.downcase unless charclass.blank?
         
         traits = a_traits + h_traits
         
+        client.emit a_traits
+        client.emit h_traits
         client.emit traits
+        client.emit charclass.downcase
         
             
       end
