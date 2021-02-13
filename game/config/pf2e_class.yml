@@ -2,37 +2,37 @@
 pf2e_class:
   Alchemist:
     key_abil:
-      - Intelligence
+    - Intelligence
     HP: 8
     specialties:
     - Bomber
     - Chirurgeon
     - Mutagenist
-    features:
-      1:
-        feat:
-        - charclass
-        charclass:
-        - Infused Reagents
-        - Advanced Alchemy
-        attack:
-          Simple Weapons: trained
-          Alchemical Bombs: trained
-          Unarmed: trained
-        defense:
-          Light Armor: trained
-          Unarmored: trained
-        Class DC: trained
-        Perception: trained
-        saves:
-          Fortitude: expert
-          Reflex: expert
-          Will: trained
-        skills_open: 3
-        skills:
-        - Crafting: trained
-        feats:
-        - Alchemical Crafting
+    chargen:
+      feat:
+      - charclass
+      charclass:
+      - Infused Reagents
+      - Advanced Alchemy
+      attack:
+        Simple Weapons: trained
+        Alchemical Bombs: trained
+        Unarmed: trained
+      defense:
+        Light Armor: trained
+        Unarmored: trained
+      Class DC: trained
+      Perception: trained
+      saves:
+        Fortitude: expert
+        Reflex: expert
+        Will: trained
+      skills_open: 3
+      class_skills:
+      - Crafting
+      class_feats:
+      - Alchemical Crafting
+    advance:
       2:
         feat:
         - charclass
@@ -166,36 +166,36 @@ pf2e_class:
       - Enigma
       - Maestro
       - Polymath
-      features:
-        1:
-          Perception: expert
-          saves:
-            Fortitude: trained
-            Reflex: trained
-            Will: expert
-          skills_open: 4
-          skills:
-          - Occultism
-          - Performance
-          attack:
-            Simple Weapons: trained
-            Bard Weapons: trained
-            Unarmed: trained
-          defense:
-            Light Armor: trained
-            Unarmored: trained
-          spell_trad: occult
-          Spells DC: trained
-          spells_per_day:
-            1: 2
-          spells_known:
-            cantrip: 5
-            1: 2
-          composition:
-            cantrip:
-            - Inspire Courage
-            1:
-            - Counter Performance
+      chargen:
+        Perception: expert
+        saves:
+          Fortitude: trained
+          Reflex: trained
+          Will: expert
+        skills_open: 4
+        skills:
+        - Occultism
+        - Performance
+        attack:
+          Simple Weapons: trained
+          Bard Weapons: trained
+          Unarmed: trained
+        defense:
+          Light Armor: trained
+          Unarmored: trained
+        spell_trad: occult
+        Spells: trained
+        spells_per_day:
+          1: 2
+        spells_known:
+          cantrip: 5
+          1: 2
+        composition:
+          cantrip:
+          - Inspire Courage
+          1:
+          - Counter Performance
+      advance:
         2:
           feat:
           - charclass
@@ -273,7 +273,7 @@ pf2e_class:
             2: 3
             3: 3
             4: 2
-          Spells DC: expert
+          Spells: expert
           feat:
           - general
           boost:
@@ -315,3 +315,139 @@ pf2e_class:
             3: 3
             4: 3
             5: 2
+        10:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+          feat:
+          - charclass
+          - skill
+          boost:
+          - ability
+        11:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 2
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 2
+          feat:
+          - general
+          boost:
+          - skill
+          attack:
+            Simple Weapons: expert
+            Bard Weapons: expert
+            Unarmed: expert
+          Perception: master
+        12:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+          feat:
+          - charclass
+          - skill
+        13:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+            7: 2
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+            7: 2
+          defense:
+            Light Armor: expert
+            Unarmored: expert
+          charclass:
+          - Weapon Specialization
+          boost:
+          - skill
+          feat:
+          - ancestry
+        14:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+            7: 3
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+            7: 3
+          feat:
+          - charclass
+          - skill
+        15:
+          spells_per_day:
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+            7: 3
+            8: 2
+          spells_known:
+            cantrip: 5
+            1: 3
+            2: 3
+            3: 3
+            4: 3
+            5: 3
+            6: 3
+            7: 3
+            8: 2
+          feat:
+          - general
+          boost:
+          - skill
+          Spells: master

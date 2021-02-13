@@ -29,7 +29,7 @@ pf2e_background:
     req_abl_boosts: []
     skills: []
     feats: []
-    special: "Amnesiac: staff see background"
+    special: "Amnesiac"
     rare: true
   Animal Whisperer:
     abl_boosts_open: 1

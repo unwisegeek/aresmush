@@ -23,7 +23,7 @@ module AresMUSH
         @charclass_info = @charclass.blank? ? {} : Global.read_config('pf2e_class', @charclass)
         @faith_info = @char.pf2_faith
 
-        super File.dirname(__FILE__) + "/cgreview.erb"
+        super File.dirname(__FILE__) + "/cg_review.erb"
       end
 
       def section_line(title)
@@ -87,11 +87,12 @@ module AresMUSH
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
         c_traits = @charclass_info ? [ @charclass.downcase ] : []
 
-        a_traits + h_traits + c_traits.uniq.sort
+        traits = a_traits + h_traits + c_traits.uniq.sort
       end
 
       def ancestry_boosts
-        @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
+        list = @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
+        list.is_a?(Array) ? list.join(" and ") : list
       end
 
       def free_ancestry_boosts

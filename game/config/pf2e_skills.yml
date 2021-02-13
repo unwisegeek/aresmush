@@ -1,2 +1,41 @@
 ---
-pf2e_skills: {}
+pf2e_skills:
+  Acrobatics:
+    key_abil: Dexterity
+  Arcana:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Athletics:
+    key_abil: Strength
+  Crafting:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Deception:
+    key_abil: Charisma
+  Diplomacy:
+    key_abil: Charisma
+  Intimidation:
+    key_abil: Charisma
+  Medicine:
+    key_abil: Wisdom
+    recall_knowledge: true
+  Nature:
+    key_abil: Wisdom
+    recall_knowledge: true
+  Occultism:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Performance:
+    key_abil: Charisma
+  Religion:
+    key_abil: Wisdom
+    recall_knowledge: true
+  Society:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Stealth:
+    key_abil: Dexterity
+  Survival:
+    key_abil: Wisdom
+  Thievery:
+    key_abil: Dexterity

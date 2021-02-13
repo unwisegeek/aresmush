@@ -12,7 +12,7 @@ pf2e:
   open_sheets: true
   open_npc_sheets: false
   title_color: '%x172'
-  list_item: '%x44'
+  list_item: '%x242'
   use_alignment: true
   use_encumbrance: false
   subclass_names:
@@ -32,36 +32,5 @@ pf2e:
     Dying: '%xr'
     Wounded: '%xy'
   faiths:
-  skills:
-    Acrobatics:
-      key_abil: Dexterity
-    Arcana:
-      key_abil: Intelligence
-    Athletics:
-      key_abil: Strength
-    Crafting:
-      key_abil: Intelligence
-    Deception:
-      key_abil: Charisma
-    Diplomacy:
-      key_abil: Charisma
-    Intimidation:
-      key_abil: Charisma
-    Medicine:
-      key_abil: Wisdom
-    Nature:
-      key_abil: Wisdom
-    Occultism:
-      key_abil: Intelligence
-    Performance:
-      key_abil: Charisma
-    Religion:
-      key_abil: Wisdom
-    Society:
-      key_abil: Intelligence
-    Stealth:
-      key_abil: Dexterity
-    Survival:
-      key_abil: Wisdom
-    Thievery:
-      key_abil: Dexterity
+  - Holy Order of Ea
+  - Green Word
