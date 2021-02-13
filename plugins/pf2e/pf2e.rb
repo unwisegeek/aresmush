@@ -14,7 +14,12 @@ module AresMUSH
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
       when "sheet"
-        return DisplaySheetCmd
+        case cmd.switch
+        when nil, "info", "top", "ability", "combat", "skills", "feats", "features", "languages"
+          return DisplaySheetCmd
+        when "show"
+          return PF2ShowSheetCmd
+        end
       when "cg"
         case cmd.switch
         when "set"
@@ -23,6 +28,7 @@ module AresMUSH
           return PF2ReviewChargenCmd
         when "reset"
           return PF2ResetChargenCmd
+
         end
       end
 

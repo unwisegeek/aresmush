@@ -15,8 +15,9 @@ pf2e_heritage:
     - Specialty Crafting
     - Specialty Crafting
   Arctic:
-    resistances:
-      cold: 1
+    defense:
+      resistances:
+        cold: 1
     circumstance: true
   Ashen One:
     traits:
@@ -48,16 +49,18 @@ pf2e_heritage:
     circumstance: true
   Deep: {}
   Desert:
-    resistances:
-      fire: 1
+    defense:
+      resistances:
+        fire: 1
   Elemental Heart:
     action:
     - Energy Emanation
   Elfbane: {}
   Fey-Touched: {}
   Forge:
-    resistances:
-      fire: 1
+    defense:
+      resistances:
+        fire: 1
   Frilled:  {}
   Gutsy: {}
   Half-Sil:
@@ -105,8 +108,9 @@ pf2e_heritage:
   Snow: {}
   Stormtossed: {}
   Strong-Blooded:
-    resistances:
-      poison: 1
+    defense:
+      resistances:
+        poison: 1
     circumstance: true
   Tailed: {}
   Taloned: {}

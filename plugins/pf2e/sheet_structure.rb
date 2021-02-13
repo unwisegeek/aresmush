@@ -12,48 +12,81 @@ module AresMUSH
     attribute :pf2_feats, :type => DataType::Array, :default => []
     attribute :pf2_faith, :type => DataType::Hash, :default => { 'faith'=>"", 'deity'=>"", 'alignment'=>"" }
     attribute :pf2_special, :type => DataType::Array, :default => []
-    attribute :pf2_boosts, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[], 'unspent'=>4 }
-    attribute :pf2_saves, :type =>DataType::Hash, :default => { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' }
+    attribute :pf2_boosts, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=> [] }
+    attribute :pf2_saves, :type => DataType::Hash, :default => { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' }
+    attribute :pf2_lang, :type => DataType::Array, :default => []
+    attribute :pf2_viewsheet, :type => DataType::Hash, :default => {}
+    attribute :pf2_to_assign, :type => DataType::Hash, :default => {}
+    attribute :pf2_size, :default => ""
+    attribute :pf2_hp, :type => DataType::Hash, :default => {}
+    attribute :pf2_movement, :type => DataType::Hash, :default => {}
 
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"
     collection :lores, "AresMUSH::Pf2eLores"
 
-    before_delete :delete_abilities
+    before_delete :delete_sheet
 
-    def delete_abilities
-      self.abilities.each { |a| a.delete }
-      self.skills.each { |s| s.delete }
+    def delete_sheet
+      self.abilities.each { |a| a.delete } if self.abilities
+      self.skills.each { |s| s.delete } if self.skills
+      self.lores.each { |l| l.delete } if self.lores
     end
   end
 
   class Pf2eAbilities < Ohm::Model
     include ObjectModel
+    include FindByName
 
     attribute :name
+    attribute :name_upcase
     attribute :base_val, :type => DataType::Integer, :default => 10
     attribute :mod_val, :default => false
-    index :name
+    index :name_upcase
+
+    before_save :set_upcase_name
+
+    def set_upcase_name
+      self.name_upcase = self.name.upcase
+    end
 
     reference :character, "AresMUSH::Character"
   end
 
   class Pf2eSkills < Ohm::Model
     include ObjectModel
+    include FindByName
 
     attribute :name
+    attribute :name_upcase
     attribute :proflevel
-    index :name
+    attribute :cg_skill, :type => DataType::Boolean
+    index :name_upcase
+
+    before_save :set_upcase_name
+
+    def set_upcase_name
+      self.name_upcase = self.name.upcase
+    end
 
     reference :character, "AresMUSH::Character"
   end
 
   class Pf2eLores < Ohm::Model
     include ObjectModel
+    include FindByName
 
     attribute :name
+    attribute :name_upcase
     attribute :proflevel
-    index :name
+    attribute :cg_lore, :type => DataType::Boolean
+    index :name_upcase
+
+    before_save :set_upcase_name
+
+    def set_upcase_name
+      self.name_upcase = self.name.upcase
+    end
 
     reference :character, "AresMUSH::Character"
   end

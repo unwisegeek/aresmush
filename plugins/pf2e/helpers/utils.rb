@@ -1,12 +1,20 @@
 module AresMUSH
   module Pf2e
 
-    def self.get_prof_level(char, skill)
+    def self.find_character_ability(char, type, name)
+      case type.downcase
+      when 'ability'
+        element_list = char.abilities
+      when 'skill'
+        element_list = char.skills
+      when 'lore'
+        element_list = char.lores
+      else
+        element_list = nil
+      end
 
-    end
-
-    def self.get_ability_mod(score)
-      mod = (score - 10) / 2
+      return nil if !element_list
+      element = element.select { |a| a.name == name }
     end
 
     def self.get_prof_bonus(p="untrained")
