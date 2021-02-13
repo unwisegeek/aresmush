@@ -16,8 +16,6 @@ module AresMUSH
         feat.upcase
       end
 
-      def
-
     end
   end
 end
