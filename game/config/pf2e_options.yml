@@ -11,7 +11,7 @@ pf2e:
     Dying: "%xr"
     Wounded: "%xy"
   faiths: 
-  list_item: "%x43"
+  list_item: "%x242"
   open_npc_sheets: false
   open_sheets: true
   shortcuts:
