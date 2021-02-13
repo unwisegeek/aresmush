@@ -27,7 +27,7 @@ module AresMUSH
           if self.target =~ valid_email
             player = Player.create
 
-            player.update(email: self.target)
+            player.update(name: self.target)
             player.update(codeword: self.codeword)
             enactor.update(player: player)
 

@@ -24,7 +24,7 @@ module AresMUSH
         player = enactor.player
 
         if player
-          player.update(email: self.email)
+          player.update(name: self.email)
           client.emit_success t('alttracker.email_ok')
         else
           client.emit_failure t('alttracker.not_registered', :name => enactor.name)

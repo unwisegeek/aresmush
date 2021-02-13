@@ -41,7 +41,7 @@ module AresMUSH
           client.emit_failure t('alttracker.not_registered', :name => display_name)
           return nil
         else
-          email = player.email
+          email = player.name
           codeword = player.codeword
           altlist = AltTracker.get_altlist_by_object(player)
           banned = player.banned
