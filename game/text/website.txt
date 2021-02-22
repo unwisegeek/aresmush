@@ -1,6 +1,6 @@
-<div class="jumbotron-tagline">Ares Test Site for Emblem of Ea MUSH</div>
+<div class="jumbotron-tagline">Journey to the magical realm of Ea.</div>
 
-All pictures and images can readily be changed, as can the color scheme. 
+Emblem of Ea is an epic fantasy MU* set in the original world of Ea, and has existed in various incarnations since 2002. We have recently converted to the AresMUSH codebase and to the Pathfinder Second Edition gaming system, and have updated and deepened our theme to expand player options and allow for deeper storytelling and more long-term plots. 
 
 I have added a CSS custom class definition for sections where the commentary is IC, and it looks like this: 
 

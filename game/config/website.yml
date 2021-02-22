@@ -21,6 +21,7 @@ website:
   - theme:*
   - policy:*
   - rules:*
+  - include:*
   sitemap_update_cron:
     hour:
     - 2
