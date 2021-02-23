@@ -11,20 +11,22 @@
 <%= left("#{item_color}Alignment%xn: #{alignment}", 20) -%>
 <%= left("#{item_color}Deity%xn: #{deity}", 28) %>
 <%= section_line("So Far...") %>
-<%= left("#{item_color}HP%xn: #{ahp + chp} + CON mod", 26) -%>
+<%= left("#{item_color}HP%xn: #{ahp + chp} + #{con_mod}", 26) -%>
 <%= left("#{item_color}Size%xn: #{size}", 26) -%>
 <%= left("#{item_color}Speed%xn: #{speed} feet", 26) %>
 
 <%= "#{item_color}Traits%xn: #{traits.join(", ")}" %>
 
-<%= "#{item_color}Free Boosts%xn: 4 (must be spread to four different stats)" %>
+<%= "#{item_color}Free Boosts%xn: #{free_boosts} (must be spread to four different stats)" %>
 <%= "#{item_color}Ancestry Boosts%xn: #{ancestry_boosts} plus #{free_ancestry_boosts} free"  %>
 <%= "#{item_color}Ancestry Flaw%xn: #{ancestry_flaw}" %>
 <%= "#{item_color}Background Boosts%xn: #{background_boosts} plus #{free_bg_boosts} free" %>
 <%= "#{item_color}Class Boosts%xn: #{charclass_boosts}" %>
 
 <%= "#{item_color}Special Senses and Abilities%xn: #{specials}" %>
-<%= section_line("Quick Check Messages") %>
+<%= "#{item_color}Skills%xn: #{skills} plus #{int_mod}" %>
+<%= "#{item_color}Languages%xn:" languages %>
+<%= section_line("Warnings") %>
 <%= messages %>
 <%= divider %>
 <%= "If you're happy with what you see, type %xccg/commit%xn to finalize it." %>
