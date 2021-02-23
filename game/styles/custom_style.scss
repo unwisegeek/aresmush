@@ -2,27 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css?family=Philosopher');
 @import url('https://fonts.googleapis.com/css?family=Bilbo');
+@import url('https://fonts.googleapis.com/css?family=Calligraffitti');
 
 /* Default font */ 
 
 body {    
   font-family: 'Philosopher', sans-serif;
-  font-size: 125%;
 } 
 
 /* Quotes and IC exposition should have its own font and classes. */
 
 .icquote {
-   font-family: 'Bilbo', handwriting;
+   font-family: 'Calligraffitti', handwriting;
    text-align: center;
 }
 
 div.icquote {
-   font-family: 'Bilbo', sans-serif;
+   font-family: 'Calligraffitti', sans-serif;
    width: 80%;
    border-style: none none none none;
    margin: auto; 
    text-align: left;
+   font-size: 125%;
 }
 
 /* Job category colors */
