@@ -11,18 +11,13 @@ Now you can start assigning ability boosts to your stats. Some of your stats wil
 Two main rules apply to assigning ability boosts:
 
 1. You begin at a score of 10, which represents human average. Many races have an "ability flaw", which means that that score begins at an 8. Each boost increases the score by 2. No score may start play at higher than 18, and only one score may start play at 18.
-2. When you receive multiple ability boosts from a single source, each boost must be applied to a different score. For example, a Lucht character receives from their ancestry ability boosts to Dexterity and Wisdom, and an additional boost to assign as they wish. That boost cannot go into Dexterity or Wisdom. It has to go somewhere else.
+2. When you receive multiple ability boosts from a single source, each boost must be applied to a different score. For example, a Lucht character receives from their ancestry ability boosts to Dexterity and Wisdom, and an additional boost to assign as they wish. That boost cannot go into whichever one they picked. It has to go somewhere else.
 
-To assign boosts, use these commands in the client:
+## Commands
 
-`boost/add <type> = <stat>`: Applies an open ability boost to <stat>.
-`boost/rem <type> = <stat>`: Removes an open ability boost from <stat>.
-`boost/reset`: Clears all set boosts and starts ability assignment over from the beginning.
+Remember: <ability> is always one of: Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. See the PRD for more information on what these abilities say about your character, and what they do.
 
-To see your scores and current sheet, simply type 'sheet' in the client.
-
-You may freely change your boost assignments at any time before submitting your application.
-
-**_IMPORTANT_**: Characters who appear to be min-maxed are likely to be delayed in approval.
-
-`cg/next` to move on when you are satisfied with your assignments.
+`cg/review`: See what boosts needs to be assigned still. If you see a number, you can assign it to anything. If you see a list, those are your choices.
+`assign <type>=<ability>`: Assigns a type of boost to <ability>.
+`unassign <type>=<ability>`: Unassigns that ability for that type only. Does not affect other boost types you may have assigned.
+`commit abilities`: When you are happy with your scores, type this to lock down your scores to continue. If you need to change them, you will need to reset them using `cg/resetabil`.

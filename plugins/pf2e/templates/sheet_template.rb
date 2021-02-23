@@ -83,12 +83,41 @@ module AresMUSH
       def abilities
         abilities = @char.abilities
         list = []
-        abilities.each do |a|
+        abilities.each do |a,i|
           name = a.name
           score = a.mod_val ? a.mod_val : a.base_val
-          list << format_ability(name, score)
+          list << format_ability(name, score, i)
         end
         list
+      end
+
+      def skills
+        skills = @char.skills
+        list = []
+        skills.each do |s,i|
+          list << format_skill(s, i)
+        end
+      end
+
+      def lores
+        lores = @char.lores
+        list = []
+        lores.each do |lore,i|
+          list << format_lore(lore, i)
+        end
+      end
+
+      def hp
+        hp_list = @char.hp
+        current = hp_list['current']
+        max = hp_list['max_current']
+        low_max = max != hp_list['max_base'] ? "%xy*%xn" : ""
+        percent = (current / max) * 100.floor
+        hp_color = "%xg" if percent > 75
+        hp_color = "%xc" if percent.between?(50,75)
+        hp_color = "%xy" if percent.between?(25,50)
+        hp_color = "%xr" if percent < 25
+        "#{hp_color}#{current}%xn / #{max}#{low_max} (#{percent})"
       end
 
       def conditions
@@ -104,11 +133,11 @@ module AresMUSH
         list.sort.join(", ")
       end
 
-      def format_ability(abil, score)
+      def format_ability(abil, score, i)
         name = "%xh#{abil.capitalize}%xn:"
-        linebreak = i % 2 == 1 ? "" : "%r"
-        mod = "(#{Pf2e.get_ability_mod(score)})"
-        "#{linebreak}#{left(name, 16)}: #{left(score, 3)} #{left(mod, 20)}"
+        linebreak = i % 3 == 0 ? "%r" : ""
+        mod = "(#{Pf2eAbilities.get_ability_mod(score)})"
+        "#{linebreak}#{left(name, 10)}: #{left(score, 3)} #{left(mod, 13)}"
       end
 
       def format_condition(condition, value)
@@ -119,21 +148,28 @@ module AresMUSH
         "#{name}#{value}%xn"
       end
 
-      # Copied from FS3, fix for PF2 when ready
-      def format_skill(s, i, show_linked_attr = false)
-        name = "%xh#{s.name}:%xn"
-        linked_attr = show_linked_attr ? print_linked_attr(s) : ""
+      def format_skill(s, i)
+        name = s.name
+        fmt_name = "%xh#{name}:%xn"
+        linked_attr = print_linked_attr(name)
         linebreak = i % 2 == 1 ? "" : "%r"
-        rating_text = "#{s.rating_name}#{linked_attr}"
-        "#{linebreak}#{left(name, 14)} #{left(s.print_rating, 8)} #{left(rating_text, 16)}"
+        proflevel = "#{s.proflevel}#{linked_attr}"
+        "#{linebreak}#{left(name, 18)} #{left(proflevel, 18)}"
       end
 
-      # Copied from FS3, fix for PF2 when ready
+      def format_lore(lore, i)
+        name = lore.name
+        fmt_name = "%xh#{name}:%xn"
+        linked_attr = "INT"
+        linebreak = i % 2 == 1 ? "" : "%r"
+        proflevel = "#{s.proflevel}#{linked_attr}"
+        "#{linebreak}#{left(name, 18)} #{left(proflevel, 18)}"
+      end
+
       def print_linked_attr(skill)
-        apt = FS3Skills.get_linked_attr(skill.name)
+        apt = Pf2eSkills.get_linked_attr(skill.name)
         !apt ? "" : " %xh%xx(#{apt[0..2].upcase})%xn"
       end
-
 
     end
   end

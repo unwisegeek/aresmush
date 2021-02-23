@@ -15,10 +15,10 @@ module AresMUSH
       case cmd.root
       when "sheet"
         case cmd.switch
-        when nil, "info", "top", "ability", "combat", "skills", "feats", "features", "languages"
-          return DisplaySheetCmd
         when "show"
           return PF2ShowSheetCmd
+        else
+          return DisplaySheetCmd
         end
       when "cg"
         case cmd.switch
@@ -28,8 +28,16 @@ module AresMUSH
           return PF2ReviewChargenCmd
         when "reset"
           return PF2ResetChargenCmd
-
         end
+      when "commit"
+        case cmd.args
+        when "info"
+          return PF2CommitInfoCmd
+        when "abilities"
+          return PF2CommitAbilitiesCmd
+        end
+      when "assign"
+        return PF2AssignCmd
       end
 
       nil
