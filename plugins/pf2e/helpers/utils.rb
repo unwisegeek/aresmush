@@ -14,7 +14,7 @@ module AresMUSH
       end
 
       return nil if !element_list
-      element = element.select { |a| a.name == name }
+      element = element_list.select { |a| a.name_upcase == name.upcase }
     end
 
     def self.get_prof_bonus(p="untrained")

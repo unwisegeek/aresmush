@@ -26,4 +26,23 @@
 <% if section == "all" %>
 <%= section_line("Combat") %>
 <% end %>
+<% if section == "combat" || "all" %>
+<%= section_line("HP") %>
+<%= section_line("Attacks") %>
+<%= section_line("Defenses") %>
+<%= section_line("Conditions") %>
+<%= conditions %>
+<% end %>
+<% if section == "all" %>
+<%= section_line("Skills") %>
+<% end %>
+<% if section == "skills" || "all" %>
+<% skills.each do |s| %>
+<%= s -%>
+<% end %>
+<%= section_line("Lores") %>
+<% lores.each do |lore| %>
+<%= lore -%>
+<% end %>
+<% end %>
 <%= footer %>

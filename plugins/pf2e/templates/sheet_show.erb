@@ -1,0 +1,7 @@
+%lh
+<%=t('pf2e.who_can_see_sheet') %>
+
+<% permissions.each do |perm, list| %>
+<% "#{item_color}perm.upcase%xn: #{list.sort.join(", ")}%r" %>
+<% end %>
+%lf

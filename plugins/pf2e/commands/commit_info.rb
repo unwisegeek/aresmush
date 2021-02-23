@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2e
-    class PF2CommitChargenCmd
+    class PF2CommitInfoCmd
       include CommandHandler
 
       def check_in_chargen
@@ -36,7 +36,7 @@ module AresMUSH
 
         abilities = %w{Strength Dexterity Constitution Intelligence Wisdom Charisma}
         abilities.each do |a|
-          Pf2eAbilities.create(name: a, character: enactor)
+          Pf2eAbilities.create(name: a, character: enactor, shortname: a.slice(0,3).upcase)
         end
 
         # Gather info for chargen options
@@ -54,27 +54,28 @@ module AresMUSH
         to_assign = enactor.pf2_to_assign
 
         # Ability Adjustments
-        boosts = enactor.pf2_boosts
+        boosts = enactor.pf2_boosts_working
 
         boosts['ancestry'] = ancestry_info['abl_boosts']
 
         if ancestry_info['abl_flaw']
           ability = ancestry_info['abl_flaw']
-          Pf2eAbilities.update_base_score(enactor,ability,-2)
+          Pf2eAbilities.update_base_score(enactor, ability, -2)
         end
 
-        to_assign['ability_free'] = 4
-        to_assign['ability_ancestry_open'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
+        to_assign['open boost'] = 4
+        boosts['open boost'] = 4
+        to_assign['open anboost'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
+        boosts['open anboost'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
 
         charclass_ability = charclass_info['key_abil']
         charclass_alt_abil = subclass_info['alt_key_abil']
         charclass_ability << charclass_alt_abil if charclass_alt_abil
 
         if charclass_ability.size == 1
-          c_abil = charclass_ability.join
-          Pf2eAbilities.update_base_score(enactor,c_abil)
+          boosts['charclass'] = charclass_ability
         else
-          to_assign['charclass_ability'] = charclass_ability
+          to_assign['class boost'] = charclass_ability
           client.emit_ooc t('pf2e.multiple_options', :element=>"class ability boost")
         end
 
@@ -82,17 +83,17 @@ module AresMUSH
 
         if bg_ability.size > 1
           client.emit_ooc t('pf2e.multiple_options', :element=>"background ability option")
-          to_assign['bgability'] = bg_ability
+          to_assign['bgboost'] = bg_ability
           bg_ability = []
-        elsif bg_ability.size ==0
+        elsif bg_ability.size == 0
           bg_ability = []
           client.emit_ooc t('pf2e.bg_no_options', :element => "ability option")
         else
-          b_abil = bg_ability.join
-          Pf2eAbilities.update_base_score(enactor,b_abil)
+          boosts['background'] = bg_ability
         end
 
-        to_assign['ability_bg_open'] = background_info['abl_boosts_open']
+        to_assign['open bgboost'] = background_info['abl_boosts_open']
+        boosts['open bgboost'] = background_info['abl_boosts_open']
 
         # Skills
         bg_skills = background_info["skills"] ? background_info["skills"] : []
@@ -122,7 +123,7 @@ module AresMUSH
         dup_skills = skills.size - unique_skills.size
 
         free_skills = class_features_info["skills_open"] + dup_skills
-        to_assign['free_skills'] = free_skills
+        to_assign['open skill'] = free_skills
 
         # Lores
         bg_lores = background_info["lores"] ? background_info["lores"] : []
@@ -168,7 +169,7 @@ module AresMUSH
 
         enactor.update(pf2_feats: new_feats)
 
-        to_assign['charclass_feat'] = charclass if class_features_info['feat'].include?('charclass')
+        to_assign['class feat'] = charclass if class_features_info['feat'].include?('charclass')
 
         # Senses and other specials
         special = ancestry_info["special"] + heritage_info["special"] + background_info["special"].uniq
@@ -208,6 +209,7 @@ module AresMUSH
 
         hp['max_current'] = max_cur_hp
         hp['max_base'] = max_base_hp
+        hp['current'] = max_cur_hp
 
         enactor.update(pf2_hp: hp)
 
@@ -219,11 +221,13 @@ module AresMUSH
 
         # Final Updates
         enactor.update(pf2_to_assign: to_assign)
+        enactor.update(pf2_cg_assigned: to_assign)
+        enactor.update(pf2_boosts_working: boosts)
+        # pf2_boosts is the reset point for cg/resetabil
+        enactor.update(pf2_boosts: boosts)
         enactor.update(pf2_baseinfo_locked: true)
 
         client.emit_success t('pf2e.chargen_committed')
-
-
       end
     end
   end

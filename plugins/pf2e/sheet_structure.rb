@@ -1,6 +1,7 @@
 module AresMUSH
   class Character
     attribute :pf2_baseinfo_locked, :type => DataType::Boolean
+    attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
 
     attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
@@ -9,14 +10,16 @@ module AresMUSH
     attribute :pf2_conditions, :type => DataType::Hash, :default => {}
     attribute :pf2_features, :type => DataType::Array, :default => []
     attribute :pf2_traits, :type => DataType::Array, :default => []
-    attribute :pf2_feats, :type => DataType::Array, :default => []
+    attribute :pf2_feats, :type => DataType::Hash, :default => { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
     attribute :pf2_faith, :type => DataType::Hash, :default => { 'faith'=>"", 'deity'=>"", 'alignment'=>"" }
     attribute :pf2_special, :type => DataType::Array, :default => []
-    attribute :pf2_boosts, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=> [] }
+    attribute :pf2_boosts_working, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=> [] }
+    attribute :pf2_boosts, :type => DataType::Hash, :default => {}
     attribute :pf2_saves, :type => DataType::Hash, :default => { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' }
     attribute :pf2_lang, :type => DataType::Array, :default => []
     attribute :pf2_viewsheet, :type => DataType::Hash, :default => {}
     attribute :pf2_to_assign, :type => DataType::Hash, :default => {}
+    attribute :pf2_cg_assigned, :type => DataType::Hash, :default => {}
     attribute :pf2_size, :default => ""
     attribute :pf2_hp, :type => DataType::Hash, :default => {}
     attribute :pf2_movement, :type => DataType::Hash, :default => {}
@@ -40,6 +43,7 @@ module AresMUSH
 
     attribute :name
     attribute :name_upcase
+    attribute :shortname
     attribute :base_val, :type => DataType::Integer, :default => 10
     attribute :mod_val, :default => false
     index :name_upcase
