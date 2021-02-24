@@ -8,14 +8,15 @@ who:
   - field: name
     width: 20
     title: Name
-  - field: group
-    value: department
-    width: 16
-    title: Department
-  - field: group
-    value: position
+  - field: ancestry
     width: 18
-    title: Position
+    title: Ancestry
+  - field: charclass
+    width: 16
+    title: Class
+  - field: level
+    width: 6
+    title: Level
   - field: connected
     width: 7
     title: Conn
