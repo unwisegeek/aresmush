@@ -38,13 +38,15 @@ module AresMUSH
         char.handle ? "@#{char.handle.name}" : ""
 
       when 'ancestry'
-        char.pf2_base_info['ancestry']
+        ancestry = char.pf2_base_info['ancestry']
+        ancestry ? ancestry : ""
 
       when 'charclass'
-        char.pf2_base_info['charclass']
+        charclass = char.pf2_base_info['charclass']
+        charclass ? charclass : ""
 
       when 'level'
-        char.pf2_level
+        char.pf2_level ? char.pf2_level : ""
 
       else
         nil
