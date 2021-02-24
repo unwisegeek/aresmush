@@ -8,6 +8,16 @@ who:
   - field: name
     width: 20
     title: Name
+  - field: ancestry
+    width: 18
+    title: Ancestry
+  - field: charclass
+    width: 16
+    title: Class
+  - field: level
+    width: 6
+    title: Level
+  - field: connected
   - field: connected
     width: 7
     title: Conn
