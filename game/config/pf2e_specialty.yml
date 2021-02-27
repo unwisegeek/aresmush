@@ -18,4 +18,4 @@ pf2e_specialty:
       formula book:
       - mutagen1
       - mutagen2
-  Barbarian:
+  Barbarian: {}

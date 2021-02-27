@@ -97,7 +97,7 @@ module AresMUSH
           client.emit_success t('pf2e.assign_ok', :element => self.type, :option => self.option.capitalize, :remaining => k)
           return
 
-        elsif (hash_key.match? 'skill' || hash_key.match? 'lore')
+        elsif (hash_key.match?'skill') || (hash_key.match? 'lore')  
 
           is_lore = self.type.match?('lore')
 
