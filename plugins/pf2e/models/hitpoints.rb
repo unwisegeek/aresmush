@@ -1,5 +1,5 @@
 module AresMUSH
-  class Pf2eHP < Ohm::ObjectModel
+  class Pf2eHP < Ohm::Model
     include ObjectModel
 
     attribute :current, :type => DataType::Integer, :default => 0

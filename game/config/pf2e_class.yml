@@ -180,8 +180,7 @@ pf2e_class:
         - Athletics
         action:
         - Rage
-      advance:
-
+      advance: {}
     Bard:
       key_abil:
       - Charisma
