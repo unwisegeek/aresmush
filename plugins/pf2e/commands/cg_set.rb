@@ -71,7 +71,7 @@ module AresMUSH
             return nil
           end
 
-          options = Global.read_config('pf2e_class', charclass, 'specialties').sort
+          options = Global.read_config('pf2e_specialty', charclass).keys.sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "faith"
           options = Global.read_config('pf2e', 'faiths')

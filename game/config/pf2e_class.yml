@@ -4,10 +4,6 @@ pf2e_class:
     key_abil:
     - Intelligence
     HP: 8
-    specialties:
-    - Bomber
-    - Chirurgeon
-    - Mutagenist
     chargen:
       feat:
       - charclass
@@ -158,14 +154,38 @@ pf2e_class:
         feat:
         - charclass
         - skill
+    Barbarian:
+      key_abil:
+      - Strength
+      HP: 12
+      chargen:
+        feat:
+        - charclass
+        attack:
+          Simple Weapons: trained
+          Martial Weapons: trained
+          Unarmed: trained
+        defense:
+          Light Armor: trained
+          Medium Armor: trained
+          Unarmored: trained
+        Class DC: trained
+        Perception: expert
+        saves:
+          Fortitude: expert
+          Reflex: trained
+          Will: expert
+        skills_open: 3
+        class_skills:
+        - Athletics
+        action:
+        - Rage
+      advance:
+
     Bard:
       key_abil:
       - Charisma
       HP: 8
-      specialties:
-      - Enigma
-      - Maestro
-      - Polymath
       chargen:
         Perception: expert
         saves:
