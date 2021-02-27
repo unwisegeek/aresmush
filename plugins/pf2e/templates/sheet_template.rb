@@ -108,11 +108,11 @@ module AresMUSH
       end
 
       def hp
-        hp_list = @char.hp
-        current = hp_list['current']
-        max = hp_list['max_current']
-        low_max = max != hp_list['max_base'] ? "%xy*%xn" : ""
-        percent = (current / max) * 100.floor
+        hp = @char.hp
+        current = hp.current
+        max = hp.max_current
+        low_max = max != hp.max_base ? "%xy*%xn" : ""
+        percent = max.zero? ? 0 : (current / max) * 100.floor
         hp_color = "%xg" if percent > 75
         hp_color = "%xc" if percent.between?(50,75)
         hp_color = "%xy" if percent.between?(25,50)

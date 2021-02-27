@@ -1,2 +1,21 @@
 ---
-pf2e_specialty: {}
+pf2e_specialty:
+  Alchemist:
+    Bomber:
+      formula book:
+      - bomb1
+      - bomb2
+    Chirurgeon:
+      formula_book:
+      - elixir1
+      - elixir2
+      chargen:
+        formula_opt:
+        - lesser elixir of life
+        - lesser antiplague
+        - lesser antidote
+    Mutagenist:
+      formula book:
+      - mutagen1
+      - mutagen2
+  Barbarian:

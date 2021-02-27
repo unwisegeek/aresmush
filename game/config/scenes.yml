@@ -7,6 +7,15 @@ scenes:
     scene_participant:
       type: story
       message: Participated in %{count} scenes.
+  content_warnings:
+  - graphic violence
+  - language
+  - substance abuse
+  - abuse
+  - abuse of children
+  - abuse of animals
+  - 'insects/spiders'
+  - torture
   delete_unshared_scenes: false
   idle_scene_timeout_days: 4
   include_pose_separator: false

@@ -2,20 +2,25 @@
 demographics:
   census_fields:
   - field: name
-    width: 28
+    width: 18
     title: Name
   - field: demographic
-    width: 10
+    width: 8
     title: Gender
     value: gender
+  - field: ancestry
+    width: 13
+    title: Ancestry
+  - field: charclass
+    width: 13
+    title: Class
   - field: group
     width: 20
-    title: Faction
-    value: Faction
-  - field: group
-    width: 20
-    title: Position
-    value: Position
+    title: Region
+    value: region
+  - field: tier
+    width: 5
+    title: Tier
   demographics:
   - full name
   - gender
@@ -26,9 +31,6 @@ demographics:
   - physique
   - played by
   - birthdate
-  - pf2_ancestry
-  - pf2_class
-  - pf2_level
   disable_auto_shortcuts: false
   editable_properties:
   - full name
@@ -57,12 +59,25 @@ demographics:
       objective_pronoun: them
       noun: robot
   groups:
-    Faction:
-      desc: Religious or secular affiliation.
-      wiki: ''
+    Region:
+      desc: What region does your character call home?
+      wiki: 'theme:regions'
       values:
-        Navy: Join the fleet, see the worlds.
-        Marines: Semper fi.
+        Stormgard: The rugged north.
+        Dran: 'Harsh, wind-swept steppes.'
+        Alexandros: The Phoenix Kingdom.
+        Myrddion: The kingdoms of the western Empire.
+        Bludgun: The nation of goblin-kin.
+        Charn: The stygian domain of the Eastern Empire.
+        Desolation: Home of an endless magical storm.
+        Veyshan: Ancient republics of the dune seas.
+        Dragonier: The nation of the dragon kings.
+        Jade Islands: The home of the Cerenzans.
+        Greatwoods: The ancient sildanyari kingdoms.
+        Khazad Duin: The great citadel of the khazad and its environs.
+        Am'shere: Jungles and the Makari are your home and its people.
+        Vast: 'Endless, wind-swept plains of ancient magic.'
+        Rune: The nation of wizards.
   help_text:
     played by: "%xcplayedby <actor>%xn - Your 'dream casting' for your character."
     physique: "%xcphysique <build/body type>%xn - athletic, wiry, slim, pudgy, etc."
@@ -72,7 +87,7 @@ demographics:
     skin: "%xcskin <complexion>%xn"
     birthdate: "%xcbirthdate <mm/dd/yyy>%xn or %xcage <years>%xn"
     full name: "%xcfullname <name>%xn - Your character's full name."
-  max_age: 1000
+  max_age: 600
   min_age: 10
   nickname_field: ''
   nickname_format: "%{name} (%{nickname})"
@@ -95,5 +110,6 @@ demographics:
     actor: demographic/set played by=
     fullname: demographic/set full name=
     playedby: demographic/set played by=
+    region: group/set region=
   permissions:
     manage_demographics: Edit demographics on other players.

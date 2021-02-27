@@ -116,7 +116,7 @@ module AresMUSH
 
         if !unique_skills.empty?
           unique_skills.each do |s|
-            Pf2eSkills.create(name: s, proflevel: "trained", character: enactor, cg_skill: true)
+            Pf2eSkills.create(name: s, prof_level: 'trained', character: enactor, cg_skill: true)
           end
         end
 
@@ -142,7 +142,7 @@ module AresMUSH
 
         if !lores.empty?
           lores.each do |l|
-            Pf2eLores.create(name: l, proflevel: "trained", character: enactor, cg_lore: true)
+            Pf2eLores.create(name: l, prof_level: 'trained', character: enactor, cg_lore: true)
           end
         end
 
@@ -195,23 +195,11 @@ module AresMUSH
 
         enactor.update(pf2_lang: languages)
 
-        # Traits, HP, Size, Movement, Misc Info
+        # Traits, Size, Movement, Misc Info
         traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
         traits = traits.uniq.sort
 
         enactor.update(pf2_traits: traits)
-
-        hp = enactor.pf2_hp
-        level = enactor.pf2_level
-        hp_from_con = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(enactor, 'Constitution')) * level
-        max_base_hp = ancestry_info["HP"] + charclass_info["HP"]
-        max_cur_hp = max_base_hp + hp_from_con
-
-        hp['max_current'] = max_cur_hp
-        hp['max_base'] = max_base_hp
-        hp['current'] = max_cur_hp
-
-        enactor.update(pf2_hp: hp)
 
         movement = enactor.pf2_movement
         movement['Size'] = ancestry_info['Size']

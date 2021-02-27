@@ -44,10 +44,10 @@ module AresMUSH
         char.is_admin? ? "" : char.pf2_base_info['heritage']
 
       when 'charclass'
-        char.is_admin ? "" : char.pf2_base_info['charclass']
+        char.is_admin? ? "" : char.pf2_base_info['charclass']
 
       when 'level'
-        char.is_admin ? "" : char.pf2_level
+        char.is_admin? ? "" : char.pf2_level
 
       when 'tier'
         level = char.pf2_level
