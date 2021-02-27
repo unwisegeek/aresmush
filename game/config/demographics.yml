@@ -51,9 +51,25 @@ demographics:
       objective_pronoun: them
       noun: robot
   groups:
-    Faction:
-      desc: Religious or secular affiliation.
-      wiki: ''
+    Region:
+      desc: What region does your character call home?
+      wiki: theme:regions
+      values:
+        Stormgard: The rugged north.
+        Dran: Harsh, wind-swept steppes.
+        Alexandros: The Phoenix Kingdom.
+        Empire-Myrddion: The kingdoms of the western Empire.
+        Empire-Bludgun: The nation of goblin-kin.
+        Empire-Charn: The stygian domain of the Eastern Empire.
+        Empire-Desolation: Home of an endless magical storm.
+        Veyshan: Ancient republics of the dune seas.
+        Dragonier: The nation of the dragon kings.
+        Jade Islands: The home of the Cerenzans.
+        Greatwoods: The ancient sildanyari kingdoms.
+        Khazad Duin: The great citadel of the khazad and its environs.
+        Am'shere: Jungles and the Makari are your home and its people.
+        Vast: Endless, wind-swept plains of ancient magic.
+        Rune: The nation of wizards.
   help_text:
     played by: "%xcplayedby <actor>%xn - Your 'dream casting' for your character."
     physique: "%xcphysique <build/body type>%xn - athletic, wiry, slim, pudgy, etc."

@@ -8,7 +8,7 @@ website:
       type: portal
       message: Edited a wiki page.
   allow_html_in_markdown: true
-  character_gallery_group: Faction
+  character_gallery_group: Region
   character_gallery_subgroup: ''
   left_sidebar: false
   max_folder_size_kb: 2000

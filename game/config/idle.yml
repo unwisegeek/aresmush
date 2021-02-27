@@ -49,8 +49,8 @@ idle:
     value: gender
   - field: group
     width: 17
-    title: Faction
-    value: Faction
+    title: Region
+    value: region
   roster_welcome_msg: Welcome!  You may wish to check your %xcnotes%xn and web portal
     profile page for any notes left by the prior player.  Type %xhonstage%xn to go
     forth and RP.

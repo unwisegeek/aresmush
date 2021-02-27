@@ -7,10 +7,22 @@ scenes:
     scene_participant:
       type: story
       message: Participated in %{count} scenes.
+  content_warnings:
+  - graphic violence
+  - language
+  - substance abuse
+  - abuse
+  - abuse of children
+  - abuse of animals
+  - insects/spiders
+  - torture
   delete_unshared_scenes: false
   idle_scene_timeout_days: 4
   include_pose_separator: false
   ooc_color: "%xc"
+  permissions:
+    control_npcs: Pose from NPCs in scenes.
+    manage_scenes: Can use scene-related admin tools, like stopping or unsharing scenes.
   related_scenes_filter_days: 90
   room_cleanup_cron:
     minute:
@@ -76,14 +88,3 @@ scenes:
   unshared_scene_deletion_days: 20
   unshared_scene_warning_days: 13
   use_custom_char_cards: false
-  permissions:
-    control_npcs: Pose from NPCs in scenes.
-    manage_scenes: Can use scene-related admin tools, like stopping or unsharing scenes.
-  content_warnings:
-  - graphic violence
-  - sexual assault
-  - nsfw
-  - self-harm
-  - suicide
-  - bigotry
-  - torture
