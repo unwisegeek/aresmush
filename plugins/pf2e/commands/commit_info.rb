@@ -167,7 +167,7 @@ module AresMUSH
 
         new_feats.each { |f| feats << f } if !new_feats.empty?
 
-        enactor.update(pf2_feats: new_feats)
+        enactor.pf2_feats = new_feats
 
         to_assign['class feat'] = charclass if class_features_info['feat'].include?('charclass')
 
@@ -178,13 +178,27 @@ module AresMUSH
           special = special + [ "Darkvision" ] - [ "Low-Light Vision" ]
         end
 
-        enactor.update(pf2_special: special)
+        enactor.pf2_special = special
 
         # Class Features
         char_features = enactor.pf2_features
         l1_features = class_features_info['charclass']
 
         l1_features.each { |f| char_features << f } if !l1_features.empty?
+
+        enactor.pf2_features = char_features
+
+        # Combat information - attacks, defenses, perception, class DC, saves
+        combat = Pf2eCombat.create(character: enactor)
+        enactor.combat = combat
+
+        combat_stats = class_features_info['combat_stats']
+
+        combat_stats.each_pair do |k,v|
+          combat.update("#{k}": v)
+        end
+
+        combat.update(key_abil: boosts['charclass']) if boosts['charclass']
 
         # Languages
         languages = enactor.pf2_lang
@@ -193,27 +207,29 @@ module AresMUSH
           languages << lang
         end
 
-        enactor.update(pf2_lang: languages)
+        enactor.pf2_lang = languages
 
         # Traits, Size, Movement, Misc Info
         traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
         traits = traits.uniq.sort
 
-        enactor.update(pf2_traits: traits)
+        enactor.pf2_traits = traits
 
         movement = enactor.pf2_movement
         movement['Size'] = ancestry_info['Size']
         movement['Speed'] = ancestry_info['Speed']
 
-        enactor.update(pf2_movement: movement)
+        enactor.pf2_movement = movement
 
         # Final Updates
-        enactor.update(pf2_to_assign: to_assign)
-        enactor.update(pf2_cg_assigned: to_assign)
-        enactor.update(pf2_boosts_working: boosts)
+        enactor.pf2_to_assign = to_assign
+        enactor.pf2_cg_assigned = to_assign
+        enactor.pf2_boosts_working = boosts
         # pf2_boosts is the reset point for cg/resetabil
-        enactor.update(pf2_boosts: boosts)
-        enactor.update(pf2_baseinfo_locked: true)
+        enactor.pf2_boosts = boosts
+        enactor.pf2_baseinfo_locked = true
+
+        enactor.save
 
         client.emit_success t('pf2e.chargen_committed')
       end

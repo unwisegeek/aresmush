@@ -31,6 +31,4 @@ pf2e:
   condition_colors:
     Dying: '%xr'
     Wounded: '%xy'
-  faiths:
-  - Holy Order of Ea
-  - Green Word
+  roll_keywords: {}

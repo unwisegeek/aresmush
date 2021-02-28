@@ -29,7 +29,7 @@ module AresMUSH
       end
 
       def handle
-        chargen_elements = %w{ancestry background charclass heritage lineage specialize faith deity alignment}
+        chargen_elements = %w{ancestry background charclass heritage lineage specialize deity alignment}
         selected_element = chargen_elements.find { |o| o.include?(self.element) }
 
         base_info = enactor.pf2_base_info
@@ -73,8 +73,6 @@ module AresMUSH
 
           options = Global.read_config('pf2e_specialty', charclass).keys.sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
-        elsif selected_element == "faith"
-          options = Global.read_config('pf2e', 'faiths')
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "deity"
           options = Global.read_config('pf2e_deities').keys
@@ -109,7 +107,7 @@ module AresMUSH
           enactor.update(pf2_base_info: base_info)
         when "lineage"
           # This needs to wait until the feats code is written!
-        when "faith", "deity", "alignment"
+        when "deity", "alignment"
           info = enactor.pf2_faith
           info[selected_element.to_sym] = selected_option
 

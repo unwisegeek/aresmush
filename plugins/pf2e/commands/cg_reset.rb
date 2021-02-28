@@ -48,7 +48,7 @@ module AresMUSH
         enactor.update(pf2_features: [])
         enactor.update(pf2_traits: [])
         enactor.update(pf2_feats: [])
-        enactor.update(pf2_faith: { 'faith'=>"", 'deity'=>"", 'alignment'=>"" })
+        enactor.update(pf2_faith: { 'deity'=>"", 'alignment'=>"" })
         enactor.update(pf2_special: [])
         enactor.update(pf2_boosts: { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[], 'unspent'=>4 })
         enactor.update(pf2_saves: { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' })
@@ -57,6 +57,7 @@ module AresMUSH
         enactor.skills&.each { |s| s.delete }
         enactor.lores&.each { |l| l.delete }
         enactor.hp&.delete
+        enactor.combat&.delete
 
         client.emit_success t('pf2e.cg_reset_ok')
 

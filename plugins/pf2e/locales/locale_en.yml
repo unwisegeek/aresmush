@@ -44,3 +44,5 @@ en:
     unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
     boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
+
+    combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
