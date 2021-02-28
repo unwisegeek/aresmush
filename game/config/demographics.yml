@@ -70,6 +70,14 @@ demographics:
         Am'shere: Jungles and the Makari are your home and its people.
         Vast: Endless, wind-swept plains of ancient magic.
         Rune: The nation of wizards.
+    Faith:
+      desc: World philosophy your character ascribes to.
+      wiki: 'theme:faiths'
+      values:
+        Holy Order of Ea: The teachings of the Millennial Empire and its nations.
+        Green Word: The teachings of the peoples of the Greatwoods.
+        Dragonlords: The tales and teachings of the dragons.
+        Other: You have your own ideas on the world and how it works.
   help_text:
     played by: "%xcplayedby <actor>%xn - Your 'dream casting' for your character."
     physique: "%xcphysique <build/body type>%xn - athletic, wiry, slim, pudgy, etc."

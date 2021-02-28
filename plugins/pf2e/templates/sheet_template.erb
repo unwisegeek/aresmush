@@ -9,8 +9,9 @@
 <%= left("#{item_color}XP%xn: #{xp}", 39) %>
 <%= left("#{item_color}Class/Level%xn: #{charclass} #{level}", 39) -%>
 <%= left("#{item_color}#{subclass_name}%xn: #{subclass}", 39) %>
-<%= left("#{item_color}Faith%xn: #{faith}", 26) -%>
-<%= left("#{item_color}Deity%xn: #{deity}", 26) -%>
+<%= left("#{item_color}Faith%xn: #{faith}", 39) -%>
+<%= left("#{item_color}Region%xn: #{region}", 39) -%>
+<%= left("#{item_color}Deity%xn: #{deity}", 39) -%>
 <%= left("#{item_color}Alignment%xn: #{alignment}", 26) %>
 <%= section_line("Traits") %>
 <%= traits %>
@@ -27,9 +28,16 @@
 <%= section_line("Combat") %>
 <% end %>
 <% if section == "combat" || "all" %>
-<%= section_line("HP") %>
+<%= left("#{item_color}HP%xn: #{hp}",39) -%>
+<%= left("#{item_color}Temp HP%xn: #{temp_hp}",39) %>
+<%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
+<%= left("#{item_color}Perception%xn: #{perception}",39) %>
+<%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
 <%= section_line("Attacks") %>
 <%= section_line("Defenses") %>
+<% saves.each do |save| %>
+<%= save %>
+<% end %>
 <%= section_line("Conditions") %>
 <%= conditions %>
 <% end %>

@@ -95,6 +95,18 @@ module AresMUSH
           enactor.update(pf2_to_assign: to_assign)
 
           client.emit_success t('pf2e.assign_ok', :element => self.type, :option => self.option.capitalize, :remaining => k)
+
+          if btype = 'charclass'
+            combat_stats = enactor.combat
+
+            if !combat_stats
+              client.emit_ooc t'pf2e.combat_something_wrong')
+              return
+            end
+
+            combat_stats.update(key_abil: self.option.capitalize)
+          end
+          
           return
 
         elsif (hash_key.match?'skill') || (hash_key.match? 'lore')  

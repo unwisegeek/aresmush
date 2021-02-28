@@ -69,7 +69,11 @@ module AresMUSH
       end
 
       def faith
-        @faith_info[:faith]
+        @char.group('Faith')
+      end
+
+      def region
+        @char.group('Region')
       end
 
       def deity
@@ -107,8 +111,15 @@ module AresMUSH
         end
       end
 
+      def combat_stats
+        @char.combat
+      end
+
       def hp
         hp = @char.hp
+
+        return "---" if !hp
+
         current = hp.current
         max = hp.max_current
         low_max = max != hp.max_base ? "%xy*%xn" : ""
@@ -118,6 +129,46 @@ module AresMUSH
         hp_color = "%xy" if percent.between?(25,50)
         hp_color = "%xr" if percent < 25
         "#{hp_color}#{current}%xn / #{max}#{low_max} (#{percent})"
+      end
+
+      def temp_hp
+        hp = @char.hp
+
+        return "---" if !hp
+
+        has_temp_hp = hp.temp_max
+
+        return "None." if !has_temp_hp
+
+        current = hp.temp_current
+        max = hp.temp_max
+        "#{current}%xn / #{max}"
+      end
+
+      def class_dc
+        return "--" if !combat_stats
+        dc = Pf2eCombat.get_class_dc(@char)
+        prof = combat_stats.class_dc[0].upcase
+        "#{bonus} (#{prof})"
+      end
+
+      def perception
+        return "--" if !combat_stats
+        bonus = Pf2eCombat.get_perception(@char)
+        prof = combat_stats.perception[0].upcase
+        "#{bonus} (#{prof})"
+      end
+
+      def saves
+        saves = %w{fortitude reflex will}
+        list = []
+        saves.each do |save|
+          list << format_save(@char, save)
+        end
+      end
+
+      def specials
+        @char.pf2_special.sort.join(", ")
       end
 
       def conditions
@@ -164,6 +215,13 @@ module AresMUSH
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = "#{s.proflevel}#{linked_attr}"
         "#{linebreak}#{left(name, 18)} #{left(proflevel, 18)}"
+      end
+
+      def format_save(char, save)
+        name = "#{save.capitalize}"
+        prof = "#{Pf2eCombat.get_save_from_char(char, save)}"[0].upcase
+        bonus = Pf2eCombat.get_save_bonus(char, save)
+        left("#{item_color}#{name}%xn: #{bonus} (#{prof})", 26)
       end
 
       def print_linked_attr(skill)

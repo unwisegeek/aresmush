@@ -11,11 +11,10 @@ module AresMUSH
     attribute :pf2_features, :type => DataType::Array, :default => []
     attribute :pf2_traits, :type => DataType::Array, :default => []
     attribute :pf2_feats, :type => DataType::Hash, :default => { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
-    attribute :pf2_faith, :type => DataType::Hash, :default => { 'faith'=>"", 'deity'=>"", 'alignment'=>"" }
+    attribute :pf2_faith, :type => DataType::Hash, :default => { 'deity'=>"", 'alignment'=>"" }
     attribute :pf2_special, :type => DataType::Array, :default => []
     attribute :pf2_boosts_working, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=> [] }
     attribute :pf2_boosts, :type => DataType::Hash, :default => {}
-    attribute :pf2_saves, :type => DataType::Hash, :default => { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' }
     attribute :pf2_lang, :type => DataType::Array, :default => []
     attribute :pf2_viewsheet, :type => DataType::Hash, :default => {}
     attribute :pf2_to_assign, :type => DataType::Hash, :default => {}
@@ -27,14 +26,16 @@ module AresMUSH
     collection :skills, "AresMUSH::Pf2eSkills"
     collection :lores, "AresMUSH::Pf2eLores"
     reference :hp, "AresMUSH::Pf2eHP"
+    reference :combat, "AresMUSH::Pf2eCombat"
 
     before_delete :delete_sheet
 
     def delete_sheet
-      self.abilities.each { |a| a.delete } if self.abilities
-      self.skills.each { |s| s.delete } if self.skills
-      self.lores.each { |l| l.delete } if self.lores
-      self.hp.delete
+      self.abilities&.each { |a| a.delete } if self.abilities
+      self.skills&.each { |s| s.delete } if self.skills
+      self.lores&.each { |l| l.delete } if self.lores
+      self.hp&.delete
+      self.combat&.delete
     end
   end
 end
