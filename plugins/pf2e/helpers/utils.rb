@@ -26,10 +26,11 @@ module AresMUSH
     def self.get_linked_attr_mod(char, value, type=nil)
       case type.downcase
       when 'skill'
-        return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(char, Pf2eSkills.get_linked_attr value))
+        skill_mod = Pf2eSkills.get_linked_attr(value)
+        return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(char, skill_mod))
       when 'lore'
         return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score char, 'Intelligence')
-      else
+      when nil
         case value.downcase
         when 'fort', 'fortitude'
           return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score char, 'Constitution')
@@ -39,8 +40,6 @@ module AresMUSH
           return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score char, 'Wisdom')
         when 'melee'
           return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score char, 'Strength')
-        else
-          nil
         end
       end
     end

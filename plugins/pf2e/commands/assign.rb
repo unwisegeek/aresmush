@@ -96,11 +96,11 @@ module AresMUSH
 
           client.emit_success t('pf2e.assign_ok', :element => self.type, :option => self.option.capitalize, :remaining => k)
 
-          if btype = 'charclass'
+          if btype == 'charclass'
             combat_stats = enactor.combat
 
             if !combat_stats
-              client.emit_ooc t'pf2e.combat_something_wrong')
+              client.emit_ooc t('pf2e.combat_something_wrong')
               return
             end
 
@@ -119,7 +119,7 @@ module AresMUSH
             skills_available = is_lore ? false : Global.read_config('pf2e_skills').keys
           end
 
-          skills_down = skills.available ? skills_available.each { |s| s.downcase } : skills_available
+          skills_down = skills_available ? skills_available.each { |s| s.downcase } : skills_available
 
           if skills_available
             if !skills_down.member?(self.option)
