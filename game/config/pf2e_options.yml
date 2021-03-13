@@ -9,12 +9,13 @@ pf2e:
   - LN
   - N
   - CN
+  roll_channel: 'PF2Rolls'
   open_sheets: true
   open_npc_sheets: false
   title_color: '%x172'
   list_item: '%x242'
   use_alignment: true
-  use_encumbrance: false
+  use_encumbrance: true
   subclass_names:
     Alchemist: 'Research Field'
     Barbarian: 'Instinct'
