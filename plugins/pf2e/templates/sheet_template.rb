@@ -33,27 +33,31 @@ module AresMUSH
       end
 
       def ancestry
-        @base_info[:ancestry]
+        @base_info['ancestry']
       end
 
       def heritage
-        @base_info[:heritage]
+        @base_info['heritage']
       end
 
       def background
-        @base_info[:background]
+        @base_info['background']
       end
 
       def charclass
-        @base_info[:charclass]
+        @base_info['charclass']
       end
 
       def subclass
-        @base_info[:specialize] ? @base_info[:specialize] : "N/A"
+        @base_info['specialize'] ? @base_info['specialize'] : "N/A"
       end
 
       def subclass_name
         subclass_list[charclass] ? subclass_list[charclass] : "Specialty"
+      end
+
+      def subclass_option
+        @base_info['specialize_info'].blank? ? "/ " + @base_info['specialize_info'] : ""
       end
 
       def traits
@@ -77,11 +81,17 @@ module AresMUSH
       end
 
       def deity
-        @faith_info[:deity]
+        @faith_info['deity']
       end
 
       def alignment
-        @faith_info[:alignment]
+        @faith_info['alignment']
+      end
+
+      def has_code
+        if (@faith_info['edicts']) || (@faith_info['anathema'])
+          t('pf2e.has_code')
+        end
       end
 
       def abilities
