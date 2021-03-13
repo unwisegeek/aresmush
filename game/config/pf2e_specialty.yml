@@ -2,7 +2,7 @@
 pf2e_specialty:
   Alchemist:
     Bomber:
-      formula book:
+      formula_book:
       - bomb1
       - bomb2
     Chirurgeon:
@@ -15,7 +15,311 @@ pf2e_specialty:
         - lesser antiplague
         - lesser antidote
     Mutagenist:
-      formula book:
+      formula_book:
       - mutagen1
       - mutagen2
-  Barbarian: {}
+  Barbarian:
+    Animal:
+      choice_name: Spirit Animal
+      choice_description: "Choose the animal this character strives to emulate."
+      choose:
+        Ape:
+          attack:
+            Ape Fist:
+              damage: 1d10
+              damage_type: B
+              traits:
+              - grapple
+              - unarmed
+        Bear:
+          attack:
+            Bear Jaws:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - unarmed
+            Bear Claws:
+              damage: 1d6
+              damage_type: S
+              traits:
+              - agile
+              - unarmed
+        Bull:
+          attack:
+            Bull Horn:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - shove
+              - unarmed
+        Cat:
+          attack:
+            Cat Jaws:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - unarmed
+            Cat Claws:
+              damage: 1d6
+              damage_type: S
+              traits:
+              - agile
+              - unarmed
+        Deer:
+          attack:
+            Deer Antler:
+              damage: 1d8
+              damage_type: P
+              traits:
+              - charge
+              - unarmed
+        Frog:
+          attack:
+            Frog Jaws:
+              damage: 1d10
+              damage_type: B
+              traits:
+              - unarmed
+            Frog Tongue:
+              damage: 1d4
+              damage_type: B
+              traits:
+              - agile
+              - unarmed
+        Shark:
+          attack:
+            Shark Jaws:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - grapple
+              - unarmed
+        Snake:
+          attack:
+            Snake Fangs:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - grapple
+              - unarmed
+        Wolf:
+          attack:
+            Wolf Jaws:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - trip
+              - unarmed
+      anathema:
+      - 't('pf2e.anathema_animal', :animal => base_info['specialize_info'])'
+      - 't('pf2e.anathema_weapons')'
+      instinct_ability: Bestial Rage
+      rage_ability:
+        Ape:
+          attack:
+            Ape Fist:
+              damage: 1d12
+              damage_type: B
+              traits:
+              - grapple
+              - unarmed
+        Bear:
+          attack:
+            Bear Jaws:
+              damage: 1d12
+              damage_type: P
+              traits:
+              - unarmed
+            Bear Claws:
+              damage: 1d8
+              damage_type: S
+              traits:
+              - agile
+              - unarmed
+        Bull:
+          attack:
+            Bull Horn:
+              damage: 1d12
+              damage_type: P
+              traits:
+              - shove
+              - unarmed
+        Cat:
+          attack:
+            Cat Jaws:
+              damage: 1d12
+              damage_type: P
+              traits:
+              - unarmed
+            Cat Claws:
+              damage: 1d8
+              damage_type: S
+              traits:
+              - agile
+              - unarmed
+        Deer:
+          attack:
+            Deer Antler:
+              damage: 1d10
+              damage_type: P
+              traits:
+              - charge
+              - unarmed
+              reach: 10
+        Frog:
+          attack:
+            Frog Jaws:
+              damage: 1d12
+              damage_type: B
+              traits:
+              - unarmed
+            Frog Tongue:
+              damage: 1d6
+              damage_type: B
+              traits:
+              - agile
+              - unarmed
+              reach: 10
+        Shark:
+          attack:
+            Shark Jaws:
+              damage: 1d12
+              damage_type: P
+              traits:
+              - grapple
+              - unarmed
+        Snake:
+          attack:
+            Snake Fangs:
+              damage: 1d12
+              damage_type: P
+              traits:
+              - grapple
+              - unarmed
+        Wolf:
+          attack:
+            Wolf Jaws:
+              damage: 1d12
+              damage_type: P
+              traits:
+              - trip
+              - unarmed
+      rage_resistance:
+        damage_type: ["S", "P"]
+    Dragon:
+      choice_name: "Dragon Color"
+      choice_description: "Color dragon this instinct applies to."
+      choose:
+        Black:
+          element: acid
+          shape: line
+        Blue:
+          element: electricity
+          shape: line
+        Green:
+          element: poison
+          shape: cone
+        Red:
+          element: fire
+          shape: cone
+        White:
+          element: cold
+          shape: cone
+        Brass:
+          element: fire
+          shape: line
+        Bronze:
+          element: electricity
+          shape: line
+        Copper:
+          element: acid
+          shape: line
+        Gold:
+          element: fire
+          shape: cone
+        Silver:
+          element: cold
+          shape: cone
+      anathema:
+      - "Cannot let a personal insult slide."
+      - "If character respects their dragon type, they may not defy one."
+      - "If character abhors their dragon type, they may not fail to defeat one they come across."
+      instinct_ability: Draconic Rage
+      rage_resistance:
+        damage_type: [ "P" ]
+        element:
+          Black: acid
+          Blue: electricity
+          Green: poison
+          Red: fire
+          White: cold
+          Brass: fire
+          Bronze: electricity
+          Copper: acid
+          Gold: fire
+          Silver: cold
+    Fury:
+      feat:
+      - charclass
+      rage_ability: Fury Rage
+      rage_resistance: Fury Resistance
+    Giant:
+      anathema:
+      - "Character may not fail to face a personal challenge of strength."
+      instinct_ability: Titan Mauler
+      rage_resistance:
+        damage_type: ["B"]
+        element:
+        - cold
+        - electricity
+        - fire
+    Spirit:
+      anathema:
+        - "Character may not defile or show disrespect to corpses or spirits."
+        - "Character is not prohibited from defending themselves against undead."
+      instinct_ability: Spirit Rage
+      rage_resistance:
+        damage_type: negative
+        damage_from: undead
+  Bard:
+    Enigma: {}
+    Maestro: {}
+    Polymath: {}
+  Champion:
+    Paladin:
+      allowed_alignments:
+      - LG
+      reaction:
+      - Retributive Strike
+      anathema:
+      - "Character must not lie, cheat, or take advantage of others."
+      edicts:
+      - "Character must respect the legitimate authority of legitimate leadership wherever they go, and must obey its laws."
+      focus_spell:
+      - lay on hands
+    Redeemer:
+      allowed_alignments:
+      - NG
+      reaction:
+      - Glimpse of Redemption
+      edicts:
+      - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
+      - "Character must show compassion for all, without regard to other factors."
+      focus_spell:
+      - lay on hands
+    Liberator:
+      allowed_alignments:
+      - CG
+      reaction:
+      - Liberating Step
+      edicts:
+      - "Character must honor decisions made by others over their own lives."
+      - "Character must demand and fight for others' freedom to make their own decisions."
+      anathema:
+      - "Character must not force someone to act in a particular way or threaten them if they refuse."
+      - "Character must not accept or countenance slavery or tyranny."
+      focus_spell:
+      - lay on hands
+  Cleric:
+    Cloistered: {}
+    Warpriest: {}
