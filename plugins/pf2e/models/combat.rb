@@ -19,6 +19,7 @@ module AresMUSH
     attribute :wp_simple, :default => 'untrained'
     attribute :wp_martial, :default => 'untrained'
     attribute :wp_advanced, :default => 'untrained'
+    attribute :wp_rage
     attribute :wp_other, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
@@ -43,7 +44,7 @@ module AresMUSH
       end
     end
 
-    def get_save_bonus(char, save)
+    def self.get_save_bonus(char, save)
       prof_bonus = Pf2e.get_prof_bonus(get_save_from_char(char, save))
 
       mod = Pf2e.get_linked_attr_mod(char, save)
@@ -55,7 +56,7 @@ module AresMUSH
       prof_bonus + mod + item_bonus
     end
 
-    def get_class_dc(char)
+    def self.get_class_dc(char)
       combat_stats = char.combat
 
       return 0 if !combat_stats

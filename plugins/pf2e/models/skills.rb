@@ -28,5 +28,16 @@ module AresMUSH
       skill = char.skills.find { |s| s.name_upcase == name.upcase }
     end
 
+    def self.get_skill_bonus(char, name)
+      skill = find_skill(name, char)
+      linked_attr = get_linked_attr(name)
+      abonus = Pf2eAbilities.get_ability_mod(
+        Pf2eAbilities.get_ability_score(char, linked_attr)
+      )
+      pbonus = skill ? Pf2e.get_prof_bonus(skill.prof_level) : 0
+
+      abonus + pbonus
+    end
+
   end
 end

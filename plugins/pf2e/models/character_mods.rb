@@ -4,7 +4,7 @@ module AresMUSH
     attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
 
-    attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
+    attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"", 'specialize_info'=>""}
     attribute :pf2_level, :type => DataType::Integer, :default => 1
     attribute :pf2_xp, :type => DataType::Integer, :default => 0
     attribute :pf2_conditions, :type => DataType::Hash, :default => {}
@@ -21,6 +21,8 @@ module AresMUSH
     attribute :pf2_cg_assigned, :type => DataType::Hash, :default => {}
     attribute :pf2_size, :default => ""
     attribute :pf2_movement, :type => DataType::Hash, :default => {}
+    attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
+    attribute :pf2_money, :type => DataType::Integer, :default => 1500
 
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"

@@ -27,5 +27,15 @@ module AresMUSH
       lore = char.lores.find { |s| s.name_upcase == name.upcase }
     end
 
+    def self.get_lore_bonus(char, name)
+      has_lore = find_lore(name, char)
+      abonus = Pf2eAbilities.get_ability_mod(
+        Pf2eAbilities.get_ability_score(char, 'intelligence')
+      )
+      pbonus = has_lore ? Pf2e.get_prof_bonus(skill.prof_level) : 0
+
+      abonus + pbonus
+    end
+
   end
 end
