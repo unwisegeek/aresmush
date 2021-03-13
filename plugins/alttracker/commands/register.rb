@@ -25,10 +25,8 @@ module AresMUSH
 
         if !player
           if self.target =~ valid_email
-            player = Player.create
-
-            player.update(name: self.target)
-            player.update(codeword: self.codeword)
+            player = Player.create(name: self.target, codeword: self.codeword)
+            
             enactor.update(player: player)
 
             client.emit_success t('alttracker.register_ok')

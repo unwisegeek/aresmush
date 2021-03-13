@@ -29,7 +29,7 @@ module AresMUSH
       end
 
       def handle
-        chargen_elements = %w{ancestry background charclass heritage lineage specialize deity alignment}
+        chargen_elements = %w{ancestry background charclass heritage lineage specialize deity alignment specialize_info}
         selected_element = chargen_elements.find { |o| o.include?(self.element) }
 
         base_info = enactor.pf2_base_info
@@ -74,6 +74,22 @@ module AresMUSH
           options = Global.read_config('pf2e_specialty', charclass).keys.sort
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+        elsif selected_element == "specialize_info"
+          charclass = base_info['charclass']
+          specialty = base_info['specialize']
+          specialty_info = Global.read_config('pf2e_specialty', charclass, specialty)
+          specialty_has_info = specialty.blank ? nil : specialty.has_key? 'choose'
+
+          if specialty.blank?
+            client.emit_failure t('pf2e.specialty_not_set')
+            return nil
+          elsif !specialty_has_info
+            client.emit_failure t('pf2e.specialty_no_info')
+            return nil
+          end
+
+          options = specialty_info['choose'].keys
+          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "deity"
           options = Global.read_config('pf2e_deities').keys
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
@@ -96,7 +112,7 @@ module AresMUSH
         end
 
         case selected_element
-        when "ancestry", "background", "charclass", "heritage", "specialize"
+        when "ancestry", "background", "charclass", "heritage", "specialize", "specialize_info"
           base_info[selected_element] = selected_option
           if selected_element == "ancestry"
             base_info['heritage'] = ""

@@ -43,19 +43,22 @@ module AresMUSH
         hp = Pf2eHP.create(character: enactor)
         level = enactor.pf2_level
         hp_from_con = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(enactor, 'Constitution')) * level
-        max_base_hp = ancestry_info["HP"] + charclass_info["HP"]
+        ahp = heritage_info['ancestry_HP'] ? heritage_info['ancestry_HP'] : ancestry_info["HP"]
+        max_base_hp = ahp + charclass_info["HP"]
         max_cur_hp = max_base_hp + hp_from_con
 
-        hp.update(current: max_cur_hp)
-        hp.update(max_base: max_cur_hp)
-        hp.update(max_current: max_cur_hp)
-        hp.update(base_for_level: max_base_hp)
-        enactor.update(hp: hp)
+        hp.current = max_cur_hp
+        hp.max_base = max_cur_hp
+        hp.max_current = max_cur_hp
+        hp.base_for_level = max_base_hp
+        hp.save
 
-        enactor.update(pf2_boosts: boosts)
-        enactor.update(pf2_boosts_working: {})
-        enactor.update(pf2_to_assign: to_assign)
-        enactor.update(pf2_abilities_locked: true)
+        enactor.hp = hp
+        enactor.pf2_boosts = boosts
+        enactor.pf2_boosts_working = {}
+        enactor.pf2_to_assign = to_assign
+        enactor.pf2_abilities_locked = true
+        enactor.save
 
         client.emit_success t('pf2e.abilities_committed')
 

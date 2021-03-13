@@ -21,9 +21,10 @@ module AresMUSH
         background = base_info['background']
         charclass = base_info['charclass']
         subclass = base_info['specialize']
+        subclass_option = base_info['specialize_info']
         faith_info = enactor.pf2_faith
 
-        cg_errors = Pf2e.chargen_messages(ancestry, heritage, background, charclass, subclass, faith_info)
+        cg_errors = Pf2e.chargen_messages(ancestry, heritage, background, charclass, subclass, faith_info, subclass_option)
 
         if cg_errors
           client.emit_failure t('pf2e.cg_issues')
@@ -49,6 +50,7 @@ module AresMUSH
         charclass_info = Global.read_config('pf2e_class', charclass)
         # Subclass_info can be nil
         subclass_info = Global.read_config('pf2e_specialty', subclass)
+        subclass_option_info = subclass_option ? subclass_info['choose'][subclass_option] : nil
         class_features_info = charclass_info["chargen"]
 
         to_assign = enactor.pf2_to_assign
@@ -125,6 +127,20 @@ module AresMUSH
         free_skills = class_features_info["skills_open"] + dup_skills
         to_assign['open skill'] = free_skills
 
+        use_deity = charclass_info.has_key?(use_deity)
+
+        if use_deity
+          deity = faith_info["deity"]
+          deity_info = Global.read_config('pf2e_deities', deity)
+          divine_skill = deity_info[divine_skill]
+
+          has_skill = Pf2eSkills.find_skill(divine_skill, enactor)
+
+          if !has_skill
+            Pf2eSkills.create(name: divine_skill, prof_level: 'trained', character: enactor, cg_skill: true)
+          end
+        end
+
         # Lores
         bg_lores = background_info["lores"] ? background_info["lores"] : []
 
@@ -186,7 +202,44 @@ module AresMUSH
 
         l1_features.each { |f| char_features << f } if !l1_features.empty?
 
+        dfont_choice = deity_info[divine_font]
+
+        if dfont_choice.size > 1
+          to_assign['divine font'] = dfont_choice
+        else
+          # Do this code when spells are done, this should be tied to spells
+        end
+
         enactor.pf2_features = char_features
+
+        # Code of Behavior - not every info combination will have one!
+        edicts = []
+        anathema = []
+
+        if use_deity
+          d_edicts = Global.read_config('pf2e_deities', faith_info['deity'], edicts)
+          d_anathema = Global.read_config('pf2e_deities', faith_info['deity'], anathema)
+        end
+
+        c_edicts = charclass_info['edicts']
+        c_anathema = charclass_info['anathema']
+
+        s_edicts = subclass_info['edicts']
+        s_anathema = subclass_info['anathema']
+
+        d_edicts.each { |e| edicts << e } if d_edicts
+        d_anathema.each { |a| anathema << a } if d_anathema
+
+        c_edicts.each { |e| edicts << e } if c_edicts
+        c_anathema.each { |a| anathema << a } if c_anathema
+
+        s_edicts.each { |e| edicts << e } if s_edicts
+        s_anathema.each { |a| anathema << a } if s_anathema
+
+        faith_info['edicts'] = edicts if !edicts.empty?
+        faith_info['anathema'] = anathema if !anathema.empty?
+
+        enactor.update(pf2_faith: faith_info)
 
         # Combat information - attacks, defenses, perception, class DC, saves
         combat = Pf2eCombat.create(character: enactor)
