@@ -16,11 +16,13 @@ module AresMUSH
         @background = base_info['background']
         @charclass = base_info['charclass']
         @subclass = base_info['specialize']
+        @subclass_option = base_info['specialize_info']
 
         @ancestry_info = @ancestry.blank? ? {} : Global.read_config('pf2e_ancestry', @ancestry)
         @heritage_info = @heritage.blank? ? {} : Global.read_config('pf2e_heritage', @heritage)
         @background_info = @background.blank? ? {} : Global.read_config('pf2e_background', @background)
         @charclass_info = @charclass.blank? ? {} : Global.read_config('pf2e_class', @charclass)
+        @subclass_info = @subclass.blank? ? {} : Global.read_config('pf2e_specialty', @charclass, @subclass)
         @faith_info = @char.pf2_faith
 
         @baseinfolock = @char.pf2_baseinfo_locked
@@ -60,8 +62,8 @@ module AresMUSH
         @subclass
       end
 
-      def faith
-        @faith_info['faith']
+      def subclass_option
+        @subclass_option
       end
 
       def deity
@@ -70,6 +72,29 @@ module AresMUSH
 
       def alignment
         @faith_info['alignment']
+      end
+
+      def has_code
+        if (@charclass == 'Champion') || (@charclass == 'Cleric')
+          d_code = Global.read_config('pf2e_deities', @faith_info['deity'], edicts) + Global.read_config('pf2e_deities', @faith_info['deity'], anathema)
+        else
+          d_code = []
+        end
+
+        s_code = []
+        s_edicts = @subclass_info['edicts']
+        s_anathema = @subclass_info['anathema']
+
+        s_edicts.each { |e| s_code << e } if s_edicts
+        s_anathema.each { |a| s_code << a } if s_anathema
+
+        code = d_code + s_code
+
+        if code.empty?
+          nil
+        else
+          code.join("%r")
+        end
       end
 
       def ahp
@@ -192,7 +217,7 @@ module AresMUSH
           msgs = Pf2eAbilities.abilities_messages(@char)
           msgs ? msgs : t('pf2e.abil_options_ok')
         else
-          msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith)
+          msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option)
           msgs ? msgs : t('pf2e.cg_options_ok')
         end
       end

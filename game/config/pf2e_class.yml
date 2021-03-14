@@ -155,390 +155,561 @@ pf2e_class:
         feat:
         - charclass
         - skill
-    Barbarian:
-      key_abil:
-      - Strength
-      HP: 12
-      chargen:
+  Barbarian:
+    key_abil:
+    - Strength
+    HP: 12
+    chargen:
+      feat:
+      - charclass
+      combat_stats:
+        wp_simple: trained
+        wp_martial: trained
+        wp_unarmed: trained
+        armor_light: trained
+        armor_med: trained
+        armor_unarmored: trained
+        class_dc: trained
+        perception: expert
+        fortitude: expert
+        reflex: trained
+        will: expert
+      skills_open: 3
+      class_skills:
+      - Athletics
+      action:
+      - Rage
+    advance:
+      2:
         feat:
         - charclass
+        - skill
+      3:
+        charclass:
+        - Deny Advantage
+        feat:
+        - general
+        boost:
+        - skill
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        charclass:
+        - Brutality
+        boost:
+        - ability
+        - skill
+        feat:
+        - ancestry
         combat_stats:
-          wp_simple: trained
-          wp_martial: trained
-          wp_unarmed: trained
-          armor_light: trained
-          armor_med: trained
-          armor_unarmored: trained
-          class_dc: trained
-          perception: expert
-          fortitude: expert
-          reflex: trained
-          will: expert
-        skills_open: 3
-        class_skills:
-        - Athletics
+          wp_simple: expert
+          wp_martial: expert
+          wp_unarmed: expert
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        charclass:
+        - Juggernaut
+        - Weapon Specialization
+        feat:
+        - general
+        boost:
+        - skill
+        combat_stats:
+          fortitude: master
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        charclass:
+        - Lightning reflexes
+        - Raging Resistance
+        combat_stats:
+          reflex: expert
+        feat:
+        - ancestry
+        boost:
+        - skill
+      10:
+        boost:
+        - ability
+        feat:
+        - charclass
+        - skill
+      11:
         action:
-        - Rage
-      advance:
-        2:
-          feat:
-          - charclass
-          - skill
-        3:
-          charclass:
-          - Deny Advantage
-          feat:
-          - general
-          boost:
-          - skill
-        4:
-          feat:
-          - charclass
-          - skill
-        5:
-          charclass:
-          - Brutality
-          boost:
-          - ability
-          - skill
-          feat:
-          - ancestry
-          combat_stats:
-            wp_simple: expert
-            wp_martial: expert
-            wp_unarmed: expert
-        6:
-          feat:
-          - charclass
-          - skill
-        7:
-          charclass:
-          - Juggernaut
-          - Weapon Specialization
-          feat:
-          - general
-          boost:
-          - skill
-          combat_stats:
-            fortitude: master
-        8:
-          feat:
-          - charclass
-          - skill
-        9:
-          charclass:
-          - Lightning reflexes
-          - Raging Resistance
-          combat_stats:
-            reflex: expert
-          feat:
-          - ancestry
-          boost:
-          - skill
-        10:
-          boost:
-          - ability
-          feat:
-          - charclass
-          - skill
-        11:
-          action:
-          - Mighty Rage
-          feat:
-          - general
-          boost:
-          - skill
-        12:
-          feat:
-          - charclass
-          - skill
-        13: {}
-    Bard:
-      key_abil:
-      - Charisma
-      HP: 8
-      chargen:
+        - Mighty Rage
+        feat:
+        - general
+        boost:
+        - skill
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        feat:
+        - ancestry
+        charclass:
+        - Greater Juggernaut
+        - Medium Armor Expertise
+        - Weapon Fury
         combat_stats:
-          perception: expert
-          fortitude: trained
-          reflex: trained
-          will: expert
-          wp_simple: trained
+          fortitude: legendary
+          armor_light: expert
+          armor_med: expert
+          armor_unarmored: expert
+          wp_simple: master
+          wp_martial: master
+          wp_unarmed: master
+        boost:
+        - skill
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        boost:
+        - ability
+        - skill
+        feat:
+        - general
+        charclass:
+        - Greater Weapon Specialization
+        - Indomitable Will
+        combat_stats:
+          will: master
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        charclass:
+        - Heightened Senses
+        - Quick Rage
+        combat_stats:
+          perception: master
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass:
+        - Armor of Fury
+        - Devastator
+        combat_stats:
+          armor_med: master
+          armor_light: master
+          armor_unarmored: master
+          class_dc: master
+      20:
+        feat:
+        - charclass
+        - skill
+        boost:
+        - ability
+  Bard:
+    key_abil:
+    - Charisma
+    HP: 8
+    chargen:
+      combat_stats:
+        perception: expert
+        fortitude: trained
+        reflex: trained
+        will: expert
+        wp_simple: trained
+        wp_other:
+          Bard Weapons: trained
+        wp_unarmed: trained
+        armor_light: trained
+        armor_unarmored: trained
+      skills_open: 4
+      skills:
+      - Occultism
+      - Performance
+      spell_trad: occult
+      Spells: trained
+      spells_per_day:
+        1: 2
+      spells_known:
+        cantrip: 5
+        1: 2
+      composition:
+        cantrip:
+        - Inspire Courage
+        1:
+        - Counter Performance
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        feat:
+        - general
+        combat_stats:
+          reflex: expert
+        signature_spells:
+          1: 1
+          2: 1
+        boost:
+        - skill
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        boost:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        signature_spells:
+          3: 1
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        Spells: expert
+        feat:
+        - general
+        boost:
+        - skill
+        signature_spells:
+          4: 1
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        combat_stats:
+          fortitude: expert
+          will: master
+        charclass: Resolve
+        boost:
+        - skill
+        feat:
+        - ancestry
+        signature_spells:
+          5: 1
+      10:
+        feat:
+        - charclass
+        - skill
+        boost:
+        - ability
+      11:
+        feat:
+        - general
+        boost:
+        - skill
+        combat_stats:
+          wp_simple: expert
           wp_other:
-            Bard Weapons: trained
-          wp_unarmed: trained
-          armor_light: trained
-          armor_unarmored: trained
-        skills_open: 4
-        skills:
-        - Occultism
-        - Performance
-        spell_trad: occult
-        Spells: trained
-        spells_per_day:
-          1: 2
-        spells_known:
-          cantrip: 5
-          1: 2
-        composition:
-          cantrip:
-          - Inspire Courage
-          1:
-          - Counter Performance
-      advance:
-        2:
-          feat:
-          - charclass
-          - skill
-          spells_per_day:
-            1: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-        3:
-          spells_per_day:
-            1: 3
-            2: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 2
-          feat:
-          - general
-          combat_stats:
-            reflex: expert
-          signature_spells:
-            1: 1
-            2: 1
-          boost:
-          - skill
-        4:
-          feat:
-          - charclass
-          - skill
-          spells_per_day:
-            1: 3
-            2: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-        5:
-          boost:
-          - ability
-          - skill
-          feat:
-          - ancestry
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 2
-        6:
-          feat:
-          - charclass
-          - skill
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-        7:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 2
-          Spells: expert
-          feat:
-          - general
-          boost:
-          - skill
-        8:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-          feat:
-          - charclass
-          - skill
-        9:
-          combat_stats:
-            fortitude: expert
-            will: master
-          charclass: Resolve
-          boost:
-          - skill
-          feat:
-          - ancestry
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 2
-        10:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-          feat:
-          - charclass
-          - skill
-          boost:
-          - ability
-        11:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 2
-          feat:
-          - general
-          boost:
-          - skill
-          combat_stats:
-            wp_simple: expert
-            wp_other:
-              Bard Weapons: expert
-            wp_unarmed: expert
-            perception: master
-        12:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-          feat:
-          - charclass
-          - skill
-        13:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-            7: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-            7: 2
-          combat_stats:
-            armor_light: expert
-            armor_unarmored: expert
-          charclass:
-          - Weapon Specialization
-          boost:
-          - skill
-          feat:
-          - ancestry
-        14:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-            7: 3
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-            7: 3
-          feat:
-          - charclass
-          - skill
-        15:
-          spells_per_day:
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-            7: 3
-            8: 2
-          spells_known:
-            cantrip: 5
-            1: 3
-            2: 3
-            3: 3
-            4: 3
-            5: 3
-            6: 3
-            7: 3
-            8: 2
-          feat:
-          - general
-          boost:
-          - skill
-          Spells: master
+            Bard Weapons: expert
+          wp_unarmed: expert
+          perception: master
+        signature_spells:
+          6: 1
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        combat_stats:
+          armor_light: expert
+          armor_unarmored: expert
+        charclass:
+        - Weapon Specialization
+        boost:
+        - skill
+        feat:
+        - ancestry
+        signature_spells:
+          7: 1
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        feat:
+        - general
+        boost:
+        - skill
+        Spells: master
+        charclass:
+        - Master Spellcaster
+        signature_spells:
+          8: 1
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        charclass:
+        - Greater Resolve
+        feat:
+        - ancestry
+        boost:
+        - skill
+        combat_stats:
+          will: legendary
+        signature_spells:
+          9: 1
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        charclass:
+        - Magnus Opus
+        - Legendary Spellcaster
+        feat:
+        - general
+        boost:
+        - skill
+        Spells: legendary
+        signature_spells:
+          10: 1
+      20:
+        feat:
+        - charclass
+        - skill
+        boost:
+        - ability
+  Champion:
+    use_deity: true
+    allowed_alignments:
+    - LG
+    - NG
+    - CG
+    key_abil:
+    - Strength
+    - Dexterity
+    spell_abil: Charisma
+    HP: 10
+    chargen:
+      skills_open: 2
+      class_skills:
+      - Religion
+      combat_stats:
+        wp_simple: trained
+        wp_martial: trained
+        wp_unarmed: trained
+        wp_deity: trained
+        armor_light: trained
+        armor_med: trained
+        armor_heavy: trained
+        armor_unarmored: trained
+        class_dc: trained
+        perception: trained
+        fortitude: expert
+        reflex: trained
+        will: expert
+      Spells: trained
+      spell_trad: divine
+      feat:
+      - charclass
+      charclass:
+      - Deific Weapon
+      class_feats:
+      - Shield Block
+      reaction:
+      - Shield Block
+    anathema:
+    - "Character may not willingly commit an evil act."
+    - "Character may not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        boost:
+        - skill
+        feat:
+        - general
+        choice_name: "Divine Ally"
+        choice_description: "Choose a divine ally."
+        choose:
+          Blade Ally: {}
+          Shield Ally: {}
+          Steed Ally:
+            animal_companion: young
+            req_ability: mount
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        boost:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        charclass:
+        - Weapon Expertise
+        combat_stats:
+          wp_simple: expert
+          wp_martial: expert
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        charclass:
+        - Armor Expertise
+        - Weapon Specialization
+        feat:
+        - general
+        boost:
+        - skill
+        combat_stats:
+          armor_light: expert
+          armor_med: expert
+          armor_heavy: expert
+          armor_unarmored: expert
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        charclass:
+        - Champion Expertise
+        - Divine Smite
+        - Juggernaut
+        - Lightning Reflexes
+        combat_stats:
+          fortitude: master
+          reflexes: expert
+          class_dc: expert
+        Spells: expert
+        feat:
+        - ancestry
+        boost:
+        - skill
+      10:
+        feat:
+        - charclass
+        - skill
+      11:
+        charclass:
+        - Alertness
+        - Divine Will
+        - Exalt
+        combat_stats:
+          will: master
+          perception: expert
+        feat:
+        - general
+        boost:
+        - skill
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        charclass:
+        - Armor Mastery
+        - Weapon Mastery
+        combat_stats:
+          armor_light: master
+          armor_med: master
+          armor_heavy: master
+          armor_unarmored: master
+          wp_simple: master
+          wp_martial: master
+        feat:
+        - ancestry
+        boost:
+        - skill
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        charclass:
+        - Greater Weapon Specialization
+        boost:
+        - ability
+        - skill
+        feat:
+        - general
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        charclass:
+        - Champion Mastery
+        - Legendary Armor
+        combat_stats:
+          class_dc: master
+          armor_med: legendary
+          armor_light: legendary
+          armor_heavy: legendary
+          armor_unarmored: legendary
+        Spells: master
+        boost:
+        - skill
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        charclass:
+        - Hero's Defiance
+        focus_spell:
+        - hero's defiance
+        feat:
+        - general
+        boost:
+        - skill
+      20:
+        feat:
+        - charclass
+        - skill
+        boost:
+        - ability
+  Cleric:
+    use_deity: true
+    key_abil:
+    - Wisdom
+    spell_abil: Wisdom
+    HP: 8
+    chargen:
+      skills_open: 2
+      class_skills:
+      - Religion
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        wp_deity: trained
+        armor_unarmored: trained
+        class_dc: trained
+        perception: trained
+        fortitude: trained
+        reflex: trained
+        will: expert
+      Spells: trained
+      spell_trad: divine
+      charclass:
+      - Divine Font
+    advance: {}

@@ -106,7 +106,7 @@ module AresMUSH
 
             combat_stats.update(key_abil: self.option.capitalize)
           end
-          
+
           return
 
         elsif (hash_key.match?'skill') || (hash_key.match? 'lore')  

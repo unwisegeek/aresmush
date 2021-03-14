@@ -24,6 +24,8 @@ en:
     lock_info_first: "This command cannot be used until your base chargen options are committed."
     no_free: "No free %{element} left to assign."
     already_has_skill: "You already have that skill. Pick another."
+    specialty_not_set: "You have not yet chosen a specialty."
+    specialty_no_info: "Your specialty does not have further options, this command is not needed."
 
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
     cg_options_ok: "%xgNo errors or issues detected with your CG options."
@@ -38,7 +40,8 @@ en:
     missing_base_info: "%xrYour base info is not yet complete.%xn"
     class_mismatch: "%xrYour alignment is not valid for your class.%xn"
     class_deity_mismatch: "%xrYour alignment is not valid for your deity and class.%xn"
-    class_requires_deity: "%xyYour class requires a deity, but none is set.%xn"
+    class_requires_deity: "%xrYour class requires a deity, but none is set.%xn"
+    missing_subclass_info: "%xrYour specialty requires an additional choice that you have not yet set.%xn"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
 
     unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
@@ -46,3 +49,7 @@ en:
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
 
     combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
+
+    has_code: "This character is required to abide by a code of behavior. See profile for details."
+    anathema_animal: "Character must not show flagrant disrespect to a %{animal}."
+    anathema_weapons: "Character must not use weapons while Raging."

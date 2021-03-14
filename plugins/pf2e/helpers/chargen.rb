@@ -10,13 +10,16 @@ module AresMUSH
       end
     end
 
-    def self.check_alignment(align, charclass, deity=nil)
+    def self.check_alignment(align, charclass, subclass, deity=nil)
+      subclass_alignments = Global.read_config('pf2e_specialty', subclass, 'allowed_alignments')
       class_alignments = Global.read_config('pf2e_class', charclass, 'allowed_alignments')
       requires_deity = Global.read_config('pf2e_class', charclass, 'check_deity')
       deity_alignments = Global.read_config('pf2e_deities', deity, 'allowed_alignments')
 
-      if !class_alignments
+      if !class_alignments && !subclass_alignments
         class_alignments = Global.read_config('pf2e', 'allowed_alignments')
+      else
+        class_alignments = class_alignments & subclass_alignments
       end
 
       if requires_deity && (!deity || deity.blank?)
@@ -39,18 +42,22 @@ module AresMUSH
       end
     end
 
-    def self.chargen_messages(ancestry, heritage, background, charclass, specialize, faith)
+    def self.chargen_messages(ancestry, heritage, background, charclass, specialize, faith, subclass_info)
       messages = []
 
       missing_info = Pf2e.missing_base_info(ancestry, heritage, background, charclass, faith)
       messages << missing_info if missing_info
 
-      bad_alignment = Pf2e.check_alignment(faith['alignment'], charclass, faith['deity'])
+      bad_alignment = Pf2e.check_alignment(faith['alignment'], charclass, specialize, faith['deity'])
       messages << bad_alignment if bad_alignment
 
       needs_specialty = Global.read_config('pf2e', 'subclass_names').keys
       error = needs_specialty.include?(charclass) && specialize.blank?
       messages << t('pf2e.missing_subclass') if error
+
+      needs_specialty_subinfo = Global.read_config('pf2e_specialty', charclass, specialize)
+      missing_subclass_info = needs_specialty_subinfo.has_key?('choose') && subclass_info.blank?
+      messages << t('pf2e.missing_subclass_info') if missing_subclass_info
 
       return nil if messages.count == 0
       return messages.join("%r")
