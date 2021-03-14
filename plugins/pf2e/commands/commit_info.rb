@@ -256,9 +256,11 @@ module AresMUSH
         # Languages
         languages = enactor.pf2_lang
 
-        ancestry_info['languages'].each do |lang|
-          languages << lang
-        end
+        ancestry_info['languages'].each { |l| languages << l }
+
+        clang = class_features_info['languages']
+
+        clang.each { |l| languages << l } if clang
 
         enactor.pf2_lang = languages
 
@@ -270,7 +272,15 @@ module AresMUSH
 
         movement = enactor.pf2_movement
         movement['Size'] = ancestry_info['Size']
-        movement['Speed'] = ancestry_info['Speed']
+        movement['base_speed'] = ancestry_info['Speed']
+
+        other_mtypes = heritage_info.has_key?('movement')
+
+        if other_mtypes
+          other_mtypes.each do |k,v|
+            movement[k] = v
+          end
+        end
 
         enactor.pf2_movement = movement
 

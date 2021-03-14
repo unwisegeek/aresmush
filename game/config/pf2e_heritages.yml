@@ -25,19 +25,31 @@ pf2e_heritage:
     special:
     - Low-Light Vision
     change_vision: true
-  Badlands: {}
+  Badlands:
+    special:
+    - Badlands Oruch
   Cavern:
     special:
     - Darkvision
-  Chameleon: {}
+  Chameleon:
+    circumstance: true
   Changeling:
     traits:
     - changeling
     special:
     - Low-Light Vision
     change_vision: true
-  Charhide: {}
-  Cliffscale: {}
+  Charhide:
+    defense:
+      resistances:
+        fire: 1
+    special:
+    - Charhide Goblin
+  Cliffscale:
+    feat:
+    - Combat Climber
+    special:
+    - Cliffscale Lizardfolk
   Dar:
     traits:
     - Dar
@@ -47,7 +59,10 @@ pf2e_heritage:
     change_vision: true
   Death Warden:
     circumstance: true
-  Deep: {}
+  Deep:
+    feat:
+    - Terrain Expertise/Underground
+    - Combat Climber
   Desert:
     defense:
       resistances:
@@ -55,14 +70,26 @@ pf2e_heritage:
   Elemental Heart:
     action:
     - Energy Emanation
-  Elfbane: {}
-  Fey-Touched: {}
+  Elfbane:
+    reaction:
+    - Resist Elf Magic
+  Fey-Touched:
+    traits:
+    - fey
+    cantrip:
+    - [ 'primal' ]
   Forge:
     defense:
       resistances:
         fire: 1
-  Frilled:  {}
-  Gutsy: {}
+  Frilled:
+    special:
+    - Frilled Lizardfolk
+    action:
+    - Threatening Approach
+  Gutsy:
+    special:
+    - Gutsy Lucht
   Half-Sil:
     traits:
     - half-sil
@@ -75,23 +102,62 @@ pf2e_heritage:
     - half-oruch
     special:
     - Low-Light Vision
-  Hillock: {}
-  Hold-Scarred: {}
-  Inbreakable: {}
-  Irongut: {}
-  Jinxed-egalrin: {}
-  Jinxed-lucht: {}
-  Mountainkeeper: {}
-  Nomadic: {}
+  Hillock:
+    rest_HP_bonus: true
+    special:
+    - Hillock Lucht
+  Hold-Scarred:
+    ancestry_HP: 12
+    feat:
+    - Diehard
+  Irongut:
+    special:
+    - Irongut Goblin
+    circumstance: true
+  Jinxed-egalrin:
+    special:
+    - Jinxed Egalrin
+  Jinxed-lucht:
+    action:
+    - Jinx
+  Mountainkeeper:
+    innate_spell:
+      spell_trad: primal
+      cantrip:
+      - disrupt undead
+    special:
+    - Mountainkeeper Egalrin
+  Nomadic:
+    language:
+    - language
+    - language
   Oathkeeper:
     circumstance: true
-  Observant: {}
-  Rainfall: {}
-  Razortooth: {}
+  Observant:
+    circumstance: true
+  Rainfall:
+    circumstance: true
+  Razortooth:
+    attack:
+      Jaws:
+        damage: 1d6
+        damage_type: P
+        traits:
+        - finesse
+        - unarmed
   Rock:
     circumstance: true
-  Runtboss: {}
-  Sandstrider: {}
+  Runtboss:
+    feat:
+    - Group Coercion
+    special:
+    - Runtboss Arvek
+  Sandstrider:
+    defense:
+      resistances:
+        fire: 1
+    special:
+    - Sandstrider Lizardfolk
   Seer:
     spell:
       name: 'Detect Magic'
@@ -100,36 +166,101 @@ pf2e_heritage:
     - Identify Magic
     - Decipher Writing
     action_bonus: 1
-  Sensate: {}
-  Makari: {}
-  Skilled: {}
-  Skyborn: {}
-  Smokeworker: {}
-  Snow: {}
-  Stormtossed: {}
+  Sensate:
+    special:
+    - Sensate Gnome
+    circumstance: true
+  Shortshanks:
+    feat:
+    - Ride
+    special:
+    - Shortshanks Arvek
+  Makari:
+    movement:
+      Swim: 15
+  Skilled:
+    skill:
+    - [ 'skill' ]
+  Skyborn:
+    special:
+    - Skyborn Egalrin
+  Smokeworker:
+    defense:
+      resistances:
+        fire: 1
+    special:
+    - Smokeworker Arvek
+  Snow:
+    defense:
+      resistances:
+        cold: 1
+  Steelskin:
+    special:
+    - Steelskin Arvek
+  Stormtossed:
+    defense:
+      resistances:
+        electricity: 1
+    special:
+    - Stormtossed Egalrin
   Strong-Blooded:
     defense:
       resistances:
         poison: 1
     circumstance: true
-  Tailed: {}
-  Taloned: {}
+  Tailed:
+    feat:
+    - Combat Climber
+    circumstance: true
+  Taloned:
+    attack:
+      Talons:
+        damage: 1d4
+        damage_type: S
+        traits:
+        - agile
+        - finesse
+        - unarmed
+        - versatile_P
   Tiefling:
     traits:
     - tiefling
     special:
     - Low-Light Vision
     change_vision: true
-  Treedweller: {}
-  Twilight: {}
-  Umbral: {}
-  Unseen: {}
-  Versatile: {}
-  Vivacious: {}
-  Wellspring: {}
+  Treedweller:
+    circumstance: true
+  Twilight:
+    special:
+    - Low-Light Vision
+  Umbral:
+    special:
+    - darkvision
+  Unbreakable:
+    ancestry_HP: 10
+    special:
+    - Unbreakable Goblin
+  Unseen:
+    circumstance: true
+  Versatile:
+    feat:
+    - [ 'general' ]
+  Vivacious:
+    defense:
+      resistances:
+        negative: 1
+  Wellspring:
+    cantrip:
+      - [ 'arcane', 'divine', 'occult' ]
+    change_spell_trad: true
   Whisper:
     circumstance: true
-  Wildwood: {}
-  Wintertouched: {}
+  Wildwood:
+    special:
+    - Wildwood Lucht
+  Wintertouched:
+    defense:
+      resistance:
+        cold: 1
   Woodland:
     circumstance: true
