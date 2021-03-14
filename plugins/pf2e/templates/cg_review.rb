@@ -70,6 +70,9 @@ module AresMUSH
         @faith_info['deity']
       end
 
+      def is_devotee
+        alert = @charclass_info['use_deity'] ? "%xh%xy!%xn" : ""
+
       def alignment
         @faith_info['alignment']
       end
@@ -98,7 +101,11 @@ module AresMUSH
       end
 
       def ahp
-        ancestry_hp = @ancestry_info["HP"] ? @ancestry_info["HP"] : 0
+        ancestry_hp = @heritage_info['ancestry_HP'] ?
+                      @heritage_info['ancestry_HP'] :
+                      @ancestry_info["HP"]
+
+        ahp = ancestry_hp ? ancestry_hp : 0
       end
 
       def chp
@@ -206,6 +213,13 @@ module AresMUSH
         @ancestry_info ? @ancestry_info['languages'].sort.join(", ") : "Tradespeak"
       end
 
+      def skills
+        charclass_skills = @class_features_info['class_skills']
+        open_skills = @class_features_info['skills_open']
+
+        "#{charclass_skills} + #{open_skills}"
+      end
+
       def bg_skills
         @to_assign['bgskill'].join(" or ") if @baseinfolock
       end
@@ -220,21 +234,6 @@ module AresMUSH
           msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option)
           msgs ? msgs : t('pf2e.cg_options_ok')
         end
-      end
-
-      def format_abil(name, value)
-        fname = "#{item_color}#{name}%xn:"
-        linebreak = i % 3 == 1 ? "" : "%r"
-        fmod = "(#{Pf2eAbilities.get_ability_mod(value)})"
-        "#{linebreak}#{left(fname, 10)}: #{left(value, 3)} #{left(fmod, 13)}"
-      end
-
-      def format_skill(name, value)
-        # This isn't done yet
-        name = "#{item_color}#{name}:%xn"
-        linebreak = i % 2 == 1 ? "" : "%r"
-        value
-        "#{linebreak}#{left(name, 21)} #{left(s.print_rating, 8)} #{left(rating_text, 10)}"
       end
 
     end

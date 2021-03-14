@@ -111,8 +111,8 @@ pf2e_specialty:
               - trip
               - unarmed
       anathema:
-      - 't('pf2e.anathema_animal', :animal => base_info['specialize_info'])'
-      - 't('pf2e.anathema_weapons')'
+      - "May not show flagrant disrespect to an animal of its chosen kind."
+      - "May not use weapons while raging."
       instinct_ability: Bestial Rage
       rage_ability:
         Ape:
