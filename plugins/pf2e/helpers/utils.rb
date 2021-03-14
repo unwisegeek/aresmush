@@ -20,7 +20,9 @@ module AresMUSH
     end
 
     def self.get_linked_attr_mod(char, value, type=nil)
-      case type.downcase
+      attr_type = type.is_a?(String) ? type.downcase : type
+
+      case attr_type
       when 'skill'
         skill_mod = Pf2eSkills.get_linked_attr(value)
         return Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(char, skill_mod))
