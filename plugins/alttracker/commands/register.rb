@@ -21,12 +21,14 @@ module AresMUSH
         max_alts = Global.read_config('alttracker','max_alts_allowed')
 
         # Use safe navigation operator to force player to nil if character not found.
-        player = self.target =~ valid_email ? AltTracker.find_player_by_email(self.target) : Character.find_one_by_name(self.target)&.player
+        player = self.target =~ valid_email ?
+            AltTracker.find_player_by_email(self.target, enactor) :
+            Character.find_one_by_name(self.target)&.player
 
         if !player
           if self.target =~ valid_email
             player = Player.create(name: self.target, codeword: self.codeword)
-            
+
             enactor.update(player: player)
 
             client.emit_success t('alttracker.register_ok')

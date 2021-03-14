@@ -3,6 +3,8 @@ en:
   pf2e:
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     who_can_see_sheet: "You have granted the following permissions to your sheet:"
+    admin_no_sheet: "That character is a game admin and does not have a sheet."
+    no_sheet_yet: "You have not yet committed your base options. Use `cg/review`."
     char_not_found: "I didn't find a character by that name."
     bad_section: "Section %{section} is not a valid section."
     only_in_chargen: "This command can only be used in chargen."
@@ -13,7 +15,7 @@ en:
     charclass_not_set: "You cannot set a specialty until you set your class."
     no_lineages: "That heritage does not have lineages associated to it."
     missing_subclass: "Your class requires a specialization, please choose one."
-    admin_no_sheet: "That character is a game admin and does not have a sheet."
+
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
     abilities_locked: "Your abilities are already locked. Use `ability/reset` to clear them first."
     reset_first: "Type cg/reset before using this command."

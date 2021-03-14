@@ -1,8 +1,8 @@
 module AresMUSH
   module AltTracker
 
-    def self.find_player_by_email(email)
-      player = ClassTargetFinder(email, Player, enactor)
+    def self.find_player_by_email(email, char)
+      player = ClassTargetFinder(email, Player, char)
     end
 
     def self.find_alts_by_email(email)
