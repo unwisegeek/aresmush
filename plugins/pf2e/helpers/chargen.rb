@@ -13,7 +13,7 @@ module AresMUSH
     def self.check_alignment(align, charclass, subclass, deity=nil)
       subclass_alignments = Global.read_config('pf2e_specialty', subclass, 'allowed_alignments')
       class_alignments = Global.read_config('pf2e_class', charclass, 'allowed_alignments')
-      requires_deity = Global.read_config('pf2e_class', charclass, 'check_deity')
+      requires_deity = Global.read_config('pf2e_class', charclass, 'use_deity')
       deity_alignments = Global.read_config('pf2e_deities', deity, 'allowed_alignments')
 
       if !class_alignments && !subclass_alignments

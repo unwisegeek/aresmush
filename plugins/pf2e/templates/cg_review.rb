@@ -72,6 +72,7 @@ module AresMUSH
 
       def is_devotee
         alert = @charclass_info['use_deity'] ? "%xh%xy!%xn" : ""
+      end
 
       def alignment
         @faith_info['alignment']
@@ -79,10 +80,19 @@ module AresMUSH
 
       def has_code
         if (@charclass == 'Champion') || (@charclass == 'Cleric')
-          d_code = Global.read_config('pf2e_deities', @faith_info['deity'], edicts) + Global.read_config('pf2e_deities', @faith_info['deity'], anathema)
+          d_code = Global.read_config('pf2e_deities',
+            @faith_info['deity'],
+            edicts
+          )
+            + Global.read_config('pf2e_deities',
+              @faith_info['deity'],
+              anathema
+            )
         else
           d_code = []
         end
+
+        d_code = [] if !d_code 
 
         s_code = []
         s_edicts = @subclass_info['edicts']
