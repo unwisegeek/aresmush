@@ -11,23 +11,23 @@ module AresMUSH
     end
 
     def self.check_alignment(align, charclass, subclass, deity=nil)
-      subclass_alignments = Global.read_config('pf2e_specialty', subclass, 'allowed_alignments')
-      class_alignments = Global.read_config('pf2e_class', charclass, 'allowed_alignments')
+      all_align = Global.read_config('pf2e','allowed_alignments')
+      subclass_align = Global.read_config('pf2e_specialty', subclass, 'allowed_alignments')
+      class_align = Global.read_config('pf2e_class', charclass, 'allowed_alignments')
       requires_deity = Global.read_config('pf2e_class', charclass, 'use_deity')
       deity_alignments = Global.read_config('pf2e_deities', deity, 'allowed_alignments')
 
-      if !class_alignments && !subclass_alignments
-        class_alignments = Global.read_config('pf2e', 'allowed_alignments')
-      else
-        class_alignments = class_alignments & subclass_alignments
-      end
+      calign = class_align ? class_align : all_align
+      salign = subclass_align ? subclass_align : all_align
+
+      alignments = calign & salign
 
       if requires_deity && (!deity || deity.blank?)
         error = t('pf2e.class_requires_deity')
       elsif requires_deity
-        error = class_alignments & deity_alignments.include?(align) ? nil : t('pf2e.class_deity_mismatch')
+        error = alignments & deity_alignments.include?(align) ? nil : t('pf2e.class_deity_mismatch')
       else
-        error = class_alignments.include?(align) ? nil : t('pf2e.class_mismatch')
+        error = alignments.include?(align) ? nil : t('pf2e.class_mismatch')
       end
 
       return error if error
