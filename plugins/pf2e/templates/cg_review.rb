@@ -72,6 +72,7 @@ module AresMUSH
 
       def is_devotee
         alert = @charclass_info['use_deity'] ? "%xh%xy!%xn" : ""
+      end
 
       def alignment
         @faith_info['alignment']
