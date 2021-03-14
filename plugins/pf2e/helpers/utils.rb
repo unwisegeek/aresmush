@@ -10,7 +10,11 @@ module AresMUSH
       end
 
       return nil if !element_list
+
       element = element_list.select { |a| a.name_upcase == name.upcase }
+      
+      return nil if element.empty?
+      element
     end
 
     # p can be passed to this method as nil
