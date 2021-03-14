@@ -78,7 +78,7 @@ module AresMUSH
           charclass = base_info['charclass']
           specialty = base_info['specialize']
           specialty_info = Global.read_config('pf2e_specialty', charclass, specialty)
-          specialty_has_info = specialty.blank ? nil : specialty.has_key? 'choose'
+          specialty_has_info = specialty.blank ? nil : specialty.has_key?('choose')
 
           if specialty.blank?
             client.emit_failure t('pf2e.specialty_not_set')
