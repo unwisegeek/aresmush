@@ -19,10 +19,6 @@ module AresMUSH
       end
 
       def handle
-        if !char.pf2_baseinfo_locked
-          client.emit_failure t('pf2e.no_sheet_yet')
-          return
-        end
 
         char = self.target ? Character.find_one_by_name(self.target) : enactor
 
