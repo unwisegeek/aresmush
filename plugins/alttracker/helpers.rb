@@ -2,11 +2,17 @@ module AresMUSH
   module AltTracker
 
     def self.find_player_by_email(email, char)
-      player = ClassTargetFinder.find(email, Player, char)
+      result = ClassTargetFinder.find(email, Player, char)
+        if result.found
+          player = result.found
+        else
+          player = nil
+        end
+      return player
     end
 
-    def self.find_alts_by_email(email)
-      player = self.find_player_by_email(email)
+    def self.find_alts_by_email(email, char)
+      player = self.find_player_by_email(email, char)
       return nil unless player
       alts = player.characters.map { |c| c.name }
     end

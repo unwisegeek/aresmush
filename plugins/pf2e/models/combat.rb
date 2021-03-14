@@ -30,7 +30,7 @@ module AresMUSH
     def self.get_save_from_char(char,save)
       combat = char.combat
 
-      return nil if !char.combat
+      return 'untrained' if !char.combat
 
       case save.downcase
       when 'fort', 'fortitude'
@@ -40,7 +40,7 @@ module AresMUSH
       when 'will'
         return combat.will
       else
-        nil
+        'untrained'
       end
     end
 

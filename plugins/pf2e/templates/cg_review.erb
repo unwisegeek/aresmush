@@ -9,7 +9,7 @@
 <%= left("#{item_color}Background%xn: #{background}", 39) %>
 <%= section_line("Faith Info") %>
 <%= left("#{item_color}Alignment%xn: #{alignment}", 39) -%>
-<%= left("#{item_color}Deity%xn: #{deity}", 39) %>
+<%= left("#{item_color}Deity%xn: #{deity}#{is_devotee}", 39) %>
 <% if has_code %>
 <%= section_line("Code Of Behavior") %>
 <%= "%xh%xyYour character choices so far include a code of behavior. This code will be visible to other players once you are approved.%xn" %>
