@@ -11,11 +11,11 @@ Now you can start assigning ability boosts to your stats. Some of your stats wil
 Two main rules apply to assigning ability boosts:
 
 1. You begin at a score of 10, which represents human average. Many races have an "ability flaw", which means that that score begins at an 8. Each boost increases the score by 2. No score may start play at higher than 18, and only one score may start play at 18.
-2. When you receive multiple ability boosts from a single source, each boost must be applied to a different score. For example, a Lucht character receives from their ancestry ability boosts to Dexterity and Wisdom, and an additional boost to assign as they wish. That boost cannot go into whichever one they picked. It has to go somewhere else.
+2. When you receive multiple ability boosts from a single source, each boost must be applied to a different score. For example, a Lucht character receives from their ancestry ability boosts to Dexterity and Wisdom, and an additional boost to assign as they wish. That boost cannot go into Dexterity or Wisdom. It has to go somewhere else.
 
 ## Commands
 
-Remember: <ability> is always one of: Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. See the PRD for more information on what these abilities say about your character, and what they do.
+Remember: <ability> is always one of Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. See the PRD for more information on what these abilities say about your character, and what they do.
 
 `cg/review`: See what boosts needs to be assigned still. If you see a number, you can assign it to anything. If you see a list, those are your choices.
 `assign <type>=<ability>`: Assigns a type of boost to <ability>.
