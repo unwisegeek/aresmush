@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    class RollCommand
+    class PF2RollCommand
       include CommandHandler
 
       attr_accessor :mods
