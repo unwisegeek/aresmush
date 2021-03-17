@@ -38,7 +38,7 @@ module AresMUSH
         end
       when "assign"
         return PF2AssignCmd
-      when roll
+      when "roll"
         case cmd.switch
         when nil
           return PF2RollCommand
