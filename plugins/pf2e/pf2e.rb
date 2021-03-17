@@ -42,6 +42,7 @@ module AresMUSH
         case cmd.switch
         when nil
           return PF2RollCommand
+        end
       end
 
       nil
