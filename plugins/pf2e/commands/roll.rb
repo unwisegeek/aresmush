@@ -42,7 +42,7 @@ module AresMUSH
             dice = e.gsub("d"," ").to_a
             amount = dice[0].to_i > 0 ? dice[0].to_i : 1
             sides = dice[1].to_i
-            roll_result << roll_dice(amount, sides)
+            roll_result << Pf2e.roll_dice(amount, sides)
           elsif e.to_i == 0
             result << Pf2e.get_keyword_value(enactor, e)
           else

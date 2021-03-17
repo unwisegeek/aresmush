@@ -823,7 +823,7 @@ pf2e_class:
         feat:
         - general
         - skill
-  Druid
+  Druid:
     key_abil: wisdom
     spell_abil: wisdom
     HP: 8
@@ -845,12 +845,16 @@ pf2e_class:
         will: expert
     charclass:
     - Wild Empathy
-    class feats:
+    class_feats:
     - Shield Block
     reaction:
     - Shield Block
     Spells: trained
     spell_trad: primal
+    anathema:
+    - "Character must not teach the Druidic language to a non-druid."
+    - "Character is not permitted to wear metal armor or carry metal shields."
+    - "Character must not take actions that despoil natural places."
     advance:
       2:
         feat:

@@ -323,3 +323,12 @@ pf2e_specialty:
   Cleric:
     Cloistered: {}
     Warpriest: {}
+  Druid: 
+    Animal:
+      class_skill: Athletics
+      feat:
+      - Animal Companion
+      anathema:
+      - "Character must not kill an animal needlessly or commit wanton cruelty to one."
+      spell:
+      - Heal Animal
