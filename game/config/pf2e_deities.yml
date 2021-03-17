@@ -1,29 +1,398 @@
 ---
 pf2e_deities:
-  Deity Name:
+  Althea:
     allowed_alignments:
-    - list
-    - allowed
-    - alignments
-    - in LG/LN/LE
-    - format
-    divine_font: "harm, heal, harm or heal"
-    skill:
-    - skill name
-    weapon: weapon name
+    - LG
+    - NG
+    - CG
+    - LN
+    - N
+    divine_font:
+    - heal
+    divine_skill: Medicine
+    fav_weapon: Halberd
     domains:
-    - list
-    - domains
-    - this
-    - way
-    spells:
-      level number:
-      - list
-      - spells
-      - for
-      - level
-      2nd level number:
-      - list
-      - spells
-      - for
-      - level
+    - Family
+    - Healing
+    - Pain
+    - Duty
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Angoron:
+    allowed_alignments:
+    - CG
+    - NG
+    - LG
+    - N
+    - CN
+    - LN
+    divine_font:
+    - harm
+    - heal
+    divine_skill: Athletics
+    fav_weapon: Maul
+    domains:
+    - Confidence
+    - Might
+    - Ambition
+    - Freedom
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Daeus:
+    allowed_alignments:
+    - LG
+    - LN
+    - NG
+    divine_font:
+    - heal
+    divine_skill: Society
+    fav_weapon: Longsword
+    domains:
+    - Wyrmkin
+    - Truth
+    - Zeal
+    - Sun
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Eluna:
+    allowed_alignments:
+    - NG
+    - CG
+    - LG
+    - LN
+    - N
+    divine_font:
+    - heal
+    divine_skill: Arcana
+    fav_weapon: starknife
+    domains:
+    - Moon
+    - Magic
+    - Dreams
+    - Change
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Gilead:
+    allowed_alignments:
+    - NG
+    - CG
+    - N
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Survival
+    fav_weapon: Longbow
+    domains:
+    - Earth
+    - Nature
+    - Travel
+    - Air
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Navos:
+    allowed_alignments:
+    - LN
+    - LG
+    - NG
+    - N
+    divine_font:
+    - heal
+    divine_skill: Acrobatics
+    fav_weapon: unarmed
+    domains:
+    - Time
+    - Secrecy
+    - Perfection
+    - Star
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Tarien:
+    allowed_alignments:
+    - NG
+    - CG
+    - CN
+    - N
+    divine_font:
+    - heal
+    divine_skill: Stealth
+    fav_weapon: Short Sword
+    domains:
+    - Luck
+    - Travel
+    - Trickery
+    - Confidence
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Animus:
+    allowed_alignments:
+    - NG
+    - LN
+    - NE
+    - N
+    - CN
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Arcana
+    fav_weapon: quarterstaff
+    domains:
+    - Magic
+    - Glyph
+    - Knowledge
+    - Fate
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Ceinara:
+    allowed_alignments:
+    - NG
+    - CG
+    - CN
+    - N
+    - NE
+    - CE
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Performance
+    fav_weapon: rapier
+    domains:
+    - Fire
+    - Passion
+    - Change
+    - Creation
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Dana:
+    allowed_alignments:
+    - NG
+    - LN
+    - N
+    - CN
+    - NE
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Nature
+    fav_weapon: scimitar
+    domains:
+    - Earth
+    - Nature
+    - Change
+    - Swarm
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Kor:
+    allowed_alignments:
+    - CG
+    - CN
+    - N
+    - NE
+    - CE
+    divine_font:
+    - harm
+    divine_skill: Intimidation
+    fav_weapon: Greataxe
+    domains:
+    - Zeal
+    - Pain
+    - Might
+    - Destruction
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Rada:
+    allowed_alignments:
+    - CG
+    - LN
+    - CN
+    - LE
+    - CE
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Diplomacy
+    fav_weapon: trident
+    domains:
+    - Water
+    - Wealth
+    - Travel
+    - Air
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Reos:
+    allowed_alignments:
+    - N
+    - NG
+    - NE
+    - LN
+    - LG
+    - LE
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Crafting
+    fav_weapon: warhammer
+    domains:
+    - Earth
+    - Creation
+    - Perfection
+    - Toil
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Serriel:
+    allowed_alignments:
+    - LG
+    - LN
+    - LE
+    - NG
+    - N
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Society
+    fav_weapon: lance
+    domains:
+    - Cities
+    - Protection
+    - Duty
+    - Wealth
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2
+  Vardama:
+    allowed_alignments:
+    - LG
+    - NG
+    - LN
+    - N
+    - LE
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Medicine
+    fav_weapon: khopesh
+    domains:
+    - Death
+    - Sorrow
+    - Repose
+    - Soul
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    anathema:
+    - anathema1
+    - anathema2

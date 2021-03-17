@@ -712,4 +712,267 @@ pf2e_class:
       spell_trad: divine
       charclass:
       - Divine Font
-    advance: {}
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        feat:
+        - general
+        boost:
+        - skill
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        boost:
+        - ability
+        - skill
+        charclass:
+        - Alertness
+        combat_stats:
+          perception: expert
+        feat:
+        - ancestry
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        boost:
+        - skill
+        feat:
+        - general
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        feat:
+        - ancestry
+        charclass:
+        - resolve
+        combat_stats:
+          will: master
+        boost:
+        - skill
+      10:
+        boost:
+        - ability
+        feat:
+        - charclass
+        - skill
+      11:
+        boost:
+        - skill
+        feat:
+        - general
+        charclass:
+        - Lightning Reflexes
+        combat_stats:
+          reflex: expert
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        boost:
+        - skill
+        feat:
+        - ancestry
+        charclass:
+        - Weapon Specialization
+        - Divine Defense
+        combat_stats:
+          armor_unarmored: expert
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        boost:
+        - ability
+        - skill
+        feat:
+        - general
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        boost:
+        - skill
+        feat:
+        - general
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        boost:
+        - skill
+        feat:
+        - general
+        charclass:
+        - miraculous spell
+      20:
+        boost:
+        - ability
+        feat:
+        - general
+        - skill
+  Druid
+    key_abil: wisdom
+    spell_abil: wisdom
+    HP: 8
+    chargen:
+      languages:
+      - Druidic
+      skills_open: 2
+      class_skills:
+      - nature
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        armor_unarmored: trained
+        armor_light: trained
+        armor_medium: trained
+        perception: trained
+        fortitude: trained
+        reflex: trained
+        will: expert
+    charclass:
+    - Wild Empathy
+    class feats:
+    - Shield Block
+    reaction:
+    - Shield Block
+    Spells: trained
+    spell_trad: primal
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        boost:
+        - skill
+        charclass:
+        - Alertness
+        - Great Fortitude
+        combat_stats:
+          perception: expert
+          fortitude: expert
+        feat:
+        - general
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        boost:
+        - ability
+        - skill
+        charclass:
+        - Lightning Reflexes
+        combat_stats:
+          reflex: expert
+        feat:
+        - ancestry
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        boost:
+        - skill
+        charclass:
+        - Expert Spellcaster
+        Spells: expert
+        feat:
+        - general
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        boost:
+        - skill
+        feat:
+        - ancestry
+      10:
+        boost:
+        - ability
+        feat:
+        - charclass
+        - skill
+      11:
+        boost:
+        - skill
+        charclass:
+        - Druid Weapon Expertise
+        - Resolve
+        combat_stats:
+          wp_unarmed: expert
+          wp_simple: expert
+          will: master
+        feat:
+        - general
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        boost:
+        - skill
+        charclass:
+        - Medium Armor Expertise
+        - Weapon Specialization
+        combat_stats:
+          armor_unarmored: expert
+          armor_light: expert
+          armor_medium: expert
+        feat:
+        - general
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        boost:
+        - ability
+        - skill
+        charclass: Master Spellcaster
+        Spells: master
+        feat:
+        - general
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        boost:
+        - skill
+        feat:
+        - ancestry
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        boost:
+        - skill
+        charclass:
+        - Legendary Spellcaster
+        - Primal Hierophant
+        Spells: legendary
+        feat:
+        - general
+      20:
+        boost:
+        - ability
+        feat:
+        - charclass
+        - skill
