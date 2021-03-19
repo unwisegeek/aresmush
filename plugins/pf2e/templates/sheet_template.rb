@@ -97,8 +97,8 @@ module AresMUSH
       def abilities
         abilities = @char.abilities
 
-        return [] if !abilities
-        
+        return [] if abilities.empty?
+
         list = []
         abilities.each do |a,i|
           name = a.name
@@ -110,6 +110,9 @@ module AresMUSH
 
       def skills
         skills = @char.skills
+
+        return [] if skills.empty?
+        
         list = []
         skills.each do |s,i|
           list << format_skill(s, i)
@@ -118,6 +121,9 @@ module AresMUSH
 
       def lores
         lores = @char.lores
+
+        return [] if lores.empty?
+
         list = []
         lores.each do |lore,i|
           list << format_lore(lore, i)
