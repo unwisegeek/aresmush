@@ -4,7 +4,7 @@ en:
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     who_can_see_sheet: "You have granted the following permissions to your sheet:"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
-    no_sheet_yet: "You have not yet committed your base options. Use `cg/review`."
+    no_sheet_yet: "This command cannot be used until the character has committed their base options."
     char_not_found: "I didn't find a character by that name."
     bad_section: "Section %{section} is not a valid section."
     only_in_chargen: "This command can only be used in chargen."

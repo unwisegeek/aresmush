@@ -30,7 +30,7 @@ module AresMUSH
           return nil
         elsif !char.pf2_baseinfo_locked
           client.emit_failure t('pf2e.no_sheet_yet')
-          return
+          return nil
         end
 
         valid_sections = %w{all info ability skills feats combat features languages}
