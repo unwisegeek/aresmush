@@ -229,7 +229,7 @@ module AresMUSH
         charclass_skills = @class_features_info['class_skills']
         open_skills = @class_features_info['skills_open']
 
-        "#{charclass_skills} + #{open_skills}"
+        "#{charclass_skills.join} + #{open_skills}"
       end
 
       def bg_skills
