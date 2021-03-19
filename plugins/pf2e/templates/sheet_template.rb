@@ -96,6 +96,9 @@ module AresMUSH
 
       def abilities
         abilities = @char.abilities
+
+        return [] if !abilities
+
         list = []
         abilities.each do |a,i|
           name = a.name
