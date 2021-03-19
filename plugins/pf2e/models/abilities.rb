@@ -27,7 +27,7 @@ module AresMUSH
     def self.get_ability_score(char, ability)
       object = Pf2e.find_character_ability(char, 'ability', ability)
 
-      return nil if !object
+      return 10 if !object
 
       score = object.mod_val ? object.mod_val : object.base_val
     end
