@@ -57,7 +57,7 @@ module AresMUSH
       error = needs_specialty.include?(charclass) && specialize.blank?
       messages << t('pf2e.missing_subclass') if error
 
-      needs_specialty_subinfo = specialize ?
+      needs_specialty_subinfo = !specialize.blank? && !charclass.blank? ?
         Global.read_config('pf2e_specialty', charclass, specialize) :
         {}
       missing_subclass_info = needs_specialty_subinfo.has_key?('choose') && subclass_info.blank?
