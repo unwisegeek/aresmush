@@ -197,7 +197,7 @@ module AresMUSH
           value = list.sort.join(", ")
         end
 
-        value 
+        value
       end
 
       def format_ability(abil, score, i)
