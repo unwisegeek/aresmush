@@ -125,7 +125,7 @@ module AresMUSH
           # This needs to wait until the feats code is written!
         when "deity", "alignment"
           info = enactor.pf2_faith
-          info[selected_element.to_sym] = selected_option
+          info[selected_element.to_sym] = selected_option.join
 
           enactor.update(pf2_faith: info)
         end
