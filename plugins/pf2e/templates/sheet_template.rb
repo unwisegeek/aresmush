@@ -96,6 +96,9 @@ module AresMUSH
 
       def abilities
         abilities = @char.abilities
+
+        return [] if !abilities
+        
         list = []
         abilities.each do |a,i|
           name = a.name
@@ -194,7 +197,7 @@ module AresMUSH
           value = list.sort.join(", ")
         end
 
-        value 
+        value
       end
 
       def format_ability(abil, score, i)
