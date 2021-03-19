@@ -9,9 +9,17 @@ module AresMUSH
       end
       
       def handle
-        value = AresMUSH::Pf2eAbilities.get_ability_mod(13)
+        char = AresMUSH::Character.find_one_by_name('Landtest')
+      
+        return [] if abilities.empty?
         
-        client.emit value
+        list = []
+        abilities.each do |a,i|
+          name = a.name
+          score = a.mod_val ? a.mod_val : a.base_val
+          list << format_ability(name, score, i)
+        end
+        list
       end
 
     end
