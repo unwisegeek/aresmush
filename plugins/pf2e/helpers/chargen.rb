@@ -27,7 +27,10 @@ module AresMUSH
       if requires_deity && (!deity || deity.blank?)
         error = t('pf2e.class_requires_deity')
       elsif requires_deity
-        error = alignments & deity_alignments.include?(align) ? nil : t('pf2e.class_deity_mismatch')
+        dalign = alignments & deity_alignments
+        error = dalign.include?(align) ?
+                nil :
+                t('pf2e.class_deity_mismatch')
       else
         error = alignments.include?(align) ? nil : t('pf2e.class_mismatch')
       end
