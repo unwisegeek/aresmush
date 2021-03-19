@@ -9,10 +9,9 @@ module AresMUSH
       end
       
       def handle
-        list = "Not an array"
-        test = list.is_a?(Array) ? list.join(" and ") : list
+        value = AresMUSH::Pf2eAbilities.get_ability_mod(13)
         
-        client.emit  test
+        client.emit value
       end
 
     end
