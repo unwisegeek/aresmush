@@ -184,14 +184,17 @@ module AresMUSH
       def conditions
         cond = @char.pf2_conditions
         if cond.empty?
-          list = "None active."
+          value = "None active."
         else
           list = []
           cond.each do |c,v|
             list << format_condition(c,v)
           end
+
+          value = list.sort.join(", ")
         end
-        list.sort.join(", ")
+
+        value 
       end
 
       def format_ability(abil, score, i)

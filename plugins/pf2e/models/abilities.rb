@@ -20,7 +20,7 @@ module AresMUSH
 
     ##### CLASS METHODS #####
 
-    def self.get_ability_mod(score)
+    def self.get_ability_mod(score=10)
       (score - 10) / 2
     end
 
@@ -36,7 +36,7 @@ module AresMUSH
       object = Pf2e.find_character_ability(char, 'ability', ability)
 
       return nil if !object
-      
+
       base = object.base_val
       mod = base < 18 ? mod : 1
       base = base + mod
