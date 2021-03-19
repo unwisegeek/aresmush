@@ -1,13 +1,9 @@
-<div class="jumbotron-tagline">Journey to the magical realm of Ea.</div>
+<div class="jumbotron-tagline">Journey to the magical world of Ea.</div>
 
-Emblem of Ea is an epic fantasy MU* set in the original world of Ea, and has existed in various incarnations since 2002. We have recently converted to the AresMUSH codebase and to the Pathfinder Second Edition gaming system, and have updated and deepened our theme to expand player options and allow for deeper storytelling and more long-term plots. 
+The autumn of 1023 is an exciting and challenging time for the intrepid Explorer's Guild, known sometimes as the Illuminated Order, a group led by a mysterious figure known only as the Shrike in their search for ancient and mysterious artifacts of the doomed Kulthian Empire. Fresh off successfully rescuing both the goddess Taara and history itself from the tricks of the all-encompassing Void and restoring Animus to his rightful place among the gods, our heroes return home to a brave new Ea that isn't _quite_ the home they knew. 
 
-I have added a CSS custom class definition for sections where the commentary is IC, and it looks like this: 
+What will this brave new world hold for them? Become one of them to find out. 
 
-<p class="icquote">"Quotes and IC snippets should look like this."</p>
+Emblem of Ea is an epic fantasy MUSH set in the original world of Ea, and has existed in various incarnations since 2002. We have recently converted to the AresMUSH codebase and to the Pathfinder Second Edition gaming system, and have updated and deepened our theme to expand player options and allow for deeper storytelling and more long-term plots. 
 
-<div class="icquote">
-<p>A much longer snippet of IC text in a paragraph should look like this. Getting this to play nicely has been a bit of a struggle, but I believe I have finally gotten it to do what I want.</p>
-
-<p>Adding a second paragraph to test play nicely together.</p>
-</div>
+[[[policy:home|Policies]]] * [[[theme:home|Theme]]] * [[[rules:home|House Rules]]]
