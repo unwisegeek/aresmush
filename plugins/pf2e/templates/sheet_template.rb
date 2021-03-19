@@ -57,7 +57,9 @@ module AresMUSH
       end
 
       def subclass_option
-        @base_info['specialize_info'].blank? ? "/ " + @base_info['specialize_info'] : ""
+        @base_info['specialize_info'].blank? ?
+                  "" :
+                  "/" + @base_info['specialize_info']
       end
 
       def traits
@@ -112,7 +114,7 @@ module AresMUSH
         skills = @char.skills
 
         return [] if skills.empty?
-        
+
         list = []
         skills.each do |s,i|
           list << format_skill(s, i)
@@ -179,7 +181,7 @@ module AresMUSH
       end
 
       def saves
-        saves = %w{fortitude reflex will}
+        saves = %w{Fortitude Reflex Will}
         list = []
         saves.each do |save|
           list << format_save(@char, save)
