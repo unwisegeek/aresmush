@@ -13,7 +13,7 @@ pf2e:
   open_sheets: true
   open_npc_sheets: false
   title_color: '%x172'
-  list_item: '%x242'
+  list_item: '%x229'
   use_alignment: true
   use_encumbrance: true
   subclass_names:

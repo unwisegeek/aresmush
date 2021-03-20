@@ -29,7 +29,7 @@ module AresMUSH
           client.emit_ooc t('pf2e.admin_no_sheet')
           return nil
         elsif !char.pf2_baseinfo_locked
-          client.emit_failure t('pf2e.no_sheet_yet')
+          client.emit_ooc t('pf2e.no_sheet_yet')
           return nil
         end
 
