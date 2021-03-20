@@ -178,16 +178,15 @@ module AresMUSH
           client.emit_ooc t('pf2e.bg_no_options', :element => "feats")
         end
 
-        class_feats = class_features_info["class_feats"] ? class_features_info["class_feats"] : []
-        heritage_feats = heritage_info["feats"] ? heritage_info["feats"] : []
+        class_feats = class_features_info["class_feats"]
+        heritage_feats = heritage_info["feats"]
 
-        new_feats = bg_feats + class_feats + heritage_feats
-
-        new_feats.each { |f| feats << f } if !new_feats.empty?
-
-        enactor.pf2_feats = new_feats
+        feats['general'] = bg_feats
+        feats['charclass'] = class_feats if class_feats
+        feats['ancestry'] = heritage_feats if heritage_feats
 
         to_assign['class feat'] = charclass if class_features_info['feat'].include?('charclass')
+        to_assign['ancestry feat'] = ancestry
 
         # Senses and other specials
         special = ancestry_info["special"] + heritage_info["special"] + background_info["special"].uniq
