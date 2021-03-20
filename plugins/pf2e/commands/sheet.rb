@@ -22,14 +22,14 @@ module AresMUSH
 
         char = self.target ? Character.find_one_by_name(self.target) : enactor
 
-        if char == nil
+        if !char
           client.emit_failure t('pf2e.char_not_found')
           return nil
         elsif char.is_admin?
-          client.emit_ooc t('pf2e.admin_no_sheet')
+          client.emit_failure t('pf2e.admin_no_sheet')
           return nil
         elsif !char.pf2_baseinfo_locked
-          client.emit_ooc t('pf2e.no_sheet_yet')
+          client.emit_failure t('pf2e.no_sheet_yet')
           return nil
         end
 
