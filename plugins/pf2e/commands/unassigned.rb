@@ -12,7 +12,7 @@ module AresMUSH
           return
         end
 
-        template = Pf2eUnassignedTemplate.new(char, to_assign)
+        template = Pf2eUnassignedTemplate.new(enactor, to_assign)
 
         client.emit template.render
       end
