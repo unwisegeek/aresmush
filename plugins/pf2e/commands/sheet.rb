@@ -19,7 +19,6 @@ module AresMUSH
       end
 
       def handle
-
         char = self.target ? Character.find_one_by_name(self.target) : enactor
 
         case self.section
@@ -31,7 +30,6 @@ module AresMUSH
         end
 
         client.emit template.render
-
       end
 
     end
