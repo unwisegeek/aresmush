@@ -203,12 +203,15 @@ module AresMUSH
 
         l1_features.each { |f| char_features << f } if !l1_features.empty?
 
-        dfont_choice = deity_info[divine_font]
+        # Cleric stuff
+        if charclass == 'Cleric'
+          dfont_choice = deity_info['divine_font']
 
-        if dfont_choice.size > 1
-          to_assign['divine font'] = dfont_choice
-        else
-          # Do this code when spells are done, this should be tied to spells
+          if dfont_choice.size > 1
+            to_assign['divine font'] = dfont_choice
+          else
+            # Do this code when spells are done, this should be tied to spells
+          end
         end
 
         enactor.pf2_features = char_features
@@ -228,14 +231,14 @@ module AresMUSH
         s_edicts = subclass_info['edicts']
         s_anathema = subclass_info['anathema']
 
-        d_edicts.each { |e| edicts << e } if d_edicts
-        d_anathema.each { |a| anathema << a } if d_anathema
-
         c_edicts.each { |e| edicts << e } if c_edicts
         c_anathema.each { |a| anathema << a } if c_anathema
 
         s_edicts.each { |e| edicts << e } if s_edicts
         s_anathema.each { |a| anathema << a } if s_anathema
+
+        d_edicts.each { |e| edicts << e } if d_edicts
+        d_anathema.each { |a| anathema << a } if d_anathema
 
         faith_info['edicts'] = edicts if !edicts.empty?
         faith_info['anathema'] = anathema if !anathema.empty?
