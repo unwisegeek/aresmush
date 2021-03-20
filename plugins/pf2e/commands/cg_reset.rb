@@ -52,6 +52,7 @@ module AresMUSH
         enactor.update(pf2_special: [])
         enactor.update(pf2_boosts_working: { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[], 'unspent'=>4 })
         enactor.update(pf2_boosts: {})
+        enactor.update(pf2_to_assign: {})
         enactor.update(pf2_saves: { 'Fortitude'=>'untrained', 'Reflex'=>'untrained', 'Will'=>'untrained' })
 
         enactor.abilities&.each { |a| a.delete }

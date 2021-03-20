@@ -209,7 +209,7 @@ module AresMUSH
       end
 
       def format_ability(abil, score, i)
-        name = "%xh#{abil.capitalize}%xn:"
+        name = "%xh#{abil.capitalize!}%xn:"
         linebreak = i % 3 == 0 ? "%r" : ""
         mod = "(#{Pf2eAbilities.get_ability_mod(score)})"
         "#{linebreak}#{left(name, 10)}: #{left(score, 3)} #{left(mod, 13)}"
@@ -218,7 +218,7 @@ module AresMUSH
       def format_condition(condition, value)
         colors = Global.read_config('pf2e', 'condition_colors')
         cond_color = colors[condition.to_s]
-        name = "#{cond_color}#{condition.to_s.capitalize}"
+        name = "#{cond_color}#{condition.to_s.capitalize!}"
         value = value ? "%b#{value}" : ""
         "#{name}#{value}%xn"
       end
@@ -242,7 +242,7 @@ module AresMUSH
       end
 
       def format_save(char, save)
-        name = "#{save.capitalize}"
+        name = "#{save.capitalize!}"
         prof = "#{Pf2eCombat.get_save_from_char(char, save)}"[0].upcase
         bonus = Pf2eCombat.get_save_bonus(char, save)
         left("#{item_color}#{name}%xn: #{bonus} (#{prof})", 26)
