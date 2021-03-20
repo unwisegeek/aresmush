@@ -30,6 +30,7 @@ en:
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
 
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
+    multiple_options: "You have multiple options for %{element}. Remember to assign this in the next stage."
     cg_options_ok: "%xgNo errors or issues detected with your CG options."
     bg_options_set: "Your background does not require any choices. Moving on..."
     cg_reset_ok: "Your sheet has been cleared."
