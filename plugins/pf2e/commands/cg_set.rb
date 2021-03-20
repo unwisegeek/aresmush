@@ -118,6 +118,9 @@ module AresMUSH
             base_info['heritage'] = ""
           elsif selected_element == "charclass"
             base_info['specialize'] = ""
+            base_info['specialize_info'] = ""
+          elsif selected_element == "specialize"
+            base_info['specialize_info'] = ""
           end
 
           enactor.update(pf2_base_info: base_info)
