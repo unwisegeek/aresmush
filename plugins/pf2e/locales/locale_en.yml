@@ -48,11 +48,11 @@ en:
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
 
     unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
+    nothing_to_assign: "You have no character options left unassigned."
     boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
 
     combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
-    anathema_animal: "Character must not show flagrant disrespect to a %{animal}."
-    anathema_weapons: "Character must not use weapons while Raging."
+    unassigned_title: Unassigned Character Options: %{name} 
