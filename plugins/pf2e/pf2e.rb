@@ -43,6 +43,8 @@ module AresMUSH
         when nil
           return PF2RollCommand
         end
+      when "unassigned"
+        return PF2DisplayUnassignedCmd
       end
 
       nil
