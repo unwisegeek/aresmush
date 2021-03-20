@@ -1,8 +1,9 @@
 <%= header %>
 <%= center("#{title_color}#{title}", 78) %>%xn
 <%= divider %>
-
 <% to_assign.each do |option| -%>
 <%= option -%>
 <% end %>
+<%= divider %>
+<%= t('pf2e.unassigned_ftr_msg') %>
 <%= footer %>

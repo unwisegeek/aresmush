@@ -49,6 +49,7 @@ en:
 
     unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
     nothing_to_assign: "You have no character options left unassigned."
+    unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."
     boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
 
