@@ -50,7 +50,7 @@ module AresMUSH
         charclass_info = Global.read_config('pf2e_class', charclass)
         # Subclass_info can be nil
         subclass_info = Global.read_config('pf2e_specialty', subclass)
-        subclass_option_info = subclass_option ? subclass_info['choose'][subclass_option] : nil
+        subclass_option_info = subclass_option.blank? ? subclass_info['choose'][subclass_option] : nil
         class_features_info = charclass_info["chargen"]
 
         to_assign = enactor.pf2_to_assign
