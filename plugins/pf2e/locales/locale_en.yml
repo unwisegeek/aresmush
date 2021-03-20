@@ -55,4 +55,4 @@ en:
     combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
-    unassigned_title: Unassigned Character Options: %{name} 
+    unassigned_title: "Unassigned Character Options: %{name}"
