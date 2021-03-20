@@ -24,13 +24,13 @@ module AresMUSH
 
         if !char
           client.emit_failure t('pf2e.char_not_found')
-          return nil
+          return
         elsif char.is_admin?
           client.emit_failure t('pf2e.admin_no_sheet')
-          return nil
+          return
         elsif !char.pf2_baseinfo_locked
           client.emit_failure t('pf2e.no_sheet_yet')
-          return nil
+          return
         end
 
         valid_sections = %w{all info ability skills feats combat features languages}
