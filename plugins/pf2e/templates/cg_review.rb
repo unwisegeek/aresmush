@@ -222,7 +222,7 @@ module AresMUSH
       end
 
       def languages
-        @ancestry_info ? @ancestry_info['languages'].sort.join(", ") : "Tradespeak"
+        @ancestry_info['languages'] ? @ancestry_info['languages'].sort.join(", ") : "Tradespeak"
       end
 
       def skills
