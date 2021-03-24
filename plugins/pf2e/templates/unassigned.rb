@@ -33,12 +33,10 @@ module AresMUSH
 
       def format_option(element, options)
         title_e = element.split.each { |word| word.capitalize! }.join(" ")
-        fmt_e = "#{item_color}#{title_e}"
+        fmt_e = "#{item_color}" + "#{title_e}"
         fmt_o = options.is_a?(Array) ? options.join(" or ") : options
 
-        "%b%b%b#{left(item_colorfmt_e}#{fmt_o}%r"
-
-        "#{left(fmt_e, 26)}#{left(fmt_o, 52)}"
+        "#{left(fmt_e, 26)}#{left(fmt_o, 52)}%r"
       end
     end
   end
