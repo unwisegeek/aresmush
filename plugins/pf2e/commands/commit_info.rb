@@ -203,17 +203,6 @@ module AresMUSH
 
         l1_features.each { |f| char_features << f } if !l1_features.empty?
 
-        # Cleric stuff
-        if charclass == 'Cleric'
-          dfont_choice = deity_info['divine_font']
-
-          if dfont_choice.size > 1
-            to_assign['divine font'] = dfont_choice
-          else
-            # Do this code when spells are done, this should be tied to spells
-          end
-        end
-
         enactor.pf2_features = char_features
 
         # Code of Behavior - not every info combination will have one!
@@ -253,9 +242,8 @@ module AresMUSH
 
         combat_stats.each_pair do |k,v|
           combat.update("#{k}": v)
-        end
 
-        combat.update(key_abil: boosts['charclass']) if boosts['charclass']
+        combat.update(key_abil: charclass_ability) if charclass_ability.size == 1
 
         # Languages
         languages = enactor.pf2_lang
@@ -287,6 +275,11 @@ module AresMUSH
         end
 
         enactor.pf2_movement = movement
+
+        # Some classes have things or adjustments that only they get.
+        # This is handled here.
+
+        Pf2e.cg_edge_cases(enactor, charclass)
 
         # Final Updates
         enactor.pf2_to_assign = to_assign
