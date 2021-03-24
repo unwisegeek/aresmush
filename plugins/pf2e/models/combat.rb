@@ -12,7 +12,7 @@ module AresMUSH
 
     attribute :armor_unarmored, :default => 'untrained'
     attribute :armor_light, :default => 'untrained'
-    attribute :armor_med, :default => 'untrained'
+    attribute :armor_medium, :default => 'untrained'
     attribute :armor_heavy, :default => 'untrained'
 
     attribute :wp_unarmed, :default => 'untrained'

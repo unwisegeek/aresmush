@@ -292,6 +292,8 @@ pf2e_specialty:
       reaction:
       - Retributive Strike
       anathema:
+      - "Character must not willingly commit an evil act."
+      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       - "Character must not lie, cheat, or take advantage of others."
       edicts:
       - "Character must respect the legitimate authority of legitimate leadership wherever they go, and must obey its laws."
@@ -305,6 +307,9 @@ pf2e_specialty:
       edicts:
       - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
       - "Character must show compassion for all, without regard to other factors."
+      anathema:
+      - "Character must not willingly commit an evil act."
+      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       focus_spell:
       - lay on hands
     Liberator:
@@ -316,6 +321,8 @@ pf2e_specialty:
       - "Character must honor decisions made by others over their own lives."
       - "Character must demand and fight for others' freedom to make their own decisions."
       anathema:
+      - "Character must not willingly commit an evil act."
+      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       - "Character must not force someone to act in a particular way or threaten them if they refuse."
       - "Character must not accept or countenance slavery or tyranny."
       focus_spell:
@@ -323,7 +330,7 @@ pf2e_specialty:
   Cleric:
     Cloistered: {}
     Warpriest: {}
-  Druid: 
+  Druid:
     Animal:
       class_skill: Athletics
       feat:

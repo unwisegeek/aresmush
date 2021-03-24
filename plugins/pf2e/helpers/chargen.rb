@@ -70,5 +70,20 @@ module AresMUSH
       return messages.join("%r")
     end
 
+    def self.cg_edge_cases(char, charclass)
+      case charclass
+      when "Cleric"
+        dfont_choice = deity_info['divine_font']
+
+        if dfont_choice.size > 1
+          to_assign['divine font'] = dfont_choice
+        else
+          # Do this code when spells are done, this should be tied to spells
+        end
+      else
+        nil
+      end
+    end
+
   end
 end

@@ -12,8 +12,9 @@ pf2e_class:
       - Advanced Alchemy
       combat_stats:
         wp_simple: trained
-        wp_other:
+        wp_martial:
           Alchemical Bombs: trained
+          other: untrained
         wp_unarmed: trained
         armor_light: trained
         armor_unarmored: trained
@@ -26,7 +27,8 @@ pf2e_class:
       class_skills:
       - Crafting
       class_feats:
-      - Alchemical Crafting
+        general:
+        - Alchemical Crafting
     advance:
       2:
         feat:
@@ -56,7 +58,7 @@ pf2e_class:
       7:
         combat_stats:
           wp_simple: expert
-          wp_other:
+          wp_martial:
             Alchemical Bombs: expert
           will: expert
         charclass:
@@ -227,7 +229,7 @@ pf2e_class:
         - skill
       9:
         charclass:
-        - Lightning reflexes
+        - Lightning Reflexes
         - Raging Resistance
         combat_stats:
           reflex: expert
@@ -332,7 +334,7 @@ pf2e_class:
         reflex: trained
         will: expert
         wp_simple: trained
-        wp_other:
+        wp_martial:
           Bard Weapons: trained
         wp_unarmed: trained
         armor_light: trained
@@ -420,7 +422,7 @@ pf2e_class:
         - skill
         combat_stats:
           wp_simple: expert
-          wp_other:
+          wp_martial:
             Bard Weapons: expert
           wp_unarmed: expert
           perception: master
@@ -528,12 +530,10 @@ pf2e_class:
       charclass:
       - Deific Weapon
       class_feats:
-      - Shield Block
+        general:
+        - Shield Block
       reaction:
       - Shield Block
-    anathema:
-    - "Character may not willingly commit an evil act."
-    - "Character may not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
     advance:
       2:
         feat:
@@ -846,7 +846,8 @@ pf2e_class:
       charclass:
       - Wild Empathy
       class_feats:
-      - Shield Block
+        general:
+        - Shield Block
       reaction:
       - Shield Block
       Spells: trained
@@ -980,3 +981,327 @@ pf2e_class:
         feat:
         - charclass
         - skill
+  Fighter:
+    key_abil:
+    - Strength
+    - Dexterity
+    HP: 10
+    chargen:
+      feat:
+      - charclass
+      combat_stats:
+        wp_simple: expert
+        wp_martial: expert
+        wp_advanced: trained
+        wp_unarmed: expert
+        armor_light: trained
+        armor_medium: trained
+        armor_heavy: trained
+        armor_unarmored: trained
+        class_dc: trained
+        perception: expert
+        fortitude: expert
+        reflex: expert
+        will: trained
+      skills_open: 3
+      class_skills:
+      - Acrobatics
+      - Athletics
+      class_feats:
+        general:
+        - Shield Block
+      reaction:
+      - Attack of Opportunity
+      - Shield Block
+      advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass:
+        - Bravery
+        combat_stats:
+          will: expert
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        boost:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        charclass:
+        - Fighter Weapon Mastery
+        choose:
+        - Club
+        - Knife
+        - Brawling
+        - Spear
+        - Sword
+        - Axe
+        - Flail
+        - Polearm
+        - Hammer
+        choice_name: Weapon Mastery
+        choice_description: "Choose a weapon group for your weapon mastery."
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        combat_stats:
+          perception: master
+        charclass:
+        - Battlefield Surveyor
+        - Weapon Specialization
+        feat:
+        - general
+        boost:
+        - skill
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        combat_stats:
+          fortitude: master
+        charclass:
+        - Juggernaut
+        - Combat Flexibility
+        feat:
+        - ancestry
+        boost:
+        - skill
+      10:
+        boost:
+        - ability
+        feat:
+        - charclass
+        - skill
+      11:
+        feat:
+        - general
+        boost:
+        - skill
+        combat_stats:
+          armor_light: expert
+          armor_medium: expert
+          armor_heavy: expert
+          armor_unarmored: expert
+          class_dc: expert
+        charclass:
+        - Armor Expertise
+        - Fighter Expertise
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        charclass:
+        - Weapon Legend
+        combat_stats:
+          wp_simple: master
+          wp_martial: master
+          wp_advanced: expert
+          wp_unarmed: master
+        choose:
+        - Club
+        - Knife
+        - Brawling
+        - Spear
+        - Sword
+        - Axe
+        - Flail
+        - Polearm
+        - Hammer
+        choice_name: Weapon Legend
+        choice_description: "Choose a weapon group for your weapon legend feat."
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        boost:
+        - ability
+        - skill
+        feat:
+        - general
+        charclass:
+        - Evasion
+        - Greater Weapon Specialization
+        - Improved Flexibility
+        combat_stats:
+          reflex: master
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        combat_stats:
+          armor_light: master
+          armor_medium: master
+          armor_heavy: master
+          armor_unarmored: master
+        charclass:
+        - Armor Mastery
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass:
+        - Versatile Legend
+        combat_stats:
+          wp_simple: legendary
+          wp_martial: legendary
+          wp_advanced: master
+          wp_unarmed: legendary
+      20:
+        boost:
+        - ability
+        feat:
+        - charclass
+        - skill
+  Monk:
+    key_abil:
+    - Strength
+    - Dexterity
+    HP: 10
+    chargen:
+      skills_open: 4
+      class_skills: []
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        armor_unarmored: expert
+        class_dc: trained
+        perception: trained
+        fortitude: expert
+        reflex: expert
+        will: expert
+      action:
+      - Flurry of Blows
+      - Powerful Fist
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass:
+        - Incredible Movement
+        - Mystic Strikes
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        boost:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        charclass:
+        - Alertness
+        combat_stats:
+          perception: expert
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass: []
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        charclass: []
+      10:
+        feat:
+        - charclass
+        - skill
+      11:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass: []
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        charclass: []
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        boost:
+        - ability
+        - skill
+        feat:
+        - general
+        charclass: []
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        charclass: []
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        feat:
+        - ancestry
+        boost:
+        - skill
+        charclass: []
+      20:
+        feat:
+        - charclass
+        - skill
+        boost:
+        - ability
