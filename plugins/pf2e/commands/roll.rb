@@ -36,14 +36,14 @@ module AresMUSH
         total = roll['total']
 
         # Determine degree of success if DC is given
-        degree = self.dc ? Pf2e.get_degree(list, total) : ""
+        degree = self.dc ? Pf2e.get_degree(list, total,self.dc) : ""
 
         roll_msg = t('pf2e.die_roll',
                   :roller => enactor.name,
                   :string => self.string,
                   :parsed => result.join(" + "),
                   :result => total,
-                  :degree => "#{degree}"
+                  :degree => degree
                 )
 
         enactor_room.emit roll_msg
@@ -58,7 +58,6 @@ module AresMUSH
         end
 
         Global.logger.info "PF2 ROLL: #{roll_msg}"
-
       end
 
     end

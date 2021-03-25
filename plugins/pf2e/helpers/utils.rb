@@ -170,17 +170,17 @@ module AresMUSH
       return return_hash
     end
 
-    def self.get_degree(list,total)
+    def self.get_degree(list,total,dc)
       degrees = [ "(%xrCRITICAL FAILURE%xn)",
         "(%xh%xyFAILURE%xn)",
         "(%xgSUCCESS!%xn)",
         "(%xh%xmCRITICAL SUCCESS!%xn)"
       ]
-      if total - self.dc >= 10
+      if total - dc >= 10
         scase = 3
-      elsif total >= self.dc
+      elsif total >= dc
         scase = 2
-      elsif total - self.dc <= -10
+      elsif total - dc <= -10
         scase = 0
       else
         scase = 1
