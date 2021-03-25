@@ -40,8 +40,10 @@ module AresMUSH
         return PF2AssignCmd
       when "roll"
         case cmd.switch
-        when nil
+        when nil, "me"
           return PF2RollCommand
+        when "for"
+          return PF2RollForCommand
         end
       when "unassigned"
         return PF2DisplayUnassignedCmd
