@@ -13,12 +13,12 @@ module AresMUSH
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-").split("+")
         self.mods = mod_list.map { |v| v.strip }
 
-        self.dc = args.arg2
+        self.dc = args.arg2.to_i
       end
 
       def check_valid_dc
         return nil if !self.dc
-        if self.dc.to_i.between?(5,50)
+        if self.dc.between?(5,50)
           return nil
         else
           return t('pf2e.dc_must_be_integer')
