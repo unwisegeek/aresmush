@@ -32,7 +32,7 @@ en:
     combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
 
     dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."
-    die_roll: "%{roller} rolls %{string} and gets: %{parsed} = %{result} %{degree}"
+    die_roll: "%xy%{roller}%xn rolls %{string} and gets: %{parsed} = %{result} %{degree}"
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."

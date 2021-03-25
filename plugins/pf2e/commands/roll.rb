@@ -35,36 +35,8 @@ module AresMUSH
         result = roll['result']
         total = roll['total']
 
-        degree = ""
-
         # Determine degree of success if DC is given
-        if self.dc
-          degrees = [ "(%xrCRITICAL FAILURE%xn)",
-            "(%xh%xyFAILURE%xn)",
-            "(%xgSUCCESS!%xn)",
-            "(%xh%xmCRITICAL SUCCESS!%xn)"
-          ]
-          if total - self.dc >= 10
-            scase = 3
-          elsif total >= self.dc
-            scase = 2
-          elsif total - self.dc <= -10
-            scase = 0
-          else
-            scase = 1
-          end
-
-          if list[0] == '1d20'
-            succ_mod = 0
-            succ_mod = 1 if result[0] == 20
-            succ_mod = -1 if result[0] == 1
-          end
-
-          success_case = scase + succ_mod
-          success_case = 0 if success_case < 0
-          success_case = 3 if success_case > 3
-          degree = degrees[success_case]
-        end
+        degree = self.dc ? Pf2e.get_degree(list, total) : ""
 
         roll_msg = t('pf2e.die_roll',
                   :roller => enactor.name,

@@ -153,12 +153,48 @@ module AresMUSH
         end
       end
 
+      fmt_result = result.map do |word|
+        if word.is_a? Array
+          fmt_word.map { |w| "%xc#{w}%xn" }
+          "(" + fmt_word.join(" ") + ")"
+        else
+          word
+        end
+
       return_hash = {}
       return_hash['list'] = roll_list
-      return_hash['result'] = result.flatten
+      return_hash['result'] = fmt_result
       return_hash['total'] = result.flatten.sum
 
       return return_hash
+    end
+
+    def self.get_degree(list,total)
+      degrees = [ "(%xrCRITICAL FAILURE%xn)",
+        "(%xh%xyFAILURE%xn)",
+        "(%xgSUCCESS!%xn)",
+        "(%xh%xmCRITICAL SUCCESS!%xn)"
+      ]
+      if total - self.dc >= 10
+        scase = 3
+      elsif total >= self.dc
+        scase = 2
+      elsif total - self.dc <= -10
+        scase = 0
+      else
+        scase = 1
+      end
+
+      if list[0] == '1d20'
+        succ_mod = 0
+        succ_mod = 1 if result[0] == 20
+        succ_mod = -1 if result[0] == 1
+      end
+
+      success_case = scase + succ_mod
+      success_case = 0 if success_case < 0
+      success_case = 3 if success_case > 3
+      degree = degrees[success_case]
     end
 
   end
