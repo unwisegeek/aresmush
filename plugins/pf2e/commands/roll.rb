@@ -46,7 +46,7 @@ module AresMUSH
                   :degree => degree
                 )
 
-        if cmd.switch.downcase == "me"
+        if cmd.switch == "me"
           client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
           enactor_room.emit roll_msg
