@@ -17,8 +17,7 @@ module AresMUSH
 
       def check_valid_dc
         return nil if !self.dc
-        return t('pf2e.dc_must_be_integer') if !self.dc.is_a?(Integer)
-        if self.dc.between?(5,50)
+        if self.dc.to_i.between?(5,50)
           return nil
         else
           return t('pf2e.dc_must_be_integer')
@@ -60,7 +59,7 @@ module AresMUSH
         final_result = result.sum
         degree = ""
 
-        # Determine degree of success iff DC is given
+        # Determine degree of success if DC is given
         if self.dc
           degrees = [ "(%xrCRITICAL FAILURE%xn)",
             "(%xh%xyFAILURE%xn)",
