@@ -39,7 +39,7 @@ module AresMUSH
         degree = self.dc ? Pf2e.get_degree(list, result, total, self.dc) : ""
 
         roll_msg = t('pf2e.die_roll',
-                  :roller => "%x24#{enactor.name}%xn",
+                  :roller => "%xh%xw#{enactor.name}%xn",
                   :string => self.string,
                   :parsed => result.join(" + "),
                   :result => total,
@@ -47,7 +47,7 @@ module AresMUSH
                 )
 
         if cmd.switch.downcase == "me"
-          client.emit roll_msg
+          client.emit "(%xyPRIVATE%xn)" + roll_msg
         else
           enactor_room.emit roll_msg
 
@@ -59,7 +59,7 @@ module AresMUSH
           if (enactor_room.scene)
             Scenes.add_to_scene(enactor_room.scene, roll_msg)
           end
-          
+
         end
 
         Global.logger.info "PF2 ROLL: #{roll_msg}"
