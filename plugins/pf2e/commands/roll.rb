@@ -8,16 +8,16 @@ module AresMUSH
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
+
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-")
-        self.mods = mod_list.split("+").map { |v| v.strip }
+        self.mods = mod_list.trimmed_list_arg("+").map { |v| v.strip }
 
         self.dc = args.arg2
       end
 
       def check_valid_dc
         return nil if !self.dc
-        return t('pf2e.dc_must_be_integer') if !self.dc.is_a?(Integer)
-        if self.dc.between?(5,50)
+        if self.dc.to_i.between?(5,50)
           return nil
         else
           return t('pf2e.dc_must_be_integer')
@@ -45,10 +45,10 @@ module AresMUSH
         result = []
         roll_list.map do |e|
           if e =~ dice_pattern
-            dice = e.gsub("d"," ").to_a
+            dice = e.gsub("d"," ").split
             amount = dice[0].to_i > 0 ? dice[0].to_i : 1
             sides = dice[1].to_i
-            roll_result << Pf2e.roll_dice(amount, sides)
+            result << Pf2e.roll_dice(amount, sides)
           elsif e.to_i == 0
             result << Pf2e.get_keyword_value(enactor, e)
           else
@@ -59,7 +59,7 @@ module AresMUSH
         final_result = result.sum
         degree = ""
 
-        # Determine degree of success iff DC is given
+        # Determine degree of success if DC is given
         if self.dc
           degrees = [ "(%xrCRITICAL FAILURE%xn)",
             "(%xh%xyFAILURE%xn)",
