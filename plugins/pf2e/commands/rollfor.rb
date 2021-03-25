@@ -34,7 +34,7 @@ module AresMUSH
 
       def handle
         subject = ClassTargetFinder.find(self.target, Character, enactor)
-        if subject.found
+        if (subject.found)
           subject = subject.target
           subject_name = subject.name
         else
