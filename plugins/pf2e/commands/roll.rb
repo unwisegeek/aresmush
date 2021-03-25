@@ -30,7 +30,7 @@ module AresMUSH
 
       def handle
 
-        aliases = enactor.pf2_roll_aliases
+        aliases = enactor.pf2_roll_aliases ? enactor.pf2_roll_aliases : {}
         roll_list = self.mods.map { |word|
           aliases.has_key?(word) ?
           aliases[word].gsub("-", "+-").gsub("--","-").split("+")
