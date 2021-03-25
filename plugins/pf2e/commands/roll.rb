@@ -38,9 +38,12 @@ module AresMUSH
         # Determine degree of success if DC is given
         degree = self.dc ? Pf2e.get_degree(list, result, total, self.dc) : ""
 
+        dc_string = self.dc ? "against DC #{self.dc} " : ""
+
         roll_msg = t('pf2e.die_roll',
                   :roller => "%xh#{enactor.name}%xn",
                   :string => self.string,
+                  :dc => dc_string,
                   :parsed => result.join(" + "),
                   :result => total,
                   :degree => degree
