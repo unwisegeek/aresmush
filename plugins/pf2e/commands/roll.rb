@@ -88,7 +88,7 @@ module AresMUSH
           degree = degrees[success_case]
         end
 
-        roll_msg = "#{enactor.name} rolls #{cmd.args} and gets: \
+        roll_msg = "#{enactor.name} rolls #{cmd.args.arg1} and gets: \
                     #{result.join(" + ")} = %x172#{final_result}%xn" \
                     + "#{degree}"
 
