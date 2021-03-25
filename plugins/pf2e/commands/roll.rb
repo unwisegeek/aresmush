@@ -36,7 +36,7 @@ module AresMUSH
         total = roll['total']
 
         # Determine degree of success if DC is given
-        degree = self.dc ? Pf2e.get_degree(result, total, self.dc) : ""
+        degree = self.dc ? Pf2e.get_degree(list, result, total, self.dc) : ""
 
         roll_msg = t('pf2e.die_roll',
                   :roller => enactor.name,
