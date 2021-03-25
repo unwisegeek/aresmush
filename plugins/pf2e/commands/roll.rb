@@ -56,7 +56,7 @@ module AresMUSH
           end
         end
 
-        final_result = result.sum
+        final_result = result.flatten.sum
         degree = ""
 
         # Determine degree of success if DC is given
