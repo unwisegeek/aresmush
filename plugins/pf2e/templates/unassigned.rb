@@ -41,4 +41,3 @@ module AresMUSH
     end
   end
 end
-q

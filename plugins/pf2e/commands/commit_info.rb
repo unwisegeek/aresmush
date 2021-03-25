@@ -28,7 +28,7 @@ module AresMUSH
 
         if cg_errors
           client.emit_failure t('pf2e.cg_issues')
-          return
+          return nil
         end
 
         # Abilities
@@ -242,6 +242,7 @@ module AresMUSH
 
         combat_stats.each_pair do |k,v|
           combat.update("#{k}": v)
+        end
 
         combat.update(key_abil: charclass_ability) if charclass_ability.size == 1
 
