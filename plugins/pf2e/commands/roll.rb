@@ -10,7 +10,7 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
 
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-")
-        self.mods = mod_list.split("+").map { |v| v.strip }
+        self.mods = mod_list.trimmed_list_arg("+").map { |v| v.strip }
 
         self.dc = args.arg2
       end
@@ -46,7 +46,7 @@ module AresMUSH
         result = []
         roll_list.map do |e|
           if e =~ dice_pattern
-            dice = e.gsub("d"," ").to_a
+            dice = e.gsub("d"," ").split
             amount = dice[0].to_i > 0 ? dice[0].to_i : 1
             sides = dice[1].to_i
             result << Pf2e.roll_dice(amount, sides)
