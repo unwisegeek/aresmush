@@ -44,11 +44,11 @@ module AresMUSH
             "(%xgSUCCESS!%xn)",
             "(%xh%xmCRITICAL SUCCESS!%xn)"
           ]
-          if final_result - self.dc >= 10
+          if total - self.dc >= 10
             scase = 3
-          elsif final_result >= self.dc
+          elsif total >= self.dc
             scase = 2
-          elsif final_result - self.dc <= -10
+          elsif total - self.dc <= -10
             scase = 0
           else
             scase = 1
