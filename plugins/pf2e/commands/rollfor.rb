@@ -33,11 +33,9 @@ module AresMUSH
       end
 
       def handle
-        subject = ClassTargetFinder.find(self.target, Character, enactor)
-        if (subject.found)
-          subject = subject.target
-          subject_name = subject.name
-        else
+        subject = Character.find_one_by_name(self.target)
+
+        if !subject
           client.emit_failure t('pf2e.char_not_found')
           return
         end
@@ -51,7 +49,7 @@ module AresMUSH
         degree = self.dc ? Pf2e.get_degree(list, result, total, self.dc) : ""
 
         roll_msg = t('pf2e.die_roll',
-                  :roller => "%xy#{enactor.name}%xn (for %x24#{subject_name}%xn)",
+                  :roller => "%xy#{enactor.name}%xn (for %x24#{subject.name}%xn)",
                   :string => self.string,
                   :parsed => result.join(" + "),
                   :result => total,
