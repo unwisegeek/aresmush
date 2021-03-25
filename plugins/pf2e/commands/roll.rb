@@ -47,7 +47,7 @@ module AresMUSH
                 )
 
         if cmd.switch.downcase == "me"
-          client.emit "(%xyPRIVATE%xn)" + roll_msg
+          client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
           enactor_room.emit roll_msg
 
