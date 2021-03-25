@@ -9,17 +9,16 @@ module AresMUSH
       end
       
       def handle
+        char = "Landslide"
       
-        subject = ClassTargetFinder.find('Derecho', Character, enactor)
+        subject = ClassTargetFinder.find(char, Character, enactor)
         if subject.found
-            client.emit "Subject:" + subject
             client.emit subject.target
-            client.emit subject.target.name
         else 
-            client.emit "Error: " + subject.error
+            whoops = subject.error ? subject.error : 'Error is nil.'
+            client.emit whoops
         end
       end
-
     end
   end
 end
