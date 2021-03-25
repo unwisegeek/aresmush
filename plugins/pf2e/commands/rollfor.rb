@@ -29,7 +29,7 @@ module AresMUSH
       end
 
       def required_args
-        [ self.mods ]
+        [ self.mods, self.target ]
       end
 
       def handle
@@ -38,7 +38,7 @@ module AresMUSH
           subject = subject.target
           subject_name = subject.name
         else
-          client.emit t('pf2e.char_not_found')
+          client.emit_failure t('pf2e.char_not_found')
           return
         end
 
