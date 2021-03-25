@@ -4,11 +4,12 @@ module AresMUSH
     class PF2RollCommand
       include CommandHandler
 
-      attr_accessor :mods, :dc
+      attr_accessor :mods, :dc, :string
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
 
+        self.string = trim_arg(args.arg1)
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-").split("+")
         self.mods = mod_list.map { |v| v.strip }
 
@@ -90,7 +91,7 @@ module AresMUSH
 
         roll_msg = t('pf2e.die_roll',
                   :roller => enactor.name,
-                  :string => cmd.args.arg1,
+                  :string => self.string,
                   :parsed => result.join(" + "),
                   :result => final_result,
                   :degree => "#{degree}"
