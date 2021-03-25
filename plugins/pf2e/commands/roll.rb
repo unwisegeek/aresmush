@@ -39,7 +39,7 @@ module AresMUSH
         degree = self.dc ? Pf2e.get_degree(list, result, total, self.dc) : ""
 
         roll_msg = t('pf2e.die_roll',
-                  :roller => "%xh%xw#{enactor.name}%xn",
+                  :roller => "%xh#{enactor.name}%xn",
                   :string => self.string,
                   :parsed => result.join(" + "),
                   :result => total,
