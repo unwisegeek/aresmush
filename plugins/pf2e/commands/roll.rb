@@ -13,7 +13,7 @@ module AresMUSH
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-").split("+")
         self.mods = mod_list.map { |v| v.strip }
 
-        self.dc = args.arg2.to_i
+        self.dc = args.arg2 ? args.arg2.to_i : nil
       end
 
       def check_valid_dc
