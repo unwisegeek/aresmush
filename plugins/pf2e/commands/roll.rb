@@ -8,6 +8,7 @@ module AresMUSH
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
+
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-")
         self.mods = mod_list.split("+").map { |v| v.strip }
 
@@ -30,7 +31,7 @@ module AresMUSH
 
       def handle
 
-        aliases = enactor.pf2_roll_aliases ? enactor.pf2_roll_aliases : {}
+        aliases = enactor.pf2_roll_aliases
         roll_list = self.mods.map { |word|
           aliases.has_key?(word) ?
           aliases[word].gsub("-", "+-").gsub("--","-").split("+")
@@ -48,7 +49,7 @@ module AresMUSH
             dice = e.gsub("d"," ").to_a
             amount = dice[0].to_i > 0 ? dice[0].to_i : 1
             sides = dice[1].to_i
-            roll_result << Pf2e.roll_dice(amount, sides)
+            result << Pf2e.roll_dice(amount, sides)
           elsif e.to_i == 0
             result << Pf2e.get_keyword_value(enactor, e)
           else
