@@ -4,17 +4,23 @@ module AresMUSH
     class PF2RollCommand
       include CommandHandler
 
-      attr_accessor :mods
+      attr_accessor :mods, :dc
 
       def parse_args
-        if cmd.args =~ (/\//)
-          mod_list = cmd.args.before("/").gsub!("-", "+-").gsub!("--","-")
-          self.mods = mod_list.split("+").map { |v| v.strip }
+        args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
+        mod_list = args.arg1.gsub!("-", "+-").gsub!("--","-")
+        self.mods = mod_list.split("+").map { |v| v.strip }
 
-          self.dc = cmd.args.after("/").to_i
+        self.dc = args.arg2
+      end
+
+      def check_valid_dc
+        return nil if !self.dc
+        return t('pf2e.dc_must_be_integer') if !self.dc.is_a?(Integer)
+        if self.dc.between?(5,50)
+          return nil
         else
-          mod_list = cmd.args.gsub!("-", "+-").gsub!("--","-")
-          self.mods = mod_list.split("+").map { |v| v.strip }
+          return t('pf2e.dc_must_be_integer')
         end
       end
 
@@ -54,7 +60,7 @@ module AresMUSH
         degree = ""
 
         # Determine degree of success iff DC is given
-        if self.dc > 0
+        if self.dc
           degrees = [ "(%xrCRITICAL FAILURE%xn)",
             "(%xh%xyFAILURE%xn)",
             "(%xgSUCCESS!%xn)",

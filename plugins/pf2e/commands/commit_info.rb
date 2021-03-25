@@ -28,7 +28,7 @@ module AresMUSH
 
         if cg_errors
           client.emit_failure t('pf2e.cg_issues')
-          return
+          return nil
         end
 
         # Abilities

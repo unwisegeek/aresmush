@@ -1,59 +1,67 @@
 ---
 en:
   pf2e:
-    cannot_view_sheet: "That character has not granted you permission to view their sheet."
-    who_can_see_sheet: "You have granted the following permissions to your sheet:"
+    abilities_locked: "Your abilities are already locked. Use `ability/reset` to clear them first."
+    ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
-    no_sheet_yet: "This command cannot be used until the character has committed their base options."
-    char_not_found: "I didn't find a character by that name."
-    bad_section: "Section %{section} is not a valid section."
-    only_in_chargen: "This command can only be used in chargen."
+    already_has_skill: "You already have that skill. Pick another."
+    ambiguous_target: "The option given is either not specific enough or was not found."
+    ancestry_not_set: "You cannot set your heritage until you set your ancestry."
+    are_you_sure: "Are you sure? This command will wipe your entire character sheet. Type 'cg/reset confirm' to confirm that you want to do this."
+    assign_ok: "Option %{element} assigned to %{option}. Remaining: %{remaining}"
+
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
     bad_option: "Not a valid option. Valid options for %{element}: %{options}."
-    ancestry_not_set: "You cannot set your heritage until you set your ancestry."
-    heritage_not_set: "You cannot set a lineage until you set your heritage."
-    charclass_not_set: "You cannot set a specialty until you set your class."
-    no_lineages: "That heritage does not have lineages associated to it."
-    missing_subclass: "Your class requires a specialization, please choose one."
-
-    cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
-    abilities_locked: "Your abilities are already locked. Use `ability/reset` to clear them first."
-    reset_first: "Type cg/reset before using this command."
-    must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
-    are_you_sure: "Are you sure? This command will wipe your entire character sheet. Type 'cg/reset confirm' to confirm that you want to do this."
-    ambiguous_target: "The option given is either not specific enough or was not found."
+    bad_section: "Section %{section} is not a valid section."
     bg_no_options: "Your background does not have any %{element} to set. Moving on..."
+    bg_options_set: "Your background does not require any choices. Moving on..."
+    boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
+
+    cannot_view_sheet: "That character has not granted you permission to view their sheet."
+    cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
+    cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
+    cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
+    cg_options_ok: "%xgNo errors or issues detected with your CG options."
+    cg_reset_ok: "Your sheet has been cleared."
+    char_not_found: "I didn't find a character by that name."
+    charclass_not_set: "You cannot set a specialty until you set your class."
+    chargen_committed: "All set. Your chargen options are locked and your fixed options assigned. Type `cg/next` to continue."
+    class_deity_mismatch: "%xrYour alignment is not valid for your deity and class.%xn"
+    class_mismatch: "%xrYour alignment is not valid for your class.%xn"
+    class_requires_deity: "%xrYour class requires a deity, but none is set.%xn"
+    combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
+
+    dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."
+
+    has_code: "This character is required to abide by a code of behavior. See profile for details."
+    heritage_not_set: "You cannot set a lineage until you set your heritage."
+
     lock_info_first: "This command cannot be used until your base chargen options are committed."
+
+    missing_base_info: "%xrYour base info is not yet complete.%xn"
+    missing_subclass: "Your class requires a specialization, please choose one."
+    missing_subclass_info: "%xrYour specialty requires an additional choice that you have not yet set.%xn"
+    multiple_options: "You have multiple options for %{element}. Remember to assign this in the next stage."
+    must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
+
     no_free: "No free %{element} left to assign."
-    already_has_skill: "You already have that skill. Pick another."
+    no_lineages: "That heritage does not have lineages associated to it."
+    no_sheet_yet: "This command cannot be used until the character has committed their base options."
+    nothing_to_assign: "You have no character options left unassigned."
+
+    only_in_chargen: "This command can only be used in chargen."
+    option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
+
+    player_added: "%{player} can now view the following section of your sheet: %{section}."
+
+    reset_first: "Type cg/reset before using this command."
+
+    skill_added: "You add %{option} to your list of %{skilltype}."
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
 
-    option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
-    multiple_options: "You have multiple options for %{element}. Remember to assign this in the next stage."
-    cg_options_ok: "%xgNo errors or issues detected with your CG options."
-    bg_options_set: "Your background does not require any choices. Moving on..."
-    cg_reset_ok: "Your sheet has been cleared."
-    player_added: "%{player} can now view the following section of your sheet: %{section}."
-    chargen_committed: "All set. Your chargen options are locked and your fixed options assigned. Type `cg/next` to continue."
-    assign_ok: "Option %{element} assigned to %{option}. Remaining: %{remaining}"
-    cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
-    skill_added: "You add %{option} to your list of %{skilltype}."
-
-    missing_base_info: "%xrYour base info is not yet complete.%xn"
-    class_mismatch: "%xrYour alignment is not valid for your class.%xn"
-    class_deity_mismatch: "%xrYour alignment is not valid for your deity and class.%xn"
-    class_requires_deity: "%xrYour class requires a deity, but none is set.%xn"
-    missing_subclass_info: "%xrYour specialty requires an additional choice that you have not yet set.%xn"
-    cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
-
     unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
-    nothing_to_assign: "You have no character options left unassigned."
     unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."
-    boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
-    ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
-
-    combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
-
-    has_code: "This character is required to abide by a code of behavior. See profile for details."
     unassigned_title: "Unassigned Character Options: %{name}"
+
+    who_can_see_sheet: "You have granted the following permissions to your sheet:"
