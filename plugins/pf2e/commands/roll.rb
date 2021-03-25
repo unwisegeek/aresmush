@@ -92,23 +92,18 @@ module AresMUSH
                     #{result.join(" + ")} = %x172#{final_result}%xn" \
                     + "#{degree}"
 
-        room.emit message
+        enactor_room.emit roll_msg
+
         channel = Global.read_config("pf2e", "roll_channel")
         if (channel)
           Channels.send_to_channel(channel, roll_msg)
         end
 
-        if (room.scene)
-          Scenes.add_to_scene(room.scene, roll_msg)
+        if (enactor_room.scene)
+          Scenes.add_to_scene(enactor_room.scene, roll_msg)
         end
 
         Global.logger.info "PF2 ROLL: #{roll_msg}"
-
-        if !msg.empty?
-          msg.each do |msg|
-            client.emit_ooc msg
-          end
-        end
 
       end
 
