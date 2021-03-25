@@ -9,7 +9,7 @@ module AresMUSH
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
 
-        mod_list = args.arg1.gsub("-", "+-").gsub("--","-").trimmed_list_arg("+")
+        mod_list = args.arg1.gsub("-", "+-").gsub("--","-").split("+")
         self.mods = mod_list.map { |v| v.strip }
 
         self.dc = args.arg2
