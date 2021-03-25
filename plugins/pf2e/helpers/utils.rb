@@ -160,6 +160,7 @@ module AresMUSH
         else
           word
         end
+      end
 
       return_hash = {}
       return_hash['list'] = roll_list
