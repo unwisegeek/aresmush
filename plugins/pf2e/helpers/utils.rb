@@ -155,7 +155,7 @@ module AresMUSH
 
       fmt_result = result.map do |word|
         if word.is_a? Array
-          fmt_word = word.map { |w| "%x24#{w}%xn" }
+          fmt_word = word.map { |w| "%xc#{w}%xn" }
           "(" + fmt_word.join(" ") + ")"
         else
           word
