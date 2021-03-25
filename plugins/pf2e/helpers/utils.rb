@@ -170,7 +170,7 @@ module AresMUSH
       return return_hash
     end
 
-    def self.get_degree(result,total,dc)
+    def self.get_degree(list,result,total,dc)
       degrees = [ "(%xrCRITICAL FAILURE%xn)",
         "(%xh%xyFAILURE%xn)",
         "(%xgSUCCESS!%xn)",
