@@ -30,34 +30,11 @@ module AresMUSH
       end
 
       def handle
+        roll = Pf2e.parse_roll_string(enactor,self.mods)
+        list = roll['list']
+        result = roll['result']
+        total = roll['total']
 
-        aliases = enactor.pf2_roll_aliases
-        roll_list = self.mods.map { |word|
-          aliases.has_key?(word) ?
-          aliases[word].gsub("-", "+-").gsub("--","-").split("+")
-          : word
-        }.flatten
-
-        dice_pattern = /([0-9]+)d[0-9]+/i
-        find_dice = roll_list.select { |d| d =~ dice_pattern }
-
-        roll_list.unshift('1d20') if find_dice.empty?
-
-        result = []
-        roll_list.map do |e|
-          if e =~ dice_pattern
-            dice = e.gsub("d"," ").split
-            amount = dice[0].to_i > 0 ? dice[0].to_i : 1
-            sides = dice[1].to_i
-            result << Pf2e.roll_dice(amount, sides)
-          elsif e.to_i == 0
-            result << Pf2e.get_keyword_value(enactor, e)
-          else
-            result << e.to_i
-          end
-        end
-
-        final_result = result.flatten.sum
         degree = ""
 
         # Determine degree of success if DC is given
@@ -77,7 +54,7 @@ module AresMUSH
             scase = 1
           end
 
-          if roll_list[0] == '1d20'
+          if list[0] == '1d20'
             succ_mod = 0
             succ_mod = 1 if result[0] == 20
             succ_mod = -1 if result[0] == 1
@@ -93,7 +70,7 @@ module AresMUSH
                   :roller => enactor.name,
                   :string => self.string,
                   :parsed => result.join(" + "),
-                  :result => final_result,
+                  :result => total,
                   :degree => "#{degree}"
                 )
 
