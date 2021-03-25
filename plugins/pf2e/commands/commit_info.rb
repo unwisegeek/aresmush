@@ -242,6 +242,7 @@ module AresMUSH
 
         combat_stats.each_pair do |k,v|
           combat.update("#{k}": v)
+        end
 
         combat.update(key_abil: charclass_ability) if charclass_ability.size == 1
 
