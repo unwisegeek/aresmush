@@ -88,9 +88,13 @@ module AresMUSH
           degree = degrees[success_case]
         end
 
-        roll_msg = "#{enactor.name} rolls #{cmd.args.arg1} and gets: \
-                    #{result.join(" + ")} = %x172#{final_result}%xn" \
-                    + "#{degree}"
+        roll_msg = t('pf2e.die_roll',
+                  :roller => enactor.name,
+                  :string => cmd.args.arg1,
+                  :parsed => result.join(" + "),
+                  :result => final_result,
+                  :degree => "#{degree}"
+                )
 
         enactor_room.emit roll_msg
 
