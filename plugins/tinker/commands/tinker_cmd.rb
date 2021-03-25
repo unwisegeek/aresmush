@@ -10,10 +10,14 @@ module AresMUSH
       
       def handle
       
-        result = 4.clamp(0,3)
-        
-        client.emit result
-    
+        subject = ClassTargetFinder.find('Derecho', Character, enactor)
+        if subject.found
+            client.emit "Subject:" + subject
+            client.emit subject.target
+            client.emit subject.target.name
+        else 
+            client.emit "Error: " + subject.error
+        end
       end
 
     end
