@@ -192,9 +192,7 @@ module AresMUSH
         succ_mod = -1 if result[0] == 1
       end
 
-      success_case = scase + succ_mod
-      success_case = 0 if success_case < 0
-      success_case = 3 if success_case > 3
+      success_case = (scase + succ_mod).clamp(0,3)
       degree = degrees[success_case]
     end
 
