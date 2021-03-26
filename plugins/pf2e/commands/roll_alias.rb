@@ -30,11 +30,17 @@ module AresMUSH
       def handle
         list = enactor.pf2_roll_aliases
 
-        list[self.rollalias] = self.value
+        if self.value
+          list[self.rollalias] = self.value
+          client.emit_success t('pf2e.alias_set_ok', :alias => self.rollalias, :value => self.value)
+        else
+          list.delete(self.rollalias)
+          client.emit_success t('pf2e.alias_deleted_ok')
+        end
 
         enactor.update(pf2_roll_aliases: list)
 
-        client.emit_success t('pf2e.alias_set_ok', :alias => self.rollalias, :value => self.value)
+
       end
 
     end
