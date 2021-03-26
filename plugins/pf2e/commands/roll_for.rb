@@ -51,7 +51,7 @@ module AresMUSH
         dc_string = self.dc ? "against DC #{self.dc} " : ""
 
         roll_msg = t('pf2e.die_roll',
-                  :roller => "%xy#{enactor.name}%xn (for %xh%xw#{subject.name}%xn)",
+                  :roller => "%xy#{enactor.name}%xn (for %xh#{subject.name}%xn)",
                   :string => self.string,
                   :dc => dc_string,
                   :parsed => result.join(" + "),

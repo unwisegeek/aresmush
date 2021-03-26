@@ -7,7 +7,7 @@ skin:
     default:
       color: "%x24"
       pattern: "=--"
-      text_position: 5
+      text_position: 6
       left_bracket: "[ "
       right_bracket: " ]"
   plain: "%x24+=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=+%xn"

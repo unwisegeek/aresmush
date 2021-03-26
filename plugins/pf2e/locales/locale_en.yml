@@ -4,6 +4,7 @@ en:
     abilities_locked: "Your abilities are already locked. Use `ability/reset` to clear them first."
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
+    alias_set_ok: "You set %{alias} to %{value}."
     already_has_skill: "You already have that skill. Pick another."
     ambiguous_target: "The option given is either not specific enough or was not found."
     ancestry_not_set: "You cannot set your heritage until you set your ancestry."
@@ -43,6 +44,7 @@ en:
     missing_subclass: "Your class requires a specialization, please choose one."
     missing_subclass_info: "%xrYour specialty requires an additional choice that you have not yet set.%xn"
     multiple_options: "You have multiple options for %{element}. Remember to assign this in the next stage."
+    must_be_word: "The first character of your alias must be a letter."
     must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
 
     no_free: "No free %{element} left to assign."

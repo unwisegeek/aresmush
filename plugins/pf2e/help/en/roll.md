@@ -17,6 +17,6 @@ For example --
 
 Public rolls appear in the log and are sent to everyone in the room.
 
-`roll/for <character> = <dice + modifiers>[/dc]`: Rolls <dice + modifiers> for another PC. Anyone can do this, but the display cannot be made private and shows the name of the roller as well as the name of the character rolled for. This command is intended to be used to help someone who is AFK or having network issues.
+`roll/for <character> = <dice + modifiers>[/dc]`: Rolls <dice + modifiers> for another PC. Anyone can do this, but the display cannot be made private and shows the name of the roller as well as the name of the character rolled for. This command is intended to be used to help someone who is AFK or having network issues. (Alias: `rollfor`)
 
 `roll/me <dice + modifiers>`: Send a dice roll only to yourself.
