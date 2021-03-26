@@ -2,6 +2,9 @@
 pf2e:
   shortcuts:
     sheet/top: sheet/info
+    rollalias: roll/alias
+    remalias: roll/alias
+    listalias: roll/listalias
   allowed_alignments:
   - LG
   - NG
@@ -32,4 +35,3 @@ pf2e:
   condition_colors:
     Dying: '%xr'
     Wounded: '%xy'
-  roll_keywords: {}
