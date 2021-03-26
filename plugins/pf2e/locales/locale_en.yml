@@ -5,6 +5,7 @@ en:
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
     alias_set_ok: "You set %{alias} to %{value}."
+    alias_deleted_ok: "You delete %{alias}."
     already_has_skill: "You already have that skill. Pick another."
     ambiguous_target: "The option given is either not specific enough or was not found."
     ancestry_not_set: "You cannot set your heritage until you set your ancestry."
@@ -58,6 +59,7 @@ en:
     player_added: "%{player} can now view the following section of your sheet: %{section}."
 
     reset_first: "Type cg/reset before using this command."
+    rollalias_title: "Roll Aliases for %{name}"
 
     skill_added: "You add %{option} to your list of %{skilltype}."
     specialty_not_set: "You have not yet chosen a specialty."
