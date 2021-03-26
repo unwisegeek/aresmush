@@ -44,6 +44,10 @@ module AresMUSH
           return PF2RollCommand
         when "for"
           return PF2RollForCommand
+        when "listalias"
+          return PF2ListRollAliasCmd
+        when "alias"
+          return PF2ChangeRollAliasCmd
         end
       when "unassigned"
         return PF2DisplayUnassignedCmd
