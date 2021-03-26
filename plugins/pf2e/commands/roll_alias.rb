@@ -35,12 +35,10 @@ module AresMUSH
           client.emit_success t('pf2e.alias_set_ok', :alias => self.rollalias, :value => self.value)
         else
           list.delete(self.rollalias)
-          client.emit_success t('pf2e.alias_deleted_ok')
+          client.emit_success t('pf2e.alias_deleted_ok', :alias => self.rollalias)
         end
 
         enactor.update(pf2_roll_aliases: list)
-
-
       end
 
     end
