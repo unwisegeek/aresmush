@@ -1108,8 +1108,6 @@ pf2e_class:
         - ancestry
         boost:
         - skill
-        charclass:
-        - Weapon Legend
         combat_stats:
           wp_simple: master
           wp_martial: master
@@ -1212,7 +1210,7 @@ pf2e_class:
         boost:
         - skill
         charclass:
-        - Incredible Movement
+        - 'Incredible Movement +10'
         - Mystic Strikes
       4:
         feat:
@@ -1226,8 +1224,11 @@ pf2e_class:
         - ancestry
         charclass:
         - Alertness
+        - Expert Strikes
         combat_stats:
           perception: expert
+          wp_unarmed: expert
+          wp_simple: expert
       6:
         feat:
         - charclass
@@ -1237,7 +1238,15 @@ pf2e_class:
         - general
         boost:
         - skill
-        charclass: []
+        choice_name: Path to Perfection
+        choice_description: "Choose your save for Path to Perfection."
+        choose:
+        - Fortitude
+        - Reflex
+        - Will
+        charclass:
+        - Weapon Specialization
+        - 'Incredible Movement +15'
       8:
         feat:
         - charclass
@@ -1247,17 +1256,30 @@ pf2e_class:
         - ancestry
         boost:
         - skill
-        charclass: []
+        charclass:
+        - Metal Strikes
+        - Monk Expertise
+        combat_stats:
+          class_dc: expert
       10:
         feat:
         - charclass
         - skill
+        boost:
+        - ability
       11:
         feat:
         - general
         boost:
         - skill
-        charclass: []
+        choice_name: Second Path to Perfection
+        choice_description: "Choose your second save for Path to Perfection."
+        choose:
+        - Fortitude
+        - Reflex
+        - Will
+        charclass:
+        - 'Incredible Movement +20'
       12:
         feat:
         - charclass
@@ -1267,7 +1289,13 @@ pf2e_class:
         - ancestry
         boost:
         - skill
-        charclass: []
+        charclass:
+        - Graceful Mastery
+        - Master Strikes
+        combat_stats:
+          armor_unarmored: master
+          wp_simple: master
+          wp_unarmed: master
       14:
         feat:
         - charclass
@@ -1278,7 +1306,12 @@ pf2e_class:
         - skill
         feat:
         - general
-        charclass: []
+        charclass:
+        - Greater Weapon Specialization
+        - 'Incredible Movement +25'
+        choice_name: Third Path to Perfection
+        choice_description: "Choose your save for Third Path to Perfection."
+        choose: []
       16:
         feat:
         - charclass
@@ -1288,7 +1321,12 @@ pf2e_class:
         - ancestry
         boost:
         - skill
-        charclass: []
+        charclass:
+        - Adamantine Strikes
+        - Graceful Legend
+        combat_stats:
+          armor_unarmored: legendary
+          class_dc: master
       18:
         feat:
         - charclass
@@ -1298,7 +1336,8 @@ pf2e_class:
         - ancestry
         boost:
         - skill
-        charclass: []
+        charclass:
+        - Perfected Form
       20:
         feat:
         - charclass
