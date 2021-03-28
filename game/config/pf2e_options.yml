@@ -1,5 +1,10 @@
 ---
 pf2e:
+  shortcuts:
+    sheet/top: sheet/info
+    rollalias: roll/alias
+    remalias: roll/alias
+    listalias: roll/listalias
   allowed_alignments:
   - LG
   - NG
@@ -7,61 +12,26 @@ pf2e:
   - LN
   - N
   - CN
-  condition_colors:
-    Dying: "%xr"
-    Wounded: "%xy"
-  faiths: 
-  list_item: "%x242"
-  open_npc_sheets: false
+  roll_channel: 'PF2Rolls'
   open_sheets: true
-  shortcuts:
-    sheet/top: sheet/info
-  skills:
-    Acrobatics:
-      key_abil: Dexterity
-    Arcana:
-      key_abil: Intelligence
-    Athletics:
-      key_abil: Strength
-    Crafting:
-      key_abil: Intelligence
-    Deception:
-      key_abil: Charisma
-    Diplomacy:
-      key_abil: Charisma
-    Intimidation:
-      key_abil: Charisma
-    Medicine:
-      key_abil: Wisdom
-    Nature:
-      key_abil: Wisdom
-    Occultism:
-      key_abil: Intelligence
-    Performance:
-      key_abil: Charisma
-    Religion:
-      key_abil: Wisdom
-    Society:
-      key_abil: Intelligence
-    Stealth:
-      key_abil: Dexterity
-    Survival:
-      key_abil: Wisdom
-    Thievery:
-      key_abil: Dexterity
-  subclass_names:
-    Alchemist: Research Field
-    Barbarian: Instinct
-    Bard: Muse
-    Champion: Cause
-    Druid: Order
-    Ranger: Hunter's Edge
-    Rogue: Racket
-    Sorcerer: Bloodline
-    Wizard: School
-    Investigator: Methodology
-    Oracle: Mystery
-    Witch: Patron
-  title_color: "%x172"
+  open_npc_sheets: false
+  title_color: '%x172'
+  list_item: '%x229'
   use_alignment: true
-  use_encumbrance: false
+  use_encumbrance: true
+  subclass_names:
+    Alchemist: 'Research Field'
+    Barbarian: 'Instinct'
+    Bard: 'Muse'
+    Champion: 'Cause'
+    Druid: 'Order'
+    Ranger: "Hunter's Edge"
+    Rogue: 'Racket'
+    Sorcerer: 'Bloodline'
+    Wizard: 'School'
+    Investigator: 'Methodology'
+    Oracle: 'Mystery'
+    Witch: 'Patron'
+  condition_colors:
+    Dying: '%xr'
+    Wounded: '%xy'
