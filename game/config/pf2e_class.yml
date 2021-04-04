@@ -37,14 +37,14 @@ pf2e_class:
       3:
         feat:
         - general
-        boost:
+        raise:
         - skill
       4:
         feat:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -65,7 +65,7 @@ pf2e_class:
         -  Perpetual Infusions
         feat:
         - general
-        boost:
+        raise:
         - skill
       8:
         feat:
@@ -79,10 +79,10 @@ pf2e_class:
         - Double Brew
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
       10:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
@@ -90,7 +90,7 @@ pf2e_class:
       11:
         feat:
         - general
-        boost:
+        raise:
         - skill
         combat_stats:
           fortitude: master
@@ -103,7 +103,7 @@ pf2e_class:
       13:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         charclass:
         - Greater Field Discovery
@@ -116,7 +116,7 @@ pf2e_class:
         - charclass
         - skill
       15:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -137,7 +137,7 @@ pf2e_class:
           class_dc: master
         charclass:
         - Perpetual Perfection
-        boost:
+        raise:
         - skill
       18:
         feat:
@@ -146,13 +146,13 @@ pf2e_class:
       19:
         feat:
         - general
-        boost:
+        raise:
         - skill
         combat_stats:
           armor_light: master
           armor_unarmored: master
       20:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
@@ -191,7 +191,7 @@ pf2e_class:
         - Deny Advantage
         feat:
         - general
-        boost:
+        raise:
         - skill
       4:
         feat:
@@ -200,7 +200,7 @@ pf2e_class:
       5:
         charclass:
         - Brutality
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -219,7 +219,7 @@ pf2e_class:
         - Weapon Specialization
         feat:
         - general
-        boost:
+        raise:
         - skill
         combat_stats:
           fortitude: master
@@ -235,10 +235,10 @@ pf2e_class:
           reflex: expert
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
       10:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
@@ -248,7 +248,7 @@ pf2e_class:
         - Mighty Rage
         feat:
         - general
-        boost:
+        raise:
         - skill
       12:
         feat:
@@ -269,14 +269,14 @@ pf2e_class:
           wp_simple: master
           wp_martial: master
           wp_unarmed: master
-        boost:
+        raise:
         - skill
       14:
         feat:
         - charclass
         - skill
       15:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -293,7 +293,7 @@ pf2e_class:
       17:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         charclass:
         - Heightened Senses
@@ -307,7 +307,7 @@ pf2e_class:
       19:
         feat:
         - general
-        boost:
+        raise:
         - skill
         charclass:
         - Armor of Fury
@@ -321,7 +321,7 @@ pf2e_class:
         feat:
         - charclass
         - skill
-        boost:
+        raise:
         - ability
   Bard:
     key_abil:
@@ -368,14 +368,14 @@ pf2e_class:
         signature_spells:
           1: 1
           2: 1
-        boost:
+        raise:
         - skill
       4:
         feat:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -390,7 +390,7 @@ pf2e_class:
         Spells: expert
         feat:
         - general
-        boost:
+        raise:
         - skill
         signature_spells:
           4: 1
@@ -403,7 +403,7 @@ pf2e_class:
           fortitude: expert
           will: master
         charclass: Resolve
-        boost:
+        raise:
         - skill
         feat:
         - ancestry
@@ -413,12 +413,12 @@ pf2e_class:
         feat:
         - charclass
         - skill
-        boost:
+        raise:
         - ability
       11:
         feat:
         - general
-        boost:
+        raise:
         - skill
         combat_stats:
           wp_simple: expert
@@ -438,7 +438,7 @@ pf2e_class:
           armor_unarmored: expert
         charclass:
         - Weapon Specialization
-        boost:
+        raise:
         - skill
         feat:
         - ancestry
@@ -451,7 +451,7 @@ pf2e_class:
       15:
         feat:
         - general
-        boost:
+        raise:
         - skill
         Spells: master
         charclass:
@@ -467,7 +467,7 @@ pf2e_class:
         - Greater Resolve
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         combat_stats:
           will: legendary
@@ -483,7 +483,7 @@ pf2e_class:
         - Legendary Spellcaster
         feat:
         - general
-        boost:
+        raise:
         - skill
         Spells: legendary
         signature_spells:
@@ -492,7 +492,7 @@ pf2e_class:
         feat:
         - charclass
         - skill
-        boost:
+        raise:
         - ability
   Champion:
     use_deity: true
@@ -540,7 +540,7 @@ pf2e_class:
         - charclass
         - skill
       3:
-        boost:
+        raise:
         - skill
         feat:
         - general
@@ -557,7 +557,7 @@ pf2e_class:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -577,7 +577,7 @@ pf2e_class:
         - Weapon Specialization
         feat:
         - general
-        boost:
+        raise:
         - skill
         combat_stats:
           armor_light: expert
@@ -601,7 +601,7 @@ pf2e_class:
         Spells: expert
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
       10:
         feat:
@@ -617,7 +617,7 @@ pf2e_class:
           perception: expert
         feat:
         - general
-        boost:
+        raise:
         - skill
       12:
         feat:
@@ -636,7 +636,7 @@ pf2e_class:
           wp_martial: master
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
       14:
         feat:
@@ -645,7 +645,7 @@ pf2e_class:
       15:
         charclass:
         - Greater Weapon Specialization
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -667,7 +667,7 @@ pf2e_class:
           armor_heavy: legendary
           armor_unarmored: legendary
         Spells: master
-        boost:
+        raise:
         - skill
       18:
         feat:
@@ -680,13 +680,13 @@ pf2e_class:
         - hero's defiance
         feat:
         - general
-        boost:
+        raise:
         - skill
       20:
         feat:
         - charclass
         - skill
-        boost:
+        raise:
         - ability
   Cleric:
     use_deity: true
@@ -720,14 +720,14 @@ pf2e_class:
       3:
         feat:
         - general
-        boost:
+        raise:
         - skill
       4:
         feat:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         charclass:
@@ -741,7 +741,7 @@ pf2e_class:
         - charclass
         - skill
       7:
-        boost:
+        raise:
         - skill
         feat:
         - general
@@ -756,16 +756,16 @@ pf2e_class:
         - resolve
         combat_stats:
           will: master
-        boost:
+        raise:
         - skill
       10:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
         - skill
       11:
-        boost:
+        raise:
         - skill
         feat:
         - general
@@ -778,7 +778,7 @@ pf2e_class:
         - charclass
         - skill
       13:
-        boost:
+        raise:
         - skill
         feat:
         - ancestry
@@ -792,7 +792,7 @@ pf2e_class:
         - charclass
         - skill
       15:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -802,7 +802,7 @@ pf2e_class:
         - charclass
         - skill
       17:
-        boost:
+        raise:
         - skill
         feat:
         - general
@@ -811,14 +811,14 @@ pf2e_class:
         - charclass
         - skill
       19:
-        boost:
+        raise:
         - skill
         feat:
         - general
         charclass:
         - miraculous spell
       20:
-        boost:
+        raise:
         - ability
         feat:
         - general
@@ -862,7 +862,7 @@ pf2e_class:
         - charclass
         - skill
       3:
-        boost:
+        raise:
         - skill
         charclass:
         - Alertness
@@ -877,7 +877,7 @@ pf2e_class:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         charclass:
@@ -891,7 +891,7 @@ pf2e_class:
         - charclass
         - skill
       7:
-        boost:
+        raise:
         - skill
         charclass:
         - Expert Spellcaster
@@ -903,18 +903,18 @@ pf2e_class:
         - charclass
         - skill
       9:
-        boost:
+        raise:
         - skill
         feat:
         - ancestry
       10:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
         - skill
       11:
-        boost:
+        raise:
         - skill
         charclass:
         - Druid Weapon Expertise
@@ -930,7 +930,7 @@ pf2e_class:
         - charclass
         - skill
       13:
-        boost:
+        raise:
         - skill
         charclass:
         - Medium Armor Expertise
@@ -946,7 +946,7 @@ pf2e_class:
         - charclass
         - skill
       15:
-        boost:
+        raise:
         - ability
         - skill
         charclass: Master Spellcaster
@@ -958,7 +958,7 @@ pf2e_class:
         - charclass
         - skill
       17:
-        boost:
+        raise:
         - skill
         feat:
         - ancestry
@@ -967,7 +967,7 @@ pf2e_class:
         - charclass
         - skill
       19:
-        boost:
+        raise:
         - skill
         charclass:
         - Legendary Spellcaster
@@ -976,7 +976,7 @@ pf2e_class:
         feat:
         - general
       20:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
@@ -1021,7 +1021,7 @@ pf2e_class:
       3:
         feat:
         - general
-        boost:
+        raise:
         - skill
         charclass:
         - Bravery
@@ -1032,7 +1032,7 @@ pf2e_class:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -1063,7 +1063,7 @@ pf2e_class:
         - Weapon Specialization
         feat:
         - general
-        boost:
+        raise:
         - skill
       8:
         feat:
@@ -1077,10 +1077,10 @@ pf2e_class:
         - Combat Flexibility
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
       10:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
@@ -1088,7 +1088,7 @@ pf2e_class:
       11:
         feat:
         - general
-        boost:
+        raise:
         - skill
         combat_stats:
           armor_light: expert
@@ -1106,7 +1106,7 @@ pf2e_class:
       13:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         combat_stats:
           wp_simple: master
@@ -1130,7 +1130,7 @@ pf2e_class:
         - charclass
         - skill
       15:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -1148,7 +1148,7 @@ pf2e_class:
       17:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         combat_stats:
           armor_light: master
@@ -1164,7 +1164,7 @@ pf2e_class:
       19:
         feat:
         - general
-        boost:
+        raise:
         - skill
         charclass:
         - Versatile Legend
@@ -1174,7 +1174,7 @@ pf2e_class:
           wp_advanced: master
           wp_unarmed: legendary
       20:
-        boost:
+        raise:
         - ability
         feat:
         - charclass
@@ -1207,7 +1207,7 @@ pf2e_class:
       3:
         feat:
         - general
-        boost:
+        raise:
         - skill
         charclass:
         - 'Incredible Movement +10'
@@ -1217,7 +1217,7 @@ pf2e_class:
         - charclass
         - skill
       5:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -1236,7 +1236,7 @@ pf2e_class:
       7:
         feat:
         - general
-        boost:
+        raise:
         - skill
         choice_name: Path to Perfection
         choice_description: "Choose your save for Path to Perfection."
@@ -1254,7 +1254,7 @@ pf2e_class:
       9:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         charclass:
         - Metal Strikes
@@ -1265,12 +1265,12 @@ pf2e_class:
         feat:
         - charclass
         - skill
-        boost:
+        raise:
         - ability
       11:
         feat:
         - general
-        boost:
+        raise:
         - skill
         choice_name: Second Path to Perfection
         choice_description: "Choose your second save for Path to Perfection."
@@ -1287,7 +1287,7 @@ pf2e_class:
       13:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         charclass:
         - Graceful Mastery
@@ -1301,7 +1301,7 @@ pf2e_class:
         - charclass
         - skill
       15:
-        boost:
+        raise:
         - ability
         - skill
         feat:
@@ -1319,7 +1319,7 @@ pf2e_class:
       17:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         charclass:
         - Adamantine Strikes
@@ -1334,7 +1334,7 @@ pf2e_class:
       19:
         feat:
         - ancestry
-        boost:
+        raise:
         - skill
         charclass:
         - Perfected Form
@@ -1342,5 +1342,5 @@ pf2e_class:
         feat:
         - charclass
         - skill
-        boost:
+        raise:
         - ability

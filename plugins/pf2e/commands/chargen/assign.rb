@@ -35,8 +35,9 @@ module AresMUSH
           return
         end
 
-        # To_assign is always either an array or an integer.
+        # The values in to_assign are always an array, an integer, or a string.
         # An array means they have a choice, an integer counts how many can be freely assigned.
+        # A string identifies the list from which that feat must be chosen.
 
         k = to_assign["#{hash_key}"]
 
@@ -59,9 +60,9 @@ module AresMUSH
         if self.type.match?("boost")
           boosts = enactor.pf2_boosts_working
 
-          abilities = %w{strength dexterity constitution intelligence wisdom charisma }
+          abilities = %w{ strength dexterity constitution intelligence wisdom charisma }
 
-          if !abilities.include?(self.option)
+          if !(abilities.include? self.option)
             client.emit_failure t('pf2e.bad_ability')
             return
           end
@@ -82,14 +83,17 @@ module AresMUSH
           boosts["#{btype}"] = assign
 
           if k.is_a?(Array)
-            k = k.clear
+            track = enactor.pf2_cg_assigned
             remaining = 0
+            track[("#{self.type}" + " track")] = self.option
+            enactor.update(pf2_cg_assigned: track)
+            to_assign.delete(self.type)
           elsif k.is_a(Integer)
             k = k - 1
             remaining = k
+            to_assign["#{self.type}"] = k
           end
 
-          to_assign["#{self.type}"] = k
 
           enactor.update(pf2_boosts_working: boosts)
           enactor.update(pf2_to_assign: to_assign)
@@ -107,14 +111,13 @@ module AresMUSH
             combat_stats.update(key_abil: self.option.capitalize)
           end
 
-          return
-
-        elsif (hash_key.match?'skill') || (hash_key.match? 'lore')  
+        elsif (hash_key.match?'skill') || (hash_key.match? 'lore')
 
           is_lore = self.type.match?('lore')
 
           if k.is_a?(Array)
             skills_available = k
+            track = enactor.pf2_cg_assigned
           else
             skills_available = is_lore ? false : Global.read_config('pf2e_skills').keys
           end
@@ -147,24 +150,66 @@ module AresMUSH
           end
 
           if k.is_a?(Array)
-            k = k.clear
             remaining = 0
+            track[("#{self.type}" + " track")] = self.option
+            enactor.update(pf2_cg_assigned: track)
+            to_assign.delete(self.type)
           elsif k.is_a(Integer)
             k = k - 1
             remaining = k
+            to_assign["#{self.type}"] = k
           end
 
-          to_assign["#{self.type}"] = k
           enactor.update(pf2_to_assign: to_assign)
 
         elsif self.type.match?('feat')
+
+          char_feats = enactor.pf2_feats
+
+          if self.type == 'bgfeat'
+            feat_type = 'general'
+          else
+            feat_type = self.type.split[0]
+          end
+
+          feat_list = Global.read_config('pf2e_feats',feat_type).keys
+
+          # Archetype feats are chosen using class feats, and skill feats can be chosen with general feats.
+          if self.type == 'charclass feat'
+            archetype_feats = Global.read_config('pf2e_feats', 'archetype').keys
+            archetype_feats.each { |f| feat_list << f }
+          elsif self.type == 'general feat'
+            skill_feats = Global.read_config('pf2e_feats', 'skill').keys
+            skill_feats.each { |f| feat_list << f }
+          end
+
+          feat = self.option.split.each { |w| w.capitalize }
+
+          if !(feat_list.include? feat)
+            client.emit_failure t('pf2e.wrong_feat_type')
+            return
+          end
+
+          qualifies = Pf2eFeats.can_take_feat?(enactor, feat_type, feat)
+
+          if !qualifies
+            client.emit_failure t('pf2e.feat_prereq_not_met')
+            return
+          end
+
+          char_feat_list = char_feats[feat_type]
+          char_feat_list << feat
+          char_feats[feat_type] = char_feat_list
+
+          track = enactor.pf2_cg_assigned
+          track[("#{self.type}" + " track")] = self.option
+          enactor.update(pf2_cg_assigned: track)
+          enactor.update(pf2_feats: char_feats)
+
+        elsif self.type.match?('open language')
+
+
         end
-
-
-
-
-
-
 
       end
     end

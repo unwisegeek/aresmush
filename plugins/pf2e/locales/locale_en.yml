@@ -35,6 +35,7 @@ en:
 
     dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."
     die_roll: "%{roller}%xn rolls %{string} %{dc}and gets: %{parsed} = %x172%{result}%xn %{degree}"
+    does_not_qualify: "You do not meet the prerequisites to take that feat. Contact staff if this is in error."
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
@@ -70,3 +71,4 @@ en:
     unassigned_title: "Unassigned Character Options: %{name}"
 
     who_can_see_sheet: "You have granted the following permissions to your sheet:"
+    wrong_feat_type: "You cannot take that feat using the type of feat specified."

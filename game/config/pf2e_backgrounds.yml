@@ -629,33 +629,6 @@ pf2e_background:
     special: []
   Raised By Belief:
     abl_boosts_open: 1
-    req_abl_boosts: []
-    skills:
-    - DEITY_SKILL
-    lores:
-    - Althean Lore
-    - Angorite Lore
-    - Animusian Lore
-    - Caracorothan Lore
-    - Ceinaran Lore
-    - Daeusite Lore
-    - Danan Lore
-    - Deimosian Lore
-    - Elunan Lore
-    - Gileadean Lore
-    - Gunakharan Lore
-    - Illothan Lore
-    - Korite Lore
-    - Maugrimite Lore
-    - Navosian Lore
-    - Radan Lore
-    - Reosian Lore
-    - Serrielite Lore
-    - Taaran Lore
-    - Tarienite Lore
-    - Thulite Lore
-    feats:
-    - Assurance - DEITY_SKILL
   Refugee:
     abl_boosts_open: 1
     req_abl_boosts:

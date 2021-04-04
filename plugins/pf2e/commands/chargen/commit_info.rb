@@ -185,7 +185,7 @@ module AresMUSH
         feats['charclass'] = class_feats if class_feats
         feats['ancestry'] = heritage_feats if heritage_feats
 
-        to_assign['class feat'] = charclass if class_features_info['feat'].include?('charclass')
+        to_assign['charclass feat'] = charclass if class_features_info['feat']&.include?('charclass')
         to_assign['ancestry feat'] = ancestry
 
         # Senses and other specials
@@ -277,10 +277,10 @@ module AresMUSH
 
         enactor.pf2_movement = movement
 
-        # Some classes have things or adjustments that only they get.
-        # This is handled here.
-
+        # Edge Cases
         Pf2e.cg_edge_cases(enactor, charclass)
+        # Raised By Belief has its own edge case.
+        Pf2e.cg_edge_cases(enactor, heritage) if heritage == "Raised By Belief"
 
         # Final Updates
         enactor.pf2_to_assign = to_assign

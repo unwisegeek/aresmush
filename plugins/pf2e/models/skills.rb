@@ -39,5 +39,10 @@ module AresMUSH
       abonus + pbonus
     end
 
+    def self.get_skill_prof(char, name)
+      skill = find_skill(name, char)
+      prof = skill.prof_level
+    end
+
   end
 end

@@ -10,7 +10,7 @@ module AresMUSH
     attribute :pf2_conditions, :type => DataType::Hash, :default => {}
     attribute :pf2_features, :type => DataType::Array, :default => []
     attribute :pf2_traits, :type => DataType::Array, :default => []
-    attribute :pf2_feats, :type => DataType::Hash, :default => { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
+    attribute :pf2_feats, :type => DataType::Hash, :default => { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[], "archetype" => []}
     attribute :pf2_faith, :type => DataType::Hash, :default => { 'deity'=>"", 'alignment'=>"" }
     attribute :pf2_special, :type => DataType::Array, :default => []
     attribute :pf2_boosts_working, :type => DataType::Hash, :default => { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=> [] }
@@ -30,9 +30,9 @@ module AresMUSH
     reference :hp, "AresMUSH::Pf2eHP"
     reference :combat, "AresMUSH::Pf2eCombat"
 
-    before_delete :delete_sheet
+    before_delete :delete_pf2
 
-    def delete_sheet
+    def delete_pf2
       self.abilities&.each { |a| a.delete } if self.abilities
       self.skills&.each { |s| s.delete } if self.skills
       self.lores&.each { |l| l.delete } if self.lores
