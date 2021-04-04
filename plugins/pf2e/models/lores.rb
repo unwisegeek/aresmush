@@ -37,5 +37,10 @@ module AresMUSH
       abonus + pbonus
     end
 
+    def self.get_lore_prof(char, name)
+      lore = find_lore(name, char)
+      prof = lore.prof_level
+    end
+
   end
 end

@@ -431,7 +431,7 @@ pf2e_ancestry:
     - Strength
     languages:
     - Common
-    - Oruch
+    - Yrch
     traits:
     - oruch
     - humanoid
@@ -485,7 +485,7 @@ pf2e_ancestry:
     abl_flaw: Intelligence
     languages:
     - Common
-    - Iruxi
+    - Draconic
     traits:
     - lizardfolk
     - humanoid

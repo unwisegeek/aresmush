@@ -97,10 +97,6 @@ module AresMUSH
       end
     end
 
-    def self.find_feat(type,term)
-
-    end
-
     def self.get_level_tier(level)
       1 + level / 5
     end

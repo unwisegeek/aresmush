@@ -21,3 +21,4 @@ Remember: <ability> is always one of Strength, Dexterity, Constitution, Intellig
 `assign <type>=<ability>`: Assigns a type of boost to <ability>.
 `unassign <type>=<ability>`: Unassigns that ability for that type only. Does not affect other boost types you may have assigned.
 `commit abilities`: When you are happy with your scores, type this to lock down your scores to continue. If you need to change them, you will need to reset them using `cg/resetabil`.
+`cg/resetabil`: Resets all abilities to defaults and starts over. This does not delete your character options; use `cg/reset` to do that.
