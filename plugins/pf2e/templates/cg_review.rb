@@ -226,6 +226,8 @@ module AresMUSH
       end
 
       def skills
+
+        return t('pf2e.not_selected_yet', :element => "Character class") if !@class_features_info
         charclass_skills = @class_features_info['class_skills'] ? @class_features_info['class_skills'] : []
 
         open_skills = @class_features_info['skills_open']
