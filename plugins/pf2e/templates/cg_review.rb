@@ -226,7 +226,10 @@ module AresMUSH
       end
 
       def skills
-        charclass_skills = @class_features_info['class_skills']
+        charclass_skills = @class_features_info['class_skills'] ?
+                           @class_features_info['class_skills'] :
+                           "No class skills listed."
+
         open_skills = @class_features_info['skills_open']
 
         "#{charclass_skills.join} + #{open_skills}"
@@ -251,4 +254,3 @@ module AresMUSH
     end
   end
 end
-

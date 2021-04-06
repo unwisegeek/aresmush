@@ -208,6 +208,25 @@ module AresMUSH
         value
       end
 
+      def feats
+        charclass_list = @char.pf2_feats['charclass']
+        ancestry_list = @char.pf2_feats['ancestry']
+        general_list = @char.pf2_feats['general']
+        skill_list = @char.pf2_feats['skill']
+
+        feats = charclass_list + ancestry_list + general_list + skill_list
+
+        list = []
+
+        feats.each_with_index { |f,i| list << format_feat(f,i) }
+
+        list
+      end
+
+      def dedication_feats
+        list = @char.pf2_feats['dedication'].sort.join(", ")
+      end
+
       def format_ability(abil, score, i)
         name = "%xh#{abil.capitalize!}%xn:"
         linebreak = i % 3 == 0 ? "%r" : ""
@@ -246,6 +265,11 @@ module AresMUSH
         prof = "#{Pf2eCombat.get_save_from_char(char, save)}"[0].upcase
         bonus = Pf2eCombat.get_save_bonus(char, save)
         left("#{item_color}#{name}%xn: #{bonus} (#{prof})", 26)
+      end
+
+      def format_feat(name, index)
+        linebreak = index % 3 == 0 ? "%r" : ""
+        "#{linebreak}#{left(name, 26)}"
       end
 
       def print_linked_attr(skill)
