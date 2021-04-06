@@ -41,7 +41,7 @@ module AresMUSH
       # Ancestry and character class checks
       if type == "ancestry"
         cinfo = char.pf2_base_info
-        ancestry = [ cinfo["ancestry"] cinfo["heritage"] ].map { |a| a.downcase }
+        ancestry = [ cinfo["ancestry"], cinfo["heritage"] ].map { |a| a.downcase }
         match = details["traits"] && ancestry
 
         msg << "ancestry" if match.empty?
@@ -100,7 +100,7 @@ module AresMUSH
           msg << "skill" if char_proficiency < min_proficiency
         when "specialize"
           kit = char.pf2_base_info["specialize"].upcase
-          msg << "specialize" if required.upcase !== kit
+          msg << "specialize" if required.upcase != kit
         when "has_focus_pool"
           nil
         when "charclass"
@@ -118,8 +118,9 @@ module AresMUSH
           msg << "lore" if char_proficiency < min_proficiency
         when "heritage"
           heritage = char.pf2_base_info["heritage"].upcase
-          msg << "heritage" if required.upcase !== heritage
+          msg << "heritage" if required.upcase != heritage
         end
+      end
     end
 
   end
