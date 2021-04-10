@@ -1,9 +1,7 @@
 <div class="jumbotron-tagline">Journey to the magical world of Ea.</div>
 
-The autumn of 1023 is an exciting and challenging time for the intrepid Explorer's Guild, known sometimes as the Illuminated Order, a group led by a mysterious figure known only as the Shrike in their search for ancient and mysterious artifacts of the doomed Kulthian Empire. Fresh off successfully rescuing both the goddess Taara and history itself from the tricks of the all-encompassing Void and restoring Animus to his rightful place among the gods, our heroes return home to a brave new Ea that isn't _quite_ the home they knew. 
+The autumn of 1023 is an exciting and challenging time for the intrepid Explorer's Guild, known sometimes as the Illuminated Order, a group led by a mysterious figure known only as the Shrike in their search for ancient and mysterious artifacts of the doomed Kulthian Empire. 
 
-What will this brave new world hold for them? Become one of them to find out. 
-
-Emblem of Ea is an epic fantasy MUSH set in the original world of Ea, and has existed in various incarnations since 2002. We have recently converted to the AresMUSH codebase and to the Pathfinder Second Edition gaming system, and have updated and deepened our theme to expand player options and allow for deeper storytelling and more long-term plots. 
+Emblem of Ea is an epic fantasy MUSH set in the original world of Ea, and has existed in various incarnations since 2002. We are in the process of converting to the AresMUSH codebase and to the Pathfinder Second Edition gaming system, and are updating and deepening our theme to expand player options and allow for deeper storytelling and more long-term plots. 
 
 [[[policy:home|Policies]]] * [[[theme:home|Theme]]] * [[[rules:home|House Rules]]]
