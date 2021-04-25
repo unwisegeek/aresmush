@@ -1,11 +1,11 @@
 ---
-game:
+game: !ruby/hash:Sinatra::IndifferentHash
   category: Other
-  description: 'This is the Ares development site for conversion of Tenebrae: The
-    Emblem of Ea from BrazilMUX to AresMUSH. When the production site goes live, this
-    will continue to be the development and test server for the game. It will never
-    become public, and only admins and code testers will ever have access to it. '
+  description: 'This is the Ares development site for conversion of  Emblem of Ea
+    from BrazilMUX to AresMUSH. When the production site goes live, this will continue
+    to be the development and test server for the game. It will never become public,
+    and only admins and code testers will ever have access to it. '
   name: The Emblem of Ea (Test Site)
   public_game: false
-  status: In Development
+  status: Sandbox
   website: arestest.tenebraemush.net
