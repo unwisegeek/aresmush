@@ -63,6 +63,17 @@ module AresMUSH
         return 0 if !obj
         Pf2eAbilities.get_ability_mod Pf2eAbilities.get_ability_score(char, obj.name)
 
+      when 'sneak attack'
+        value = char.combat&.sneak_attack
+
+        return 0 if !value
+
+        dice = value.gsub("d"," ").split
+        amount = dice[0].to_i
+        sides = dice[1].to_i
+
+        result = Pf2e.roll_dice(amount, sides)
+
       else
         value = 0
 
@@ -143,7 +154,7 @@ module AresMUSH
           sides = dice[1].to_i
           result << Pf2e.roll_dice(amount, sides)
         elsif e.to_i == 0
-          result << Pf2e.get_keyword_value(enactor, e)
+          result << Pf2e.get_keyword_value(target, e)
         else
           result << e.to_i
         end

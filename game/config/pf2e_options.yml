@@ -5,6 +5,7 @@ pf2e:
     rollalias: roll/alias
     remalias: roll/alias
     listalias: roll/listalias
+    rollfor: roll/for
   allowed_alignments:
   - LG
   - NG

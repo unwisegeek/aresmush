@@ -1344,3 +1344,545 @@ pf2e_class:
         - skill
         raise:
         - ability
+  Oracle:
+    key_abil: Charisma
+    spell_abil: Charisma
+    HP: 8
+    chargen:
+      skills_open: 3
+      class_skills: Religion
+      class_feats:
+      feat:
+      - charclass
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        armor_unarmored: trained
+        armor_light: trained
+        class_dc: trained
+        perception: trained
+        fortitude: trained
+        reflex: trained
+        will: expert
+    Spells: trained
+    spell_trad: divine
+    spells_per_day:
+      1: 2
+    spells_known:
+      cantrip: 5
+      1: 2
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        feat:
+        - general
+        boost:
+        - skill
+        charclass:
+        signature_spells:
+        - 1: 1
+        - 2: 1
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        raise:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        signature_spells:
+        - 3: 1
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Expert Spellcaster
+        - Resolve
+        combat_stats:
+        - spells: expert
+        - will: master
+        signature_spells:
+        - 4: 1
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Magical Fortitude
+        combat_stats:
+        - fortitude: expert
+        signature_spells:
+        - 5: 1
+      10:
+        feat:
+        - charclass
+        - skill
+      11:
+        feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Alertness
+        - Weapon Expertise
+        - Major Curse
+        combat_stats:
+        - perception: expert
+        - wp_unarmed: expert
+        - wp_simple: expert
+        signature_spells:
+        - 6: 1
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Light Armor Expertise
+        - Lightning Reflexes
+        - Weapon Specialization
+        combat_stats:
+        - armor_unarmored: expert
+        - armor_light: expert
+        signature_spells:
+        - 7: 1
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        raise:
+        - ability
+        - skill
+        feat:
+        - general
+        charclass:
+        - Master Spellcaster
+        combat_stats:
+        - spells: master
+        signature_spells:
+        - 8: 1
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Greater Resolve
+        - Extreme Curse
+        combat_stats:
+        - will: legendary
+        signature_spells:
+        - 9: 1
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Legendary Spellcaster
+        - Oracular Clarity
+        combat_stats:
+        - spells: legendary
+      20:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - ability
+  Ranger:
+    key_abil:
+    - Strength
+    - Dexterity
+    spell_abil: Wisdom
+    HP: 10
+    chargen:
+      skills_open: 4
+      class_skills:
+      - Nature
+      - Survival
+      feat:
+      - charclass
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        wp_martial: trained
+        armor_unarmored: trained
+        armor_light: trained
+        armor_medium: trained
+        class_dc: trained
+        perception: expert
+        fortitude: expert
+        reflex: expert
+        will: trained
+    Spells: trained
+    spell_trad: primal
+    action: Hunt Prey
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+      3:
+        feat:
+        - general
+        raise:
+        - skill
+        charclass: Iron Will
+        combat_stats:
+        - will: expert
+      4:
+        feat:
+        - charclass
+        - skill
+      5:
+        raise:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        charclass:
+        - Ranger Weapon Expertise
+        - Trackless Step
+        combat_stats:
+        - wp_unarmed: expert
+        - wp_simple: expert
+        - wp_martial: expert
+      6:
+        feat:
+        - charclass
+        - skill
+      7:
+        feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Evasion
+        - Vigilant Senses
+        - Weapon Specialization
+        combat_stats:
+        - reflex: master
+        - perception: master
+      8:
+        feat:
+        - charclass
+        - skill
+      9:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Nature's Edge
+        - Ranger Expertise
+        combat_stats:
+        - class_dc: expert
+      10:
+        raise:
+        - ability
+        feat:
+        - charclass
+        - skill
+      11:
+        charclass:
+        - Juggernaut
+        - Medium Armor Expertise
+        - Wild Stride
+        combat_stats:
+        - fortitude: master
+        - armor_unarmored: expert
+        - armor_light: expert
+        - armor_medium: expert
+        feat:
+        - general
+        raise:
+        - skill
+      12:
+        feat:
+        - charclass
+        - skill
+      13:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Weapon Mastery
+        combat_stats:
+        - wp_unarmed: master
+        - wp_simple: master
+        - wp_martial: master
+      14:
+        feat:
+        - charclass
+        - skill
+      15:
+        raise:
+        - ability
+        - skill
+        feat:
+        - general
+        charclass:
+        - Greater Weapon Specialization
+        - Improved Evasion
+        - Incredible Senses
+        combat_stats:
+        - reflex: legendary
+        - perception: legendary
+      16:
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Masterful Hunter
+        combat_stats:
+        - class_dc: master
+      18:
+        feat:
+        - charclass
+        - skill
+      19:
+        feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Second Skin
+        - Swift Prey
+        combat_stats:
+        - armor_unarmored: master
+        - armor_light: master
+        - armor_medium: master
+      20:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - ability
+  Rogue:
+    key_abil: Dexterity
+    HP: 8
+    chargen:
+      skills_open: 7
+      class_skills:
+      - Stealth
+      class_feats:
+      feat:
+      - charclass
+      - skill
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        armor_unarmored: trained
+        armor_light: trained
+        class_dc: trained
+        perception: expert
+        fortitude: trained
+        reflex: expert
+        will: expert
+        sneak_attack: 1d6
+        charclass:
+        - Sneak Attack
+        - Surprise Attack
+    advance:
+      2:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      3:
+        feat:
+        - general
+        - skill
+        raise:
+        - skill
+        charclass:
+        - Deny Advantage
+      4:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      5:
+        raise:
+        - ability
+        - skill
+        feat:
+        - ancestry
+        - skill
+        charclass:
+        - Weapon Tricks
+        combat_stats:
+        - wp_unarmed: expert
+        - wp_simple: expert
+        - sneak_attack: 2d6
+      6:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      7:
+        feat:
+        - general
+        - skill
+        raise:
+        - skill
+        charclass:
+        - Evasion
+        - Vigilant Senses
+        - Weapon Specialization
+        combat_stats:
+        - reflex: master
+        - perception: master
+      8:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      9:
+        feat:
+        - ancestry
+        - skill
+        raise:
+        - skill
+        charclass:
+        - Great Fortitude
+        combat_stats:
+        - fortitude: expert
+        action: Debilitating Strike
+      10:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      11:
+        feat:
+        - general
+        - skill
+        raise:
+        - skill
+        charclass:
+        - Rogue Expertise
+        combat_stats:
+        - class_dc: expert
+        - sneak_attack: 3d6
+      12:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      13:
+        feat:
+        - ancestry
+        - skill
+        raise:
+        - skill
+        charclass:
+        - Improved Evasion
+        - Incredible Senses
+        - Light Armor Expertise
+        - Master Tricks
+        combat_stats:
+        - reflex: legendary
+        - perception: legendary
+        - armor_unarmored: expert
+        - armor_light: expert
+        - wp_unarmed: master
+        - wp_simple: master
+      14:
+        raise:
+        - skill
+        feat:
+        - charclass
+        - skill
+      15:
+        raise:
+        - ability
+        - skill
+        feat:
+        - general
+        - skill
+        charclass:
+        - Double Debilitation
+        - Greater Weapon Specialization
+      16:
+        raise:
+        - skill
+        feat:
+        - charclass
+        - skill
+      17:
+        feat:
+        - ancestry
+        - skill
+        raise:
+        - skill
+        charclass:
+        - Slippery Mind
+        combat_stats:
+        - sneak_attack: 4d6
+      18:
+        raise:
+        - skill
+        feat:
+        - charclass
+        - skill
+      19:
+        feat:
+        - skill
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Light Armor Mastery
+        - Master Strike
+        combat_stats:
+        - armor_unarmored: master
+        - armor_light: master
+      20:
+        feat:
+        - charclass
+        - skill
+        raise:
+        - ability
+        - skill

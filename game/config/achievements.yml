@@ -1,6 +1,12 @@
 ---
 achievements:
-  achievements: {}
+  achievements:
+    survived_pf1:
+      type: community
+      message: I Survived PF1: Ported over from Pathfinder 1E.
+    that_escalated_quickly:
+      type: story
+      message: That Escalated Quickly: Survived getting chased out of Alexandria.
   shortcuts:
     achievements: achievement
   types:
