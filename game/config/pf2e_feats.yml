@@ -1,2 +1,951 @@
 ---
-pf2e_feats: {}
+pf2e_feats:
+  charclass:
+    Alchemical Familiar:
+      traits:
+      - alchemist
+      prereq:
+        level: 1
+      shortdesc: "You have used alchemy to create yourself a familiar."
+      familiar: true
+    Alchemical Savant:
+      traits:
+      - alchemist
+      prereq:
+        level: 1
+        skill: Crafting/trained
+      shortdesc: "You can identify alchemical items more quickly than most."
+      circumstance: true
+    Far Lobber:
+      traits:
+      - alchemist
+      prereq:
+        level: 1
+      shortdesc: "You've learned how to throw a longer distance."
+    Quick Bomber:
+      traits:
+      - alchemist
+      prereq:
+        level: 1
+      shortdesc: "You keep your bombs easy to reach and draw them without thinking."
+      action: Quick Bomber
+    Poison Resistance:
+      traits:
+      - alchemist
+      prereq:
+        level: 2
+      shortdesc: "Repeated exposure to toxic reagents has made you resistant to poison."
+      defense:
+        resistances:
+          poison: 1
+    Revivifying Mutagen:
+      traits:
+      - alchemist
+      prereq:
+        level: 2
+      shortdesc: You can cannibalize a mutagen's effects to heal yourself.
+      action: Revivifying Mutagen
+    Smoke Bomb:
+      traits:
+      - additive 1
+      - alchemist
+      prereq:
+        level: 2
+      shortdesc: "You cause a bomb made with Quick Alchemy to create a cloud of thick smoke."
+      action: Smoke Bomb
+    Calculated Splash:
+      traits:
+      - alchemist
+      prereq:
+        level: 4
+      shortdesc: You have calculated all the angles to maximize a bomb's splash.
+      circumstance: true
+    Efficient Alchemy:
+      traits:
+      - alchemist
+      prereq:
+        level: 4
+      shortdesc: You know how to scale your formulas into larger batches that don't require any additional attention.
+    Enduring Alchemy:
+      traits:
+      - alchemist
+      prereq:
+        level: 4
+      shortdesc: You've learned how to make your personal energy last just a little bit longer when brewing.
+    Combine Elixirs:
+      traits:
+      - additive 2
+      - alchemist
+      prereq:
+        level: 6
+      shortdesc: You've discovered how to mix two elixirs into a hybrid concoction.
+      action: Combine Elixirs
+    Debilitating Bomb:
+      traits:
+      - additive 2
+      - alchemist
+      prereq:
+        level: 6
+      shortdesc: Your bombs impose additional effects on your enemies.
+      action: Debilitating Bomb
+    Directional Bombs:
+      traits:
+      - alchemist
+      prereq:
+        level: 6
+      shortdesc: You can lob bombs with great force and precise trajectory to create a splash in the direction you desire.
+    Feral Mutagen:
+      traits:
+      - alchemist
+      prereq:
+        level: 8
+      shortdesc: Your bestial mutagen brings out the beast within you.
+    Powerful Alchemy:
+      traits:
+      - alchemist
+      prereq:
+        level: 8
+      shortdesc: Alchemical items you create on the fly are particularly potent.
+    Sticky Bomb:
+      traits:
+      - additive 2
+      - alchemist
+      prereq:
+        level: 8
+      shortdesc: You mix in an additive to make your bomb's contents adhere to the target and continue to do damage. Bomb level must be no more than two less than your advanced alchemy level.
+      action: Sticky Bomb
+    Elastic Mutagen:
+      traits:
+      - alchemist
+      prereq:
+        level: 10
+      shortdesc: You can cause your body to twist and flow like the quicksilver within your mutagens.
+    Expanded Splash:
+      traits:
+      - alchemist
+      prereq:
+        level: 10
+        feat:
+        - Calculated Splash
+      shortdesc: Your bombs create especially large and powerful explosions.
+    Greater Debilitating Bomb:
+      traits:
+      - alchemist
+      prereq:
+        level: 10
+        feat:
+        - Debilitating Bomb
+      shortdesc: You have learned alchemical secrets that allow you to expand the range of effects your bombs create.
+    Merciful Elixir:
+      traits:
+      - additive 2
+      - alchemist
+      prereq:
+        level: 10
+      shortdesc: An elixir of life no more than two levels lower than your advanced alchemy level can also calm the drinker's body and mind.
+      action: Merciful Elixir
+    Potent Poisoner:
+      traits:
+      - alchemist
+      prereq:
+        level: 10
+        feat:
+        - Powerful Alchemy
+        lore: Lore Name/trained
+      shortdesc: By concentrating your poison's toxic components, you make your poisons more difficult to resist.
+    Acute Vision:
+      traits:
+      - barbarian
+      prereq:
+        level: 1
+      shortdesc: When you are raging, your visual senses improve, granting you Darkvision.
+    Moment of Clarity:
+      traits:
+      - barbarian
+      - concentrate
+      - rage
+      prereq:
+        level: 1
+      shortdesc: You push back your rage for a moment to be able to think clearly. Until the end of this turn, you may use actions with the concentrate trait even if they do not have the rage trait.
+      action: Moment of Clarity
+    Raging Intimidation:
+      traits:
+      - barbarian
+      prereq:
+        level: 1
+      shortdesc: Your fury fills your foes with fear. Your Demoralize and (if you have it) Scare to Death actions gain the rage trait.
+    Raging Thrower:
+      traits:
+      - barbarian
+      prereq:
+        level: 1
+      shortdesc: Thrown weapons become especially deadly in your fury.
+    Sudden Charge:
+      traits:
+      - barbarian
+      - flourish
+      - open
+      prereq:
+        level: 1
+      shortdesc: With a quick sprint, you dash up to your foes and swing.
+      action: Sudden Charge
+    Acute Scent:
+      traits:
+      - barbarian
+      prereq:
+        level: 2
+        orfeat:
+        - Acute Vision
+        orspecial: darkvision
+      shortdesc: When you rage, your sense of smell improves. Gain imprecise scent 30'.
+    Furious Finish:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 2
+      shortdesc: Desperate to finish the fight, you pour all your rage into one final blow.
+      action: Furious Finish
+    No Escape:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 2
+      shortdesc: You keep pace with a retreating foe.
+      reaction: No Escape
+    Second Wind:
+      traits:
+      - barbarian
+      prereq:
+        level: 2
+      shortdesc: You can enter a second wind, but after that you need to catch your breath.
+    Shake It Off:
+      traits:
+      - barbarian
+      - concentrate
+      - rage
+      prereq:
+        level: 2
+      shortdesc: You concentrate on your rage, overcoming fear and fighting back sickness.
+      action: Shake It Off
+    Fast Movement:
+      traits:
+      - barbarian
+      prereq:
+        level: 4
+      shortdesc: Your rage is a frenzy of rapid movements. When you are raging, add a 10' status bonus to your speed.
+    Raging Athlete:
+      traits:
+      - barbarian
+      prereq:
+        level: 4
+        skill: Athletics/expert
+      shortdesc: Physical obstacles can't hold back your fury.
+    Swipe:
+      traits:
+      - barbarian
+      - flourish
+      prereq:
+        level: 4
+      shortdesc: You make a wide, arcing swing that is capable of hitting two foes adjacent to each other.
+      action: Swipe
+    Wounded Rage:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 4
+      shortdesc: If you take damage and are capable of entering a rage, you roar in pain and Rage as a reaction.
+    Animal Skin:
+      traits:
+      - barbarian
+      - instinct
+      - morph
+      - primal
+      - transmutation
+      prereq:
+        level:
+        subclass_info: Animal
+      shortdesc: Your proficiency in unarmored defense increases to expert, and while raging and unarmored, you gain the tough hide of an animal.
+    Attack of Opportunity:
+      traits:
+      - barbarian
+      - champion
+      prereq:
+        level: 6
+      shortdesc: You swat a foe that leaves an opening. This feat triggers if a creature within your reach uses a manipulate or move action, makes a ranged attack, or leaves a square.
+      reaction: Attack of Opportunity
+    Brutal Bully:
+      traits:
+      - barbarian
+      prereq:
+        level: 6
+        skill: Athletics/expert
+      shortdesc: You push your foes around and leave bruises.
+    Cleave:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 6
+      shortdesc: You swing clear through one foe and into another. When you kill or knock unconscious a foe and another is adjacent to them, make a melee Strike against the second foe.
+      reaction: Cleave
+    Dragon's Rage Breath:
+      traits:
+      - arcane
+      - barbarian
+      - concentration
+      - evocation
+      - instinct
+      - rage
+      prereq:
+        level: 6
+        subclass_info: Dragon
+      shortdesc: You breathe deeply and exhale your dragon's breath weapon.
+      requirement: You have not used this ability since you last Raged.
+      action: Dragon's Rage Breath
+    Giant's Stature:
+      traits:
+      - barbarian
+      - instinct
+      - polymorph
+      - primal
+      - rage
+      - transmutation
+      prereq:
+        level: 6
+        subclass_info: Giant
+      shortdesc: You grow to incredible size. You become Large, increase reach by 5', and gain clumsy 1 until the end of your rage. Your equipment grows with you.
+      action: Giant's Stature
+    Spirits' Interference:
+      traits:
+      - barbarian
+      - divine
+      - instinct
+      - necromancy
+      - rage
+      prereq:
+        level: 6
+        subclass_info: Spirit
+      shortdesc: You call forth protective spirits to ward off ranged attacks. Until the end of your rage, anyone making a ranged attack against you must succeed at a DC 5 flat check or the attack misses with no effect.
+      action: Spirits' Interference
+    Animal Rage:
+      traits:
+      - barbarian
+      - concentrate
+      - instinct
+      - polymorph
+      - primal
+      - rage
+      - transmutation
+      prereq:
+        level: 8
+        ability: Strength/16
+        skill: Medicine/trained
+        specialize: Maestro
+        has_focus_pool: true
+        charclass: arcane bond
+        feat:
+        - "Feat Name"
+        lore: Lore Name/trained
+        heritage: "<heritage>"
+        special: <string>
+        subclass_info: Animal
+      shortdesc: You transform into your animal.
+      action: Animal Rage
+    Furious Bully:
+      traits:
+      - barbarian
+      prereq:
+        level: 8
+        skill: Athletics/master
+      shortdesc: You bully foes across the battlefield. While raging, gain +2 circumstance bonus to Athletics checks for attack actions.
+      circumstance: true
+    Renewed Vigor:
+      traits:
+      - barbarian
+      - concentrate
+      - rage
+      prereq:
+        level: 8
+      shortdesc: You pause to recover your raging vigor. You gain temp HP equal to 1/2 your level plus your CON modifier.
+      action: Renewed Vigor
+    Share Rage:
+      traits:
+      - auditory
+      - barbarian
+      - rage
+      - visual
+      prereq:
+        level: 8
+      shortdesc: You stoke an ally's fury. One willing creature within 30' gains the effect of the Rage action, except it can still use concentrate actions.
+      requirement: You haven't used this ability since you last raged.
+      action: Share Rage
+    Sudden Leap:
+      traits:
+      - barbarian
+      prereq:
+        level: 8
+      shortdesc: You swing at a foe mid-leap.
+    Thrash:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 8
+      shortdesc: You thrash a grabbed foe around. It takes B damage, gets a Fortitude save to resist.
+      requirement:  You have a foe grabbed.
+      action: Thrash
+    Come and Get Me:
+      traits:
+      - barbarian
+      - concentrate
+      - rage
+      prereq:
+        level: 10
+      shortdesc: You open yourself to attacks so you can respond in turn.
+      action: Come and Get Me
+    Furious Sprint:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 10
+      shortdesc: You rush forward, Striding up to five times your base Speed in a straight line. If you choose to spend three actions for this, you cna move up to eight times your speed.
+      action: Furious Sprint
+    Great Cleave:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 10
+        feat:
+        - Cleave
+      shortdesc: Your fury carries your weapon through multiple foes.
+    Knockback:
+      traits:
+      - barbarian
+      - rage
+      prereq:
+        level: 10
+      shortdesc: The weight of your swing drives your enemy back. You push the enemy back 5' as a successful shove.
+      requirement: Your last action was a successful strike.
+      action: Knockback
+    Terrifying Howl:
+      traits:
+      - auditory
+      - barbarian
+      - rage
+      prereq:
+        level: 10
+        feat:
+        - Intimidating Glare
+      shortdesc: You unleash a terrifying howl. Attempt Intimidate checks to Demoralize each creature within 30'. Pass or fail, each creature is then immune to this feat for 1 minute.
+      requirement: <string if present>
+      action: Terrifying Howl
+    Bardic Lore:
+      traits:
+      - bard
+      prereq:
+        level: 1
+        specialize: Enigma
+      shortdesc: Your studies make you informed on every subject. Gain Bardic Lore at trained proficiency. If your Occultism proficiency reaches legendary, you gain expert in this lore.
+      lore: Bardic Lore
+    Lingering Composition:
+      traits:
+      - bard
+      prereq:
+        level: 1
+        has_focus_pool: true
+        specialize: Maestro
+      shortdesc: By adding a flourish, you make your compositions last longer.
+      focus_spell: Lingering Composition
+      focus_pool: 1
+    Reach Spell:
+      traits:
+      - bard
+      - concentrate
+      - metamagic
+      prereq:
+        level: 1
+      shortdesc: You learn to extend your spell's range.
+      requirement: The next action you use is to cast a spell that has a range.
+      action: Reach Spell
+    Cantrip Expansion:
+      traits:
+      - bard
+      prereq:
+        level: 2
+      shortdesc: Study broadens your range of simple spells. Add two additional cantrips from your spell list to your repertoire.
+      choose:
+        cantrip1: []
+        cantrip2: []
+      choice_name: Cantrip Expansion
+      choice_description: Choose two cantrips from your spell list to add to your repertoire.
+    Esoteric Polymath:
+      traits:
+      - bard
+      prereq:
+        level: 2
+        specialize: Polymath
+      shortdesc: You keep a book of occult spells, similar to a wizard's spellbook, and can use its spells to supplement your spell repertoire.
+      spellbook: true
+    Inspire Competence:
+      traits:
+      - bard
+      prereq:
+        level: 2
+        specialize: Maestro
+      shortdesc: You learn the inspire competence composition cantrip.
+      composition: Inspire Competence
+    Loremaster's Etude:
+      traits:
+      - bard
+      - fortune
+      prereq:
+        level: 2
+        specialize: Enigma
+        has_focus_pool: true
+      shortdesc: You magically unlock memories, making them easier to recall. You learn the loremaster's etude composition spell.
+      focus_spell: Loremaster's Etude
+      focus_pool: 1
+    Multifarious Muse_Enigma:
+      traits:
+      - bard
+      prereq:
+        level: 2
+        specialize: !Enigma
+      shortdesc: Your muse doesn't fit into any one label. Choose a 1st-level feat requiring the Enigma muse, and you now meet the muse prerequisite for other feats requiring the Enigma muse.
+      choose:
+        feat:
+        - Bardic Lore
+    Multifarious Muse_Polymath:
+      traits:
+      - bard
+      prereq:
+        level: 2
+        specialize: !Polymath
+      shortdesc: Your muse doesn't fit into any one label. Choose a 1st-level feat requiring the Polymath muse, and you now meet the muse prerequisite for other feats requiring the Polymath muse.
+      choose:
+        feat:
+        - Versatile Performance
+    Multifarious Muse_Maestro:
+      traits:
+      - bard
+      prereq:
+        level: 2
+        specialize: !Maestro
+      shortdesc: Your muse doesn't fit into any one label. Choose a 1st-level feat requiring the Maestro muse, and you now meet the muse prerequisite for other feats requiring the Maestro muse.
+      choose:
+        feat:
+        - Lingering Composition
+    Inspire Defense:
+      traits:
+      - bard
+      prereq:
+        level: 4
+        specialize: Maestro
+      shortdesc: You learn the inspire defense composition cantrip.
+      composition: Inspire Defense
+    Melodious Spell:
+      traits:
+      - bard
+      - concentrate
+      - manipulate
+      - metamagic
+      prereq:
+        level: 4
+      shortdesc: You subtly weave your spellcasting into your performance, hiding verbal, somatic, and material components of a spell in an ordinary performance.
+      action: Melodious Spell
+    Triple Time:
+      traits:
+      - bard
+      prereq:
+        level: 4
+      shortdesc: You learn the Triple Time composition cantrip, which speeds up you and your allies for a round.
+      composition: Triple Time
+    Versatile Signature:
+      traits:
+      - bard
+      prereq:
+        level: 4
+        specialize: Polymath
+      shortdesc: When you make your daily preparations, you cna change one of your signature spells to a different spell of that level in your repertoire.
+    Dirge of Doom:
+      traits:
+      prereq:
+        level: 6
+      shortdesc: You learn the dirge of doom composition cantrip.
+      composition: Dirge of Doom
+    Harmonize:
+      traits:
+      - bard
+      - concentrate
+      - manipulate
+      - metamagic
+      prereq:
+        level: 6
+        specialize: Maestro
+      shortdesc: You can perform multiple compositions simultaneously.
+    Steady Spellcastng:
+      traits:
+      - bard
+      prereq:
+        level: 6
+      shortdesc: You don't lose spells easily. If a reaction would disrupt your spellcasting action, make a DC 15 flat check. If you succeed, your action is not disrupted.
+    Eclectic Skill:
+      traits:
+      - bard
+      prereq:
+        level: 8
+        skill: Occultism/master
+        specialize: Polymath
+      shortdesc: Your broad experiences translate to a range of skills.
+    Inspire Heroics:
+      traits:
+      - bard
+      prereq:
+        level: 8
+        specialize: Maestro
+        has_focus_pool: true
+      shortdesc: Your performances inspire even greater deeds in your allies.
+    Know-It-All:
+      traits:
+      - bard
+      prereq:
+        level: 8
+        specialize: Enigma
+      shortdesc: When you succeed at a Knowledge check, you gain additional information or context. A critical success might gain you even more at GM discretion.
+    House of Imaginary Walls:
+      traits:
+      - bard
+      prereq:
+        level: 10
+      shortdesc: You erect an imaginary barrier others believe to be real. You learn the house of imaginary walls composition cantrip.
+      composition: House of Imaginary Walls
+    Quickened Casting:
+      traits:
+      - bard
+      - concentrate
+      - metamagic
+      prereq:
+        level: 10
+      shortdesc: Reduce the number of actions to cast a spell (minimum 1 action)
+      requirement: once per day, spell is 2 levels lower than highest available spell level
+      action: Quickened Casting
+    Unusual Competition:
+      traits:
+      - bard
+      - concentrate
+      - manipulate
+      - metamagic
+      prereq:
+        level: 10
+        specialize: Polymath
+      shortdesc: You can translate the emotion and power of a composition to other mediums.
+    Deity's Domain:
+      traits:
+      - champion
+      prereq:
+        level: 1
+      shortdesc: Choose one of your deity's domains. You gain the domain's initial domain spell as a devotion spell.
+    Ranged Reprisal:
+      traits:
+      - champion
+      prereq:
+        level: 1
+        specialize: Paladin
+      shortdesc: You can use the Retributive Strike reaction with a ranged weapon.
+    Unimpeded Step:
+      traits:
+      - champion
+      prereq:
+        level: 1
+        specialize: Liberator
+      shortdesc: Your ally's movement from Liberating Step is unaffected by difficult terrain, greater difficult terrain, narrow surfaces, and uneven ground.
+    Weight of Guilt:
+      traits:
+      - champion
+      prereq:
+        level: 1
+        specialize: Redeemer
+      shortdesc: Guilt clouds the minds of those who ignore your Glimpse of Redemption. You can make the triggering creature stupefied 2 instead of enfeebled 2.
+    Divine Grace:
+      traits:
+      - champion
+      prereq:
+        level: 2
+      shortdesc: When you attempt a save against a spell, you use your reaction to call upon your deity's grace, granting a +2 circumstance bonus to the save.
+      circumstance: true
+      reaction: Divine Grace
+    Dragonslayer Oath:
+      traits:
+      - champion
+      - oath
+      prereq:
+        level: <integer>
+        ability: Strength/16
+        skill: Medicine/trained
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You've sworn to slay evil dragons, and you do not consider evil dragons to be legitimate authorities, even in nations they rule.
+      circumstance: true
+      edicts: Character must slay evil dragons they encounter so long as they have a reasonable chance of success.
+    Fiendsbane Oath:
+      traits:
+      - champion
+      - oath
+      prereq:
+        level: 2
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You've sworn to banish the corruption of fiends to the dark planes they call home, and you do not consider fiends legitimate authorities, even in lands they rule.
+      circumstance: true
+      edicts: Character must banish or slay fiends they come across, as long as they have a reasonable chance of success. This does not apply to the unlikely event that they find a good fiend.
+    Shining Oath:
+      traits:
+      - champion
+      - oath
+      prereq:
+        level: 2
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You've sworn an oath to put the undead to rest. You do not consider undead to be legitimate authorities, even in lands they rule.
+      circumstance: true
+      edicts: You must end the existence of undead you encounter, so long as you have a reasonable chance of success. In the unlikely event that you find a good undead, you may try to help it resolve unfinished business and find peace.
+    Vengeful Oath:
+      traits:
+      - champion
+      - oath
+      prereq:
+        level: 2
+        ability: Strength/16
+        skill: Medicine/trained
+        specialize: Paladin
+      shortdesc: You have sworn an oath to hunt down wicked evildoers and bring them to justice.
+      circumstance: true
+      edicts: Character must hunt down and exterminate evil creatures that have committed heinous atrocities as long as there is a reasonable chance of success.
+    Aura of Courage:
+      traits:
+      - champion
+      prereq:
+        level: 4
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You stand strong in the face of danger, and inspire your allies to do the same. When you gain the frightened condition, reduce its value by 1 (min 0), and when your frightened condition reduces by 1 at the end of your turn, reduce it by 1 for all allies within 15'.
+      circumstance: true
+    Divine Health:
+      traits:
+      - champion
+      prereq:
+        level: 4
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: Your faith makes you resistant to disease, protecting you as you offer succor to the ill.
+    Mercy:
+      traits:
+      - champion
+      - concentrate
+      - metamagic
+      prereq:
+        level: 4
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: Your touch relieves fear and restores movement. If your next action is to _lay on hands_, you can attempt to counter fear or paralysis in the target in addition to other benefits.
+      requirement: <string if present>
+      action: Mercy
+    Litany Against Wrath:
+      traits:
+      - champion
+      prereq:
+        level: 6
+        has_focus_pool: true
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You excoriate a foe for its wrath against goodly creatures. Gain the devotion spell _litany against wrath_.
+      focus_spell: Litany Against Wrath
+      focus_pool: 1
+    Loyal Warhorse:
+      traits:
+      - champion
+      prereq:
+        level: 6
+        charclass: Steed Ally
+      shortdesc: You and your mount have grown closer, and your loyalty to each other is unbreakable. Your mount is now mature and will never attack you, even if magically compelled to do so.
+      circumstance: true
+      animal_companion: mature
+    Shield Warden:
+      traits:
+      - champion
+      prereq:
+        level: 6
+        charclass: Shield Ally
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You use your shield to protect your allies as well as yourself.
+    Smite Evil:
+      traits:
+      - champion
+      prereq:
+        level: 6
+        charclass: Blade Ally
+      shortdesc: Your blade ally becomes an even more powerful tool against evildoers.
+      requirement: <string if present>
+      action: Smite Evil
+    Advanced Deity's Domain:
+      traits:
+      - champion
+      prereq:
+        level: 8
+        feat:
+        - Deity's Domain
+      shortdesc: Through your conviction, you have glimpsed the deeper secrets of your deity's domain. You gain an advanced domain spell from the selected domain as a devotion spell.
+      focus_pool: 1
+    Greater Mercy:
+      traits:
+      - champion
+      prereq:
+        level: 8
+        feat:
+        - Mercy
+      shortdesc: When you use Mercy, you can instead attempt to remove the conditions blinded, slowed, sickened, or deafened.
+    Heal Mount:
+      traits:
+      - champion
+      prereq:
+        level: 8
+        charclass: Steed Ally
+      shortdesc: Your devotion to your mount manifests as a surge of positive energy. When you cast _lay on hands_ on your mount, you can restore 10 HP + 10 HP / heightened level.
+    Quick Block:
+      traits:
+      - champion
+      prereq:
+        level: 8
+      shortdesc: You can block with your shield instinctively. Gain a second reaction at the start of each turn that can be used only to Shield Block.
+    Second Ally:
+      traits:
+      prereq:
+        level: 8
+        charclass:
+        - Blade Ally
+        - Steed Ally
+        - Shield Ally
+      shortdesc: Your inner grace attracts the attention of a second protective spirit. Choose a second Ally and gain its benefits.
+      choice_name: "Divine Ally"
+      choice_description: "Choose a divine ally."
+      choose:
+        Blade Ally: {}
+        Shield Ally: {}
+        Steed Ally:
+          animal_companion: young
+          req_ability: mount
+    Sense Evil:
+      traits:
+      - champion
+      prereq:
+        level: 8
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+      shortdesc: You sense evil as a queasy or foreboding feeling.
+    Devoted Focus:
+      traits:
+      - champion
+      prereq:
+        level: 10
+        has_focus_pool: true
+      shortdesc: Your devotion is strong enough to increase your focus to incredible heights. If you have spent at least 2 Focus Points since the last time you Refocused, you recover two focus points instead of 1 when you Refocus.
+    Imposing Destrier:
+      traits:
+      - champion
+      prereq:
+        level: 10
+        charclass: Steed Ally
+        feat:
+        - Loyal Warhorse
+      shortdesc: Under your care, your mount has realized its innate potential.
+    Litany Against Sloth:
+      traits:
+      - champion
+      prereq:
+        level: 10
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+        has_focus_pool: true
+      shortdesc: You learn the devotion spell _litany against sloth_.
+      focus_spell: Litany Against Sloth
+      focus_pool: 1
+    Radiant Blade Spirit:
+      traits:
+      - champion
+      prereq:
+        level: 10
+        charclass: Blade Ally
+      shortdesc: Your divine ally radiates power, enhancing your chosen weapon. Add _flaming_ and any of the aligned properties to the list of effects you can choose from.
+    Shield of Reckoning:
+      traits:
+      - champion
+      prereq:
+        level: 10
+        specialize:
+        - Paladin
+        - Redeemer
+        - Liberator
+        charclass: Shield Ally
+        feat:
+        - Shield Warden
+      shortdesc: When you shield your ally against an attack, you call upon your power to protect your ally further, using the Shield Block to prevent damage and invoking the Champion's Reaction against that foe.
+      requirement: A foe's attack against an ally matches the trigger for both your shield block reaction and your champion's reaction.
+      reaction: Shield of Reckoning
+    Deadly Simplicity:
+      traits:
+      - cleric
+      prereq:
+        level: 1
+        deity: COME BACK TO ME
+      shortdesc: Your deity's weapon is especially powerful in your hands. When you are wielding your deity's favored weapon, increase the damage die size of that weapon by one step, minimum d6.
+    Domain Initiate:
+      traits:
+      - cleric
+      prereq:
+        level: 1
+      shortdesc: Your deity bestows a special spell related to their powers. 
+      requirement: <string if present>
+      action: <string>
+      reaction: <string>
+      circumstance: <Boolean>
+      spell: <string if present, used if it adds a spell>
+      cantrip: <string if present, used if it adds a cantrip>
+      focus_spell: <string if present>
+      focus_cantrip: <string if present, used if it adds a focus spell or cantrip respectively>
+      composition: <string if present, used for bard composition spells>
+      familiar: <Boolean>
+      animal_companion: <Boolean>
+      edicts: <string>
+      anathema: <string>
+      defense:
+        resistances:
+          poison: 1
+      lore: <lore name>
+      focus_pool: <integer, usually 1>
+      spellbook: true

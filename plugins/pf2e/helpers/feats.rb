@@ -39,6 +39,8 @@ module AresMUSH
       end
 
       # Ancestry and character class checks
+      is_from_dedication = nil
+
       if type == "ancestry"
         cinfo = char.pf2_base_info
         ancestry = [ cinfo["ancestry"], cinfo["heritage"] ].map { |a| a.downcase }
@@ -47,20 +49,20 @@ module AresMUSH
         msg << "ancestry" if match.empty?
       elsif type == "charclass"
         cinfo = char.pf2_base_info
-        charclass = [ cinfo["charclass"] ].map { |c| c.downcase }
+        charclass = [ cinfo["charclass"], cinfo["dedication"] ].flatten.map { |c| c.downcase }
+        dmatch = details['traits'] && charclass
 
-        # Charclass can also match a dedication
-        if !(details["traits"].include? charclass)
-          dedication = cinfo["dedication"].map { |d| d.downcase }
-          dmatch = details['traits'] && dedication
-          if dmatch.empty?
-            msg << "charclass"
-          end
+        if dmatch.empty?
+          msg << "charclass"
+          return msg
         end
+
+        is_from_dedication = true if !dmatch.include?(cinfo['charclass'])
       end
 
       # Prereq check, prerequisites includes level
-      effective_level = char.pf2_level
+
+      effective_level = is_from_dedication ? (char.pf2_level / 2) : char.pf2_level
 
       fails_prereqs = prereq_check(char, type, feat, effective_level)
 
@@ -72,6 +74,7 @@ module AresMUSH
 
     def self.prereq_check(char, type, feat, level)
       msg = []
+      orlist = {}
 
       name = feat.split.map { |word| word.capitalize }
 
@@ -87,20 +90,31 @@ module AresMUSH
           minimum = string[1]
         end
 
+        if ptype.start_with?("or")
+          keytype = ptype.delete("or")
+          orlist[keytype] = required
+          next
+        end
+
         case ptype
         when "level"
-          msg << "level" if details["level"] > level
+          msg << "level" if prereqs['level'] > level
         when "ability"
           char_score = Pf2eAbilities.get_ability_score(char, factor)
           msg << "ability" if char_score < minimum
         when "skill"
-          char_proficiency = Pf2e.get_prof_bonus(Pf2eSkills.get_skill_prof char, factor)
-          min_proficiency = Pf2e.get_prof_bonus(minimum)
+          char_prof = Pf2e.get_prof_bonus(Pf2eSkills.get_skill_prof char, factor)
+          min_prof = Pf2e.get_prof_bonus(minimum)
 
-          msg << "skill" if char_proficiency < min_proficiency
+          msg << "skill" if char_prof < min_prof
         when "specialize"
-          kit = char.pf2_base_info["specialize"].upcase
-          msg << "specialize" if required.upcase != kit
+          if required.start_with?('!')
+            banned = required.delete('!').set_upcase_name
+            msg << "specialize" if banned == kit
+          else
+            kit = char.pf2_base_info["specialize"].upcase
+            msg << "specialize" if required.upcase != kit
+          end
         when "has_focus_pool"
           nil
         when "charclass"
@@ -117,8 +131,16 @@ module AresMUSH
  
           msg << "lore" if char_proficiency < min_proficiency
         when "heritage"
-          heritage = char.pf2_base_info["heritage"].upcase
-          msg << "heritage" if required.upcase != heritage
+          if required.start_with?('!')
+            banned = required.delete('!').set_upcase_name
+            msg << "heritage" if banned == heritage
+          else
+            heritage = char.pf2_base_info["heritage"].upcase
+            msg << "heritage" if required.upcase != heritage
+          end
+        when "special"
+          char_specials = char.pf2_special.each { |s| s.upcase }
+          msg << "special" if !(char_specials.include?(required.upcase))
         end
       end
     end

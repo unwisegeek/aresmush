@@ -7,9 +7,9 @@ summary: How to use Pathfinder Second Edition dice commands.
 
 The roll commands on this game have been constructed to be reasonably familiar to those familiar with AresMUSH FS3 games, but the mechanics behind them are compliant with Pathfinder Second Edition.
 
-`roll <dice + modifiers>: The <dice + modifiers> string can be any combination of integers, dice to roll, and specific keywords. A keyword that is not recognized will be passed to the roller as 0, so it won't affect the roll.
+`roll <dice + modifiers>``: The <dice + modifiers> string can be any combination of integers, dice to roll, and specific keywords. A keyword that is not recognized will be passed to the roller as 0, so it won't affect the roll.
 
-`roll <dice + modifiers>/<dc>`: As above, except <dc> must be an integer between 50 and 50. Guidance on what this integer should be can be found in the Pathfinder 2E rules, or may be provided by the DM.
+`roll <dice + modifiers>/<dc>`: As above, except <dc> must be an integer between 5 and 50. Guidance on what this integer should be can be found in the Pathfinder 2E rules, or may be provided by the DM.
 
 For example --
 
