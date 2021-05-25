@@ -52,7 +52,7 @@ en:
     no_free: "No free %{element} left to assign."
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
-    not_selected_yet: "%{element}" not selected yet"
+    not_selected_yet: "%{element} not selected yet."
     nothing_to_assign: "You have no character options left unassigned."
 
     only_in_chargen: "This command can only be used in chargen."

@@ -18,10 +18,6 @@ website:
     manage_wiki: Create and delete restricted wiki pages.
   restricted_pages:
   - home
-  - theme:*
-  - policy:*
-  - rules:*
-  - include:*
   sitemap_update_cron:
     hour:
     - 2
