@@ -1,6 +1,9 @@
 ---
 toc: Pathfinder Second Edition
 summary: How to use Pathfinder Second Edition dice commands.
+aliases:
+- roll
+- dice
 ---
 
 # Rolling Dice in Pathfinder Second Edition

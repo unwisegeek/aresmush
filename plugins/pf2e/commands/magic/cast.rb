@@ -10,7 +10,7 @@ module AresMUSH
         self.trad = downcase_arg(args.arg1)
 
         trads = %w{arcane divine occult primal}
-        self.tradition = trads.select { |t| t.match?(self.trad) }[0]
+        self.tradition = trads.select { |t| t.match?(self.trad) }[0].downcase
 
         self.level = integer_arg(args.arg2)
         self.spell = getspell[0]
@@ -32,6 +32,13 @@ module AresMUSH
 
         if !magic
           client.emit_failure t('pf2e.not_caster')
+          return
+        end
+
+        # Can you cast spells from the specified tradition?
+
+        if !magic.tradition[self.tradition]
+          client.emit_failure t('pf2e.cannot_cast_tradition', :trad=>self.tradition)
           return
         end
 

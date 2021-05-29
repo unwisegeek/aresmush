@@ -103,8 +103,8 @@ module AresMUSH
           char_score = Pf2eAbilities.get_ability_score(char, factor)
           msg << "ability" if char_score < minimum
         when "skill"
-          char_prof = Pf2e.get_prof_bonus(Pf2eSkills.get_skill_prof char, factor)
-          min_prof = Pf2e.get_prof_bonus(minimum)
+          char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
+          min_prof = Pf2e.get_prof_bonus(char, minimum)
 
           msg << "skill" if char_prof < min_prof
         when "specialize"
@@ -126,9 +126,9 @@ module AresMUSH
           req = required.upcase
           msg << "feat" if !(feats.include? req)
         when "lore"
-          char_proficiency = Pf2e.get_prof_bonus(Pf2eLores.get_lore_prof char, factor)
-          min_proficiency = Pf2e.get_prof_bonus(minimum)
- 
+          char_proficiency = Pf2e.get_prof_bonus(char, Pf2eLores.get_lore_prof(char, factor))
+          min_proficiency = Pf2e.get_prof_bonus(char, minimum)
+
           msg << "lore" if char_proficiency < min_proficiency
         when "heritage"
           if required.start_with?('!')
@@ -145,6 +145,12 @@ module AresMUSH
       end
     end
    
+
+    def self.has_feat?(enactor, feat)
+      feat_list = enactor.pf2_feats
+
+      feat_list.include?(feat.pretty_string)
+    end
 
   end
 end

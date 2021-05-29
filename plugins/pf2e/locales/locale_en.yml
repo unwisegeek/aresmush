@@ -20,6 +20,7 @@ en:
     boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
 
     cannot_cast_spell_level: "You cannot cast spells of that level."
+    cannot_cast_tradition: "You cannot cast spells of the %{trad} tradtion."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."

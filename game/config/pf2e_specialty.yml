@@ -20,96 +20,97 @@ pf2e_specialty:
       - mutagen2
   Barbarian:
     Animal:
-      choice_name: Spirit Animal
-      choice_description: "Choose the animal this character strives to emulate."
       choose:
-        Ape:
-          attack:
-            Ape Fist:
-              damage: 1d10
-              damage_type: B
-              traits:
-              - grapple
-              - unarmed
-        Bear:
-          attack:
-            Bear Jaws:
-              damage: 1d10
-              damage_type: P
-              traits:
-              - unarmed
-            Bear Claws:
-              damage: 1d6
-              damage_type: S
-              traits:
-              - agile
-              - unarmed
-        Bull:
-          attack:
-            Bull Horn:
-              damage: 1d10
-              damage_type: P
-              traits:
-              - shove
-              - unarmed
-        Cat:
-          attack:
-            Cat Jaws:
-              damage: 1d10
-              damage_type: P
-              traits:
-              - unarmed
-            Cat Claws:
-              damage: 1d6
-              damage_type: S
-              traits:
-              - agile
-              - unarmed
-        Deer:
-          attack:
-            Deer Antler:
-              damage: 1d8
-              damage_type: P
-              traits:
-              - charge
-              - unarmed
-        Frog:
-          attack:
-            Frog Jaws:
-              damage: 1d10
-              damage_type: B
-              traits:
-              - unarmed
-            Frog Tongue:
-              damage: 1d4
-              damage_type: B
-              traits:
-              - agile
-              - unarmed
-        Shark:
-          attack:
-            Shark Jaws:
-              damage: 1d10
-              damage_type: P
-              traits:
-              - grapple
-              - unarmed
-        Snake:
-          attack:
-            Snake Fangs:
-              damage: 1d10
-              damage_type: P
-              traits:
-              - grapple
-              - unarmed
-        Wolf:
-          attack:
-            Wolf Jaws:
-              damage: 1d10
-              damage_type: P
-              traits:
-              - trip
-              - unarmed
+        choice_name: Spirit Animal
+        choice_description: "Choose the animal this character strives to emulate."
+        options:
+          Ape:
+            attack:
+              Ape Fist:
+                damage: 1d10
+                damage_type: B
+                traits:
+                - grapple
+                - unarmed
+          Bear:
+            attack:
+              Bear Jaws:
+                damage: 1d10
+                damage_type: P
+                traits:
+                - unarmed
+              Bear Claws:
+                damage: 1d6
+                damage_type: S
+                traits:
+                - agile
+                - unarmed
+          Bull:
+            attack:
+              Bull Horn:
+                damage: 1d10
+                damage_type: P
+                traits:
+                - shove
+                - unarmed
+          Cat:
+            attack:
+              Cat Jaws:
+                damage: 1d10
+                damage_type: P
+                traits:
+                - unarmed
+              Cat Claws:
+                damage: 1d6
+                damage_type: S
+                traits:
+                - agile
+                - unarmed
+          Deer:
+            attack:
+              Deer Antler:
+                damage: 1d8
+                damage_type: P
+                traits:
+                - charge
+                - unarmed
+          Frog:
+            attack:
+              Frog Jaws:
+                damage: 1d10
+                damage_type: B
+                traits:
+                - unarmed
+              Frog Tongue:
+                damage: 1d4
+                damage_type: B
+                traits:
+                - agile
+                - unarmed
+          Shark:
+            attack:
+              Shark Jaws:
+                damage: 1d10
+                damage_type: P
+                traits:
+                - grapple
+                - unarmed
+          Snake:
+            attack:
+              Snake Fangs:
+                damage: 1d10
+                damage_type: P
+                traits:
+                - grapple
+                - unarmed
+          Wolf:
+            attack:
+              Wolf Jaws:
+                damage: 1d10
+                damage_type: P
+                traits:
+                - trip
+                - unarmed
       anathema:
       - "May not show flagrant disrespect to an animal of its chosen kind."
       - "May not use weapons while raging."
@@ -207,39 +208,40 @@ pf2e_specialty:
       rage_resistance:
         damage_type: ["S", "P"]
     Dragon:
-      choice_name: "Dragon Color"
-      choice_description: "Color dragon this instinct applies to."
       choose:
-        Black:
-          element: acid
-          shape: line
-        Blue:
-          element: electricity
-          shape: line
-        Green:
-          element: poison
-          shape: cone
-        Red:
-          element: fire
-          shape: cone
-        White:
-          element: cold
-          shape: cone
-        Brass:
-          element: fire
-          shape: line
-        Bronze:
-          element: electricity
-          shape: line
-        Copper:
-          element: acid
-          shape: line
-        Gold:
-          element: fire
-          shape: cone
-        Silver:
-          element: cold
-          shape: cone
+        choice_name: "Dragon Color"
+        choice_description: "Color dragon this instinct applies to."
+        options:
+          Black:
+            element: acid
+            shape: line
+          Blue:
+            element: electricity
+            shape: line
+          Green:
+            element: poison
+            shape: cone
+          Red:
+            element: fire
+            shape: cone
+          White:
+            element: cold
+            shape: cone
+          Brass:
+            element: fire
+            shape: line
+          Bronze:
+            element: electricity
+            shape: line
+          Copper:
+            element: acid
+            shape: line
+          Gold:
+            element: fire
+            shape: cone
+          Silver:
+            element: cold
+            shape: cone
       anathema:
       - "Cannot let a personal insult slide."
       - "If character respects their dragon type, they may not defy one."
@@ -269,10 +271,13 @@ pf2e_specialty:
       instinct_ability: Titan Mauler
       rage_resistance:
         damage_type: ["B"]
-        element:
-        - cold
-        - electricity
-        - fire
+        choose:
+          choice_name: Rage Resistance Element
+          choice_description: Choose the element to which your rage resistance applies.
+          options:
+          - cold
+          - electricity
+          - fire
     Spirit:
       anathema:
         - "Character may not defile or show disrespect to corpses or spirits."
@@ -296,8 +301,8 @@ pf2e_specialty:
       - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       - "Character must not lie, cheat, or take advantage of others."
       edicts:
-      - "Character must respect the legitimate authority of legitimate leadership wherever they go, and must obey its laws."
-      focus_spell:
+      - "Character must respect the authority of legitimate leadership wherever they go, and must obey its laws."
+      devotion:
       - lay on hands
     Redeemer:
       allowed_alignments:
@@ -310,7 +315,7 @@ pf2e_specialty:
       anathema:
       - "Character must not willingly commit an evil act."
       - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      focus_spell:
+      devotion:
       - lay on hands
     Liberator:
       allowed_alignments:
@@ -325,7 +330,7 @@ pf2e_specialty:
       - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       - "Character must not force someone to act in a particular way or threaten them if they refuse."
       - "Character must not accept or countenance slavery or tyranny."
-      focus_spell:
+      devotion:
       - lay on hands
   Cleric:
     Cloistered: {}

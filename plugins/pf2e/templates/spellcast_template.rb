@@ -18,6 +18,10 @@ module AresMUSH
         super File.dirname(__FILE__) + "/spellcast_template.erb"
       end
 
+      def textline(title)
+        @client.screen_reader ? title : line_with_text(title)
+      end
+
       def caster_name
         @caster.name
       end
@@ -35,15 +39,8 @@ module AresMUSH
       end
 
       def target
-        @target
-      end
-
-      def actions
-        @details["actions"]
-      end
-
-      def cast
-        @details["cast"].join(", ")
+        return nil if !@target
+        @target.split(",").map { |w| Pf2e.pretty_string(w) }.sort.join(", ")
       end
 
       def area
@@ -56,27 +53,6 @@ module AresMUSH
 
       def duration
         @details["duration"]
-      end
-
-      def heighten
-        string = @details["heighten"]
-
-        return nil if !string
-
-        h = []
-
-        if string.is_a?(Hash)
-          string.each_pair do |k,v|
-            h << "#{k}: #{v}"
-          end
-        else
-          string.each_with_index do |v,i|
-            h << "#{i + base_level}: #{v}"
-          end
-        end
-
-        h.join("%r")
-
       end
 
       def base_level
@@ -102,18 +78,25 @@ module AresMUSH
         roll["total"]
       end
 
-      def trads
-        t = @details["tradition"]
-
-        trads = t.is_a?(Array) ? t.join(", ") : t
-      end
-
-      def effect
-        @details["effect"]
+      def damage_type
+        @details["damage_type"]
       end
 
       def save
         @details["save"]
+      end
+
+      def save_dc
+        magic = @caster.magic
+        spell_abil = magic.spell_abil[@tradition]
+        spell_prof = magic.spell_prof
+        prof_bonus = Pf2e.get_prof_bonus(@caster, spell_prof)
+
+        abil_mod = Pf2eAbilities.get_ability_mod(
+          Pf2eAbilities.get_ability_score @caster, spell_abil
+        )
+
+        dc = 10 + abil_mod + prof_bonus
       end
 
     end
