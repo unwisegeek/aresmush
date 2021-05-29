@@ -62,7 +62,7 @@ module AresMUSH
 
         template = Pf2eCastSpellTemplate.new(enactor, spell_name, self.tradition, self.level, self.target)
 
-        Scenes.emit_pose(enactor, template.render, true, false)
+        Scenes.emit_pose(Game.master.system_character, template.render, true, false, nil, true)
 
       end
 

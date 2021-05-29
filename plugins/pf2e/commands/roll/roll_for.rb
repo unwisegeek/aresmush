@@ -59,15 +59,11 @@ module AresMUSH
                   :degree => degree
                 )
 
-        enactor_room.emit roll_msg
+        Scene.emit_pose(Game.master.system_character,roll_msg,true,false,nil,true)
 
         channel = Global.read_config("pf2e", "roll_channel")
         if (channel)
           Channels.send_to_channel(channel, roll_msg)
-        end
-
-        if (enactor_room.scene)
-          Scenes.add_to_scene(enactor_room.scene, roll_msg)
         end
 
         Global.logger.info "PF2 ROLL: #{roll_msg}"
