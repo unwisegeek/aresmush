@@ -19,6 +19,7 @@ en:
     bg_options_set: "Your background does not require any choices. Moving on..."
     boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
 
+    cannot_cast_spell_level: "You cannot cast spells of that level."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
@@ -40,6 +41,8 @@ en:
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
 
+    invalid_tradition: "Either that tradition does not exist, or you do not have it."
+
     lock_info_first: "This command cannot be used until your base chargen options are committed."
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"
@@ -52,8 +55,10 @@ en:
     no_free: "No free %{element} left to assign."
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
-    not_selected_yet: "%{element}" not selected yet"
+    not_caster: "You are not a spellcaster."
+    not_selected_yet: "%{element} not selected yet"
     nothing_to_assign: "You have no character options left unassigned."
+    nothing_to_display: "No %{elements} matched your search."
 
     only_in_chargen: "This command can only be used in chargen."
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
@@ -66,6 +71,7 @@ en:
     skill_added: "You add %{option} to your list of %{skilltype}."
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
+    spell_not_in_list: "That spell is not in the list of spells you have available today at that level."
 
     unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
     unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."

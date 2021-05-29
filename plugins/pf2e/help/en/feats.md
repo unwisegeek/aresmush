@@ -14,9 +14,7 @@ These commands can be used to review the feats you have or determine which ones 
 
 `feat/info`: Shows details for all feats the character currently possesses.
 `feat <name>`: Shows details for the named feat.
-`feat/qualify <category>`: Shows all feats matching <category> for which the character meets all prerequisites.
 `feat/search <category> = <term>`: Shows all feats in <category> matching <term>.
-`feat/chain <name>`: Shows all feats for which <name> is a prerequisite, or which lead to that feat.
 
 Feat category may be one of:
 

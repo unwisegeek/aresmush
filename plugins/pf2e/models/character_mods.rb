@@ -29,6 +29,7 @@ module AresMUSH
     collection :lores, "AresMUSH::Pf2eLores"
     reference :hp, "AresMUSH::Pf2eHP"
     reference :combat, "AresMUSH::Pf2eCombat"
+    reference :magic, "AresMUSH::Pf2eMagic"
 
     before_delete :delete_pf2
 
@@ -38,6 +39,7 @@ module AresMUSH
       self.lores&.each { |l| l.delete } if self.lores
       self.hp&.delete
       self.combat&.delete
+      self.magic&.delete
     end
   end
 end
