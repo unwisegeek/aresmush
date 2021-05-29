@@ -1,0 +1,25 @@
+<%= textline("Spellcasting!") %>
+<%= "#{caster_name} casts #{spell_name} at level #{cast_level}!" %>
+<% if range %>
+<%= left("#{item_color}Range%xn: #{range}", 39) -%>
+<% end %>
+<% if area %>
+<%= left("#{item_color}Area%xn: #{area}", 39) %>
+<% end %>
+<% if duration %>
+<%= "#{item_color}Duration%xn: #{duration}" %>
+<% end %>
+<% if target %>
+<%= "#{item_color}Target(s):%xn #{target}" %>
+<% end %>
+<% if save %>
+<%= "#{item_color}Saving Throw:%xn #{save}, DC #{save_dc}" %>
+<% end %>
+<% if damage %>
+<%= "#{item_color}Damage(s):%xn #{damage}" -%>
+<% if damage_type %>
+<%= "#{damage_type}" -%>
+<%= "(#{dam_roll} total damage)" %>
+<% end %>
+<% end %>
+<%= footer %>

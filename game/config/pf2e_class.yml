@@ -343,13 +343,10 @@ pf2e_class:
       skills:
       - Occultism
       - Performance
-      spell_trad: occult
-      Spells: trained
-      spells_per_day:
-        1: 2
-      spells_known:
-        cantrip: 5
-        1: 2
+      magic_stats:
+        spell_trad: occult
+        spell_dc: trained
+        spell_abil: Charisma
       composition:
         cantrip:
         - Inspire Courage
@@ -387,7 +384,8 @@ pf2e_class:
         - charclass
         - skill
       7:
-        Spells: expert
+        magic_stats:
+          spell_dc: expert
         feat:
         - general
         raise:
@@ -453,7 +451,8 @@ pf2e_class:
         - general
         raise:
         - skill
-        Spells: master
+        magic_stats:
+          spell_dc: master
         charclass:
         - Master Spellcaster
         signature_spells:
@@ -485,7 +484,8 @@ pf2e_class:
         - general
         raise:
         - skill
-        Spells: legendary
+        magic_stats:
+          spell_dc: legendary
         signature_spells:
           10: 1
       20:
@@ -503,7 +503,6 @@ pf2e_class:
     key_abil:
     - Strength
     - Dexterity
-    spell_abil: Charisma
     HP: 10
     chargen:
       skills_open: 2
@@ -523,8 +522,10 @@ pf2e_class:
         fortitude: expert
         reflex: trained
         will: expert
-      Spells: trained
-      spell_trad: divine
+      magic_stats:
+        spell_dc: trained
+        spell_trad: divine
+        spell_abil: Charisma
       feat:
       - charclass
       charclass:
@@ -598,7 +599,8 @@ pf2e_class:
           fortitude: master
           reflexes: expert
           class_dc: expert
-        Spells: expert
+        magic_stats:
+          spells_dc: expert
         feat:
         - ancestry
         raise:
@@ -666,7 +668,8 @@ pf2e_class:
           armor_light: legendary
           armor_heavy: legendary
           armor_unarmored: legendary
-        Spells: master
+        magic_stats:
+          spell_dc: master
         raise:
         - skill
       18:
@@ -676,8 +679,8 @@ pf2e_class:
       19:
         charclass:
         - Hero's Defiance
-        focus_spell:
-        - hero's defiance
+        devotion:
+        - Hero's Defiance
         feat:
         - general
         raise:
@@ -692,7 +695,7 @@ pf2e_class:
     use_deity: true
     key_abil:
     - Wisdom
-    spell_abil: Wisdom
+
     HP: 8
     chargen:
       skills_open: 2
@@ -708,8 +711,10 @@ pf2e_class:
         fortitude: trained
         reflex: trained
         will: expert
-      Spells: trained
-      spell_trad: divine
+      magic_stats:
+        spell_abil: Wisdom
+        spell_dc: trained
+        spell_trad: divine
       charclass:
       - Divine Font
     advance:
@@ -816,7 +821,7 @@ pf2e_class:
         feat:
         - general
         charclass:
-        - miraculous spell
+        - Miraculous Spell
       20:
         raise:
         - ability
@@ -825,7 +830,7 @@ pf2e_class:
         - skill
   Druid:
     key_abil: wisdom
-    spell_abil: wisdom
+
     HP: 8
     chargen:
       languages:
@@ -850,8 +855,10 @@ pf2e_class:
         - Shield Block
       reaction:
       - Shield Block
-      Spells: trained
-      spell_trad: primal
+      magic_stats:
+        spell_abil: Wisdom
+        spell_dc: trained
+        spell_trad: primal
     anathema:
     - "Character must not teach the Druidic language to a non-druid."
     - "Character is not permitted to wear metal armor or carry metal shields."
@@ -895,7 +902,8 @@ pf2e_class:
         - skill
         charclass:
         - Expert Spellcaster
-        Spells: expert
+        magic_stats:
+          spell_dc: expert
         feat:
         - general
       8:
@@ -950,7 +958,8 @@ pf2e_class:
         - ability
         - skill
         charclass: Master Spellcaster
-        Spells: master
+        magic_stats:
+          spell_dc: master
         feat:
         - general
       16:
@@ -972,7 +981,8 @@ pf2e_class:
         charclass:
         - Legendary Spellcaster
         - Primal Hierophant
-        Spells: legendary
+        magic_stats:
+          spell_dc: legendary
         feat:
         - general
       20:
@@ -1346,7 +1356,6 @@ pf2e_class:
         - ability
   Oracle:
     key_abil: Charisma
-    spell_abil: Charisma
     HP: 8
     chargen:
       skills_open: 3
@@ -1364,13 +1373,10 @@ pf2e_class:
         fortitude: trained
         reflex: trained
         will: expert
-    Spells: trained
-    spell_trad: divine
-    spells_per_day:
-      1: 2
-    spells_known:
-      cantrip: 5
-      1: 2
+      magic_stats:
+        spell_abil: Charisma
+        spell_dc: trained
+        spell_trad: divine
     advance:
       2:
         feat:
@@ -1410,8 +1416,9 @@ pf2e_class:
         - Expert Spellcaster
         - Resolve
         combat_stats:
-        - spells: expert
-        - will: master
+          will: master
+        magic_stats:
+          spell_dc: expert
         signature_spells:
         - 4: 1
       8:
@@ -1462,8 +1469,8 @@ pf2e_class:
         - Lightning Reflexes
         - Weapon Specialization
         combat_stats:
-        - armor_unarmored: expert
-        - armor_light: expert
+          armor_unarmored: expert
+          armor_light: expert
         signature_spells:
         - 7: 1
       14:
@@ -1478,8 +1485,8 @@ pf2e_class:
         - general
         charclass:
         - Master Spellcaster
-        combat_stats:
-        - spells: master
+        magic_stats:
+          spell_dc: master
         signature_spells:
         - 8: 1
       16:
@@ -1495,7 +1502,7 @@ pf2e_class:
         - Greater Resolve
         - Extreme Curse
         combat_stats:
-        - will: legendary
+          will: legendary
         signature_spells:
         - 9: 1
       18:
@@ -1510,8 +1517,8 @@ pf2e_class:
         charclass:
         - Legendary Spellcaster
         - Oracular Clarity
-        combat_stats:
-        - spells: legendary
+        magic_stats:
+          spell_dc: legendary
       20:
         feat:
         - charclass
@@ -1522,7 +1529,6 @@ pf2e_class:
     key_abil:
     - Strength
     - Dexterity
-    spell_abil: Wisdom
     HP: 10
     chargen:
       skills_open: 4
@@ -1543,8 +1549,10 @@ pf2e_class:
         fortitude: expert
         reflex: expert
         will: trained
-    Spells: trained
-    spell_trad: primal
+      magic_stats:
+        spell_abil: Wisdom
+        spell_dc: trained
+        spell_trad: primal
     action: Hunt Prey
     advance:
       2:
@@ -1558,7 +1566,7 @@ pf2e_class:
         - skill
         charclass: Iron Will
         combat_stats:
-        - will: expert
+          will: expert
       4:
         feat:
         - charclass
@@ -1573,9 +1581,9 @@ pf2e_class:
         - Ranger Weapon Expertise
         - Trackless Step
         combat_stats:
-        - wp_unarmed: expert
-        - wp_simple: expert
-        - wp_martial: expert
+          wp_unarmed: expert
+          wp_simple: expert
+          wp_martial: expert
       6:
         feat:
         - charclass
@@ -1590,8 +1598,8 @@ pf2e_class:
         - Vigilant Senses
         - Weapon Specialization
         combat_stats:
-        - reflex: master
-        - perception: master
+          reflex: master
+          perception: master
       8:
         feat:
         - charclass
@@ -1605,7 +1613,7 @@ pf2e_class:
         - Nature's Edge
         - Ranger Expertise
         combat_stats:
-        - class_dc: expert
+          class_dc: expert
       10:
         raise:
         - ability
@@ -1618,10 +1626,10 @@ pf2e_class:
         - Medium Armor Expertise
         - Wild Stride
         combat_stats:
-        - fortitude: master
-        - armor_unarmored: expert
-        - armor_light: expert
-        - armor_medium: expert
+          fortitude: master
+          armor_unarmored: expert
+          armor_light: expert
+          armor_medium: expert
         feat:
         - general
         raise:
@@ -1638,9 +1646,9 @@ pf2e_class:
         charclass:
         - Weapon Mastery
         combat_stats:
-        - wp_unarmed: master
-        - wp_simple: master
-        - wp_martial: master
+          wp_unarmed: master
+          wp_simple: master
+          wp_martial: master
       14:
         feat:
         - charclass
@@ -1656,8 +1664,8 @@ pf2e_class:
         - Improved Evasion
         - Incredible Senses
         combat_stats:
-        - reflex: legendary
-        - perception: legendary
+          reflex: legendary
+          perception: legendary
       16:
         feat:
         - charclass
@@ -1670,7 +1678,7 @@ pf2e_class:
         charclass:
         - Masterful Hunter
         combat_stats:
-        - class_dc: master
+          class_dc: master
       18:
         feat:
         - charclass
@@ -1684,9 +1692,9 @@ pf2e_class:
         - Second Skin
         - Swift Prey
         combat_stats:
-        - armor_unarmored: master
-        - armor_light: master
-        - armor_medium: master
+          armor_unarmored: master
+          armor_light: master
+          armor_medium: master
       20:
         feat:
         - charclass
@@ -1749,9 +1757,9 @@ pf2e_class:
         charclass:
         - Weapon Tricks
         combat_stats:
-        - wp_unarmed: expert
-        - wp_simple: expert
-        - sneak_attack: 2d6
+          wp_unarmed: expert
+          wp_simple: expert
+          sneak_attack: 2d6
       6:
         feat:
         - charclass
@@ -1769,8 +1777,8 @@ pf2e_class:
         - Vigilant Senses
         - Weapon Specialization
         combat_stats:
-        - reflex: master
-        - perception: master
+          reflex: master
+          perception: master
       8:
         feat:
         - charclass
@@ -1786,7 +1794,7 @@ pf2e_class:
         charclass:
         - Great Fortitude
         combat_stats:
-        - fortitude: expert
+          fortitude: expert
         action: Debilitating Strike
       10:
         feat:
@@ -1803,8 +1811,8 @@ pf2e_class:
         charclass:
         - Rogue Expertise
         combat_stats:
-        - class_dc: expert
-        - sneak_attack: 3d6
+          class_dc: expert
+          sneak_attack: 3d6
       12:
         feat:
         - charclass
@@ -1823,12 +1831,12 @@ pf2e_class:
         - Light Armor Expertise
         - Master Tricks
         combat_stats:
-        - reflex: legendary
-        - perception: legendary
-        - armor_unarmored: expert
-        - armor_light: expert
-        - wp_unarmed: master
-        - wp_simple: master
+          reflex: legendary
+          perception: legendary
+          armor_unarmored: expert
+          armor_light: expert
+          wp_unarmed: master
+          wp_simple: master
       14:
         raise:
         - skill
@@ -1860,7 +1868,7 @@ pf2e_class:
         charclass:
         - Slippery Mind
         combat_stats:
-        - sneak_attack: 4d6
+          sneak_attack: 4d6
       18:
         raise:
         - skill
@@ -1877,8 +1885,8 @@ pf2e_class:
         - Light Armor Mastery
         - Master Strike
         combat_stats:
-        - armor_unarmored: master
-        - armor_light: master
+          armor_unarmored: master
+          armor_light: master
       20:
         feat:
         - charclass

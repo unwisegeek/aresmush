@@ -45,7 +45,7 @@ module AresMUSH
     end
 
     def self.get_save_bonus(char, save)
-      prof_bonus = Pf2e.get_prof_bonus(get_save_from_char(char, save))
+      prof_bonus = Pf2e.get_prof_bonus(enactor, get_save_from_char(char, save))
 
       mod = Pf2e.get_linked_attr_mod(char, save)
       mod = 0 if !mod
@@ -61,7 +61,7 @@ module AresMUSH
 
       return 0 if !combat_stats
 
-      prof_bonus = Pf2e.get_prof_bonus(combat_stats.class_dc)
+      prof_bonus = Pf2e.get_prof_bonus(enactor, combat_stats.class_dc)
       abil_mod = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score combat_stats.key_abil)
 
       item = Pf2e.bonus_from_item(@char, 'class_dc')
@@ -76,7 +76,7 @@ module AresMUSH
 
       return abil_mod if !combat_stats
 
-      prof_bonus = Pf2e.get_prof_bonus(combat_stats.perception)
+      prof_bonus = Pf2e.get_prof_bonus(enactor, combat_stats.perception)
 
       item = Pf2e.bonus_from_item(@char, 'perception')
       item_bonus = item ? item : 0

@@ -2,12 +2,9 @@ module AresMUSH
   class Pf2eMagic < Ohm::Model
     include ObjectModel
 
-    attribute :tradition, :type => DataType::Hash, :default => {
-      "arcane" => "untrained",
-      "divine" => "untrained",
-      "occult" => "untrained",
-      "primal" => "untrained"
-    }
+    attribute :tradition, :type => DataType::Hash, :default => {}
+    attribute :spell_abil, :type => DataType::Hash, :default => {}
+    attribute :spell_prof, :default => "untrained"
     attribute :focus_spells, :type => DataType::Hash, :default => {}
     attribute :focus_pool, :type => DataType::Hash, :default => { "max"=>0, "current"=>0 }
     attribute :innate_spells, :type => DataType::Hash, :default => {}

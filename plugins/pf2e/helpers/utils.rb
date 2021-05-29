@@ -15,9 +15,20 @@ module AresMUSH
     end
 
     # p can be passed to this method as nil
-    def self.get_prof_bonus(p="untrained")
-      levels = { "untrained"=>0, "trained"=>2, "expert"=>4, "master"=>6, "legendary"=>8 }
-      bonus = levels[p]
+    def self.get_prof_bonus(char, p="untrained")
+      level = char.pf2_level
+
+      if p == "untrained"
+        if char.has_feat?("Untrained Improvisation")
+          bonus = level < 7 ? (level / 2).floor : level
+          return bonus
+        else
+          return 0
+        end
+      end
+
+      profs = { "trained"=>2, "expert"=>4, "master"=>6, "legendary"=>8 }
+      bonus = profs[p] + level
     end
 
     def self.get_linked_attr_mod(char, value, type=nil)

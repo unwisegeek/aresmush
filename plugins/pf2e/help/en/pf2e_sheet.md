@@ -1,6 +1,8 @@
 ---
 toc: Pathfinder Second Edition
 summary: Pathfinder 2E sheets and sheet sections.
+aliases:
+- sheet
 ---
 
 # Pathfinder 2E Sheets
