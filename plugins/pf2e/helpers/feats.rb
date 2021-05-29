@@ -126,7 +126,7 @@ module AresMUSH
           req = required.upcase
           msg << "feat" if !(feats.include? req)
         when "lore"
-          char_proficiency = Pf2e.get_prof_bonus(char, Pf2eLores.get_lore_prof char, factor)
+          char_proficiency = Pf2e.get_prof_bonus(char, Pf2eLores.get_lore_prof(char, factor))
           min_proficiency = Pf2e.get_prof_bonus(char, minimum)
 
           msg << "lore" if char_proficiency < min_proficiency
