@@ -203,5 +203,9 @@ module AresMUSH
       degree = degrees[success_case]
     end
 
+    def self.pretty_string(string)
+      string.split.map { |w| w.capitalize }.join(" ")
+    end
+
   end
 end
