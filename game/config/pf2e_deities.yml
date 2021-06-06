@@ -215,8 +215,8 @@ pf2e_deities:
     - NE
     - CE
     divine_font:
-    - heal
-    - harm
+    - heal or harm
+    divine_ability: Charisma
     divine_skill: Performance
     fav_weapon: rapier
     domains:
@@ -225,15 +225,17 @@ pf2e_deities:
     - Change
     - Creation
     cleric_spells:
-    - {}
-    - {}
-    - {}
+    - Agitate
+    - Fireball
+    - Spirit Song
     edicts:
-    - edict1
-    - edict2
+    - Embrace your passions
+    - Patronize the arts and inspiration in all its forms.
+    - Delight in creation.
     anathema:
-    - anathema1
-    - anathema2
+    - Support or protect the status quo, resort to rudeness when politeness will serve.
+    - Discouraging someone from their inspiration
+    - Hiding your emotions for any reason
   Dana:
     allowed_alignments:
     - NG

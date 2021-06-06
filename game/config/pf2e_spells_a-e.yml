@@ -1,0 +1,693 @@
+---
+pf2e_spells:
+  Acid Splash:
+    base_level: cantrip
+    school: Evocation
+    traits:
+    - Acid
+    - attack
+    - cantrip
+    - evocation
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    damage: 1d6
+    damage_type: acid
+    effect: You splash a glob of acid that splatters your target and nearby creatures. Make a spell attack. If you hit, you deal 1d6 acid damage plus 1 splash acid damage. On a critical success, the target also takes 1 persistent acid damage.
+    heighten:
+      3: The initial damage increases to 1d6 + your spellcasting ability modifier, and the persistent damage increases to 2.
+      5: The initial damage increases to 2d6 + your spellcasting ability modifier, the persistent damage increases to 3, and the splash damage increases to 2.
+      7: The initial damage increases to 3d6 + your spellcasting ability modifier, the persistent damage increases to 4, and the splash damage increases to 3.
+      9: The initial damage increases to 4d6 + your spellcasting ability modifier, the persistent damage increases to 5, and the splash damage increases to 4.
+    tradition:
+    - arcane
+    - primal
+  Chill Touch:
+    base_level: cantrip
+    school: Necromancy
+    traits:
+    - cantrip
+    - necromancy
+    - negative
+    bloodline:
+    - undead
+    - shadow
+    tradition:
+    - arcane
+    - divine
+    - occult
+    mystery:
+    - bones
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: touch
+    target: 1 living or undead creature
+    damage: 1d4
+    damage_type: negative
+    save: Fortitude
+    effect: Siphoning negative energy into yourself, your hand radiates a pale darkness. Your touch weakens the living and disorients undead, possibly even causing them to flee. The effect depends on whether the target is living or undead.%r**Living Creature** The spell deals negative damage equal to 1d4 plus your spellcasting modifier. The target attempts a basic Fortitude save, but is also enfeebled 1 for 1 round on a critical failure.%r**Undead Creature** The target is flat-footed for 1 round on a failed Fortitude save. On a critical failure, the target is also fleeing for 1 round unless it succeeds at a Will save.
+    heighten:
+    - 1d4
+    - 2d4
+    - 3d4
+    - 4d4
+    - 5d4
+    - 6d4
+    - 7d4
+    - 8d4
+    - 9d4
+    - 10d4
+  Dancing Lights:
+    base_level: cantrip
+    school: Evocation
+    traits:
+    - cantrip
+    - evocation
+    - light
+    tradition:
+    - arcane
+    - occult
+    - primal
+    mystery: cosmos
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 120 feet
+    duration: sustained
+    effect: You create up to four floating lights, no two of which are more than 10 feet apart. Each sheds light like a torch. When you Sustain the Spell, you can move any number of lights up to 60 feet. Each light must remain within 120 feet of you and within 10 feet of all others, or it winks out.
+  Daze:
+    base_level: cantrip
+    school: Enchantment
+    traits:
+    - cantrip
+    - enchantment
+    - mental
+    - nonlethal
+    bloodline:
+    - aberrant
+    - hag
+    tradition:
+    - arcane
+    - divine
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 60 feet
+    target: 1 creature
+    duration: 1 round
+    damage: 0
+    save: Will
+    effect: You cloud the target's mind and daze it with a mental jolt. The jolt deals mental damage equal to your spellcasting ability modifier; the target must attempt a basic Will save. If the target critically fails the save, it is also stunned 1.
+    heighten:
+    - 0
+    - 0
+    - 1d6
+    - 1d6
+    - 2d6
+    - 2d6
+    - 3d6
+    - 3d6
+    - 4d6
+    - 4d6
+    - 5d6
+    - 5d6
+  Detect Magic:
+    base_level: cantrip
+    school: Divination
+    traits:
+    - cantrip
+    - detection
+    - divination
+    bloodline:
+    - imperial
+    - genie
+    tradition:
+    - arcane
+    - divine
+    - occult
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 30 foot emanation
+    effect: You send out a pulse that registers the presence of magic. You receive no information beyond the presence or absence of magic. You can choose to ignore magic you're fully aware of, such as the magic items and ongoing spells of you and your allies.%r%rYou detect illusion magic only if that magic's effect has a lower level than the level of your detect magic spell. However, items that have an illusion aura but aren't deceptive in appearance (such as an invisibility potion) typically are detected normally.
+    heighten:
+      3: You learn the school of magic for the highest-level effect within range that the spell detects. If multiple effects are equally strong, the GM determines which you learn.
+      4: As 3rd level, but you also pinpoint the source of the highest-level magic. Like for an imprecise sense, you don't learn the exact location, but can narrow down the source to within a 5-foot cube (or the nearest if larger than that).
+  Disrupt Undead:
+    base_level: cantrip
+    school: Necromancy
+    traits:
+    - cantrip
+    - necromancy
+    - positive
+    bloodline:
+    - psychopomp
+    tradition:
+    - divine
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 undead creature
+    damage: 1d6
+    damage_type: positive
+    save: Fortitude
+    effect: You lance the target with energy. You deal 1d6 positive damage plus your spellcasting ability modifier. The target must attempt a basic Fortitude save. If the creature critically fails the save, it is also enfeebled 1 for 1 round.
+    heighten:
+    - 1d6
+    - 2d6
+    - 3d6
+    - 4d6
+    - 5d6
+    - 6d6
+    - 7d6
+    - 8d6
+    - 9d6
+    - 10d6
+  Divine Lance:
+    base_level: cantrip
+    school: Evocation
+    traits:
+    - attack
+    - cantrip
+    - evocation
+    tradition: divine
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    damage: 1d4
+    damage_type: aligned
+    effect: You unleash a beam of divine energy. Choose an alignment your deity has (chaotic, evil, good, or lawful). You can't cast this spell if you don't have a deity or if your deity is true neutral. Make a ranged spell attack roll against the target's AC. On a hit, the target takes damage of the chosen alignment type equal to 1d4 + your spellcasting ability modifier (double damage on a critical hit). The spell gains the trait of the alignment you chose.
+    heighten:
+    - 1d4
+    - 2d4
+    - 3d4
+    - 4d4
+    - 5d4
+    - 6d4
+    - 7d4
+    - 8d4
+    - 9d4
+    - 10d4
+  Electric Arc:
+    base_level: cantrip
+    school: Evocation
+    traits:
+    - cantrip
+    - electricity
+    - evocation
+    tradition:
+    - arcane
+    - primal
+    mystery:
+    - tempest
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 or 2 creatures
+    damage: 1d4
+    damage_type: electricity
+    save: basic Reflex
+    effect: An arc of lightning leaps from one target to another. You deal electricity damage equal to 1d4 plus your spellcasting ability modifier.
+    heighten:
+    - 1d4
+    - 2d4
+    - 3d4
+    - 4d4
+    - 5d4
+    - 6d4
+    - 7d4
+    - 8d4
+    - 9d4
+    - 10d4
+  Acidic Burst:
+    base_level: 1
+    school: Evocation
+    traits:
+    - acid
+    - evocation
+    tradition:
+    - arcane
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 5-foot emanation
+    range: <string>
+    target: <string>
+    duration: <string>
+    damage: 2d6
+    damage_type: acid
+    save: basic Reflex
+    effect: You create a shell of acid around yourself that immediately bursts outward, dealing 2d6 acid damage to each creature in the area.
+    heighten:
+    - 2d6
+    - 4d6
+    - 6d6
+    - 8d6
+    - 10d6
+    - 12d6
+    - 14d6
+    - 16d6
+    - 18d6
+    - 20d6
+  Agitate:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - enchantment
+    - mental
+    - nonlethal
+    tradition:
+    - arcane
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    duration: varies
+    damage: 2d8
+    damage_type: mental
+    save: Will
+    effect: You send the target’s mind and body into overdrive, forcing it to become restless and hyperactive. During the duration, the target must Stride at least once each turn or take 2d8 mental damage that turn. The duration of this effect depends on the target’s Will save.%r%r**Critical Success** The spell has no effect.%R**Success** The duration is 1 round.%R**Failure** The duration is 2 rounds.%R**Critical** Failure The duration is 4 rounds.
+    heighten:
+    - 2d8
+    - 4d8
+    - 6d8
+    - 8d8
+    - 10d8
+    - 12d8
+    - 14d8
+    - 16d8
+    - 18d8
+    - 20d8
+  Air Bubble:
+    base_level: 1
+    school: Conjuration
+    traits:
+    - air
+    - conjuration
+    tradition:
+    - arcane
+    - divine
+    - primal
+    cast:
+    - verbal
+    actions: reaction
+    trigger: A creature within range enters an environment where it cannot breathe.
+    range: 60 feet
+    target: The triggering creature
+    duration: 1 minute
+    effect: A bubble of pure air appears around the target's head, allowing it to breathe normally. The effect ends as soon as the target returns to an environment where it can breathe normally.
+  Alarm:
+    base_level: 1
+    school: Abjuration
+    traits:
+    - abjuration
+    tradition:
+    - arcane
+    - divine
+    - occult
+    - primal
+    cast:
+    - focus (3 gp silver bell)
+    - material
+    - somatic
+    - verbal
+    actions: 10 minutes
+    area: 20-foot burst
+    range: touch
+    duration: 8 hours
+    effect: You ward an area to alert you when creatures enter without your permission. When you cast alarm, select a password. Whenever a Small or larger corporeal creature enters the spell's area without speaking the password, alarm sends your choice of a mental alert (in which case the spell gains the mental trait) or an audible alarm with the sound and volume of a hand bell (in which case the spell gains the auditory trait). Either option automatically awakens you, and the bell allows each creature in the area to attempt a DC 15 Perception check to wake up. A creature aware of the alarm must succeed at a Stealth check against the spell's DC or trigger the spell when moving into the area.
+    heighten:
+      3: You can specify criteria for which creatures sound the alarm spell — for instance, orcs or masked people.
+  Animate Dead:
+    base_level: 1
+    school: Necromancy
+    traits:
+    - necromancy
+    tradition:
+    - arcane
+    - divine
+    - occult
+    cast:
+    - material
+    - somatic
+    - verbal
+    actions: 3
+    range: 30 feet
+    duration: sustained up to 1 minute
+    effect: Your magic dredges up a corpse or skeleton and fills it with necromantic life, and you force the dead to fight at your command. You summon a common creature that has the undead trait and whose level is –1; this creature gains the summoned trait. Heightening the spell increases the maximum level of creature you can summon.
+    heighten:
+      2: Level 1
+      3: Level 2
+      4: Level 3
+      5: Level 4
+      6: Level 5
+      7: Level 9
+      8: Level 11
+      9: Level 13
+      10: Level 15
+  Animate Rope:
+    base_level: 1
+    school: Transmutation
+    traits:
+    - transmutation
+    tradition:
+    - arcane
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 100 feet
+    target: up to 50 feet of rope or a nonliving rope-like object
+    effect: 'You cause a length or section of rope or a rope-like object to animate and follow simple commands. You can give it two commands when you Cast the Spell, and one command each time you Sustain the Spell.%r* Bind (attack) The rope attempts to partially bind a creature. Attempt a spell attack roll against the target's Reflex DC. If you succeed, the target takes a –10-foot circumstance penalty to its Speed (–20-foot on a critical success). This ends if the target Escapes against your spell DC or breaks the rope. (A standard adventuring rope has Hardness 2, HP 8, and a Broken Threshold of 4.)%r* Coil The rope forms a tidy, coiled stack.%r* Crawl The rope inches along the ground like a snake, moving one of its ends 10 feet. The rope must move along a surface, but that surface doesn't need to be horizontal.%r* Knot The rope ties a sturdy knot in itself.%r* Loop The rope forms a simple loop at one or both ends, or straightens itself back out.%r* Tie The rope ties itself around a willing creature or an object that's unattended or attended by a willing creature.%r& Undo The rope undoes one of its knots, ties, or bindings.'
+    heighten: '(+2) The range increases by 50 feet, and you can animate 50 more feet of rope.'
+  Ant Haul:
+    base_level: 1
+    school: Transmutation
+    traits:
+    - transmutation
+    tradition:
+    - arcane
+    - primal
+    mystery: <list>
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: touch
+    target: 1 creature
+    duration: 8 hours
+    effect: You reinforce the target's musculoskeletal system to bear more weight. The target can carry 3 more Bulk than normal before becoming encumbered and up to a maximum of 6 more Bulk.
+  Anticipate Peril:
+    base_level: 1
+    school: Divination
+    traits:
+    - divination
+    tradition:
+    - arcane
+    - occult
+    mystery: <list>
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    duration: 10 minutes
+    effect: You grant the target brief foresight. The target gains a +1 status bonus to its next initiative roll, after which the spell ends.
+    heighten: '(+2) The status bonus increases to 1, to a maximum of +4 at 7th level.'
+  Bane:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - enchantment
+    - mental
+    tradition:
+    - divine
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 5-foot emanation
+    duration: 1 minute
+    save: Will
+    effect: You fill the minds of your enemies with doubt. Enemies in the area must succeed at a Will save or take a –1 status penalty to attack rolls as long as they are in the area. Once per turn, starting the turn after you cast bane, you can use a single action, which has the concentrate trait, to increase the emanation's radius by 5 feet and force enemies in the area that weren't yet affected to attempt another saving throw. Bane can counteract bless.
+   Befuddle:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - enchantment
+    - emotion
+    - mental
+    tradition:
+    - arcane
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    duration: 1 round
+    effect: You sow seeds of confusion in your target’s mind, causing their actions and thoughts to become clumsy.%r**Critical Success** The target is unaffected.%r**Success** The target is clumsy 1 and stupefied 1.%r**Failure** The target is clumsy 2 and stupefied 2.%r**Critical Failure** The target is clumsy 3, stupefied 3, and confused.
+  Bless:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - enchantment
+    - mental
+    tradition:
+    - divine
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 5-foot emanation
+    duration: 1 minute
+    effect: 'Blessings from beyond help your companions strike true. You and your allies gain a +1 status bonus to attack rolls while within the emanation. Once per turn, starting the turn after you cast _bless_, you can use a single action, which has the concentrate trait, to increase the emanation's radius by 5 feet. _Bless_ can counteract _bane_.'
+  Burning Hands:
+    base_level: 1
+    school: Evocation
+    traits:
+    - evocation
+    - fire
+    bloodline:
+    - elemental
+    tradition:
+    - arcane
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 15-foot cone
+    damage: 2d6
+    damage_type: fire
+    save: basic Reflex
+    effect: Gouts of flame rush from your hands. You deal 2d6 fire damage to creatures in the area.
+    heighten:
+    - 2d6
+    - 4d6
+    - 6d6
+    - 8d6
+    - 10d6
+    - 12d6
+    - 14d6
+    - 16d6
+    - 18d6
+    - 20d6
+  Charm:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - emotion
+    - enchantment
+    - incapacitation
+    - mental
+    bloodline:
+    - diabolic
+    - fey
+    - nymph
+    tradition:
+    - arcane
+    - occult
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    duration: 1 hour
+    save: Will
+    effect: 'To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used hostile actions against it.%r%rYou can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn't necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.%r%r**Critical Success** The target is unaffected and aware you tried to charm it.%r**Success** The target is unaffected but thinks your spell was something harmless instead of charm, unless it identifies the spell (see Identifying Spells).%r**Failure** The target's attitude becomes friendly toward you. If it was friendly, it becomes helpful. It can't use hostile actions against you.%r**Critical Failure** The target's attitude becomes helpful toward you, and it can't use hostile actions against you.'
+    heighten:
+      4: The duration lasts until the next time you make your daily preparations.
+      8: The duration lasts until the next time you make your daily preparations, and you can target up to 10 creatures.
+  Chilling Spray:
+    base_level: 1
+    school: Evocation
+    traits:
+    - cold
+    - evocation
+    tradition:
+    - arcane
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 15-foot cone
+    damage: 2d4
+    damage_type: cold
+    save: Reflex
+    effect: 'A cone of icy shards bursts from your spread hands and coats the targets in a layer of frost. You deal 2d4 cold damage to creatures in the area; they must each attempt a Reflex save.%r%r**Critical Success** The creature is unaffected.%r**Success** The creature takes half damage.%r**Failure** The creature takes full damage and takes a –5-foot status penalty to its Speeds for 2 rounds.%r**Critical Failure** The creature takes double damage and takes a –10-foot status penalty to its Speeds for 2 rounds.'
+    heighten:
+    - 2d4
+    - 4d4
+    - 6d4
+    - 8d4
+    - 10d4
+    - 12d4
+    - 14d4
+    - 16d4
+    - 18d4
+    - 20d4
+  Color Spray:
+    base_level: 1
+    school: Illusion
+    traits:
+    - illusion
+    - incapacitation
+    - visual
+    tradition:
+    - arcane
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    area: 15-foot cone
+    duration: '1 or more rounds (see text)'
+    save: Will
+    effect: Swirling colors affect viewers based on their Will saves.%r%r**Critical Success** The creature is unaffected.%r**Success** The creature is dazzled for 1 round.%r**Failure** The creature is stunned 1, blinded for 1 round, and dazzled for 1 minute.%r**Critical Failure** The creature is stunned for 1 round and blinded for 1 minute.
+  Command:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - auditory
+    - enchantment
+    - linguistic
+    - mental
+    tradition:
+    - arcane
+    - divine
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 30 feet
+    target: 1 creature
+    duration: until the end of the target's next turn
+    save: Will
+    effect: You shout a command that's hard to ignore. You can command the target to approach you, run away (as if it had the fleeing condition), release what it's holding, drop prone, or stand in place. It can't Delay or take any reactions until it has obeyed your command. The effects depend on the target's Will save.%r%r**Success** The creature is unaffected.%r**Failure** For the first action on its next turn, the creature must use a single action to do as you command.%r**Critical Failure** The target must use all its actions on its next turn to obey your command.
+    heighten:
+      5: Target up to 10 creatures.
+  Create Water:
+    base_level: 1
+    school: Conjuration
+    traits:
+    - conjuration
+    - water
+    tradition:
+    - arcane
+    - divine
+    - primal
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 0 feet
+    effect: As you cup your hands, water begins to flow forth from them. You create 2 gallons of water. If no one drinks it, it evaporates after 1 day.
+  Déjà Vu:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - enchantment
+    - incapacitation
+    - mental
+    tradition:
+    - arcane
+    - occult
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: 100 feet
+    target: 1 creature
+    duration: 2 rounds
+    save: Will
+    effect: 'You loop a thought process in the target's mind, forcing it to repeat the same actions over again. The target must attempt a Will save. If the target fails, whatever actions the target uses on its next turn, it must repeat on its following turn. The actions must be repeated in the same order and as close to the same specifics as possible. For example, if the target makes an attack, it must repeat the attack against the same creature, if possible, and if the target moves, it must move the same distance and direction, if possible, on its next turn. %r%rIf the target can't repeat an action, such as Casting a Spell that has been exhausted or needing to target a creature that has died, it can act as it chooses for that action but becomes stupefied 1 until the end of its turn.'
+  Disrupting Weapons:
+    base_level: 1
+    school: Necromancy
+    traits:
+    - necromancy
+    - positive
+    tradition: divine
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    range: touch
+    target: up to two weapons, each of which must be wielded by you or a willing ally, or else unattended
+    duration: 1 minute
+    effect: You infuse weapons with positive energy. Attacks with these weapons deal an extra 1d4 positive damage to undead.
+    heighten:
+      3: The damage increases to 2d4 damage.
+      5: Target up to three weapons, and the damage increases to 3d4 damage.
+  Endure:
+    base_level: 1
+    school: Enchantment
+    traits:
+    - enchantment
+    - mental
+    tradition:
+    - arcane
+    - occult
+    cast:
+    - somatic
+    actions: 1
+    range: touch
+    target: 1 creature
+    duration: 1 round
+    effect: You invigorate the touched creature’s mind and urge it to press on. You grant the touched creature 5 temporary Hit Points.
+    heighten: '(+1) Increase the temporary Hit Points by 5.'
+
+
+  Spell Name:
+    base_level: <integer>
+    school: <string>
+    traits: <list>
+    bloodline: <list>
+    tradition: <list>
+    mystery: <list>
+    cast:
+    - somatic
+    - verbal
+    actions: 2
+    trigger: <string>
+    area: <string>
+    range: <string>
+    target: <string>
+    duration: <string>
+    damage: <integer or string>
+    damage_type: <string>
+    save: <string>
+    effect: <string>
+    heighten: <hash if different effects at different levels, list if change is per +1 to level>

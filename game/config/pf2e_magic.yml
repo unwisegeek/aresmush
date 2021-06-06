@@ -1,0 +1,44 @@
+---
+pf2e_magic:
+  lessons:
+    basic:
+      Lesson of Dreams:
+        cantrip: Veil of Dreams
+        spell: Sleep
+      Lesson of the Elements:
+        cantrip: Elemental Betrayal
+        spell:
+          choose:
+            choice_name: Spell - Lesson of the Elements
+            choice_description: Choose which spell your familiar learns from Lesson of the Elements.
+            options:
+            - Burning Hands
+            - Air Bubble
+            - Hydraulic Push
+            - Pummeling Rubble
+      Lesson of Life:
+        cantrip: Life Boost
+        spell: Spirit Link
+      Lesson of Protection:
+        cantrip: Blood Ward
+        spell: Mage Armor
+      Lesson of Vengeance:
+        cantrip: Needle of Vengeance
+        spell: Phantom Pain
+    greater:
+      Lesson of Mischief:
+        cantrip: Deceiver's Cloak
+        spell: Mad Monkeys
+      Lesson of Shadow:
+        cantrip: Malicious Shadow
+        spell: Chilling Darkness
+      Lesson of Snow:
+        cantrip: Personal Blizzard
+        spell: Wall of Wind
+    major:
+      Lesson of Death:
+        cantrip: Curse of Death
+        spell: Raise Dead
+      Lesson of Renewal:
+        cantrip: Restorative Moment
+        spell: Field of Life
