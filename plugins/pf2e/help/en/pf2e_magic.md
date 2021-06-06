@@ -12,7 +12,7 @@ Casting a spell in Pathfinder 2E depends on what type of spell it is. Spellcaste
 
 Commands for casting:
 
-`cast[/<metamagic>] <tradition>/<level> = <spell name>[ at <target>]`: Casts a spell from a spellcaster's daily spell allotment. If _at <target>_ is included, <target> is a string, a character or NPC name. It may be a list of names.
+`cast[/<metamagic>] <class>/<level> = <spell name>[ at <target>]`: Casts a spell from a spellcaster's daily spell allotment. If _at <target>_ is included, <target> is a string, a character or NPC name. It may be a list of names.
 
 * <tradition> is one of: arcane, divine, occult, or primal. Which it is depends on the source where you learned it.
 * <level> is an integer, or the word _cantrip_.
