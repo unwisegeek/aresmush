@@ -132,3 +132,8 @@ website:
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home
+  wiki_export_cron:
+    hour:
+    - 3
+    minute:
+    - 37
