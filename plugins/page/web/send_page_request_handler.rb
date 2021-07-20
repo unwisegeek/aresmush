@@ -49,12 +49,12 @@ module AresMUSH
           end
         end
         
-        thread = Page.send_page(sender, recipients, message, Login.find_client(enactor))
+        thread = Page.send_page(sender, recipients, message, Login.find_client(sender))
         # Respond to existing thread - no return
         if (thread_id)
           return {}
         else
-          return { thread: Channels.build_page_web_data(thread, enactor) }
+          return { thread: Page.build_page_web_data(thread, enactor) }
         end
       end
     end
