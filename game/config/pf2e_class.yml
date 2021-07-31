@@ -1,11 +1,11 @@
----
+`   `---
 pf2e_class:
   Alchemist:
     key_abil:
     - Intelligence
     HP: 8
     chargen:
-      feat:
+      choose_feat:
       - charclass
       charclass:
       - Infused Reagents
@@ -24,35 +24,34 @@ pf2e_class:
         reflex: expert
         will: trained
       skills_open: 3
-      class_skills:
+      skill:
       - Crafting
-      class_feats:
-        general:
-        - Alchemical Crafting
+      feat:
+      - Alchemical Crafting
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
       3:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Field Discovery
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
       7:
@@ -63,12 +62,12 @@ pf2e_class:
           will: expert
         charclass:
         -  Perpetual Infusions
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
       9:
@@ -77,18 +76,18 @@ pf2e_class:
           perception: expert
         charclass:
         - Double Brew
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
       10:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
       11:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -97,11 +96,11 @@ pf2e_class:
         charclass:
         - Perpetual Potency
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
       13:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -112,14 +111,14 @@ pf2e_class:
           armor_light: expert
           armor_unarmored: expert
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Alchemical Alacrity
@@ -127,11 +126,11 @@ pf2e_class:
         combat_stats:
           reflex: master
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         combat_stats:
           class_dc: master
@@ -140,11 +139,11 @@ pf2e_class:
         raise:
         - skill
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -154,7 +153,7 @@ pf2e_class:
       20:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
   Barbarian:
@@ -162,7 +161,7 @@ pf2e_class:
     - Strength
     HP: 12
     chargen:
-      feat:
+      choose_feat:
       - charclass
       combat_stats:
         wp_simple: trained
@@ -177,24 +176,24 @@ pf2e_class:
         reflex: trained
         will: expert
       skills_open: 3
-      class_skills:
+      skill:
       - Athletics
       action:
       - Rage
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
       3:
         charclass:
         - Deny Advantage
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
       5:
@@ -203,28 +202,28 @@ pf2e_class:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         combat_stats:
           wp_simple: expert
           wp_martial: expert
           wp_unarmed: expert
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
       7:
         charclass:
         - Juggernaut
         - Weapon Specialization
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
         combat_stats:
           fortitude: master
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
       9:
@@ -233,29 +232,29 @@ pf2e_class:
         - Raging Resistance
         combat_stats:
           reflex: expert
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
       10:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
       11:
         action:
         - Mighty Rage
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
       13:
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Greater Juggernaut
@@ -272,14 +271,14 @@ pf2e_class:
         raise:
         - skill
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Greater Weapon Specialization
@@ -287,11 +286,11 @@ pf2e_class:
         combat_stats:
           will: master
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -301,11 +300,11 @@ pf2e_class:
         combat_stats:
           perception: master
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -318,7 +317,7 @@ pf2e_class:
           armor_unarmored: master
           class_dc: master
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
@@ -340,81 +339,136 @@ pf2e_class:
         armor_light: trained
         armor_unarmored: trained
       skills_open: 4
-      skills:
+      skill:
       - Occultism
       - Performance
       magic_stats:
-        spell_trad: occult
-        spell_dc: trained
-        spell_abil: Charisma
+        max_spell_level: 1
+        tradition:
+          occult: trained
+        spells_per_day:
+          1: 2
+        repertoire:
+          cantrip: 5
+          1: 2
       composition:
-        cantrip:
-        - Inspire Courage
-        1:
-        - Counter Performance
+        cantrip: Inspire Courage
+        spell: Counter Performance
+      action:
+      - Cast a Spell
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            1: 3
+          repertoire:
+            1: 1
       3:
-        feat:
+        choose_feat:
         - general
         combat_stats:
           reflex: expert
-        signature_spells:
-          1: 1
-          2: 1
+        magic_stats:
+          spells_per_day:
+            2: 2
+          repertoire:
+            2: 2
+          signature_spells:
+            1: 1
+            2: 1
+          max_spell_level: 2
         raise:
         - skill
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            2: 3
+          repertoire:
+            2: 1
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
-        signature_spells:
-          3: 1
+        magic_stats:
+          spells_per_day:
+            3: 2
+          repertoire:
+            3: 2
+          signature_spells:
+            3: 1
+          max_spell_level: 3
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
-      7:
         magic_stats:
-          spell_dc: expert
-        feat:
+          spells_per_day:
+            3: 3
+          repertoire:
+            3: 1
+      7:
+        tradition:
+          occult: expert
+        choose_feat:
         - general
         raise:
         - skill
-        signature_spells:
-          4: 1
+        magic_stats:
+          spells_per_day:
+            4: 2
+          repertoire:
+            4: 2
+          signature_spells:
+            4: 1
+          max_spell_level: 4
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            4: 3
+          repertoire:
+            4: 1
       9:
         combat_stats:
           fortitude: expert
           will: master
-        charclass: Resolve
+        charclass:
+        - Resolve
         raise:
         - skill
-        feat:
+        choose_feat:
         - ancestry
-        signature_spells:
-          5: 1
+        magic_stats:
+          spells_per_day:
+            5: 2
+          repertoire:
+            5: 2
+          signature_spells:
+            5: 1
+          max_spell_level: 5
       10:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - ability
+        magic_stats:
+          spells_per_day:
+            5: 3
+          repertoire:
+            5: 1
       11:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -424,12 +478,23 @@ pf2e_class:
             Bard Weapons: expert
           wp_unarmed: expert
           perception: master
-        signature_spells:
-          6: 1
+        magic_stats:
+          spells_per_day:
+            6: 2
+          repertoire:
+            6: 2
+          signature_spells:
+            6: 1
+          max_spell_level: 6
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            6: 3
+          repertoire:
+            6: 1
       13:
         combat_stats:
           armor_light: expert
@@ -438,58 +503,92 @@ pf2e_class:
         - Weapon Specialization
         raise:
         - skill
-        feat:
+        choose_feat:
         - ancestry
-        signature_spells:
-          7: 1
+        magic_stats:
+          spells_per_day:
+            7: 2
+          repertoire:
+            7: 2
+          signature_spells:
+            7: 1
+          max_spell_level: 7
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            7: 3
+          repertoire:
+            7: 1
       15:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
-        magic_stats:
-          spell_dc: master
         charclass:
         - Master Spellcaster
-        signature_spells:
-          8: 1
+        magic_stats:
+          tradition:
+            occult: master
+          spells_per_day:
+            8: 2
+          repertoire:
+            8: 2
+          signature_spells:
+            8: 1
+          max_spell_level: 8
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            8: 3
+          repertoire:
+            8: 1
       17:
         charclass:
         - Greater Resolve
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
         combat_stats:
           will: legendary
-        signature_spells:
-          9: 1
+        magic_stats:
+          spells_per_day:
+            9: 2
+          repertoire:
+            9: 2
+          signature_spells:
+            9: 1
+          max_spell_level: 9
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
         charclass:
         - Magnus Opus
         - Legendary Spellcaster
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
         magic_stats:
-          spell_dc: legendary
-        signature_spells:
-          10: 1
+          spells_per_day:
+            10: 1
+          repertoire:
+            10: 2
+          tradition:
+            occult: legendary
+          signature_spells:
+            10: 1
+          max_spell_level: 10
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
@@ -506,7 +605,7 @@ pf2e_class:
     HP: 10
     chargen:
       skills_open: 2
-      class_skills:
+      skill:
       - Religion
       combat_stats:
         wp_simple: trained
@@ -523,45 +622,45 @@ pf2e_class:
         reflex: trained
         will: expert
       magic_stats:
-        spell_dc: trained
-        spell_trad: divine
+        tradition:
+          divine: trained
         spell_abil: Charisma
-      feat:
+      choose_feat:
       - charclass
       charclass:
       - Deific Weapon
-      class_feats:
-        general:
-        - Shield Block
+      feat:
+      - Shield Block
       reaction:
       - Shield Block
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
       3:
         raise:
         - skill
-        feat:
+        choose_feat:
         - general
-        choice_name: "Divine Ally"
-        choice_description: "Choose a divine ally."
         choose:
-          Blade Ally: {}
-          Shield Ally: {}
-          Steed Ally:
-            animal_companion: young
-            req_ability: mount
+          choice_name: "Divine Ally"
+          choice_description: "Choose a divine ally."
+          choice_type: ability
+          options:
+            Blade Ally: {}
+            Shield Ally: {}
+            Steed Ally:
+              companion: mount
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Weapon Expertise
@@ -569,14 +668,14 @@ pf2e_class:
           wp_simple: expert
           wp_martial: expert
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
       7:
         charclass:
         - Armor Expertise
         - Weapon Specialization
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -586,7 +685,7 @@ pf2e_class:
           armor_heavy: expert
           armor_unarmored: expert
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
       9:
@@ -600,13 +699,14 @@ pf2e_class:
           reflexes: expert
           class_dc: expert
         magic_stats:
-          spells_dc: expert
-        feat:
+          tradition:
+            divine: expert
+        choose_feat:
         - ancestry
         raise:
         - skill
       10:
-        feat:
+        choose_feat:
         - charclass
         - skill
       11:
@@ -617,12 +717,12 @@ pf2e_class:
         combat_stats:
           will: master
           perception: expert
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
       13:
@@ -636,12 +736,12 @@ pf2e_class:
           armor_unarmored: master
           wp_simple: master
           wp_martial: master
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
@@ -650,14 +750,14 @@ pf2e_class:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Champion Mastery
@@ -669,24 +769,26 @@ pf2e_class:
           armor_heavy: legendary
           armor_unarmored: legendary
         magic_stats:
-          spell_dc: master
+          tradition:
+            divine: master
         raise:
         - skill
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
         charclass:
         - Hero's Defiance
-        devotion:
-        - Hero's Defiance
-        feat:
+        magic_stats:
+          devotion:
+            spell: Hero's Defiance
+        choose_feat:
         - general
         raise:
         - skill
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
@@ -695,11 +797,10 @@ pf2e_class:
     use_deity: true
     key_abil:
     - Wisdom
-
     HP: 8
     chargen:
       skills_open: 2
-      class_skills:
+      skill:
       - Religion
       combat_stats:
         wp_simple: trained
@@ -713,24 +814,40 @@ pf2e_class:
         will: expert
       magic_stats:
         spell_abil: Wisdom
-        spell_dc: trained
-        spell_trad: divine
+        tradition:
+          divine: trained
+        max_spell_level: 1
+        spells_per_day:
+          cantrip: 5
+          1: 2
       charclass:
       - Divine Font
+      action:
+      - Cast a Spell
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            1: 3
       3:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
+        magic_stats:
+          spells_per_day:
+            2: 2
+          max_spell_level: 2
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            2: 3
       5:
         raise:
         - ability
@@ -739,105 +856,158 @@ pf2e_class:
         - Alertness
         combat_stats:
           perception: expert
-        feat:
+        choose_feat:
         - ancestry
+        magic_stats:
+          spells_per_day:
+            3: 2
+          max_spell_level: 3
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            3: 3
       7:
         raise:
         - skill
-        feat:
+        choose_feat:
         - general
+        magic_stats:
+          spells_per_day:
+            4: 2
+          max_spell_level: 4
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            4: 3
       9:
-        feat:
+        choose_feat:
         - ancestry
         charclass:
-        - resolve
+        - Resolve
         combat_stats:
           will: master
         raise:
         - skill
+        magic_stats:
+          spells_per_day:
+            5: 2
+          max_spell_level: 5
       10:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            5: 3
       11:
         raise:
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Lightning Reflexes
         combat_stats:
           reflex: expert
+        magic_stats:
+          spells_per_day:
+            6: 2
+          max_spell_level: 6
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            6: 3
       13:
         raise:
         - skill
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Weapon Specialization
         - Divine Defense
         combat_stats:
           armor_unarmored: expert
+        magic_stats:
+          spells_per_day:
+            7: 2
+          max_spell_level: 6
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            7: 3
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
+        magic_stats:
+          spells_per_day:
+            8: 2
+        max_spell_level: 8
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            8: 3
       17:
         raise:
         - skill
-        feat:
+        choose_feat:
         - general
+        magic_stats:
+          spells_per_day:
+            9: 2
+        max_spell_level: 9
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            9: 3
       19:
         raise:
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Miraculous Spell
+        magic_stats:
+          spells_per_day:
+            10: 1
+          max_spell_level: 10
       20:
         raise:
         - ability
-        feat:
+        choose_feat:
         - general
         - skill
   Druid:
-    key_abil: wisdom
-
+    key_abil:
+    - Wisdom
     HP: 8
     chargen:
       languages:
       - Druidic
       skills_open: 2
-      class_skills:
-      - nature
+      skill:
+      - Nature
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -850,24 +1020,34 @@ pf2e_class:
         will: expert
       charclass:
       - Wild Empathy
-      class_feats:
+      feat:
         general:
         - Shield Block
       reaction:
       - Shield Block
       magic_stats:
-        spell_abil: Wisdom
-        spell_dc: trained
-        spell_trad: primal
+        tradition:
+          primal: trained
+        spell_abil: wisdom
+        max_spell_level: 1
+        spells_per_day:
+          cantrip: 5
+          1: 2
+        focus_pool: 1
+      action:
+      - Cast a Spell
     anathema:
     - "Character must not teach the Druidic language to a non-druid."
     - "Character is not permitted to wear metal armor or carry metal shields."
     - "Character must not take actions that despoil natural places."
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            1: 3
       3:
         raise:
         - skill
@@ -877,12 +1057,19 @@ pf2e_class:
         combat_stats:
           perception: expert
           fortitude: expert
-        feat:
+        choose_feat:
         - general
+        magic_stats:
+          spells_per_day:
+            2: 2
+          max_spell_level: 2
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            2: 3
       5:
         raise:
         - ability
@@ -891,36 +1078,57 @@ pf2e_class:
         - Lightning Reflexes
         combat_stats:
           reflex: expert
-        feat:
+        choose_feat:
         - ancestry
+        magic_stats:
+          spells_per_day:
+            3: 2
+          max_spell_level: 3
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            3: 3
       7:
         raise:
         - skill
         charclass:
         - Expert Spellcaster
         magic_stats:
-          spell_dc: expert
-        feat:
+          spells_per_day:
+            4: 2
+          tradition:
+            primal: expert
+          max_spell_level: 4
+        choose_feat:
         - general
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            4: 3
       9:
         raise:
         - skill
-        feat:
+        choose_feat:
         - ancestry
+        magic_stats:
+          spells_per_day:
+            5: 2
+          max_spell_level: 5
       10:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            5: 3
       11:
         raise:
         - skill
@@ -931,12 +1139,19 @@ pf2e_class:
           wp_unarmed: expert
           wp_simple: expert
           will: master
-        feat:
+        choose_feat:
         - general
+        magic_stats:
+          spells_per_day:
+            6: 2
+          max_spell_level: 6
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            6: 3
       13:
         raise:
         - skill
@@ -947,34 +1162,56 @@ pf2e_class:
           armor_unarmored: expert
           armor_light: expert
           armor_medium: expert
-        feat:
+        choose_feat:
         - general
+        magic_stats:
+          spells_per_day:
+            7: 2
+          max_spell_level: 7
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            7: 3
       15:
         raise:
         - ability
         - skill
-        charclass: Master Spellcaster
+        charclass:
+        - Master Spellcaster
         magic_stats:
-          spell_dc: master
-        feat:
+          spells_per_day:
+            8: 2
+          tradition:
+            primal: master
+          max_spell_level: 8
+        choose_feat:
         - general
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            8: 3
       17:
         raise:
         - skill
-        feat:
+        choose_feat:
         - ancestry
+        magic_stats:
+          spells_per_day:
+            9: 2
+          max_spell_level: 9
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            9: 3
       19:
         raise:
         - skill
@@ -982,13 +1219,17 @@ pf2e_class:
         - Legendary Spellcaster
         - Primal Hierophant
         magic_stats:
-          spell_dc: legendary
-        feat:
+          spells_per_day:
+            10: 1
+          tradition:
+            primal: legendary
+          max_spell_level: 10
+        choose_feat:
         - general
       20:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
   Fighter:
@@ -997,7 +1238,7 @@ pf2e_class:
     - Dexterity
     HP: 10
     chargen:
-      feat:
+      choose_feat:
       - charclass
       combat_stats:
         wp_simple: expert
@@ -1014,10 +1255,10 @@ pf2e_class:
         reflex: expert
         will: trained
       skills_open: 3
-      class_skills:
+      skill:
       - Acrobatics
       - Athletics
-      class_feats:
+      feat:
         general:
         - Shield Block
       reaction:
@@ -1025,11 +1266,11 @@ pf2e_class:
       - Shield Block
       advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
       3:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1038,14 +1279,14 @@ pf2e_class:
         combat_stats:
           will: expert
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Fighter Weapon Mastery
@@ -1062,7 +1303,7 @@ pf2e_class:
         choice_name: Weapon Mastery
         choice_description: "Choose a weapon group for your weapon mastery."
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
       7:
@@ -1071,12 +1312,12 @@ pf2e_class:
         charclass:
         - Battlefield Surveyor
         - Weapon Specialization
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
       9:
@@ -1085,18 +1326,18 @@ pf2e_class:
         charclass:
         - Juggernaut
         - Combat Flexibility
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
       10:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
       11:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1110,11 +1351,11 @@ pf2e_class:
         - Armor Expertise
         - Fighter Expertise
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
       13:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1136,14 +1377,14 @@ pf2e_class:
         choice_name: Weapon Legend
         choice_description: "Choose a weapon group for your weapon legend feat."
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Evasion
@@ -1152,11 +1393,11 @@ pf2e_class:
         combat_stats:
           reflex: master
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1168,11 +1409,11 @@ pf2e_class:
         charclass:
         - Armor Mastery
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1186,8 +1427,199 @@ pf2e_class:
       20:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
+        - skill
+  Investigator:
+    key_abil: Intelligence
+    HP: 8
+    chargen:
+      skills_open: 4
+      skill:
+      - Society
+      charclass:
+      - Strategic Strike 1d6
+      - On the Case
+      - Devise A Strategem
+      choose_feat:
+      - charclass
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        wp_martial: trained
+        armor_unarmored: trained
+        armor_light: trained
+        class_dc: trained
+        perception: expert
+        fortitude: trained
+        reflex: expert
+        will: expert
+    action:
+    - Pursue A Lead
+    reaction:
+    - Clue In
+    advance:
+      2:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      3:
+        choose_feat:
+        - general
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Keen Recollection
+        - Skillful Lessons
+      4:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      5:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - ancestry
+        - skillful lesson
+        charclass:
+        - Weapon Expertise
+        combat_stats:
+          wp_simple: expert
+          wp_unarmed: expert
+          wp_martial: expert
+      6:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      7:
+        choose_feat:
+        - general
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Vigilant Senses
+        - Weapon Specialization
+        combat_stats:
+          perception: master
+      8:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      9:
+        choose_feat:
+        - ancestry
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Great Fortitude
+        - Investigator Expertise
+        combat_stats:
+          fortitude: expert
+          class_dc: expert
+      10:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      11:
+        choose_feat:
+        - general
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Deductive Improvisation
+        - Resolve
+        combat_stats:
+          will: master
+      12:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      13:
+        choose_feat:
+        - ancestry
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Incredible Senses
+        combat_stats:
+          perception: legendary
+      14:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      15:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - general
+        - skillful lesson
+        charclass:
+        - Evasion
+        - Greater Weapon Specialization
+        combat_stats:
+          reflex: master
+      16:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      17:
+        choose_feat:
+        - ancestry
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Greater Resolve
+        combat_stats:
+          will: legendary
+      18:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - skill
+      19:
+        choose_feat:
+        - ancestry
+        - skillful lesson
+        raise:
+        - skill
+        charclass:
+        - Light Armor Mastery
+        - Master Detective
+        combat_stats:
+          armor_light: master
+          armor_unarmored: master
+          class_dc: master
+      20:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - ability
         - skill
   Monk:
     key_abil:
@@ -1196,7 +1628,7 @@ pf2e_class:
     HP: 10
     chargen:
       skills_open: 4
-      class_skills: []
+      skill: []
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -1209,13 +1641,20 @@ pf2e_class:
       action:
       - Flurry of Blows
       - Powerful Fist
+    choose:
+      choice_name: Spell Tradition
+      choice_description: Do you draw ki spells from divine or occult magic?
+      choice_type: magic_stats
+      options:
+      - divine
+      - occult
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
       3:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1223,14 +1662,14 @@ pf2e_class:
         - 'Incredible Movement +10'
         - Mystic Strikes
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Alertness
@@ -1240,29 +1679,30 @@ pf2e_class:
           wp_unarmed: expert
           wp_simple: expert
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
       7:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
-        choice_name: Path to Perfection
-        choice_description: "Choose your save for Path to Perfection."
         choose:
-        - Fortitude
-        - Reflex
-        - Will
+          choice_name: Path to Perfection
+          choice_description: "Choose your save for Path to Perfection."
+          options:
+          - Fortitude
+          - Reflex
+          - Will
         charclass:
         - Weapon Specialization
         - 'Incredible Movement +15'
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
       9:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1272,30 +1712,31 @@ pf2e_class:
         combat_stats:
           class_dc: expert
       10:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - ability
       11:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
-        choice_name: Second Path to Perfection
-        choice_description: "Choose your second save for Path to Perfection."
         choose:
-        - Fortitude
-        - Reflex
-        - Will
+          choice_name: Second Path to Perfection
+          choice_description: "Choose your second save for Path to Perfection."
+          options:
+          - Fortitude
+          - Reflex
+          - Will
         charclass:
         - 'Incredible Movement +20'
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
       13:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1307,27 +1748,28 @@ pf2e_class:
           wp_simple: master
           wp_unarmed: master
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Greater Weapon Specialization
         - 'Incredible Movement +25'
-        choice_name: Third Path to Perfection
-        choice_description: "Choose your save for Third Path to Perfection."
-        choose: []
+        choose:
+          choice_name: Third Path to Perfection
+          choice_description: "Choose your save for Third Path to Perfection."
+          options: []
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1338,18 +1780,18 @@ pf2e_class:
           armor_unarmored: legendary
           class_dc: master
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
         charclass:
         - Perfected Form
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
@@ -1359,10 +1801,8 @@ pf2e_class:
     HP: 8
     chargen:
       skills_open: 3
-      class_skills: Religion
-      class_feats:
-      feat:
-      - charclass
+      skill:
+      - Religion
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -1374,41 +1814,77 @@ pf2e_class:
         reflex: trained
         will: expert
       magic_stats:
+        tradition:
+          divine: trained
+        max_spell_level: 1
         spell_abil: Charisma
-        spell_dc: trained
-        spell_trad: divine
+        spells_per_day:
+          1: 2
+        repertoire:
+          cantrip: 5
+          1: 2
+        focus_pool: 2
+      action:
+      - Cast a Spell
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            1: 3
+          repertoire:
+            1: 1
       3:
-        feat:
+        choose_feat:
         - general
         boost:
         - skill
         charclass:
-        signature_spells:
-        - 1: 1
-        - 2: 1
+        magic_stats:
+          spells_per_day:
+            2: 2
+          repertoire:
+            2: 2
+          signature_spells:
+            1: 1
+            2: 1
+          max_spell_level: 2
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            2: 3
+          repertoire:
+            2: 1
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
-        signature_spells:
-        - 3: 1
+        magic_stats:
+          spells_per_day:
+            3: 2
+          signature_spells:
+            3: 1
+          repertoire:
+            3: 2
+          max_spell_level: 3
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            3: 3
+          repertoire:
+            3: 1
       7:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1418,30 +1894,52 @@ pf2e_class:
         combat_stats:
           will: master
         magic_stats:
-          spell_dc: expert
-        signature_spells:
-        - 4: 1
+          spells_per_day:
+            4: 2
+          signature_spells:
+            4: 1
+          tradition:
+            divine: expert
+          repertoire:
+            4: 2
+          max_spell_level: 4
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            4: 3
+          repertoire:
+            4: 1
       9:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
         charclass:
         - Magical Fortitude
         combat_stats:
-        - fortitude: expert
-        signature_spells:
-        - 5: 1
+          fortitude: expert
+        magic_stats:
+          spells_per_day:
+            5: 2
+          signature_spells:
+            5: 1
+          repertoire:
+            5: 2
+          max_spell_level: 5
       10:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            5: 3
+          repertoire:
+            5: 1
       11:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1450,17 +1948,26 @@ pf2e_class:
         - Weapon Expertise
         - Major Curse
         combat_stats:
-        - perception: expert
-        - wp_unarmed: expert
-        - wp_simple: expert
-        signature_spells:
-        - 6: 1
+          perception: expert
+          wp_unarmed: expert
+          wp_simple: expert
+        magic_stats:
+          spells_per_day:
+            6: 2
+          signature_spells:
+            6: 1
+          repertoire:
+            6: 2
+          max_spell_level: 6
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            6: 3
       13:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1471,30 +1978,52 @@ pf2e_class:
         combat_stats:
           armor_unarmored: expert
           armor_light: expert
-        signature_spells:
-        - 7: 1
+        magic_stats:
+          spells_per_day:
+            7: 2
+          signature_spells:
+            7: 1
+          repertoire:
+            7: 1
+          max_spell_level: 7
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            7: 3
+          repertoire:
+            7: 1
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Master Spellcaster
         magic_stats:
-          spell_dc: master
-        signature_spells:
-        - 8: 1
+          tradition:
+            divine: master
+          spells_per_day:
+            8: 2
+          signature_spells:
+            8: 1
+          repertoire:
+            8: 2
+          max_spell_level: 8
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            8: 3
+          repertoire:
+            8: 1
       17:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1503,14 +2032,25 @@ pf2e_class:
         - Extreme Curse
         combat_stats:
           will: legendary
-        signature_spells:
-        - 9: 1
+        magic_stats:
+          spells_per_day:
+            9: 2
+          signature_spells:
+            9: 1
+          repertoire:
+            9: 1
+          max_spell_level: 9
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
+        magic_stats:
+          spells_per_day:
+            9: 3
+          repertoire:
+            9: 1
       19:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1518,9 +2058,15 @@ pf2e_class:
         - Legendary Spellcaster
         - Oracular Clarity
         magic_stats:
-          spell_dc: legendary
+          tradition:
+            divine: legendary
+          spells_per_day:
+            10: 1
+          repertoire:
+            10: 2
+          max_spell_level: 10
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
@@ -1532,10 +2078,10 @@ pf2e_class:
     HP: 10
     chargen:
       skills_open: 4
-      class_skills:
+      skill:
       - Nature
       - Survival
-      feat:
+      choose_feat:
       - charclass
       combat_stats:
         wp_simple: trained
@@ -1551,31 +2097,32 @@ pf2e_class:
         will: trained
       magic_stats:
         spell_abil: Wisdom
-        spell_dc: trained
-        spell_trad: primal
+        tradition:
+          primal: trained
     action: Hunt Prey
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
       3:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
-        charclass: Iron Will
+        charclass:
+        - Iron Will
         combat_stats:
           will: expert
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
       5:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         charclass:
         - Ranger Weapon Expertise
@@ -1585,11 +2132,11 @@ pf2e_class:
           wp_simple: expert
           wp_martial: expert
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
       7:
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
@@ -1601,11 +2148,11 @@ pf2e_class:
           reflex: master
           perception: master
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
       9:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1617,7 +2164,7 @@ pf2e_class:
       10:
         raise:
         - ability
-        feat:
+        choose_feat:
         - charclass
         - skill
       11:
@@ -1630,16 +2177,16 @@ pf2e_class:
           armor_unarmored: expert
           armor_light: expert
           armor_medium: expert
-        feat:
+        choose_feat:
         - general
         raise:
         - skill
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
       13:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1650,14 +2197,14 @@ pf2e_class:
           wp_simple: master
           wp_martial: master
       14:
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         charclass:
         - Greater Weapon Specialization
@@ -1667,11 +2214,11 @@ pf2e_class:
           reflex: legendary
           perception: legendary
       16:
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1680,11 +2227,11 @@ pf2e_class:
         combat_stats:
           class_dc: master
       18:
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
-        feat:
+        choose_feat:
         - ancestry
         raise:
         - skill
@@ -1696,22 +2243,23 @@ pf2e_class:
           armor_light: master
           armor_medium: master
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - ability
   Rogue:
-    key_abil: Dexterity
     HP: 8
     chargen:
       skills_open: 7
-      class_skills:
+      skill:
       - Stealth
-      class_feats:
-      feat:
+      choose_feat:
       - charclass
       - skill
+      charclass:
+      - Sneak Attack
+      - Surprise Attack
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -1723,18 +2271,15 @@ pf2e_class:
         reflex: expert
         will: expert
         sneak_attack: 1d6
-        charclass:
-        - Sneak Attack
-        - Surprise Attack
     advance:
       2:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - skill
       3:
-        feat:
+        choose_feat:
         - general
         - skill
         raise:
@@ -1742,7 +2287,7 @@ pf2e_class:
         charclass:
         - Deny Advantage
       4:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
@@ -1751,7 +2296,7 @@ pf2e_class:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - ancestry
         - skill
         charclass:
@@ -1761,13 +2306,13 @@ pf2e_class:
           wp_simple: expert
           sneak_attack: 2d6
       6:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - skill
       7:
-        feat:
+        choose_feat:
         - general
         - skill
         raise:
@@ -1780,13 +2325,13 @@ pf2e_class:
           reflex: master
           perception: master
       8:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - skill
       9:
-        feat:
+        choose_feat:
         - ancestry
         - skill
         raise:
@@ -1797,13 +2342,13 @@ pf2e_class:
           fortitude: expert
         action: Debilitating Strike
       10:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - skill
       11:
-        feat:
+        choose_feat:
         - general
         - skill
         raise:
@@ -1814,13 +2359,13 @@ pf2e_class:
           class_dc: expert
           sneak_attack: 3d6
       12:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - skill
       13:
-        feat:
+        choose_feat:
         - ancestry
         - skill
         raise:
@@ -1840,14 +2385,14 @@ pf2e_class:
       14:
         raise:
         - skill
-        feat:
+        choose_feat:
         - charclass
         - skill
       15:
         raise:
         - ability
         - skill
-        feat:
+        choose_feat:
         - general
         - skill
         charclass:
@@ -1856,11 +2401,11 @@ pf2e_class:
       16:
         raise:
         - skill
-        feat:
+        choose_feat:
         - charclass
         - skill
       17:
-        feat:
+        choose_feat:
         - ancestry
         - skill
         raise:
@@ -1872,11 +2417,11 @@ pf2e_class:
       18:
         raise:
         - skill
-        feat:
+        choose_feat:
         - charclass
         - skill
       19:
-        feat:
+        choose_feat:
         - skill
         - ancestry
         raise:
@@ -1888,9 +2433,741 @@ pf2e_class:
           armor_unarmored: master
           armor_light: master
       20:
-        feat:
+        choose_feat:
         - charclass
         - skill
         raise:
         - ability
         - skill
+  Sorcerer:
+    key_abil:
+    - Charisma
+    HP: 6
+    chargen:
+      skills_open: 2
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        armor_unarmored: trained
+        perception: trained
+        fortitude: trained
+        reflex: trained
+        will: expert
+      magic_stats:
+        spell_abil: Charisma
+        spells_per_day:
+          1: 3
+        repertoire:
+          cantrip: 4
+          1: 2
+        max_spell_level: 1
+      action:
+      - Cast a Spell
+    advance:
+      2:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            1: 4
+          repertoire:
+            1: 1
+      3:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Signature Spells
+        magic_stats:
+          spells_per_day:
+            2: 3
+          repertoire:
+            2: 2
+          signature_spells:
+            1: 1
+            2: 1
+          max_spell_level: 2
+      4:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            2: 4
+          repertoire:
+            2: 1
+      5:
+        magic_stats:
+          spells_per_day:
+            3: 3
+          repertoire:
+            3: 2
+          signature_spells:
+            3: 1
+          max_spell_level: 3
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - ancestry
+        charclass:
+        - Magical Fortitude
+        combat_stats:
+          fortitude: expert
+      6:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            3: 4
+          repertoire:
+            3: 1
+      7:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Expert Spellcaster
+        magic_stats:
+          spells_per_day:
+            4: 3
+          repertoire:
+            4: 2
+          signature_spells:
+            4: 1
+          max_spell_level: 4
+      8:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            4: 4
+          repertoire:
+            4: 1
+      9:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Lightning Reflexes
+        magic_stats:
+          spells_per_day:
+            5: 3
+          repertoire:
+            5: 2
+          signature_spells:
+            5: 1
+          max_spell_level: 5
+        combat_stats:
+          reflex: expert
+      10:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            5: 4
+          repertoire:
+            5: 1
+      11:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Alertness
+        magic_stats:
+          spells_per_day:
+            6: 3
+          repertoire:
+            6: 2
+          signature_spells:
+            6: 1
+          max_spell_level: 6
+        combat_stats:
+          perception: expert
+      12:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            6: 4
+          repertoire:
+            6: 1
+      13:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Defensive Robes
+        - Weapon Specialization
+        magic_stats:
+          spells_per_day:
+            7: 3
+          repertoire:
+            7: 2
+          signature_spells:
+            7: 1
+          max_spell_level: 7
+        combat_stats:
+          armor_unarmored: expert
+      14:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            7: 4
+          repertoire:
+            7: 1
+      15:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - general
+        charclass:
+        - Master Spellcaster
+        magic_stats:
+          spells_per_day:
+            8: 3
+          repertoire:
+            8: 2
+          signature_spells:
+            8: 1
+          max_spell_level: 8
+      16:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            8: 4
+          repertoire:
+            8: 1
+      17:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        magic_stats:
+          spells_per_day:
+            9: 3
+          repertoire:
+            9: 2
+          signature_spells:
+            9: 1
+          max_spell_level: 9
+      18:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            9: 4
+          repertoire:
+            9: 1
+      19:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Legendary Spellcaster
+        - Bloodline Paragon
+        magic_stats:
+          spells_per_day:
+            10: 1
+          repertoire:
+            10: 2
+          signature_spells:
+            10: 1
+          max_spell_level: 10
+      20:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - ability
+  Witch:
+    key_abil:
+    - Intelligence
+    HP: 6
+    chargen:
+      skills_open: 3
+      choose_feat:
+      - charclass
+      combat_stats:
+        wp_simple: trained
+        wp_unarmed: trained
+        armor_unarmored: trained
+        perception: trained
+        fortitude: trained
+        reflex: trained
+        will: expert
+      magic_stats:
+        max_spell_level: 1
+        spell_abil: Intelligence
+        spells_per_day:
+          cantrip: 5
+          1: 2
+        spellbook:
+          cantrip: 10
+          1: 5
+        focus_pool: 1
+      action:
+      - Cast a Spell
+      familiar: any
+    advance:
+      2:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            1: 3
+          spellbook: 2
+      3:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        magic_stats:
+          spells_per_day:
+            2: 2
+          spellbook: 2
+          max_spell_level: 2
+      4:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            2: 3
+          spellbook: 2
+      5:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - ancestry
+        charclass:
+        - Magical Fortitude
+        magic_stats:
+          spells_per_day:
+            3: 2
+          spellbook: 2
+          max_spell_level: 3
+        combat_stats:
+          fortitude: expert
+      6:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            3: 3
+          spellbook: 2
+      7:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Expert Spellcaster
+        magic_stats:
+          spells_per_day:
+            4: 2
+          spellbook: 2
+          max_spell_level: 4
+      8:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            4: 3
+          spellbook: 2
+      9:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Lightning Reflexes
+        magic_stats:
+          spells_per_day:
+            5: 2
+          spellbook: 2
+          max_spell_level: 5
+      10:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            5: 3
+          spellbook: 2
+      11:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Alertness
+        - Weapon Expertise
+        magic_stats:
+          spells_per_day:
+            6: 2
+          spellbook: 2
+          max_spell_level: 6
+        combat_stats:
+          perception: expert
+          wp_simple: expert
+          wp_unarmed: expert
+      12:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            6: 3
+          spellbook: 2
+      13:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Defensive Robes
+        - Weapon Specialization
+        magic_stats:
+          spells_per_day:
+            7: 2
+          spellbook: 2
+          max_spell_level: 7
+        combat_stats:
+          armor_unarmored: expert
+      14:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            7: 3
+          spellbook: 2
+      15:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - general
+        charclass:
+        - Master Spellcaster
+        magic_stats:
+          spells_per_day:
+            8: 2
+          spellbook: 2
+          max_spell_level: 8
+      16:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            8: 3
+          spellbook: 2
+      17:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Resolve
+        magic_stats:
+          spells_per_day:
+            9: 2
+          spellbook: 2
+          max_spell_level: 9
+        combat_stats:
+          will: master
+      18:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            9: 3
+          spellbook: 2
+      19:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Legendary Spellcaster
+        - Patron's Gift
+        magic_stats:
+          spells_per_day:
+            10: 1
+          spellbook: 2
+          max_spell_level: 10
+      20:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - ability
+  Wizard:
+    key_abil: Intelligence
+    HP: 6
+    chargen:
+      skills_open: 2
+      skill:
+      - Arcana
+      choose_feat:
+      - charclass
+      charclass:
+      - Arcane Bond
+      combat_stats:
+        wp_simple:
+          Wizard Weapons: trained
+        wp_unarmed: trained
+        armor_unarmored: trained
+        perception: trained
+        fortitude: trained
+        reflex: trained
+        will: expert
+      magic_stats:
+        tradition:
+          arcane: trained
+        spell_abil: Intelligence
+        spells_per_day:
+          cantrip: 5
+          1: 2
+        spellbook:
+          cantrip: 10
+          1: 5
+        max_spell_level: 1
+    action:
+    - Drain Bonded Item
+    - Cast a Spell
+    advance:
+      2:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            1: 3
+          spellbook: 2
+      3:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        magic_stats:
+          spells_per_day:
+            2: 2
+          spellbook: 2
+          max_spell_level: 2
+      4:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            2: 3
+          spellbook: 2
+      5:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - ancestry
+        charclass:
+        - Lightning Reflexes
+        magic_stats:
+          spells_per_day:
+            3: 2
+          spellbook: 2
+          max_spell_level: 3
+        combat_stats:
+          reflex: expert
+      6:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            3: 3
+          spellbook: 2
+      7:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Expert Spellcaster
+        magic_stats:
+          tradition:
+            arcane: expert
+          spells_per_day:
+            4: 2
+          repertoire:
+            4: 2
+          spellbook: 2
+          signature_spells:
+            4: 1
+          max_spell_level: 4
+      8:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            4: 3
+          spellbook: 2
+      9:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Magical Fortitude
+        magic_stats:
+          spells_per_day:
+            5: 2
+          spellbook: 2
+          max_spell_level: 5
+        combat_stats:
+          fortitude: expert
+      10:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            5: 3
+          spellbook: 2
+      11:
+        choose_feat:
+        - general
+        raise:
+        - skill
+        charclass:
+        - Alertness
+        magic_stats:
+          spells_per_day:
+            6: 2
+          spellbook: 2
+          max_spell_level: 6
+        combat_stats:
+          perception: expert
+          wp_simple:
+            Wizard Weapons: expert
+      12:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            6: 3
+          spellbook: 2
+      13:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Defensive Robes
+        - Weapon Specialization
+        magic_stats:
+          spells_per_day:
+            7: 2
+          spellbook: 2
+          max_spell_level: 7
+        combat_stats:
+          armor_unarmored: expert
+      14:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            7: 3
+          spellbook: 2
+      15:
+        raise:
+        - ability
+        - skill
+        choose_feat:
+        - general
+        charclass:
+        - Master Spellcaster
+        magic_stats:
+          tradition:
+            arcane: master
+          spells_per_day:
+            8: 2
+          spellbook: 2
+          max_spell_level: 8
+      16:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            8: 3
+          spellbook: 2
+      17:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Resolve
+        magic_stats:
+          spells_per_day:
+            9: 2
+          spellbook: 2
+          max_spell_level: 9
+        combat_stats:
+          will: master
+      18:
+        choose_feat:
+        - charclass
+        - skill
+        magic_stats:
+          spells_per_day:
+            9: 3
+          spellbook: 2
+      19:
+        choose_feat:
+        - ancestry
+        raise:
+        - skill
+        charclass:
+        - Archwizard's Spellcraft
+        - Legendary Spellcaster
+        magic_stats:
+          tradition:
+            arcane: legendary
+          spells_per_day:
+            10: 1
+          spellbook: 2
+          max_spell_level: 10
+      20:
+        choose_feat:
+        - charclass
+        - skill
+        raise:
+        - ability

@@ -32,7 +32,7 @@ module AresMUSH
           return
         end
 
-        valid_sections = %w{all info ability skills feats combat features languages}
+        valid_sections = %w{all info ability skills feats combat features languages magic}
 
         if valid_sections.include? self.section
           template = Pf2eSheetTemplate.new(char, self.section, client, char.pf2_base_info, char.pf2_faith)

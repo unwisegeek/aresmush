@@ -7,23 +7,14 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
         getspell = args.arg3.partition("at")
 
-        self.trad = downcase_arg(args.arg1)
-
-        trads = %w{arcane divine occult primal}
-        self.tradition = trads.select { |t| t.match?(self.trad) }[0].downcase
-
+        self.charclass = downcase_arg(args.arg1)
         self.level = integer_arg(args.arg2)
         self.spell = getspell[0]
         self.target = getspell[2]
       end
 
       def required_args
-        [ self.tradition, self.level, self.spell ]
-      end
-
-      def check_valid_tradition
-        return nil if !(self.tradition.blank?)
-        return t('pf2e.invalid_tradition')
+        [ self.charclass, self.level, self.spell ]
       end
 
       def handle
@@ -35,17 +26,16 @@ module AresMUSH
           return
         end
 
-        # Can you cast spells from the specified tradition?
+        # Can you cast spells from the specified character class?
 
-        if !magic.tradition[self.tradition]
-          client.emit_failure t('pf2e.cannot_cast_tradition', :trad=>self.tradition)
+        if !magic.tradition[self.charclass]
+          client.emit_failure t('pf2e.cannot_cast_charclass')
           return
         end
 
         # Can you cast spells of the desired level?
-        ready_list = magic.spells_today[self.tradition].empty? ? magic.spells_today[self.tradition] : magic.spells_known
 
-        if !ready_list[self.level]
+        if magic.max_spell_level < self.level
           client.emit_failure t('pf2e.cannot_cast_spell_level')
           return
         end
@@ -60,7 +50,9 @@ module AresMUSH
           return
         end
 
-        template = Pf2eCastSpellTemplate.new(enactor, spell_name, self.tradition, self.level, self.target)
+        tradition = magic.tradition[self.charclass][0]
+
+        template = Pf2eCastSpellTemplate.new(enactor, spell_name, tradition, self.level, self.target)
 
         Scenes.emit_pose(Game.master.system_character, template.render, true, false, nil, true)
 

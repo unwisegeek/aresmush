@@ -22,6 +22,8 @@ website:
   - policy:*
   - rules:*
   - include:*
+  - template:*
+  - deity:*
   sitemap_update_cron:
     hour:
     - 2
