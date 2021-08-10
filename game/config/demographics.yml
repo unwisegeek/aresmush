@@ -69,7 +69,7 @@ demographics:
         Khazad Duin: The great citadel of the khazad and its environs.
         Am'shere: Jungles and the Makari are your home and its people.
         Vast: Endless, wind-swept plains of ancient magic.
-        Rune: The nation of wizards.
+        Rune: The eccentric nation of wizards.
     Faith:
       desc: World philosophy your character ascribes to.
       wiki: 'theme:faiths'

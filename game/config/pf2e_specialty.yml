@@ -3,26 +3,19 @@ pf2e_specialty:
   Alchemist:
     Bomber:
       formula_book:
-      - bomb1
-      - bomb2
+        bombs: 2
     Chirurgeon:
       formula_book:
-      - elixir1
-      - elixir2
-      chargen:
-        formula_opt:
-        - lesser elixir of life
-        - lesser antiplague
-        - lesser antidote
+        elixir: 2
     Mutagenist:
       formula_book:
-      - mutagen1
-      - mutagen2
+        mutagen: 2
   Barbarian:
     Animal:
       choose:
         choice_name: Spirit Animal
         choice_description: "Choose the animal this character strives to emulate."
+        choice_type: subclass_info
         options:
           Ape:
             attack:
@@ -211,37 +204,18 @@ pf2e_specialty:
       choose:
         choice_name: "Dragon Color"
         choice_description: "Color dragon this instinct applies to."
+        choice_type: subclass_info
         options:
-          Black:
-            element: acid
-            shape: line
-          Blue:
-            element: electricity
-            shape: line
-          Green:
-            element: poison
-            shape: cone
-          Red:
-            element: fire
-            shape: cone
-          White:
-            element: cold
-            shape: cone
-          Brass:
-            element: fire
-            shape: line
-          Bronze:
-            element: electricity
-            shape: line
-          Copper:
-            element: acid
-            shape: line
-          Gold:
-            element: fire
-            shape: cone
-          Silver:
-            element: cold
-            shape: cone
+        - Black
+        - Blue
+        - Green
+        - Red
+        - White
+        - Brass
+        - Bronze
+        - Copper
+        - Silver
+        - Gold
       anathema:
       - "Cannot let a personal insult slide."
       - "If character respects their dragon type, they may not defy one."
@@ -249,19 +223,8 @@ pf2e_specialty:
       instinct_ability: Draconic Rage
       rage_resistance:
         damage_type: [ "P" ]
-        element:
-          Black: acid
-          Blue: electricity
-          Green: poison
-          Red: fire
-          White: cold
-          Brass: fire
-          Bronze: electricity
-          Copper: acid
-          Gold: fire
-          Silver: cold
     Fury:
-      feat:
+      choose_feat:
       - charclass
       rage_ability: Fury Rage
       rage_resistance: Fury Resistance
@@ -271,13 +234,13 @@ pf2e_specialty:
       instinct_ability: Titan Mauler
       rage_resistance:
         damage_type: ["B"]
-        choose:
-          choice_name: Rage Resistance Element
-          choice_description: Choose the element to which your rage resistance applies.
-          options:
-          - cold
-          - electricity
-          - fire
+      choose:
+        choice_name: Rage Resistance Element
+        choice_description: Choose the element to which your rage resistance applies.
+        options:
+        - cold
+        - electricity
+        - fire
     Spirit:
       anathema:
         - "Character may not defile or show disrespect to corpses or spirits."
@@ -287,60 +250,1394 @@ pf2e_specialty:
         damage_type: negative
         damage_from: undead
   Bard:
-    Enigma: {}
-    Maestro: {}
-    Polymath: {}
+    Enigma:
+      chargen:
+        feat: Bardic Lore
+        magic_stats:
+          addspell:
+            1: True Strike
+    Maestro:
+      chargen:
+        feat: Lingering Composition
+        magic_stats:
+          addspell:
+            1: Soothe
+    Polymath:
+      chargen:
+        feat: Versatile Performance
+        magic_stats:
+          addspell:
+            1: Unseen Servant
+    Warrior:
+      chargen:
+        feat: Martial Performance
+        magic_stats:
+          addspell:
+            1: Fear
   Champion:
     Paladin:
       allowed_alignments:
       - LG
-      reaction:
-      - Retributive Strike
-      anathema:
-      - "Character must not willingly commit an evil act."
-      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      - "Character must not lie, cheat, or take advantage of others."
-      edicts:
-      - "Character must respect the authority of legitimate leadership wherever they go, and must obey its laws."
-      devotion:
-      - lay on hands
+      chargen:
+        reaction:
+        - Retributive Strike
+        anathema:
+        - "Character must not willingly commit an evil act."
+        - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+        - "Character must not lie, cheat, or take advantage of others."
+        edicts:
+        - "Character must respect the authority of legitimate leadership wherever they go, and must obey its laws."
+        magic_stats:
+          devotion:
+            spell:
+            - Lay On Hands
     Redeemer:
       allowed_alignments:
       - NG
-      reaction:
-      - Glimpse of Redemption
-      edicts:
-      - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
-      - "Character must show compassion for all, without regard to other factors."
-      anathema:
-      - "Character must not willingly commit an evil act."
-      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      devotion:
-      - lay on hands
+      chargen:
+        reaction:
+        - Glimpse of Redemption
+        edicts:
+        - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
+        - "Character must show compassion for all, without regard to other factors."
+        anathema:
+        - "Character must not willingly commit an evil act."
+        - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+        magic_stats:
+          devotion:
+            spell:
+            - Lay On Hands
     Liberator:
       allowed_alignments:
       - CG
-      reaction:
-      - Liberating Step
-      edicts:
-      - "Character must honor decisions made by others over their own lives."
-      - "Character must demand and fight for others' freedom to make their own decisions."
-      anathema:
-      - "Character must not willingly commit an evil act."
-      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      - "Character must not force someone to act in a particular way or threaten them if they refuse."
-      - "Character must not accept or countenance slavery or tyranny."
-      devotion:
-      - lay on hands
+      chargen:
+        reaction:
+        - Liberating Step
+        edicts:
+        - "Character must honor decisions made by others over their own lives."
+        - "Character must demand and fight for others' freedom to make their own decisions."
+        anathema:
+        - "Character must not willingly commit an evil act."
+        - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+        - "Character must not force someone to act in a particular way or threaten them if they refuse."
+        - "Character must not accept or countenance slavery or tyranny."
+        magic_stats:
+          devotion:
+            spell:
+            - Lay On Hands
   Cleric:
-    Cloistered: {}
-    Warpriest: {}
+    Cloistered:
+      chargen:
+        feat:
+        - Domain Initiate
+        charclass:
+        - 'First Doctrine (Cloistered)'
+      advance:
+        3:
+          charclass:
+          - 'Second Doctrine (Cloistered)'
+          combat_stats:
+            fortitude: expert
+        7:
+          magic_stats:
+            tradition:
+              divine: expert
+          charclass:
+          - 'Third Doctrine (Cloistered)'
+        11:
+          charclass:
+          - 'Fourth Doctrine (Cloistered)'
+          combat_stats:
+            wp_deity: expert
+        15:
+          charclass:
+          - 'Fifth Doctrine (Cloistered)'
+          magic_stats:
+            tradition:
+              divine: master
+        19:
+          charclass:
+          - 'Final Doctrine (Cloistered)'
+          magic_stats:
+            tradition:
+              divine: legendary
+    Warpriest:
+        chargen:
+          combat_stats:
+            armor_light: trained
+            armor_med: trained
+            fortitude: expert
+          feat:
+          - Shield Block
+          reaction:
+          - Shield Block
+          charclass:
+          - 'First Doctrine (Warpriest)'
+        advance:
+          3:
+            charclass:
+            - 'Second Doctrine (Warpriest)'
+            combat_stats:
+              wp_martial: trained
+          7:
+            combat_stats:
+              wp_deity: expert
+            charclass:
+            - 'Third Doctrine (Warpriest)'
+          11:
+            charclass:
+            - 'Fourth Doctrine (Warpriest)'
+            magic_stats:
+              tradition:
+                divine: expert
+          15:
+            charclass:
+            - 'Fifth Doctrine (Warpriest)'
+            combat_stats:
+              fortitude: master
+          19:
+            charclass:
+            - 'Final Doctrine (Warpriest)'
+            magic_stats:
+              tradition:
+                divine: master
   Druid:
     Animal:
-      class_skill: Athletics
-      feat:
-      - Animal Companion
-      anathema:
-      - "Character must not kill an animal needlessly or commit wanton cruelty to one."
-      spell:
-      - Heal Animal
+      chargen:
+        skill:
+        - Athletics
+        feat:
+        - Animal Companion
+        anathema:
+        - "Character must not kill an animal needlessly or commit wanton cruelty to one."
+        magic_stats:
+          order:
+            spell:
+            - Heal Animal
+        companion: any
+    Leaf:
+      chargen:
+        skill:
+        - Diplomacy
+        feat:
+        - Leshy Familiar
+        magic_stats:
+          order:
+            spell:
+            - Goodberry
+          focus_pool: 1
+        anathema:
+        - "Character must not kill a plant needlessly or commit wanton cruelty to one."
+        familiar: Leshy
+    Storm:
+      chargen:
+        skill:
+        - Acrobatics
+        feat:
+        - Storm Born
+        magic_stats:
+          focus_pool: 1
+          order:
+            spell:
+            - Tempest Surge
+        edicts:
+        - "Character must punish those who cause major air pollution or climate shifts."
+        anathema:
+        - "Character must not pollute the air."
+    Wild:
+      chargen:
+        skill:
+        - Intimidation
+        feat:
+        - Wild Shape
+        magic_stats:
+          order:
+            spell:
+            - Wild Morph
+        anathema:
+        - "Character must not become reliant on the temptations of civilization."
+  Investigator:
+    Alchemical Sciences:
+      chargen:
+        skill:
+        - Crafting
+        feat:
+        - Alchemical Crafting
+        formula_book: 2
+        action:
+        - Quick Tincture
+    Empiricism:
+      chargen:
+        feat:
+        - That's Odd
+        action:
+        - Expeditious Inspection
+    Forensic Medicine:
+      chargen:
+        skill:
+        - Medicine
+        feat:
+        - Forensic Acumen
+        - Battle Medicine
+    Interrogation:
+      chargen:
+        skill:
+        - Diplomacy
+        feat:
+        - No Cause For Alarm
+        action:
+        - Pointed Question
+  Oracle:
+    Ancestors:
+      chargen:
+        choose_feat:
+        - ancestry
+        skill:
+        - Society
+        magic_stats:
+          cantrip:
+          - Guidance
+          revelation:
+            spell:
+            - Ancestral Touch
+        curse: Ancestral Meddling
+    Battle:
+      chargen:
+        skill:
+        - Athletics
+        magic_stats:
+          cantrip:
+          - Shield
+          revelation:
+            spell:
+            - Call to Arms
+        curse: Hero's Burden
+        combat_stats:
+          armor_med: trained
+          armor_heavy: trained
+    Bones:
+      chargen:
+        skill:
+        - Medicine
+        magic_stats:
+          cantrip:
+          - Chill Touch
+          revelation:
+            spell:
+            - Soul Siphon
+        curse: Living Death
+    Cosmos:
+      chargen:
+        skill:
+        - Nature
+        magic_stats:
+          cantrip:
+          - Dancing Lights
+          revelation:
+            spell:
+            - Spray of Stars
+        curse: Sky's Call
+    Flames:
+      chargen:
+        skill:
+        - Acrobatics
+        magic_stats:
+          cantrip:
+          - Produce Flame
+          revelation:
+            spell:
+            - Incendiary Aura
+        curse: Engulfing Flames
+    Life:
+      chargen:
+        skill:
+        - Medicine
+        magic_stats:
+          cantrip:
+          - Stabilize
+          revelation:
+            spell:
+            - Life Link
+        curse: Outpouring Life
+    Lore:
+      chargen:
+        skill:
+        - Occultism
+        magic_stats:
+          cantrip:
+          - Read Aura
+          revelation:
+            spell:
+            - Brain Drain
+        curse: Torrential Knowledge
+    Tempest:
+      chargen:
+        skill:
+        - Nature
+        magic_stats:
+        cantrip:
+          - Electric Arc
+          revelation:
+            spell:
+            - Tempest Touch
+        curse: Perpetual Storm
+  Ranger:
+    Flurry: {}
+    Outwit: {}
+    Precision: {}
+  Rogue:
+    Eldritch Trickster:
+      choose:
+        choice_name: Magical Archetype
+        choice_description: Choose which spellcasting class you are dedicated in.
+        options:
+        - Oracle
+        - Sorcerer
+        - Wizard
+        - Bard
+        - Witch
+      key_abil:
+      - Dexterity
+      - Charisma
+      - Wisdom
+      - Intelligence
+    Mastermind:
+      chargen:
+        skill:
+        - Society
+      choose:
+        choice_name: Second Trained Skill
+        choice_description: Your racket grants Society and one other skill as class skills. Choose the second.
+        options:
+        - Arcana
+        - Nature
+        - Occultism
+        - Religion
+      key_abil:
+      - Dexterity
+      - Intelligence
+    Ruffian:
+      chargen:
+        skill:
+        - Intimidation
+        combat_stats:
+          armor_med: trained
+      key_abil:
+      - Dexterity
+      - Strength
+    Scoundrel:
+      chargen:
+        skill:
+        - Deception
+        - Diplomacy
+      key_abil:
+      - Dexterity
+      - Charisma
+    Thief:
+      chargen:
+        skill:
+        - Thievery
+  Sorcerer:
+    Aberrant:
+      chargen:
+        magic_stats:
+          tradition:
+            occult: trained
+          addspell:
+            cantrip: Daze
+            1: Spider Sting
+          bloodline:
+            spell:
+            - Tentacular Limbs
+        skill:
+        - Intimidation
+        - Occultism
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Touch of Idiocy
+        5:
+          magic_stats:
+            addspell:
+              3: Vampiric Touch
+        7:
+          magic_stats:
+            addspell:
+              4: Confusion
+            tradition:
+              occult: trained
+        9:
+          magic_stats:
+            addspell:
+              5: Black Tentacles
+        11:
+          magic_stats:
+            addspell:
+              6: Feeblemind
+        13:
+          magic_stats:
+            addspell:
+              7: Warp Mind
+        15:
+          magic_stats:
+            addspell:
+              8: Uncontrollable Dance
+            tradition:
+              occult: master
+        17:
+          magic_stats:
+            addspell:
+              9: Unfathomable Song
+        19:
+          magic_stats:
+            tradition:
+              occult: legendary
+    Angelic:
+      chargen:
+        magic_stats:
+          tradition:
+            divine: trained
+          addspell:
+            cantrip: Light
+            1: Heal
+          bloodline:
+            spell:
+            - Angelic Halo
+        skill:
+        - Diplomacy
+        - Religion
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Spiritual Weapon
+        5:
+          magic_stats:
+            addspell:
+              3: Searing Light
+        7:
+          magic_stats:
+            addspell:
+              4: Divine Wrath
+            tradition:
+              divine: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Flame Strike
+        11:
+          magic_stats:
+            addspell:
+              6: Blade Barrier
+        13:
+          magic_stats:
+            addspell:
+              7: Divine Decree
+        15:
+          magic_stats:
+            addspell:
+              8: Divine Aura
+            tradition:
+              divine: master
+        17:
+          magic_stats:
+            addspell:
+              9: Foresight
+        19:
+          magic_stats:
+            tradition:
+              divine: legendary
+    Demonic:
+      chargen:
+        magic_stats:
+          tradition:
+            divine: trained
+          addspell:
+            cantrip: Acid Splash
+            1: Fear
+          bloodline:
+            spell:
+            - Glutton's Law
+        skill:
+        - Intimidation
+        - Religion
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Enlarge
+        5:
+          magic_stats:
+            addspell:
+              3: Slow
+        7:
+          magic_stats:
+            addspell:
+              4: Divine Wrath
+            tradition:
+              divine: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Abyssal Plague
+        11:
+          magic_stats:
+            addspell:
+              6: Disintegrate
+        13:
+          magic_stats:
+            addspell:
+              7: Divine Decree
+        15:
+          magic_stats:
+            addspell:
+              8: Divine Aura
+            tradition:
+              divine: master
+        17:
+          magic_stats:
+            addspell:
+              9: Implosion
+        19:
+          magic_stats:
+            tradition:
+              divine: legendary
+    Diabolic:
+      chargen:
+        magic_stats:
+          tradition:
+            divine: trained
+          addspell:
+            cantrip: Produce Flame
+            1: Charm
+          bloodline:
+            spell:
+            - Diabolic Edict
+        skill:
+        - Deception
+        - Religion
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Flaming Sphere
+        5:
+          magic_stats:
+            addspell:
+              3: Enthrall
+        7:
+          magic_stats:
+            addspell:
+              4: Suggestion
+            tradition:
+              divine: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Crushing Despair
+        11:
+          magic_stats:
+            addspell:
+              6: True Seeing
+        13:
+          magic_stats:
+            addspell:
+              7: Divine Decree
+        15:
+          magic_stats:
+            addspell:
+              8: Divine Aura
+            tradition:
+              divine: master
+        17:
+          magic_stats:
+            addspell:
+              9: Meteor Swarm
+        19:
+          magic_stats:
+            tradition:
+              divine: legendary
+    Draconic:
+      choose:
+        choice_name: Dragon Type
+        choice_description: Choose the dragon type to which you are linked.
+        options:
+        - Brass
+        - Bronze
+        - Copper
+        - Silver
+        - Gold
+        - Black
+        - Blue
+        - Green
+        - Red
+        - White
+      chargen:
+        magic_stats:
+          tradition:
+            arcane: trained
+          addspell:
+            cantrip: Shield
+            1: True Strike
+          bloodline:
+            spell:
+            - Dragon Claws
+        skill:
+        - Arcana
+        - Intimidation
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Resist Energy
+        5:
+          magic_stats:
+            addspell:
+              3: Haste
+        7:
+          magic_stats:
+            addspell:
+              4: Spell Immunity
+            tradition:
+              arcane: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Chromatic Wall
+        11:
+          magic_stats:
+            addspell:
+              6: Dragon Form
+        13:
+          magic_stats:
+            addspell:
+              7: Mask of Terror
+        15:
+          magic_stats:
+            addspell:
+              8: Prismatic Wall
+            tradition:
+              arcane: master
+        17:
+          magic_stats:
+            addspell:
+              9: Overwhelming Presence
+        19:
+          magic_stats:
+            tradition:
+              arcane: legendary
+    Elemental:
+      choose:
+        choice_name: Elemental Affinity
+        choice_description: Choose the element you have an affinity for.
+        options:
+        - Fire
+        - Air
+        - Earth
+        - Water
+      chargen:
+        magic_stats:
+          tradition:
+            primal: trained
+          addspell:
+            cantrip: Produce Flame
+            1: Burning Hands
+          bloodline:
+            spell:
+            - Elemental Toss
+        skill:
+        - Nature
+        - Intimidation
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Resist Energy
+        5:
+          magic_stats:
+            addspell:
+              3: Fireball
+        7:
+          magic_stats:
+            addspell:
+              4: Freedom of Movement
+            tradition:
+              primal: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Elemental Form
+        11:
+          magic_stats:
+            addspell:
+              6: Repulsion
+        13:
+          magic_stats:
+            addspell:
+              7: Energy Aegis
+        15:
+          magic_stats:
+            addspell:
+              8: Prismatic Wall
+            tradition:
+              primal: master
+        17:
+          magic_stats:
+            addspell:
+              9: Storm of Vengeance
+        19:
+          magic_stats:
+            tradition:
+              primal: legendary
+    Fey:
+      chargen:
+        magic_stats:
+          tradition:
+            primal: trained
+          addspell:
+            cantrip: Ghost Sound
+            1: Charm
+          bloodline:
+            spell:
+            - Faerie Dust
+        skill:
+        - Nature
+        - Deception
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Hideous Laughter
+        5:
+          magic_stats:
+            addspell:
+              3: Enthrall
+        7:
+          magic_stats:
+            addspell:
+              4: Suggestion
+            tradition:
+              primal: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Cloak of Colors
+        11:
+          magic_stats:
+            addspell:
+              6: Mislead
+        13:
+          magic_stats:
+            addspell:
+              7: Visions of Danger
+        15:
+          magic_stats:
+            addspell:
+              8: Uncontrollable Dance
+            tradition:
+              primal: master
+        17:
+          magic_stats:
+            addspell:
+              9: Resplendent Mansion
+        19:
+          magic_stats:
+            tradition:
+              primal: legendary
+    Genie:
+      choose:
+        choice_name: Genie Origins
+        choice_description: Choose which genie type is in your blood.
+        options:
+        - Janni
+        - Djinni
+        - Efreeti
+        - Marid
+        - Shaitan
+      chargen:
+        magic_stats:
+          tradition:
+            arcane: trained
+          addspell:
+            cantrip: Detect Magic
+            1: Illusory Disguise
+          bloodline:
+            spell:
+            - Genie's Veil
+        skill:
+        - Arcana
+        - Deception
+      advance:
+        3:
+          magic_stats:
+            get_genie_spell: 2
+        5:
+          magic_stats:
+            addspell:
+              3: Enthrall
+        7:
+          magic_stats:
+            addspell:
+              4: Creation
+            tradition:
+              arcane: expert
+        9:
+          magic_stats:
+            get_genie_spell: 5
+        11:
+          magic_stats:
+            addspell:
+              6: True Seeing
+        13:
+          magic_stats:
+            addspell:
+              7: Energy Aegis
+        15:
+          magic_stats:
+            get_genie_spell: 8
+            tradition:
+              arcane: master
+        17:
+          magic_stats:
+            addspell:
+              9: Resplendent Mansion
+        19:
+          magic_stats:
+            tradition:
+              arcane: legendary
+    Hag:
+      chargen:
+        magic_stats:
+          tradition:
+            occult: trained
+          addspell:
+            cantrip: Daze
+            1: Illusory Disguise
+          bloodline:
+            spell:
+            - Jealous Hex
+        skill:
+        - Occultism
+        - Deception
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Touch of Idiocy
+        5:
+          magic_stats:
+            addspell:
+              3: Blindness
+        7:
+          magic_stats:
+            addspell:
+              4: Outcast's Curse
+            tradition:
+              occult: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Mariner's Curse
+        11:
+          magic_stats:
+            addspell:
+              6: Baleful Polymorph
+        13:
+          magic_stats:
+            addspell:
+              7: Warp Mind
+        15:
+          magic_stats:
+            addspell:
+              8: Spiritual Epidemic
+            tradition:
+              occult: master
+        17:
+          magic_stats:
+            addspell:
+              9: Nature's Enmity
+        19:
+          magic_stats:
+            tradition:
+              occult: legendary
+    Imperial:
+      chargen:
+        magic_stats:
+          tradition:
+            arcane: trained
+          addspell:
+            cantrip: Detect Magic
+            1: Magic Missile
+          bloodline:
+            spell:
+            - Ancestral Memories
+        skill:
+        - Arcana
+        - Society
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Dispel Magic
+        5:
+          magic_stats:
+            addspell:
+              3: Haste
+        7:
+          magic_stats:
+            addspell:
+              4: Dimension Door
+            tradition:
+              arcane: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Prying Eye
+        11:
+          magic_stats:
+            addspell:
+              6: Disintegrate
+        13:
+          magic_stats:
+            addspell:
+              7: Prismatic Spray
+        15:
+          magic_stats:
+            addspell:
+              8: Maze
+            tradition:
+              arcane: master
+        17:
+          magic_stats:
+            addspell:
+              9: Prismatic Sphere
+        19:
+          magic_stats:
+            tradition:
+              arcane: legendary
+    Nymph:
+      chargen:
+        magic_stats:
+          tradition:
+            primal: trained
+          addspell:
+            cantrip: Tanglefoot
+            1: Charm
+          bloodline:
+            spell:
+            - Nymph's Token
+        skill:
+        - Diplomacy
+        - Nature
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Calm Emotions
+        5:
+          magic_stats:
+            addspell:
+              3: Animal Vision
+        7:
+          magic_stats:
+            addspell:
+              4: Vital Beacon
+            tradition:
+              primal: trained
+        9:
+          magic_stats:
+            addspell:
+              5: Crushing Despair
+        11:
+          magic_stats:
+            addspell:
+              6: Repulsion
+        13:
+          magic_stats:
+            addspell:
+              7: Unfettered Pack
+        15:
+          magic_stats:
+            addspell:
+              8: Moment of Renewal
+            tradition:
+              primal: master
+        17:
+          magic_stats:
+            addspell:
+              9: Overwhelming Presence
+        19:
+          magic_stats:
+            tradition:
+              primal: legendary
+    Psychopomp:
+      chargen:
+        magic_stats:
+          tradition:
+            divine: trained
+          addspell:
+            cantrip: Disrupt Undead
+            1: Heal
+          bloodline:
+            spell:
+            - Sepulchral Mask
+        skill:
+        - Intimidation
+        - Religion
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Calm Emotions
+        5:
+          magic_stats:
+            addspell:
+              3: Searing Light
+        7:
+          magic_stats:
+            addspell:
+              4: Dimensional Anchor
+            tradition:
+              divine: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Death Ward
+        11:
+          magic_stats:
+            addspell:
+              6: Spirit Blast
+        13:
+          magic_stats:
+            addspell:
+              7: Finger of Death
+        15:
+          magic_stats:
+            addspell:
+              8: Spirit Song
+            tradition:
+              divine: master
+        17:
+          magic_stats:
+            addspell:
+              9: Massacre
+        19:
+          magic_stats:
+            tradition:
+              divine: legendary
+    Shadow:
+      chargen:
+        magic_stats:
+          tradition:
+            occult: trained
+          addspell:
+            cantrip: Chill Touch
+            1: Grim Tendrils
+          bloodline:
+            spell:
+            - Dim the Light
+        skill:
+        - Occultism
+        - Stealth
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: Darkness
+        5:
+          magic_stats:
+            addspell:
+              3: Chilling Darkness
+        7:
+          magic_stats:
+            addspell:
+              4: Phantasmal Killer
+            tradition:
+              occult: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Shadow Siphon
+        11:
+          magic_stats:
+            addspell:
+              6: Collective Transposition
+        13:
+          magic_stats:
+            addspell:
+              7: Duplicate Foe
+        15:
+          magic_stats:
+            addspell:
+              8: Disappearance
+            tradition:
+              occult: master
+        17:
+          magic_stats:
+            addspell:
+              9: Weird
+        19:
+          magic_stats:
+            tradition:
+              occult: legendary
+    Undead:
+      chargen:
+        magic_stats:
+          tradition:
+            divine: trained
+          addspell:
+            cantrip: Chill Touch
+            1: Harm
+          bloodline:
+            spell:
+            - Undeath's Blessing
+        skill:
+        - Intimidation
+        - Religion
+      advance:
+        3:
+          magic_stats:
+            addspell:
+              2: False Life
+        5:
+          magic_stats:
+            addspell:
+              3: Bind Undead
+        7:
+          magic_stats:
+            addspell:
+              4: Talking Corpse
+            tradition:
+              divine: expert
+        9:
+          magic_stats:
+            addspell:
+              5: Cloudkill
+        11:
+          magic_stats:
+            addspell:
+              6: Vampiric Exsanguination
+        13:
+          magic_stats:
+            addspell:
+              7: Finger of Death
+        15:
+          magic_stats:
+            addspell:
+              8: Horrid Wilting
+            tradition:
+              divine: master
+        17:
+          magic_stats:
+            addspell:
+              9: Wail of the Banshee
+        19:
+          magic_stats:
+            tradition:
+              divine: legendary
+  Wizard:
+    Improved Familiar Attunement:
+      chargen:
+        feat:
+        - Familiar
+        familiar: any
+        replace_action: 'Drain Bonded Item | Drain Familiar'
+        familiar_ability: true
+      advance:
+        6:
+          familiar_ability: true
+        12:
+          familiar_ability: true
+        18:
+          familiar_ability: true
+    Metamagical Experimentation:
+      chargen:
+        choose_feat:
+        - metamagic
+    # The code for this option is under spell preparation.
+    Spell Blending: {}
+    Spell Substitution: {}
+    # Staff Nexus is managed under items.
+    Staff Nexus: {}
+  Witch:
+    Curse:
+      chargen:
+        skill:
+        - Occultism
+        magic_stats:
+          tradition:
+            occult: trained
+          hex:
+            cantrip:
+            - Evil Eye
+          addspell:
+            1: Ray of Enfeeblement
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              occult: expert
+        15:
+          magic_stats:
+            tradition:
+              occult: master
+        19:
+          magic_stats:
+            tradition:
+              occult: legendary
+    Fate:
+      chargen:
+        skill:
+        - Occultism
+        magic_stats:
+          tradition:
+            occult: trained
+          hex:
+            cantrip:
+            - Nudge Fate
+          addspell:
+            1: True Strike
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              occult: expert
+        15:
+          magic_stats:
+            tradition:
+              occult: master
+        19:
+          magic_stats:
+            tradition:
+              occult: legendary
+    Fervor:
+      chargen:
+        skill:
+        - Religion
+        magic_stats:
+          tradition:
+            divine: trained
+          hex:
+            cantrip:
+            - Stoke the Heart
+          addspell:
+            1: Command
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              divine: expert
+        15:
+          magic_stats:
+            tradition:
+              divine: master
+        19:
+          magic_stats:
+            tradition:
+              divine: legendary
+    Night:
+      chargen:
+        skill:
+        - Occultism
+        magic_stats:
+          tradition:
+            occult: trained
+          hex:
+            cantrip:
+            - Shroud of Night
+          addspell:
+            1: Sleep
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              occult: expert
+        15:
+          magic_stats:
+            tradition:
+              occult: master
+        19:
+          magic_stats:
+            tradition:
+              occult: legendary
+    Rune:
+      chargen:
+        skill:
+        - Arcana
+        magic_stats:
+          tradition:
+            arcane: trained
+          hex:
+            cantrip:
+            - Discern Secrets
+          addspell:
+            1: Magic Weapon
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              arcane: expert
+        15:
+          magic_stats:
+            tradition:
+              arcane: master
+        19:
+          magic_stats:
+            tradition:
+              arcane: legendary
+    Wild:
+      chargen:
+        skill:
+        - Nature
+        magic_stats:
+          tradition:
+            primal: trained
+          hex:
+            cantrip:
+            - Wilding Word
+      choose:
+        choice_name: Granted Spell
+        choice_description: Your patron grants you a choice of granted spells.
+        choice_type: spell
+        options:
+        - Summon Animal
+        - Summon Plant or Fungus
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              primal: expert
+        15:
+          magic_stats:
+            tradition:
+              primal: master
+        19:
+          magic_stats:
+            tradition:
+              primal: legendary
+    Winter:
+      chargen:
+        skill:
+        - Nature
+        magic_stats:
+          tradition:
+            primal: trained
+          hex:
+            cantrip:
+            - Clinging Ice
+          addspell:
+            1: Gust of Wind
+      advance:
+        7:
+          magic_stats:
+            tradition:
+              primal: expert
+        15:
+          magic_stats:
+            tradition:
+              primal: master
+        19:
+          magic_stats:
+            tradition:
+              primal: legendary

@@ -34,7 +34,7 @@ module AresMUSH
           return
         end
 
-        valid_sections = %w{all info ability skills feats combat}
+        valid_sections = %w{all info ability skills feats combat features languages magic}
 
         if !(valid_sections.include? self.section)
           client.emit_failure t('pf2e.bad_section', :section => self.section)

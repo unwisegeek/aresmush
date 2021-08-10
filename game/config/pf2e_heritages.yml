@@ -9,7 +9,7 @@ pf2e_heritage:
   Ancient-Blooded:
     reaction: 'Call On Ancient Blood'
   Anvil:
-    skills:
+    skill:
     - Crafting
     feats:
     - Specialty Crafting

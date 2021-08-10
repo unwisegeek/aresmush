@@ -44,6 +44,27 @@ module AresMUSH
       end
     end
 
+    def self.get_create_combat_obj(char)
+      obj = char.combat
+
+      return obj if obj
+
+      obj = Pf2eCombat.create(character: char)
+      char.combat = obj
+
+      return obj
+    end
+
+    def self.update_combat_stats(char, info)
+      combat = get_create_combat_obj(char)
+
+      info.each_pair do |key, value|
+        combat.update("#{key}": value)
+      end
+
+      return combat
+    end
+
     def self.get_save_bonus(char, save)
       prof_bonus = Pf2e.get_prof_bonus(enactor, get_save_from_char(char, save))
 

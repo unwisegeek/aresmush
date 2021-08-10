@@ -132,10 +132,6 @@ module AresMUSH
         end
       end
 
-      def combat_stats
-        @char.combat
-      end
-
       def hp
         hp = @char.hp
 
@@ -170,7 +166,7 @@ module AresMUSH
         return "--" if !combat_stats
         dc = Pf2eCombat.get_class_dc(@char)
         prof = combat_stats.class_dc[0].upcase
-        "#{bonus} (#{prof})"
+        "#{dc} (#{prof})"
       end
 
       def perception
@@ -214,17 +210,45 @@ module AresMUSH
         general_list = @char.pf2_feats['general']
         skill_list = @char.pf2_feats['skill']
 
+        charclass_list = charclass_list.map { |f| f + " (CL)" }
+        ancestry_list = ancestry_list.map { |f| f + " (AN)" }
+        general_list = general_list.map { |f| f + " (GN)" }
+        skill_list = skill_list.map { |f| f + " (SK)" }
+
         feats = charclass_list + ancestry_list + general_list + skill_list
+      end
 
-        list = []
-
-        feats.each_with_index { |f,i| list << format_feat(f,i) }
-
-        list
+      def features
+        flist = @char.pf2_features.sort.join(", ")
       end
 
       def dedication_feats
         list = @char.pf2_feats['dedication'].sort.join(", ")
+      end
+
+      def languages
+        lang = @char.pf2_lang
+        list = lang.empty? ? "None set." : lang.sort.join(", ")
+      end
+
+      def spell_dcs
+        dc_list = magic_stats.tradition
+
+        list = []
+
+        dc_list.each_pair do |charclass, dc|
+          list << format_spell_dc(charclass, dc[0], dc[1])
+        end
+
+        list.join("%r")
+      end
+
+      def combat_stats
+        @char.combat
+      end
+
+      def magic_stats
+        @char.magic
       end
 
       def format_ability(abil, score, i)
@@ -267,9 +291,12 @@ module AresMUSH
         left("#{item_color}#{name}%xn: #{bonus} (#{prof})", 26)
       end
 
-      def format_feat(name, index)
-        linebreak = index % 3 == 0 ? "%r" : ""
-        "#{linebreak}#{left(name, 26)}"
+      def format_spell_dc(c, t, p)
+        dc = Pf2eMagic.get_spell_dc(char, c, p)
+        trad = Pf2e.pretty_string(t)
+        atk = dc - 10
+
+        "#{item_color}#{c}: Tradition - #{trad} Spell Attack Roll: #{atk} Spell DC: #{dc}"
       end
 
       def print_linked_attr(skill)

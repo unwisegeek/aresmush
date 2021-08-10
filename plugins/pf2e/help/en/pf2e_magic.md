@@ -14,7 +14,7 @@ Commands for casting:
 
 `cast[/<metamagic>] <class>/<level> = <spell name>[ at <target>]`: Casts a spell from a spellcaster's daily spell allotment. If _at <target>_ is included, <target> is a string, a character or NPC name. It may be a list of names.
 
-* <tradition> is one of: arcane, divine, occult, or primal. Which it is depends on the source where you learned it.
+* <class> is the class from which the spell is learned.
 * <level> is an integer, or the word _cantrip_.
 * The <metamagic> switch denotes the use of a metamagic feat immediately prior to the spell casting.
 

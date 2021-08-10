@@ -85,5 +85,36 @@ module AresMUSH
       end
     end
 
+    def self.update_sheet(char, info)
+      info.each_pair do |key, value|
+        case key
+        when "choose_feat"
+          to_assign = char.pf2_to_assign
+          to_assign['feat_by_type'] = value
+          char.update(pf2_to_assign: to_assign)
+        when "charclass"
+          features = char.pf2_features
+
+          value.each { |f| features << f }
+
+          char.update(pf2_features: features.uniq.sort)
+        when "combat_stats"
+          PF2eCombat.update_combat_stats(char, value)
+        when "magic_stats"
+          Pf2eMagic.update_magic_stats(char, value)
+        when "skill"
+        when "feat"
+        when "action"
+        when "reaction"
+        when "familiar"
+        when "animal companion"
+        when "raise"
+        when "choose"
+        else
+          client.emit_ooc "Unknown key in update_sheet: #{key}. Please raise this to code staff."
+        end
+      end
+    end
+
   end
 end

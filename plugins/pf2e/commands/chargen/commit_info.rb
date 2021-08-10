@@ -54,6 +54,7 @@ module AresMUSH
                                nil :
                                subclass_info['choose'][subclass_option]
         class_features_info = charclass_info["chargen"]
+        subclass_features_info = subclass_info["chargen"]
 
         to_assign = enactor.pf2_to_assign
 
@@ -72,9 +73,8 @@ module AresMUSH
         to_assign['open anboost'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
         boosts['open anboost'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
 
-        charclass_ability = charclass_info['key_abil']
-        charclass_alt_abil = subclass_info['alt_key_abil']
-        charclass_ability << charclass_alt_abil if charclass_alt_abil
+        # Some classes have their key ability options defined in their specialty.
+        charclass_ability = charclass_info['key_abil'] ? charclass_info['key_abil'] : subclass_info['key_abil']
 
         if charclass_ability.size == 1
           boosts['charclass'] = charclass_ability
@@ -99,7 +99,7 @@ module AresMUSH
         to_assign['open bgboost'] = background_info['abl_boosts_open']
         boosts['open bgboost'] = background_info['abl_boosts_open']
 
-        # Skills
+        # Opening Skills
         bg_skills = background_info["skills"] ? background_info["skills"] : []
 
         if bg_skills.size > 1
@@ -107,15 +107,14 @@ module AresMUSH
           to_assign['bgskill'] = bg_skills
           bg_skills = []
         elsif bg_skills.size == 0
-          bg_skills = []
           client.emit_ooc t('pf2e.bg_no_options', :element => "skills")
         end
 
-        class_skills = class_features_info["class_skills"]
+        heritage_skills = heritage_info['skill'] ? heritage_info['skill'] : []
+        class_skills = class_features_info['skill'] ? class_features_info['skill'] : []
+        subclass_skills = subclass_features_info['skill'] ? subclass_features_info['skill'] : []
 
-        heritage_skills = heritage_info['skills'] ? heritage_info['skills'] : []
-
-        skills = bg_skills + class_skills + heritage_skills
+        skills = bg_skills + heritage_skills + class_skills + subclass_skills
         unique_skills = skills.uniq
 
         if !unique_skills.empty?
@@ -129,12 +128,13 @@ module AresMUSH
         free_skills = class_features_info["skills_open"] + dup_skills
         to_assign['open skill'] = free_skills
 
-        use_deity = charclass_info.has_key?(use_deity)
+        # Some classes get a skill based on their deity.
+        use_deity = charclass_info.has_key?('use_deity')
 
         if use_deity
           deity = faith_info["deity"]
           deity_info = Global.read_config('pf2e_deities', deity)
-          divine_skill = deity_info[divine_skill]
+          divine_skill = deity_info['divine_skill']
 
           has_skill = Pf2eSkills.find_skill(divine_skill, enactor)
 
@@ -156,7 +156,8 @@ module AresMUSH
         end
 
         class_lores = class_features_info["lores"] ? class_features_info["lores"] : []
-        lores = bg_lores + class_lores
+        subclass_lores = subclass_features_info["lores"] ? subclass_features_info["lores"] : []
+        lores = bg_lores + class_lores + subclass_lores
 
         if !lores.empty?
           lores.each do |l|
@@ -164,7 +165,7 @@ module AresMUSH
           end
         end
 
-        # Starting Feats
+        # Feats
         feats = enactor.pf2_feats
 
         bg_feats = background_info["feats"] ? background_info["feats"] : []
@@ -178,15 +179,19 @@ module AresMUSH
           client.emit_ooc t('pf2e.bg_no_options', :element => "feats")
         end
 
-        class_feats = class_features_info["class_feats"]
-        heritage_feats = heritage_info["feats"]
+        class_feats = class_features_info["feat"] ? class_features_info["feat"] : []
+        subclass_feats = subclass_features_info["feat"] ? subclass_features_info["feat"] : []
+        heritage_feats = heritage_info["feat"]
 
-        feats['general'] = bg_feats
-        feats['charclass'] = class_feats if class_feats
+        feats['general'] = bg_feats unless bg_feats.empty?
         feats['ancestry'] = heritage_feats if heritage_feats
+        feats['charclass'] = class_feats + subclass_feats
 
-        to_assign['charclass feat'] = charclass if class_features_info['feat']&.include?('charclass')
         to_assign['ancestry feat'] = ancestry
+
+        if class_features_info['choose_feat']&.include? 'charclass'
+          to_assign['charclass feat'] = charclass
+        end
 
         # Senses and other specials
         special = ancestry_info["special"] + heritage_info["special"] + background_info["special"].uniq
@@ -196,14 +201,6 @@ module AresMUSH
         end
 
         enactor.pf2_special = special
-
-        # Class Features
-        char_features = enactor.pf2_features
-        l1_features = class_features_info['charclass']
-
-        l1_features.each { |f| char_features << f } if !l1_features.empty?
-
-        enactor.pf2_features = char_features
 
         # Code of Behavior - not every info combination will have one!
         edicts = []
@@ -235,16 +232,16 @@ module AresMUSH
         enactor.update(pf2_faith: faith_info)
 
         # Combat information - attacks, defenses, perception, class DC, saves
-        combat = Pf2eCombat.create(character: enactor)
-        enactor.combat = combat
-
         combat_stats = class_features_info['combat_stats']
 
-        combat_stats.each_pair do |k,v|
-          combat.update("#{k}": v)
-        end
+        combat = Pf2eCombat.update_combat_stats(enactor,combat_stats)
 
         combat.update(key_abil: charclass_ability) if charclass_ability.size == 1
+
+        # Starting Magic
+        magic_stats = class_features_info['magic_stats']
+
+        Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
 
         # Languages
         languages = enactor.pf2_lang

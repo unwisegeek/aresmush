@@ -24,6 +24,9 @@ module AresMUSH
     attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
     attribute :pf2_money, :type => DataType::Integer, :default => 1500
 
+    ### Only some characters will have these attributes, so nil check these.
+    attribute :pf2_formula_book, :type => DataType::Hash
+
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"
     collection :lores, "AresMUSH::Pf2eLores"

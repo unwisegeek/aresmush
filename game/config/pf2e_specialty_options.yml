@@ -1,0 +1,54 @@
+---
+pf2e_subclass:
+  get_genie_spell:
+    Janni:
+      2: Create Food
+      5: Banishment
+      8: Scintillating Pattern
+    Djinni:
+      2: Invisibility
+      5: Illusory Scene
+      8: Punishing Winds
+    Efreeti:
+      2: Enlarge
+      5: Elemental Form
+      8: Maze
+    Marid:
+      2: Water Walk
+      5: Control Water
+      8: Horrid Wilting
+    Shaitan:
+      2: Glitterdust
+      5: Wall of Stone
+      8: Earthquake
+  Dragon Types:
+    Black:
+      element: acid
+      shape: line
+    Blue:
+      element: electricity
+      shape: line
+    Green:
+      element: poison
+      shape: cone
+    Red:
+      element: fire
+      shape: cone
+    White:
+      element: cold
+      shape: cone
+    Brass:
+      element: fire
+      shape: line
+    Bronze:
+      element: electricity
+      shape: line
+    Copper:
+      element: acid
+      shape: line
+    Gold:
+      element: fire
+      shape: cone
+    Silver:
+      element: cold
+      shape: cone
