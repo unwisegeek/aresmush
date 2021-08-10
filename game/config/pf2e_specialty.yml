@@ -575,12 +575,12 @@ pf2e_specialty:
         skill:
         - Nature
         magic_stats:
-        cantrip:
-          - Electric Arc
+          cantrip:
+            - Electric Arc
           revelation:
             spell:
             - Tempest Touch
-        curse: Perpetual Storm
+          curse: Perpetual Storm
   Ranger:
     Flurry: {}
     Outwit: {}
