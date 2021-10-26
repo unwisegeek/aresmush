@@ -382,8 +382,8 @@ pf2e_spells:
     actions: 2
     range: 100 feet
     target: up to 50 feet of rope or a nonliving rope-like object
-    effect: 'You cause a length or section of rope or a rope-like object to animate and follow simple commands.'
-    heighten: '(+2) The range increases by 50 feet, and you can animate 50 more feet of rope.'
+    effect: You cause a length or section of rope or a rope-like object to animate and follow simple commands.' You can give it two commands when you Cast the Spell, and one command each time you Sustain the Spell.%r* Bind (attack) The rope attempts to partially bind a creature. Attempt a spell attack roll against the target's Reflex DC. If you succeed, the target takes a –10-foot circumstance penalty to its Speed (–20-foot on a critical success). This ends if the target Escapes against your spell DC or breaks the rope. (A standard adventuring rope has Hardness 2, HP 8, and a Broken Threshold of 4.)%r* Coil The rope forms a tidy, coiled stack.%r* Crawl The rope inches along the ground like a snake, moving one of its ends 10 feet. The rope must move along a surface, but that surface doesn't need to be horizontal.%r* Knot The rope ties a sturdy knot in itself.%r* Loop The rope forms a simple loop at one or both ends, or straightens itself back out.%r* Tie The rope ties itself around a willing creature or an object that's unattended or attended by a willing creature.%r& Undo The rope undoes one of its knots, ties, or bindings.
+    heighten: The range increases by 50 feet, and you can animate 50 more feet of rope.
   Ant Haul:
     base_level: 1
     school: Transmutation
@@ -436,7 +436,7 @@ pf2e_spells:
     duration: 1 minute
     save: Will
     effect: You fill the minds of your enemies with doubt. Enemies in the area must succeed at a Will save or take a –1 status penalty to attack rolls as long as they are in the area. Once per turn, starting the turn after you cast bane, you can use a single action, which has the concentrate trait, to increase the emanation's radius by 5 feet and force enemies in the area that weren't yet affected to attempt another saving throw. Bane can counteract bless.
-   Befuddle:
+  Befuddle:
     base_level: 1
     school: Enchantment
     traits:
@@ -468,7 +468,7 @@ pf2e_spells:
     actions: 2
     area: 5-foot emanation
     duration: 1 minute
-    effect: 'Blessings from beyond help your companions strike true. You and your allies gain a +1 status bonus to attack rolls while within the emanation. Once per turn, starting the turn after you cast _bless_, you can use a single action, which has the concentrate trait, to increase the emanation's radius by 5 feet. _Bless_ can counteract _bane_.'
+    effect: Blessings from beyond help your companions strike true. You and your allies gain a +1 status bonus to attack rolls while within the emanation. Once per turn, starting the turn after you cast _bless_, you can use a single action, which has the concentrate trait, to increase the emanation's radius by 5 feet. _Bless_ can counteract _bane_.
   Burning Hands:
     base_level: 1
     school: Evocation
@@ -524,7 +524,7 @@ pf2e_spells:
     target: 1 creature
     duration: 1 hour
     save: Will
-    effect: 'To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used hostile actions against it.%r%rYou can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn't necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.%r%r**Critical Success** The target is unaffected and aware you tried to charm it.%r**Success** The target is unaffected but thinks your spell was something harmless instead of charm, unless it identifies the spell (see Identifying Spells).%r**Failure** The target's attitude becomes friendly toward you. If it was friendly, it becomes helpful. It can't use hostile actions against you.%r**Critical Failure** The target's attitude becomes helpful toward you, and it can't use hostile actions against you.'
+    effect: To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used hostile actions against it.%r%rYou can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn't necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.%r%r**Critical Success** The target is unaffected and aware you tried to charm it.%r**Success** The target is unaffected but thinks your spell was something harmless instead of charm, unless it identifies the spell (see Identifying Spells).%r**Failure** The target's attitude becomes friendly toward you. If it was friendly, it becomes helpful. It can't use hostile actions against you.%r**Critical Failure** The target's attitude becomes helpful toward you, and it can't use hostile actions against you.
     heighten:
       4: The duration lasts until the next time you make your daily preparations.
       8: The duration lasts until the next time you make your daily preparations, and you can target up to 10 creatures.
@@ -632,7 +632,7 @@ pf2e_spells:
     target: 1 creature
     duration: 2 rounds
     save: Will
-    effect: 'You loop a thought process in the target's mind, forcing it to repeat the same actions over again. The target must attempt a Will save. If the target fails, whatever actions the target uses on its next turn, it must repeat on its following turn. The actions must be repeated in the same order and as close to the same specifics as possible. For example, if the target makes an attack, it must repeat the attack against the same creature, if possible, and if the target moves, it must move the same distance and direction, if possible, on its next turn. %r%rIf the target can't repeat an action, such as Casting a Spell that has been exhausted or needing to target a creature that has died, it can act as it chooses for that action but becomes stupefied 1 until the end of its turn.'
+    effect: You loop a thought process in the target's mind, forcing it to repeat the same actions over again. The target must attempt a Will save. If the target fails, whatever actions the target uses on its next turn, it must repeat on its following turn. The actions must be repeated in the same order and as close to the same specifics as possible. For example, if the target makes an attack, it must repeat the attack against the same creature, if possible, and if the target moves, it must move the same distance and direction, if possible, on its next turn. %r%rIf the target can't repeat an action, such as Casting a Spell that has been exhausted or needing to target a creature that has died, it can act as it chooses for that action but becomes stupefied 1 until the end of its turn.
   Disrupting Weapons:
     base_level: 1
     school: Necromancy
