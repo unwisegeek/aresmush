@@ -24,3 +24,4 @@ profile:
     relationship/remove: relationship/delete
     relationship/update: relationship/add
     relationship/set: relationship/add
+  profile_title_format: bitname
