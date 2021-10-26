@@ -52,7 +52,7 @@ module AresMUSH
         if cmd.switch == "me"
           client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
-          Scene.emit_pose(Game.master.system_character,roll_msg,true,false,nil,true)
+          Scenes.emit_pose(Game.master.system_character,roll_msg,true,false,nil,true)
 
           channel = Global.read_config("pf2e", "roll_channel")
           if (channel)
