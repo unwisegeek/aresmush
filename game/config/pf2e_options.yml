@@ -13,7 +13,7 @@ pf2e:
   - LN
   - N
   - CN
-  roll_channel: 'PF2Rolls'
+  roll_channel: 'Rolls'
   open_sheets: true
   open_npc_sheets: false
   title_color: '%x172'
