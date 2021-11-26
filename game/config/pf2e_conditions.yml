@@ -24,12 +24,16 @@ pf2e_conditions:
     short_descr: You lose your wits and attack wildly.
     descr: "You don’t have your wits about you, and you attack wildly. You are flat-footed,
     you don’t treat anyone as your ally (though they might still treat you as theirs),
-    and you can’t Delay, Ready, or use reactions.%r%rYou use all your actions to Strike or
+    and you can’t Delay, Ready, or use reactions.
+
+You use all your actions to Strike or
     cast offensive cantrips, though the GM can have you use other actions to facilitate attack,
     such as draw a weapon, move so that a target is in reach, and so forth. Your targets are
     determined randomly by the GM. If you have no other viable targets, you target yourself,
     automatically hitting but not scoring a critical hit. If it’s impossible for you to attack or
-    cast spells, you babble incoherently, wasting your actions.%r%rEach time you take damage
+    cast spells, you babble incoherently, wasting your actions.
+
+Each time you take damage
     from an attack or spell, you can attempt a DC 11 flat check to recover from your confusion
     and end the condition."
     value: false
@@ -45,8 +49,8 @@ pf2e_conditions:
     override: false
   Dazzled:
     short_descr: Your eyes are overstimulated and you cannot see clearly.
-    descr: Your eyes are overstimulated. If vision is your only precise sense, all creatures
-    and objects are concealed from you.
+    descr: "Your eyes are overstimulated. If vision is your only precise sense, all creatures
+    and objects are concealed from you."
     value: false
     override: false
   Deafened:
@@ -66,7 +70,9 @@ pf2e_conditions:
     descr: "A powerful force has gripped your soul, calling you closer to death. Doomed
     always includes a value. The dying value at which you die is reduced by your doomed
     value. If your maximum dying value is reduced to 0, you instantly die. When you
-    die, you’re no longer doomed.%r%rYour doomed value decreases by 1 each time you get
+    die, you’re no longer doomed.
+
+Your doomed value decreases by 1 each time you get
     a full night’s rest."
     value: true
     override: false
@@ -80,7 +86,9 @@ pf2e_conditions:
     value, and your maximum Hit Points are reduced by the same amount. For example,
     if you’re hit by an effect that inflicts drained 3 and you’re a 3rd-level character,
     you lose 9 Hit Points and reduce your maximum Hit Points by 9. Losing these Hit
-    Points doesn’t count as taking damage.%r%rEach time you get a full night’s rest, your
+    Points doesn’t count as taking damage.
+
+Each time you get a full night’s rest, your
     drained value decreases by 1. This increases your maximum Hit Points, but you don’t
     immediately recover the lost Hit Points."
     value: true
@@ -95,7 +103,9 @@ pf2e_conditions:
     4, you die. If you’re dying, you must attempt a recovery check (page 459) at the
     start of your turn each round to determine whether you get better or worse. Your
     dying condition increases by 1 if you take damage while dying, or by 2 if you
-    take damage from an enemy’s critical hit or a critical failure on your save.%r%rIf you
+    take damage from an enemy’s critical hit or a critical failure on your save.
+
+If you
     lose the dying condition by succeeding at a recovery check and are still
     at 0 Hit Points, you remain unconscious, but you can wake up as described in that
     condition. You lose the dying condition automatically and wake up if you ever have
@@ -178,7 +188,9 @@ pf2e_conditions:
     descr: "You’re gripped by fear and struggle to control your nerves. The frightened
     condition always includes a value. You take a status penalty equal to this value
     to all your checks and DCs. Unless specified otherwise, at the end of each of
-    your turns, the value of your frightened condition decreases by 1.%r%rGAME NOTE: This penalty
+    your turns, the value of your frightened condition decreases by 1.
+
+GAME NOTE: This penalty
     is not coded, players should manually include on all rolls."
     value: true
     override: false
@@ -245,7 +257,9 @@ pf2e_conditions:
     are Crawl and Stand. Standing up ends the prone condition. You can Take Cover
     while prone to hunker down and gain cover against ranged attacks, even if you
     don’t have an object to get behind, gaining a +4 circumstance bonus to AC against
-    ranged attacks (but you remain flat-footed).%r%rIf you would be knocked prone while
+    ranged attacks (but you remain flat-footed).
+
+If you would be knocked prone while
     you’re Climbing or Flying, you fall (see CRB pages 463-464 for the rules on falling).
     You can’t be knocked prone when Swimming."
     value: false
@@ -275,7 +289,9 @@ pf2e_conditions:
     - including elixirs and potions - while sickened. You can spend a single action
     retching in an attempt to recover, which lets you immediately attempt a Fortitude save
     against the DC of the effect that made you sickened. On a success, you reduce your
-    sickened value by 1 (or by 2 on a critical success).%r%rGAME NOTE: This penalty is not coded.
+    sickened value by 1 (or by 2 on a critical success).
+
+GAME NOTE: This penalty is not coded.
     Players should include it on all rolls."
     value: true
     override: false
@@ -296,7 +312,9 @@ pf2e_conditions:
     your stunned value by the number of actions you lost. For example, if you were
     stunned 4, you would lose all 3 of your actions on your turn, reducing you to
     stunned 1; on your next turn, you would lose 1 more action, and then be able to
-    use your remaining 2 actions normally. %r%rStunned might also have a duration instead
+    use your remaining 2 actions normally. 
+
+Stunned might also have a duration instead
     of a value, such as “stunned for 1 minute.” In this case, you lose all your actions
     for the listed duration. Stunned overrides slowed. If the duration of your stunned
     condition ends while you are slowed, you count the actions lost to the stunned condition
@@ -326,26 +344,42 @@ pf2e_conditions:
     status penalty to AC, Perception, and Reflex saves, and you have the blinded and
     flat-footed conditions. When you gain this condition, you fall prone and drop
     items you are wielding or holding unless the effect states otherwise or the GM
-    determines you’re in a position in which you wouldn’t.%r%rIf you’re unconscious because
+    determines you’re in a position in which you wouldn’t.
+
+If you’re unconscious because
     you’re dying, you can’t wake up while you have 0 Hit Points. If you are restored to 1
     Hit Point or more via healing, you lose the dying and unconscious conditions and can act
-    normally on your next turn.%r%rIf you are unconscious and at 0 Hit Points, but not dying,
+    normally on your next turn.
+
+If you are unconscious and at 0 Hit Points, but not dying,
     you naturally return to 1 Hit Point and awaken after sufficient time passes. The GM determines how
     long you remain unconscious, from a minimum of 10 minutes to several hours. If
     you receive healing during this time, you lose the unconscious condition and can
-    act normally on your next turn. %r%rIf you’re unconscious and have more than 1 Hit Point
+    act normally on your next turn. 
+
+If you’re unconscious and have more than 1 Hit Point
     (typically because you are asleep or unconscious due to an effect), you wake up in one of
-    the following ways. Each causes you to lose the unconscious condition.%r%r- You take damage,
+    the following ways. Each causes you to lose the unconscious condition.
+
+- You take damage,
     provided the damage doesn’t reduce you to 0 Hit Points. If
     the damage reduces you to 0 Hit Points, you remain unconscious and gain the dying
-    condition as normal.%r%r- You receive healing, other than the natural healing you get from
-    resting.%r%r- Someone shakes you awake with an Interact action.%r%r- There’s loud noise going
+    condition as normal.
+
+- You receive healing, other than the natural healing you get from
+    resting.
+
+- Someone shakes you awake with an Interact action.
+
+- There’s loud noise going
     on around you, though this isn’t automatic. At the start
     of your turn, you automatically attempt a Perception check against the noise’s
     DC (or the lowest DC if there is more than one noise), waking up if you succeed.
     If creatures are attempting to stay quiet around you, this Perception check uses
     their Stealth DCs. Some magical effects make you sleep so deeply that they don’t
-    allow you to attempt this Perception check.%r%r- If you are simply asleep, the GM decides
+    allow you to attempt this Perception check.
+
+- If you are simply asleep, the GM decides
     you wake up either because you have had a restful night’s sleep or something disrupted that rest."
     value: false
     override: false
