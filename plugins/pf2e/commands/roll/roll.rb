@@ -55,6 +55,7 @@ module AresMUSH
           enactor_room.emit roll_msg
           if (enactor_room.scene)
             Scenes.add_to_scene(enactor_room.scene, roll_msg, Game.master.system_character, false, true)
+          end
 
           channel = Global.read_config("pf2e", "roll_channel")
           if (channel)
