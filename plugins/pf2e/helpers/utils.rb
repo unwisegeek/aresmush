@@ -218,5 +218,10 @@ module AresMUSH
       string.split.map { |w| w.capitalize }.join(" ")
     end
 
+    def self.award_xp(target, amount)
+      xp = target.pf2_xp + amount
+      target.update(pf2_xp: xp)
+    end  
+
   end
 end

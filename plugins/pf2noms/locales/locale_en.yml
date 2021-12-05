@@ -1,3 +1,20 @@
 ---
 en:
-  pf2noms: {}
+  pf2noms:
+
+    enactor_not_approved: "You must be approved for RP to use this command."
+
+    invalid_player: "This player is not correctly registered. Contact staff for assistance."
+
+    nom_check_you: "You have %{weekly_noms_available} / %{weekly_noms} left this week and have nommed %{noms_given_today} people today."
+    not_enough_noms: "You need %{noms} noms available to do that, but you only have %{available} left this week. Try again."
+
+    success: "You nominate %{list} for good RP."
+
+    target_already_nomd: "Max number of daily noms for %{target} reached. Skipping."
+    target_not_approved: "Character '%{target}' is not approved for play. Skipping."
+    target_not_found: "Could not find character matching '%{item}'. Skipping."
+
+    use_dmnom: "Staffers should use the `dmnom` command to reward good RP."
+
+    view_only_own: "You can view only your own noms."

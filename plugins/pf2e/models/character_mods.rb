@@ -44,5 +44,6 @@ module AresMUSH
       self.combat&.delete
       self.magic&.delete
     end
+
   end
 end
