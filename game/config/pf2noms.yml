@@ -1,2 +1,6 @@
 ---
-pf2noms: {}
+pf2noms:
+  noms_per_week: 30
+  daily_noms_per_player: 1
+  nom_amount: 1
+  dmnom_amount: 3
