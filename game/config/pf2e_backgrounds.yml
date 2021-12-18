@@ -627,9 +627,6 @@ pf2e_background:
     feats:
     - Experienced Smuggler
     special: []
-  Raised By Belief:
-    abl_boosts_open: 1
-    req_abl_boosts: []
   Refugee:
     abl_boosts_open: 1
     req_abl_boosts:
