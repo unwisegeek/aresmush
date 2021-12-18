@@ -1,5 +1,5 @@
 module AresMUSH
-  module Pf2e
+  module Pf2noms
 
     class PF2NomDisplayCommand
       include CommandHandler
@@ -50,17 +50,14 @@ module AresMUSH
         weekly_noms_available = player.totalnoms
         noms_given_today = player.nomlist.count
 
-        if is_staffer
-          
-        else
-          msg = t('pf2noms.nom_check_you',
-            :weekly_noms => weekly_noms,
-            :weekly_noms_available => weekly_noms_available,
-            :noms_given_today => noms_given_today
-          )
+        msg = t('pf2noms.nom_check',
+          :char => character,
+          :weekly_noms => weekly_noms,
+          :weekly_noms_available => weekly_noms_available,
+          :noms_given_today => noms_given_today
+        )
 
-          client.emit_ooc msg
-        end
+        client.emit_ooc msg
 
       end
 

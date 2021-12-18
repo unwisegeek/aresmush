@@ -1,13 +1,13 @@
 module AresMUSH
   module Pf2noms
 
-    class PF2NomCommand
+    class PF2NomSceneCommand
       include CommandHandler
 
-      attr_accessor :list
+      attr_accessor :scene
 
       def parse_args
-        self.list = list_arg(cmd.args)
+        self.scene = integer_arg(cmd.args)
       end
 
       def check_approval
@@ -32,14 +32,17 @@ module AresMUSH
         nom_okay = []
         max_per_day = Global.read_config('pf2noms', 'daily_noms_per_player')
 
+        scene = Scene[self.scene]
 
-        self.list.each do |item|
-          char = Character.find_one_by_name(item)
+        if !scene
+          client.emit_failure t('scenes.scene_not_found')
+          return nil
+        end
 
-          if !char
-            client.emit_ooc t('pf2noms.target_not_found', :target=>item)
-            next
-          elsif !(char.player)
+        char_list = scene.participants_and_room_chars
+
+        char_list.each do |char|
+          if !(char.player)
             client.emit_ooc t('pf2noms.target_bad_player', :target=>char.name)
             next
           elsif !(char.is_approved?)
