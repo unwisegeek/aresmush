@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-     module Pf2noms
+    module Pf2noms
 
     def self.plugin_dir
       File.dirname(__FILE__)
@@ -12,6 +12,20 @@ module AresMUSH
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
+      case cmd.root
+      when "dmnom"
+        case cmd.switch
+        when "all"
+          return PF2DMNomAllCommand
+        else
+          return PF2DMNomCommand
+        end
+      when "nom"
+        return PF2NomCommand
+      when "noms"
+        return PF2NomDisplayCommand
+      end
+
       nil
     end
 

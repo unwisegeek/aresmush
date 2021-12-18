@@ -2,16 +2,19 @@
 en:
   pf2noms:
 
+    dmnom_notify: "You got a DM nom from %{sender}!"
+
     enactor_not_approved: "You must be approved for RP to use this command."
 
     invalid_player: "This player is not correctly registered. Contact staff for assistance."
 
-    nom_check_you: "You have %{weekly_noms_available} / %{weekly_noms} left this week and have nommed %{noms_given_today} people today."
+    nom_check: "Character %{char} has %{weekly_noms_available} / %{weekly_noms} left this week and has nommed %{noms_given_today} people today."
     not_enough_noms: "You need %{noms} noms available to do that, but you only have %{available} left this week. Try again."
 
     success: "You nominate %{list} for good RP."
 
     target_already_nomd: "Max number of daily noms for %{target} reached. Skipping."
+    target_bad_player: "Character %{target} does not have a valid player and should contact staff for assistance. Skipping."
     target_not_approved: "Character '%{target}' is not approved for play. Skipping."
     target_not_found: "Could not find character matching '%{item}'. Skipping."
 

@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2noms
 
-    class PF2NomCommand
+    class PF2DMNomCommand
       include CommandHandler
 
       attr_accessor :list
@@ -11,27 +11,13 @@ module AresMUSH
       end
 
       def check_approval
-        return t('pf2noms.use_dmnom') if enactor.is_admin?
-
-        return nil if enactor.is_approved?
-
-        return t('pf2noms.enactor_not_approved')
+        return t('dispatcher.not_allowed') if !enactor.has_permission("dm")
+        return nil
       end
 
       def handle
 
-        player = enactor.player
-
-        if !player
-          client.emit_failure t('pf2noms.invalid_player')
-          return nil
-        end
-
-        already_nomd = player.nomlist
-        noms_available = player.totalnoms
         nom_okay = []
-        max_per_day = Global.read_config('pf2noms', 'daily_noms_per_player')
-
 
         self.list.each do |item|
           char = Character.find_one_by_name(item)
@@ -57,27 +43,21 @@ module AresMUSH
           end
         end
 
-        needed_noms = nom_okay.count
-
-        if needed_noms > noms_available
-          client.emit_failure t('pf2noms.not_enough_noms', :noms=>needed_noms, :available=> noms_available)
-          return nil
-        end
-
-        nom_amount = Global.read_config('pf2noms', 'nom_amount')
-        remaining_noms = noms_available - needed_noms
+        nom_amount = Global.read_config('pf2noms', 'dmnom_amount')
         success_list = []
 
         nom_okay.each do |target|
           Pf2e.award_xp(target, nom_amount)
-          already_nomd << target.player
           success_list << target.name
         end
 
-        player.update(nomlist: already_nomd)
-        player.update(totalnoms: remaining_noms)
-
         client.emit_ooc t('pf2noms.success', :list=>success_list.sort.join(", "))
+
+        message = t('pf2noms.dmnom_notify', :sender => enactor.name)
+
+        Global.notifier.notify_ooc(type, message) do |char|
+          char & nom_okay.include?(char)
+        end
 
       end
 
