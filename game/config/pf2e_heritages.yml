@@ -9,7 +9,7 @@ pf2e_heritage:
   Ancient-Blooded:
     reaction: 'Call On Ancient Blood'
   Anvil:
-    skill:
+    skills:
     - Crafting
     feats:
     - Specialty Crafting
@@ -179,7 +179,7 @@ pf2e_heritage:
     movement:
       Swim: 15
   Skilled:
-    skill:
+    skills:
     - [ 'skill' ]
   Skyborn:
     special:

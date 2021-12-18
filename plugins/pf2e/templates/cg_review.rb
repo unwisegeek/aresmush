@@ -229,11 +229,10 @@ module AresMUSH
 
         return t('pf2e.not_selected_yet', :element => "Character class") if !@class_features_info
         charclass_skills = @class_features_info['skills'] ? @class_features_info['skills'] : []
-        bg_skills = @background_info['skills'] ? @background_info['skills'] : []
 
         open_skills = @class_features_info['skills_open']
 
-        "#{charclass_skills + bg_skills.join(", ")} + #{open_skills}"
+        "#{charclass_skills.join} + #{open_skills}"
       end
 
       def bg_skills
