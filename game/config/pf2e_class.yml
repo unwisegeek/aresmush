@@ -24,7 +24,7 @@ pf2e_class:
         reflex: expert
         will: trained
       skills_open: 3
-      skills:
+      skill:
       - Crafting
       feat:
       - Alchemical Crafting
@@ -176,7 +176,7 @@ pf2e_class:
         reflex: trained
         will: expert
       skills_open: 3
-      skills:
+      skill:
       - Athletics
       action:
       - Rage
@@ -605,7 +605,7 @@ pf2e_class:
     HP: 10
     chargen:
       skills_open: 2
-      skills:
+      skill:
       - Religion
       combat_stats:
         wp_simple: trained
@@ -800,7 +800,7 @@ pf2e_class:
     HP: 8
     chargen:
       skills_open: 2
-      skills:
+      skill:
       - Religion
       combat_stats:
         wp_simple: trained
@@ -1006,7 +1006,7 @@ pf2e_class:
       languages:
       - Druidic
       skills_open: 2
-      skills:
+      skill:
       - Nature
       combat_stats:
         wp_simple: trained
@@ -1255,7 +1255,7 @@ pf2e_class:
         reflex: expert
         will: trained
       skills_open: 3
-      skills:
+      skill:
       - Acrobatics
       - Athletics
       feat:
@@ -1435,7 +1435,7 @@ pf2e_class:
     HP: 8
     chargen:
       skills_open: 4
-      skills:
+      skill:
       - Society
       charclass:
       - Strategic Strike 1d6
@@ -1628,7 +1628,7 @@ pf2e_class:
     HP: 10
     chargen:
       skills_open: 4
-      skills: []
+      skill: []
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -1801,7 +1801,7 @@ pf2e_class:
     HP: 8
     chargen:
       skills_open: 3
-      skills:
+      skill:
       - Religion
       combat_stats:
         wp_simple: trained
@@ -2078,7 +2078,7 @@ pf2e_class:
     HP: 10
     chargen:
       skills_open: 4
-      skills:
+      skill:
       - Nature
       - Survival
       choose_feat:
@@ -2252,7 +2252,7 @@ pf2e_class:
     HP: 8
     chargen:
       skills_open: 7
-      skills:
+      skill:
       - Stealth
       choose_feat:
       - charclass
@@ -2931,7 +2931,7 @@ pf2e_class:
     HP: 6
     chargen:
       skills_open: 2
-      skills:
+      skill:
       - Arcana
       choose_feat:
       - charclass
