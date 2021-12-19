@@ -245,9 +245,9 @@ module AresMUSH
         combat.update(key_abil: charclass_ability) if charclass_ability.size == 1
 
         # Starting Magic
-        magic_stats = class_features_info['magic_stats']
+        # magic_stats = class_features_info['magic_stats']
 
-        Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
+        # Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
 
         # Languages
         languages = enactor.pf2_lang
