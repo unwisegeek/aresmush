@@ -339,7 +339,7 @@ pf2e_class:
         armor_light: trained
         armor_unarmored: trained
       skills_open: 4
-
+      skill:
       - Occultism
       - Performance
       magic_stats:
