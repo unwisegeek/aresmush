@@ -117,6 +117,8 @@ module AresMUSH
         skills = bg_skills + heritage_skills + class_skills + subclass_skills
         unique_skills = skills.uniq
 
+        client.emit_ooc "Skills found: #{skills} Unique Skills Found: #{unique_skills}"
+
         if !unique_skills.empty?
           unique_skills.each do |s|
             Pf2eSkills.create(name: s, prof_level: 'trained', character: enactor, cg_skill: true)
