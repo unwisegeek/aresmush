@@ -25,7 +25,7 @@ module AresMUSH
     end
 
     def self.find_skill(name, char)
-      skill = char.skills.find { |s| s.name_upcase == name.upcase }
+      skill = char.skills.select { |s| s.name_upcase == name.upcase }
     end
 
     def self.get_skill_bonus(char, name)
@@ -42,6 +42,18 @@ module AresMUSH
     def self.get_skill_prof(char, name)
       skill = find_skill(name, char)
       prof = skill.prof_level
+    end
+
+    def self.create_skill_for_char(name, char, cg_skill)
+      has_skill = Pf2eSkills.find_skill(name, char)
+
+      return nil if has_skill
+
+      if cg_skill
+        Pf2eSkills.create(name: name, prof_level: 'trained', character: char, cg_skill: true)
+      else
+        Pf2eSkills.create(name: name, prof_level: 'trained', character: char)
+      end
     end
 
   end

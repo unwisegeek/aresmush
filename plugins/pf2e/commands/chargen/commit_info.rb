@@ -121,7 +121,11 @@ module AresMUSH
 
         if !unique_skills.empty?
           unique_skills.each do |s|
-            Pf2eSkills.create(name: s, prof_level: 'trained', character: enactor, cg_skill: true)
+            has_skill = Pf2eSkills.find_skill(s, enactor)
+
+            next if has_skill
+
+            Pf2eSkills.create_skill_for_char(s, enactor, true)
           end
         end
 
