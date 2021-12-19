@@ -51,8 +51,8 @@ module AresMUSH
 
         when "tradition"
 
-          trad = value.key
-          prof = value.value
+          trad = value.keys[0]
+          prof = value.values_at(trad)
 
           magic.tradition[charclass][trad] = prof
 

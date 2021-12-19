@@ -258,7 +258,7 @@ module AresMUSH
 
         clang.each { |l| languages << l } if clang
 
-        enactor.pf2_lang = languages
+        enactor.pf2_lang = languages.uniq
 
         # Traits, Size, Movement, Misc Info
         traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
