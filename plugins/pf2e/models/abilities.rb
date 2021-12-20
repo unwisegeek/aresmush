@@ -60,7 +60,7 @@ module AresMUSH
         messages << t('pf2e.unassigned_abilities', :missing => a.join(", "))
       end
 
-      boosts = enactor.pf2_boosts_working
+      boosts = char.pf2_boosts_working
       boosts.each do |k,v|
         messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
       end
