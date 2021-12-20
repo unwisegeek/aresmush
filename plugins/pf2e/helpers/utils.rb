@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    def self.find_character_ability(char, type, name)
+    def self.find_character_ability(char, type, string)
       case type.downcase
       when 'ability' then element_list = char.abilities
       when 'skill' then element_list = char.skills
@@ -11,7 +11,7 @@ module AresMUSH
 
       return nil if !element_list
 
-      element = element_list.select { |a| a.name_upcase == name.upcase }[0]
+      element = element_list.select { |a| a.name_upcase == string.upcase }
     end
 
     # p can be passed to this method as nil
@@ -221,7 +221,7 @@ module AresMUSH
     def self.award_xp(target, amount)
       xp = target.pf2_xp + amount
       target.update(pf2_xp: xp)
-    end  
+    end
 
   end
 end
