@@ -32,7 +32,7 @@ module AresMUSH
       abonus = Pf2eAbilities.get_ability_mod(
         Pf2eAbilities.get_ability_score(char, 'intelligence')
       )
-      pbonus = has_lore ? Pf2e.get_prof_bonus(enactor, skill.prof_level) : 0
+      pbonus = has_lore ? Pf2e.get_prof_bonus(char, skill.prof_level) : 0
 
       abonus + pbonus
     end

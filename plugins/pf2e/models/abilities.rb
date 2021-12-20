@@ -45,7 +45,7 @@ module AresMUSH
     def self.abilities_messages(char)
       messages = []
 
-      to_assign = enactor.pf2_to_assign
+      to_assign = char.pf2_to_assign
       boost_list = {}
       to_assign.each_pair do |k,v|
         boost_list[k] = v if k.match? "boost"
