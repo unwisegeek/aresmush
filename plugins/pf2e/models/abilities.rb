@@ -56,7 +56,7 @@ module AresMUSH
         a << k unless val.zero?
       end
 
-      if !a.count > 0
+      if !a.empty?
         messages << t('pf2e.unassigned_abilities', :missing => a.join(", "))
       end
 
