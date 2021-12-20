@@ -50,7 +50,7 @@ module AresMUSH
       return obj if obj
 
       obj = Pf2eCombat.create(character: char)
-      char.combat = obj
+      char.update(combat: obj)
 
       return obj
     end
@@ -83,7 +83,7 @@ module AresMUSH
       return 0 if !combat_stats
 
       prof_bonus = Pf2e.get_prof_bonus(char, combat_stats.class_dc)
-      abil_mod = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score combat_stats.key_abil)
+      abil_mod = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score char, combat_stats.key_abil)
 
       item = Pf2e.bonus_from_item(@char, 'class_dc')
       item_bonus = item ? item : 0
