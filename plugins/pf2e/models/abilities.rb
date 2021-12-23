@@ -62,7 +62,11 @@ module AresMUSH
 
       boosts = char.pf2_boosts_working
       boosts.each do |k,v|
-        messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
+        if v.is_a?(Array)
+          messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
+        else
+          next
+        end
       end
 
       scores = {}
