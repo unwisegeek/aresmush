@@ -131,7 +131,7 @@ module AresMUSH
           skills << divine_skill
         end
 
-        defined_skills = skills.difference[ "open" ]
+        defined_skills = skills.difference( [ "open" ] )
 
         unique_skills = defined_skills.uniq
 
