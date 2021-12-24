@@ -250,35 +250,24 @@ module AresMUSH
       end
 
       def charclass_skills
-        return t('pf2e.not_selected_yet', :element => "Character class") if !@class_features_info
+        return [] if !@class_features_info
         charclass_skills = @class_features_info['skills'] ? @class_features_info['skills'] : []
       end
 
       def subclass_skills
-        return t('pf2e.not_selected_yet', :element => "Specialty") if !@subclass_features_info
+        return [] if !@subclass_features_info
 
         subclass_skills = @subclass_features_info['skills'] ? @subclass_features_info['skills'] : []
       end
 
       def bg_skills
-        return t('pf2e.not_selected_yet', :element => "Character class") if !@class_features_info
+        return [] if !@background_info
 
         bg_skills = @background_info['skills'] ? @background_info['skills'] : []
       end
 
       def all_skills
-        allskills = []
-        charclass_skills.each do |c|
-          all_skills << c
-        end
-        subclass_skills.each do |s|
-          all_skills << s
-        end
-        bg_skills.each do |b|
-          all_skills << b
-        end
-
-        allskills
+        charclass_skills + subclass_skills + bg_skills
       end
 
       def unique_skills
