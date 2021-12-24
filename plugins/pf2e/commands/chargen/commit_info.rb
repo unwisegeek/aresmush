@@ -262,7 +262,7 @@ module AresMUSH
 
         combat = Pf2eCombat.update_combat_stats(enactor,combat_stats)
 
-        combat.update(key_abil: charclass_ability) if charclass_ability.size == 1
+        combat.update(key_abil: key_ability) if key_ability.size == 1
 
         # Starting Magic
         # magic_stats = class_features_info['magic_stats']
