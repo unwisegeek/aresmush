@@ -174,9 +174,9 @@ module AresMUSH
         unique_lores = lores.uniq
 
         if !unique_lores.empty?
-          lores.each do |l|
+          unique_lores.each do |l|
 
-            has_lore = Pf2eLores.find_lore(s, enactor)
+            has_lore = Pf2eLores.find_lore(l, enactor)
 
             next if has_lore
 

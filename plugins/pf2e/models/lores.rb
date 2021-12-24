@@ -42,5 +42,16 @@ module AresMUSH
       prof = lore.prof_level
     end
 
+    def self.create_lore_for_char(name, char, cg_lore)
+      has_lore = Pf2eLores.find_lore(name, char)
+
+      return nil if has_lore
+
+      if cg_lore
+        Pf2eLores.create(name: name, prof_level: 'trained', character: char, cg_lore: true)
+      else
+        Pf2eLores.create(name: name, prof_level: 'trained', character: char)
+      end
+
   end
 end
