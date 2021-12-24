@@ -128,7 +128,7 @@ module AresMUSH
           deity = faith_info["deity"]
           deity_info = Global.read_config('pf2e_deities', deity)
           divine_skill = deity_info['divine_skill']
-          skills = skills + divine_skill
+          skills << divine_skill
         end
 
         defined_skills = skills.difference[ "open" ]
