@@ -3,6 +3,7 @@ module AresMUSH
     attribute :pf2_baseinfo_locked, :type => DataType::Boolean
     attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
+    attribute :advancing, :type => DataType::Boolean
 
     attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"", 'specialize_info'=>""}
     attribute :pf2_level, :type => DataType::Integer, :default => 1

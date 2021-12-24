@@ -61,6 +61,7 @@ module AresMUSH
         # Ability Adjustments
         boosts = enactor.pf2_boosts_working
 
+        # Ancestry boosts
         boosts['ancestry'] = ancestry_info['abl_boosts']
 
         if ancestry_info['abl_flaw']
@@ -68,10 +69,11 @@ module AresMUSH
           Pf2eAbilities.update_base_score(enactor, ability, -2)
         end
 
-        to_assign['open boost'] = %w{open open open open}
-        boosts['open boost'] = %w{open open open open}
+        # Free boosts
+        to_assign['openboost'] = %w{open open open open}
+        boosts['free'] = %w{open open open open}
 
-        # Key ability check.
+        # Charclass boosts and key ability check.
         # Some classes have multiple options, some only one.
         # Options can be defined in the charclass or the subclass, depending
         # on the class.
@@ -83,11 +85,11 @@ module AresMUSH
         if key_ability.is_a?(String)
           boosts['charclass'] = key_ability
         else
-          to_assign['class boost'] = key_ability
+          to_assign['classboost'] = key_ability
           client.emit_ooc t('pf2e.multiple_options', :element=>"key ability")
         end
 
-        # Background abilities
+        # Background ability boosts
         # Number of these and their options vary.
 
         bg_ability = background_info['abl_boosts']
@@ -147,13 +149,10 @@ module AresMUSH
 
         # Stash our open skills for later assignment.
 
-
-        free_skills_count = skills.size - unique_skills.size
+        extra_skills = skills.size - unique_skills.size
 
         ary = []
-        open_skills = ary.fill("open", nil, free_skills_count)
-
-        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join, open: open_skills.size)
+        open_skills = ary.fill("open", nil, extra_skills)
 
         # Lores
         bg_lores = background_info["lores"] ? background_info["lores"] : []
@@ -190,6 +189,8 @@ module AresMUSH
         extra_lores = ary.fill("open", nil, open_lores)
 
         to_assign['open_skills'] = open_skills + extra_lores
+
+        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join, open: open_skills.size)
 
         # Feats
         feats = enactor.pf2_feats
