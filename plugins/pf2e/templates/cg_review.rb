@@ -267,7 +267,18 @@ module AresMUSH
       end
 
       def all_skills
-        charclass_skills + subclass_skills + bg_skills
+        allskills = []
+        charclass_skills.each do |c|
+          all_skills << c
+        end
+        subclass_skills.each do |s|
+          all_skills << s
+        end
+        bg_skills.each do |b|
+          all_skills << b
+        end
+
+        allskills
       end
 
       def unique_skills
