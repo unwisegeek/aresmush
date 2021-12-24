@@ -196,7 +196,7 @@ module AresMUSH
         end
       end
 
-      def charclass_boosts
+      def key_ability
         if @baseinfolock
           list = @boosts['charclass']
           list.sort.join(", ")
