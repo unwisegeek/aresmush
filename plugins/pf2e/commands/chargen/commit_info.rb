@@ -180,7 +180,7 @@ module AresMUSH
 
             next if has_lore
 
-            Pf2eLores.create_lore_for_char(name: l, prof_level: 'trained', character: enactor, cg_lore: true)
+            Pf2eLores.create_lore_for_char(l, enactor, true)
           end
         end
 
