@@ -1,10 +1,9 @@
 ---
 pf2e_background:
   Acolyte:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Religion
     lores:
@@ -13,10 +12,9 @@ pf2e_background:
     - Student of the Canon
     special: []
   Acrobat:
-    abl_boosts_open: 1
     req_abl_boosts:
-    - Strength
-    - Dexterity
+    - [ Strength, Dexterity ]
+    - open
     skills:
     - Acrobatics
     lores:
@@ -25,17 +23,18 @@ pf2e_background:
     - Steady Balance
     special: []
   Amnesiac:
-    abl_boosts_open: 3
-    req_abl_boosts: []
+    abl_boosts:
+    - open
+    - open
+    - open
     skills: []
     feats: []
     special: "Amnesiac"
     rare: true
   Animal Whisperer:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Intelligence
+    abl_boosts:
+    - [ Constitution, Intelligence ]
+    - open
     skills:
     - Society
     lores:
@@ -43,10 +42,9 @@ pf2e_background:
     feats:
     - Additional Lore
   Artisan:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Intelligence
+    abl_boosts:
+    - [ Strength, Intelligence ]
+    - open
     skills:
     - Crafting
     lores:
@@ -55,10 +53,9 @@ pf2e_background:
     - Specialty Crafting
     special: []
   Artist:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Charisma
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
     skills:
     - Crafting
     lores:
@@ -67,10 +64,9 @@ pf2e_background:
     - Specialty Crafting
     special: []
   Bandit:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Charisma
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
     skills:
     - Intimidation
     lores:
@@ -85,10 +81,9 @@ pf2e_background:
     - Group Coercion
     special: []
   Barber:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Wisdom
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
     skills:
     - Medicine
     lores:
@@ -97,10 +92,9 @@ pf2e_background:
     - Risky Surgery
     special: []
   Barkeep:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Charisma
+    abl_boosts:
+    - [ Constitution, Charisma ]
+    - open
     skills:
     - Diplomacy
     lores:
@@ -109,10 +103,9 @@ pf2e_background:
     - Hobnobber
     special: []
   Barrister:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Diplomacy
     lores:
@@ -121,40 +114,18 @@ pf2e_background:
     - Group Impression
     special: []
   Blessed:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Wisdom
-    - Charisma
-    skills:
-    - Althean Lore
-    - Angorite Lore
-    - Animusian Lore
-    - Caracorothan Lore
-    - Ceinaran Lore
-    - Daeusite Lore
-    - Danan Lore
-    - Deimosian Lore
-    - Elunan Lore
-    - Gileadean Lore
-    - Gunakharan Lore
-    - Illothan Lore
-    - Korite Lore
-    - Maugrimite Lore
-    - Navosian Lore
-    - Radan Lore
-    - Reosian Lore
-    - Serrielite Lore
-    - Taaran Lore
-    - Tarienite Lore
-    - Thulite Lore
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    lores:
+    - deity
     feats: []
     special: "Blessed: 1st level divine innate spell at will"
     rare: true
   Bookkeeper:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Society
     lores:
@@ -163,10 +134,9 @@ pf2e_background:
     - Eye For Numbers
     special: []
   Bounty Hunter:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Wisdom
+    abl_boosts:
+    - [ Strength, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
@@ -175,10 +145,9 @@ pf2e_background:
     - Experienced Tracker
     special: []
   Charlatan:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Deception
     lores:
@@ -187,10 +156,9 @@ pf2e_background:
     - Charming Liar
     special: []
   Cook:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Intelligence
+    abl_boosts:
+    - [ Constitution, Intelligence ]
+    - open
     skills:
     - Survival
     lores:
@@ -199,27 +167,20 @@ pf2e_background:
     - Seasoned
     special: []
   Courier:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Intelligence
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
     skills:
     - Society
     lores:
-    - Alexandrian Lore
-    - Bryn Myridorn Lore
-    - Dun Mordren Lore
-    - Tashraan Lore
-    - Hextus Lore
-    - Abyss'a Lore
+    - city
     feats:
     - Glean Contents
     special: []
   Criminal:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Intelligence
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
     skills:
     - Stealth
     lores:
@@ -228,42 +189,20 @@ pf2e_background:
     - Experienced Smuggler
     special: []
   Cultist:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Occultism
     lores:
-    - Althean Lore
-    - Angorite Lore
-    - Animusian Lore
-    - Caracorothan Lore
-    - Ceinaran Lore
-    - Daeusite Lore
-    - Danan Lore
-    - Deimosian Lore
-    - Elunan Lore
-    - Gileadean Lore
-    - Gunakharan Lore
-    - Illothan Lore
-    - Korite Lore
-    - Maugrimite Lore
-    - Navosian Lore
-    - Radan Lore
-    - Reosian Lore
-    - Serrielite Lore
-    - Taaran Lore
-    - Tarienite Lore
-    - Thulite Lore
+    - deity
     feats:
     - Schooled In Secrets
     special: []
   Cursed:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Occultism
     lores:
@@ -273,10 +212,9 @@ pf2e_background:
     - Warding Sign
     rare: true
   Detective:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Society
     lores:
@@ -285,27 +223,20 @@ pf2e_background:
     - Streetwise
     special: []
   Emissary:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Society
     lores:
-    - Alexandrian Lore
-    - Bryn Myridorn Lore
-    - Dun Mordren Lore
-    - Tashraan Lore
-    - Hextus Lore
-    - Abyss'a Lore
+    - city
     feats:
     - Multilingual
     special: []
   Entertainer:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Charisma
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
     skills:
     - Performance
     lores:
@@ -314,10 +245,9 @@ pf2e_background:
     - Fascinating Performance
     special: []
   Farmhand:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Athletics
     lores:
@@ -326,11 +256,8 @@ pf2e_background:
     - Assurance - Athletics
     special: []
   Feral Child:
-    abl_boosts_open: 0
-    req_abl_boosts:
-    - Strength
-    - Dexterity
-    - Constitution
+    abl_boosts:
+    - [ Strength, Dexterity, Constitution ]
     skills:
     - Nature
     - Survival
@@ -341,10 +268,9 @@ pf2e_background:
     - Imprecise Scent
     rare: true
   Feybound:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Charisma
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
     skills:
     - Nature
     lores:
@@ -354,10 +280,9 @@ pf2e_background:
     - "Fey's Fortune"
     rare: true
   Field Medic:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Medicine
     lores:
@@ -366,10 +291,9 @@ pf2e_background:
     - Battle Medicine
     special: []
   Fortune Teller:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Occultism
     lores:
@@ -378,10 +302,9 @@ pf2e_background:
     - Lie To Me
     special: []
   Gambler:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Charisma
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
     skills:
     - Deception
     lores:
@@ -390,10 +313,9 @@ pf2e_background:
     - Lie To Me
     special: []
   Gladiator:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Charisma
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
     skills:
     - Performance
     lores:
@@ -402,10 +324,9 @@ pf2e_background:
     - Impressive Performance
     special: []
   Guard:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Charisma
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
     skills:
     - Intimidation
     lores:
@@ -415,8 +336,8 @@ pf2e_background:
     - Quick Coercion
     special: []
   Harrow-Led:
-    abl_boosts_open: 1
-    req_abl_boost: []
+    abl_boost:
+    - open
     skills:
     - Occultism
     - Performance
@@ -427,20 +348,18 @@ pf2e_background:
     - Dubious Knowledge
     special: Harrow
   Haunted:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Wisdom
-    - Charisma
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
     skills:
     - Occultism
     feats: []
     special: "Haunted: free skill + circumstance"
     rare: true
   Herbalist:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Nature
     lores:
@@ -449,30 +368,21 @@ pf2e_background:
     - Natural Medicine
     special: []
   Hermit:
-    abl_boost_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Intelligence
+    abl_boosts:
+    - [ Constitution, Intelligence ]
+    - open
     skills:
     - Nature
     - Occultism
     lores:
-    - Cave Lore
-    - Desert Lore
-    - Plains Lore
-    - Swamp Lore
-    - Winterland Lore
-    - Mountains Lore
-    - Hills Lore
-    - Island Lore
+    - terrain
     feats:
     - Dubious Knowledge
     special: []
   Hunter:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Wisdom
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
@@ -481,10 +391,9 @@ pf2e_background:
     - Survey Wildlife
     special: []
   Insurgent:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Wisdom
+    abl_boosts:
+    - [ Strength, Wisdom ]
+    - open
     skills:
     - Deception
     lores:
@@ -493,10 +402,9 @@ pf2e_background:
     - Lengthy Diversion
     special: []
   Laborer:
-    abl_boosts_open: 1
-    req_abls_boosts:
-    - Strength
-    - Constitution
+    abl_boosts:
+    - [ Strength, Constitution ]
+    - open
     skills:
     - Athletics
     lores:
@@ -504,10 +412,9 @@ pf2e_background:
     feats:
     - Hefty Hauler
   Martial Disciple:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Dexterity
+    abl_boosts:
+    - [ Strength, Dexterity ]
+    - open
     skills:
     - Acrobatics
     - Athletics
@@ -518,10 +425,9 @@ pf2e_background:
     - Quick Jump
     special: []
   Merchant:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Diplomacy
     lores:
@@ -530,10 +436,9 @@ pf2e_background:
     - Bargain Hunter
     special: []
   Miner:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Wisdom
+    abl_boosts:
+    - [ Strength, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
@@ -542,10 +447,9 @@ pf2e_background:
     - Terrain Expertise - Underground
     special: []
   Noble:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Society
     lores:
@@ -554,28 +458,20 @@ pf2e_background:
     - Courtly Graces
     special: []
   Nomad:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
-    - Desert Lore
-    - Plains Lore
-    - Swamp Lore
-    - Winterland Lore
-    - Mountains Lore
-    - Hills Lore
-    - Island Lore
+    - terrain
     feats:
     - Assurance - Survival
     special: []
   Outrider:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Nature
     lores:
@@ -584,42 +480,20 @@ pf2e_background:
     - Express Rider
     special: []
   Pilgrim:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Wisdom
-    - Charisma
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
     skills:
     - Religion
     lores:
-    - Althean Lore
-    - Angorite Lore
-    - Animusian Lore
-    - Caracorothan Lore
-    - Ceinaran Lore
-    - Daeusite Lore
-    - Danan Lore
-    - Deimosian Lore
-    - Elunan Lore
-    - Gileadean Lore
-    - Gunakharan Lore
-    - Illothan Lore
-    - Korite Lore
-    - Maugrimite Lore
-    - Navosian Lore
-    - Radan Lore
-    - Reosian Lore
-    - Serrielite Lore
-    - Taaran Lore
-    - Tarienite Lore
-    - Thulite Lore
+    - deity
     feats:
     - "Pilgrim's Token"
     special: []
   Prisoner:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Constitution
+    abl_boosts:
+    - [ Strength, Constitution ]
+    - open
     skills:
     - Stealth
     lores:
@@ -628,32 +502,29 @@ pf2e_background:
     - Experienced Smuggler
     special: []
   Refugee:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Society
     lores:
-    - SETTLEMENT Lore
+    - city
     feats:
     - Streetwise
     special: []
   Returned:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills: []
     feats:
     - [ "Diehard", "Additional Lore - Boneyard Lore" ]
     special: []
     rare: true
   Root Worker:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Occultism
     lores:
@@ -662,10 +533,9 @@ pf2e_background:
     - Root Magic
     special: []
   Sailor:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Dexterity
+    abl_boosts:
+    - [ Strength, Dexterity ]
+    - open
     skills:
     - Athletics
     - Acrobatics
@@ -676,27 +546,20 @@ pf2e_background:
     - Cat Fall
     special: []
   Scavenger:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
-    - Alexandrian Lore
-    - Bryn Myridorn Lore
-    - Dun Mordren Lore
-    - Tashraan Lore
-    - Hextus Lore
-    - Abyss'a Lore
+    - city
     feats:
     - Forager
     special: []
   Scholar:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Arcana
     - Nature
@@ -708,28 +571,20 @@ pf2e_background:
     - Assurance - SKILL_CHOICE
     special: []
   Scout:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Wisdom
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
-    - Desert Lore
-    - Plains Lore
-    - Swamp Lore
-    - Winterland Lore
-    - Mountains Lore
-    - Hills Lore
-    - Island Lore
+    - terrain
     feats:
     - Forager
     special: []
   Servant:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Charisma
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
     skills:
     - Society
     lores:
@@ -738,10 +593,9 @@ pf2e_background:
     - Read Lips
     special: []
   Spell Seeker:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Arcana
     - Occultism
@@ -751,10 +605,9 @@ pf2e_background:
     - Recognize Spell
     special: []
   Squire:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Constitution
+    abl_boosts:
+    - [ Strength, Constitution ]
+    - open
     skills:
     - Athletics
     lores:
@@ -764,39 +617,31 @@ pf2e_background:
     - Armor Assist
     special: []
   Street Urchin:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Constitution
+    abl_boosts:
+    - [ Dexterity, Constitution ]
+    - open
     skills:
     - Thievery
     lores:
-    - Alexandrian Lore
-    - Bryn Myridorn Lore
-    - Dun Mordren Lore
-    - Tashraan Lore
-    - Hextus Lore
-    - Abyss'a Lore
+    - city
     feats:
     - Pickpocket
     special: []
   Tax Collector:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Charisma
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
     skills:
     - Intimidation
     lores:
-    - SETTLEMENT Lore
+    - city
     feats:
     - Quick Coercion
     special: []
   Teacher:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Wisdom
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
     skills:
     - Performance
     - Society
@@ -806,10 +651,9 @@ pf2e_background:
     - Experienced Professional
     special: []
   Tinker:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Dexterity
-    - Intelligence
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
     skills:
     - Crafting
     lores:
@@ -818,10 +662,9 @@ pf2e_background:
     - Specialty Crafting
     special: []
   Trailblazer:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Wisdom
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
     skills:
     - Survival
     lores:
@@ -830,10 +673,9 @@ pf2e_background:
     - Terrain Expertise - TERRAIN
     special: []
   Translator:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Intelligence
-    - Charisma
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
     skills:
     - Society
     lores:
@@ -842,10 +684,9 @@ pf2e_background:
     - Multilingual
     special: []
   Ward:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Constitution
-    - Charisma
+    abl_boosts:
+    - [ Constitution, Charisma ]
+    - open
     skills:
     - Performance
     lores:
@@ -854,10 +695,9 @@ pf2e_background:
     - Fascinating Performance
     special: []
   Warrior:
-    abl_boosts_open: 1
-    req_abl_boosts:
-    - Strength
-    - Constitution
+    abl_boosts:
+    - [ Strength, Constitution ]
+    - open
     skills:
     - Intimidation
     lores:

@@ -68,22 +68,29 @@ module AresMUSH
           Pf2eAbilities.update_base_score(enactor, ability, -2)
         end
 
-        to_assign['open boost'] = 4
-        boosts['open boost'] = 4
-        to_assign['open anboost'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
-        boosts['open anboost'] = ancestry_info['abl_boosts_open'] if ancestry_info['abl_boosts_open'] > 0
+        to_assign['open boost'] = %w{open open open open}
+        boosts['open boost'] = %w{open open open open}
 
-        # Some classes have their key ability options defined in their specialty.
-        charclass_ability = charclass_info['key_abil'] ? charclass_info['key_abil'] : subclass_info['key_abil']
+        # Key ability check.
+        # Some classes have multiple options, some only one.
+        # Options can be defined in the charclass or the subclass, depending
+        # on the class.
 
-        if charclass_ability.size == 1
-          boosts['charclass'] = charclass_ability
+        key_ability = charclass_info['key_abil'] ?
+          charclass_info['key_abil'] :
+          subclass_info['key_abil']
+
+        if key_ability.is_a?(String)
+          boosts['charclass'] = key_ability
         else
-          to_assign['class boost'] = charclass_ability
-          client.emit_ooc t('pf2e.multiple_options', :element=>"class ability boost")
+          to_assign['class boost'] = key_ability
+          client.emit_ooc t('pf2e.multiple_options', :element=>"key ability")
         end
 
-        bg_ability = background_info['req_abl_boosts']
+        # Background abilities
+        # Number of these and their options vary.
+
+        bg_ability = background_info['abl_boosts']
 
         if bg_ability.size > 1
           client.emit_ooc t('pf2e.multiple_options', :element=>"background ability option")
@@ -96,10 +103,8 @@ module AresMUSH
           boosts['background'] = bg_ability
         end
 
-        to_assign['open bgboost'] = background_info['abl_boosts_open']
-        boosts['open bgboost'] = background_info['abl_boosts_open']
-
         # Opening Skills
+
         bg_skills = background_info["skills"] ? background_info["skills"] : []
 
         if bg_skills.size > 1
@@ -110,14 +115,25 @@ module AresMUSH
           client.emit_ooc t('pf2e.bg_no_options', :element => "skills")
         end
 
-        heritage_skills = heritage_info['skill'] ? heritage_info['skill'] : []
-        class_skills = class_features_info['skill'] ? class_features_info['skill'] : []
-        subclass_skills = subclass_features_info['skill'] ? subclass_features_info['skill'] : []
+        heritage_skills = heritage_info['skills'] ? heritage_info['skills'] : []
+        class_skills = class_features_info['skills'] ? class_features_info['skills'] : []
+        subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
 
-        skills = bg_skills + heritage_skills + class_skills + subclass_skills
-        unique_skills = skills.uniq
+        # Some classes get a skill based on their deity.
+        use_deity = charclass_info.has_key?('use_deity')
 
-        client.emit_ooc "Skills found: #{skills} Unique Skills Found: #{unique_skills}"
+        if use_deity
+          deity = faith_info["deity"]
+          deity_info = Global.read_config('pf2e_deities', deity)
+          divine_skill = deity_info['divine_skill']
+
+        skills = bg_skills + heritage_skills + class_skills + subclass_skills + divine_skill
+
+        defined_skills = skills.difference[ "open" ]
+
+        unique_skills = defined_skills.uniq
+
+        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join, open: open_skills.size )
 
         if !unique_skills.empty?
           unique_skills.each do |s|
@@ -129,25 +145,13 @@ module AresMUSH
           end
         end
 
-        dup_skills = skills.size - unique_skills.size
+        # Stash our open skills for later assignment.
 
-        free_skills = class_features_info["skills_open"] + dup_skills
-        to_assign['open skill'] = free_skills
 
-        # Some classes get a skill based on their deity.
-        use_deity = charclass_info.has_key?('use_deity')
+        free_skills_count = skills.size - unique_skills.size
 
-        if use_deity
-          deity = faith_info["deity"]
-          deity_info = Global.read_config('pf2e_deities', deity)
-          divine_skill = deity_info['divine_skill']
-
-          has_skill = Pf2eSkills.find_skill(divine_skill, enactor)
-
-          if !has_skill
-            Pf2eSkills.create(name: divine_skill, prof_level: 'trained', character: enactor, cg_skill: true)
-          end
-        end
+        ary = []
+        open_skills = ary.fill("open", nil, free_skills_count)
 
         # Lores
         bg_lores = background_info["lores"] ? background_info["lores"] : []
@@ -165,11 +169,25 @@ module AresMUSH
         subclass_lores = subclass_features_info["lores"] ? subclass_features_info["lores"] : []
         lores = bg_lores + class_lores + subclass_lores
 
-        if !lores.empty?
+        unique_lores = lores.uniq
+
+        if !unique_lores.empty?
           lores.each do |l|
+
+            has_lore = Pf2eLores.find_lore(s, enactor)
+
+            next if has_lore
+
             Pf2eLores.create(name: l, prof_level: 'trained', character: enactor, cg_lore: true)
           end
         end
+
+        # Duplicate lores go back into the open skills pool.
+
+        open_lores = lores.size - unique_lores.size
+        extra_lores = ary.fill("open", nil, open_lores)
+
+        to_assign['open_skills'] = open_skills + extra_lores
 
         # Feats
         feats = enactor.pf2_feats

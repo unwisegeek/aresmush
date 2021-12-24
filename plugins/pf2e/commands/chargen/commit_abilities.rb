@@ -32,7 +32,7 @@ module AresMUSH
         to_assign = enactor.pf2_to_assign
         to_assign = to_assign.delete_if { |k, v| k.match? "boost" }
 
-        int_mod = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(enactor, "Intelligence"))
+        int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.getabil(enactor, "Intelligence"))
         int_mod = int_mod.negative? ? 0 : int_mod
 
         open_skills = to_assign["open skills"]
@@ -42,7 +42,7 @@ module AresMUSH
         # Calculate HP
         hp = Pf2eHP.create(character: enactor)
         level = enactor.pf2_level
-        hp_from_con = Pf2eAbilities.get_ability_mod(Pf2eAbilities.get_ability_score(enactor, 'Constitution')) * level
+        hp_from_con = Pf2eAbilities.abilmod(Pf2eAbilities.getabil(enactor, 'Constitution')) * level
         ahp = heritage_info['ancestry_HP'] ? heritage_info['ancestry_HP'] : ancestry_info["HP"]
         max_base_hp = ahp + charclass_info["HP"]
         max_cur_hp = max_base_hp + hp_from_con

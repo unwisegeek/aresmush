@@ -20,11 +20,11 @@ module AresMUSH
 
     ##### CLASS METHODS #####
 
-    def self.get_ability_mod(score=10)
+    def self.abilmod(score=10)
       (score - 10) / 2
     end
 
-    def self.get_ability_score(char, ability)
+    def self.getabil(char, ability)
       object = Pf2e.find_character_ability(char, 'ability', ability)
 
       return 10 if !object

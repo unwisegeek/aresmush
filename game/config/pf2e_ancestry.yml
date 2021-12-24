@@ -4,10 +4,10 @@ pf2e_ancestry:
     HP: 10
     Size: M
     Speed: 20
-    abl_boosts_open: 1
     abl_boosts:
     - Constitution
     - Wisdom
+    - open
     abl_flaw: Charisma
     languages:
     - Tradespeak
@@ -74,10 +74,10 @@ pf2e_ancestry:
     HP: 6
     Size: M
     Speed: 30
-    abl_boosts_open: 1
     abl_boosts:
     - Dexterity
     - Intelligence
+    - open
     abl_flaw: Constitution
     languages:
     - Common
@@ -145,10 +145,10 @@ pf2e_ancestry:
     HP: 8
     Size: S
     Speed: 25
-    abl_boosts_open: 1
     abl_boosts:
     - Constitution
     - Charisma
+    - open
     abl_flaw: Strength
     languages:
     - Common
@@ -214,10 +214,10 @@ pf2e_ancestry:
     HP: 6
     Size: S
     Speed: 25
-    abl_boosts_open: 1
     abl_boosts:
     - Dexterity
     - Charisma
+    - open
     abl_flaw: Wisdom
     languages:
     - Common
@@ -285,10 +285,10 @@ pf2e_ancestry:
     HP: 6
     Size: S
     Speed: 25
-    abl_boosts_open: 1
     able_boosts:
     - Dexterity
     - Wisdom
+    - open
     abl_flaw: Strength
     languages:
     - Common
@@ -355,8 +355,9 @@ pf2e_ancestry:
     HP: 8
     Size: M
     Speed: 25
-    abl_boosts_open: 2
-    abl_boosts: []
+    abl_boosts:
+    - open
+    - open
     languages:
     - Common
     traits:
@@ -426,9 +427,9 @@ pf2e_ancestry:
     HP: 10
     Size: M
     Speed: 25
-    abl_boosts_open: 1
     abl_boosts:
     - Strength
+    - open
     languages:
     - Common
     - Yrch
@@ -478,10 +479,10 @@ pf2e_ancestry:
     HP: 8
     Size: M
     Speed: 25
-    abl_boosts_open: 1
     abl_boosts:
     - Strength
     - Wisdom
+    - open
     abl_flaw: Intelligence
     languages:
     - Common
@@ -534,10 +535,10 @@ pf2e_ancestry:
     HP: 8
     Size: M
     Speed: 25
-    abl_boosts_open: 1
     abl_boosts:
     - Constitution
     - Intelligence
+    - open
     abl_flaws: Wisdom
     languages:
     - Common
@@ -580,9 +581,9 @@ pf2e_ancestry:
   Egalrin:
     HP: 6
     Size: M
-    abl_boosts_open: 1
     abl_boosts:
     - Dexterity
+    - open
     languages:
     - Common
     - Egalrin
