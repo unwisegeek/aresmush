@@ -190,7 +190,7 @@ module AresMUSH
               msg << item
             end
           end
-          
+
           msg.join(", ")
         end
       end
