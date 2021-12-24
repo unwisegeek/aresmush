@@ -1,0 +1,76 @@
+---
+pf2e_lores:
+  deity:
+  - Althean Lore
+  - Angorite Lore
+  - Animusian Lore
+  - Caracorothan Lore
+  - Ceinaran Lore
+  - Daeusite Lore
+  - Danan Lore
+  - Deimosian Lore
+  - Elunan Lore
+  - Gileadean Lore
+  - Gunakharan Lore
+  - Illothan Lore
+  - Korite Lore
+  - Maugrimite Lore
+  - Navosian Lore
+  - Radan Lore
+  - Reosian Lore
+  - Serrielite Lore
+  - Taaran Lore
+  - Tarienite Lore
+  - Thulite Lore
+  city:
+  - Alexandrian Lore
+  - Bryn Myridorn Lore
+  - Dun Mordren Lore
+  - Tashraan Lore
+  - Hextus Lore
+  - "Abyss'a Lore"
+  - Xiang Sei Lore
+  terrain:
+  - Cave Lore
+  - Desert Lore
+  - Plains Lore
+  - Swamp Lore
+  - Winterland Lore
+  - Mountains Lore
+  - Hills Lore
+  - Island Lore
+  creature:
+  - Demon Lore
+  - Devil Lore
+  - Vampire Lore
+  general:
+  - Academia Lore
+  - Accounting Lore
+  - Architecture Lore
+  - Art Lore
+  - Circus Lore
+  - Engineering Lore
+  - Farming Lore
+  - Fishing Lore
+  - Fortune-Telling Lore
+  - Games Lore
+  - Genealogy Lore
+  - Gladiatorial Lore
+  - Guild Lore
+  - Heraldry Lore
+  - Herbalism Lore
+  - Hunting Lore
+  - Labor Lore
+  - Legal Lore
+  - Library Lore
+  - Mercatile Lore
+  - Midwifery Lore
+  - Milling Lore
+  - Mining Lore
+  - Sailing Lore
+  - Scouting Lore
+  - Scribing Lore
+  - Tanning Lore
+  - Theater Lore
+  - Underworld Lore
+  - Warfare Lore
