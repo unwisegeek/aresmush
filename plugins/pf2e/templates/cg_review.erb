@@ -20,7 +20,7 @@
 <%= left("#{item_color}Size%xn: #{size}", 26) -%>
 <%= left("#{item_color}Speed%xn: #{speed} feet", 26) %>
 <%= section_line("Traits") %>
-<%= traits.join(", ") %>
+<%= traits.sort.join(", ") %>
 <%= section_line("Ability Boosts") %>
 <%= "#{item_color}Free Boosts%xn: #{free_boosts} (must be spread to four different stats)" %>
 <%= "#{item_color}Ancestry Boosts%xn: #{ancestry_boosts}"  %>
@@ -29,7 +29,7 @@
 <%= "#{item_color}Key Ability%xn: #{key_ability}" %>
 <%= section_line("Other Stuff") %>
 <%= "#{item_color}Special Senses and Abilities%xn: #{specials}" %>
-<%= "#{item_color}Skills%xn: #{unique_skills} + #{open_skills} + #{int_mod} open" %>
+<%= "#{item_color}Skills%xn: #{unique_skills.join(", ")} + #{open_skills} + #{int_mod} open" %>
 <%= "#{item_color}Starting Languages%xn: #{languages}" %>
 <%= section_line("Warnings") %>
 <%= messages %>
