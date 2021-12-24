@@ -119,15 +119,17 @@ module AresMUSH
         class_skills = class_features_info['skills'] ? class_features_info['skills'] : []
         subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
 
-        # Some classes get a skill based on their deity.
+        skills = bg_skills + heritage_skills + class_skills + subclass_skills
+
+        # Some classes also get a skill based on their deity.
         use_deity = charclass_info.has_key?('use_deity')
 
         if use_deity
           deity = faith_info["deity"]
           deity_info = Global.read_config('pf2e_deities', deity)
           divine_skill = deity_info['divine_skill']
-
-        skills = bg_skills + heritage_skills + class_skills + subclass_skills + divine_skill
+          skills = skills + divine_skill
+        end
 
         defined_skills = skills.difference[ "open" ]
 
