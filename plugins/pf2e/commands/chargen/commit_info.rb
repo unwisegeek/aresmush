@@ -135,8 +135,6 @@ module AresMUSH
 
         unique_skills = defined_skills.uniq
 
-        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join, open: open_skills.size )
-
         if !unique_skills.empty?
           unique_skills.each do |s|
             has_skill = Pf2eSkills.find_skill(s, enactor)
@@ -154,6 +152,8 @@ module AresMUSH
 
         ary = []
         open_skills = ary.fill("open", nil, free_skills_count)
+
+        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join, open: open_skills.size)
 
         # Lores
         bg_lores = background_info["lores"] ? background_info["lores"] : []
