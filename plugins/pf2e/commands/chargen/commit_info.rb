@@ -119,7 +119,9 @@ module AresMUSH
         class_skills = class_features_info['skills'] ? class_features_info['skills'] : []
         subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
 
-        # Some classes get a skill based on their deity.
+        skills = bg_skills + heritage_skills + class_skills + subclass_skills
+
+        # Some classes also get a skill based on their deity.
         use_deity = charclass_info.has_key?('use_deity')
 
         if use_deity

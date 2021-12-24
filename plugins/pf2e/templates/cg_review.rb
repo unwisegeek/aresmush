@@ -212,7 +212,7 @@ module AresMUSH
           else
             key_ability
           end
-          
+
         end
       end
 
