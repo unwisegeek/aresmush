@@ -158,7 +158,8 @@ module AresMUSH
                 msg << item.join( " and ")
               else
                 msg << item
-            end
+              end
+            end 
 
             msg.join(", ")
           else
@@ -188,6 +189,7 @@ module AresMUSH
             else
               msg << item
             end
+          end
 
           msg.join(", ")
         end

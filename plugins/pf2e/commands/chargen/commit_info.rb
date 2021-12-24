@@ -126,6 +126,7 @@ module AresMUSH
           deity = faith_info["deity"]
           deity_info = Global.read_config('pf2e_deities', deity)
           divine_skill = deity_info['divine_skill']
+        end
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills + divine_skill
 
