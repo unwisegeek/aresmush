@@ -52,6 +52,7 @@ module AresMUSH
       else
         Pf2eLores.create(name: name, prof_level: 'trained', character: char)
       end
+    end
 
   end
 end
