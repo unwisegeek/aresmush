@@ -404,7 +404,7 @@ pf2e_specialty:
   Druid:
     Animal:
       chargen:
-        skill:
+        skills:
         - Athletics
         feat:
         - Animal Companion
@@ -417,7 +417,7 @@ pf2e_specialty:
         companion: any
     Leaf:
       chargen:
-        skill:
+        skills:
         - Diplomacy
         feat:
         - Leshy Familiar
@@ -431,7 +431,7 @@ pf2e_specialty:
         familiar: Leshy
     Storm:
       chargen:
-        skill:
+        skills:
         - Acrobatics
         feat:
         - Storm Born
@@ -446,7 +446,7 @@ pf2e_specialty:
         - "Character must not pollute the air."
     Wild:
       chargen:
-        skill:
+        skills:
         - Intimidation
         feat:
         - Wild Shape
@@ -459,7 +459,7 @@ pf2e_specialty:
   Investigator:
     Alchemical Sciences:
       chargen:
-        skill:
+        skills:
         - Crafting
         feat:
         - Alchemical Crafting
@@ -474,14 +474,14 @@ pf2e_specialty:
         - Expeditious Inspection
     Forensic Medicine:
       chargen:
-        skill:
+        skills:
         - Medicine
         feat:
         - Forensic Acumen
         - Battle Medicine
     Interrogation:
       chargen:
-        skill:
+        skills:
         - Diplomacy
         feat:
         - No Cause For Alarm
@@ -492,7 +492,7 @@ pf2e_specialty:
       chargen:
         choose_feat:
         - ancestry
-        skill:
+        skills:
         - Society
         magic_stats:
           cantrip:
@@ -503,7 +503,7 @@ pf2e_specialty:
         curse: Ancestral Meddling
     Battle:
       chargen:
-        skill:
+        skills:
         - Athletics
         magic_stats:
           cantrip:
@@ -517,7 +517,7 @@ pf2e_specialty:
           armor_heavy: trained
     Bones:
       chargen:
-        skill:
+        skills:
         - Medicine
         magic_stats:
           cantrip:
@@ -528,7 +528,7 @@ pf2e_specialty:
         curse: Living Death
     Cosmos:
       chargen:
-        skill:
+        skills:
         - Nature
         magic_stats:
           cantrip:
@@ -539,7 +539,7 @@ pf2e_specialty:
         curse: Sky's Call
     Flames:
       chargen:
-        skill:
+        skills:
         - Acrobatics
         magic_stats:
           cantrip:
@@ -550,7 +550,7 @@ pf2e_specialty:
         curse: Engulfing Flames
     Life:
       chargen:
-        skill:
+        skills:
         - Medicine
         magic_stats:
           cantrip:
@@ -561,7 +561,7 @@ pf2e_specialty:
         curse: Outpouring Life
     Lore:
       chargen:
-        skill:
+        skills:
         - Occultism
         magic_stats:
           cantrip:
@@ -572,7 +572,7 @@ pf2e_specialty:
         curse: Torrential Knowledge
     Tempest:
       chargen:
-        skill:
+        skills:
         - Nature
         magic_stats:
           cantrip:
@@ -603,7 +603,7 @@ pf2e_specialty:
       - Intelligence
     Mastermind:
       chargen:
-        skill:
+        skills:
         - Society
       choose:
         choice_name: Second Trained Skill
@@ -618,7 +618,7 @@ pf2e_specialty:
       - Intelligence
     Ruffian:
       chargen:
-        skill:
+        skills:
         - Intimidation
         combat_stats:
           armor_med: trained
@@ -627,7 +627,7 @@ pf2e_specialty:
       - Strength
     Scoundrel:
       chargen:
-        skill:
+        skills:
         - Deception
         - Diplomacy
       key_abil:
@@ -635,7 +635,7 @@ pf2e_specialty:
       - Charisma
     Thief:
       chargen:
-        skill:
+        skills:
         - Thievery
   Sorcerer:
     Aberrant:
@@ -649,7 +649,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Tentacular Limbs
-        skill:
+        skills:
         - Intimidation
         - Occultism
       advance:
@@ -704,7 +704,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Angelic Halo
-        skill:
+        skills:
         - Diplomacy
         - Religion
       advance:
@@ -759,7 +759,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Glutton's Law
-        skill:
+        skills:
         - Intimidation
         - Religion
       advance:
@@ -814,7 +814,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Diabolic Edict
-        skill:
+        skills:
         - Deception
         - Religion
       advance:
@@ -883,7 +883,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Dragon Claws
-        skill:
+        skills:
         - Arcana
         - Intimidation
       advance:
@@ -946,7 +946,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Elemental Toss
-        skill:
+        skills:
         - Nature
         - Intimidation
       advance:
@@ -1001,7 +1001,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Faerie Dust
-        skill:
+        skills:
         - Nature
         - Deception
       advance:
@@ -1065,7 +1065,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Genie's Veil
-        skill:
+        skills:
         - Arcana
         - Deception
       advance:
@@ -1117,7 +1117,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Jealous Hex
-        skill:
+        skills:
         - Occultism
         - Deception
       advance:
@@ -1172,7 +1172,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Ancestral Memories
-        skill:
+        skills:
         - Arcana
         - Society
       advance:
@@ -1227,7 +1227,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Nymph's Token
-        skill:
+        skills:
         - Diplomacy
         - Nature
       advance:
@@ -1282,7 +1282,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Sepulchral Mask
-        skill:
+        skills:
         - Intimidation
         - Religion
       advance:
@@ -1337,7 +1337,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Dim the Light
-        skill:
+        skills:
         - Occultism
         - Stealth
       advance:
@@ -1392,7 +1392,7 @@ pf2e_specialty:
           bloodline:
             spell:
             - Undeath's Blessing
-        skill:
+        skills:
         - Intimidation
         - Religion
       advance:
@@ -1463,7 +1463,7 @@ pf2e_specialty:
   Witch:
     Curse:
       chargen:
-        skill:
+        skills:
         - Occultism
         magic_stats:
           tradition:
@@ -1488,7 +1488,7 @@ pf2e_specialty:
               occult: legendary
     Fate:
       chargen:
-        skill:
+        skills:
         - Occultism
         magic_stats:
           tradition:
@@ -1513,7 +1513,7 @@ pf2e_specialty:
               occult: legendary
     Fervor:
       chargen:
-        skill:
+        skills:
         - Religion
         magic_stats:
           tradition:
@@ -1538,7 +1538,7 @@ pf2e_specialty:
               divine: legendary
     Night:
       chargen:
-        skill:
+        skills:
         - Occultism
         magic_stats:
           tradition:
@@ -1563,7 +1563,7 @@ pf2e_specialty:
               occult: legendary
     Rune:
       chargen:
-        skill:
+        skills:
         - Arcana
         magic_stats:
           tradition:
@@ -1588,7 +1588,7 @@ pf2e_specialty:
               arcane: legendary
     Wild:
       chargen:
-        skill:
+        skills:
         - Nature
         magic_stats:
           tradition:
@@ -1618,7 +1618,7 @@ pf2e_specialty:
               primal: legendary
     Winter:
       chargen:
-        skill:
+        skills:
         - Nature
         magic_stats:
           tradition:

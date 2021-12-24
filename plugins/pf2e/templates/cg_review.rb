@@ -28,6 +28,7 @@ module AresMUSH
         @baseinfolock = @char.pf2_baseinfo_locked
         @abil_lock = @char.pf2_abilities_locked
         @class_features_info = @charclass_info['chargen']
+        @subclass_features_info = @subclass_info['chargen']
         @to_assign = @char.pf2_to_assign
         @boosts = @char.pf2_boosts_working
 
@@ -248,17 +249,33 @@ module AresMUSH
         @ancestry_info['languages'] ? @ancestry_info['languages'].sort.join(", ") : "Tradespeak"
       end
 
-      def skills
+      def charclass_skills
         return t('pf2e.not_selected_yet', :element => "Character class") if !@class_features_info
-        charclass_skills = @class_features_info['skill'] ? @class_features_info['skill'] : []
+        charclass_skills = @class_features_info['skills'] ? @class_features_info['skills'] : []
+      end
 
-        open_skills = @class_features_info['skills_open']
+      def subclass_skills
+        return t('pf2e.not_selected_yet', :element => "Specialty") if !@subclass_features_info
 
-        "#{charclass_skills.join} + #{open_skills}"
+        subclass_skills = @subclass_features_info['skills'] ? @subclass_features_info['skills'] : []
       end
 
       def bg_skills
-        @to_assign['bgskill'].join(" or ") if @baseinfolock
+        return t('pf2e.not_selected_yet', :element => "Character class") if !@class_features_info
+
+        bg_skills = @background_info['skills'] ? @background_info['skills'] : []
+      end
+
+      def all_skills
+        charclass_skills + subclass_skills + bg_skills
+      end
+
+      def unique_skills
+        all_skills.difference([ "open"]).uniq
+      end
+
+      def open_skills
+        all_skills.size - unique_skills.size
       end
 
       def messages
