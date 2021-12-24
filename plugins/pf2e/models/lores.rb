@@ -29,8 +29,8 @@ module AresMUSH
 
     def self.get_lore_bonus(char, name)
       has_lore = find_lore(name, char)
-      abonus = Pf2eAbilities.get_ability_mod(
-        Pf2eAbilities.get_ability_score(char, 'intelligence')
+      abonus = Pf2eAbilities.abilmod(
+        Pf2eAbilities.getabil(char, 'intelligence')
       )
       pbonus = has_lore ? Pf2e.get_prof_bonus(char, skill.prof_level) : 0
 

@@ -92,8 +92,8 @@ module AresMUSH
         spell_prof = magic.spell_prof
         prof_bonus = Pf2e.get_prof_bonus(@caster, spell_prof)
 
-        abil_mod = Pf2eAbilities.get_ability_mod(
-          Pf2eAbilities.get_ability_score @caster, spell_abil
+        abil_mod = Pf2eAbilities.abilmod(
+          Pf2eAbilities.getabil @caster, spell_abil
         )
 
         dc = 10 + abil_mod + prof_bonus

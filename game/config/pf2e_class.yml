@@ -1,8 +1,7 @@
 ---
 pf2e_class:
   Alchemist:
-    key_abil:
-    - Intelligence
+    key_abil: Intelligence
     HP: 8
     chargen:
       choose_feat:
@@ -23,9 +22,11 @@ pf2e_class:
         fortitude: expert
         reflex: expert
         will: trained
-      skills_open: 3
-      skill:
+      skills:
       - Crafting
+      - open
+      - open
+      - open
       feat:
       - Alchemical Crafting
     advance:
@@ -157,8 +158,7 @@ pf2e_class:
         - charclass
         - skill
   Barbarian:
-    key_abil:
-    - Strength
+    key_abil: Strength
     HP: 12
     chargen:
       choose_feat:
@@ -175,9 +175,11 @@ pf2e_class:
         fortitude: expert
         reflex: trained
         will: expert
-      skills_open: 3
-      skill:
+      skills:
       - Athletics
+      - open
+      - open
+      - open
       action:
       - Rage
     advance:
@@ -323,8 +325,7 @@ pf2e_class:
         raise:
         - ability
   Bard:
-    key_abil:
-    - Charisma
+    key_abil: Charisma
     HP: 8
     chargen:
       combat_stats:
@@ -338,10 +339,13 @@ pf2e_class:
         wp_unarmed: trained
         armor_light: trained
         armor_unarmored: trained
-      skills_open: 4
-      skill:
+      skills:
       - Occultism
       - Performance
+      - open
+      - open
+      - open
+      - open
       magic_stats:
         max_spell_level: 1
         tradition:
@@ -604,9 +608,10 @@ pf2e_class:
     - Dexterity
     HP: 10
     chargen:
-      skills_open: 2
-      skill:
+      skills:
       - Religion
+      - open
+      - open
       combat_stats:
         wp_simple: trained
         wp_martial: trained
@@ -795,13 +800,13 @@ pf2e_class:
         - ability
   Cleric:
     use_deity: true
-    key_abil:
-    - Wisdom
+    key_abil: Wisdom
     HP: 8
     chargen:
-      skills_open: 2
-      skill:
+      skills:
       - Religion
+      - open
+      - open
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -999,15 +1004,15 @@ pf2e_class:
         - general
         - skill
   Druid:
-    key_abil:
-    - Wisdom
+    key_abil: Wisdom
     HP: 8
     chargen:
       languages:
       - Druidic
-      skills_open: 2
-      skill:
+      skills:
       - Nature
+      - open
+      - open
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -1254,10 +1259,12 @@ pf2e_class:
         fortitude: expert
         reflex: expert
         will: trained
-      skills_open: 3
-      skill:
+      skills:
       - Acrobatics
       - Athletics
+      - open
+      - open
+      - open
       feat:
         general:
         - Shield Block
@@ -1434,9 +1441,12 @@ pf2e_class:
     key_abil: Intelligence
     HP: 8
     chargen:
-      skills_open: 4
-      skill:
+      skills:
       - Society
+      - open
+      - open
+      - open
+      - open
       charclass:
       - Strategic Strike 1d6
       - On the Case
@@ -1627,8 +1637,11 @@ pf2e_class:
     - Dexterity
     HP: 10
     chargen:
-      skills_open: 4
-      skill: []
+      skills:
+      - open
+      - open
+      - open
+      - open
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -1800,9 +1813,12 @@ pf2e_class:
     key_abil: Charisma
     HP: 8
     chargen:
-      skills_open: 3
-      skill:
+      skills:
       - Religion
+      - open
+      - open
+      - open
+      - open
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -2077,10 +2093,13 @@ pf2e_class:
     - Dexterity
     HP: 10
     chargen:
-      skills_open: 4
-      skill:
+      skills:
       - Nature
       - Survival
+      - open
+      - open
+      - open
+      - open
       choose_feat:
       - charclass
       combat_stats:
@@ -2251,9 +2270,15 @@ pf2e_class:
   Rogue:
     HP: 8
     chargen:
-      skills_open: 7
-      skill:
+      skills:
       - Stealth
+      - open
+      - open
+      - open
+      - open
+      - open
+      - open
+      - open
       choose_feat:
       - charclass
       - skill
@@ -2440,11 +2465,12 @@ pf2e_class:
         - ability
         - skill
   Sorcerer:
-    key_abil:
-    - Charisma
+    key_abil: Charisma
     HP: 6
     chargen:
-      skills_open: 2
+      skills:
+      - open
+      - open
       combat_stats:
         wp_simple: trained
         wp_unarmed: trained
@@ -2698,11 +2724,13 @@ pf2e_class:
         raise:
         - ability
   Witch:
-    key_abil:
-    - Intelligence
+    key_abil: Intelligence
     HP: 6
     chargen:
-      skills_open: 3
+      skills:
+      - open
+      - open
+      - open
       choose_feat:
       - charclass
       combat_stats:
@@ -2930,9 +2958,10 @@ pf2e_class:
     key_abil: Intelligence
     HP: 6
     chargen:
-      skills_open: 2
-      skill:
+      skills:
       - Arcana
+      - open
+      - open
       choose_feat:
       - charclass
       charclass:

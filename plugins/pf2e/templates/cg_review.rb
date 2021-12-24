@@ -150,15 +150,20 @@ module AresMUSH
           list.sort.join(", ")
         else
           list = @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
-          list.is_a?(Array) ? list.join(" and ") : list
-        end
-      end
 
-      def free_ancestry_boosts
-        if @baseinfolock
-          @to_assign['open anboost'] ? @to_assign['open anboost'] : 0
-        else
-          @ancestry_info["abl_boosts_open"] ? @ancestry_info["abl_boosts_open"] : 0
+          msg = []
+          if list.is_a?(Array)
+            list.each do |item|
+              if item.is_a?(Array)
+                msg << item.join( " and ")
+              else
+                msg << item
+            end
+
+            msg.join(", ")
+          else
+            list
+          end
         end
       end
 
@@ -166,21 +171,25 @@ module AresMUSH
         @ancestry_info["abl_flaw"] ? @ancestry_info["abl_flaw"] : "None."
       end
 
-      def background_boosts
+      def bg_boosts
         if @baseinfolock
           list = @boosts['background']
           list.sort.join(", ")
         else
-          list = @background_info["req_abl_boosts"] ? @background_info["req_abl_boosts"] : []
-          list.empty? ? "None required" : list.join(" or ")
-        end
-      end
+          list = @background_info["abl_boosts"] ? @background_info["abl_boosts"] : []
 
-      def free_bg_boosts
-        if @baseinfolock
-          @to_assign['open bgboost'] ? @to_assign['open bgboost'] : 0
-        else
-          @background_info["abl_boosts_open"] ? @background_info["abl_boosts_open"] : 0
+          return "None." if list.empty?
+
+          msg = []
+
+          list.each do |item|
+            if item.is_a?(Array)
+              msg << item.join(" or ")
+            else
+              msg << item
+            end
+
+          msg.join(", ")
         end
       end
 
@@ -189,13 +198,25 @@ module AresMUSH
           list = @boosts['charclass']
           list.sort.join(", ")
         else
-          @charclass_info["key_abil"] ? @charclass_info["key_abil"].join(" or ") : "Class not set."
+
+          key_ability = @subclass_info['key_abil'] ?
+            @subclass_info['key_abil'] :
+            @charclass_info['key_abil']
+
+          return "Not set." if !key_ability
+
+          if key_ability.is_a?(Array)
+            key_ability.join(" or ")
+          else
+            key_ability
+          end
+          
         end
       end
 
       def con_mod
         if @abil_lock
-          con_mod = Pf2e.get_ability_mod(Pf2eAbilities.get_ability_score(@char, "Constitution"))
+          con_mod = Pf2e.abilmod(Pf2eAbilities.getabil(@char, "Constitution"))
         else
           con_mod = "CON Mod"
         end
@@ -203,7 +224,7 @@ module AresMUSH
 
       def int_mod
         if @abil_lock
-          int_mod = Pf2e.get_ability_mod(Pf2eAbilities.get_ability_score(@char, "Intelligence"))
+          int_mod = Pf2e.abilmod(Pf2eAbilities.getabil(@char, "Intelligence"))
         else
           int_mod = "INT Mod"
         end
@@ -245,7 +266,7 @@ module AresMUSH
           msgs = Pf2eAbilities.abilities_messages(@char)
           msgs ? msgs : t('pf2e.abil_options_ok')
         else
-          msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option)
+          msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option, @to_assign)
           msgs ? msgs : t('pf2e.cg_options_ok')
         end
       end

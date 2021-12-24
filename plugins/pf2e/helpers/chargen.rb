@@ -47,7 +47,7 @@ module AresMUSH
       end
     end
 
-    def self.chargen_messages(ancestry, heritage, background, charclass, specialize, faith, subclass_info)
+    def self.chargen_messages(ancestry, heritage, background, charclass, specialize, faith, subclass_info, to_assign=nil)
       messages = []
 
       missing_info = Pf2e.missing_base_info(ancestry, heritage, background, charclass, faith)
