@@ -92,7 +92,7 @@ module AresMUSH
       10 + prof_bonus + abil_mod + item_bonus
     end
 
-    def get_perception(char)
+    def self.get_perception(char)
       abil_mod = Pf2e.get_linked_attr_mod(char, 'perception')
       combat_stats = char.combat
 
