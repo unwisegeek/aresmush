@@ -145,7 +145,7 @@ module AresMUSH
         if @baseinfolock
           open_list = @to_assign['openboost']
           still_free = open_list.count("open")
-          assigned = open_list.difference("open").empty? ?
+          assigned = open_list.difference([ "open" ]).empty? ?
                      "None assigned" :
                      open_list.difference("open").sort.join
 
