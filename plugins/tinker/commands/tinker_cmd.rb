@@ -13,10 +13,10 @@ module AresMUSH
         
         score = Pf2eAbilities.get_score(char,"Wisdom")
         
-        mod = Pf2eAbiliies.abilmod(score)
+        mod = Pf2eAbilities.abilmod(score)
         
         client.emit "Score: #{score}"
-        client.emit "Mod: @{mod}"
+        client.emit "Mod: #{mod}"
       end
 
     end
