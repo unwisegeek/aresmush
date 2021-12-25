@@ -24,7 +24,7 @@ module AresMUSH
       (score - 10) / 2
     end
 
-    def self.getabil(char, stat)
+    def self.get_score(char, stat)
       object = Pf2e.find_character_ability(char, 'ability', stat)
 
       return 10 if !object

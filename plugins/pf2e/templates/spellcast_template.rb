@@ -93,7 +93,7 @@ module AresMUSH
         prof_bonus = Pf2e.get_prof_bonus(@caster, spell_prof)
 
         abil_mod = Pf2eAbilities.abilmod(
-          Pf2eAbilities.getabil @caster, spell_abil
+          Pf2eAbilities.get_score @caster, spell_abil
         )
 
         dc = 10 + abil_mod + prof_bonus
