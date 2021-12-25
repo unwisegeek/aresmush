@@ -9,14 +9,17 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Testchar")
+        char=Character.find_one_by_name("Testchar")
         
-        score = Pf2eAbilities.get_score(char,"Wisdom")
+        result = ClassTargetFinder.find("Wisdom",Pf2eAbilities,char)
+        if result.found?
+            client.emit "#{result.target.name}"
+            client.emit "#{result.target.base_val}"   
+            client.emit "#{result.target.character.name}"
+        else 
+            client.emit "#{result.error}"
+        end
         
-        mod = Pf2eAbilities.abilmod(score)
-        
-        client.emit "Score: #{score}"
-        client.emit "Mod: #{mod}"
       end
 
     end
