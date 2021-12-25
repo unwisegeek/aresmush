@@ -142,7 +142,17 @@ module AresMUSH
       end
 
       def free_boosts
-        @baseinfolock ? @to_assign['open boost'] : 4
+        if @baseinfolock
+          open_list = @to_assign['openboost']
+          still_free = open_list.count("open")
+          assigned = open_list.difference("open").empty? ?
+                     "None assigned" :
+                     open_list.difference("open").sort.join
+
+          "#{assigned} plus #{still_free} free"
+        else
+          4
+        end
       end
 
       def ancestry_boosts
@@ -198,8 +208,8 @@ module AresMUSH
 
       def key_ability
         if @baseinfolock
-          list = @boosts['charclass']
-          list.sort.join(", ")
+          list = @to_assign['classboost'] ? @to_assign['classboost'] : @boosts['charclass']
+          list.sort.join(" or ")
         else
 
           key_ability = @subclass_info['key_abil'] ?
@@ -283,7 +293,7 @@ module AresMUSH
           t('pf2e.cg_and_abil_lock_ok')
         elsif @baseinfolock
           msgs = Pf2eAbilities.abilities_messages(@char)
-          msgs ? msgs : t('pf2e.abil_options_ok')
+          msgs ? msgs.flatten : t('pf2e.abil_options_ok')
         else
           msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option, @to_assign)
           msgs ? msgs : t('pf2e.cg_options_ok')
