@@ -101,12 +101,14 @@ module AresMUSH
 
         return "I HAVE NO ABILITIES HERE" if !abil_list
 
+        return abil_list
         list = []
         abil_list.each_with_index do |a,i|
           name = a.name
           score = a.mod_val ? a.mod_val : a.base_val
           list << format_ability(name, score, i)
         end
+
         list
       end
 
