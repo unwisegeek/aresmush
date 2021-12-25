@@ -74,7 +74,7 @@ en:
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."
 
-    unassigned_abilities: "You must assign all boosts and boost options before committing. Still to assign: %{missing}"
+    unassigned_abilities: "%xrYou must assign all boosts and boost options before committing. Still to assign: %{missing}%xn"
     unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."
     unassigned_title: "Unassigned Character Options: %{name}"
 

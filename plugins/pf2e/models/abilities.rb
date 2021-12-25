@@ -63,11 +63,11 @@ module AresMUSH
 
       if !a.empty?
         messages << t('pf2e.unassigned_abilities',
-          :missing => a.join(", ")
+          :missing => a.uniq.sort.join(", ")
         )
       end
 
-      return messages if !messages.empty?
+      return messages.flatten if !messages.empty?
 
       boosts = char.pf2_boosts_working
       boosts.each do |k,v|
