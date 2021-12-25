@@ -9,11 +9,7 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Testchar")
-
-        strength = Pf2e.find_character_ability(char, 'ability', "Strength")
-        
-        client.emit "Strength: #{strength.name}"
+        client.emit_success "Done!"
       end
 
     end
