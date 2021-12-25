@@ -32,7 +32,7 @@ module AresMUSH
       skill = find_skill(name, char)
       linked_attr = get_linked_attr(name)
       abonus = Pf2eAbilities.abilmod(
-        Pf2eAbilities.getabil(char, linked_attr)
+        Pf2eAbilities.get_score(char, linked_attr)
       )
       pbonus = skill ? Pf2e.get_prof_bonus(char, skill.prof_level) : 0
 

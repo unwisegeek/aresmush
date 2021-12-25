@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    def self.find_character_ability(char, type, string)
+    def self.find_character_ability(char, type, string="")
       case type.downcase
       when 'ability' then element_list = char.abilities
       when 'skill' then element_list = char.skills
@@ -10,8 +10,6 @@ module AresMUSH
       end
 
       return nil if !element_list
-
-      return string
 
       element = element_list.select { |a| a.name_upcase == string.upcase }.first
     end
@@ -39,19 +37,19 @@ module AresMUSH
       case attr_type
       when 'skill'
         skill_mod = Pf2eSkills.get_linked_attr(value)
-        return Pf2eAbilities.abilmod(Pf2eAbilities.getabil(char, skill_mod))
+        return Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, skill_mod))
       when 'lore'
-        return Pf2eAbilities.abilmod(Pf2eAbilities.getabil char, 'Intelligence')
+        return Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, 'Intelligence')
       when nil
         case value.downcase
         when 'fort', 'fortitude'
-          return Pf2eAbilities.abilmod(Pf2eAbilities.getabil char, 'Constitution')
+          return Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, 'Constitution')
         when 'ref', 'reflex', 'ranged', 'finesse'
-          return Pf2eAbilities.abilmod(Pf2eAbilities.getabil char, 'Dexterity')
+          return Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, 'Dexterity')
         when 'will', 'perception'
-          return Pf2eAbilities.abilmod(Pf2eAbilities.getabil char, 'Wisdom')
+          return Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, 'Wisdom')
         when 'melee'
-          return Pf2eAbilities.abilmod(Pf2eAbilities.getabil char, 'Strength')
+          return Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, 'Strength')
         end
       end
     end
@@ -68,13 +66,13 @@ module AresMUSH
       when 'melee', 'ranged', 'unarmed', 'finesse' then 0
 
       when 'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'
-        Pf2eAbilities.abilmod Pf2eAbilities.getabil(char, word)
+        Pf2eAbilities.abilmod Pf2eAbilities.get_score(char, word)
 
       when 'str', 'dex', 'con', 'int', 'wis', 'cha'
         shortname = word.upcase
         obj = char.abilities.select { |a| a.shortname == shortname }
         return 0 if !obj
-        Pf2eAbilities.abilmod(Pf2eAbilities.getabil(char, obj.name))
+        Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, obj.name))
 
       when 'sneak attack'
         value = char.combat&.sneak_attack
