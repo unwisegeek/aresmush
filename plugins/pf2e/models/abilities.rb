@@ -46,27 +46,32 @@ module AresMUSH
       messages = []
 
       to_assign = char.pf2_to_assign
+
       boost_list = {}
       to_assign.each_pair do |k,v|
-        boost_list[k] = v if k.match? "boost"
+        boost_list[k] = v if k.match?("boost")
       end
       a = []
       boost_list.each_pair do |k,v|
-        val = v.is_a?(Array) ? v.size : v
-        a << k unless val.zero?
+        free_unassigned = v.include?("open")
+        choice_not_made = v.values.any? { |v| v.is_a?(Array) }
+
+        a << k if free_unassigned || choice_not_made
+
+        a << k if boost_list['classboost'] && boost_list['classboost'].is_a?(Array)
       end
 
       if !a.empty?
-        messages << t('pf2e.unassigned_abilities', :missing => a.join(", "))
+        messages << t('pf2e.unassigned_abilities',
+          :missing => a.join(", ")
+        )
       end
+
+      return messages if !messages.empty?
 
       boosts = char.pf2_boosts_working
       boosts.each do |k,v|
-        if v.is_a?(Array)
-          messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
-        else
-          next
-        end
+        messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
       end
 
       scores = {}
