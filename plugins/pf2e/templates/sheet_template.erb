@@ -20,7 +20,7 @@
 <%= section_line("Abilities") %>
 <% end %>
 <% if section == "ability" || "all" %>
-<% abilities.each do |a| %>
+<% abilities.each do |a| -%>
 <% a -%>
 <% end %>
 <% end %>
@@ -35,8 +35,8 @@
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
 <%= section_line("Attacks") %>
 <%= section_line("Defenses") %>
-<% saves.each do |save| %>
-<%= save %>
+<% saves.each do |save| -%>
+<% save -%>
 <% end %>
 <%= section_line("Conditions") %>
 <%= conditions %>
@@ -45,11 +45,11 @@
 <%= section_line("Skills") %>
 <% end %>
 <% if section == "skills" || "all" %>
-<% skills.each do |s| %>
+<% skills.each do |s| -%>
 <%= s -%>
 <% end %>
 <%= section_line("Lores") %>
-<% lores.each do |lore| %>
+<% lores.each do |lore| -%>
 <%= lore -%>
 <% end %>
 <% end %>
@@ -57,7 +57,7 @@
 <%= section_line("Feats") %>
 <% end %>
 <% if section == "feats" || "all" %>
-<% feats.each do |feat| %>
+<% feats.each do |feat| -%>
 <%= feat %>
 <% end %>
 <% end %>
