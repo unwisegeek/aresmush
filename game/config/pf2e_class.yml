@@ -168,7 +168,7 @@ pf2e_class:
         wp_martial: trained
         wp_unarmed: trained
         armor_light: trained
-        armor_med: trained
+        armor_medium: trained
         armor_unarmored: trained
         class_dc: trained
         perception: expert
@@ -265,7 +265,7 @@ pf2e_class:
         combat_stats:
           fortitude: legendary
           armor_light: expert
-          armor_med: expert
+          armor_medium: expert
           armor_unarmored: expert
           wp_simple: master
           wp_martial: master
@@ -314,7 +314,7 @@ pf2e_class:
         - Armor of Fury
         - Devastator
         combat_stats:
-          armor_med: master
+          armor_medium: master
           armor_light: master
           armor_unarmored: master
           class_dc: master
@@ -618,7 +618,7 @@ pf2e_class:
         wp_unarmed: trained
         wp_deity: trained
         armor_light: trained
-        armor_med: trained
+        armor_medium: trained
         armor_heavy: trained
         armor_unarmored: trained
         class_dc: trained
@@ -686,7 +686,7 @@ pf2e_class:
         - skill
         combat_stats:
           armor_light: expert
-          armor_med: expert
+          armor_medium: expert
           armor_heavy: expert
           armor_unarmored: expert
       8:
@@ -736,7 +736,7 @@ pf2e_class:
         - Weapon Mastery
         combat_stats:
           armor_light: master
-          armor_med: master
+          armor_medium: master
           armor_heavy: master
           armor_unarmored: master
           wp_simple: master
@@ -769,7 +769,7 @@ pf2e_class:
         - Legendary Armor
         combat_stats:
           class_dc: master
-          armor_med: legendary
+          armor_medium: legendary
           armor_light: legendary
           armor_heavy: legendary
           armor_unarmored: legendary

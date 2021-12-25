@@ -20,6 +20,7 @@ module AresMUSH
     attribute :wp_martial, :default => 'untrained'
     attribute :wp_advanced, :default => 'untrained'
     attribute :wp_rage
+    attribute :wp_deity
     attribute :wp_other, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
