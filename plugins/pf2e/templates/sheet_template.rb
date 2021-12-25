@@ -99,7 +99,7 @@ module AresMUSH
       def abilities
         abil_list = @char.abilities
 
-        return [] if !abil_list
+        return "I HAVE NO ABILITIES HERE" if !abil_list
 
         list = []
         abil_list.each_with_index do |a,i|
