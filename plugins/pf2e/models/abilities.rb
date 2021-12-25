@@ -54,7 +54,7 @@ module AresMUSH
       a = []
       boost_list.each_pair do |k,v|
         free_unassigned = v.include?("open")
-        choice_not_made = v.values.any? { |v| v.is_a?(Array) }
+        choice_not_made = v.any? { |v| v.is_a?(Array) }
 
         a << k if free_unassigned || choice_not_made
 
