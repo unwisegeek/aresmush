@@ -11,8 +11,9 @@ module AresMUSH
 
       return nil if !element_list
 
-      element = element_list.select { |a| a.name_upcase == string.upcase }.first
+      return string
 
+      element = element_list.select { |a| a.name_upcase == string.upcase }.first
     end
 
     # p can be passed to this method as nil
@@ -73,7 +74,7 @@ module AresMUSH
         shortname = word.upcase
         obj = char.abilities.select { |a| a.shortname == shortname }
         return 0 if !obj
-        Pf2eAbilities.abilmod Pf2eAbilities.getabil(char, obj.name)
+        Pf2eAbilities.abilmod(Pf2eAbilities.getabil(char, obj.name))
 
       when 'sneak attack'
         value = char.combat&.sneak_attack

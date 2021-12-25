@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    class DisplaySheetCmd
+    class PF2DisplaySheetCmd
       include CommandHandler
 
       attr_accessor :section, :target

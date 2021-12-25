@@ -293,7 +293,7 @@ module AresMUSH
           t('pf2e.cg_and_abil_lock_ok')
         elsif @baseinfolock
           msgs = Pf2eAbilities.abilities_messages(@char)
-          msgs ? msgs.flatten : t('pf2e.abil_options_ok')
+          msgs ? msgs : t('pf2e.abil_options_ok')
         else
           msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option, @to_assign)
           msgs ? msgs : t('pf2e.cg_options_ok')
