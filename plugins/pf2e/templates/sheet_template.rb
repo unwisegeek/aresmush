@@ -256,7 +256,7 @@ module AresMUSH
         name = "%xh#{abil.capitalize}%xn"
         linebreak = i % 3 == 0 ? "%r" : ""
         mod = "(#{Pf2eAbilities.abilmod(score)})"
-        "#{linebreak}#{left(name, 18)}: #{left(score, 2)} #{left(mod, 6)}"
+        "#{linebreak}#{left(name, 13)}: #{left(score, 2)} #{left(mod, 9)}"
       end
 
       def format_condition(condition, value)
@@ -286,10 +286,10 @@ module AresMUSH
       end
 
       def format_save(char, save)
-        name = "#{save.capitalize!}"
+        name = "#{save.capitalize}"
         prof = "#{Pf2eCombat.get_save_from_char(char, save)}"[0].upcase
         bonus = Pf2eCombat.get_save_bonus(char, save)
-        left("#{item_color}#{name}%xn: #{bonus} (#{prof})", 26)
+        left("%xh#{name}%xn: #{bonus} (#{prof})", 26)
       end
 
       def format_spell_dc(c, t, p)
