@@ -5,13 +5,23 @@ module AresMUSH
       
       def handle
       
-        array = [] 
-          
-        open_skills = 4
-          
-        skills_array = array.fill("open", nil, open_skills)
+        char = Character.find_one_by_name("Testchar")
+      
+        boosts = char.pf2_boosts_working
         
-        client.emit skills_array
+        scores = {}
+        char.abilities.each do |a|
+            k = a.name
+            v = a.base_val
+            scores[k] = v
+        end
+        
+        score_chk = boosts.values.flatten
+        
+        client.emit "Char: #{char}"
+        client.emit "Boosts: #{boosts}"
+        client.emit "Scores: #{scores}"
+        client.emit "Score-chk: #{score_chk}"
         
       end
       
