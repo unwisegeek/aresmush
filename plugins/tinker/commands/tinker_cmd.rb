@@ -20,6 +20,8 @@ module AresMUSH
             client.emit "#{result.error}"
         end
         
+        client.emit "#{char.combat.key_abil}"
+        
       end
 
     end
