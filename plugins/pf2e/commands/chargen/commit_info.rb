@@ -190,7 +190,7 @@ module AresMUSH
 
         to_assign['open_skills'] = open_skills + extra_lores
 
-        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join, open: open_skills.size)
+        client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join(", "), open: open_skills.size)
 
         # Feats
         feats = enactor.pf2_feats
