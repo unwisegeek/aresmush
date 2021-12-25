@@ -1,19 +1,6 @@
 module AresMUSH
   module Pf2e
 
-    def self.find_character_ability(char, type, string="")
-      case type.downcase
-      when 'ability' then element_list = char.abilities
-      when 'skill' then element_list = char.skills
-      when 'lore' then element_list = char.lores
-      else element_list = nil
-      end
-
-      return nil if !element_list
-
-      element = element_list.select { |a| a.name_upcase == string.upcase }.first
-    end
-
     # p can be passed to this method as nil
     def self.get_prof_bonus(char, p="untrained")
       level = char.pf2_level

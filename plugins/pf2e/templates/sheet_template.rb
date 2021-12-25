@@ -97,12 +97,12 @@ module AresMUSH
       end
 
       def abilities
-        abilities = @char.abilities
+        abil_list = @char.abilities
 
-        return [] if !abilities
+        return [] if !abil_list
 
         list = []
-        abilities.each_with_index do |a,i|
+        abil_list.each_with_index do |a,i|
           name = a.name
           score = a.mod_val ? a.mod_val : a.base_val
           list << format_ability(name, score, i)
