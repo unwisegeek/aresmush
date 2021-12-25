@@ -24,8 +24,8 @@ module AresMUSH
       (score - 10) / 2
     end
 
-    def self.getabil(char, ability)
-      object = Pf2e.find_character_ability(char, 'ability', ability)
+    def self.getabil(char, stat)
+      object = Pf2e.find_character_ability(char, 'ability', stat)
 
       return 10 if !object
 
@@ -67,7 +67,7 @@ module AresMUSH
         )
       end
 
-      return messages.flatten if !messages.empty?
+      return messages.join if !messages.empty?
 
       boosts = char.pf2_boosts_working
       boosts.each do |k,v|
