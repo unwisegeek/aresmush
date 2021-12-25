@@ -11,6 +11,8 @@ module AresMUSH
 
       return nil if !element_list
 
+      return string
+
       element = element_list.select { |a| a.name_upcase == string.upcase }.first
     end
 
