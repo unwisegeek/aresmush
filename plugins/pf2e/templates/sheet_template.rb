@@ -256,7 +256,7 @@ module AresMUSH
         name = "%xh#{abil.capitalize}%xn"
         linebreak = i % 3 == 0 ? "%r" : ""
         mod = "(#{Pf2eAbilities.abilmod(score)})"
-        "#{linebreak}#{left(name, 10)}: #{left(score, 3)} #{left(mod, 13)}"
+        "#{linebreak}#{left(name, 18)}: #{left(score, 2)} #{left(mod, 6)}"
       end
 
       def format_condition(condition, value)
