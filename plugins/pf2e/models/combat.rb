@@ -84,7 +84,9 @@ module AresMUSH
       return 0 if !combat_stats
 
       prof_bonus = Pf2e.get_prof_bonus(char, combat_stats.class_dc)
-      abil_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, combat_stats.key_abil)
+
+      key_ability = combat_stats.key_abil ? combat_stats.key_abil : "Strength"
+      abil_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, key_ability))
 
       item = Pf2e.bonus_from_item(@char, 'class_dc')
       item_bonus = item ? item : 0
