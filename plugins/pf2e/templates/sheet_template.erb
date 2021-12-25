@@ -21,7 +21,7 @@
 <% end %>
 <% if section == "ability" || "all" %>
 <% abilities.each do |a| -%>
-<% a -%>
+<%= a -%>
 <% end %>
 <% end %>
 <% if section == "all" %>
@@ -36,7 +36,7 @@
 <%= section_line("Attacks") %>
 <%= section_line("Defenses") %>
 <% saves.each do |save| -%>
-<% save -%>
+<%= save -%>
 <% end %>
 <%= section_line("Conditions") %>
 <%= conditions %>
