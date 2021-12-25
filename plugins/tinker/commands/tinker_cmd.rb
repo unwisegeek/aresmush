@@ -9,7 +9,14 @@ module AresMUSH
       end
       
       def handle
-        client.emit_success "Done!"
+        char = Character.find_one_by_name("Testchar")
+        
+        score = Pf2eAbilities.get_score(char,"Wisdom")
+        
+        mod = Pf2eAbiliies.abilmod(score)
+        
+        client.emit "Score: #{score}"
+        client.emit "Mod: @{mod}"
       end
 
     end
