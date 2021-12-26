@@ -195,7 +195,7 @@ module AresMUSH
               end
             end
           end
-          list
+          list.join(", ")
         else
           list = @background_info["abl_boosts"] ? @background_info["abl_boosts"] : []
 
