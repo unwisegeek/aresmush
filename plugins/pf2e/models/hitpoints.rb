@@ -12,9 +12,11 @@ module AresMUSH
     attribute :base_for_level, :type => DataType::Integer, :default => 0
     # Tracks base HP for past levels, because someone will want to
     attribute :hp_per_level, :type => DataType::Hash, :default => {}
-    # Max temporary HP
+    # Max and current temporary HP
     attribute :temp_max, :type => DataType::Integer, :default => 0
+    attribute :temp_current, :type => DataType::Integer, :default => 0
 
+    
     reference :character, "AresMUSH::Character"
 
 
