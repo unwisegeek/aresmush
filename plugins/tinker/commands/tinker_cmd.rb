@@ -11,11 +11,17 @@ module AresMUSH
       def handle
         char=Character.find_one_by_name("Testchar")
         
-        hp = char.hp
+        combat = char.combat
+        save_list = combat.saves
         
-        hp.update(temp_max: 0)
+        if save_list
+            save_list.each_pair do |k,v|
+                client.emit "#{key} - #{value}"
+            end
+        else 
+            client.emit "No save list."
+        end
         
-        client.emit "Done - #{hp.temp_max}"
       end
 
     end
