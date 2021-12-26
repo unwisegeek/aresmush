@@ -51,6 +51,11 @@ module AresMUSH
         end
       when "unassigned"
         return PF2DisplayUnassignedCmd
+      when "boost"
+        case cmd.switch
+        when "set"
+          return PF2BoostSetCmd
+        end
       end
 
       nil

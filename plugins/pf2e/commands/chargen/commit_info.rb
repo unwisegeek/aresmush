@@ -236,6 +236,7 @@ module AresMUSH
 
         obj = Pf2eHP.create(character: enactor,
           base_for_level: base_HP,
+          max_base: base_HP,
           max_current: base_HP,
           current: base_HP
         )

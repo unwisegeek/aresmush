@@ -1,27 +1,96 @@
 module AresMUSH
   module Pf2e
-    class PF2AssignBoostsCmd
+    class PF2BoostSetCmd
       include CommandHandler
 
+      attr_accessor :type, :value
+
       def parse_args
-
-
-
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+        self.type = downcase_arg(args.arg1)
+        self.value = titlecase_arg(args.arg2)
       end
 
       def check_chargen_or_advancement
 
         if enactor.chargen_locked && !enactor.advancing || enactor.is_admin?
           return t('pf2e.only_in_chargen')
-        elsif !enactor.chargen_stage
+        elsif enactor.chargen_stage.zero?
           return t('chargen.not_started')
         else
           return nil
         end
+
       end
 
       def handle
+        ##### VALIDATION SECTION #####
         # Verify that there are things to be assigned that this command handles.
+
+        to_assign = enactor.pf2_to_assign
+        unassigned_boosts = to_assign.keep_if { |k, v| k.match("boost") }.keys
+
+        if !(unassigned_boosts.include(self.type))
+          client.emit_failure t('pf2e.boost_bad_type', :type=>self.type)
+          return
+        end
+
+        # Make sure they've committed their base info and their abilities are correctly created.
+        char_abilities = enactor.abilities
+
+        if !char_abilities || !enactor.pf2_baseinfo_locked
+          client.emit_failure t('pf2e.lock_info_first')
+          return
+        end
+
+        # Is the value given in the command valid?
+        ability_options = char_abilities.map { |a| a.name }
+
+        if !(ability_options.include?(self.value))
+          client.emit_failure t('pf2e.bad_ability_value', :value=>self.value)
+          return
+        end
+
+        # Do they have an open option to set that type to?
+        # Location of open option becomes variable 'assigning'
+
+        working_boost_list = enactor.pf2_boosts_working
+
+        boost_values = working_boost_list[self.type]
+
+        if boost_values.is_a?(String)
+          client.emit_failure t('pf2e.no_free', :element=>self.type)
+          return
+        end
+
+        assigning = boost_values.index("open")
+
+        # This could be an option assignment. If it is, that assignment
+        # gets priority over an open slot.
+        option_check = boost_values.select { |val| val.is_a?(Array) }
+
+        if !option_check.empty?
+          if option_check.include?(self.value)
+            assigning = boost_values.index(option_check)
+          end
+        end
+
+        if !assigning
+          client.emit_failure t('pf2e.no_free', :element=>self.type)
+          return
+        end
+
+        ##### VALIDATION SECTION END #####
+
+        boost_values[assigning] = self.value
+
+        Pf2eAbilities.update_base_score(enactor,self.value)
+
+        working_boost_list[self.type] = boost_values
+
+        enactor.update(pf2_boosts_working: working_boost_list)
+
+        client.emit_success t('pf2e.assignment_ok', :type => self.type, :value => self.value)
 
       end
 
