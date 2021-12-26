@@ -11,16 +11,10 @@ module AresMUSH
       def handle
         char=Character.find_one_by_name("Testchar")
         
-        combat = char.combat
-        save_list = combat.saves
+        prof = Pf2eCombat.get_save_from_char(char, "fortitude")
         
-        if save_list
-            save_list.each_pair do |k,v|
-                client.emit "#{key} - #{value}"
-            end
-        else 
-            client.emit "No save list."
-        end
+        client.emit "Prof is nil" if !prof
+        client.emit "#{prof[0].upcase}" if prof
         
       end
 
