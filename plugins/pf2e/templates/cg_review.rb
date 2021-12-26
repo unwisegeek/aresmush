@@ -187,10 +187,15 @@ module AresMUSH
         if @baseinfolock
           list = @boosts['background']
           if list.is_a?(Array)
-            list.sort.join(", ")
-          else
-            list
+            list = list.map do |v|
+              if v.is_a?(Array)
+                v.join(" or ")
+              else
+                v
+              end
+            end
           end
+          list
         else
           list = @background_info["abl_boosts"] ? @background_info["abl_boosts"] : []
 
