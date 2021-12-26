@@ -30,7 +30,7 @@ module AresMUSH
         to_assign = enactor.pf2_to_assign
         unassigned_boosts = to_assign.keep_if { |k, v| k.match("boost") }.keys
 
-        if !(unassigned_boosts.include(self.type))
+        if !(unassigned_boosts.include?(self.type))
           client.emit_failure t('pf2e.boost_bad_type', :type=>self.type)
           return
         end
