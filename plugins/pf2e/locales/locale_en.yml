@@ -19,7 +19,7 @@ en:
     bg_no_options: "Your background does not have any %{element} to set. Moving on..."
     bg_options_set: "Your background does not require any choices. Moving on..."
     boost_bad_type: "Boost type %{type} cannot be changed with this command."
-    boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
+    boost_not_unique: "%xrYour %{type} boosts must all be assigned to different stats.%xn"
 
     cannot_cast_charclass: "That character class does not have a spell proficiency."
     cannot_cast_spell_level: "You cannot cast spells of that level."

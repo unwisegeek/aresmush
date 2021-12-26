@@ -68,7 +68,7 @@ module AresMUSH
         option_check = boost_values.select { |val| val.is_a?(Array) }
 
         if !option_check.empty?
-          if option_check.include?(self.value)
+          if option_check.flatten.include?(self.value)
             assigning = boost_values.index(option_check)
           end
         end
