@@ -11,17 +11,15 @@ module AresMUSH
       def handle
         char=Character.find_one_by_name("Testchar")
         
-        result = ClassTargetFinder.find("Wisdom",Pf2eAbilities,char)
-        if result.found?
-            client.emit "#{result.target.name}"
-            client.emit "#{result.target.base_val}"   
-            client.emit "#{result.target.character.name}"
-        else 
-            client.emit "#{result.error}"
+        combat = char.combat
+        
+        saves = %w{Fortitude Reflex Will}
+        list = []
+        saves.each do |save|
+          list << "#{save}: #{combat.save}"
         end
         
-        client.emit "#{char.combat.key_abil}"
-        
+        client.emit list
       end
 
     end
