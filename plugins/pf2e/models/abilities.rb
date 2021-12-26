@@ -89,13 +89,13 @@ module AresMUSH
         scores[k] = v
       end
 
-      score_chk = boosts.values.flatten
-      score_chk.each do |boost|
-        k = boost.capitalize
-        v = scores[k]
-        mod = v >= 18 ? 1 : 2
-        scores[k] = v + mod
-      end
+      #score_chk = boosts.values.flatten
+      #score_chk.each do |boost|
+      #  k = boost.capitalize
+      #  v = scores[k]
+      #  mod = v >= 18 ? 1 : 2
+      #  scores[k] = v + mod
+      #end
 
       bad_scores = []
       scores.each do |k, v|
