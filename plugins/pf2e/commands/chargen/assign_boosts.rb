@@ -47,7 +47,7 @@ module AresMUSH
         ability_options = char_abilities.map { |a| a.name }
 
         if !(ability_options.include?(self.value))
-          client.emit_failure t('pf2e.bad_ability_value', :value=>self.value)
+          client.emit_failure t('pf2e.bad_option', :element=>self.value, :options=>ability_options.join(", "))
           return
         end
 
