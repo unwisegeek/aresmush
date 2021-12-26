@@ -178,10 +178,10 @@ module AresMUSH
       end
 
       def saves
-        saves = @char.combat.saves
+        saves = %w{fortitude reflex will}
         list = []
-        saves.each do |k, v|
-          list << format_save(k, v)
+        saves.each do |s|
+          list << format_save(@char, s)
         end
       end
 
@@ -285,11 +285,11 @@ module AresMUSH
         "#{linebreak}#{left(name, 18)} #{left(proflevel, 18)}"
       end
 
-      def format_save(name,prof)
+      def format_save(char,name)
         save = "#{item_color}#{name.capitalize}%xn"
-        prof = Pf2eCombat.get_save_from_char(char, name.downcase)
-        bonus = Pf2eCombat.get_save_bonus(char, name.downcase)
-        left("#{save}: #{bonus} (#{prof[0].upcase})", 26)
+        prof = Pf2eCombat.get_save_from_char(char, name)
+        bonus = Pf2eCombat.get_save_bonus(char, name)
+        "#{left("#{save}: #{bonus} (#{prof[0].upcase})", 26)}"
       end
 
       def format_spell_dc(c, t, p)

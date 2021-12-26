@@ -21,11 +21,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Aid the suffering
+    - Shelter those in need
+    - Assist those that seek atonement
     anathema:
-    - anathema1
-    - anathema2
+    - Resort to violence when peace is possible
+    - Use negitive energy spells
+    - Betray the trust of a community
   Angoron:
     allowed_alignments:
     - CG
@@ -49,11 +51,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Protect those weaker than yourself
+    - Always try to do better than you did before
+    - Encourage the best of those around you
     anathema:
-    - anathema1
-    - anathema2
+    - Turn your back on a chance to challenge yourself
+    - Bullying those weaker than yourself
+    - Fail to acknowledge when you’ve been bested
   Daeus:
     allowed_alignments:
     - LG
@@ -73,11 +77,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Justice isn’t perfect, always try to make it better
+    - Share the truths you learn
+    - Protect the people who need it
     anathema:
-    - anathema1
-    - anathema2
+    - Abide injustice when you can step forward
+    - Chose for another who can choose for themselves
+    - Cheat, deceive, or undermine those who have placed trust in you
   Eluna:
     allowed_alignments:
     - NG
@@ -99,11 +105,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Take the long view and always consider the greater good of all
+    - Use magic responsibly, and challenge those who do not
+    - Seek to rescue those lycanthropes you can from the grip of Caracoroth
     anathema:
-    - anathema1
-    - anathema2
+    - Using spells or magic that deny the target their free will
+    - Sacrificing the future for short-term benefit
+    - Ignoring the guidance found in dreams, divination, and prophecy
   Gilead:
     allowed_alignments:
     - NG
@@ -124,11 +132,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Honor the Hunt
+    - Defend the Wild
+    - Kill only what you need
     anathema:
-    - anathema1
-    - anathema2
+    - A clean kill is a merciful kill
+    - The wild is to be protected not smothered
+    - Allow the wild to enrich all
   Navos:
     allowed_alignments:
     - LN
@@ -149,11 +159,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Learn from the past, do not dwell on it
+    - Be aware that you are making history now
+    - Do not seek to change the past
     anathema:
-    - anathema1
-    - anathema2
+    - Be consumed by something you can not change
+    - Failing to perceive your own actions
+    - Try to change past events
   Tarien:
     allowed_alignments:
     - NG
@@ -174,11 +186,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Find the small joys in everything
+    - Humility is the greatest teacher
+    - It's only funny if others laugh too
     anathema:
-    - anathema1
-    - anathema2
+    - Making a joke of someone who doesn’t deserve it
+    - Dogpiling someone already being shamed
+    - Bringing harm with your humor
   Animus:
     allowed_alignments:
     - NG
@@ -203,9 +217,11 @@ pf2e_deities:
     edicts:
     - edict1
     - edict2
+    - edict3
     anathema:
     - anathema1
     - anathema2
+    - anathema3
   Ceinara:
     allowed_alignments:
     - NG
@@ -258,11 +274,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Defend nature’s bounty against those who would pillage it
+    - Honor the land as your mother; let none bring Her to harm
+    - Tend the gardens of the earth in all their forms
     anathema:
-    - anathema1
-    - anathema2
+    - Engage in wanton destruction
+    - Suffer the poisoning of the earth
+    - Hunt rampantly
   Kor:
     allowed_alignments:
     - CG
@@ -284,11 +302,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Be brave enough to fight at My side
+    - Be wise enough to achieve a glorious death
+    - Be prepared to train to achieve glory
     anathema:
-    - anathema1
-    - anathema2
+    - Never be the first to leave the battlefield
+    - Never mistake bravery for foolishness
+    - Never lie about your accomplishments
   Rada:
     allowed_alignments:
     - CG
@@ -311,11 +331,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Honor a fair trade
+    - The sea is owed a portion of your keep
+    - Harvest only what you need
     anathema:
-    - anathema1
-    - anathema2
+    - Never break a fair bargain
+    - Never be a false guide to another
+    - Pollute the ocean
   Reos:
     allowed_alignments:
     - N
@@ -339,11 +361,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Always tinker - a thing can always be better
+    - Never disrespect honest effort lacking skill
+    - Never disrespect expertise
     anathema:
-    - anathema1
-    - anathema2
+    - Never engage in wonton destruction
+    - Never strive for impossible perfection
+    - Disrespect the act of creation
   Serriel:
     allowed_alignments:
     - LG
@@ -366,11 +390,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - edict1
-    - edict2
+    - Enrich your community
+    - Honor the way of other communities
+    - A thriving community is a growing one
     anathema:
-    - anathema1
-    - anathema2
+    - Enriching yourself at the expense of your community
+    - Refusing to defend your community
+    - Vandalizing a piece of cultural heritage
   Vardama:
     allowed_alignments:
     - LG
@@ -393,8 +419,174 @@ pf2e_deities:
     - {}
     - {}
     edicts:
+    - Guard the rest of the peaceful dead
+    - Offer succor to the grieving
+    - Try to ensure a peaceful passing
+    anathema:
+    - Disturb not the rest of the dead
+    - Judge not the worth of a person
+    - The fate of a soul is not yours to command
+  Caracoroth:
+    allowed_alignments:
+    - CE
+    - CN
+    - NE
+    divine_font:
+    - harm
+    divine_skill: Survival
+    fav_weapon: unarmed
+    domains:
+    - Evil
+    - Chaos
+    - Animal
+    - Madness
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - Follow your instincts
+    - Delight in destruction
+    - Do not suffer the weak
+    anathema:
+    - Being a coward
+    - Showing weakness
+    - Talking when actions serve better
+  Demios:
+    allowed_alignments:
+    - LN
+    - N
+    - LE
+    - NE
+    divine_font:
+    - heal
+    - harm
+    divine_skill: Deception
+    fav_weapon: whip
+    domains:
+    - Secrecy
+    - Luck
+    - Wealth
+    - Ambition
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - Use the truth to make your lies more plausible
+    - Lie so that you do not get caught
+    - Bear false witness where possible
+    anathema:
+    - Tell the absolute truth
+    - Allow another to get the better of you in a lie
+    - Believe in innocence
+  Gunahkar:
+    allowed_alignments:
+    - TN
+    - CN
+    - CE
+    divine_font:
+    - harm
+    divine_skill: Survival
+    fav_weapon: guisarme
+    domains:
+    - Chaos
+    - Destruction
+    - Death
+    - Weather
+    - Evil
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - Do not stop suffering
+    - Do not fear sickness
+    - Endure all you can
+    anathema:
+    - Stop the faithful from feeling their pain
+    - Failing to endure a trial
+    - Seek treatment for personal problems
+  Maugrim:
+    allowed_alignments:
+    - LN
+    - N
+    - LE
+    - NE
+    divine_font:
+    - harm
+    divine_skill: Intimidation
+    fav_weapon: greatsword
+    domains:
+    - Ambition
+    - Toil
+    - Tyranny
+    - Perfection
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
     - edict1
     - edict2
+    - edict3
     anathema:
     - anathema1
     - anathema2
+    - anathema3
+  Taara:
+    allowed_alignments:
+    - N
+    - CN
+    - NE
+    - CE
+    divine_font:
+    - harm
+    divine_skill: Deception
+    fav_weapon: spiked chain
+    domains:
+    - Void
+    - Darkness
+    - Magic
+    - Secrecy
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - edict1
+    - edict2
+    - edict3
+    anathema:
+    - anathema1
+    - anathema2
+    - anathema3
+  Thul:
+    allowed_alignments:
+    - LN
+    - N
+    - CN
+    - LE
+    - NE
+    - CE
+    divine_font:
+    - harm
+    divine_skill: Occultism
+    fav_weapon: scythe
+    domains:
+    - Undeath
+    - Indulgence
+    - Decay
+    - Winter
+    cleric_spells:
+    - {}
+    - {}
+    - {}
+    edicts:
+    - Do not fear death
+    - Gather as much experience as you can
+    - Serve the dead where you can
+    anathema:
+    - Failing to preserve memories
+    - Ignoring the needs of the dead
+    - Living in fear of death
