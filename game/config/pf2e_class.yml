@@ -19,9 +19,10 @@ pf2e_class:
         armor_unarmored: trained
         class_dc: trained
         perception: trained
-        fortitude: expert
-        reflex: expert
-        will: trained
+        saves:
+          fortitude: expert
+          reflex: expert
+          will: trained
       skills:
       - Crafting
       - open
@@ -60,7 +61,8 @@ pf2e_class:
           wp_simple: expert
           wp_martial:
             Alchemical Bombs: expert
-          will: expert
+          saves:
+            will: expert
         charclass:
         -  Perpetual Infusions
         choose_feat:
@@ -93,7 +95,8 @@ pf2e_class:
         raise:
         - skill
         combat_stats:
-          fortitude: master
+          saves:
+            fortitude: master
         charclass:
         - Perpetual Potency
       12:
@@ -125,7 +128,8 @@ pf2e_class:
         - Alchemical Alacrity
         - Evasion
         combat_stats:
-          reflex: master
+          saves:
+            reflex: master
       16:
         choose_feat:
         - charclass
@@ -172,9 +176,10 @@ pf2e_class:
         armor_unarmored: trained
         class_dc: trained
         perception: expert
-        fortitude: expert
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: expert
+          reflex: trained
+          will: expert
       skills:
       - Athletics
       - open
@@ -223,7 +228,8 @@ pf2e_class:
         raise:
         - skill
         combat_stats:
-          fortitude: master
+          saves:
+            fortitude: master
       8:
         choose_feat:
         - charclass
@@ -233,7 +239,8 @@ pf2e_class:
         - Lightning Reflexes
         - Raging Resistance
         combat_stats:
-          reflex: expert
+          saves:
+            reflex: expert
         choose_feat:
         - ancestry
         raise:
@@ -263,7 +270,8 @@ pf2e_class:
         - Medium Armor Expertise
         - Weapon Fury
         combat_stats:
-          fortitude: legendary
+          saves:
+            fortitude: legendary
           armor_light: expert
           armor_medium: expert
           armor_unarmored: expert
@@ -286,7 +294,8 @@ pf2e_class:
         - Greater Weapon Specialization
         - Indomitable Will
         combat_stats:
-          will: master
+          saves:
+            will: master
       16:
         choose_feat:
         - charclass
@@ -330,9 +339,10 @@ pf2e_class:
     chargen:
       combat_stats:
         perception: expert
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
         wp_simple: trained
         wp_martial:
           Bard Weapons: trained
@@ -374,7 +384,8 @@ pf2e_class:
         choose_feat:
         - general
         combat_stats:
-          reflex: expert
+          saves:
+            reflex: expert
         magic_stats:
           spells_per_day:
             2: 2
@@ -444,8 +455,9 @@ pf2e_class:
             4: 1
       9:
         combat_stats:
-          fortitude: expert
-          will: master
+          saves:
+            fortitude: expert
+            will: master
         charclass:
         - Resolve
         raise:
@@ -560,7 +572,8 @@ pf2e_class:
         raise:
         - skill
         combat_stats:
-          will: legendary
+          saves:
+            will: legendary
         magic_stats:
           spells_per_day:
             9: 2
@@ -623,9 +636,10 @@ pf2e_class:
         armor_unarmored: trained
         class_dc: trained
         perception: trained
-        fortitude: expert
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: expert
+          reflex: trained
+          will: expert
       magic_stats:
         tradition:
           divine: trained
@@ -700,8 +714,9 @@ pf2e_class:
         - Juggernaut
         - Lightning Reflexes
         combat_stats:
-          fortitude: master
-          reflexes: expert
+          saves:
+            fortitude: master
+            reflex: expert
           class_dc: expert
         magic_stats:
           tradition:
@@ -720,7 +735,8 @@ pf2e_class:
         - Divine Will
         - Exalt
         combat_stats:
-          will: master
+          saves:
+            will: master
           perception: expert
         choose_feat:
         - general
@@ -814,9 +830,10 @@ pf2e_class:
         armor_unarmored: trained
         class_dc: trained
         perception: trained
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
       magic_stats:
         spell_abil: Wisdom
         tradition:
@@ -896,7 +913,8 @@ pf2e_class:
         charclass:
         - Resolve
         combat_stats:
-          will: master
+          saves:
+            will: master
         raise:
         - skill
         magic_stats:
@@ -920,7 +938,8 @@ pf2e_class:
         charclass:
         - Lightning Reflexes
         combat_stats:
-          reflex: expert
+          saves:
+            reflex: expert
         magic_stats:
           spells_per_day:
             6: 2
@@ -1020,9 +1039,10 @@ pf2e_class:
         armor_light: trained
         armor_medium: trained
         perception: trained
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
       charclass:
       - Wild Empathy
       feat:
@@ -1061,7 +1081,8 @@ pf2e_class:
         - Great Fortitude
         combat_stats:
           perception: expert
-          fortitude: expert
+          saves:
+            fortitude: expert
         choose_feat:
         - general
         magic_stats:
@@ -1082,7 +1103,8 @@ pf2e_class:
         charclass:
         - Lightning Reflexes
         combat_stats:
-          reflex: expert
+          saves:
+            reflex: expert
         choose_feat:
         - ancestry
         magic_stats:
@@ -1143,7 +1165,8 @@ pf2e_class:
         combat_stats:
           wp_unarmed: expert
           wp_simple: expert
-          will: master
+          saves:
+            will: master
         choose_feat:
         - general
         magic_stats:
@@ -1256,9 +1279,10 @@ pf2e_class:
         armor_unarmored: trained
         class_dc: trained
         perception: expert
-        fortitude: expert
-        reflex: expert
-        will: trained
+        saves:
+          fortitude: expert
+          reflex: expert
+          will: trained
       skills:
       - Acrobatics
       - Athletics
@@ -1284,7 +1308,8 @@ pf2e_class:
         charclass:
         - Bravery
         combat_stats:
-          will: expert
+          saves:
+            will: expert
       4:
         choose_feat:
         - charclass
@@ -1329,7 +1354,8 @@ pf2e_class:
         - skill
       9:
         combat_stats:
-          fortitude: master
+          saves:
+            fortitude: master
         charclass:
         - Juggernaut
         - Combat Flexibility
@@ -1398,7 +1424,8 @@ pf2e_class:
         - Greater Weapon Specialization
         - Improved Flexibility
         combat_stats:
-          reflex: master
+          saves:
+            reflex: master
       16:
         choose_feat:
         - charclass
@@ -1461,9 +1488,10 @@ pf2e_class:
         armor_light: trained
         class_dc: trained
         perception: expert
-        fortitude: trained
-        reflex: expert
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: expert
+          will: expert
     action:
     - Pursue A Lead
     reaction:
@@ -1536,7 +1564,8 @@ pf2e_class:
         - Great Fortitude
         - Investigator Expertise
         combat_stats:
-          fortitude: expert
+          saves:
+            fortitude: expert
           class_dc: expert
       10:
         choose_feat:
@@ -1554,7 +1583,8 @@ pf2e_class:
         - Deductive Improvisation
         - Resolve
         combat_stats:
-          will: master
+          saves:
+            will: master
       12:
         choose_feat:
         - charclass
@@ -1588,7 +1618,8 @@ pf2e_class:
         - Evasion
         - Greater Weapon Specialization
         combat_stats:
-          reflex: master
+          saves:
+            reflex: master
       16:
         choose_feat:
         - charclass
@@ -1604,7 +1635,8 @@ pf2e_class:
         charclass:
         - Greater Resolve
         combat_stats:
-          will: legendary
+          saves:
+            will: legendary
       18:
         choose_feat:
         - charclass
@@ -1648,9 +1680,10 @@ pf2e_class:
         armor_unarmored: expert
         class_dc: trained
         perception: trained
-        fortitude: expert
-        reflex: expert
-        will: expert
+        saves:
+          fortitude: expert
+          reflex: expert
+          will: expert
       action:
       - Flurry of Blows
       - Powerful Fist
@@ -1826,9 +1859,10 @@ pf2e_class:
         armor_light: trained
         class_dc: trained
         perception: trained
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
       magic_stats:
         tradition:
           divine: trained
@@ -1908,7 +1942,8 @@ pf2e_class:
         - Expert Spellcaster
         - Resolve
         combat_stats:
-          will: master
+          saves:
+            will: master
         magic_stats:
           spells_per_day:
             4: 2
@@ -1936,7 +1971,8 @@ pf2e_class:
         charclass:
         - Magical Fortitude
         combat_stats:
-          fortitude: expert
+          saves:
+            fortitude: expert
         magic_stats:
           spells_per_day:
             5: 2
@@ -2047,7 +2083,8 @@ pf2e_class:
         - Greater Resolve
         - Extreme Curse
         combat_stats:
-          will: legendary
+          saves:
+            will: legendary
         magic_stats:
           spells_per_day:
             9: 2
@@ -2111,9 +2148,10 @@ pf2e_class:
         armor_medium: trained
         class_dc: trained
         perception: expert
-        fortitude: expert
-        reflex: expert
-        will: trained
+        saves:
+          fortitude: expert
+          reflex: expert
+          will: trained
       magic_stats:
         spell_abil: Wisdom
         tradition:
@@ -2132,7 +2170,8 @@ pf2e_class:
         charclass:
         - Iron Will
         combat_stats:
-          will: expert
+          saves:
+            will: expert
       4:
         choose_feat:
         - charclass
@@ -2164,7 +2203,8 @@ pf2e_class:
         - Vigilant Senses
         - Weapon Specialization
         combat_stats:
-          reflex: master
+          saves:
+            reflex: master
           perception: master
       8:
         choose_feat:
@@ -2192,7 +2232,8 @@ pf2e_class:
         - Medium Armor Expertise
         - Wild Stride
         combat_stats:
-          fortitude: master
+          saves:
+            fortitude: master
           armor_unarmored: expert
           armor_light: expert
           armor_medium: expert
@@ -2230,7 +2271,8 @@ pf2e_class:
         - Improved Evasion
         - Incredible Senses
         combat_stats:
-          reflex: legendary
+          saves:
+            reflex: legendary
           perception: legendary
       16:
         choose_feat:
@@ -2292,9 +2334,10 @@ pf2e_class:
         armor_light: trained
         class_dc: trained
         perception: expert
-        fortitude: trained
-        reflex: expert
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: expert
+          will: expert
         sneak_attack: 1d6
     advance:
       2:
@@ -2347,7 +2390,8 @@ pf2e_class:
         - Vigilant Senses
         - Weapon Specialization
         combat_stats:
-          reflex: master
+          saves:
+            reflex: master
           perception: master
       8:
         choose_feat:
@@ -2364,7 +2408,8 @@ pf2e_class:
         charclass:
         - Great Fortitude
         combat_stats:
-          fortitude: expert
+          saves:
+            fortitude: expert
         action: Debilitating Strike
       10:
         choose_feat:
@@ -2401,7 +2446,8 @@ pf2e_class:
         - Light Armor Expertise
         - Master Tricks
         combat_stats:
-          reflex: legendary
+          saves:
+            reflex: legendary
           perception: legendary
           armor_unarmored: expert
           armor_light: expert
@@ -2476,9 +2522,10 @@ pf2e_class:
         wp_unarmed: trained
         armor_unarmored: trained
         perception: trained
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
       magic_stats:
         spell_abil: Charisma
         spells_per_day:
@@ -2541,7 +2588,8 @@ pf2e_class:
         charclass:
         - Magical Fortitude
         combat_stats:
-          fortitude: expert
+          saves:
+            fortitude: expert
       6:
         choose_feat:
         - charclass
@@ -2591,7 +2639,8 @@ pf2e_class:
             5: 1
           max_spell_level: 5
         combat_stats:
-          reflex: expert
+          saves:
+            reflex: expert
       10:
         choose_feat:
         - charclass
@@ -2738,9 +2787,10 @@ pf2e_class:
         wp_unarmed: trained
         armor_unarmored: trained
         perception: trained
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
       magic_stats:
         max_spell_level: 1
         spell_abil: Intelligence
@@ -2795,7 +2845,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 3
         combat_stats:
-          fortitude: expert
+          saves:
+            fortitude: expert
       6:
         choose_feat:
         - charclass
@@ -2926,7 +2977,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 9
         combat_stats:
-          will: master
+          saves:
+            will: master
       18:
         choose_feat:
         - charclass
@@ -2972,9 +3024,10 @@ pf2e_class:
         wp_unarmed: trained
         armor_unarmored: trained
         perception: trained
-        fortitude: trained
-        reflex: trained
-        will: expert
+        saves:
+          fortitude: trained
+          reflex: trained
+          will: expert
       magic_stats:
         tradition:
           arcane: trained
@@ -3030,7 +3083,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 3
         combat_stats:
-          reflex: expert
+          saves:
+            reflex: expert
       6:
         choose_feat:
         - charclass
@@ -3078,7 +3132,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 5
         combat_stats:
-          fortitude: expert
+          saves:
+            fortitude: expert
       10:
         choose_feat:
         - charclass
@@ -3170,7 +3225,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 9
         combat_stats:
-          will: master
+          saves:
+            will: master
       18:
         choose_feat:
         - charclass

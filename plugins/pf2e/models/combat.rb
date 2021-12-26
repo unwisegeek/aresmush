@@ -6,6 +6,8 @@ module AresMUSH
     attribute :reflex, :default => 'untrained'
     attribute :will, :default => 'untrained'
 
+    attribute :saves, :type => DataType::Hash, :default => { 'fortitude' => 'untrained', 'reflex' => 'untrained', 'will' => 'untrained' }
+
     attribute :perception, :default => 'untrained'
     attribute :class_dc, :default => 'untrained'
     attribute :key_abil
@@ -33,16 +35,8 @@ module AresMUSH
 
       return 'untrained' if !char.combat
 
-      case save.downcase
-      when 'fort', 'fortitude'
-        return combat.fortitude
-      when 'ref', 'reflex'
-        return combat.reflex
-      when 'will'
-        return combat.will
-      else
-        'untrained'
-      end
+      save_list = combat.saves
+      prof = save_list[save]
     end
 
     def self.get_create_combat_obj(char)
