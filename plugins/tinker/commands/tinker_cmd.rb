@@ -10,11 +10,12 @@ module AresMUSH
       
       def handle
         char=Character.find_one_by_name("Testchar")
+        save = "fortitude"
         
-        prof = Pf2eCombat.get_save_from_char(char, "fortitude")
+        prof_bonus = Pf2e.get_prof_bonus(char, Pf2eCombat.get_save_from_char(char, save))
         
-        client.emit "Prof is nil" if !prof
-        client.emit "#{prof[0].upcase}" if prof
+        client.emit "Save: #{save} Prof_bonus: #{prof_bonus}" if prof_bonus
+        client.emit "Prof_bonus is nil" if !prof_bonus
         
       end
 
