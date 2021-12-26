@@ -36,13 +36,17 @@ module AresMUSH
     end
 
     def self.update_base_score(char,ability,mod=2)
-      object = Pf2e.find_character_ability(char, 'ability', ability)
+      object = ClassTargetFinder.find(ability,Pf2eAbilities,char)
+      if object.found?
+        base = object.target.base_val
+      else
+        return nil
+      end
 
-      base = object ? object.base_val : 10
       mod = base < 18 ? mod : 1
-      base = base + mod
+      new_base = base + mod
 
-      object.update(base_val: base) if object
+      object.update(base_val: new_base)
     end
 
     def self.abilities_messages(char)
