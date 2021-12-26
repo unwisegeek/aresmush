@@ -71,7 +71,6 @@ module AresMUSH
         end
 
         # Free boosts
-        to_assign['openboost'] = %w{open open open open}
         boosts['free'] = %w{open open open open}
 
         # Charclass boosts and key ability check.
@@ -82,12 +81,11 @@ module AresMUSH
           subclass_info['key_abil'] :
           charclass_info['key_abil']
 
-        if key_ability.is_a?(String)
-          boosts['charclass'] = key_ability
-        else
-          to_assign['classboost'] = key_ability
+        if key_ability.is_a?(Array)
           client.emit_ooc t('pf2e.multiple_options', :element=>"key ability")
         end
+
+        boosts['charclass'] = key_ability
 
         # Background ability boosts
         # Number of these and their options vary.
@@ -96,14 +94,11 @@ module AresMUSH
 
         if bg_ability.size > 1
           client.emit_ooc t('pf2e.multiple_options', :element=>"background ability option")
-          to_assign['bgboost'] = bg_ability
-          bg_ability = []
-        elsif bg_ability.size == 0
-          bg_ability = []
+        elsif bg_ability.empty?
           client.emit_ooc t('pf2e.bg_no_options', :element => "ability option")
-        else
-          boosts['background'] = bg_ability
         end
+
+        boosts['background'] = bg_ability
 
         # Opening Skills
 
