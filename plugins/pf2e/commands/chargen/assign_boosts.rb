@@ -65,10 +65,10 @@ module AresMUSH
 
         # This could be an option assignment. If it is, that assignment
         # gets priority over an open slot.
-        option_check = boost_values.select { |val| val.is_a?(Array) }
+        option_check = boost_values.select { |val| val.is_a?(Array) }.flatten
 
         if !option_check.empty?
-          if option_check.flatten.include?(self.value)
+          if option_check.include?(self.value)
             assigning = boost_values.index(option_check)
           end
         end
