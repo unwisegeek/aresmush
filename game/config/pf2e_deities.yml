@@ -22,11 +22,11 @@ pf2e_deities:
     - {}
     edicts:
     - Aid the suffering
-    - Shelter those in need
+    - Assist those in need
     - Assist those that seek atonement
     anathema:
-    - Resort to violence when peace is possible
-    - Use negitive energy spells
+    - Use violence when non-violence will serve
+    - Use negative energy spells
     - Betray the trust of a community
   Angoron:
     allowed_alignments:
@@ -53,7 +53,7 @@ pf2e_deities:
     edicts:
     - Protect those weaker than yourself
     - Always try to do better than you did before
-    - Encourage the best of those around you
+    - Encourage the best in those around you
     anathema:
     - Turn your back on a chance to challenge yourself
     - Bullying those weaker than yourself
@@ -79,10 +79,10 @@ pf2e_deities:
     edicts:
     - Justice isn’t perfect, always try to make it better
     - Share the truths you learn
-    - Protect the people who need it
+    - Protect those who cannot defend themselves
     anathema:
     - Abide injustice when you can step forward
-    - Chose for another who can choose for themselves
+    - Choose for another who can choose for themselves
     - Cheat, deceive, or undermine those who have placed trust in you
   Eluna:
     allowed_alignments:
@@ -132,12 +132,12 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Honor the Hunt
-    - Defend the Wild
-    - Kill only what you need
+    - Honor the hunt
+    - Defend wild spaces
+    - Kill only what you must
     anathema:
-    - A clean kill is a merciful kill
-    - The wild is to be protected not smothered
+    - Fail to bring down prey as cleanly as possible
+    - The wild is to be protected, not smothered
     - Allow the wild to enrich all
   Navos:
     allowed_alignments:
@@ -163,7 +163,7 @@ pf2e_deities:
     - Be aware that you are making history now
     - Do not seek to change the past
     anathema:
-    - Be consumed by something you can not change
+    - Being consumed by something you cannot change
     - Failing to perceive your own actions
     - Try to change past events
   Tarien:
