@@ -70,7 +70,7 @@ module AresMUSH
       return messages.join("%r")
     end
 
-    def self.cg_edge_cases(char, charclass)
+    def self.cg_edge_cases(char, charclass, heritage, background)
       case charclass
       when "Cleric"
         dfont_choice = deity_info['divine_font']
