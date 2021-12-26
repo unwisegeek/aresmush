@@ -47,14 +47,21 @@ module AresMUSH
         ability_options = char_abilities.map { |a| a.name }
 
         if !(ability_options.include?(self.value))
-          client.emit_failure t('pf2e.bad_option', :element=>self.value, :options=>ability_options.join(", "))
+          client.emit_failure t('pf2e.bad_option', :element=>"abilities", :options=>ability_options.join(", "))
+          return
+        end
+
+        # Is the type given a valid value?
+        working_boost_list = enactor.pf2_boosts_working
+        valid_types = working_boost_list.keys
+        
+        if !(valid_types.include?(self.type))
+          client.emit_failure t('pf2e.bad_option', :element=>"boost types", :options=>valid_types.join(", "))
           return
         end
 
         # Do they have an open option to set that type to?
         # Location of open option becomes variable 'assigning'
-
-        working_boost_list = enactor.pf2_boosts_working
 
         boost_values = working_boost_list[self.type]
 
