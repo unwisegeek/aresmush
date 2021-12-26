@@ -9,12 +9,10 @@ module AresMUSH
         if char.has_feat?("Untrained Improvisation")
           bonus = level < 7 ? (level / 2).floor : level
           return bonus
-        else
-          return 0
         end
       end
 
-      profs = { "trained"=>2, "expert"=>4, "master"=>6, "legendary"=>8 }
+      profs = { "untrained"=>0, "trained"=>2, "expert"=>4, "master"=>6, "legendary"=>8 }
       bonus = profs[p] + level
     end
 
