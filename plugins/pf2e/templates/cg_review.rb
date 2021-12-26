@@ -143,7 +143,7 @@ module AresMUSH
 
       def free_boosts
         if @baseinfolock
-          open_list = @to_assign['openboost']
+          open_list = @boosts['free']
           still_free = open_list.count("open")
           assigned = open_list.difference([ "open" ]).empty? ?
                      "None assigned" :
@@ -208,7 +208,7 @@ module AresMUSH
 
       def key_ability
         if @baseinfolock
-          list = @to_assign['classboost'] ? @to_assign['classboost'] : @boosts['charclass']
+          list = @boosts['charclass']
           list.sort.join(" or ")
         else
 
