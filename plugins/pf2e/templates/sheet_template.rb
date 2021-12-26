@@ -183,6 +183,8 @@ module AresMUSH
         saves.each do |s|
           list << format_save(@char, s)
         end
+
+        list
       end
 
       def specials
