@@ -4,7 +4,6 @@ module AresMUSH
       include CommandHandler
 
       def check_in_chargen
-        return nil unless ( enactor.is_approved? || enactor.is_admin? )
         return nil if enactor.chargen_stage
         return t('pf2e.only_in_chargen')
       end
