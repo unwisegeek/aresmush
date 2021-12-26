@@ -2,6 +2,7 @@
 en:
   pf2e:
     abilities_locked: "Your abilities are already locked. Use `ability/reset` to clear them first."
+    abil_options_ok: "%xgNo issues detected with your abilities.%xn"
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
     alias_set_ok: "You set %{alias} to %{value}."
