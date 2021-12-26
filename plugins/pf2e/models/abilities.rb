@@ -38,7 +38,8 @@ module AresMUSH
     def self.update_base_score(char,ability,mod=2)
       object = ClassTargetFinder.find(ability,Pf2eAbilities,char)
       if object.found?
-        base = object.target.base_val
+        object = object.target
+        base = object.base_val
       else
         return nil
       end
