@@ -10,14 +10,11 @@ module AresMUSH
       
       def handle
         char=Character.find_one_by_name("Testchar")
-        save = "fortitude"
+        hp = char.hp
         
-        level = char.pf2_level
+        hp.update(max_base: 16)
         
-        prof_bonus = Pf2e.get_prof_bonus(char, Pf2eCombat.get_save_from_char(char, save))
-        
-        client.emit "Save: #{save} Prof_bonus: #{prof_bonus} Level: #{level}" if prof_bonus
-        client.emit "Prof_bonus is nil" if !prof_bonus
+        client.emit "Done - #{hp.max_base}"
         
       end
 
