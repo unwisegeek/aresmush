@@ -57,6 +57,14 @@ module AresMUSH
         combat.update("#{key}": value)
       end
 
+      # This is a kludge, fix this method later
+
+      save_list = info['saves']
+      saves = {}
+      save_list.each_pair { |k,v| saves[k] = v }
+
+      combat.update(saves: saves)
+
       return combat
     end
 
