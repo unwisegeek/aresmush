@@ -45,7 +45,7 @@ module AresMUSH
       # Word could be many things - figure out which
       case downcase_word
       when 'will', 'fort', 'fortitude', 'ref', 'reflex'
-        Pf2eCombat.get_save_bonus(char, word)
+        Pf2eCombat.get_save_bonus(char, downcase_word)
 
       # This will change when I establish attack code
       when 'melee', 'ranged', 'unarmed', 'finesse' then 0
