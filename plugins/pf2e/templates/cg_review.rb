@@ -151,7 +151,7 @@ module AresMUSH
           still_free = open_list.count("open")
           assigned = open_list.difference([ "open" ]).empty? ?
                      "None assigned" :
-                     open_list.difference("open").sort.join
+                     open_list.difference([ "open" ]).sort.join
 
           "#{assigned} plus #{still_free} free"
         else
