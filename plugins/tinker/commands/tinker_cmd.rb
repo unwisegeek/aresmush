@@ -12,9 +12,11 @@ module AresMUSH
         char=Character.find_one_by_name("Testchar")
         save = "fortitude"
         
+        level = char.pf2_level
+        
         prof_bonus = Pf2e.get_prof_bonus(char, Pf2eCombat.get_save_from_char(char, save))
         
-        client.emit "Save: #{save} Prof_bonus: #{prof_bonus}" if prof_bonus
+        client.emit "Save: #{save} Prof_bonus: #{prof_bonus} Level: #{level}" if prof_bonus
         client.emit "Prof_bonus is nil" if !prof_bonus
         
       end
