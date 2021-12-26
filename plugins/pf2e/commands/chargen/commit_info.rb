@@ -15,6 +15,8 @@ module AresMUSH
           return
         end
 
+        # Assemble info and validate that everything is set
+
         base_info = enactor.pf2_base_info
         ancestry = base_info['ancestry']
         heritage = base_info['heritage']
@@ -31,7 +33,7 @@ module AresMUSH
           return nil
         end
 
-        # Abilities
+        # Create abilities
 
         client.emit_ooc "Setting up your abilities..."
 
@@ -74,13 +76,12 @@ module AresMUSH
         boosts['free'] = %w{open open open open}
 
         # Charclass boosts and key ability check.
-        # Some classes have multiple options, some only one.
-        # Options can be defined in the charclass or the subclass, depending
-        # on the class.
+        # Check for subclass override of key ability
+        # Key ability can have multiple options, if it does, slate for assignment
 
-        key_ability = charclass_info['key_abil'] ?
-          charclass_info['key_abil'] :
-          subclass_info['key_abil']
+        key_ability = subclass_info['key_abil'] ?
+          subclass_info['key_abil'] :
+          charclass_info['key_abil']
 
         if key_ability.is_a?(String)
           boosts['charclass'] = key_ability
@@ -147,7 +148,7 @@ module AresMUSH
           end
         end
 
-        # Stash our open skills for later assignment.
+        # Stash our open or duplicate skills for later assignment.
 
         extra_skills = skills.size - unique_skills.size
 
@@ -220,16 +221,35 @@ module AresMUSH
           to_assign['charclass feat'] = charclass
         end
 
+        enactor.pf2_feats = feats
+
+        # Calculate and set base HP excluding CON mod
+        # Final HP is calculated and set on chargen lock
+
+        # Check for heritage override of base ancestry HP
+        ancestry_hp = heritage_info['ancestry_HP'] ?
+                      heritage_info['ancestry_HP'] :
+                      ancestry_info["HP"]
+
+        class_hp = charclass_info["HP"]
+
+        base_HP = ancestry_hp + class_hp
+
+        Pf2eHP.create(character: enactor, base_for_level: base_HP)
+
+        enactor.hp = obj
+
         # Senses and other specials
         special = ancestry_info["special"] + heritage_info["special"] + background_info["special"].uniq
 
+        # Check for darkvision override of low-light vision
         if Pf2e.character_has?(ancestry_info["special"], "Low-Light Vision") && heritage_info["change_vision"]
           special = special + [ "Darkvision" ] - [ "Low-Light Vision" ]
         end
 
         enactor.pf2_special = special
 
-        # Code of Behavior - not every info combination will have one!
+        # Check for and set code of behavior if character has one
         edicts = []
         anathema = []
 
@@ -263,7 +283,10 @@ module AresMUSH
 
         combat = Pf2eCombat.update_combat_stats(enactor,combat_stats)
 
-        combat.update(key_abil: key_ability) if key_ability.size == 1
+        # Some classes have a choice of key ability
+        # If so, set at ability commit, if not, set here
+
+        combat.update(key_abil: key_ability) if key_ability.is_a?(String)
 
         # Starting Magic
         # magic_stats = class_features_info['magic_stats']
@@ -291,6 +314,8 @@ module AresMUSH
         movement['Size'] = ancestry_info['Size']
         movement['base_speed'] = ancestry_info['Speed']
 
+        # Some heritages offer other movement types, if so, include
+
         other_mtypes = heritage_info.has_key?('movement')
 
         if other_mtypes
@@ -301,12 +326,10 @@ module AresMUSH
 
         enactor.pf2_movement = movement
 
-        # Edge Cases
-        Pf2e.cg_edge_cases(enactor, charclass)
-        # Raised By Belief has its own edge case.
-        Pf2e.cg_edge_cases(enactor, heritage) if heritage == "Raised By Belief"
+        # Check for and handle weird edge cases
+        Pf2e.cg_edge_cases(enactor, charclass, heritage, background)
 
-        # Final Updates
+        # Put everything together, lock it, and save to database
         enactor.pf2_to_assign = to_assign
         enactor.pf2_cg_assigned = to_assign
         enactor.pf2_boosts_working = boosts
