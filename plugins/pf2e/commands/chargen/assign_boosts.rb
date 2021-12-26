@@ -27,11 +27,11 @@ module AresMUSH
         ##### VALIDATION SECTION #####
         # Verify that there are things to be assigned that this command handles.
 
-        to_assign = enactor.pf2_to_assign
-        unassigned_boosts = to_assign.keep_if { |k, v| k.match("boost") }.keys
+        working_boost_list = enactor.pf2_boosts_working
+        valid_boost_types = working_boost_list.keys
 
-        if !(unassigned_boosts.include?(self.type))
-          client.emit_failure t('pf2e.boost_bad_type', :type=>self.type)
+        if !(valid_boost_types.include?(self.type))
+          client.emit_failure t('pf2e.bad_option', :element=>"boost type", :options=>valid_boost_types.join(", "))
           return
         end
 
@@ -48,15 +48,6 @@ module AresMUSH
 
         if !(ability_options.include?(self.value))
           client.emit_failure t('pf2e.bad_option', :element=>"abilities", :options=>ability_options.join(", "))
-          return
-        end
-
-        # Is the type given a valid value?
-        working_boost_list = enactor.pf2_boosts_working
-        valid_types = working_boost_list.keys
-        
-        if !(valid_types.include?(self.type))
-          client.emit_failure t('pf2e.bad_option', :element=>"boost types", :options=>valid_types.join(", "))
           return
         end
 
