@@ -10,11 +10,14 @@ module AresMUSH
       
       def handle
         char=Character.find_one_by_name("Testchar")
-        hp = char.hp
+        working_boost_list = char.pf2_boosts_working
+        boost_values = working_boost_list['background']
         
-        hp.update(max_base: 16)
+        option_check = boost_values.select { |val| val.is_a?(Array) }
         
-        client.emit "Done - #{hp.max_base}"
+        client.emit "Working Boost List - #{working_boost_list}"
+        client.emit "Boost Values - #{working_boost_list['background']}"
+        client.emit "Option Check - #{option_check}"
         
       end
 
