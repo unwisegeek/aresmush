@@ -184,7 +184,7 @@ module AresMUSH
           list << format_save(@char, s)
         end
 
-        list
+        list + [ "%r" ]
       end
 
       def specials
