@@ -35,6 +35,10 @@ module AresMUSH
         super File.dirname(__FILE__) + "/cg_review.erb"
       end
 
+      def baseinfolock
+        @baseinfolock
+      end
+
       def section_line(title)
         @client.screen_reader ? title : line_with_text(title)
       end
