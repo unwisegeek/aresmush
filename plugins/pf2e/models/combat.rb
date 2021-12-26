@@ -69,7 +69,7 @@ module AresMUSH
     end
 
     def self.get_save_bonus(char, save)
-      prof_bonus = Pf2e.get_prof_bonus(char, get_save_from_char(char, save))
+      prof_bonus = Pf2e.get_prof_bonus(char, Pf2eCombat.get_save_from_char(char, save))
 
       mod = Pf2e.get_linked_attr_mod(char, save)
       mod = 0 if !mod
