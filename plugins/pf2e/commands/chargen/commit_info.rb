@@ -235,7 +235,7 @@ module AresMUSH
 
         base_HP = ancestry_hp + class_hp
 
-        Pf2eHP.create(character: enactor, base_for_level: base_HP)
+        obj = Pf2eHP.create(character: enactor, base_for_level: base_HP)
 
         enactor.hp = obj
 
