@@ -146,7 +146,7 @@ module AresMUSH
         hp_color = "%xc" if percent.between?(50,75)
         hp_color = "%xy" if percent.between?(25,50)
         hp_color = "%xr" if percent < 25
-        "#{hp_color}#{current}%xn / #{max}#{low_max} (#{percent})"
+        "#{hp_color}#{current}%xn / #{max}#{low_max} (#{percent}%)"
       end
 
       def temp_hp
@@ -184,7 +184,7 @@ module AresMUSH
           list << format_save(@char, s)
         end
 
-        list + [ "%r" ]
+        list
       end
 
       def specials
