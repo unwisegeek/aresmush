@@ -287,9 +287,9 @@ module AresMUSH
 
       def format_save(name,prof)
         save = "#{name.capitalize}"
-        prof = "#{Pf2eCombat.get_save_from_char(char, save)[0].upcase}"
+        prof = Pf2eCombat.get_save_from_char(char, save)
         bonus = Pf2eCombat.get_save_bonus(char, save)
-        left("%xh#{save}%xn: #{bonus} (#{prof})", 26)
+        left("%xh#{save}%xn: #{bonus} (#{prof[0].upcase})", 26)
       end
 
       def format_spell_dc(c, t, p)
