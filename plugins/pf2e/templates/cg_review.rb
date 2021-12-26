@@ -186,7 +186,11 @@ module AresMUSH
       def bg_boosts
         if @baseinfolock
           list = @boosts['background']
-          list.sort.join(", ")
+          if list.is_a?(Array)
+            list.sort.join(", ")
+          else
+            list
+          end
         else
           list = @background_info["abl_boosts"] ? @background_info["abl_boosts"] : []
 
