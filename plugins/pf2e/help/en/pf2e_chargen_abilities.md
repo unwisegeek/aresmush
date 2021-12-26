@@ -18,7 +18,8 @@ Two main rules apply to assigning ability boosts:
 Remember: <ability> is always one of Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. See the PRD for more information on what these abilities say about your character, and what they do.
 
 `cg/review`: See what boosts needs to be assigned still. If you see a number, you can assign it to anything. If you see a list, those are your choices.
-`assign <type>=<ability>`: Assigns a type of boost to <ability>.
-`unassign <type>=<ability>`: Unassigns that ability for that type only. Does not affect other boost types you may have assigned.
+`unassigned`: See all the things that still need to be chosen to complete the character.
+`boost/set <type>=<ability>`: Assigns a type of boost to <ability>.
+`boost/unset <type>=<ability>`: Unassigns that ability for that type only. Does not affect other boost types you may have assigned.
 `commit abilities`: When you are happy with your scores, type this to lock down your scores to continue. If you need to change them, you will need to reset them using `cg/resetabil`.
 `cg/resetabil`: Resets all abilities to defaults and starts over. This does not delete your character options; use `cg/reset` to do that.

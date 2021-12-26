@@ -10,13 +10,14 @@ en:
     ambiguous_target: "The option given is either not specific enough or was not found."
     ancestry_not_set: "You cannot set your heritage until you set your ancestry."
     are_you_sure: "Are you sure? This command will wipe your entire character sheet. Type 'cg/reset confirm' to confirm that you want to do this."
-    assign_ok: "Option %{element} assigned to %{option}. Remaining: %{remaining}"
+    assignment_ok: "Open option %{type} assigned to %{value}."
 
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
     bad_option: "Not a valid option. Valid options for %{element}: %{options}."
     bad_section: "Section %{section} is not a valid section."
     bg_no_options: "Your background does not have any %{element} to set. Moving on..."
     bg_options_set: "Your background does not require any choices. Moving on..."
+    boost_bad_type: "Boost type %{type} cannot be changed with this command."
     boost_not_unique: "Your %{type} boosts must all be assigned to different stats."
 
     cannot_cast_charclass: "That character class does not have a spell proficiency."
