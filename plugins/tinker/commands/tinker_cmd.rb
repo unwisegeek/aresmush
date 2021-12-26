@@ -11,15 +11,11 @@ module AresMUSH
       def handle
         char=Character.find_one_by_name("Testchar")
         
-        combat = char.combat
+        hp = char.hp
         
-        saves = %w{Fortitude Reflex Will}
-        list = []
-        saves.each do |save|
-          list << "#{save}: #{combat.save}"
-        end
+        hp.update(temp_max: 0)
         
-        client.emit list
+        client.emit "Done - #{hp.temp_max}"
       end
 
     end
