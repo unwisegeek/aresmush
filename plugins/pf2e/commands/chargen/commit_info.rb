@@ -241,14 +241,19 @@ module AresMUSH
         enactor.hp = obj
 
         # Senses and other specials
-        special = ancestry_info["special"] + heritage_info["special"] + background_info["special"].uniq
+
+        a_specials = ancestry_info["special"] ? ancestry_info["special"] : []
+        h_specials = heritage_info["special"] ? heritage_info["special"] : []
+        b_specials = background_info["special"] ? background_info["special"] : []
+
+        specials = a_specials + h_specials + b_specials.uniq
 
         # Check for darkvision override of low-light vision
         if Pf2e.character_has?(ancestry_info["special"], "Low-Light Vision") && heritage_info["change_vision"]
           special = special + [ "Darkvision" ] - [ "Low-Light Vision" ]
         end
 
-        enactor.pf2_special = special
+        enactor.pf2_special = specials
 
         # Check for and set code of behavior if character has one
         edicts = []
