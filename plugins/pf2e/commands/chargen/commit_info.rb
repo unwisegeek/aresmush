@@ -249,7 +249,7 @@ module AresMUSH
         specials = a_specials + h_specials + b_specials.uniq
 
         # Check for darkvision override of low-light vision
-        if Pf2e.character_has?(ancestry_info["special"], "Low-Light Vision") && heritage_info["change_vision"]
+        if Pf2e.character_has?(a_specials, "Low-Light Vision") && heritage_info["change_vision"]
           special = special + [ "Darkvision" ] - [ "Low-Light Vision" ]
         end
 
