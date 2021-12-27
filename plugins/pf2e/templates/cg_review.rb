@@ -96,24 +96,25 @@ module AresMUSH
           de = d_edicts ? d_edicts : []
           da = d_anathema ? d_anathema : []
 
-          d_code = de + da
         else
-          d_code = []
+          d_edicts = []
+          d_anathema = []
         end
 
-        s_code = []
-        s_edicts = @subclass_info['edicts']
-        s_anathema = @subclass_info['anathema']
+        s_edicts = @subclass_info['edicts'] ? @subclass_info['edicts'] : []
+        s_anathema = @subclass_info['anathema'] ? @subclass_info['anathema'] : []
 
-        s_edicts.each { |e| s_code << e } if s_edicts
-        s_anathema.each { |a| s_code << a } if s_anathema
+        edicts = d_edicts + s_edicts
+        anathema = d_anathema + s_anathema
 
-        code = d_code + s_code
+        code = edicts + anathema
 
         if code.empty?
           nil
         else
-          code.join("%r")
+          "#{{item_color}}Edicts:%xn%r#{edicts.join("%r")}
+          %r
+          #{item_color}Anathema:%xn%r#{anathema.join("%r")}"
         end
       end
 
