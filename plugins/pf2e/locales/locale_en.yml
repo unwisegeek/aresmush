@@ -29,6 +29,7 @@ en:
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
     cg_options_ok: "%xgNo errors or issues detected with your CG options."
     cg_reset_ok: "Your sheet has been cleared."
+    char_has_code: "%xhEdicts:%xn%r%{edicts}%r%xhAnathema%xn:%r%{anathema}"
     char_not_found: "I didn't find a character by that name."
     charclass_not_set: "You cannot set a specialty until you set your class."
     chargen_committed: "All set. Your chargen options are locked and your fixed options assigned. Type `cg/next` to continue."

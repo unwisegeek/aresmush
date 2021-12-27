@@ -112,9 +112,10 @@ module AresMUSH
         if code.empty?
           nil
         else
-          "#{{item_color}}Edicts:%xn%r#{edicts.join("%r")}
-          %r
-          #{item_color}Anathema:%xn%r#{anathema.join("%r")}"
+          t('pf2e.char_has_code',
+            :edicts=>edicts.join("%r"),
+            :anathema=>anathema.join("%r")
+          )
         end
       end
 
