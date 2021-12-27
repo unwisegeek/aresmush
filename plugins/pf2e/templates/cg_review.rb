@@ -224,7 +224,12 @@ module AresMUSH
       def key_ability
         if @baseinfolock
           list = @boosts['charclass']
-          list.sort.join(" or ")
+
+          if list.is_a?(Array)
+            list.sort.join(" or ")
+          else
+            list
+          end
         else
 
           key_ability = @subclass_info['key_abil'] ?
