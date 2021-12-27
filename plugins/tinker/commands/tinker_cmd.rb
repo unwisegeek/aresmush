@@ -9,10 +9,13 @@ module AresMUSH
       end
       
       def handle
-        ary = ["1","2","3"]
-        nested_array = Array.new(1,ary)
+        char = Character.find_one_by_name("testchar")
         
-        client.emit "#{nested_array}"
+        skills = char.skills
+        
+        skill_names = skills.map { |s| s.name }
+        
+        client.emit "Skill Names - #{skill_names}"
         
       end
 
