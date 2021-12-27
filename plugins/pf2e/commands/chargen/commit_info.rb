@@ -81,11 +81,13 @@ module AresMUSH
           subclass_info['key_abil'] :
           charclass_info['key_abil']
 
+        boosts['charclass'] = key_ability
+
+        # If key ability has multiple options, I need a nested array for future checks.
         if key_ability.is_a?(Array)
           client.emit_ooc t('pf2e.multiple_options', :element=>"key ability")
+          boosts['charclass'] = Array.new(1,key_ability)
         end
-
-        boosts['charclass'] = key_ability
 
         # Background ability boosts
         # Number of these and their options vary.
