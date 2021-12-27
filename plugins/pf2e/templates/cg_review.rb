@@ -232,7 +232,7 @@ module AresMUSH
           return "Not set." if !key_ability
 
           if key_ability.is_a?(Array)
-            key_ability.join(" or ")
+            key_ability.flatten.join(" or ")
           else
             key_ability
           end
