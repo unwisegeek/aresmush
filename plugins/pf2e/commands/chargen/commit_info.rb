@@ -311,7 +311,8 @@ module AresMUSH
         enactor.pf2_lang = languages.uniq
 
         # Traits, Size, Movement, Misc Info
-        traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
+        h_traits = heritage_info["traits"] ? heritage_info["traits"] : []
+        traits = ancestry_info["traits"] + h_traits + [ charclass.downcase ]
         traits = traits.uniq.sort
 
         enactor.pf2_traits = traits
