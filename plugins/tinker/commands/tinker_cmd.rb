@@ -9,15 +9,10 @@ module AresMUSH
       end
       
       def handle
-        char=Character.find_one_by_name("Testchar")
-        working_boost_list = char.pf2_boosts_working
-        boost_values = working_boost_list['background']
+        ary = ["1","2","3"]
+        nested_array = Array.new(1,ary)
         
-        option_check = boost_values.select { |val| val.is_a?(Array) }
-        
-        client.emit "Working Boost List - #{working_boost_list}"
-        client.emit "Boost Values - #{working_boost_list['background']}"
-        client.emit "Option Check - #{option_check}"
+        client.emit "#{nested_array}"
         
       end
 
