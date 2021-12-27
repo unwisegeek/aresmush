@@ -270,8 +270,7 @@ module AresMUSH
       end
 
       def format_skill(s, i)
-        name = s.name
-        fmt_name = "%xh#{name}:%xn"
+        name = "%xh#{s}:%xn"
         linked_attr = print_linked_attr(name)
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = "#{s.proflevel}#{linked_attr}"
