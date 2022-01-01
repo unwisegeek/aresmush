@@ -546,8 +546,8 @@ pf2e_background:
     feat:
     - Assurance/Survival
     special: []
-        action: []
-        reaction: []
+    action: []
+    reaction: []
   Outrider:
     abl_boosts:
     - [ Constitution, Wisdom ]
@@ -824,4 +824,4 @@ pf2e_background:
     - Intimidating Glare
     special: []
     action: []
-    reaction: []
+    reaction: [] 
