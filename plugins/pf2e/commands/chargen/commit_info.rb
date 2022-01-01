@@ -192,14 +192,13 @@ module AresMUSH
         # Feats
         feats = enactor.pf2_feats
 
-        bg_feats = background_info["feats"] ? background_info["feats"] : []
+        bg_feats = background_info["feat"]
 
         if bg_feats.size > 1
           client.emit_ooc t('pf2e.multiple_options', :element=>"feat")
           to_assign['bgfeat'] = bg_feats
           bg_feats = []
-        elsif bg_feats.size == 0
-          bg_feats = []
+        elsif bg_feats.empty?
           client.emit_ooc t('pf2e.bg_no_options', :element => "feats")
         end
 
@@ -207,8 +206,8 @@ module AresMUSH
         subclass_feats = subclass_features_info["feat"] ? subclass_features_info["feat"] : []
         heritage_feats = heritage_info["feat"]
 
-        feats['general'] = bg_feats unless bg_feats.empty?
-        feats['ancestry'] = heritage_feats if heritage_feats
+        feats['general'] = bg_feats
+        feats['ancestry'] = heritage_feats
         feats['charclass'] = class_feats + subclass_feats
 
         to_assign['ancestry feat'] = ancestry
@@ -243,8 +242,8 @@ module AresMUSH
         # Senses and other specials
 
         a_specials = ancestry_info["special"] ? ancestry_info["special"] : []
-        h_specials = heritage_info["special"] ? heritage_info["special"] : []
-        b_specials = background_info["special"] ? background_info["special"] : []
+        h_specials = heritage_info["special"]
+        b_specials = background_info["special"]
 
         specials = a_specials + h_specials + b_specials.uniq
 
@@ -311,8 +310,7 @@ module AresMUSH
         enactor.pf2_lang = languages.uniq
 
         # Traits, Size, Movement, Misc Info
-        h_traits = heritage_info["traits"] ? heritage_info["traits"] : []
-        traits = ancestry_info["traits"] + h_traits + [ charclass.downcase ]
+        traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
         traits = traits.uniq.sort
 
         enactor.pf2_traits = traits
@@ -332,6 +330,28 @@ module AresMUSH
         end
 
         enactor.pf2_movement = movement
+
+        # Actions and reactions unique to the character
+        # Should update even if the array is empty
+
+        char_actions = enactor.pf2_actions
+
+        h_actions = heritage_info['action']
+        h_reactions = heritage_info['reaction']
+
+        b_actions = background_info['action']
+        b_reactions = background_info['reaction']
+
+        c_actions = class_features_info['action']
+        c_reactions = class_features_info['reaction']
+
+        actions = h_actions + b_actions + c_actions.uniq.sort
+        reactions = h_reactions + b_reactions + c_reactions.uniq.sort
+
+        char_actions['actions'] = actions
+        char_actions['reactions'] = reactions
+
+        enactor.pf2_actions = char_actions
 
         # Check for and handle weird edge cases
         Pf2e.cg_edge_cases(enactor, charclass, heritage, background)

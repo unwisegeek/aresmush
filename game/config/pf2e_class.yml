@@ -30,6 +30,8 @@ pf2e_class:
       - open
       feat:
       - Alchemical Crafting
+      action: []
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -187,6 +189,7 @@ pf2e_class:
       - open
       action:
       - Rage
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -370,6 +373,7 @@ pf2e_class:
         spell: Counter Performance
       action:
       - Cast a Spell
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -652,6 +656,7 @@ pf2e_class:
       - Shield Block
       reaction:
       - Shield Block
+      action: []
     advance:
       2:
         choose_feat:
@@ -846,6 +851,7 @@ pf2e_class:
       - Divine Font
       action:
       - Cast a Spell
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -1061,6 +1067,7 @@ pf2e_class:
         focus_pool: 1
       action:
       - Cast a Spell
+      reaction: []
     anathema:
     - "Character must not teach the Druidic language to a non-druid."
     - "Character is not permitted to wear metal armor or carry metal shields."
@@ -1295,175 +1302,176 @@ pf2e_class:
       reaction:
       - Attack of Opportunity
       - Shield Block
-      advance:
-      2:
-        choose_feat:
-        - charclass
-        - skill
-      3:
-        choose_feat:
-        - general
-        raise:
-        - skill
-        charclass:
-        - Bravery
-        combat_stats:
-          saves:
-            will: expert
-      4:
-        choose_feat:
-        - charclass
-        - skill
-      5:
-        raise:
-        - ability
-        - skill
-        choose_feat:
-        - ancestry
-        charclass:
-        - Fighter Weapon Mastery
-        choose:
-        - Club
-        - Knife
-        - Brawling
-        - Spear
-        - Sword
-        - Axe
-        - Flail
-        - Polearm
-        - Hammer
-        choice_name: Weapon Mastery
-        choice_description: "Choose a weapon group for your weapon mastery."
-      6:
-        choose_feat:
-        - charclass
-        - skill
-      7:
-        combat_stats:
-          perception: master
-        charclass:
-        - Battlefield Surveyor
-        - Weapon Specialization
-        choose_feat:
-        - general
-        raise:
-        - skill
-      8:
-        choose_feat:
-        - charclass
-        - skill
-      9:
-        combat_stats:
-          saves:
-            fortitude: master
-        charclass:
-        - Juggernaut
-        - Combat Flexibility
-        choose_feat:
-        - ancestry
-        raise:
-        - skill
-      10:
-        raise:
-        - ability
-        choose_feat:
-        - charclass
-        - skill
-      11:
-        choose_feat:
-        - general
-        raise:
-        - skill
-        combat_stats:
-          armor_light: expert
-          armor_medium: expert
-          armor_heavy: expert
-          armor_unarmored: expert
-          class_dc: expert
-        charclass:
-        - Armor Expertise
-        - Fighter Expertise
-      12:
-        choose_feat:
-        - charclass
-        - skill
-      13:
-        choose_feat:
-        - ancestry
-        raise:
-        - skill
-        combat_stats:
-          wp_simple: master
-          wp_martial: master
-          wp_advanced: expert
-          wp_unarmed: master
-        choose:
-        - Club
-        - Knife
-        - Brawling
-        - Spear
-        - Sword
-        - Axe
-        - Flail
-        - Polearm
-        - Hammer
-        choice_name: Weapon Legend
-        choice_description: "Choose a weapon group for your weapon legend feat."
-      14:
-        choose_feat:
-        - charclass
-        - skill
-      15:
-        raise:
-        - ability
-        - skill
-        choose_feat:
-        - general
-        charclass:
-        - Evasion
-        - Greater Weapon Specialization
-        - Improved Flexibility
-        combat_stats:
-          saves:
-            reflex: master
-      16:
-        choose_feat:
-        - charclass
-        - skill
-      17:
-        choose_feat:
-        - ancestry
-        raise:
-        - skill
-        combat_stats:
-          armor_light: master
-          armor_medium: master
-          armor_heavy: master
-          armor_unarmored: master
-        charclass:
-        - Armor Mastery
-      18:
-        choose_feat:
-        - charclass
-        - skill
-      19:
-        choose_feat:
-        - general
-        raise:
-        - skill
-        charclass:
-        - Versatile Legend
-        combat_stats:
-          wp_simple: legendary
-          wp_martial: legendary
-          wp_advanced: master
-          wp_unarmed: legendary
-      20:
-        raise:
-        - ability
-        choose_feat:
-        - charclass
-        - skill
+      action: []
+    advance:
+    2:
+      choose_feat:
+      - charclass
+      - skill
+    3:
+      choose_feat:
+      - general
+      raise:
+      - skill
+      charclass:
+      - Bravery
+      combat_stats:
+        saves:
+          will: expert
+    4:
+      choose_feat:
+      - charclass
+      - skill
+    5:
+      raise:
+      - ability
+      - skill
+      choose_feat:
+      - ancestry
+      charclass:
+      - Fighter Weapon Mastery
+      choose:
+      - Club
+      - Knife
+      - Brawling
+      - Spear
+      - Sword
+      - Axe
+      - Flail
+      - Polearm
+      - Hammer
+      choice_name: Weapon Mastery
+      choice_description: "Choose a weapon group for your weapon mastery."
+    6:
+      choose_feat:
+      - charclass
+      - skill
+    7:
+      combat_stats:
+        perception: master
+      charclass:
+      - Battlefield Surveyor
+      - Weapon Specialization
+      choose_feat:
+      - general
+      raise:
+      - skill
+    8:
+      choose_feat:
+      - charclass
+      - skill
+    9:
+      combat_stats:
+        saves:
+          fortitude: master
+      charclass:
+      - Juggernaut
+      - Combat Flexibility
+      choose_feat:
+      - ancestry
+      raise:
+      - skill
+    10:
+      raise:
+      - ability
+      choose_feat:
+      - charclass
+      - skill
+    11:
+      choose_feat:
+      - general
+      raise:
+      - skill
+      combat_stats:
+        armor_light: expert
+        armor_medium: expert
+        armor_heavy: expert
+        armor_unarmored: expert
+        class_dc: expert
+      charclass:
+      - Armor Expertise
+      - Fighter Expertise
+    12:
+      choose_feat:
+      - charclass
+      - skill
+    13:
+      choose_feat:
+      - ancestry
+      raise:
+      - skill
+      combat_stats:
+        wp_simple: master
+        wp_martial: master
+        wp_advanced: expert
+        wp_unarmed: master
+      choose:
+      - Club
+      - Knife
+      - Brawling
+      - Spear
+      - Sword
+      - Axe
+      - Flail
+      - Polearm
+      - Hammer
+      choice_name: Weapon Legend
+      choice_description: "Choose a weapon group for your weapon legend feat."
+    14:
+      choose_feat:
+      - charclass
+      - skill
+    15:
+      raise:
+      - ability
+      - skill
+      choose_feat:
+      - general
+      charclass:
+      - Evasion
+      - Greater Weapon Specialization
+      - Improved Flexibility
+      combat_stats:
+        saves:
+          reflex: master
+    16:
+      choose_feat:
+      - charclass
+      - skill
+    17:
+      choose_feat:
+      - ancestry
+      raise:
+      - skill
+      combat_stats:
+        armor_light: master
+        armor_medium: master
+        armor_heavy: master
+        armor_unarmored: master
+      charclass:
+      - Armor Mastery
+    18:
+      choose_feat:
+      - charclass
+      - skill
+    19:
+      choose_feat:
+      - general
+      raise:
+      - skill
+      charclass:
+      - Versatile Legend
+      combat_stats:
+        wp_simple: legendary
+        wp_martial: legendary
+        wp_advanced: master
+        wp_unarmed: legendary
+    20:
+      raise:
+      - ability
+      choose_feat:
+      - charclass
+      - skill
   Investigator:
     key_abil: Intelligence
     HP: 8
@@ -1492,10 +1500,10 @@ pf2e_class:
           fortitude: trained
           reflex: expert
           will: expert
-    action:
-    - Pursue A Lead
-    reaction:
-    - Clue In
+      action:
+      - Pursue A Lead
+      reaction:
+      - Clue In
     advance:
       2:
         choose_feat:
@@ -1687,6 +1695,7 @@ pf2e_class:
       action:
       - Flurry of Blows
       - Powerful Fist
+      reaction: []
     choose:
       choice_name: Spell Tradition
       choice_description: Do you draw ki spells from divine or occult magic?
@@ -1876,6 +1885,7 @@ pf2e_class:
         focus_pool: 2
       action:
       - Cast a Spell
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -2156,7 +2166,9 @@ pf2e_class:
         spell_abil: Wisdom
         tradition:
           primal: trained
-    action: Hunt Prey
+      action:
+      - Hunt Prey
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -2339,6 +2351,8 @@ pf2e_class:
           reflex: expert
           will: expert
         sneak_attack: 1d6
+      action: []
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -2536,6 +2550,7 @@ pf2e_class:
         max_spell_level: 1
       action:
       - Cast a Spell
+      reaction: []
     advance:
       2:
         choose_feat:
@@ -2803,6 +2818,7 @@ pf2e_class:
         focus_pool: 1
       action:
       - Cast a Spell
+      reaction: []
       familiar: any
     advance:
       2:
@@ -3039,9 +3055,10 @@ pf2e_class:
           cantrip: 10
           1: 5
         max_spell_level: 1
-    action:
-    - Drain Bonded Item
-    - Cast a Spell
+      action:
+      - Drain Bonded Item
+      - Cast a Spell
+      reaction: []
     advance:
       2:
         choose_feat:
