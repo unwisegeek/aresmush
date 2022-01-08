@@ -36,3 +36,5 @@ pf2e:
   condition_colors:
     Dying: '%xr'
     Wounded: '%xy'
+  permissions:
+    modify_sheet: Modify character sheets.

@@ -1,7 +1,8 @@
 ---
 pf2e_class:
   Alchemist:
-    key_abil: Intelligence
+    key_abil:
+    - Intelligence
     HP: 8
     chargen:
       choose_feat:
@@ -164,7 +165,8 @@ pf2e_class:
         - charclass
         - skill
   Barbarian:
-    key_abil: Strength
+    key_abil:
+    - Strength
     HP: 12
     chargen:
       choose_feat:
@@ -337,7 +339,8 @@ pf2e_class:
         raise:
         - ability
   Bard:
-    key_abil: Charisma
+    key_abil:
+    - Charisma
     HP: 8
     chargen:
       combat_stats:
@@ -821,7 +824,8 @@ pf2e_class:
         - ability
   Cleric:
     use_deity: true
-    key_abil: Wisdom
+    key_abil:
+    - Wisdom
     HP: 8
     chargen:
       skills:
@@ -1029,7 +1033,8 @@ pf2e_class:
         - general
         - skill
   Druid:
-    key_abil: Wisdom
+    key_abil:
+    - Wisdom
     HP: 8
     chargen:
       languages:
@@ -1473,7 +1478,8 @@ pf2e_class:
       - charclass
       - skill
   Investigator:
-    key_abil: Intelligence
+    key_abil:
+    - Intelligence
     HP: 8
     chargen:
       skills:
@@ -1852,7 +1858,8 @@ pf2e_class:
         raise:
         - ability
   Oracle:
-    key_abil: Charisma
+    key_abil:
+    - Charisma
     HP: 8
     chargen:
       skills:
@@ -2525,7 +2532,8 @@ pf2e_class:
         - ability
         - skill
   Sorcerer:
-    key_abil: Charisma
+    key_abil:
+    - Charisma
     HP: 6
     chargen:
       skills:
@@ -2788,7 +2796,8 @@ pf2e_class:
         raise:
         - ability
   Witch:
-    key_abil: Intelligence
+    key_abil:
+    - Intelligence
     HP: 6
     chargen:
       skills:

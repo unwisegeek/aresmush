@@ -2,16 +2,28 @@
 pf2e_specialty:
   Alchemist:
     Bomber:
-      formula_book:
-        bombs: 2
+      chargen:
+        action: []
+        reaction: []
+        formula_book:
+          bombs: 2
     Chirurgeon:
-      formula_book:
-        elixir: 2
+      chargen:
+        action: []
+        reaction: []
+        formula_book:
+          elixir: 2
     Mutagenist:
-      formula_book:
-        mutagen: 2
+      chargen:
+        action: []
+        reaction: []
+        formula_book:
+          mutagen: 2
   Barbarian:
     Animal:
+      chargen:
+        action: []
+        reaction: []
       choose:
         choice_name: Spirit Animal
         choice_description: "Choose the animal this character strives to emulate."
@@ -201,6 +213,9 @@ pf2e_specialty:
       rage_resistance:
         damage_type: ["S", "P"]
     Dragon:
+      chargen:
+        action: []
+        reaction: []
       choose:
         choice_name: "Dragon Color"
         choice_description: "Color dragon this instinct applies to."
@@ -252,24 +267,32 @@ pf2e_specialty:
   Bard:
     Enigma:
       chargen:
+        action: []
+        reaction: []
         feat: Bardic Lore
         magic_stats:
           addspell:
             1: True Strike
     Maestro:
       chargen:
+        action: []
+        reaction: []
         feat: Lingering Composition
         magic_stats:
           addspell:
             1: Soothe
     Polymath:
       chargen:
+        action: []
+        reaction: []
         feat: Versatile Performance
         magic_stats:
           addspell:
             1: Unseen Servant
     Warrior:
       chargen:
+        action: []
+        reaction: []
         feat: Martial Performance
         magic_stats:
           addspell:
@@ -279,6 +302,7 @@ pf2e_specialty:
       allowed_alignments:
       - LG
       chargen:
+        action: []
         reaction:
         - Retributive Strike
         anathema:
@@ -295,6 +319,7 @@ pf2e_specialty:
       allowed_alignments:
       - NG
       chargen:
+        action: []
         reaction:
         - Glimpse of Redemption
         edicts:
@@ -311,6 +336,7 @@ pf2e_specialty:
       allowed_alignments:
       - CG
       chargen:
+        action: []
         reaction:
         - Liberating Step
         edicts:
@@ -328,6 +354,8 @@ pf2e_specialty:
   Cleric:
     Cloistered:
       chargen:
+        action: []
+        reaction: []
         feat:
         - Domain Initiate
         charclass:
@@ -363,6 +391,7 @@ pf2e_specialty:
               divine: legendary
     Warpriest:
         chargen:
+          action: []
           combat_stats:
             armor_light: trained
             armor_med: trained
@@ -404,6 +433,8 @@ pf2e_specialty:
   Druid:
     Animal:
       chargen:
+        action: []
+        reaction: []
         skills:
         - Athletics
         feat:
@@ -417,6 +448,8 @@ pf2e_specialty:
         companion: any
     Leaf:
       chargen:
+        action: []
+        reaction: []
         skills:
         - Diplomacy
         feat:
@@ -431,6 +464,8 @@ pf2e_specialty:
         familiar: Leshy
     Storm:
       chargen:
+        action: []
+        reaction: []
         skills:
         - Acrobatics
         feat:
@@ -446,6 +481,8 @@ pf2e_specialty:
         - "Character must not pollute the air."
     Wild:
       chargen:
+        action: []
+        reaction: []
         skills:
         - Intimidation
         feat:
@@ -459,6 +496,7 @@ pf2e_specialty:
   Investigator:
     Alchemical Sciences:
       chargen:
+        reaction: []
         skills:
         - Crafting
         feat:
@@ -472,6 +510,7 @@ pf2e_specialty:
         - That's Odd
         action:
         - Expeditious Inspection
+        reaction: []
     Forensic Medicine:
       chargen:
         skills:
@@ -479,6 +518,8 @@ pf2e_specialty:
         feat:
         - Forensic Acumen
         - Battle Medicine
+        action: []
+        reaction: []
     Interrogation:
       chargen:
         skills:
@@ -487,6 +528,7 @@ pf2e_specialty:
         - No Cause For Alarm
         action:
         - Pointed Question
+        reaction: []
   Oracle:
     Ancestors:
       chargen:
@@ -501,6 +543,8 @@ pf2e_specialty:
             spell:
             - Ancestral Touch
         curse: Ancestral Meddling
+        action: []
+        reaction: []
     Battle:
       chargen:
         skills:
@@ -512,6 +556,8 @@ pf2e_specialty:
             spell:
             - Call to Arms
         curse: Hero's Burden
+        action: []
+        reaction: []
         combat_stats:
           armor_med: trained
           armor_heavy: trained
@@ -526,6 +572,8 @@ pf2e_specialty:
             spell:
             - Soul Siphon
         curse: Living Death
+        action: []
+        reaction: []
     Cosmos:
       chargen:
         skills:
@@ -537,6 +585,8 @@ pf2e_specialty:
             spell:
             - Spray of Stars
         curse: Sky's Call
+        action: []
+        reaction: []
     Flames:
       chargen:
         skills:
@@ -548,6 +598,8 @@ pf2e_specialty:
             spell:
             - Incendiary Aura
         curse: Engulfing Flames
+        action: []
+        reaction: []
     Life:
       chargen:
         skills:
@@ -559,6 +611,8 @@ pf2e_specialty:
             spell:
             - Life Link
         curse: Outpouring Life
+        action: []
+        reaction: []
     Lore:
       chargen:
         skills:
@@ -570,6 +624,8 @@ pf2e_specialty:
             spell:
             - Brain Drain
         curse: Torrential Knowledge
+        action: []
+        reaction: []
     Tempest:
       chargen:
         skills:
@@ -581,10 +637,15 @@ pf2e_specialty:
             spell:
             - Tempest Touch
           curse: Perpetual Storm
+        action: []
+        reaction: []
   Ranger:
     Flurry: {}
     Outwit: {}
     Precision: {}
+    chargen:
+      action: []
+      reaction: []
   Rogue:
     Eldritch Trickster:
       choose:
@@ -601,10 +662,15 @@ pf2e_specialty:
       - Charisma
       - Wisdom
       - Intelligence
+      chargen:
+        action: []
+        reaction: []
     Mastermind:
       chargen:
         skills:
         - Society
+        action: []
+        reaction: []
       choose:
         choice_name: Second Trained Skill
         choice_description: Your racket grants Society and one other skill as class skills. Choose the second.
@@ -616,12 +682,15 @@ pf2e_specialty:
       key_abil:
       - Dexterity
       - Intelligence
+
     Ruffian:
       chargen:
         skills:
         - Intimidation
         combat_stats:
           armor_med: trained
+        action: []
+        reaction: []
       key_abil:
       - Dexterity
       - Strength
@@ -630,6 +699,8 @@ pf2e_specialty:
         skills:
         - Deception
         - Diplomacy
+        action: []
+        reaction: []
       key_abil:
       - Dexterity
       - Charisma
@@ -637,6 +708,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Thievery
+        action: []
+        reaction: []
   Sorcerer:
     Aberrant:
       chargen:
@@ -652,6 +725,8 @@ pf2e_specialty:
         skills:
         - Intimidation
         - Occultism
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -707,6 +782,8 @@ pf2e_specialty:
         skills:
         - Diplomacy
         - Religion
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -762,6 +839,8 @@ pf2e_specialty:
         skills:
         - Intimidation
         - Religion
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -817,6 +896,8 @@ pf2e_specialty:
         skills:
         - Deception
         - Religion
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -886,6 +967,8 @@ pf2e_specialty:
         skills:
         - Arcana
         - Intimidation
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -949,6 +1032,8 @@ pf2e_specialty:
         skills:
         - Nature
         - Intimidation
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1004,6 +1089,8 @@ pf2e_specialty:
         skills:
         - Nature
         - Deception
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1068,6 +1155,8 @@ pf2e_specialty:
         skills:
         - Arcana
         - Deception
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1120,6 +1209,8 @@ pf2e_specialty:
         skills:
         - Occultism
         - Deception
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1175,6 +1266,8 @@ pf2e_specialty:
         skills:
         - Arcana
         - Society
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1230,6 +1323,8 @@ pf2e_specialty:
         skills:
         - Diplomacy
         - Nature
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1285,6 +1380,8 @@ pf2e_specialty:
         skills:
         - Intimidation
         - Religion
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1340,6 +1437,8 @@ pf2e_specialty:
         skills:
         - Occultism
         - Stealth
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1395,6 +1494,8 @@ pf2e_specialty:
         skills:
         - Intimidation
         - Religion
+        action: []
+        reaction: []
       advance:
         3:
           magic_stats:
@@ -1444,6 +1545,8 @@ pf2e_specialty:
         familiar: any
         replace_action: 'Drain Bonded Item | Drain Familiar'
         familiar_ability: true
+        action: []
+        reaction: []
       advance:
         6:
           familiar_ability: true
@@ -1465,6 +1568,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Occultism
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             occult: trained
@@ -1490,6 +1595,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Occultism
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             occult: trained
@@ -1515,6 +1622,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Religion
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             divine: trained
@@ -1540,6 +1649,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Occultism
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             occult: trained
@@ -1565,6 +1676,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Arcana
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             arcane: trained
@@ -1590,6 +1703,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Nature
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             primal: trained
@@ -1620,6 +1735,8 @@ pf2e_specialty:
       chargen:
         skills:
         - Nature
+        action: []
+        reaction: []
         magic_stats:
           tradition:
             primal: trained
