@@ -4,6 +4,7 @@ secrets.yml
 server.yml
 sites.yml
 real_database.yml
+game.yml
 packer_vars.json
 
 # Logs and errors
