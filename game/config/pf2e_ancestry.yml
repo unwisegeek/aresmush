@@ -10,16 +10,20 @@ pf2e_ancestry:
     - open
     abl_flaw: Charisma
     languages:
-    - Tradespeak
     - Khazdul
+    - Tradespeak
     traits:
     - khazad
     - humanoid
     special:
     - Darkvision
     heritages:
+    - Aasimar
     - Ancient-Blooded
     - Anvil
+    - Ashen One
+    - Changeling
+    - Dar
     - Death Warden
     - Elemental Heart
     - Forge
@@ -27,10 +31,6 @@ pf2e_ancestry:
     - Rock
     - Strong-Blooded
     - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
     feats:
       1:
       - Avenge In Glory
@@ -49,9 +49,9 @@ pf2e_ancestry:
       - Boulder Roll
       - Clan Protector
       - Defy the Darkness
+      - Fey Influence
       - Khazadi Reinforcement
       - Khazadi Weapon Cunning
-      - Fey Influence
       - Protective Sheath
       - Sheltering Slab
       - "Tomb-Watcher's Glare"
@@ -88,16 +88,16 @@ pf2e_ancestry:
     special:
     - Low-Light Vision
     heritages:
-    - Tiefling
     - Aasimar
-    - Dar
     - Ashen One
-    - Changeling
     - Ancient
     - Arctic
     - Cavern
+    - Changeling
+    - Dar
     - Desert
     - Seer
+    - Tiefling
     - Whisper
     - Woodland
     feats:
@@ -105,15 +105,15 @@ pf2e_ancestry:
       - Ancestral Linguistics
       - Ancestral Longevity
       - Elemental Wrath
-      - Sildanyar Aloofness
-      - Sildanyar Lore
-      - Sildanyar Verve
-      - Sildanyar Weapon Familiarity
       - Forlorn
       - Know Your Own
       - Nimble Elf
       - Otherworldly Magic
       - Share Thoughts
+      - Sildanyar Aloofness
+      - Sildanyar Lore
+      - Sildanyar Verve
+      - Sildanyar Weapon Familiarity
       - Unwavering Mien
       - Wildborn Magic
       - Woodcraft
@@ -121,11 +121,11 @@ pf2e_ancestry:
       - Ageless Patience
       - Ancestral Suspicion
       - Defiance Unto Death
-      - Sildanyar Instincts
-      - Sildanyar Weapon Elegance
       - Fey Influence
       - Forest Stealth
       - Martial Experience
+      - Sildanyar Instincts
+      - Sildanyar Weapon Elegance
       - Wildborn Adept
       9:
       - Brightness Seeker
@@ -160,17 +160,17 @@ pf2e_ancestry:
     special:
     - Low-Light Vision
     heritages:
+    - Aasimar
+    - Ashen One
     - Chameleon
+    - Changeling
+    - Dar
     - Fey-Touched
     - Sensate
+    - Tiefling
     - Umbral
     - Vivacious
     - Wellspring
-    - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
     feats:
       1:
       - Animal Accomplice
@@ -192,7 +192,7 @@ pf2e_ancestry:
       - Vibrant Display
       5:
       - Animal Elocutionist
-      - Edlectic Obsession
+      - Eclectic Obsession
       - Energized Font
       - Fey Influence
       - Gnome Weapon Innovator
@@ -228,18 +228,18 @@ pf2e_ancestry:
     special:
     - darkvision
     heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
     - Charhide
+    - Dar
     - Irongut
     - Razortooth
     - Snow
     - Tailed
-    - Treedweller
-    - Inbreakable
     - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
+    - Treedweller
+    - Unbreakable
     feats:
       1:
       - Bouncy Gobber
@@ -299,28 +299,28 @@ pf2e_ancestry:
     special:
     - keen eyes
     heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Dar
     - Gutsy
     - Hillock
     - Jinxed-lucht
     - Nomadic
     - Observant
+    - Tiefling
     - Twilight
     - Wildwood
-    - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
     feats:
       1:
       - Adroit Manipulation
       - Distracting Shadows
       - Folksy Patter
+      - Innocuous
+      - Intuitive Cooperation
       - Lucht Lore
       - Lucht Luck
       - Lucht Weapon Familiarity
-      - Innocuous
-      - Intuitive Cooperation
       - Prairie Rider
       - Sure Feet
       - Titan Slinger
@@ -358,22 +358,23 @@ pf2e_ancestry:
     abl_boosts:
     - open
     - open
+    abl_flaw: ""
     languages:
     - Common
     traits:
     - human
     - humanoid
     heritages:
-    - Skilled
-    - Versatile
-    - Wintertouched
-    - Half-Elf
-    - Half-Oruch
-    - Tiefling
     - Aasimar
-    - Dar
     - Ashen One
     - Changeling
+    - Dar
+    - Half-Elf
+    - Half-Oruch
+    - Skilled
+    - Tiefling
+    - Versatile
+    - Wintertouched
     feats:
       1:
       - Adapted Cantrip
@@ -386,7 +387,7 @@ pf2e_ancestry:
       - Gloomseer
       - Haughty Obstinacy
       - Keep Up Appearance
-      - Know Oneselef
+      - Know Oneself
       - Natural Ambition
       - Natural Skill
       - Quah Bond
@@ -420,7 +421,7 @@ pf2e_ancestry:
       - Shadow Pact
       - Shory Aerialist
       - Stubborn Persistence
-      - Unonventional Expertise
+      - Unconventional Expertise
       17:
       - Heroic Presence
   Oruch:
@@ -439,15 +440,15 @@ pf2e_ancestry:
     special:
     - darkvision
     heritages:
+    - Aasimar
+    - Ashen One
     - Badlands
+    - Changeling
+    - Dar
     - Deep
     - Hold-Scarred
     - Rainfall
     - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
     feats:
       1:
       - Beast Trainer
@@ -466,7 +467,7 @@ pf2e_ancestry:
       - Victorious Vigor
       9:
       - "Death's Drums"
-      - Pervaise Superstition
+      - Pervasive Superstition
       - Undying Ferocity
       13:
       - Ferocious Beasts
@@ -501,21 +502,22 @@ pf2e_ancestry:
     bonus_feats:
     - Breath Control
     heritages:
-    - Cliffscale
-    - Frilled
-    - Sandstrider
-    - Unseen
-    - Sith-Makar
-    - Tiefling
     - Aasimar
-    - Dar
     - Ashen One
     - Changeling
+    - Cliffscale
+    - Dar
+    - Frilled
+    - Sandstrider
+    - Sith-Makar
+    - Unseen
+    - Tiefling
+
     feats:
       1:
       - Lizardfolk Lore
       - Marsh Runner
-      - Parthenogenic Hatchling
+      - Parthenogenetic Hatchling
       - Razor Claws
       - Reptile Speaker
       - Sharp Fangs
@@ -549,14 +551,14 @@ pf2e_ancestry:
     special:
     - darkvision
     heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Dar
     - Elfbane
     - Runtboss
     - Smokeworker
     - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
     feats:
       1:
       - Alchemical Scholar
@@ -567,15 +569,15 @@ pf2e_ancestry:
       - Vigorous Health
       5:
       - Agonizing Rebuke
+      - Arvek Weapon Discipline
       - Expert Drill Sergeant
       - Fey Influence
       - Formation Training
-      - Arvek Weapon Discipline
       9:
       - Pride In Arms
       13:
-      - Formation Master
       - Arvek Weapon Expertise
+      - Formation Master
       17:
       - "Azaersi's Roads"
   Egalrin:
@@ -601,29 +603,29 @@ pf2e_ancestry:
         - finesse
         - unarmed
     heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Dar
     - Jinxed-egalrin
     - Mountainkeeper
     - Skyborn
     - Stormtossed
     - Taloned
     - Tiefling
-    - Aasimar
-    - Dar
-    - Ashen One
-    - Changeling
     feats:
       1:
+      - Egalrin Lore
+      - Egalrin Weapon Familiarity
       - "Scavenger's Search"
       - Squawk!
       - "Storm's Lash"
-      - Egalrin Lore
-      - Egalrin Weapon Familiarity
       5:
       - Eat Fortune
+      - Egalrin Weapon Study
       - Fey Influence
       - Long-Nosed Form
       - One-Toed Hop
-      - Egalrin Weapon Study
       9:
       - Eclectic Sword Training
       - Soaring Flight
