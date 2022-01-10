@@ -17,10 +17,11 @@ module AresMUSH
         [ self.rollalias ]
       end
 
-      def check_approval
-        return nil if (enactor.is_approved?) || (enactor.is_admin?)
-        return t('chargen.not_approved')
-      end
+      # Disabled for playtest
+      # def check_approval
+        # return nil if (enactor.is_approved?) || (enactor.is_admin?)
+        # return t('chargen.not_approved')
+      # end
 
       def check_is_word
         return nil if self.rollalias.to_i.zero?
