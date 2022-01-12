@@ -3,8 +3,8 @@ module AresMUSH
 
     def self.find_player_by_email(email, char)
       result = ClassTargetFinder.find(email, Player, char)
-        if result.found
-          player = result.found
+        if result.found?
+          player = result.target
         else
           player = nil
         end
