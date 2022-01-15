@@ -258,11 +258,6 @@ module AresMUSH
         edicts = []
         anathema = []
 
-        if use_deity
-          d_edicts = Global.read_config('pf2e_deities', faith_info['deity'], edicts)
-          d_anathema = Global.read_config('pf2e_deities', faith_info['deity'], anathema)
-        end
-
         c_edicts = charclass_info['edicts']
         c_anathema = charclass_info['anathema']
 
@@ -275,13 +270,18 @@ module AresMUSH
         s_edicts.each { |e| edicts << e } if s_edicts
         s_anathema.each { |a| anathema << a } if s_anathema
 
-        d_edicts.each { |e| edicts << e } if d_edicts
-        d_anathema.each { |a| anathema << a } if d_anathema
+        if use_deity
+          d_edicts = deity_info['edicts']
+          d_anathema = deity_info['anathema']
+
+          d_edicts.each { |e| edicts << e }
+          d_anathema.each { |a| anathema << a }
+        end
 
         faith_info['edicts'] = edicts if !edicts.empty?
         faith_info['anathema'] = anathema if !anathema.empty?
 
-        enactor.update(pf2_faith: faith_info)
+        enactor.pf2_faith = faith_info
 
         # Combat information - attacks, defenses, perception, class DC, saves
         combat_stats = class_features_info['combat_stats']

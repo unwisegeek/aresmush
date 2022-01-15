@@ -12,10 +12,10 @@ Casting a spell in Pathfinder 2E depends on what type of spell it is. Spellcaste
 
 Commands for casting:
 
-`cast[/<metamagic>] <class>/<level> = <spell name>[ at <target>]`: Casts a spell from a spellcaster's daily spell allotment. If _at <target>_ is included, <target> is a string, a character or NPC name. It may be a list of names.
+`cast[/<metamagic>] <type>[/<level>] = <spell name>[ at <target>]`: Casts a spell from a spellcaster's daily spell allotment. If _at <target>_ is included, <target> is a string, a character or NPC name. It may be a list of names.
 
-* <class> is the class from which the spell is learned.
-* <level> is an integer, or the word _cantrip_.
+* <type> is either the class from which the spell pool comes, or the type of focus spell, if it is a focus spell. For example, an oracle casting this as a revelation spell will use the keyword `revelation` and not specify a level.
+* <level>, if present, is an integer, or the word _cantrip_. This is optional and not required for a focus spell, or if the spell is not heightened.
 * The <metamagic> switch denotes the use of a metamagic feat immediately prior to the spell casting.
 
 `cast/focus <type>/<level> = <spell name>[ at <target>]`: Casts a focus spell. <type> depends on the class.
