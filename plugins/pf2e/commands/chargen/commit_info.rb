@@ -114,9 +114,9 @@ module AresMUSH
           client.emit_ooc t('pf2e.bg_no_options', :element => "skills")
         end
 
-        heritage_skills = heritage_info['skills'] ? heritage_info['skills'] : []
-        class_skills = class_features_info['skills'] ? class_features_info['skills'] : []
-        subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
+        heritage_skills = heritage_info['skills']
+        class_skills = class_features_info['skills']
+        subclass_skills = subclass_features_info['skills']
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills
 
@@ -345,8 +345,11 @@ module AresMUSH
         c_actions = class_features_info['action']
         c_reactions = class_features_info['reaction']
 
-        actions = h_actions + b_actions + c_actions.uniq.sort
-        reactions = h_reactions + b_reactions + c_reactions.uniq.sort
+        s_actions = subclass_features_info['action']
+        s_reactions = subclass_features_info['reaction']
+
+        actions = h_actions + b_actions + c_actions + s_actions.uniq.sort
+        reactions = h_reactions + b_reactions + c_reactions + s_reactions.uniq.sort
 
         char_actions['actions'] = actions
         char_actions['reactions'] = reactions
