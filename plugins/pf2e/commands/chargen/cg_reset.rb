@@ -19,16 +19,10 @@ module AresMUSH
         end
       end
 
-      def check_confirm
-        return nil unless self.confirm
-        return nil if self.confirm.downcase == "confirm"
-        return t('pf2e.must_confirm')
-      end
-
       def handle
 
         if (enactor.pf2_reset && !self.confirm)
-          client.emit_failure t('pf2e.must_confirm')
+          client.emit_ooc t('pf2e.must_confirm')
           return nil
         elsif !enactor.pf2_reset && self.confirm
           client.emit_failure t('pf2e.reset_first')

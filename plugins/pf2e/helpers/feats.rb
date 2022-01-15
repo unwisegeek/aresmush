@@ -13,6 +13,8 @@ module AresMUSH
 
       match = all_feats.select { |f| f.match?(string) }
 
+      return nil if match.empty?
+
       values = match.each do |f|
         k = f.split.each { |word| word.capitalize }
         v = all_feats[k]
@@ -39,7 +41,7 @@ module AresMUSH
       end
 
       # Ancestry and character class checks
-      is_from_dedication = nil
+      is_from_dedication = false
 
       if type == "ancestry"
         cinfo = char.pf2_base_info
@@ -64,23 +66,23 @@ module AresMUSH
 
       effective_level = is_from_dedication ? (char.pf2_level / 2) : char.pf2_level
 
-      fails_prereqs = prereq_check(char, type, feat, effective_level)
+      prereqs = details["prereqs"]
 
-      msg << "prerequisites" if fails_prereqs
+      meets_prereqs = true
 
-      return nil if msg.empty?
-      return msg
+      if !(prereqs.empty?)
+        meets_prereqs = meets_prereqs?(char, prereqs, effective_level)
+      end
+
+      msg << "prerequisites" if !meets_prereqs
+
+      return true if msg.empty?
+      return false
     end
 
-    def self.prereq_check(char, type, feat, level)
+    def self.meets_prereqs?(char, prereqs, level)
       msg = []
       orlist = {}
-
-      name = feat.split.map { |word| word.capitalize }
-
-      details = Global.read_config('pf2e_feats', type, name)
-
-      prereqs = details['prereqs']
 
       prereqs.each_pair do |ptype, required|
 
@@ -143,13 +145,16 @@ module AresMUSH
           msg << "special" if !(char_specials.include?(required.upcase))
         end
       end
+
+      return true if msgs.empty?
+      return false
     end
    
 
     def self.has_feat?(enactor, feat)
-      feat_list = enactor.pf2_feats
+      feat_list = enactor.pf2_feats.map { |f| f.upcase }
 
-      feat_list.include?(feat.pretty_string)
+      feat_list.include?(feat.upcase)
     end
 
   end

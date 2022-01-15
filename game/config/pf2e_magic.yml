@@ -42,3 +42,8 @@ pf2e_magic:
       Lesson of Renewal:
         cantrip: Restorative Moment
         spell: Field of Life
+  domains:
+    Ambition:
+      description: "You strive to keep up with and outpace the competition."
+      initial: Blind Ambition
+      advanced: Competitive Edge
