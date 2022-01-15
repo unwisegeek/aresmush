@@ -113,8 +113,8 @@ module AresMUSH
           nil
         else
           t('pf2e.char_has_code',
-            :edicts=>edicts.join("%r"),
-            :anathema=>anathema.join("%r")
+            :edicts=>edicts.join("%r%b%b- "),
+            :anathema=>anathema.join("%r%b%b- ")
           )
         end
       end

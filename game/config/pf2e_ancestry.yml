@@ -1,146 +1,52 @@
 ---
 pf2e_ancestry:
-  Khazad:
-    HP: 10
+  Arvek Nar:
+    HP: 8
     Size: M
-    Speed: 20
+    Speed: 25
     abl_boosts:
     - Constitution
-    - Wisdom
-    - open
-    abl_flaw: Charisma
-    languages:
-    - Khazdul
-    - Tradespeak
-    traits:
-    - khazad
-    - humanoid
-    special:
-    - Darkvision
-    heritages:
-    - Aasimar
-    - Ancient-Blooded
-    - Anvil
-    - Ashen One
-    - Changeling
-    - Dar
-    - Death Warden
-    - Elemental Heart
-    - Forge
-    - Oathkeeper
-    - Rock
-    - Strong-Blooded
-    - Tiefling
-    feats:
-      1:
-      - Avenge In Glory
-      - Clan's Edge
-      - Khazadi Doughtiness
-      - Khazadi Lore
-      - Khazadi Weapon Familiarity
-      - Eye For Treasure
-      - "Forge-Day's Rest"
-      - Rock Runner
-      - Stonecunning
-      - Surface Culture
-      - Unburdened Iron
-      - Vengeful Hatred
-      5:
-      - Boulder Roll
-      - Clan Protector
-      - Defy the Darkness
-      - Fey Influence
-      - Khazadi Reinforcement
-      - Khazadi Weapon Cunning
-      - Protective Sheath
-      - Sheltering Slab
-      - "Tomb-Watcher's Glare"
-      9:
-      - Battleforger
-      - Echoes in Stone
-      - Energy Blessed
-      - "Heroes' Call"
-      - Kneel for No God
-      - "Mountain's Stoutness"
-      - Returning Throw
-      - Stone Bones
-      - Stonewalker
-      13:
-      - Khazadi Weapon Expertise
-      - Telluric Power
-      17:
-      - Stonegate
-  Sildanyar:
-    HP: 6
-    Size: M
-    Speed: 30
-    abl_boosts:
-    - Dexterity
     - Intelligence
     - open
-    abl_flaw: Constitution
+    abl_flaws: Wisdom
     languages:
     - Common
-    - Sildanyar
+    - Gobber
     traits:
-    - sildanyar
+    - arvek
     - humanoid
     special:
-    - Low-Light Vision
+    - darkvision
     heritages:
     - Aasimar
     - Ashen One
-    - Ancient
-    - Arctic
-    - Cavern
     - Changeling
     - Dar
-    - Desert
-    - Seer
+    - Elfbane
+    - Runtboss
+    - Smokeworker
     - Tiefling
-    - Whisper
-    - Woodland
     feats:
       1:
-      - Ancestral Linguistics
-      - Ancestral Longevity
-      - Elemental Wrath
-      - Forlorn
-      - Know Your Own
-      - Nimble Elf
-      - Otherworldly Magic
-      - Share Thoughts
-      - Sildanyar Aloofness
-      - Sildanyar Lore
-      - Sildanyar Verve
-      - Sildanyar Weapon Familiarity
-      - Unwavering Mien
-      - Wildborn Magic
-      - Woodcraft
+      - Alchemical Scholar
+      - Arvek Lore
+      - Arvek Weapon Familiarity
+      - Leech-Clipper
+      - Remorseless Lash
+      - Vigorous Health
       5:
-      - Ageless Patience
-      - Ancestral Suspicion
-      - Defiance Unto Death
+      - Agonizing Rebuke
+      - Arvek Weapon Discipline
+      - Expert Drill Sergeant
       - Fey Influence
-      - Forest Stealth
-      - Martial Experience
-      - Sildanyar Instincts
-      - Sildanyar Weapon Elegance
-      - Wildborn Adept
+      - Formation Training
       9:
-      - Brightness Seeker
-      - Elf Step
-      - Expert Longevity
-      - Otherworldly Acumen
-      - Sense Thoughts
-      - Tree Climber (Elf)
+      - Pride In Arms
       13:
-      - Avenge Ally
-      - Sildanyar Weapon Expertise
-      - Universal Longevity
-      - Wandering Heart
+      - Arvek Weapon Expertise
+      - Formation Master
       17:
-      - Magic Rider
+      - "Azaersi's Roads"
   Gnome:
     HP: 8
     Size: S
@@ -281,76 +187,59 @@ pf2e_ancestry:
       - "Very, Very Sneaky"
       17:
       - Reckless Abandon
-  Lucht Siuil:
+  Egalrin:
     HP: 6
-    Size: S
-    Speed: 25
-    able_boosts:
+    Size: M
+    abl_boosts:
     - Dexterity
-    - Wisdom
     - open
-    abl_flaw: Strength
     languages:
     - Common
-    - Lucht
+    - Egalrin
     traits:
-    - Lucht
+    - egalrin
     - humanoid
     special:
-    - keen eyes
+    - Low-Light Vision
+    attack:
+      Beak:
+        damage: 1d6
+        damage_type: P
+        group: brawling
+        traits:
+        - finesse
+        - unarmed
     heritages:
     - Aasimar
     - Ashen One
     - Changeling
     - Dar
-    - Gutsy
-    - Hillock
-    - Jinxed-lucht
-    - Nomadic
-    - Observant
+    - Jinxed-egalrin
+    - Mountainkeeper
+    - Skyborn
+    - Stormtossed
+    - Taloned
     - Tiefling
-    - Twilight
-    - Wildwood
     feats:
       1:
-      - Adroit Manipulation
-      - Distracting Shadows
-      - Folksy Patter
-      - Innocuous
-      - Intuitive Cooperation
-      - Lucht Lore
-      - Lucht Luck
-      - Lucht Weapon Familiarity
-      - Prairie Rider
-      - Sure Feet
-      - Titan Slinger
-      - Unassuming Dedication
-      - Unfettered Lucht
-      - Watchful Lucht
+      - Egalrin Lore
+      - Egalrin Weapon Familiarity
+      - "Scavenger's Search"
+      - Squawk!
+      - "Storm's Lash"
       5:
-      - Cultural Adaptability
-      - Easily Dismissed
+      - Eat Fortune
+      - Egalrin Weapon Study
       - Fey Influence
-      - Lucht Ingenuity
-      - Lucht Weapon Trickster
-      - "Shared Luck (Lucht)"
-      - Step Lively
+      - Long-Nosed Form
+      - One-Toed Hop
       9:
-      - Cunning Climber
-      - Dance Underfoot
-      - Fade Away
-      - Guiding Luck
-      - Helpful Lucht
-      - Irrepressible
-      - Unhampered Passage
+      - Eclectic Sword Training
+      - Soaring Flight
       13:
-      - Ceaseless Shadows
-      - Cobble Dancer
-      - Lucht Weapon Expertise
-      - "Incredible Luck (Lucht)"
-      - Toppling Dance
+      - Egalrin Weapon Expertise
       17:
-      - Shadow Self
+      - Great Egalrin Form
   Human:
     HP: 8
     Size: M
@@ -424,58 +313,76 @@ pf2e_ancestry:
       - Unconventional Expertise
       17:
       - Heroic Presence
-  Oruch:
+  Khazad:
     HP: 10
     Size: M
-    Speed: 25
+    Speed: 20
     abl_boosts:
-    - Strength
+    - Constitution
+    - Wisdom
     - open
+    abl_flaw: Charisma
     languages:
-    - Common
-    - Yrch
+    - Khazdul
+    - Tradespeak
     traits:
-    - oruch
+    - khazad
     - humanoid
     special:
-    - darkvision
+    - Darkvision
     heritages:
     - Aasimar
+    - Ancient-Blooded
+    - Anvil
     - Ashen One
-    - Badlands
     - Changeling
     - Dar
-    - Deep
-    - Hold-Scarred
-    - Rainfall
+    - Death Warden
+    - Elemental Heart
+    - Forge
+    - Oathkeeper
+    - Rock
+    - Strong-Blooded
     - Tiefling
     feats:
       1:
-      - Beast Trainer
-      - Iron Fists
-      - Oruch Ferocity
-      - Oruch Lore
-      - Oruch Superstition
-      - Oruch Weapon Familiarity
-      - Tusks
+      - Avenge In Glory
+      - Clan's Edge
+      - Khazadi Doughtiness
+      - Khazadi Lore
+      - Khazadi Weapon Familiarity
+      - Eye For Treasure
+      - "Forge-Day's Rest"
+      - Rock Runner
+      - Stonecunning
+      - Surface Culture
+      - Unburdened Iron
+      - Vengeful Hatred
       5:
-      - Athletic Might
-      - Bloody Blows
+      - Boulder Roll
+      - Clan Protector
+      - Defy the Darkness
       - Fey Influence
-      - Hold Mark
-      - Oruch Weapon Carnage
-      - Victorious Vigor
+      - Khazadi Reinforcement
+      - Khazadi Weapon Cunning
+      - Protective Sheath
+      - Sheltering Slab
+      - "Tomb-Watcher's Glare"
       9:
-      - "Death's Drums"
-      - Pervasive Superstition
-      - Undying Ferocity
+      - Battleforger
+      - Echoes in Stone
+      - Energy Blessed
+      - "Heroes' Call"
+      - Kneel for No God
+      - "Mountain's Stoutness"
+      - Returning Throw
+      - Stone Bones
+      - Stonewalker
       13:
-      - Ferocious Beasts
-      - Incredible Ferocity
-      - Oruch Weapon Expertise
-      - Spell Devourer
+      - Khazadi Weapon Expertise
+      - Telluric Power
       17:
-      - Rampaging Ferocity
+      - Stonegate
   Lizardfolk:
     HP: 8
     Size: M
@@ -533,103 +440,256 @@ pf2e_ancestry:
       - Terrain Advantage
       13:
       - Iruxi Unarmed Expertise
-  Arvek Nar:
-    HP: 8
+  Lucht Siuil:
+    HP: 6
+    Size: S
+    Speed: 25
+    able_boosts:
+    - Dexterity
+    - Wisdom
+    - open
+    abl_flaw: Strength
+    languages:
+    - Common
+    - Lucht
+    traits:
+    - Lucht
+    - humanoid
+    special:
+    - keen eyes
+    heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Dar
+    - Gutsy
+    - Hillock
+    - Jinxed-lucht
+    - Nomadic
+    - Observant
+    - Tiefling
+    - Twilight
+    - Wildwood
+    feats:
+      1:
+      - Adroit Manipulation
+      - Distracting Shadows
+      - Folksy Patter
+      - Innocuous
+      - Intuitive Cooperation
+      - Lucht Lore
+      - Lucht Luck
+      - Lucht Weapon Familiarity
+      - Prairie Rider
+      - Sure Feet
+      - Titan Slinger
+      - Unassuming Dedication
+      - Unfettered Lucht
+      - Watchful Lucht
+      5:
+      - Cultural Adaptability
+      - Easily Dismissed
+      - Fey Influence
+      - Lucht Ingenuity
+      - Lucht Weapon Trickster
+      - "Shared Luck (Lucht)"
+      - Step Lively
+      9:
+      - Cunning Climber
+      - Dance Underfoot
+      - Fade Away
+      - Guiding Luck
+      - Helpful Lucht
+      - Irrepressible
+      - Unhampered Passage
+      13:
+      - Ceaseless Shadows
+      - Cobble Dancer
+      - Lucht Weapon Expertise
+      - "Incredible Luck (Lucht)"
+      - Toppling Dance
+      17:
+      - Shadow Self
+  Oruch:
+    HP: 10
     Size: M
     Speed: 25
     abl_boosts:
-    - Constitution
-    - Intelligence
+    - Strength
     - open
-    abl_flaws: Wisdom
     languages:
     - Common
-    - Gobber
+    - Yrch
     traits:
-    - arvek
+    - oruch
     - humanoid
     special:
     - darkvision
     heritages:
     - Aasimar
     - Ashen One
+    - Badlands
     - Changeling
     - Dar
-    - Elfbane
-    - Runtboss
-    - Smokeworker
+    - Deep
+    - Hold-Scarred
+    - Rainfall
     - Tiefling
     feats:
       1:
-      - Alchemical Scholar
-      - Arvek Lore
-      - Arvek Weapon Familiarity
-      - Leech-Clipper
-      - Remorseless Lash
-      - Vigorous Health
+      - Beast Trainer
+      - Iron Fists
+      - Oruch Ferocity
+      - Oruch Lore
+      - Oruch Superstition
+      - Oruch Weapon Familiarity
+      - Tusks
       5:
-      - Agonizing Rebuke
-      - Arvek Weapon Discipline
-      - Expert Drill Sergeant
+      - Athletic Might
+      - Bloody Blows
       - Fey Influence
-      - Formation Training
+      - Hold Mark
+      - Oruch Weapon Carnage
+      - Victorious Vigor
       9:
-      - Pride In Arms
+      - "Death's Drums"
+      - Pervasive Superstition
+      - Undying Ferocity
       13:
-      - Arvek Weapon Expertise
-      - Formation Master
+      - Ferocious Beasts
+      - Incredible Ferocity
+      - Oruch Weapon Expertise
+      - Spell Devourer
       17:
-      - "Azaersi's Roads"
-  Egalrin:
+      - Rampaging Ferocity
+  Ratfolk:
     HP: 6
-    Size: M
+    Size: S
     abl_boosts:
     - Dexterity
+    - Intelligence
     - open
+    abl_flaws: Strength
     languages:
     - Common
-    - Egalrin
+    - Ysoki
     traits:
-    - egalrin
+    - uncommon
     - humanoid
+    - ratfolk
     special:
     - Low-Light Vision
-    attack:
-      Beak:
-        damage: 1d6
-        damage_type: P
-        group: brawling
-        traits:
-        - finesse
-        - unarmed
     heritages:
     - Aasimar
     - Ashen One
     - Changeling
     - Dar
-    - Jinxed-egalrin
-    - Mountainkeeper
-    - Skyborn
-    - Stormtossed
-    - Taloned
+    - Deep Rat
+    - Desert Rat
+    - Longsnout Rat
+    - Sewer Rat
+    - Shadow Rat
+    - Snow Rat
     - Tiefling
+    - Tunnel Rat
     feats:
       1:
-      - Egalrin Lore
-      - Egalrin Weapon Familiarity
-      - "Scavenger's Search"
-      - Squawk!
-      - "Storm's Lash"
+      - Cheek Pouches
+      - Pack Rat
+      - Rat Familiar
+      - Ratfolk Lore
+      - Ratspeak
+      - Skull Creeper
+      - Tinkering Fingers
+      - Vicious Incisors
+      - Warren Friend
+      - Warren Navigator
       5:
-      - Eat Fortune
-      - Egalrin Weapon Study
+      - Cornered Fury
       - Fey Influence
-      - Long-Nosed Form
-      - One-Toed Hop
+      - Gnaw
+      - Lab Rat
+      - Plague Sniffer
+      - Quick Stow (Ratfolk)
+      - Rat Magic
+      - Ratfolk Roll
       9:
-      - Eclectic Sword Training
-      - Soaring Flight
+      - Big Mouth
+      - Overcrowd
+      - Rat Form
       13:
-      - Egalrin Weapon Expertise
+      - Shinstabber
+      - Skittering Sneak
+      - Warren Digger
+      - Ratfolk Growth
+  Sildanyar:
+    HP: 6
+    Size: M
+    Speed: 30
+    abl_boosts:
+    - Dexterity
+    - Intelligence
+    - open
+    abl_flaw: Constitution
+    languages:
+    - Common
+    - Sildanyar
+    traits:
+    - sildanyar
+    - humanoid
+    special:
+    - Low-Light Vision
+    heritages:
+    - Aasimar
+    - Ashen One
+    - Ancient
+    - Arctic
+    - Cavern
+    - Changeling
+    - Dar
+    - Desert
+    - Seer
+    - Tiefling
+    - Whisper
+    - Woodland
+    feats:
+      1:
+      - Ancestral Linguistics
+      - Ancestral Longevity
+      - Elemental Wrath
+      - Forlorn
+      - Know Your Own
+      - Nimble Elf
+      - Otherworldly Magic
+      - Share Thoughts
+      - Sildanyar Aloofness
+      - Sildanyar Lore
+      - Sildanyar Verve
+      - Sildanyar Weapon Familiarity
+      - Unwavering Mien
+      - Wildborn Magic
+      - Woodcraft
+      5:
+      - Ageless Patience
+      - Ancestral Suspicion
+      - Defiance Unto Death
+      - Fey Influence
+      - Forest Stealth
+      - Martial Experience
+      - Sildanyar Instincts
+      - Sildanyar Weapon Elegance
+      - Wildborn Adept
+      9:
+      - Brightness Seeker
+      - Elf Step
+      - Expert Longevity
+      - Otherworldly Acumen
+      - Sense Thoughts
+      - Tree Climber (Elf)
+      13:
+      - Avenge Ally
+      - Sildanyar Weapon Expertise
+      - Universal Longevity
+      - Wandering Heart
       17:
-      - Great Egalrin Form
+      - Magic Rider
