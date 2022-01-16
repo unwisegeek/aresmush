@@ -313,6 +313,66 @@ pf2e_ancestry:
       - Unconventional Expertise
       17:
       - Heroic Presence
+  Khailli:
+    HP: 6
+    Size: S
+    abl_boosts:
+    - Dexterity
+    - Intelligence
+    - open
+    abl_flaws: Strength
+    languages:
+    - Common
+    - Ysoki
+    traits:
+    - uncommon
+    - humanoid
+    - ratfolk
+    special:
+    - Low-Light Vision
+    heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Dar
+    - Deep Rat
+    - Desert Rat
+    - Longsnout Rat
+    - Sewer Rat
+    - Shadow Rat
+    - Snow Rat
+    - Tiefling
+    - Tunnel Rat
+    feats:
+      1:
+      - Cheek Pouches
+      - Pack Rat
+      - Rat Familiar
+      - Ratfolk Lore
+      - Ratspeak
+      - Skull Creeper
+      - Tinkering Fingers
+      - Vicious Incisors
+      - Warren Friend
+      - Warren Navigator
+      5:
+      - Cornered Fury
+      - Fey Influence
+      - Gnaw
+      - Lab Rat
+      - Plague Sniffer
+      - Quick Stow (Ratfolk)
+      - Rat Magic
+      - Ratfolk Roll
+      9:
+      - Big Mouth
+      - Overcrowd
+      - Rat Form
+      13:
+      - Shinstabber
+      - Skittering Sneak
+      - Warren Digger
+      - Ratfolk Growth
   Khazad:
     HP: 10
     Size: M
@@ -562,66 +622,6 @@ pf2e_ancestry:
       - Spell Devourer
       17:
       - Rampaging Ferocity
-  Ratfolk:
-    HP: 6
-    Size: S
-    abl_boosts:
-    - Dexterity
-    - Intelligence
-    - open
-    abl_flaws: Strength
-    languages:
-    - Common
-    - Ysoki
-    traits:
-    - uncommon
-    - humanoid
-    - ratfolk
-    special:
-    - Low-Light Vision
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Dar
-    - Deep Rat
-    - Desert Rat
-    - Longsnout Rat
-    - Sewer Rat
-    - Shadow Rat
-    - Snow Rat
-    - Tiefling
-    - Tunnel Rat
-    feats:
-      1:
-      - Cheek Pouches
-      - Pack Rat
-      - Rat Familiar
-      - Ratfolk Lore
-      - Ratspeak
-      - Skull Creeper
-      - Tinkering Fingers
-      - Vicious Incisors
-      - Warren Friend
-      - Warren Navigator
-      5:
-      - Cornered Fury
-      - Fey Influence
-      - Gnaw
-      - Lab Rat
-      - Plague Sniffer
-      - Quick Stow (Ratfolk)
-      - Rat Magic
-      - Ratfolk Roll
-      9:
-      - Big Mouth
-      - Overcrowd
-      - Rat Form
-      13:
-      - Shinstabber
-      - Skittering Sneak
-      - Warren Digger
-      - Ratfolk Growth
   Sildanyar:
     HP: 6
     Size: M
