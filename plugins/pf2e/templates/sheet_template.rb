@@ -120,6 +120,8 @@ module AresMUSH
         skills.each_with_index do |s,i|
           list << format_skill(s, i)
         end
+
+        list
       end
 
       def lores
@@ -131,6 +133,8 @@ module AresMUSH
         lores.each_with_index do |lore,i|
           list << format_lore(lore, i)
         end
+
+        list
       end
 
       def hp
@@ -284,7 +288,7 @@ module AresMUSH
         linked_attr = "INT"
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = "#{s.prof_level}#{linked_attr}"
-        "#{linebreak}#{left(name, 18)} #{left(proflevel, 18)}"
+        "#{linebreak}#{left(fmt_name, 18)} #{left(proflevel, 18)}"
       end
 
       def format_save(char,name)
