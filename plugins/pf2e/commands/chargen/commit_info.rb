@@ -296,7 +296,8 @@ module AresMUSH
         # Starting Magic
         magic_stats = class_features_info['magic_stats']
 
-        Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
+        # This needs work, commenting out for now
+        # Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
 
         # Languages
         languages = enactor.pf2_lang
