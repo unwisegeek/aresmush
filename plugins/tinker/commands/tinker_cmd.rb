@@ -11,11 +11,13 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("testchar")
         
-        skills = char.skills
+        int_mod = 3
         
-        skill_names = skills.map { |s| s.name }
+        ary = []
         
-        client.emit "Skill Names - #{skill_names}"
+        ary.cycle(int_mod) { |x| ary << "open" }
+        
+        client.emit ary
         
       end
 
