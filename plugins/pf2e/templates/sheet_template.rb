@@ -302,8 +302,8 @@ module AresMUSH
       end
 
       def print_linked_attr(skill)
-        apt = Pf2eSkills.get_linked_attr(skill.name)
-        !apt ? "" : " %xh%xx(#{apt[0..2].upcase})%xn"
+        apt = Pf2eSkills.get_linked_attr(skill)
+        apt ? "" : " %xh%xx(#{apt[0..2].upcase})%xn"
       end
 
     end
