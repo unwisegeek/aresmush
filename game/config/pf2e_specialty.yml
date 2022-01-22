@@ -277,8 +277,9 @@ pf2e_specialty:
         skills: []
         feat: Bardic Lore
         magic_stats:
-          addspell:
-            1: True Strike
+          spell:
+            1:
+              True Strike
     Maestro:
       chargen:
         action: []
@@ -286,7 +287,7 @@ pf2e_specialty:
         skills: []
         feat: Lingering Composition
         magic_stats:
-          addspell:
+          spell:
             1: Soothe
     Polymath:
       chargen:
@@ -295,7 +296,7 @@ pf2e_specialty:
         skills: []
         feat: Versatile Performance
         magic_stats:
-          addspell:
+          spell:
             1: Unseen Servant
     Warrior:
       chargen:
@@ -304,7 +305,7 @@ pf2e_specialty:
         skills: []
         feat: Martial Performance
         magic_stats:
-          addspell:
+          spell:
             1: Fear
   Champion:
     Paladin:
@@ -457,8 +458,7 @@ pf2e_specialty:
         - "Character must not kill an animal needlessly or commit wanton cruelty to one."
         magic_stats:
           order:
-            spell:
-            - Heal Animal
+          - Heal Animal
         companion: any
     Leaf:
       chargen:
@@ -470,8 +470,7 @@ pf2e_specialty:
         - Leshy Familiar
         magic_stats:
           order:
-            spell:
-            - Goodberry
+          - Goodberry
           focus_pool: 1
         anathema:
         - "Character must not kill a plant needlessly or commit wanton cruelty to one."
@@ -487,8 +486,7 @@ pf2e_specialty:
         magic_stats:
           focus_pool: 1
           order:
-            spell:
-            - Tempest Surge
+          - Tempest Surge
         edicts:
         - "Character must punish those who cause major air pollution or climate shifts."
         anathema:
@@ -503,8 +501,7 @@ pf2e_specialty:
         - Wild Shape
         magic_stats:
           order:
-            spell:
-            - Wild Morph
+          - Wild Morph
         anathema:
         - "Character must not become reliant on the temptations of civilization."
   Investigator:
@@ -731,9 +728,9 @@ pf2e_specialty:
         - Nature
         magic_stats:
           cantrip:
-            - Electric Arc
+          - Electric Arc
           revelation:
-          _ Tempest Touch
+          - Tempest Touch
           curse: Perpetual Storm
         action: []
         reaction: []
@@ -828,7 +825,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             occult: trained
-          addspell:
+          spell:
             cantrip: Daze
             1: Spider Sting
           bloodline:
@@ -842,39 +839,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Touch of Idiocy
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Vampiric Touch
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Confusion
             tradition:
               occult: trained
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Black Tentacles
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Feeblemind
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Warp Mind
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Uncontrollable Dance
             tradition:
               occult: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Unfathomable Song
         19:
           magic_stats:
@@ -885,7 +882,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             divine: trained
-          addspell:
+          spell:
             cantrip: Light
             1: Heal
           bloodline:
@@ -899,39 +896,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Spiritual Weapon
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Searing Light
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Divine Wrath
             tradition:
               divine: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Flame Strike
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Blade Barrier
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Divine Decree
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Divine Aura
             tradition:
               divine: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Foresight
         19:
           magic_stats:
@@ -942,7 +939,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             divine: trained
-          addspell:
+          spell:
             cantrip: Acid Splash
             1: Fear
           bloodline:
@@ -956,39 +953,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Enlarge
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Slow
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Divine Wrath
             tradition:
               divine: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Abyssal Plague
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Disintegrate
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Divine Decree
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Divine Aura
             tradition:
               divine: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Implosion
         19:
           magic_stats:
@@ -999,7 +996,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             divine: trained
-          addspell:
+          spell:
             cantrip: Produce Flame
             1: Charm
           bloodline:
@@ -1013,39 +1010,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Flaming Sphere
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Enthrall
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Suggestion
             tradition:
               divine: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Crushing Despair
         11:
           magic_stats:
-            addspell:
+            spell:
               6: True Seeing
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Divine Decree
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Divine Aura
             tradition:
               divine: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Meteor Swarm
         19:
           magic_stats:
@@ -1070,12 +1067,11 @@ pf2e_specialty:
         magic_stats:
           tradition:
             arcane: trained
-          addspell:
+          spell:
             cantrip: Shield
             1: True Strike
           bloodline:
-            spell:
-            - Dragon Claws
+          - Dragon Claws
         skills:
         - Arcana
         - Intimidation
@@ -1084,39 +1080,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Resist Energy
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Haste
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Spell Immunity
             tradition:
               arcane: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Chromatic Wall
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Dragon Form
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Mask of Terror
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Prismatic Wall
             tradition:
               arcane: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Overwhelming Presence
         19:
           magic_stats:
@@ -1135,7 +1131,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             primal: trained
-          addspell:
+          spell:
             cantrip: Produce Flame
             1: Burning Hands
           bloodline:
@@ -1149,39 +1145,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Resist Energy
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Fireball
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Freedom of Movement
             tradition:
               primal: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Elemental Form
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Repulsion
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Energy Aegis
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Prismatic Wall
             tradition:
               primal: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Storm of Vengeance
         19:
           magic_stats:
@@ -1192,7 +1188,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             primal: trained
-          addspell:
+          spell:
             cantrip: Ghost Sound
             1: Charm
           bloodline:
@@ -1206,39 +1202,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Hideous Laughter
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Enthrall
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Suggestion
             tradition:
               primal: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Cloak of Colors
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Mislead
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Visions of Danger
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Uncontrollable Dance
             tradition:
               primal: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Resplendent Mansion
         19:
           magic_stats:
@@ -1258,7 +1254,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             arcane: trained
-          addspell:
+          spell:
             cantrip: Detect Magic
             1: Illusory Disguise
           bloodline:
@@ -1275,11 +1271,11 @@ pf2e_specialty:
             get_genie_spell: 2
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Enthrall
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Creation
             tradition:
               arcane: expert
@@ -1288,11 +1284,11 @@ pf2e_specialty:
             get_genie_spell: 5
         11:
           magic_stats:
-            addspell:
+            spell:
               6: True Seeing
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Energy Aegis
         15:
           magic_stats:
@@ -1301,7 +1297,7 @@ pf2e_specialty:
               arcane: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Resplendent Mansion
         19:
           magic_stats:
@@ -1312,7 +1308,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             occult: trained
-          addspell:
+          spell:
             cantrip: Daze
             1: Illusory Disguise
           bloodline:
@@ -1326,39 +1322,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Touch of Idiocy
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Blindness
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Outcast's Curse
             tradition:
               occult: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Mariner's Curse
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Baleful Polymorph
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Warp Mind
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Spiritual Epidemic
             tradition:
               occult: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Nature's Enmity
         19:
           magic_stats:
@@ -1369,7 +1365,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             arcane: trained
-          addspell:
+          spell:
             cantrip: Detect Magic
             1: Magic Missile
           bloodline:
@@ -1383,39 +1379,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Dispel Magic
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Haste
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Dimension Door
             tradition:
               arcane: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Prying Eye
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Disintegrate
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Prismatic Spray
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Maze
             tradition:
               arcane: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Prismatic Sphere
         19:
           magic_stats:
@@ -1426,7 +1422,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             primal: trained
-          addspell:
+          spell:
             cantrip: Tanglefoot
             1: Charm
           bloodline:
@@ -1440,39 +1436,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Calm Emotions
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Animal Vision
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Vital Beacon
             tradition:
               primal: trained
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Crushing Despair
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Repulsion
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Unfettered Pack
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Moment of Renewal
             tradition:
               primal: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Overwhelming Presence
         19:
           magic_stats:
@@ -1483,7 +1479,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             divine: trained
-          addspell:
+          spell:
             cantrip: Disrupt Undead
             1: Heal
           bloodline:
@@ -1497,39 +1493,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Calm Emotions
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Searing Light
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Dimensional Anchor
             tradition:
               divine: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Death Ward
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Spirit Blast
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Finger of Death
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Spirit Song
             tradition:
               divine: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Massacre
         19:
           magic_stats:
@@ -1540,7 +1536,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             occult: trained
-          addspell:
+          spell:
             cantrip: Chill Touch
             1: Grim Tendrils
           bloodline:
@@ -1554,39 +1550,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: Darkness
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Chilling Darkness
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Phantasmal Killer
             tradition:
               occult: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Shadow Siphon
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Collective Transposition
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Duplicate Foe
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Disappearance
             tradition:
               occult: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Weird
         19:
           magic_stats:
@@ -1597,7 +1593,7 @@ pf2e_specialty:
         magic_stats:
           tradition:
             divine: trained
-          addspell:
+          spell:
             cantrip: Chill Touch
             1: Harm
           bloodline:
@@ -1611,39 +1607,39 @@ pf2e_specialty:
       advance:
         3:
           magic_stats:
-            addspell:
+            spell:
               2: False Life
         5:
           magic_stats:
-            addspell:
+            spell:
               3: Bind Undead
         7:
           magic_stats:
-            addspell:
+            spell:
               4: Talking Corpse
             tradition:
               divine: expert
         9:
           magic_stats:
-            addspell:
+            spell:
               5: Cloudkill
         11:
           magic_stats:
-            addspell:
+            spell:
               6: Vampiric Exsanguination
         13:
           magic_stats:
-            addspell:
+            spell:
               7: Finger of Death
         15:
           magic_stats:
-            addspell:
+            spell:
               8: Horrid Wilting
             tradition:
               divine: master
         17:
           magic_stats:
-            addspell:
+            spell:
               9: Wail of the Banshee
         19:
           magic_stats:
@@ -1690,7 +1686,7 @@ pf2e_specialty:
           hex:
             cantrip:
             - Evil Eye
-          addspell:
+          spell:
             1: Ray of Enfeeblement
       advance:
         7:
@@ -1717,7 +1713,7 @@ pf2e_specialty:
           hex:
             cantrip:
             - Nudge Fate
-          addspell:
+          spell:
             1: True Strike
       advance:
         7:
@@ -1744,7 +1740,7 @@ pf2e_specialty:
           hex:
             cantrip:
             - Stoke the Heart
-          addspell:
+          spell:
             1: Command
       advance:
         7:
@@ -1771,7 +1767,7 @@ pf2e_specialty:
           hex:
             cantrip:
             - Shroud of Night
-          addspell:
+          spell:
             1: Sleep
       advance:
         7:
@@ -1798,7 +1794,7 @@ pf2e_specialty:
           hex:
             cantrip:
             - Discern Secrets
-          addspell:
+          spell:
             1: Magic Weapon
       advance:
         7:
@@ -1857,7 +1853,7 @@ pf2e_specialty:
           hex:
             cantrip:
             - Clinging Ice
-          addspell:
+          spell:
             1: Gust of Wind
       advance:
         7:

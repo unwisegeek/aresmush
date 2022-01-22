@@ -134,7 +134,7 @@ module AresMUSH
 
         unique_skills = defined_skills.uniq
 
-        if !unique_skills.empty?
+        if !(unique_skills.empty?)
           unique_skills.each do |s|
             has_skill = Pf2eSkills.find_skill(s, enactor)
 
@@ -294,9 +294,9 @@ module AresMUSH
         combat.update(key_abil: key_ability) if key_ability.is_a?(String)
 
         # Starting Magic
-        # magic_stats = class_features_info['magic_stats']
+        magic_stats = class_features_info['magic_stats']
 
-        # Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
+        Pf2eMagic.update_magic_stats(enactor,magic_stats) if magic_stats
 
         # Languages
         languages = enactor.pf2_lang
@@ -307,7 +307,7 @@ module AresMUSH
 
         clang.each { |l| languages << l } if clang
 
-        enactor.pf2_lang = languages.uniq
+        enactor.pf2_lang = languages
 
         # Traits, Size, Movement, Misc Info
         traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
