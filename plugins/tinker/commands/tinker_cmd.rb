@@ -15,9 +15,9 @@ module AresMUSH
         
         ary = []
         
-        ary.cycle(int_mod) { |x| ary << "open" }
+        int_skills = [].fill("open", nil, int_mod)
         
-        client.emit ary
+        client.emit int_skills
         
       end
 
