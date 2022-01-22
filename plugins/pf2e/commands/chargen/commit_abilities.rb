@@ -36,7 +36,9 @@ module AresMUSH
         int_mod = int_mod.negative? ? 0 : int_mod
 
         open_skills = to_assign["open skills"]
-        to_assign['open skill'] = open_skills + int_mod
+        int_skills = [].fill("open", nil, int_mod)
+
+        to_assign['open skill'] = open_skills + int_skills
         to_assign['open language'] = int_mod
 
         # Calculate HP
