@@ -24,6 +24,7 @@ pf2e_class:
           fortitude: expert
           reflex: expert
           will: trained
+      magic_stats: {}
       skills:
       - Crafting
       - open
@@ -184,6 +185,7 @@ pf2e_class:
           fortitude: expert
           reflex: trained
           will: expert
+      magic_stats: {}
       skills:
       - Athletics
       - open
@@ -1295,6 +1297,7 @@ pf2e_class:
           fortitude: expert
           reflex: expert
           will: trained
+      magic_stats: {}
       skills:
       - Acrobatics
       - Athletics
@@ -1506,6 +1509,7 @@ pf2e_class:
           fortitude: trained
           reflex: expert
           will: expert
+      magic_stats: {}
       action:
       - Pursue A Lead
       reaction:
@@ -1702,6 +1706,7 @@ pf2e_class:
       - Flurry of Blows
       - Powerful Fist
       reaction: []
+      magic_stats: {}
     choose:
       choice_name: Spell Tradition
       choice_description: Do you draw ki spells from divine or occult magic?
@@ -2358,6 +2363,7 @@ pf2e_class:
           reflex: expert
           will: expert
         sneak_attack: 1d6
+      magic_stats: {}
       action: []
       reaction: []
     advance:
