@@ -249,7 +249,7 @@ module AresMUSH
 
         # Check for darkvision override of low-light vision
         if Pf2e.character_has?(a_specials, "Low-Light Vision") && heritage_info["change_vision"]
-          special = special + [ "Darkvision" ] - [ "Low-Light Vision" ]
+          specials = special + [ "Darkvision" ] - [ "Low-Light Vision" ]
         end
 
         enactor.pf2_special = specials
@@ -307,7 +307,7 @@ module AresMUSH
 
         clang.each { |l| languages << l } if clang
 
-        enactor.pf2_lang = languages
+        enactor.pf2_lang = languages.uniq
 
         # Traits, Size, Movement, Misc Info
         traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
