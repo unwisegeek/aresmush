@@ -274,7 +274,7 @@ module AresMUSH
         fmt_name = "%xh#{name}:%xn"
         linked_attr = print_linked_attr(name)
         linebreak = i % 2 == 1 ? "" : "%r"
-        proflevel = "#{s.proflevel}#{linked_attr}"
+        proflevel = "#{s.prof_level}#{linked_attr}"
         "#{linebreak}#{left(fmt_name, 18)} #{left(proflevel, 18)}"
       end
 
@@ -283,7 +283,7 @@ module AresMUSH
         fmt_name = "%xh#{name}:%xn"
         linked_attr = "INT"
         linebreak = i % 2 == 1 ? "" : "%r"
-        proflevel = "#{s.proflevel}#{linked_attr}"
+        proflevel = "#{s.prof_level}#{linked_attr}"
         "#{linebreak}#{left(name, 18)} #{left(proflevel, 18)}"
       end
 
