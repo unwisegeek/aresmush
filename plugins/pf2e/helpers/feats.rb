@@ -152,7 +152,7 @@ module AresMUSH
    
 
     def self.has_feat?(enactor, feat)
-      feat_list = enactor.pf2_feats.map { |f| f.upcase }
+      feat_list = enactor.pf2_feats.values.flatten.map { |f| f.upcase }
 
       feat_list.include?(feat.upcase)
     end
