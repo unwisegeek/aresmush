@@ -104,6 +104,16 @@ module AresMUSH
 
         # Opening Skills
 
+        ## Create all skills with default values.
+
+        skill_list = Global.read_config('pf2e_skills').keys
+
+        skill_list.each do |s|
+          Pf2eSkills.create_skill_for_char(s, enactor)
+        end
+
+        ## Determine what skills come with the character's base info, and set those.
+
         bg_skills = background_info["skills"] ? background_info["skills"] : []
 
         if bg_skills.size > 1
@@ -136,11 +146,7 @@ module AresMUSH
 
         if !(unique_skills.empty?)
           unique_skills.each do |s|
-            has_skill = Pf2eSkills.find_skill(s, enactor)
-
-            next if has_skill
-
-            Pf2eSkills.create_skill_for_char(s, enactor, true)
+            Pf2eSkills.update_skill_for_char(s, enactor, 'trained', true)
           end
         end
 
