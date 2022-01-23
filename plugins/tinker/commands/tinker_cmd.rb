@@ -11,13 +11,17 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("testchar")
         
-        int_mod = 3
+        obj_list = char.skills
         
-        ary = []
+        obj_list_sorted = obj_list.to_a.sort_by { |a| a.name }
         
-        int_skills = [].fill("open", nil, int_mod)
+        skills = obj_list.map { |a| a.name }
         
-        client.emit int_skills
+        skills_sorted = obj_list_sorted.map { |a| a.name }
+        
+        client.emit skills
+        
+        client.emit skills_sorted
         
       end
 
