@@ -6,7 +6,7 @@ module AresMUSH
       level = char.pf2_level
 
       if p == "untrained"
-        if Pf2eSkills.has_feat?(char, "Untrained Improvisation")
+        if Pf2e.has_feat?(char, "Untrained Improvisation")
           bonus = level < 7 ? (level / 2).floor : level
           return bonus
         end
