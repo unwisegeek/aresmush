@@ -118,7 +118,7 @@ module AresMUSH
 
         list = []
         skills.each_with_index do |s,i|
-          list << format_skill(s, i)
+          list << format_skill(@char, s, i)
         end
 
         list
@@ -273,13 +273,14 @@ module AresMUSH
         "#{name}#{value}%xn"
       end
 
-      def format_skill(s, i)
+      def format_skill(char, s, i)
         name = s.name
-        fmt_name = "%xh#{name}:%xn"
+        fmt_name = "%xh#{name}%xn"
         linked_attr = print_linked_attr(name)
+        skill_mod = Pf2eSkills.get_skill_bonus(char, name)
         linebreak = i % 2 == 1 ? "" : "%r"
-        proflevel = "#{s.prof_level}#{linked_attr}"
-        "#{linebreak}#{left(fmt_name, 18)} #{left(proflevel, 18)}"
+        proflevel = "(#{s.prof_level[0].upcase})"
+        "#{linebreak}#{left(fmt_name, 18)} #{linked_attr}: #{left(skill_mod, 15)} #{proflevel}"
       end
 
       def format_lore(lore, i)

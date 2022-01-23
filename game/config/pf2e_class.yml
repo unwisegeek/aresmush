@@ -1337,19 +1337,20 @@ pf2e_class:
       choose_feat:
       - ancestry
       charclass:
-      - Fighter Weapon Mastery
       choose:
-      - Club
-      - Knife
-      - Brawling
-      - Spear
-      - Sword
-      - Axe
-      - Flail
-      - Polearm
-      - Hammer
-      choice_name: Weapon Mastery
-      choice_description: "Choose a weapon group for your weapon mastery."
+        choice_name: Weapon Mastery
+        choice_description: "Choose a weapon group for your weapon mastery."
+        choice_type: charclass_option
+        options:
+        - Club
+        - Knife
+        - Brawling
+        - Spear
+        - Sword
+        - Axe
+        - Flail
+        - Polearm
+        - Hammer
     6:
       choose_feat:
       - charclass
@@ -1414,17 +1415,19 @@ pf2e_class:
         wp_advanced: expert
         wp_unarmed: master
       choose:
-      - Club
-      - Knife
-      - Brawling
-      - Spear
-      - Sword
-      - Axe
-      - Flail
-      - Polearm
-      - Hammer
-      choice_name: Weapon Legend
-      choice_description: "Choose a weapon group for your weapon legend feat."
+        choice_name: Weapon Legend
+        choice_description: "Choose a weapon group for your weapon legend feat."
+        choice_type: charclass_option
+        options:
+        - Club
+        - Knife
+        - Brawling
+        - Spear
+        - Sword
+        - Axe
+        - Flail
+        - Polearm
+        - Hammer
     14:
       choose_feat:
       - charclass

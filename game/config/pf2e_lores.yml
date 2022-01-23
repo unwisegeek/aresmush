@@ -63,7 +63,7 @@ pf2e_lores:
   - Labor Lore
   - Legal Lore
   - Library Lore
-  - Mercatile Lore
+  - Mercantile Lore
   - Midwifery Lore
   - Milling Lore
   - Mining Lore
@@ -74,3 +74,16 @@ pf2e_lores:
   - Theater Lore
   - Underworld Lore
   - Warfare Lore
+  crafting:
+  - Alchemy
+  - Artistry
+  - Blacksmithing
+  - Bookmaking
+  - Glassmaking
+  - Leatherworking
+  - Pottery
+  - Shipbuilding
+  - Stonemasonry
+  - Tailoring
+  - Weaving
+  - Woodworking

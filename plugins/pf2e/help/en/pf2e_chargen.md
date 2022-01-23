@@ -19,10 +19,9 @@ The first thing you'll need to do is set your basic character information. You w
 * charclass%xy*%xn: Your character's class, their field of expertise.
 * heritage%xy*%xn: A subset of ancestry, determines what ancestry feats are available.
 * lineage: Some heritages offer optional lineage feats. If yours does and you want one, choose it with this keyword.
-* specialize: Some classes have specialties. If yours does, choose it using this element.
+* specialize: Many classes have specialties. If yours does, choose it using this element.
 * specialize_info: A few classes need to choose an option for their specialty. Choose it with this keyword.
-* faith%xy*%xn: The character's general philosophy and how they view the world.
-* alignment: Your character's alignment, expressed as a two-letter code. See [PRD](https://2e.aonprd.com/Rules.aspx?ID=95) for how alignment works in PF2E.
+* alignment%xy*%xn: Your character's alignment, expressed as a two-letter code. See [PRD](https://2e.aonprd.com/Rules.aspx?ID=95) for how alignment works in PF2E.
 * deity: Does your character venerate a specific deity above all others?
 
 _An element marked with the * character is a mandatory element._ Note that some other elements may be mandatory depending on game configuration and on the options chosen.
