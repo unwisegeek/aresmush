@@ -88,7 +88,7 @@ module AresMUSH
             return nil
           end
 
-          options = specialty_info['choose'].keys
+          options = specialty_info['choose']['options'].keys
           selected_option = options.find { |o| o.downcase.include? self.value.downcase }
         elsif selected_element == "deity"
           options = Global.read_config('pf2e_deities').keys
