@@ -53,6 +53,7 @@ module AresMUSH
         enactor.lores&.each { |l| l.delete }
         enactor.hp&.delete
         enactor.combat&.delete
+        enactor.magic&.delete
 
         client.emit_success t('pf2e.cg_reset_ok')
 
