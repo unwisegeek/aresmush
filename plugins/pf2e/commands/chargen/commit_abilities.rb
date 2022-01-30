@@ -11,6 +11,7 @@ module AresMUSH
 
       def handle
 
+        base_info = enactor.pf2_base_info
         ancestry = base_info['ancestry']
         heritage = base_info['heritage']
         charclass = base_info['charclass']
