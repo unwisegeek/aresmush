@@ -311,16 +311,16 @@ pf2e_specialty:
     Paladin:
       allowed_alignments:
       - LG
+      anathema:
+      - "Character must not willingly commit an evil act."
+      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Character must not lie, cheat, or take advantage of others."
+      edicts:
+      - "Character must respect the authority of legitimate leadership wherever they go, and must obey its laws."
       chargen:
         action: []
         reaction:
         - Retributive Strike
-        anathema:
-        - "Character must not willingly commit an evil act."
-        - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-        - "Character must not lie, cheat, or take advantage of others."
-        edicts:
-        - "Character must respect the authority of legitimate leadership wherever they go, and must obey its laws."
         magic_stats:
           devotion:
             spell:
@@ -329,16 +329,16 @@ pf2e_specialty:
     Redeemer:
       allowed_alignments:
       - NG
+      edicts:
+      - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
+      - "Character must show compassion for all, without regard to other factors."
+      anathema:
+      - "Character must not willingly commit an evil act."
+      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       chargen:
         action: []
         reaction:
         - Glimpse of Redemption
-        edicts:
-        - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
-        - "Character must show compassion for all, without regard to other factors."
-        anathema:
-        - "Character must not willingly commit an evil act."
-        - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
         magic_stats:
           devotion:
             spell:
@@ -347,18 +347,18 @@ pf2e_specialty:
     Liberator:
       allowed_alignments:
       - CG
+      edicts:
+      - "Character must honor decisions made by others over their own lives."
+      - "Character must demand and fight for others' freedom to make their own decisions."
+      anathema:
+      - "Character must not willingly commit an evil act."
+      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Character must not force someone to act in a particular way or threaten them if they refuse."
+      - "Character must not accept or countenance slavery or tyranny."
       chargen:
         action: []
         reaction:
         - Liberating Step
-        edicts:
-        - "Character must honor decisions made by others over their own lives."
-        - "Character must demand and fight for others' freedom to make their own decisions."
-        anathema:
-        - "Character must not willingly commit an evil act."
-        - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-        - "Character must not force someone to act in a particular way or threaten them if they refuse."
-        - "Character must not accept or countenance slavery or tyranny."
         magic_stats:
           devotion:
             spell:
