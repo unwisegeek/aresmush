@@ -46,6 +46,7 @@ module AresMUSH
 
         # Calculate new HP
 
+        hp = enactor.hp
 
         level = enactor.pf2_level
         hp_from_con = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(enactor, 'Constitution')) * level
