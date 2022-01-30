@@ -11,14 +11,17 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("testchar")
         
-        abilities = char.abilities
+        name = "Arcana"
         
-        ability = "Dexterity"
+        linked_attr = Pf2eSkills.get_linked_attr(name)
         
-        object = abilities.select { |a| a.name_upcase == ability.upcase }
-          
-        client.emit ability
-        client.emit object.count
+        abonus = Pf2eAbilities.abilmod(
+            Pf2eAbilities.get_score(char, linked_attr)
+        )
+        
+        client.emit linked_attr
+        
+        client.emit abonus
 
       end
 
