@@ -36,12 +36,10 @@ module AresMUSH
     end
 
     def self.update_base_score(char,ability,mod=2)
-      object = char.abilities.select { |a| a.name_upcase == ability.upcase }.first
+      object = char.abilities.select { |a| a.name_upcase == ability.upcase }
 
       return nil if !object
 
-
- 
       base = object.base_val
 
       if (mod.negative?)
@@ -54,7 +52,7 @@ module AresMUSH
         new_base = base + mod
       end
 
-      object.update(base_val: new_base)
+      abil.update(base_val: new_base)
     end
 
     def self.abilities_messages(char)
