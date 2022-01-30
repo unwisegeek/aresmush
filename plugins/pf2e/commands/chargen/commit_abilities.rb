@@ -10,6 +10,15 @@ module AresMUSH
       end
 
       def handle
+
+        ancestry = base_info['ancestry']
+        heritage = base_info['heritage']
+        charclass = base_info['charclass']
+        ancestry_info = Global.read_config('pf2e_ancestry', ancestry)
+        heritage_info = Global.read_config('pf2e_heritage', heritage)
+        charclass_info = Global.read_config('pf2e_class', charclass)
+
+
         if !enactor.pf2_baseinfo_locked
           client.emit_failure t('pf2e.lock_info_first')
           return
@@ -35,6 +44,7 @@ module AresMUSH
         to_assign['open language'] = int_mod
 
         # Calculate new HP
+
 
         level = enactor.pf2_level
         hp_from_con = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(enactor, 'Constitution')) * level
