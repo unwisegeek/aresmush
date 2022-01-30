@@ -89,7 +89,7 @@ module AresMUSH
         d_anathema = []
 
         if (@charclass == 'Champion') || (@charclass == 'Cleric')
-          if @faith_info['deity']
+          if !(@faith_info['deity'].blank?)
 
             d_edicts = Global.read_config('pf2e_deities',
                         @faith_info['deity'],
@@ -97,7 +97,7 @@ module AresMUSH
             d_anathema = Global.read_config('pf2e_deities',
                         @faith_info['deity'],
                         'anathema')
-          end          
+          end
         end
 
         s_edicts = @subclass_info['edicts'] ? @subclass_info['edicts'] : []
