@@ -11,20 +11,15 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("testchar")
         
+        abilities = char.abilities
+        
         ability = "Dexterity"
         
-        object = ClassTargetFinder.find(ability,Pf2eAbilities,char)
-        
-          if object.found?
-            ability = object.target
-            base = object.target.base_val
-          else
-            return nil
-          end
+        object = abilities.select { |a| a.name_upcase == ability.upcase }
           
-          client.emit ability
-          client.emit base
-            
+        client.emit ability
+        client.emit object.count
+
       end
 
     end
