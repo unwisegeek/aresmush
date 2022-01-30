@@ -11,18 +11,20 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("testchar")
         
-        obj_list = char.skills
+        ability = "Dexterity"
         
-        obj_list_sorted = obj_list.to_a.sort_by { |a| a.name }
+        object = ClassTargetFinder.find(ability,Pf2eAbilities,char)
         
-        skills = obj_list.map { |a| a.name }
-        
-        skills_sorted = obj_list_sorted.map { |a| a.name }
-        
-        client.emit skills
-        
-        client.emit skills_sorted
-        
+          if object.found?
+            ability = object.target
+            base = object.target.base_val
+          else
+            return nil
+          end
+          
+          client.emit ability
+          client.emit base
+            
       end
 
     end
