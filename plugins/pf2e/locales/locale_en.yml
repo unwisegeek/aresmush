@@ -19,6 +19,7 @@ en:
     bg_no_options: "Your background does not have any %{element} to set. Moving on..."
     bg_options_set: "Your background does not require any choices. Moving on..."
     boost_bad_type: "Boost type %{type} cannot be changed with this command."
+    boost_not_assigned: "%{value} has not yet been assigned to that boost type."
     boost_not_unique: "%xrYour %{type} boosts must all be assigned to different stats.%xn"
 
     cannot_cast_charclass: "That character class does not have a spell proficiency."
@@ -59,7 +60,7 @@ en:
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
     not_caster: "You are not a spellcaster."
-    not_selected_yet: "%{element} not selected yet"
+    not_selected_yet: "%{element} not selected yet."
     nothing_to_assign: "You have no character options left unassigned."
     nothing_to_display: "No %{elements} matched your search."
 
@@ -69,6 +70,7 @@ en:
     player_added: "%{player} can now view the following section of your sheet: %{section}."
 
     reset_first: "Type cg/reset before using this command."
+    reset_ok: "Reset of element '%{element}' complete."
     rollalias_title: "Roll Aliases for %{name}"
 
     show_skills_list: "Your base info grants you %{open} open skills plus these skills: %{defined}"
