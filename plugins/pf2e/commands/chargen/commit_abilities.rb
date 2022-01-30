@@ -31,7 +31,7 @@ module AresMUSH
         open_skills = to_assign["open skills"]
         int_skills = [].fill("open", nil, int_mod)
 
-        to_assign['open skill'] = open_skills + int_skills
+        to_assign['open skills'] = open_skills + int_skills
         to_assign['open language'] = int_mod
 
         # Calculate new HP
