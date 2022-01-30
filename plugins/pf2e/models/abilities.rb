@@ -36,7 +36,7 @@ module AresMUSH
     end
 
     def self.update_base_score(char,ability,mod=2)
-      object = char.abilities.select { |a| a.name_upcase == ability.upcase }
+      object = char.abilities.select { |a| a.name_upcase == ability.upcase }.first
 
       return nil if !object
 
