@@ -40,6 +40,8 @@ module AresMUSH
 
       return nil if !object
 
+
+ 
       base = object.base_val
 
       if (mod.negative?)
