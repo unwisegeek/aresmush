@@ -23,6 +23,8 @@ module AresMUSH
           return
         end
 
+        to_assign = enactor.pf2_to_assign
+
         int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(enactor, "Intelligence"))
         int_mod = int_mod.negative? ? 0 : int_mod
 
@@ -46,6 +48,7 @@ module AresMUSH
         hp.base_for_level = max_base_hp
         hp.save
 
+        enactor.pf2_to_assign = to_assign
         enactor.pf2_abilities_locked = true
         enactor.save
 
