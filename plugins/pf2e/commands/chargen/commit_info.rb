@@ -188,10 +188,7 @@ module AresMUSH
 
         # Duplicate lores go back into the open skills pool.
 
-        open_lores = lores.size - unique_lores.size
-        extra_lores = ary.fill("open", nil, open_lores)
-
-        to_assign['open skills'] = open_skills + extra_lores
+        to_assign['open skills'] = open_skills
 
         client.emit_ooc t('pf2e.show_skills_list', defined: unique_skills.sort.join(", "), open: open_skills.size)
 
