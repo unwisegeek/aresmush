@@ -11,17 +11,11 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("testchar")
         
-        name = "Arcana"
+        to_assign = char.pf2_to_assign
         
-        linked_attr = Pf2eSkills.get_linked_attr(name)
+        client.emit to_assign
         
-        abonus = Pf2eAbilities.abilmod(
-            Pf2eAbilities.get_score(char, linked_attr)
-        )
-        
-        client.emit linked_attr
-        
-        client.emit abonus
+        client.emit to_assign.empty?
 
       end
 
