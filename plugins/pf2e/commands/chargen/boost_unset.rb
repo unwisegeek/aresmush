@@ -3,6 +3,8 @@ module AresMUSH
     class PF2BoostUnsetCmd
       include CommandHandler
 
+      attr_accessor :type, :value
+
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
         self.type = downcase_arg(args.arg1)
@@ -70,7 +72,7 @@ module AresMUSH
 
         working_boost_list[self.type] = type_list
 
-        # Modify base score appropriately. 
+        # Modify base score appropriately.
         Pf2eAbilities.update_base_score(enactor, self.value, -2)
 
         enactor.update(pf2_boosts_working: working_boost_list)
