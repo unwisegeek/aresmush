@@ -60,7 +60,7 @@ module AresMUSH
           return
         end
         ##### VALIDATION SECTION END #####
-        
+
         # Let's do it. Find the reference value.
 
         starting_value = enactor.pf2_boosts[self.type][index]
@@ -69,6 +69,9 @@ module AresMUSH
         type_list[index] = starting_value
 
         working_boost_list[self.type] = type_list
+
+        # Modify base score appropriately. 
+        Pf2eAbilities.update_base_score(enactor, self.value, -2)
 
         enactor.update(pf2_boosts_working: working_boost_list)
 

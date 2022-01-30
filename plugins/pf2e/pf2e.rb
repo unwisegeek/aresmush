@@ -55,6 +55,8 @@ module AresMUSH
         case cmd.switch
         when "set"
           return PF2BoostSetCmd
+        when "unset"
+          return PF2BoostUnsetCmd
         end
       end
 

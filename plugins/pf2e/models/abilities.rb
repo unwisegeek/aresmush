@@ -44,8 +44,15 @@ module AresMUSH
         return nil
       end
 
-      mod = base < 18 ? mod : 1
-      new_base = base + mod
+      if (mod.negative?)
+        high_mod = -1
+        mod = base <= 18 ? mod : high_mod
+        new_base = base + mod
+      else
+        high_mod = 1
+        mod = base < 18 ? mod : high_mod
+        new_base = base + mod
+      end
 
       object.update(base_val: new_base)
     end
