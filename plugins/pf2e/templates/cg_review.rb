@@ -103,8 +103,8 @@ module AresMUSH
         s_edicts = @subclass_info['edicts'] ? @subclass_info['edicts'] : []
         s_anathema = @subclass_info['anathema'] ? @subclass_info['anathema'] : []
 
-        edicts = d_edicts + s_edicts
-        anathema = d_anathema + s_anathema
+        edicts = s_edicts + d_edicts
+        anathema = s_anathema + d_anathema
 
         code = edicts + anathema
 
@@ -112,8 +112,8 @@ module AresMUSH
           nil
         else
           t('pf2e.char_has_code',
-            :edicts=>edicts.join("%r%b%b- "),
-            :anathema=>anathema.join("%r%b%b- ")
+            :edicts=>edicts.join("%r"),
+            :anathema=>anathema.join("%r")
           )
         end
       end
