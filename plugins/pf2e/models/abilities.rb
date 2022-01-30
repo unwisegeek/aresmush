@@ -38,8 +38,8 @@ module AresMUSH
     def self.update_base_score(char,ability,mod=2)
       object = char.abilities.select { |a| a.name_upcase == ability.upcase }
 
-      if object.to_a.size = 1
-        ability = object[0]
+      if object.count = 1
+        ability = object.first
         base = ability.base_val
       else
         return nil
