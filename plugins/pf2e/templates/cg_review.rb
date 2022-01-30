@@ -86,16 +86,19 @@ module AresMUSH
       def has_code
         if (@charclass == 'Champion') || (@charclass == 'Cleric')
 
-          d_edicts = Global.read_config('pf2e_deities',
-                      @faith_info['deity'],
-                      'edicts')
-          d_anathema = Global.read_config('pf2e_deities',
-                      @faith_info['deity'],
-                      'anathema')
+          if @faith_info['deity']
 
-          de = d_edicts ? d_edicts : []
-          da = d_anathema ? d_anathema : []
+            d_edicts = Global.read_config('pf2e_deities',
+                        @faith_info['deity'],
+                        'edicts')
+            d_anathema = Global.read_config('pf2e_deities',
+                        @faith_info['deity'],
+                        'anathema')
 
+            de = d_edicts ? d_edicts : []
+            da = d_anathema ? d_anathema : []
+          end
+          
         else
           d_edicts = []
           d_anathema = []
