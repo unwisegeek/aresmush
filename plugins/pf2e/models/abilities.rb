@@ -52,7 +52,7 @@ module AresMUSH
         new_base = base + mod
       end
 
-      abil.update(base_val: new_base)
+      object.update(base_val: new_base)
     end
 
     def self.abilities_messages(char)
