@@ -24,15 +24,12 @@ module AresMUSH
       (score - 10) / 2
     end
 
-    def self.get_score(char, stat)
-      object = ClassTargetFinder.find(stat,Pf2eAbilities,char)
-      if object.found?
-        score = object.target.mod_val ? object.target.mod_val : object.target.base_val
-      else
-        score = 10
-      end
+    def self.get_score(char, ability)
+      object = char.abilities.select { |a| a.name_upcase == ability.upcase }.first
 
-      score
+      return nil if !object
+
+      object.mod_val ? object.mod_val : object.base_val
     end
 
     def self.update_base_score(char,ability,mod=2)
