@@ -1,8 +1,10 @@
 ---
 en:
   pf2e:
-    abilities_locked: "Your abilities are already locked. Use `ability/reset` to clear them first."
+    abilities_locked: "Your abilities are already locked. Use `cg/resetabil` to clear them first."
+    abilities_not_locked: "Your abilities have not been locked. Use `commit abilities` to lock them first."
     abil_options_ok: "%xgNo issues detected with your abilities.%xn"
+    abilities_committed: "Your abilities have been successfully committed. Type `cg/next` to continue. "
     ability_too_high: "At least one of your ability scores is too high. Too high: %{score}"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
     alias_set_ok: "You set %{alias} to %{value}."
@@ -22,6 +24,7 @@ en:
     boost_not_assigned: "%{value} has not yet been assigned to that boost type."
     boost_not_unique: "%xrYour %{type} boosts must all be assigned to different stats.%xn"
 
+    cannot_assign_type: "You don't have that type of %{element} to assign."
     cannot_cast_charclass: "That character class does not have a spell proficiency."
     cannot_cast_spell_level: "You cannot cast spells of that level."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."

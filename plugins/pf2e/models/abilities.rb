@@ -55,20 +55,13 @@ module AresMUSH
     def self.abilities_messages(char)
       messages = []
 
-      to_assign = char.pf2_to_assign
-
-      boost_list = {}
-      to_assign.each_pair do |k,v|
-        boost_list[k] = v if k.match?("boost")
-      end
+      boosts = char.pf2_boosts_working
       a = []
-      boost_list.each_pair do |k,v|
+      boosts.each_pair do |k,v|
         free_unassigned = v.include?("open")
         choice_not_made = v.any? { |v| v.is_a?(Array) }
 
         a << k if free_unassigned || choice_not_made
-
-        a << k if boost_list['classboost'] && boost_list['classboost'].is_a?(Array)
       end
 
       if !a.empty?
@@ -77,9 +70,6 @@ module AresMUSH
         )
       end
 
-      return messages.join if !messages.empty?
-
-      boosts = char.pf2_boosts_working
       boosts.each do |k,v|
         messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
       end
@@ -90,14 +80,6 @@ module AresMUSH
         v = a.base_val
         scores[k] = v
       end
-
-      #score_chk = boosts.values.flatten
-      #score_chk.each do |boost|
-      #  k = boost.capitalize
-      #  v = scores[k]
-      #  mod = v >= 18 ? 1 : 2
-      #  scores[k] = v + mod
-      #end
 
       bad_scores = []
       scores.each do |k, v|
