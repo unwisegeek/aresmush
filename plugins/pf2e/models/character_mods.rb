@@ -1,7 +1,6 @@
 module AresMUSH
   class Character
     attribute :pf2_baseinfo_locked, :type => DataType::Boolean
-    attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
     attribute :advancing, :type => DataType::Boolean
 
@@ -25,6 +24,8 @@ module AresMUSH
     attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
     attribute :pf2_money, :type => DataType::Integer, :default => 1500
     attribute :pf2_actions, :type => DataType::Hash, :default => {}
+
+    attribute :charbadges, :type => DataType::Array, :default => []
 
     ### Only some characters will have these attributes, so nil check these.
     attribute :pf2_formula_book, :type => DataType::Hash

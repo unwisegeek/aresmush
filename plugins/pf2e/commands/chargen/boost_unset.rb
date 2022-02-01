@@ -75,6 +75,11 @@ module AresMUSH
         # Modify base score appropriately.
         Pf2eAbilities.update_base_score(enactor, self.value, -2)
 
+        if self.type == 'charclass'
+          combat = enactor.combat
+          combat.update(key_abil: nil)
+        end
+
         enactor.update(pf2_boosts_working: working_boost_list)
 
         client.emit_success t('pf2e.reset_ok', :element=>self.value)
