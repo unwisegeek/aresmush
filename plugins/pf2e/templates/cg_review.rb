@@ -245,7 +245,7 @@ module AresMUSH
 
       def con_mod
         if @abil_lock
-          con_mod = Pf2e.abilmod(Pf2eAbilities.get_score(@char, "Constitution"))
+          con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Constitution"))
         else
           con_mod = "CON Mod"
         end
@@ -253,7 +253,7 @@ module AresMUSH
 
       def int_mod
         if @abil_lock
-          int_mod = Pf2e.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
+          int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
         else
           int_mod = "INT Mod"
         end
