@@ -63,7 +63,7 @@ module AresMUSH
 
         # This could be an option assignment. If it is, that assignment
         # gets priority over an open slot. If not, assign to an open slot.
-        
+
         option_check = boost_values.select { |val| val.is_a?(Array) }.flatten
 
         if !option_check.empty?
@@ -84,6 +84,11 @@ module AresMUSH
         boost_values[assigning] = self.value
 
         Pf2eAbilities.update_base_score(enactor,self.value)
+
+        if self.type == 'charclass'
+          combat = enactor.combat
+          combat.update(key_abil: self.value)
+        end
 
         working_boost_list[self.type] = boost_values
 

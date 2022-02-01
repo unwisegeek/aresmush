@@ -55,6 +55,8 @@ module AresMUSH
         enactor.combat&.delete
         enactor.magic&.delete
 
+        enactor.update(pf2_reset: false)
+
         client.emit_success t('pf2e.cg_reset_ok')
 
       end

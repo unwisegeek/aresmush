@@ -21,13 +21,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Aid the suffering
-    - Assist those in need
-    - Assist those that seek atonement
+    - Must aid the suffering
+    - Must assist those in need
+    - Must assist those that seek atonement
     anathema:
-    - Use violence when non-violence will serve
-    - Use negative energy spells
-    - Betray the trust of a community
+    - Must not use violence when non-violence will serve
+    - Must not use negative energy spells
+    - May not betray the trust of a community
   Angoron:
     allowed_alignments:
     - CG
@@ -51,13 +51,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Protect those weaker than yourself
-    - Always try to do better than you did before
-    - Encourage the best in those around you
+    - Must always protect those weaker than yourself
+    - Must always try to do better than you did before
+    - Must encourage the best in those around you
     anathema:
-    - Turn your back on a chance to challenge yourself
-    - Bullying those weaker than yourself
-    - Fail to acknowledge when you’ve been bested
+    - May not turn your back on a chance to challenge yourself
+    - May not bully those weaker than yourself
+    - May not fail to acknowledge when you’ve been bested
   Daeus:
     allowed_alignments:
     - LG
@@ -78,12 +78,12 @@ pf2e_deities:
     - {}
     edicts:
     - Justice isn’t perfect, always try to make it better
-    - Share the truths you learn
-    - Protect those who cannot defend themselves
+    - Must share the truths you learn
+    - Must protect those who cannot defend themselves
     anathema:
-    - Abide injustice when you can step forward
-    - Choose for another who can choose for themselves
-    - Cheat, deceive, or undermine those who have placed trust in you
+    - May not abide injustice when you can step forward
+    - May not choose for another who can choose for themselves
+    - May not cheat, deceive, or undermine those who have placed trust in you
   Eluna:
     allowed_alignments:
     - NG
@@ -106,12 +106,12 @@ pf2e_deities:
     - {}
     edicts:
     - Take the long view and always consider the greater good of all
-    - Use magic responsibly, and challenge those who do not
+    - Must use magic responsibly, and challenge those who do not
     - Seek to rescue those lycanthropes you can from the grip of Caracoroth
     anathema:
-    - Using spells or magic that deny the target their free will
-    - Sacrificing the future for short-term benefit
-    - Ignoring the guidance found in dreams, divination, and prophecy
+    - May not use spells or magic that deny the target their free will
+    - May not sacrifice the future for short-term benefit
+    - May not ignore the guidance found in dreams, divination, and prophecy
   Gilead:
     allowed_alignments:
     - NG
@@ -132,13 +132,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Honor the hunt
-    - Defend wild spaces
-    - Kill only what you must
+    - Must honor the hunt
+    - Must defend wild spaces
+    - May only kill what you must
     anathema:
-    - Fail to bring down prey as cleanly as possible
+    - Must not fail to bring down prey as cleanly as possible
     - The wild is to be protected, not smothered
-    - Allow the wild to enrich all
+    - Must allow the wild to enrich all
   Navos:
     allowed_alignments:
     - LN
@@ -159,13 +159,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Learn from the past, do not dwell on it
+    - Must learn from the past, do not dwell on it
     - Be aware that you are making history now
-    - Do not seek to change the past
+    - Must seek to encourage the balance of time
     anathema:
-    - Being consumed by something you cannot change
-    - Failing to perceive your own actions
-    - Try to change past events
+    - Must not be consumed by something you cannot change
+    - Must not fail to perceive your own actions
+    - Must not try to change past events
   Tarien:
     allowed_alignments:
     - NG
@@ -186,13 +186,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Find the small joys in everything
-    - Humility is the greatest teacher
+    - Must find the small joys in everything
+    - Must understand that humility is the greatest teacher
     - It's only funny if others laugh too
     anathema:
-    - Making a joke of someone who doesn’t deserve it
-    - Dogpiling someone already being shamed
-    - Bringing harm with your humor
+    - Must not make a joke of someone who doesn’t deserve it
+    - Must not dogpile someone already being shamed
+    - Must not ringing harm with your humor
   Animus:
     allowed_alignments:
     - NG
@@ -245,13 +245,13 @@ pf2e_deities:
     - Fireball
     - Spirit Song
     edicts:
-    - Embrace your passions
-    - Patronize the arts and inspiration in all its forms.
-    - Delight in creation.
+    - Must embrace your passions
+    - Must patronize the arts and inspiration in all its forms.
+    - Must delight in creation.
     anathema:
-    - Support or protect the status quo, resort to rudeness when politeness will serve.
-    - Discouraging someone from their inspiration
-    - Hiding your emotions for any reason
+    - Must not support or protect the status quo, resort to rudeness when politeness will serve.
+    - Must not discourage someone from their inspiration
+    - Must not hide your emotions for any reason
   Dana:
     allowed_alignments:
     - NG
@@ -274,13 +274,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Defend nature’s bounty against those who would pillage it
-    - Honor the land as your mother; let none bring Her to harm
-    - Tend the gardens of the earth in all their forms
+    - Must defend nature’s bounty against those who would pillage it
+    - Must honor the land as your mother; let none bring Her to harm
+    - Must tend the gardens of the earth in all their forms
     anathema:
-    - Engage in wanton destruction
-    - Suffer the poisoning of the earth
-    - Hunt rampantly
+    - May not engage in wanton destruction
+    - May not suffer the poisoning of the earth
+    - Must not hunt rampantly
   Kor:
     allowed_alignments:
     - CG
@@ -302,13 +302,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Be brave enough to fight at My side
-    - Be wise enough to achieve a glorious death
-    - Be prepared to train to achieve glory
+    - Must be brave enough to fight at My side
+    - Must be wise enough to achieve a glorious death
+    - Must be prepared to train to achieve glory
     anathema:
-    - Never be the first to leave the battlefield
-    - Never mistake bravery for foolishness
-    - Never lie about your accomplishments
+    - Must never be the first to leave the battlefield
+    - Must never mistake bravery for foolishness
+    - Must never lie about your accomplishments
   Rada:
     allowed_alignments:
     - CG
@@ -331,13 +331,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Honor a fair trade
+    - Must honor a fair trade
     - The sea is owed a portion of your keep
-    - Harvest only what you need
+    - Must harvest only what you need
     anathema:
-    - Never break a fair bargain
-    - Never be a false guide to another
-    - Pollute the ocean
+    - Must never break a fair bargain
+    - Must never be a false guide to another
+    - Must not pollute the ocean
   Reos:
     allowed_alignments:
     - N
@@ -362,12 +362,12 @@ pf2e_deities:
     - {}
     edicts:
     - Always tinker - a thing can always be better
-    - Never disrespect honest effort lacking skill
-    - Never disrespect expertise
+    - May never disrespect honest effort lacking skill
+    - May never disrespect expertise
     anathema:
-    - Never engage in wonton destruction
-    - Never strive for impossible perfection
-    - Disrespect the act of creation
+    - Must never engage in wonton destruction
+    - Must never strive for impossible perfection
+    - Must not disrespect the act of creation
   Serriel:
     allowed_alignments:
     - LG
@@ -390,13 +390,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Enrich your community
+    - Must enrich your community
     - Honor the way of other communities
     - A thriving community is a growing one
     anathema:
-    - Enriching yourself at the expense of your community
-    - Refusing to defend your community
-    - Vandalizing a piece of cultural heritage
+    - Must never enrich yourself at the expense of your community
+    - May never refuse to defend your community
+    - Must not vandalizing a piece of cultural heritage
   Vardama:
     allowed_alignments:
     - LG
@@ -419,12 +419,12 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Guard the rest of the peaceful dead
-    - Offer succor to the grieving
-    - Try to ensure a peaceful passing
+    - Must guard the rest of the peaceful dead
+    - Must offer succor to the grieving
+    - Must try to ensure a peaceful passing
     anathema:
-    - Disturb not the rest of the dead
-    - Judge not the worth of a person
+    - May not disturb the rest of the dead
+    - May not judge the worth of a person
     - The fate of a soul is not yours to command
   Caracoroth:
     allowed_alignments:
@@ -445,13 +445,12 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Follow your instincts
-    - Delight in destruction
-    - Do not suffer the weak
+    - Must follow your instincts
+    - Must not suffer the weak
     anathema:
-    - Being a coward
-    - Showing weakness
-    - Talking when actions serve better
+    - May not be a coward
+    - May not show weakness
+    - May not talk when actions serve better
   Demios:
     allowed_alignments:
     - LN
@@ -473,13 +472,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Use the truth to make your lies more plausible
-    - Lie so that you do not get caught
-    - Bear false witness where possible
+    - Must use the truth to make your lies more plausible
+    - Must lie so that you do not get caught
+    - Must bear false witness where possible
     anathema:
-    - Tell the absolute truth
-    - Allow another to get the better of you in a lie
-    - Believe in innocence
+    - May not tell the absolute truth
+    - May not allow another to get the better of you in a lie
+    - May not believe in innocence
   Gunahkar:
     allowed_alignments:
     - TN
@@ -500,13 +499,13 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Do not stop suffering
-    - Do not fear sickness
-    - Endure all you can
+    - May not stop suffering
+    - May not fear sickness
+    - Must endure all you can
     anathema:
-    - Stop the faithful from feeling their pain
-    - Failing to endure a trial
-    - Seek treatment for personal problems
+    - Must not stop the faithful from feeling their pain
+    - Must not fail to endure a trial
+    - May not seek treatment for personal problems
   Maugrim:
     allowed_alignments:
     - LN
@@ -583,10 +582,10 @@ pf2e_deities:
     - {}
     - {}
     edicts:
-    - Do not fear death
-    - Gather as much experience as you can
-    - Serve the dead where you can
+    - Must not fear death
+    - Must gather as much experience as you can
+    - Must serve the dead where you can
     anathema:
-    - Failing to preserve memories
-    - Ignoring the needs of the dead
-    - Living in fear of death
+    - May not fail to preserve memories
+    - May not ignore the needs of the dead
+    - May not live in fear of death

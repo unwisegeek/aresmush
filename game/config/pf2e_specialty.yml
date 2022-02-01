@@ -250,7 +250,7 @@ pf2e_specialty:
       rage_resistance: Fury Resistance
     Giant:
       anathema:
-      - "Character may not fail to face a personal challenge of strength."
+      - "May not fail to face a personal challenge of strength."
       instinct_ability: Titan Mauler
       rage_resistance:
         damage_type: ["B"]
@@ -263,8 +263,8 @@ pf2e_specialty:
         - fire
     Spirit:
       anathema:
-        - "Character may not defile or show disrespect to corpses or spirits."
-        - "Character is not prohibited from defending themselves against undead."
+        - "May not defile or show disrespect to corpses or spirits."
+        - "May defend themselves against undead."
       instinct_ability: Spirit Rage
       rage_resistance:
         damage_type: negative
@@ -312,11 +312,11 @@ pf2e_specialty:
       allowed_alignments:
       - LG
       anathema:
-      - "Character must not willingly commit an evil act."
-      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      - "Character must not lie, cheat, or take advantage of others."
+      - "Must not willingly commit an evil act."
+      - "Must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Must not lie, cheat, or take advantage of others."
       edicts:
-      - "Character must respect the authority of legitimate leadership wherever they go, and must obey its laws."
+      - "Must respect the authority of legitimate leadership wherever they go, and obey its laws."
       chargen:
         action: []
         reaction:
@@ -330,11 +330,11 @@ pf2e_specialty:
       allowed_alignments:
       - NG
       edicts:
-      - "Character must attempt to redeem those who commit evil acts before punishing them or killing them."
-      - "Character must show compassion for all, without regard to other factors."
+      - "Must attempt to redeem those who commit evil acts before punishing them or killing them."
+      - "Must show compassion for all, without regard to other factors."
       anathema:
-      - "Character must not willingly commit an evil act."
-      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Must not willingly commit an evil act."
+      - "Must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       chargen:
         action: []
         reaction:
@@ -348,13 +348,13 @@ pf2e_specialty:
       allowed_alignments:
       - CG
       edicts:
-      - "Character must honor decisions made by others over their own lives."
-      - "Character must demand and fight for others' freedom to make their own decisions."
+      - "Must honor decisions made by others over their own lives."
+      - "Must demand and fight for others' freedom to make their own decisions."
       anathema:
-      - "Character must not willingly commit an evil act."
-      - "Character must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      - "Character must not force someone to act in a particular way or threaten them if they refuse."
-      - "Character must not accept or countenance slavery or tyranny."
+      - "Must not willingly commit an evil act."
+      - "Must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Must not force someone to act in a particular way or threaten them if they refuse."
+      - "Must not accept or countenance slavery or tyranny."
       chargen:
         action: []
         reaction:
@@ -455,7 +455,7 @@ pf2e_specialty:
         feat:
         - Animal Companion
         anathema:
-        - "Character must not kill an animal needlessly or commit wanton cruelty to one."
+        - "Must not kill an animal needlessly or commit wanton cruelty to one."
         magic_stats:
           order:
           - Heal Animal
@@ -473,7 +473,7 @@ pf2e_specialty:
           - Goodberry
           focus_pool: 1
         anathema:
-        - "Character must not kill a plant needlessly or commit wanton cruelty to one."
+        - "Must not kill a plant needlessly or commit wanton cruelty to one."
         familiar: Leshy
     Storm:
       chargen:
@@ -488,9 +488,9 @@ pf2e_specialty:
           order:
           - Tempest Surge
         edicts:
-        - "Character must punish those who cause major air pollution or climate shifts."
+        - "Must punish those who cause major air pollution or climate shifts."
         anathema:
-        - "Character must not pollute the air."
+        - "Must not pollute the air."
     Wild:
       chargen:
         action: []
@@ -503,7 +503,7 @@ pf2e_specialty:
           order:
           - Wild Morph
         anathema:
-        - "Character must not become reliant on the temptations of civilization."
+        - "Must not become reliant on the temptations of civilization."
   Investigator:
     Alchemical Sciences:
       chargen:
