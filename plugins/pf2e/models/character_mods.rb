@@ -1,7 +1,6 @@
 module AresMUSH
   class Character
     attribute :pf2_baseinfo_locked, :type => DataType::Boolean
-    attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
     attribute :advancing, :type => DataType::Boolean
 

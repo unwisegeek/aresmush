@@ -26,7 +26,6 @@ module AresMUSH
         @faith_info = @char.pf2_faith
 
         @baseinfolock = @char.pf2_baseinfo_locked
-        @abil_lock = @char.pf2_abilities_locked
         @class_features_info = @charclass_info['chargen']
         @subclass_features_info = @subclass_info['chargen']
         @to_assign = @char.pf2_to_assign
@@ -244,7 +243,7 @@ module AresMUSH
       end
 
       def con_mod
-        if @abil_lock
+        if @baseinfolock
           con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Constitution"))
         else
           con_mod = "CON Mod"
@@ -252,7 +251,7 @@ module AresMUSH
       end
 
       def int_mod
-        if @abil_lock
+        if @baseinfolock
           int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
         else
           int_mod = "INT Mod"
@@ -305,7 +304,7 @@ module AresMUSH
       end
 
       def messages
-        if @abil_lock
+        if @baseinfolock
           t('pf2e.cg_and_abil_lock_ok')
         elsif @baseinfolock
           msgs = Pf2eAbilities.abilities_messages(@char)
