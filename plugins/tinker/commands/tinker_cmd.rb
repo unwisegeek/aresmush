@@ -9,14 +9,7 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("testchar")
-        
-        to_assign = char.pf2_to_assign
-        
-        client.emit to_assign
-        
-        client.emit to_assign.empty?
-
+        client.emit_success "Done!"
       end
 
     end
