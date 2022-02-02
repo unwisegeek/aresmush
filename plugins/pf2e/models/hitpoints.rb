@@ -20,7 +20,7 @@ module AresMUSH
       obj = char.hp
     end
 
-    def self.max_hp(char)
+    def self.get_max_hp(char)
       hp = get_hp_obj(char)
       con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Constitution"))
       ancestry_hp = hp.ancestry_hp
@@ -33,9 +33,9 @@ module AresMUSH
       max_hp = (charclass_hp + con_mod - drain_value) * level + ancestry_hp
     end
 
-    def self.current_hp(char)
+    def self.get_current_hp(char)
       hp = char.hp
-      max_hp = max_hp(char)
+      max_hp = get_max_hp(char)
       damage = hp.damage
 
       cur_hp = max_hp - damage
