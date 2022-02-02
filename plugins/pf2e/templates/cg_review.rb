@@ -308,8 +308,6 @@ module AresMUSH
 
       def messages
         if @baseinfolock
-          t('pf2e.cg_and_abil_lock_ok')
-        elsif @baseinfolock
           msgs = Pf2eAbilities.abilities_messages(@char)
           msgs ? msgs : t('pf2e.abil_options_ok')
         else

@@ -56,6 +56,7 @@ en:
     must_be_word: "The first character of your alias must be a letter."
     must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
 
+    no_double_mojo: "Your base options include too many restricted elements. See wiki for details."
     no_free: "No free %{element} left to assign."
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
