@@ -34,13 +34,12 @@
 <%= section_line("Warnings") %>
 <%= messages %>
 <%= divider %>
-<% if baseinfolock %>
-<%= "If you're happy with what you see, type %xccommit abilities%xn to finalize it." %>
-<%= "All messages in Warnings must be resolved before you can commit." %>
-<%= "If you change your mind after committing, you must %xccg/resetabil%xn." %>
-<% else %>
+<%= if baseinfolock %>
+<%= "All messages in %xrred%xn in Warnings must be resolved before you can apply for approval." %>
+<%= "Your base info is committed. If you want to change them, you must %xccg/reset%xn." %>
+<%= else %>
 <%= "If you're happy with what you see, type %xccommit info%xn to finalize it." %>
-<%= "All messages in Warnings must be resolved before you can commit." %>
+<%= "All messages in %xrred%xn in Warnings must be resolved before you can commit." %>
 <%= "If you change your mind after committing, you must %xccg/reset%xn." %>
-<% end %>
+<%= end %>
 <%= footer %>

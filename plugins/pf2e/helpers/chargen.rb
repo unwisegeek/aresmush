@@ -66,6 +66,18 @@ module AresMUSH
       missing_subclass_info = needs_specialty_subinfo.has_key?('choose') && subclass_info.blank?
       messages << t('pf2e.missing_subclass_info') if missing_subclass_info
 
+      restricted = []
+
+      a_rare = Global.read_config('pf2e_ancestry', ancestry)['rare']
+      b_rare = Global.read_config('pf2e_background', background)['rare']
+      h_rare = Global.read_config('pf2e_heritage', heritage)['rare']
+
+      restricted << "ancestry" if a_rare
+      restricted << "background" if b_rare
+      restricted << "heritage" if h_rare
+
+      messages << t('pf2e.no_double_mojo', :elements=>restricted.join(",")) if restricted.count > 1
+
       return nil if messages.count == 0
       return messages.join("%r")
     end
