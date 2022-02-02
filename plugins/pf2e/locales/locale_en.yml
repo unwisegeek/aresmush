@@ -24,6 +24,7 @@ en:
     cannot_assign_type: "You don't have that type of %{element} to assign."
     cannot_cast_charclass: "That character class does not have a spell proficiency."
     cannot_cast_spell_level: "You cannot cast spells of that level."
+    cannot_change_element: "That is part of your chargen options and cannot be changed."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
