@@ -66,7 +66,13 @@ module AresMUSH
 
         starting_value = enactor.pf2_boosts[self.type][index]
 
-        if starting_value.is_a?(String) && !(starting_value == 'open')
+        if self.type == 'ancestry'
+          option_locked = !(starting_value == 'open')
+        else
+          option_locked = starting_value.is_a?(String) && !(starting_value == 'open')
+        end
+
+        if locked
           client.emit_failure t('pf2e.cannot_change_element')
           return
         end
