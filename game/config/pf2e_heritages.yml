@@ -1,6 +1,7 @@
 ---
 pf2e_heritage:
   Aasimar:
+    rare: true
     traits:
     - aasimar
     special:
@@ -47,6 +48,7 @@ pf2e_heritage:
     reaction: []
     attack: {}
   Ashen One:
+    rare: true
     traits:
     - Ashen One
     special:
@@ -89,6 +91,7 @@ pf2e_heritage:
     reaction: []
     attack: {}
   Changeling:
+    rare: true
     traits:
     - changeling
     special:
@@ -124,6 +127,7 @@ pf2e_heritage:
     reaction: []
     attack: {}
   Dar:
+    rare: true
     traits:
     - Dar
     special:
@@ -574,6 +578,7 @@ pf2e_heritage:
     special: []
     traits: []
   Tiefling:
+    rare: true
     traits:
     - tiefling
     special:
