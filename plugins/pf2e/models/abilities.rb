@@ -90,7 +90,8 @@ module AresMUSH
         messages << t('pf2e.ability_too_high', :score => bad_scores.join(', '))
       end
 
-      return messages.join if !messages.empty?
+      return nil if messages.empty?
+      return messages.join("%r")
     end
 
 

@@ -76,9 +76,9 @@ module AresMUSH
       restricted << "background" if b_rare
       restricted << "heritage" if h_rare
 
-      messages << t('pf2e.no_double_mojo', :elements=>restricted.join(",")) if restricted.count > 1
+      messages << t('pf2e.no_double_mojo') if restricted.count > 1
 
-      return nil if messages.count == 0
+      return nil if messages.empty?
       return messages.join("%r")
     end
 
