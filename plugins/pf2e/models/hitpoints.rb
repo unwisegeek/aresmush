@@ -2,21 +2,14 @@ module AresMUSH
   class Pf2eHP < Ohm::Model
     include ObjectModel
 
-    # Tracks damage and CON mod changes
-    attribute :current, :type => DataType::Integer, :default => 0
-    # Max accounting for CON mod change
-    attribute :max_current, :type => DataType::Integer, :default => 0
-    # Includes base CON mod only
-    attribute :max_base, :type => DataType::Integer, :default => 0
-    # Changes only at advancement, no CON mod
-    attribute :base_for_level, :type => DataType::Integer, :default => 0
-    # Tracks base HP for past levels, because someone will want to
-    attribute :hp_per_level, :type => DataType::Hash, :default => {}
-    # Max and current temporary HP
+
+    attribute :ancestry_hp, :type => DataType::Integer, :default => 0
+    attribute :charclass_hp, :type => DataType::Integer, :default => 0
+    attribute :damage, :type => DataType::Integer, :default => 0
     attribute :temp_max, :type => DataType::Integer, :default => 0
     attribute :temp_current, :type => DataType::Integer, :default => 0
 
-    
+
     reference :character, "AresMUSH::Character"
 
 
@@ -25,6 +18,27 @@ module AresMUSH
 
     def self.get_hp_obj(char)
       obj = char.hp
+    end
+
+    def self.max_hp(char)
+      hp = get_hp_obj(char)
+      con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Constitution"))
+      ancestry_hp = hp.ancestry_hp
+      charclass_hp = hp.charclass_hp
+      level = char.pf2_level
+      # drain_value = Pf2e.get_condition_value(char, 'Drained')
+      # For right now, until I do conditions, it's just 0
+      drain_value = 0
+
+      max_hp = (charclass_hp + con_mod - drain_value) * level + ancestry_hp
+    end
+
+    def self.current_hp(char)
+      hp = char.hp
+      max_hp = max_hp(char)
+      damage = hp.damage
+
+      cur_hp = max_hp - damage
     end
 
   end

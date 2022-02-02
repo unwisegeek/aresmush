@@ -144,15 +144,14 @@ module AresMUSH
 
         return "---" if !hp
 
-        current = hp.current
-        max = hp.max_current
-        low_max = max != hp.max_base ? "%xy*%xn" : ""
+        current = Pf2eHP.get_current_hp(@char)
+        max = Pf2eHP.get_max_hp(@char)
         percent = max.zero? ? 0 : (current / max) * 100.floor
         hp_color = "%xg" if percent > 75
         hp_color = "%xc" if percent.between?(50,75)
         hp_color = "%xy" if percent.between?(25,50)
         hp_color = "%xr" if percent < 25
-        "#{hp_color}#{current}%xn / #{max}#{low_max} (#{percent}%)"
+        "#{hp_color}#{current}%xn / #{max} (#{percent}%)"
       end
 
       def temp_hp
