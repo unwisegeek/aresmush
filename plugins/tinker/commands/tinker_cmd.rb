@@ -9,7 +9,21 @@ module AresMUSH
       end
       
       def handle
-        client.emit_success "Done!"
+          restricted = []
+          
+          ancestry = 'Sildanyar'
+          background = 'Feybound'
+          heritage = 'Dar'
+        
+          a_rare = Global.read_config('pf2e_ancestry', ancestry)['rare']
+          b_rare = Global.read_config('pf2e_background', background)['rare']
+          h_rare = Global.read_config('pf2e_heritage', heritage)['rare']
+        
+          restricted << "ancestry" if a_rare
+          restricted << "background" if b_rare
+          restricted << "heritage" if h_rare
+          
+          client.emit restricted.join(", ")
       end
 
     end
