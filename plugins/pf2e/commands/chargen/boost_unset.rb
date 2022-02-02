@@ -61,13 +61,19 @@ module AresMUSH
           client.emit_failure t('pf2e.boost_not_assigned', :value=>self.value)
           return
         end
-        ##### VALIDATION SECTION END #####
 
-        # Let's do it. Find the reference value.
+        # Are they allowed to change that element?
 
         starting_value = enactor.pf2_boosts[self.type][index]
 
-        # Replace the working array element with the new value.
+        if starting_value.is_a?(String) && !(starting_value == 'open')
+          client.emit_failure t('pf2e.cannot_change_element')
+          return
+        end
+
+        ##### VALIDATION SECTION END #####
+
+        # Let's do it. Replace the working array element with the new value.
         type_list[index] = starting_value
 
         working_boost_list[self.type] = type_list
