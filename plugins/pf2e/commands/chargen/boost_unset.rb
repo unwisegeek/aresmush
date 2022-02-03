@@ -67,14 +67,43 @@ module AresMUSH
         starting_value = enactor.pf2_boosts[self.type][index]
 
         if self.type == 'ancestry'
-          option_locked = !(starting_value == 'open')
+
+          # In ancestry, the player can only change elements marked 'open' in
+          # the reference list. We must see if there's a self.value in the
+          # working list that corresponds to a 'open' value in the reference
+          # list. If we find one, that's our index. If not, reject.
+
+          open_option = []
+
+          ancestry_list = enactor.pf2_boosts[self.type]
+
+          ancestry_list.each do |v,i|
+            open_option << i if v == 'open'
+          end
+
+          working_option = []
+          type_list.each do |v,i|
+            working_option << i if v == self.value
+          end
+
+          # The index is the intersection of these two arrays.
+
+          index = open_option & working_option.first
+
+          if !index
+            client.emit_failure t('pf2e.cannot_change_element')
+            return
+          end
+
+          # For ancestry, starting value will always be open.
+          starting_value = 'open'
         else
           option_locked = starting_value.is_a?(String) && !(starting_value == 'open')
-        end
 
-        if locked
-          client.emit_failure t('pf2e.cannot_change_element')
-          return
+          if option_locked
+            client.emit_failure t('pf2e.cannot_change_element')
+            return
+          end
         end
 
         ##### VALIDATION SECTION END #####
