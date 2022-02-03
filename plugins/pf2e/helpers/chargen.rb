@@ -68,9 +68,9 @@ module AresMUSH
 
       restricted = []
 
-      a_rare = ancestry.blank? ? Global.read_config('pf2e_ancestry', ancestry)['rare'] : nil
-      b_rare = background.blank? ? Global.read_config('pf2e_background', background)['rare'] : nil
-      h_rare = heritage.blank? ? Global.read_config('pf2e_heritage', heritage)['rare'] : nil
+      a_rare = ancestry.blank? ? nil : Global.read_config('pf2e_ancestry', ancestry)['rare']
+      b_rare = background.blank? ? nil : Global.read_config('pf2e_background', background)['rare']
+      h_rare = heritage.blank? ? nil : Global.read_config('pf2e_heritage', heritage)['rare']
 
       restricted << "ancestry" if a_rare
       restricted << "background" if b_rare
