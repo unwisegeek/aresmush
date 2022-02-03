@@ -88,7 +88,7 @@ module AresMUSH
 
           # The index is the intersection of these two arrays.
 
-          index = open_option & working_option.first
+          index = (open_option & working_option).first
 
           if !index
             client.emit_failure t('pf2e.cannot_change_element')
