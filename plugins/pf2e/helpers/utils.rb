@@ -5,7 +5,9 @@ module AresMUSH
     def self.get_prof_bonus(char, p="untrained")
       level = char.pf2_level
 
-      if p == "untrained"
+      allow_untrained_improv = Global.read_config('pf2e', 'use_untrained_improv')
+
+      if (p == "untrained" && allow_untrained_improv)
         if Pf2eFeats.has_feat?(char, "Untrained Improvisation")
           bonus = level < 7 ? (level / 2).floor : level
           return bonus

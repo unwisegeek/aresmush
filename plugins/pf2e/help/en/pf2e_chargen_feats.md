@@ -16,6 +16,7 @@ Next, choose your open feats. Feats in Pathfinder are special abilities that are
 `cg/review`: Lists the base feats you have available to you.
 `unassigned`: Lists what is left for you to assign, based on your base info.
 `feat <name>`: Lists details of a feat.
+`feat/info`: Shows the details of all feats that you have so far. Be aware that this command paginates, there may be more than one page!
 `feat/set <type>=<feat>`: Sets an open feat.
 `feat/choose <type>=<feat>`: If you have a choice of feats from <type> source, select which one you want.
 `feat/unset <type>=<feat>`: Deletes a feat selected with feat/set. You cannot delete feats granted by your base info.
