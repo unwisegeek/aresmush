@@ -36,13 +36,12 @@ module AresMUSH
     def self.get_skill_bonus(char, name)
       skill = find_skill(name, char)
       linked_attr = get_linked_attr(name)
-      level = char.pf2_level
       abonus = Pf2eAbilities.abilmod(
         Pf2eAbilities.get_score(char, linked_attr)
       )
       pbonus = skill ? Pf2e.get_prof_bonus(char, skill.prof_level) : 0
 
-      abonus + pbonus + level
+      abonus + pbonus
     end
 
     def self.get_skill_prof(char, name)
