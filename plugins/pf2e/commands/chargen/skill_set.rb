@@ -21,16 +21,9 @@ module AresMUSH
         end
       end
 
-      def check_abilities_committed
-        if !enactor.pf2_baseinfo_locked
-          client.emit_failure t('pf2e.lock_info_first')
-          return
-        elsif !enactor.pf2_abilities_locked
-          client.emit_failure t('pf2e.abilities_not_locked')
-          return
-        else
-          return nil
-        end
+      def check_baseinfolock
+        return t('pf2e.lock_info_first') if !enactor.pf2_baseinfo_locked
+        return nil
       end
 
       def handle
