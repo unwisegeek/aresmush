@@ -66,7 +66,8 @@ module AresMUSH
         boosts['ancestry'] = ancestry_info['abl_boosts']
 
         aflaw = ancestry_info['abl_flaw']
-        fixed_aboosts = ancestry_info['abl_boosts'].difference('open')
+
+        fixed_aboosts = ancestry_info['abl_boosts'].difference([ 'open' ])
 
         if !fixed_aboosts.empty?
           fixed_aboosts.each do |abil|
