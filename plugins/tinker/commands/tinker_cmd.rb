@@ -9,21 +9,13 @@ module AresMUSH
       end
       
       def handle
-          restricted = []
+          char = Character.find_one_by_name("Rashmi")
           
-          ancestry = 'Sildanyar'
-          background = 'Feybound'
-          heritage = 'Dar'
-        
-          a_rare = Global.read_config('pf2e_ancestry', ancestry)['rare']
-          b_rare = Global.read_config('pf2e_background', background)['rare']
-          h_rare = Global.read_config('pf2e_heritage', heritage)['rare']
-        
-          restricted << "ancestry" if a_rare
-          restricted << "background" if b_rare
-          restricted << "heritage" if h_rare
+          feats = char.pf2_feats
           
-          client.emit restricted.join(", ")
+          feats['ancestry'] = []
+          
+          char.update(pf2_feats: feats)
       end
 
     end
