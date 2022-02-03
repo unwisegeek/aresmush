@@ -20,6 +20,7 @@ pf2e:
   list_item: '%x229'
   use_alignment: true
   use_encumbrance: true
+  use_untrained_improv: false
   subclass_names:
     Alchemist: 'Research Field'
     Barbarian: 'Instinct'
