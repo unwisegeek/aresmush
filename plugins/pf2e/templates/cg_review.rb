@@ -142,7 +142,7 @@ module AresMUSH
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
         c_traits = @charclass_info ? [ @charclass.downcase ] : []
 
-        traits = a_traits + h_traits + c_traits.uniq.sort
+        traits = a_traits + h_traits + c_traits.uniq.difference([ "" ]).sort
       end
 
       def free_boosts
