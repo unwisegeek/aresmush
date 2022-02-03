@@ -216,7 +216,7 @@ module AresMUSH
 
         class_feats = class_features_info["feat"] ? class_features_info["feat"] : []
         subclass_feats = subclass_features_info["feat"] ? subclass_features_info["feat"] : []
-        heritage_feats = heritage_info["feat"]
+        heritage_feats = heritage_info["feat"] ? heritage_info["feat"] : []
 
         feats['general'] = bg_feats
         feats['ancestry'] = heritage_feats
