@@ -22,21 +22,22 @@
 <%= section_line("Traits") %>
 <%= traits.sort.join(", ") %>
 <%= section_line("Ability Boosts") %>
-<%= "#{item_color}Free Boosts%xn: #{free_boosts} (must be spread to four different stats)" %>
+<%= "#{item_color}Free Boosts%xn: #{free_boosts}" %>
 <%= "#{item_color}Ancestry Boosts%xn: #{ancestry_boosts}"  %>
 <%= "#{item_color}Ancestry Flaw%xn: #{ancestry_flaw}" %>
 <%= "#{item_color}Background Boosts%xn: #{bg_boosts}" %>
 <%= "#{item_color}Key Ability%xn: #{key_ability}" %>
 <%= section_line("Other Stuff") %>
 <%= "#{item_color}Special Senses and Abilities%xn: #{specials}" %>
-<%= "#{item_color}Skills%xn: #{unique_skills.join(", ")} + #{open_skills} + #{int_mod} open" %>
+<%= "#{item_color}Skills%xn: #{unique_skills.join(", ")} + #{open_skills + int_mod} open" %>
 <%= "#{item_color}Starting Languages%xn: #{languages}" %>
 <%= section_line("Warnings") %>
 <%= messages %>
 <%= divider %>
 <% if baseinfolock %>
+<%= "Your base info is committed. You can now assign abilities, skills, feats, etc." %>
 <%= "All messages in %xrred%xn in Warnings must be resolved before you can apply for approval." %>
-<%= "Your base info is committed. If you want to change them, you must %xccg/reset%xn." %>
+<%= "If you want to change your base options, you must %xccg/reset%xn." %>
 <% else %>
 <%= "If you're happy with what you see, type %xccommit info%xn to finalize it." %>
 <%= "All messages in %xrred%xn in Warnings must be resolved before you can commit." %>
