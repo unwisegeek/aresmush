@@ -257,7 +257,7 @@ module AresMUSH
         if @baseinfolock
           int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
         else
-          int_mod = "INT Mod"
+          int_mod = 0
         end
       end
 
