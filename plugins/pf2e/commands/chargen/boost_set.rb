@@ -51,10 +51,17 @@ module AresMUSH
           return
         end
 
-        # Do they have an open option to set that type to?
-        # Location of open option becomes variable 'assigning'
+        # Do they already have that boost in that list? Duplicates are not allowed.
 
         boost_values = working_boost_list[self.type]
+
+        if boost_values.include?(self.value)
+          client.emit_failure t('pf2e.no_duplicate_boosts')
+          return
+        end
+
+        # Do they have an open option to set that type to?
+        # Location of open option becomes variable 'assigning'
 
         if boost_values.is_a?(String)
           client.emit_failure t('pf2e.no_free', :element=>self.type)
