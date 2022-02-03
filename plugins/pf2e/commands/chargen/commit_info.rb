@@ -65,9 +65,17 @@ module AresMUSH
         # Ancestry boosts
         boosts['ancestry'] = ancestry_info['abl_boosts']
 
-        if ancestry_info['abl_flaw']
-          ability = ancestry_info['abl_flaw']
-          Pf2eAbilities.update_base_score(enactor, ability, -2)
+        aflaw = ancestry_info['abl_flaw']
+        fixed_aboosts = ancestry_info['abl_boosts'].difference('open')
+
+        if !fixed_aboosts.empty?
+          fixed_aboosts.each do |abil|
+            Pf2eAbilities.update_base_score(enactor, abil)
+          end
+        end
+
+        if aflaw
+          Pf2eAbilities.update_base_score(enactor, aflaw, -2)
         end
 
         # Free boosts
