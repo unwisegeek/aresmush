@@ -765,30 +765,51 @@ pf2e_specialty:
             chargen:
               feat:
               - MC Dedication Bard
+              action: []
+              reaction: []
+              skills: []
           Cleric:
             chargen:
               feat:
               - MC Dedication Cleric
+              action: []
+              reaction: []
+              skills: []
           Druid:
             chargen:
               feat:
               - MC Dedication Druid
+              action: []
+              reaction: []
+              skills: []
           Oracle:
             chargen:
               feat:
               - MC Dedication Oracle
+              action: []
+              reaction: []
+              skills: []
           Sorcerer:
             chargen:
               feat:
               - MC Dedication Sorcerer
+              action: []
+              reaction: []
+              skills: []
           Witch:
             chargen:
               feat:
               - MC Dedication Witch
+              action: []
+              reaction: []
+              skills: []
           Wizard:
             chargen:
               feat:
               - MC Dedication Wizard
+              action: []
+              reaction: []
+              skills: []
       key_abil:
       - Dexterity
       - Charisma
