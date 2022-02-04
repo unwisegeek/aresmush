@@ -325,6 +325,7 @@ pf2e_background:
     - "Fey's Fortune"
     rare: true
     reaction: []
+    special: []
   Field Medic:
     abl_boosts:
     - [ Constitution, Wisdom ]
