@@ -23,7 +23,7 @@ module AresMUSH
         when 'ancestry'
           options = Global.read_config('pf2e_ancestry').keys.sort
         when 'heritage'
-          if base_info['ancestry'].blank?
+          if ancestry.blank?
             client.emit_failure t('pf2e.cannot_find_info', :element=>self.element, :prereq=>'ancestry')
             return
           end
@@ -34,24 +34,38 @@ module AresMUSH
         when 'class', 'charclass'
           options = Global.read_config('pf2e_class').keys.sort
         when 'specialize'
-          if base_info['charclass'].blank?
-            client.emit_failure t('pf2e.cannot_find_info', :element=>self.element, :prereq=>'charclass')
+          if charclass.blank?
+            client.emit_failure t('pf2e.cannot_find_info', :element=>self.element, :prereq=>'character class')
             return
           end
 
-          options = Global.read_config('pf2e_specialty', charclass).keys.sort
+          specialty_info = Global.read_config('pf2e_specialty', charclass)
+
+          if !specialty_info
+            client.emit_failure t('pf2e.no_cginfo_available', :element=>self.element, :prereq=>'character class')
+            return
+          end
+
+          options = specialty_info.keys.sort
         when 'specialize_info'
-          if base_info['specialize'].blank?
+          if subclass.blank?
             client.emit_failure t('pf2e.cannot_find_cginfo', :element=>self.element, :prereq=>'specialization')
             return
           end
 
-          options = Global.read_config('pf2e_specialty', charclass, subclass)['choose']['options'].keys.sort
+          subclass_info = Global.read_config('pf2e_specialty', charclass, subclass)['choose']
+
+          if !subclass_info
+            client.emit_failure t('pf2e.no_cginfo_available', :element=>self.element, :prereq=>'specialization')
+            return
+          end
+
+          options = subclass_info['options'].keys.sort
         when 'deity'
           options = Global.read_config('pf2e_deities').keys.sort
         when 'align', 'alignment'
           all_align = Global.read_config('pf2e','allowed_alignments')
-          subclass_align = subclass.blank? ? all_align : Global.read_config('pf2e_specialty', charclass, subclass)['allowed_alignments'] 
+          subclass_align = subclass.blank? ? all_align : Global.read_config('pf2e_specialty', charclass, subclass)['allowed_alignments']
           class_align = charclass.blank? ? all_align : Global.read_config('pf2e_class', charclass, 'allowed_alignments')
           deity_align = deity.blank? ? all_align : Global.read_config('pf2e_deities', deity, 'allowed_alignments')
 
@@ -60,7 +74,9 @@ module AresMUSH
 
           options = all_align & subclass_align & class_align & deity_align
         else
-          client.emit_failure t('pf2e.no_cginfo_available', :element=>self.element)
+          options = %w{ancestry heritage charclass background specialize specialize_info deity alignment}.sort
+
+          client.emit_failure t('pf2e.bad_option', :element=>"cg/info", :options=>options.join(", "))
           return
         end
 
