@@ -55,7 +55,7 @@ module AresMUSH
                                nil :
                                subclass_info['choose']['options'][subclass_option]
         class_features_info = charclass_info["chargen"]
-        subclass_features_info = subclass_info["chargen"]
+        subclass_features_info = subclass_info ? subclass_info["chargen"] : {}
         subclassopt_features_info = subclass_option_info ? subclass_option_info['chargen'] : {}
 
         to_assign = enactor.pf2_to_assign
@@ -136,8 +136,8 @@ module AresMUSH
 
         heritage_skills = heritage_info['skills']
         class_skills = class_features_info['skills']
-        subclass_skills = subclass_features_info['skills']
-        subclassopt_skills = subclassopt_features_info['skills']
+        subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
+        subclassopt_skills = subclassopt_features_info['skills'] ? subclassopt_features_info['skills'] : []
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills + subclassopt_skills
 
