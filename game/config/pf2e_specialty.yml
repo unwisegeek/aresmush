@@ -761,11 +761,34 @@ pf2e_specialty:
         choice_name: Magical Archetype
         choice_description: Choose which spellcasting class you are dedicated in.
         options:
-        - Oracle
-        - Sorcerer
-        - Wizard
-        - Bard
-        - Witch
+          Bard:
+            chargen:
+              feat:
+              - MC Dedication Bard
+          Cleric:
+            chargen:
+              feat:
+              - MC Dedication Cleric
+          Druid:
+            chargen:
+              feat:
+              - MC Dedication Druid
+          Oracle:
+            chargen:
+              feat:
+              - MC Dedication Oracle
+          Sorcerer:
+            chargen:
+              feat:
+              - MC Dedication Sorcerer
+          Witch:
+            chargen:
+              feat:
+              - MC Dedication Witch
+          Wizard:
+            chargen:
+              feat:
+              - MC Dedication Wizard
       key_abil:
       - Dexterity
       - Charisma

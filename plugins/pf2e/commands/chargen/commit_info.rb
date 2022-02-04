@@ -56,6 +56,7 @@ module AresMUSH
                                subclass_info['choose'][subclass_option]
         class_features_info = charclass_info["chargen"]
         subclass_features_info = subclass_info["chargen"]
+        subclassopt_features_info = subclass_option_info ? subclass_option_info['chargen'] : {}
 
         to_assign = enactor.pf2_to_assign
 
@@ -136,8 +137,9 @@ module AresMUSH
         heritage_skills = heritage_info['skills']
         class_skills = class_features_info['skills']
         subclass_skills = subclass_features_info['skills']
+        subclassopt_skills = subclassopt_features_info['skills'] ? subclassopt_features_info['skills'] : []
 
-        skills = bg_skills + heritage_skills + class_skills + subclass_skills
+        skills = bg_skills + heritage_skills + class_skills + subclass_skills + subclassopt_skills
 
         # Some classes also get a skill based on their deity.
         use_deity = charclass_info.has_key?('use_deity')
@@ -217,10 +219,11 @@ module AresMUSH
         class_feats = class_features_info["feat"] ? class_features_info["feat"] : []
         subclass_feats = subclass_features_info["feat"] ? subclass_features_info["feat"] : []
         heritage_feats = heritage_info["feat"] ? heritage_info["feat"] : []
+        subclass_info_feats = subclassopt_features_info["feat"] ? subclassopt_features_info["feat"] : []
 
         feats['general'] = bg_feats
         feats['ancestry'] = heritage_feats
-        feats['charclass'] = class_feats + subclass_feats
+        feats['charclass'] = class_feats + subclass_feats + subclass_info_feats
 
         to_assign['ancestry feat'] = ancestry
 
@@ -371,9 +374,10 @@ module AresMUSH
 
         # Put everything together, lock it, and save to database
         enactor.pf2_to_assign = to_assign
+        # pf2_cg_assigned is the reset point for skills, feats, etc
         enactor.pf2_cg_assigned = to_assign
         enactor.pf2_boosts_working = boosts
-        # pf2_boosts is the reset point for cg/resetabil
+        # pf2_boosts is the reset point for boosts
         enactor.pf2_boosts = boosts
         enactor.pf2_baseinfo_locked = true
 
