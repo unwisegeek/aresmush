@@ -141,7 +141,6 @@ pf2e_background:
     lores:
     - deity
     feat: []
-    special: "Blessed: 1st level divine innate spell at will"
     rare: true
     action: []
     reaction: []
@@ -824,4 +823,4 @@ pf2e_background:
     - Intimidating Glare
     special: []
     action: []
-    reaction: [] 
+    reaction: []
