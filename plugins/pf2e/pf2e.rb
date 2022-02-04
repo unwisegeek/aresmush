@@ -28,6 +28,8 @@ module AresMUSH
           return PF2ReviewChargenCmd
         when "reset"
           return PF2ResetChargenCmd
+        when "info"
+          return PF2ChargenInfoCmd
         end
       when "commit"
         case cmd.args

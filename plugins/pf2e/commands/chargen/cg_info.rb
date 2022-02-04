@@ -46,15 +46,13 @@ module AresMUSH
           end
 
           options = Global.read_config('pf2e_specialty', charclass, subclass).keys.sort
-        when 'alignment'
-
         when 'deity'
           options = Global.read_config('pf2e_deities').keys.sort
         when 'align', 'alignment'
           all_align = Global.read_config('pf2e','allowed_alignments')
-          subclass_align = subclass.blank? all_align : Global.read_config('pf2e_specialty', subclass, 'allowed_alignments')
-          class_align = charclass.blank? all_align : Global.read_config('pf2e_class', charclass, 'allowed_alignments')
-          deity_align = deity.blank? all_align : Global.read_config('pf2e_deities', deity, 'allowed_alignments')
+          subclass_align = subclass.blank? ? all_align : Global.read_config('pf2e_specialty', subclass, 'allowed_alignments')
+          class_align = charclass.blank? ? all_align : Global.read_config('pf2e_class', charclass, 'allowed_alignments')
+          deity_align = deity.blank? ? all_align : Global.read_config('pf2e_deities', deity, 'allowed_alignments')
 
           class_align = all_align if !class_align
           subclass_align = all_align if !subclass_align
@@ -69,7 +67,7 @@ module AresMUSH
 
         client.emit t('pf2e.cg_info',
           :element=>"%x24#{self.element}%xn",
-          :options=>"#{item_color}#{options.join(", ")}""
+          :options=>"#{item_color}#{options.join(", ")}"
         )
       end
 
