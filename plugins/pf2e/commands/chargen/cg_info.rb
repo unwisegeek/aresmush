@@ -42,7 +42,7 @@ module AresMUSH
           specialty_info = Global.read_config('pf2e_specialty', charclass)
 
           if !specialty_info
-            client.emit_failure t('pf2e.no_cginfo_available', :element=>self.element, :prereq=>'character class')
+            client.emit_ooc t('pf2e.no_cginfo_available', :element=>self.element, :prereq=>'character class')
             return
           end
 
@@ -56,7 +56,7 @@ module AresMUSH
           subclass_info = Global.read_config('pf2e_specialty', charclass, subclass)['choose']
 
           if !subclass_info
-            client.emit_failure t('pf2e.no_cginfo_available', :element=>self.element, :prereq=>'specialization')
+            client.emit_ooc t('pf2e.no_cginfo_available', :element=>self.element, :prereq=>'specialization')
             return
           end
 
