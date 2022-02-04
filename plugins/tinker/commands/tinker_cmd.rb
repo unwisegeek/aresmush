@@ -9,13 +9,30 @@ module AresMUSH
       end
       
       def handle
-          char = Character.find_one_by_name("Rashmi")
+        char = Character.find_one_by_name("Karasu")
           
-          feats = char.pf2_feats
+        base_info = char.pf2_base_info
           
-          feats['ancestry'] = []
+        subclass_option = base_info['specialize_info']
+        charclass = base_info['charclass']
+        subclass = base_info['specialize']
+        
+        subclass_info = Global.read_config('pf2e_specialty', charclass, subclass)
           
-          char.update(pf2_feats: feats)
+        subclass_option_info = subclass_option.blank? ?
+                               nil :
+                               subclass_info['choose']['options'][subclass_option]
+                               
+        subclassopt_features_info = subclass_option_info ? subclass_option_info['chargen'] : {}  
+        
+        subclassopt_skills = subclassopt_features_info['skills']
+        
+        client.emit base_info
+        client.emit subclass_option
+        client.emit subclass_option_info
+        client.emit subclassopt_features_info
+        client.emit subclassopt_skills
+        
       end
 
     end
