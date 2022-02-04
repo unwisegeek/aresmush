@@ -53,7 +53,7 @@ module AresMUSH
         subclass_info = Global.read_config('pf2e_specialty', charclass, subclass)
         subclass_option_info = subclass_option.blank? ?
                                nil :
-                               subclass_info['choose'][subclass_option]
+                               subclass_info['choose']['options'][subclass_option]
         class_features_info = charclass_info["chargen"]
         subclass_features_info = subclass_info["chargen"]
         subclassopt_features_info = subclass_option_info ? subclass_option_info['chargen'] : {}
