@@ -474,7 +474,7 @@ pf2e_heritage:
     traits: []
   Skilled:
     skills:
-    - [ 'skill' ]
+    - open
     action: []
     attack: {}
     defense: {}
