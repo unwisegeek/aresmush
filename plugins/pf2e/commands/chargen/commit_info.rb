@@ -136,8 +136,8 @@ module AresMUSH
 
         heritage_skills = heritage_info['skills']
         class_skills = class_features_info['skills']
-        subclass_skills = subclass_features_info['skills']
-        subclassopt_skills = subclassopt_features_info['skills']
+        subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
+        subclassopt_skills = subclassopt_features_info['skills'] ? subclassopt_features_info['skills'] : []
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills + subclassopt_skills
 
