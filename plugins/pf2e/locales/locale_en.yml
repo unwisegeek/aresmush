@@ -25,8 +25,10 @@ en:
     cannot_cast_charclass: "That character class does not have a spell proficiency."
     cannot_cast_spell_level: "You cannot cast spells of that level."
     cannot_change_element: "That is part of your chargen options and cannot be changed."
+    cannot_find_cginfo: "You must choose %{prereq} before you can see options for %{element}."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
+    cg_info: "The following options are available for %{element}: %{options}"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
     cg_options_ok: "%xgNo errors or issues detected with your CG options."
@@ -57,6 +59,7 @@ en:
     must_be_word: "The first character of your alias must be a letter."
     must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
 
+    no_cginfo_available: "No information is available in chargen for element %{element}."
     no_double_mojo: "%xrYour base options include too many restricted elements. See wiki for details.%xr"
     no_duplicate_boosts: "The boosts for a given category must all be assigned to different stats."
     no_free: "No free %{element} left to assign."

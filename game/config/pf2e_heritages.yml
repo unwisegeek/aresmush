@@ -642,9 +642,8 @@ pf2e_heritage:
     special: []
     traits: []
   Versatile:
-    choose:
-      Heritage Feats:
-      - [ 'general' ]
+    feat:
+    - ancestry
     action: []
     attack: {}
     defense: {}
