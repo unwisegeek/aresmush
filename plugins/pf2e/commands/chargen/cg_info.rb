@@ -46,8 +46,6 @@ module AresMUSH
           end
 
           options = Global.read_config('pf2e_specialty', charclass, subclass).keys.sort
-        when 'alignment'
-
         when 'deity'
           options = Global.read_config('pf2e_deities').keys.sort
         when 'align', 'alignment'
