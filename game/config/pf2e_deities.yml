@@ -451,7 +451,7 @@ pf2e_deities:
     - May not be a coward
     - May not show weakness
     - May not talk when actions serve better
-  Demios:
+  Deimos:
     allowed_alignments:
     - LN
     - N
