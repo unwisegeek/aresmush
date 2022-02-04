@@ -14,6 +14,7 @@ module AresMUSH
 
         base_info = enactor.pf2_base_info
         faith_info = enactor.pf2_faith
+        ancestry = base_info['ancestry']
         charclass = base_info['charclass']
         subclass = base_info['specialize']
         deity = faith_info['deity']
@@ -27,7 +28,7 @@ module AresMUSH
             return
           end
 
-          options = Global.read_config('pf2e_ancestry', 'heritages').sort
+          options = Global.read_config('pf2e_ancestry', ancestry, 'heritages').sort
         when 'background', 'backgrounds'
           options = Global.read_config('pf2e_background').keys.sort
         when 'class', 'charclass'
