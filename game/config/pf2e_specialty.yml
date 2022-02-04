@@ -258,9 +258,18 @@ pf2e_specialty:
         choice_name: Rage Resistance Element
         choice_description: Choose the element to which your rage resistance applies.
         options:
-        - cold
-        - electricity
-        - fire
+          Cold:
+            defense:
+              resistance:
+                cold: 1
+          Electricity:
+            defense:
+              resistance:
+                electricity: 1
+          Fire:
+            defense:
+              resistance:
+                fire: 1
     Spirit:
       anathema:
         - "May not defile or show disrespect to corpses or spirits."
