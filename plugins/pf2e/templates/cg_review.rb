@@ -74,8 +74,12 @@ module AresMUSH
         @faith_info['deity']
       end
 
+      def use_deity
+        @charclass_info['use_deity']
+      end
+
       def is_devotee
-        alert = @charclass_info['use_deity'] ? " %xh%xy(REQ)%xn" : ""
+        alert = use_deity ? " %xh%xy(REQ)%xn" : ""
       end
 
       def alignment
@@ -87,7 +91,7 @@ module AresMUSH
         d_edicts = []
         d_anathema = []
 
-        if (@charclass == 'Champion') || (@charclass == 'Cleric')
+        if use_deity
           if !(@faith_info['deity'].blank?)
 
             d_edicts = Global.read_config('pf2e_deities',
@@ -286,13 +290,20 @@ module AresMUSH
       end
 
       def bg_skills
-        return [] if !@background_info
+          return [] if !@background_info
 
-        bg_skills = @background_info['skills'] ? @background_info['skills'] : []
+          bgskills = @background_info['skills'] ? @background_info['skills'] : []
       end
 
+      def deity_skills
+        return [] if (!use_deity || faith_info['deity'].blank?)
+
+        divine_skill = Global.read_config('pf2e_deities', deity, 'divine_skill')
+      end
+
+
       def all_skills
-        charclass_skills + subclass_skills + bg_skills
+        charclass_skills + subclass_skills + bg_skills + deity_skills
       end
 
       def unique_skills
@@ -303,7 +314,7 @@ module AresMUSH
         all_skills.size - unique_skills.size
       end
 
-      def messages
+      def errors
         if @baseinfolock
           msgs = Pf2eAbilities.abilities_messages(@char)
           msgs ? msgs : t('pf2e.abil_options_ok')

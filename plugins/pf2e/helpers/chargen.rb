@@ -82,6 +82,16 @@ module AresMUSH
       return messages.join("%r")
     end
 
+    def self.chargen_warn_player(char)
+      messages = []
+
+      feat_list = char.pf2_feats.values.flatten
+      dup_feats = feat_list != feat_list.uniq
+
+      messages << t('pf2e.duplicate_feats') if dup_feats
+
+    end
+
     def self.cg_edge_cases(char, charclass, heritage, background)
       case charclass
       when "Cleric"

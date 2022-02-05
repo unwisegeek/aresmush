@@ -24,7 +24,6 @@ en:
     cannot_assign_type: "You don't have that type of %{element} to assign."
     cannot_cast_charclass: "That character class does not have a spell proficiency."
     cannot_cast_spell_level: "You cannot cast spells of that level."
-    cannot_change_element: "That is part of your chargen options and cannot be changed."
     cannot_find_cginfo: "You must choose %{prereq} before you can see options for %{element}."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
@@ -46,6 +45,9 @@ en:
     dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."
     die_roll: "%{roller}%xn rolls %{string} %{dc}and gets: %{parsed} = %x172%{result}%xn %{degree}"
     does_not_qualify: "You do not meet the prerequisites to take that feat. Contact staff if this is in error."
+    dup_feats: "%xyYour chargen options include one or more duplicate feats. Be sure to bring this up with your appstaffer.%xn"
+
+    element_cglocked: "That %{element} is part of your chargen options and cannot be changed."
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
@@ -53,7 +55,7 @@ en:
     lock_info_first: "This command cannot be used until your base chargen options are committed."
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"
-    missing_subclass: "Your class requires a specialization, please choose one."
+    missing_subclass: "xrYour class requires a specialization, please choose one.%xn"
     missing_subclass_info: "%xrYour specialty requires an additional choice that you have not yet set.%xn"
     multiple_options: "You have multiple options for %{element}. Remember to assign this in the next stage."
     must_be_word: "The first character of your alias must be a letter."
@@ -66,6 +68,7 @@ en:
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
     not_caster: "You are not a spellcaster."
+    not_in_list: "%%{option} is not in the list of items you have assigned."
     not_selected_yet: "%{element} not selected yet."
     nothing_to_assign: "You have no character options left unassigned."
     nothing_to_display: "No %{elements} matched your search."
@@ -76,11 +79,16 @@ en:
     player_added: "%{player} can now view the following section of your sheet: %{section}."
 
     reset_first: "Type cg/reset before using this command."
-    reset_ok: "Reset of element '%{element}' complete."
+    reset_ok: "Reset of %{element} '%{option}' complete."
+    restricted_option: "%xyYour chargen options include a rare element. Be sure to reflect this in your prologue."
+    review_cg_issues: "%xrIncomplete sheet!%xn"
+    review_dup_feats: "%xyPC's character options include duplicate feats."
+    review_evil_deity: "%xyApp includes worship of an evil deity.%xn"
+    review_restricted_option: %xyApp includes a restricted option: %{restricted}.%xn
     rollalias_title: "Roll Aliases for %{name}"
 
     show_skills_list: "Your base info grants you %{open} open skills plus these skills: %{defined}"
-    skill_added: "You add %{option} to your list of %{skilltype}."
+    skill_added: "You are now trained in %{skill}."
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."

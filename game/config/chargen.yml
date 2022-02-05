@@ -86,6 +86,8 @@ chargen:
       help: pf2e_chargen
     sheet_abilities:
       help: pf2e_chargen_abilities
+    sheet_skills:
+      help: pf2e_chargen_skills
     desc:
       help: descriptions
     hooks:

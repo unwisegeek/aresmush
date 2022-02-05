@@ -20,22 +20,10 @@ pf2e_background:
     skills:
     - Acrobatics
     lores:
-    - Circus
+    - Circus Lore
     feat:
     - Steady Balance
     special: []
-    action: []
-    reaction: []
-  Amnesiac:
-    abl_boosts:
-    - open
-    - open
-    - open
-    skills: []
-    feat: []
-    special:
-    - Amnesiac
-    rare: true
     action: []
     reaction: []
   Animal Whisperer:
@@ -45,7 +33,7 @@ pf2e_background:
     skills:
     - Society
     lores:
-    - Architecture
+    - Architecture Lore
     feat:
     - Additional Lore
     action: []
@@ -83,13 +71,7 @@ pf2e_background:
     skills:
     - Intimidation
     lores:
-    - Desert Lore
-    - Plains Lore
-    - Swamp Lore
-    - Winterland Lore
-    - Mountains Lore
-    - Hills Lore
-    - Island Lore
+    - terrain
     feat:
     - Group Coercion
     special: []

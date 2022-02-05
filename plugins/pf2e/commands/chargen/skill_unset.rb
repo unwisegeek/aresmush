@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2e
-    class PF2SkillSetCmd
+    class PF2SkillUnSetCmd
       include CommandHandler
 
       attr_accessor :type, :value
@@ -59,58 +59,43 @@ module AresMUSH
           return
         end
 
-        # Does that character already have that skill trained?
+        # Is this skill set by chargen options? If so, they can't change it.
 
         skill_for_char = Pf2eSkills.find_skill(self.value, enactor)
 
-        if !(skill_for_char.prof_level == 'untrained')
-          client.emit_failure t('pf2e.already_has_skill')
+        if skill_for_char.cg_skill
+          client.emit_failure t('pf2e.element_cglocked', :element=>'skill')
           return
         end
 
         ##### VALIDATION SECTION END #####
 
-        # Type-specific handling
-
-        # Background skills, if present, are an array of choices.
-        # Match self.value to a choice in the array and assign it.
+        reference = enactor.pf2_cg_assigned[assignment_type]
 
         if assignment_type == "bgskill"
-          skill_choice = skill_options.select { |skill| skill == self.value }
-
-          if skill_choice.size.zero?
-            client.emit_failure t('pf2e.bad_option', :element=>"skill option", :options=>skill_options.sort.join(", "))
-            return
-          elsif skill_choice.size > 1
-            client.emit_failure t('pf2e.ambiguous_target')
-            return
-          else
-            skill_choice = skill_choice.first
-          end
-
-          skill_options = skill_choice
+          skill_options = reference
         end
 
-        # Open skills are a matter of finding an open skill left to assign.
+        # If open skill, find the skill in the list and set it to 'open'.
 
         if assignment_type == "open skill"
-          index = skill_options.index("open")
+          index = skill_options.index(self.value)
 
           if !index
-            client.emit_failure t('pf2e.no_free', :element=>self.type)
+            client.emit_failure t('pf2e.not_in_list', :option=>self.value)
             return
           end
 
-          skill_options[index] = self.value
+          skill_options[index] = 'open'
         end
 
         to_assign[assignment_type] = skill_options
 
         enactor.update(pf2_to_assign: to_assign)
 
-        skill_for_char.update(prof_level: 'trained')
+        skill_for_char.update(prof_level: 'untrained')
 
-        client.emit_success t('pf2e.skill_added', :skill=>self.value)
+        client.emit_success t('pf2e.reset_ok', :element=>assignment_type, :option=>self.value)
       end
 
     end
