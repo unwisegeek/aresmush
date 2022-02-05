@@ -35,11 +35,7 @@ module AresMUSH
         case cmd.args
         when "info"
           return PF2CommitInfoCmd
-        when "abilities"
-          return PF2CommitAbilitiesCmd
         end
-      when "assign"
-        return PF2AssignCmd
       when "roll"
         case cmd.switch
         when nil, "me"
@@ -51,14 +47,19 @@ module AresMUSH
         when "alias"
           return PF2ChangeRollAliasCmd
         end
-      when "unassigned"
-        return PF2DisplayUnassignedCmd
       when "boost"
         case cmd.switch
         when "set"
           return PF2BoostSetCmd
         when "unset"
           return PF2BoostUnsetCmd
+        end
+      when "skill"
+        case cmd.switch
+        when "set"
+          return PF2SkillSetCmd
+        when "unset"
+          return PF2SkillUnSetCmd
         end
       end
 

@@ -19,11 +19,9 @@ Next, choose your open skills. Your choice of ancestry, heritage, character clas
 `sheet`: Shows your sheet so far.
 
 ### Skills
-`skill/set <type>=<skill>`: Sets an open skill.
-`skill/choose <type>=<skill>`: If you have a choice of skills from <type> source, select which one you want.
+`skill/set <type>=<skill>`: Sets an open skill. Types are **background** or **free**.
 `skill/unset <type>=<skill>`: Deletes a skill selected with `skill/set`. You cannot delete skills granted by your base info.
 
 ### Lores
 `lore/set <type>=<skill>`: Uses one of your open skills to select a lore.
-`lore/choose <type>=<skill>`: If you have a choice of lores from <type> source, select which one you want.
 `lore/unset <type>=<skill>`: Deletes a skill selected with `lore/set`. You cannot delete lores granted by your base info.

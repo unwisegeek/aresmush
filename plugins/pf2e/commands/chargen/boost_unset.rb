@@ -69,7 +69,7 @@ module AresMUSH
         option_locked = starting_value.is_a?(String) && !(starting_value == 'open')
 
         if option_locked
-          client.emit_failure t('pf2e.cannot_change_element')
+          client.emit_failure t('pf2e.element_cglocked', :element=>'boost')
           return
         end
 
@@ -90,7 +90,7 @@ module AresMUSH
 
         enactor.update(pf2_boosts_working: working_boost_list)
 
-        client.emit_success t('pf2e.reset_ok', :element=>self.value)
+        client.emit_success t('pf2e.reset_ok', :element=>"#{self.type} boost", :option=>self.value)
 
       end
 
