@@ -34,7 +34,7 @@ module AresMUSH
         options = skill_types.keys
         to_assign = enactor.pf2_to_assign
 
-        if !(options.include(self.type))
+        if !(options.include?(self.type))
           client.emit_failure t('pf2e.bad_option', :element=> "skill type", :options=> options.sort.join(", "))
           return
         end
