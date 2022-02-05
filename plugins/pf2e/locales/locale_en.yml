@@ -80,11 +80,11 @@ en:
 
     reset_first: "Type cg/reset before using this command."
     reset_ok: "Reset of %{element} '%{option}' complete."
-    restricted_option: "%xyYour chargen options include a rare element. Be sure to reflect this in your prologue."
+    restricted_option: "%xyYour chargen options include a rare element. Be sure to reflect this in your prologue.%xn"
     review_cg_issues: "%xrIncomplete sheet!%xn"
-    review_dup_feats: "%xyPC's character options include duplicate feats."
+    review_dup_feats: "%xyPC's character options include duplicate feats.%xn"
     review_evil_deity: "%xyApp includes worship of an evil deity.%xn"
-    review_restricted_option: %xyApp includes a restricted option: %{restricted}.%xn
+    review_restricted_option: "%xyApp includes a restricted option: %{restricted}.%xn"
     rollalias_title: "Roll Aliases for %{name}"
 
     show_skills_list: "Your base info grants you %{open} open skills plus these skills: %{defined}"
