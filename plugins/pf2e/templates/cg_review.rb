@@ -301,7 +301,7 @@ module AresMUSH
       def deity_skills
         return [] if (!use_deity || @faith_info['deity'].blank?)
 
-        divine_skill = Global.read_config('pf2e_deities', deity, 'divine_skill').to_a
+        divine_skill = Global.read_config('pf2e_deities', deity, 'divine_skill').split
       end
 
 
