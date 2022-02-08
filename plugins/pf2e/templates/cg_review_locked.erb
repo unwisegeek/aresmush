@@ -1,0 +1,50 @@
+<%= header %>
+<%= center("#{title_color}CG Review: #{name}", 78) %>%xn
+<%= divider %>
+<%= left("#{item_color}Ancestry%xn: #{ancestry}", 39) -%>
+<%= left("#{item_color}Heritage%xn: #{heritage}", 39) %>
+<%= left("#{item_color}Class%xn: #{charclass}", 39) -%>
+<%= left("#{item_color}Kit/Specialty%xn: #{subclass}", 39) %>
+<%= left("#{item_color}Specialty Detail%xn: #{subclass_option}", 39) -%>
+<%= left("#{item_color}Background%xn: #{background}", 39) %>
+<%= section_line("Faith Info") %>
+<%= left("#{item_color}Alignment%xn: #{alignment}", 39) -%>
+<%= left("#{item_color}Deity%xn: #{deity}#{is_devotee}", 39) %>
+<% if has_code %>
+<%= section_line("Code Of Behavior") %>
+<%= "%xh%xyYour character choices so far include a code of behavior. This code will be visible to other players once you are approved.%xn" %>
+<%= has_code %>
+<% end %>
+<%= section_line("So Far...") %>
+<%= left("#{item_color}HP%xn: #{ahp + chp} + #{con_mod}", 26) -%>
+<%= left("#{item_color}Size%xn: #{size}", 26) -%>
+<%= left("#{item_color}Speed%xn: #{speed} feet", 26) %>
+<%= section_line("Traits") %>
+<%= traits.sort.join(", ") %>
+<%= section_line("Ability Boosts") %>
+<%= "#{item_color}Free Boosts%xn: #{free_boosts}" %>
+<%= "#{item_color}Ancestry Boosts%xn: #{ancestry_boosts}"  %>
+<%= "#{item_color}Ancestry Flaw%xn: #{ancestry_flaw}" %>
+<%= "#{item_color}Background Boosts%xn: #{bg_boosts}" %>
+<%= "#{item_color}Key Ability%xn: #{key_ability}" %>
+<%= section_line("Skills and Lores") %>
+<%= "#{item_color}Current Skills: #{existing_skills}" %>
+<%= "#{item_color}Current Lores: #{existing_lores}" %>
+<%= "#{item_color}Free Skills: #{open_skills}" %>
+<% if bgskill_choice %>
+<%= "%xyYou need to choose which skill you get from your background. Options: #{bgskill_choice}%xn" %>
+<% end %>
+<% if bglore_choice %>
+<%= "%xyYou need to choose which lore you get from your background. Options: #{bglore_choice}%xn" %>
+<% end %>
+<%= section_line("Other Stuff") %>
+<%= "#{item_color}Special Senses and Abilities%xn: #{specials}" %>
+<%= "#{item_color}Starting Languages%xn: #{languages}" %>
+<%= section_line("Warnings") %>
+<%= errors %>
+<%= divider %>
+<%= "Your base info is committed. You can now assign abilities, skills, feats, etc." %>
+<%= "All messages in %xrred%xn in Warnings must be resolved before you can apply for approval." %>
+<%= "Messages in %xh%xyyellow%xn are warnings. You can apply with these, but your appstaffer might ask about these items." %>
+<%= "If you want to change your base options, you must %xccg/reset%xn." %>
+<%= footer %>

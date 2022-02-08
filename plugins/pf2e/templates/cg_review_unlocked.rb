@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    class PF2CGReviewDisplay < ErbTemplateRenderer
+    class PF2CGReviewUnlockDisplay < ErbTemplateRenderer
       include CommonTemplateFields
 
       attr_accessor :char, :client
@@ -31,7 +31,7 @@ module AresMUSH
         @to_assign = @char.pf2_to_assign
         @boosts = @char.pf2_boosts_working
 
-        super File.dirname(__FILE__) + "/cg_review.erb"
+        super File.dirname(__FILE__) + "/cg_review_unlocked.erb"
       end
 
       def baseinfolock
@@ -147,17 +147,7 @@ module AresMUSH
       end
 
       def free_boosts
-        if @baseinfolock
-          open_list = @boosts['free']
-          still_free = open_list.count("open")
-          assigned = open_list.difference([ "open" ]).empty? ?
-                     "None assigned" :
-                     open_list.difference([ "open" ]).sort.join(", ")
-
-          "#{assigned} plus #{still_free} free"
-        else
-          4
-        end
+        free = 4
       end
 
       def ancestry_boosts
@@ -177,11 +167,21 @@ module AresMUSH
               end
             end 
 
-            msg.join(", ")
-          else
-            list
+        msg = []
+        if list.is_a?(Array)
+          list.each do |item|
+            if item.is_a?(Array)
+              msg << item.join( " and ")
+            else
+              msg << item
+            end
           end
+
+          msg.join(", ")
+        else
+          list
         end
+
       end
 
       def ancestry_flaw
@@ -189,77 +189,45 @@ module AresMUSH
       end
 
       def bg_boosts
-        if @baseinfolock
-          list = @boosts['background']
-          if list.is_a?(Array)
-            list = list.map do |v|
-              if v.is_a?(Array)
-                v.join(" or ")
-              else
-                v
-              end
-            end
+        list = @background_info["abl_boosts"] ? @background_info["abl_boosts"] : []
+
+        return "None." if list.empty?
+
+        msg = []
+
+        list.each do |item|
+          if item.is_a?(Array)
+            msg << item.join(" or ")
+          else
+            msg << item
           end
-          list.join(", ")
-        else
-          list = @background_info["abl_boosts"] ? @background_info["abl_boosts"] : []
-
-          return "None." if list.empty?
-
-          msg = []
-
-          list.each do |item|
-            if item.is_a?(Array)
-              msg << item.join(" or ")
-            else
-              msg << item
-            end
-          end
-
-          msg.join(", ")
         end
+
+        msg.join(", ")
       end
 
       def key_ability
-        if @baseinfolock
-          list = @boosts['charclass']
 
-          if list.is_a?(Array)
-            list.sort.join(" or ")
-          else
-            list
-          end
+        key_ability = @subclass_info['key_abil'] ?
+          @subclass_info['key_abil'] :
+          @charclass_info['key_abil']
+
+        return "Not set." if !key_ability
+
+        if key_ability.is_a?(Array)
+          key_ability.flatten.join(" or ")
         else
-
-          key_ability = @subclass_info['key_abil'] ?
-            @subclass_info['key_abil'] :
-            @charclass_info['key_abil']
-
-          return "Not set." if !key_ability
-
-          if key_ability.is_a?(Array)
-            key_ability.flatten.join(" or ")
-          else
-            key_ability
-          end
-
+          key_ability
         end
+
       end
 
       def con_mod
-        if @baseinfolock
-          con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Constitution"))
-        else
-          con_mod = "CON Mod"
-        end
+        con_mod = "CON Mod"
       end
 
       def int_mod
-        if @baseinfolock
-          int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
-        else
-          int_mod = 0
-        end
+        int_mod = "Int MOD"
       end
 
       def specials
@@ -290,9 +258,9 @@ module AresMUSH
       end
 
       def bg_skills
-          return [] if !@background_info
+        return [] if !@background_info
 
-          bgskills = @background_info['skills'] ? @background_info['skills'] : []
+        bgskills = @background_info['skills'] ? @background_info['skills'] : []
       end
 
       def deity_skills
@@ -314,14 +282,15 @@ module AresMUSH
         all_skills.size - unique_skills.size
       end
 
+      def unique_lores
+        blore = @background_info["lores"] ? @background_info["lores"] : []
+
+        blore.join(" or ")
+      end
+
       def errors
-        if @baseinfolock
-          msgs = Pf2eAbilities.abilities_messages(@char)
-          msgs ? msgs : t('pf2e.abil_options_ok')
-        else
-          msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option, @to_assign)
-          msgs ? msgs : t('pf2e.cg_options_ok')
-        end
+        msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option, @to_assign)
+        msgs ? msgs : t('pf2e.cg_options_ok')
       end
 
     end
