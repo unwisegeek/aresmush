@@ -184,9 +184,13 @@ module AresMUSH
           client.emit_ooc t('pf2e.bg_no_options', :element => "lores")
         end
 
-        class_lores = class_features_info["lores"] ? class_features_info["lores"] : []
-        subclass_lores = subclass_features_info["lores"] ? subclass_features_info["lores"] : []
-        lores = bg_lores + class_lores + subclass_lores
+        # No class or specialty right now grants lores, this is left in in case they do later.
+        #
+        # class_lores = class_features_info["lores"] ? class_features_info["lores"] : []
+        # subclass_lores = subclass_features_info["lores"] ? subclass_features_info["lores"] : []
+        # lores = bg_lores + class_lores + subclass_lores
+
+        lores = bg_lores
 
         # Strip out and kick to to_assign lores that are a type instead of a lore.
         known_lore_types = Global.read_config('pf2e_lores').keys

@@ -29,7 +29,9 @@ module AresMUSH
           return nil
         end
 
-        template = PF2CGReviewDisplay.new(self.target, client)
+        template = enactor.pf2_baseinfo_locked ?
+          PF2CGReviewLockDisplay.new(self.target, client) :
+          PF2CGReviewUnlockDisplay.new(self.target, client)
 
         client.emit template.render
       end
