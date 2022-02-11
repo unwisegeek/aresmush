@@ -39,6 +39,15 @@ module AresMUSH
           return
         end
 
+        # Is self.value a valid skill?
+
+        all_skills = Global.read_config('pf2e_skills').keys
+
+        if !all_skills.include?(self.value)
+          client.emit_failure t('pf2e.bad_option', :element=>'skill name', :options=>all_skills.join(", "))
+          return
+        end
+
         # Verify that this character's options left to assign include the listed type.
 
         assignment_type = skill_types[self.type]
@@ -47,15 +56,6 @@ module AresMUSH
 
         if !skill_options
           client.emit_failure t('pf2e.cannot_assign_type', :element=>"skill")
-          return
-        end
-
-        # Is self.value a valid skill?
-
-        all_skills = Global.read_config('pf2e_skills').keys
-
-        if !all_skills.include?(self.value)
-          client.emit_failure t('pf2e.bad_option', :element=>'skill name', :options=>all_skills.join(", "))
           return
         end
 
@@ -75,7 +75,8 @@ module AresMUSH
         # Background skills, if present, are an array of choices.
         # Match self.value to a choice in the array and assign it.
 
-        if assignment_type == "bgskill"
+        case assignment_type
+        when "bgskill"
           skill_choice = skill_options.select { |skill| skill == self.value }
 
           if skill_choice.size.zero?
@@ -89,14 +90,13 @@ module AresMUSH
           end
 
           skill_options = skill_choice
-        end
 
         # Open skills are a matter of finding an open skill left to assign.
 
-        if assignment_type == "open skill"
+        when "open skill"
           index = skill_options.index("open")
 
-          if !index
+          if !(index)
             client.emit_failure t('pf2e.no_free', :element=>self.type)
             return
           end
