@@ -287,7 +287,7 @@ module AresMUSH
       def format_lore(char,lore, i)
         name = lore.name
         fmt_name = "%xh#{name}%xn"
-        linked_attr = "(INT)"
+        linked_attr = " (INT)"
         lore_mod = Pf2eLores.get_lore_bonus(char, name)
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = " (#{lore.prof_level[0].upcase})"
@@ -311,7 +311,7 @@ module AresMUSH
 
       def print_linked_attr(skill)
         apt = Pf2eSkills.get_linked_attr(skill)
-        apt ? "" : " %xh%xx(#{apt[0..2].upcase})%xn"
+        apt ? "" : " (#{apt[0..2].upcase})"
       end
 
     end
