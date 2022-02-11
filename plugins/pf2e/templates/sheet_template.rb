@@ -281,7 +281,7 @@ module AresMUSH
         skill_mod = Pf2eSkills.get_skill_bonus(char, name)
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = " (#{s.prof_level[0].upcase})"
-        "#{linebreak}#{left(fmt_name + linked_attr + ":",18)} #{left(skill_mod.to_s + proflevel, 20)}"
+        "#{linebreak}#{left(fmt_name + linked_attr,21)} #{left(skill_mod.to_s + proflevel, 17)}"
       end
 
       def format_lore(char,lore, i)
@@ -291,7 +291,7 @@ module AresMUSH
         lore_mod = Pf2eLores.get_lore_bonus(char, name)
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = " (#{lore.prof_level[0].upcase})"
-        "#{linebreak}#{left(fmt_name + linked_attr + ":",18)} #{left(lore_mod.to_s + proflevel, 20)}"
+        "#{linebreak}#{left(fmt_name + linked_attr,21)} #{left(lore_mod.to_s + proflevel, 17)}"
       end
 
       def format_save(char,name)
