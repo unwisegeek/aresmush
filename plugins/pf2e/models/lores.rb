@@ -24,7 +24,7 @@ module AresMUSH
     end
 
     def self.find_lore(name, char)
-      lore = char.lores.select { |s| s.name_upcase == name.upcase }
+      lore = char.lores.select { |s| s.name_upcase == name.upcase }.first
     end
 
     def self.get_lore_bonus(char, name)
