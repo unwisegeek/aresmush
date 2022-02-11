@@ -44,6 +44,7 @@ en:
 
     dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."
     die_roll: "%{roller}%xn rolls %{string} %{dc}and gets: %{parsed} = %x172%{result}%xn %{degree}"
+    does_not_have: "You do not have that %{item}."
     does_not_qualify: "You do not meet the prerequisites to take that feat. Contact staff if this is in error."
     dup_feats: "%xyYour chargen options include one or more duplicate feats. Be sure to bring this up with your appstaffer.%xn"
 

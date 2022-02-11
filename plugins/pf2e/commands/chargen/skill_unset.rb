@@ -59,9 +59,16 @@ module AresMUSH
           return
         end
 
-        # Is this skill set by chargen options? If so, they can't change it.
+        # Do they have this skill?
 
         skill_for_char = Pf2eSkills.find_skill(self.value, enactor)
+
+        if skill_for_char.prof_level == 'untrained'
+          client.emit_failure t('pf2e.does_not_have', :item=>'skill')
+          return
+        end
+
+        # Is this skill set by chargen options? If so, they can't change it.
 
         if skill_for_char.cg_skill
           client.emit_failure t('pf2e.element_cglocked', :element=>'skill')
