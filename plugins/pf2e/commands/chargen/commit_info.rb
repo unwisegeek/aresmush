@@ -206,14 +206,10 @@ module AresMUSH
         # Determine unique lores in the list and create.
         unique_lores = lores.uniq
 
-        if !unique_lores.empty?
-          unique_lores.each do |l|
+        if !(unique_lores.empty?)
+          unique_lores.each do |lore|
 
-            has_lore = Pf2eLores.find_lore(l, enactor)
-
-            next if has_lore
-
-            Pf2eLores.create_lore_for_char(l, enactor, true)
+            Pf2eLores.create_lore_for_char(lore, enactor, true)
           end
         end
 
