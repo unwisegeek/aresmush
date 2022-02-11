@@ -133,7 +133,7 @@ module AresMUSH
 
         list = []
         lores.each_with_index do |lore,i|
-          list << format_lore(lore, i)
+          list << format_lore(@char, lore, i)
         end
 
         list
@@ -284,13 +284,14 @@ module AresMUSH
         "#{linebreak}#{left(fmt_name + linked_attr + ":",18)} #{left(skill_mod.to_s + proflevel, 20)}"
       end
 
-      def format_lore(lore, i)
+      def format_lore(char,lore, i)
         name = lore.name
-        fmt_name = "%xh#{name}:%xn"
+        fmt_name = "%xh#{name}%xn"
         linked_attr = "INT"
+        skill_mod = Pf2eSkills.get_lore_bonus(char, name)
         linebreak = i % 2 == 1 ? "" : "%r"
-        proflevel = "#{lore.prof_level}#{linked_attr}"
-        "#{linebreak}#{left(fmt_name, 18)} #{left(proflevel, 18)}"
+        proflevel = " (#{lore.prof_level[0].upcase})"
+        "#{linebreak}#{left(fmt_name + linked_attr + ":",18)} #{left(skill_mod.to_s + proflevel, 20)}"
       end
 
       def format_save(char,name)
