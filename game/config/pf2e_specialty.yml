@@ -673,13 +673,15 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Fire:
-            magic_stats:
-              revelation:
-              - Fire Ray
+            chargen:
+              magic_stats:
+                revelation:
+                - Fire Ray
           Sun:
-            magic_stats:
-              revelation:
-              - Dazzling Flash
+            chargen:
+              magic_stats:
+                revelation:
+                - Dazzling Flash
     Life:
       chargen:
         skills:
