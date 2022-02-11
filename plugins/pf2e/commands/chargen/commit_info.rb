@@ -206,6 +206,8 @@ module AresMUSH
         # Determine unique lores in the list and create.
         unique_lores = lores.uniq
 
+        client.emit unique_lores
+
         if !(unique_lores.empty?)
           unique_lores.each do |lore|
             Pf2eLores.create_lore_for_char(name: lore, prof_level: 'trained', character: enactor, cg_lore: true)
