@@ -94,19 +94,19 @@ module AresMUSH
         # Open skills are a matter of finding an open skill left to assign.
 
         when "open skill"
-          index = skill_options.index("open")
+          loc = skill_options.index("open")
 
-          if !(index)
+          if !(loc)
             client.emit_failure t('pf2e.no_free', :element=>self.type)
             return
           end
 
-          skill_options[index] = self.value
+          skill_options[loc] = self.value
         end
 
         client.emit skill_options
         client.emit skill_options.index("open")
-        client.emit "Nil" if !index
+        client.emit "Nil" if !loc
 
         to_assign[assignment_type] = skill_options
 
