@@ -57,7 +57,7 @@ module AresMUSH
       Pf2eSkills.create(name: name, prof_level: 'untrained', character: char)
     end
 
-    def self.update_skill_for_char(name, char, prof, cg_skill)
+    def self.update_skill_for_char(name, char, prof, cg_skill=false)
       skill = find_skill(name, char)
 
       return nil if !skill
