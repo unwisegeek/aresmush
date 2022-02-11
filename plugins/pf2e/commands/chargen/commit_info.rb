@@ -209,11 +209,11 @@ module AresMUSH
         if !(unique_lores.empty?)
           unique_lores.each do |lore|
 
-            has_lore = Pf2eLores.find_lore(l, enactor)
+            has_lore = Pf2eLores.find_lore(lore, enactor)
 
             next if has_lore
 
-            Pf2eLores.create_lore_for_char(name: l, prof_level: 'trained', character: enactor, cg_lore: true)
+            Pf2eLores.create_lore_for_char(name: lore, prof_level: 'trained', character: enactor, cg_lore: true)
           end
         end
 
