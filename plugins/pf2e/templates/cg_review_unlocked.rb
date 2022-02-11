@@ -166,7 +166,7 @@ module AresMUSH
             end
           end
 
-          msg.join(", ")
+          msg
         else
           list
         end
