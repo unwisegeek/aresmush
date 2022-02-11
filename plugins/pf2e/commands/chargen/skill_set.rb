@@ -105,6 +105,7 @@ module AresMUSH
         end
 
         client.emit skill_options
+        client.emit skill_options.index("open")
         client.emit "Nil" if !index
 
         to_assign[assignment_type] = skill_options
