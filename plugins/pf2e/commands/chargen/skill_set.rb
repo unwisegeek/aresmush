@@ -104,6 +104,9 @@ module AresMUSH
           skill_options[index] = self.value
         end
 
+        client.emit skill_options
+        client.emit index
+
         to_assign[assignment_type] = skill_options
 
         enactor.update(pf2_to_assign: to_assign)
