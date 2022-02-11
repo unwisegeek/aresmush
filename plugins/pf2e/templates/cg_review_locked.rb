@@ -229,7 +229,7 @@ module AresMUSH
       end
 
       def open_skills
-        @to_assign['open skills'].count
+        @to_assign['open skills'].count("open")
       end
 
       def bgskill_choice
