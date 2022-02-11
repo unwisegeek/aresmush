@@ -276,7 +276,7 @@ module AresMUSH
 
       def format_skill(char, s, i)
         name = s.name
-        fmt_name = "%xh#{name}%xn"
+        fmt_name = "#{item_color}#{name}%xn"
         linked_attr = print_linked_attr(name)
         skill_mod = "%xh#{Pf2eSkills.get_skill_bonus(char, name)}%xn"
         linebreak = i % 2 == 1 ? "" : "%r"
@@ -286,7 +286,7 @@ module AresMUSH
 
       def format_lore(char,lore, i)
         name = lore.name
-        fmt_name = "%xh#{name}%xn"
+        fmt_name = "#{item_color}#{name}%xn"
         linked_attr = " %xh%xx(INT)%xn"
         lore_mod = "%xh#{Pf2eLores.get_lore_bonus(char, name)}%xn"
         linebreak = i % 2 == 1 ? "" : "%r"
