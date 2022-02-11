@@ -151,21 +151,7 @@ module AresMUSH
       end
 
       def ancestry_boosts
-        if @baseinfolock
-          list = @boosts['ancestry']
-          list.sort.join(", ")
-        else
-          list = @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
-
-          msg = []
-          if list.is_a?(Array)
-            list.each do |item|
-              if item.is_a?(Array)
-                msg << item.join( " and ")
-              else
-                msg << item
-              end
-            end 
+        list = @ancestry_info["abl_boosts"] ? @ancestry_info["abl_boosts"] : "?"
 
         msg = []
         if list.is_a?(Array)
