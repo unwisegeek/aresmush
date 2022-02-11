@@ -210,9 +210,11 @@ module AresMUSH
 
         if !(unique_lores.empty?)
           unique_lores.each do |lore|
+            client.emit "BOOGABOOGA"
+            client.emit lore
+            client.emit enactor.name
 
             Pf2eLores.create_lore_for_char(lore, enactor, true)
-            client.emit enactor.name
           end
         end
 
