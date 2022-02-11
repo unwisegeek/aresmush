@@ -50,12 +50,15 @@
 <% skills.each do |s| %>
 <%= s -%>
 <% end %>
+<%= "%r" %>
 
 <%= section_line("Lores") %>
 <% lores.each do |lore| %>
 <%= lore -%>
 <% end %>
+<%= "%r" %>
 <% end %>
+
 <% if section == "all" %>
 <%= section_line("Feats") %>
 <% end %>
