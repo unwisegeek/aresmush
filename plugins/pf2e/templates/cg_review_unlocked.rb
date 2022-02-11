@@ -163,7 +163,7 @@ module AresMUSH
             end
           end
 
-          msg
+          msg.join(", ")
         else
           list
         end
@@ -261,7 +261,7 @@ module AresMUSH
       end
 
       def unique_skills
-        all_skills.difference([ "open"]).uniq
+        all_skills.difference([ "open" ]).uniq
       end
 
       def open_skills

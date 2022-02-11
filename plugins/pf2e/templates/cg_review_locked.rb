@@ -223,7 +223,7 @@ module AresMUSH
       def existing_lores
         char_lores = @char.lores
 
-        return "None." if !char_lores
+        return "None." if char_lores.empty?
 
         lores = char_lores.map { |lore| lore.name }.sort.join(", ")
       end

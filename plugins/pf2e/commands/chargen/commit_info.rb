@@ -141,8 +141,6 @@ module AresMUSH
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills + subclassopt_skills
 
-        client.emit skills.join(", ")
-
         # Some classes also get a skill based on their deity.
         use_deity = charclass_info.has_key?('use_deity')
 
@@ -156,8 +154,6 @@ module AresMUSH
         defined_skills = skills.difference([ "open" ])
 
         unique_skills = defined_skills.uniq
-
-        client.emit unique_skills.join(", ")
 
         if !(unique_skills.empty?)
           unique_skills.each do |s|
