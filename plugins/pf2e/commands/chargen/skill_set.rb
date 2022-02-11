@@ -93,7 +93,7 @@ module AresMUSH
 
         # Open skills are a matter of finding an open skill left to assign.
 
-        when "open skill"
+        when "open skills"
           loc = skill_options.index("open")
 
           if !(loc)
