@@ -25,12 +25,7 @@ module AresMUSH
     end
 
     def self.find_skill(name, char)
-      skill = ClassTargetFinder.find(name,Pf2eSkills,char)
-      if skill.found?
-        return skill.target
-      else
-        return nil
-      end
+      skill = @char.skills.select { |s| s.name_upcase == name.upcase }.first
     end
 
     def self.get_skill_bonus(char, name)
