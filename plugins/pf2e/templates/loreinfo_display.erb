@@ -1,7 +1,5 @@
 <%= header %>
-<%= "#{title_color}#{title}%xn%r" -%>
+<%= center("#{title_color}#{title}", 78) %>%xn
 <%= divider %>
-<% lores.each do |l| %>
-<%= l %>
-<% end %>
+<% lores.each { |l| l } -%>
 <%= footer %>
