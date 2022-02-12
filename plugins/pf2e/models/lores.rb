@@ -50,5 +50,17 @@ module AresMUSH
       end
     end
 
+    def self.lores_messages(char)
+      msgs = []
+      to_assign = char.pf2_to_assign
+
+      choose_bglore = to_assign['bglore'].is_a?(Array)
+
+      msgs < t('pf2e.unassigned_bglore') if choose_bglore
+
+      return nil if msgs.empty?
+      return msgs.join("%r")
+    end
+
   end
 end
