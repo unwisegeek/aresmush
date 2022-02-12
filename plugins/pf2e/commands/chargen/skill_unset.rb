@@ -79,13 +79,14 @@ module AresMUSH
 
         reference = enactor.pf2_cg_assigned[assignment_type]
 
-        if assignment_type == "bgskill"
-          skill_options = reference
-        end
+        case assignment_type
+        when "bgskill"
+
+        skill_options = reference
 
         # If open skill, find the skill in the list and set it to 'open'.
 
-        if assignment_type == "open skill"
+        when "open skills"
           index = skill_options.index(self.value)
 
           if !index
