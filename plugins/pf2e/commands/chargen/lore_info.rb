@@ -35,7 +35,7 @@ module AresMUSH
           return
         end
 
-        lore_list = all_lores.keep_if { |k,v| k == self.loretype }
+        lore_list = all_lores.select { |k,v| k == self.loretype }
 
         list = lore_list.values.flatten.sort
 
