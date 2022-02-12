@@ -86,16 +86,15 @@ module AresMUSH
 
         # If open lore, find the lore in the list and set it to 'open'.
 
-        when "open lores"
-          index = lore_options.index(self.value)
+      when "open skills"
+        index = lore_options.index(self.value)
 
-          if !index
-            client.emit_failure t('pf2e.not_in_list', :option=>self.value)
-            return
-          end
-
-          lore_options[index] = 'open'
+        if !index
+          client.emit_failure t('pf2e.not_in_list', :option=>self.value)
+          return
         end
+
+        lore_options[index] = 'open'
 
         to_assign[assignment_type] = lore_options
 
