@@ -25,7 +25,6 @@ module AresMUSH
       end
 
       def lores
-
         list = []
 
         @lore_list.each_with_index do |lore,i|
