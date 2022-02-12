@@ -56,7 +56,7 @@ module AresMUSH
 
       choose_bglore = to_assign['bglore'].is_a?(Array)
 
-      msgs < t('pf2e.unassigned_bglore') if choose_bglore
+      msgs << t('pf2e.unassigned_bglore') if choose_bglore
 
       return nil if msgs.empty?
       return msgs.join("%r")
