@@ -97,7 +97,7 @@ en:
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."
 
     unassigned_abilities: "%xrYou have unassigned boosts. Still to assign: %{missing}%xn"
-    unassigned_bglore: "%xr"You have not chosen your background lore.%xn
+    unassigned_bglore: "%xrYou have not chosen your background lore.%xn"
     unassigned_bgskill: "%xrYou have not chosen your background skill.%xn"
     unassigned_openskill: "%xrYou have free skills left to assign.%xn"
     unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."
