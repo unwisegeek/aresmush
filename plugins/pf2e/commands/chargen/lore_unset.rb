@@ -30,7 +30,7 @@ module AresMUSH
         ##### VALIDATION SECTION #####
         # Verify that there are things to be assigned that this command handles.
 
-        lore_types = { 'background'=>'bglore', 'free'=>'open lores' }
+        lore_types = { 'background'=>'bglore', 'free'=>'open skills' }
         options = lore_types.keys
         to_assign = enactor.pf2_to_assign
 
