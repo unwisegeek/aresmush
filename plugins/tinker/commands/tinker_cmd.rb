@@ -9,13 +9,17 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("rashmi")
-          
-        skill_list = Global.read_config('pf2e_skills').keys
-
-        skill_list.each do |s|
-          Pf2eSkills.create_skill_for_char(s, enactor)
-        end
+        lore_list = Global.read_config('pf2e_lores')
+        lore_types = lore_list.keys
+        
+        type = 'crafting'
+        
+        client.emit lore_list
+        client.emit lore_types
+        
+        lore_list = lore_list.keep_if { |k,v| k == type }
+        
+        client.emit lore_list
       end
 
     end
