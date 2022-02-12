@@ -91,7 +91,7 @@ module AresMUSH
       end
 
       return nil if messages.empty?
-      return messages.join("%r")
+      return messages
     end
 
 
