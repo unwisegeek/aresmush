@@ -59,7 +59,7 @@ module AresMUSH
       msgs << t('pf2e.unassigned_bglore') if choose_bglore
 
       return nil if msgs.empty?
-      return msgs.join("%r")
+      return msgs
     end
 
   end
