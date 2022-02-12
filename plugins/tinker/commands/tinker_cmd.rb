@@ -9,14 +9,13 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Testchar")
+        char = Character.find_one_by_name("rashmi")
           
-        skill_list = Global.read_config('pf2e_skills').keys + [ "open" ]
-        
-        index = skill_list.index("open")
-        
-        client.emit index 
-        client.emit skill_list.join(" | ")
+        skill_list = Global.read_config('pf2e_skills').keys
+
+        skill_list.each do |s|
+          Pf2eSkills.create_skill_for_char(s, enactor)
+        end
       end
 
     end
