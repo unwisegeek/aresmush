@@ -13,11 +13,11 @@ module AresMUSH
 
       def handle
 
-        lore_list = Global.read_config('pf2e_lores')
+        all_lores = Global.read_config('pf2e_lores')
 
         if self.loretype == "all"
 
-          list = lore_list.values.flatten.sort
+          list = all_lores.values.flatten.sort
 
           template = PF2LoreInfoTemplate.new(list, self.loretype)
 
@@ -25,7 +25,7 @@ module AresMUSH
           return
         end
 
-        lore_types = lore_list.keys
+        lore_types = all_lores.keys
 
         if !(lore_types.include?(self.loretype))
           client.emit_failure t('pf2e.bad_option',
@@ -35,7 +35,7 @@ module AresMUSH
           return
         end
 
-        lore_list = lore_list.keep_if { |k,v| k == self.loretype }
+        lore_list = all_lores.keep_if { |k,v| k == self.loretype }
 
         list = lore_list.values.flatten.sort
 
