@@ -50,10 +50,6 @@ module AresMUSH
     end
 
     def self.create_skill_for_char(name, char)
-      has_skill = Pf2eSkills.find_skill(name, char)
-
-      return nil if has_skill
-
       Pf2eSkills.create(name: name, prof_level: 'untrained', character: char)
     end
 
