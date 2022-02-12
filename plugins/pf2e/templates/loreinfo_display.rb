@@ -37,7 +37,7 @@ module AresMUSH
 
       def format_lore(lore, i)
         linebreak = i % 3 == 1 ? "" : "%r"
-        "#{left(lore, 39)}#{linebreak}"
+        "#{linebreak}#{left(lore, 25)}"
       end
 
     end
