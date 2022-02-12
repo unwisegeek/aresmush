@@ -86,7 +86,7 @@ module AresMUSH
 
         # If open lore, find the lore in the list and set it to 'open'.
 
-        when "open lores"
+      when "open skills"
           index = lore_options.index(self.value)
 
           if !index
