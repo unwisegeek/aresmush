@@ -61,6 +61,13 @@ module AresMUSH
         when "unset"
           return PF2SkillUnSetCmd
         end
+      when "lore"
+        case cmd.switch
+        when "set"
+          return PF2LoreSetCmd
+        when "unset"
+          return PF2LoreUnSetCmd
+        end
       end
 
       nil
