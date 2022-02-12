@@ -54,6 +54,7 @@ en:
     heritage_not_set: "You cannot set a lineage until you set your heritage."
 
     lock_info_first: "This command cannot be used until your base chargen options are committed."
+    lore_options_ok: "%xgNo issues detected with your lores.%xn"
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"
     missing_subclass: "xrYour class requires a specialization, please choose one.%xn"
@@ -69,7 +70,7 @@ en:
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
     not_caster: "You are not a spellcaster."
-    not_in_list: "%%{option} is not in the list of items you have assigned."
+    not_in_list: "%{option} is not in the list of items you have assigned."
     not_selected_yet: "%{element} not selected yet."
     nothing_to_assign: "You have no character options left unassigned."
     nothing_to_display: "No %{elements} matched your search."
@@ -90,11 +91,15 @@ en:
 
     show_skills_list: "Your base info grants you %{open} open skills plus these skills: %{defined}"
     skill_added: "You are now trained in %{skill}."
+    skill_options_ok: "%xgNo issues detected with your skills.%xn"
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."
 
     unassigned_abilities: "%xrYou have unassigned boosts. Still to assign: %{missing}%xn"
+    unassigned_bglore: "%xr"You have not chosen your background lore.%xn
+    unassigned_bgskill: "%xrYou have not chosen your background skill.%xn"
+    unassigned_openskill: "%xrYou have free skills left to assign.%xn"
     unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."
     unassigned_title: "Unassigned Character Options: %{name}"
 

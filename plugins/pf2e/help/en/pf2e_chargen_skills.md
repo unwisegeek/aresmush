@@ -23,5 +23,6 @@ Next, choose your open skills. Your choice of ancestry, heritage, character clas
 `skill/unset <type>=<skill>`: Deletes a skill selected with `skill/set`. You cannot delete skills granted by your base info.
 
 ### Lores
-`lore/set <type>=<skill>`: Uses one of your open skills to select a lore.
+`lore/set <type>=<skill>`: Selects a lore. If <type> is **free**, it draws from your open pool of skills. If <type> is **background**, it sets which lore you get from your background, if you have this option.
 `lore/unset <type>=<skill>`: Deletes a skill selected with `lore/set`. You cannot delete lores granted by your base info.
+`lore/info [<type>]`: Shows what lores are available. If you specify a type, it will show you only lores under that category. Types are _deity_, _creature_, _city_, _terrain_, or _general_. If <type> is not specified, it will show all available lores.

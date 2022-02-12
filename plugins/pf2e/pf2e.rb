@@ -67,6 +67,8 @@ module AresMUSH
           return PF2LoreSetCmd
         when "unset"
           return PF2LoreUnSetCmd
+        when "info"
+          return PF2LoreInfoCmd
         end
       end
 

@@ -249,8 +249,33 @@ module AresMUSH
       end
 
       def errors
-        msgs = Pf2eAbilities.abilities_messages(@char)
-        msgs ? msgs : t('pf2e.abil_options_ok')
+        messages = []
+
+        abil_msgs = Pf2eAbilities.abilities_messages(@char)
+        if abil_msgs
+          abil_msgs.each do |msg|
+            messages << msg
+        else
+          messages << t('pf2e.abil_options_ok')
+        end
+
+        skill_msgs = Pf2eSkills.skills_messages(@char)
+        if skill_msgs
+          skill_msgs.each do |msg|
+            messages << msg
+        else
+          messages << t('pf2e.skill_options_ok')
+        end
+
+        lore_msgs = Pf2eLores.lores_messages(@char)
+        if lore_msgs
+          lore_msgs.each do |msg|
+            messages << msg
+        else
+          messages << t('pf2e.lore_options_ok')
+        end
+
+        messages.join("%r")
       end
 
     end
