@@ -25,7 +25,7 @@ module AresMUSH
     end
 
     def self.find_skill(name, char)
-      skill = @char.skills.select { |s| s.name_upcase == name.upcase }.first
+      skill = char.skills.select { |s| s.name_upcase == name.upcase }.first
     end
 
     def self.get_skill_bonus(char, name)
