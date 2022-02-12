@@ -63,15 +63,15 @@ module AresMUSH
 
       choose_bgskill = to_assign['bgskill'].is_a?(Array)
 
-      msgs < t('pf2e.unassigned_bgskill') if choose_bgskill
+      msgs << t('pf2e.unassigned_bgskill') if choose_bgskill
 
       choose_open_skill = to_assign['open skills'].include?("open")
 
-      msgs < t('pf2e.unassigned_openskill') if choose_open_skill
+      msgs << t('pf2e.unassigned_openskill') if choose_open_skill
 
       return nil if msgs.empty?
       return msgs.join("%r")
     end
-      
+
   end
 end
