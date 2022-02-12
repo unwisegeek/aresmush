@@ -6,9 +6,9 @@ module AresMUSH
       attr_accessor :loretype
 
       def parse_args
-        args = cmd.args
+        arg = cmd.args
 
-        self.loretype = args ? downcase_arg(args.arg1) : 'all'
+        self.loretype = arg ? downcase_arg(arg) : 'all'
       end
 
       def handle
