@@ -17,7 +17,7 @@ module AresMUSH
 
         title = "Available Lores For Type #{type}"
 
-        if type = "All"
+        if type == "All"
           title = "Emblem of Ea Available Lores"
         end
 
