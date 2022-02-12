@@ -17,7 +17,7 @@ module AresMUSH
 
         title = "Available Lores For Type #{type}"
 
-        if type = "All"
+        if type == "All"
           title = "Emblem of Ea Available Lores"
         end
 
@@ -37,7 +37,7 @@ module AresMUSH
 
       def format_lore(lore, i)
         linebreak = i % 2 == 1 ? "" : "%r"
-        "#{linebreak}#{left(lore, 39)}
+        "#{linebreak}#{left(lore, 39)}"
       end
 
     end
