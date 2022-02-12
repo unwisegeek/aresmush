@@ -70,7 +70,7 @@ module AresMUSH
       msgs << t('pf2e.unassigned_openskill') if choose_open_skill
 
       return nil if msgs.empty?
-      return msgs.join("%r")
+      return msgs
     end
 
   end
