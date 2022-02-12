@@ -255,6 +255,7 @@ module AresMUSH
         if abil_msgs
           abil_msgs.each do |msg|
             messages << msg
+          end
         else
           messages << t('pf2e.abil_options_ok')
         end
@@ -263,6 +264,7 @@ module AresMUSH
         if skill_msgs
           skill_msgs.each do |msg|
             messages << msg
+          end
         else
           messages << t('pf2e.skill_options_ok')
         end
@@ -271,6 +273,7 @@ module AresMUSH
         if lore_msgs
           lore_msgs.each do |msg|
             messages << msg
+          end
         else
           messages << t('pf2e.lore_options_ok')
         end
