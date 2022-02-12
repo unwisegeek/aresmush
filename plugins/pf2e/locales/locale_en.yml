@@ -69,7 +69,7 @@ en:
     no_lineages: "That heritage does not have lineages associated to it."
     no_sheet_yet: "This command cannot be used until the character has committed their base options."
     not_caster: "You are not a spellcaster."
-    not_in_list: "%%{option} is not in the list of items you have assigned."
+    not_in_list: "%{option} is not in the list of items you have assigned."
     not_selected_yet: "%{element} not selected yet."
     nothing_to_assign: "You have no character options left unassigned."
     nothing_to_display: "No %{elements} matched your search."
