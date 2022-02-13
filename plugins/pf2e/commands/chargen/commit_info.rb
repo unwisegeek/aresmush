@@ -339,6 +339,16 @@ module AresMUSH
 
         enactor.pf2_lang = languages.uniq
 
+        # PC may choose another language to replace a duplicate.
+
+        if !(languages.size == languages.uniq.size)
+          extra_lang = languages.size - languages.uniq.size
+
+          ary = []
+          open_languages = ary.fill("open", nil, extra_lang)
+          to_assign['open languages'] = open_languages
+        end
+
         # Traits, Size, Movement, Misc Info
         traits = ancestry_info["traits"] + heritage_info["traits"] + [ charclass.downcase ]
         traits = traits.uniq.sort

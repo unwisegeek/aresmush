@@ -25,3 +25,5 @@ Remember: <ability> is always one of Strength, Dexterity, Constitution, Intellig
 `unassigned`: See all the things that still need to be chosen to complete the character.
 `boost/set <type>=<ability>`: Assigns a type of boost to <ability>.
 `boost/unset <type>=<ability>`: Unassigns that ability for that type only. Does not affect other boost types you may have assigned.
+
+When you are done, and satisfied with what you have, type `commit abilities`. This locks your ability scores and allows you to choose your skills and languages. If you want to change your ability scores after you do this, you will need to start your sheet over using `cg/reset`

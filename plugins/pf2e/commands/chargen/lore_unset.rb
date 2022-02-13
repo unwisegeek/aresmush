@@ -21,8 +21,8 @@ module AresMUSH
         end
       end
 
-      def check_baseinfolock
-        return t('pf2e.lock_info_first') if !enactor.pf2_baseinfo_locked
+      def check_abilinfolock
+        return t('pf2e.lock_abil_first') if !enactor.pf2_abilities_locked
         return nil
       end
 
@@ -85,9 +85,9 @@ module AresMUSH
         lore_options = reference
 
         # If open lore, find the lore in the list and set it to 'open'.
-
-      when "open skills"
+        when "open skills"
         index = lore_options.index(self.value)
+        end
 
         if !index
           client.emit_failure t('pf2e.not_in_list', :option=>self.value)
