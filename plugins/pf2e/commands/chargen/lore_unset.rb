@@ -86,8 +86,9 @@ module AresMUSH
 
         # If open lore, find the lore in the list and set it to 'open'.
 
-      when "open skills"
+        when "open skills"
         index = lore_options.index(self.value)
+        end
 
         if !index
           client.emit_failure t('pf2e.not_in_list', :option=>self.value)
