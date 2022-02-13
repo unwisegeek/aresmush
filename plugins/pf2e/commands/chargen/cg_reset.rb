@@ -47,7 +47,7 @@ module AresMUSH
         enactor.pf2_boosts_working = { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[] }
         enactor.pf2_boosts = {}
         enactor.pf2_to_assign = {}
-        enactor.pf2_languages = []
+        enactor.pf2_lang = []
         enactor.pf2_movement = {}
 
         enactor.abilities&.each { |a| a.delete }
