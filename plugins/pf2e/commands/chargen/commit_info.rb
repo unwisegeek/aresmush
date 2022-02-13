@@ -329,9 +329,13 @@ module AresMUSH
         # Languages
         languages = enactor.pf2_lang
 
+        client.emit languages
+
         ancestry_info['languages'].each { |l| languages << l }
 
         clang = class_features_info['languages']
+
+        client.emit clang
 
         clang.each { |l| languages << l } if clang
 
