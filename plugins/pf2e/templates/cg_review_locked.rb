@@ -248,6 +248,11 @@ module AresMUSH
         options.sort.join(" or ")
       end
 
+      def lock_msg
+        return t('pf2e.msg_cgandabil_lock') if @char.pf2_abilities_locked
+        return t('pf2e.msg_cglock')
+      end
+
       def errors
         messages = []
 
