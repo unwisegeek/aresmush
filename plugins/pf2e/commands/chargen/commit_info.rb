@@ -337,12 +337,17 @@ module AresMUSH
 
         clang.each { |l| languages << l } if clang
 
+        unique_lang = languages.uniq
+
         enactor.pf2_lang = languages.uniq
 
         # PC may choose another language to replace a duplicate.
 
-        if (languages.count != languages.uniq.count)
-          extra_lang = languages.size - languages.uniq.size
+        client.emit languages
+        client.emit languages.uniq
+
+        if (languages.count != unique_lang.count)
+          extra_lang = languages.count - unique_lang.count
 
           ary = []
           open_languages = ary.fill("open", nil, extra_lang)
