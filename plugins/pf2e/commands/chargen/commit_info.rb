@@ -341,7 +341,7 @@ module AresMUSH
 
         # PC may choose another language to replace a duplicate.
 
-        if !(languages.size == languages.uniq.size)
+        if (languages.count != languages.uniq.count)
           extra_lang = languages.size - languages.uniq.size
 
           ary = []
