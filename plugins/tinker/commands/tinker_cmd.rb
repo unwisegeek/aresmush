@@ -9,17 +9,11 @@ module AresMUSH
       end
       
       def handle
-        lore_list = Global.read_config('pf2e_lores')
-        lore_types = lore_list.keys
+        char = Character.find_one_by_name("Testchar")
         
-        type = 'crafting'
+        char.update(pf2_abilities_locked: false)
         
-        client.emit lore_list
-        client.emit lore_types
-        
-        lore_list = lore_list.keep_if { |k,v| k == type }
-        
-        client.emit lore_list
+        client.emit char.name
       end
 
     end
