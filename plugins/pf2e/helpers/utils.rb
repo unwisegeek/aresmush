@@ -75,7 +75,7 @@ module AresMUSH
       else
         value = 0
 
-        roll_keywords = Global.read_config('pf2e', 'roll_keywords')
+        # roll_keywords = Global.read_config('pf2e', 'roll_keywords')
         skills = Global.read_config('pf2e_skills').keys.each { |s| s.downcase }
 
         # if roll_keywords.has_key?(downcase_word)
@@ -86,10 +86,10 @@ module AresMUSH
         #   value = Pf2eSkills.get_lore_bonus(char, downcase_word)
         # end
 
-        if skills.member?(downcase_word)
+        if skills.include?(downcase_word)
           value = Pf2eSkills.get_skill_bonus(char, downcase_word)
         elsif downcase_word.match?(/.+\slore$/)
-          value = Pf2eSkills.get_lore_bonus(char, downcase_word)
+          value = Pf2eLores.get_lore_bonus(char, downcase_word)
         end
 
         value
