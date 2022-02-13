@@ -1,7 +1,9 @@
 ---
 en:
   pf2e:
+    abil_lock_ok: "%xgYour abilities are completed and locked.%xn"
     abil_options_ok: "%xgNo issues detected with your abilities.%xn"
+    abil_issues: "Your abilities are not yet complete. Use cg/review to see what is missing."
     ability_too_high: "%xrAt least one of your ability scores is too high. Too high: %{score}%xn"
     admin_no_sheet: "That character is a game admin and does not have a sheet."
     alias_set_ok: "You set %{alias} to %{value}."
@@ -26,7 +28,7 @@ en:
     cannot_cast_spell_level: "You cannot cast spells of that level."
     cannot_find_cginfo: "You must choose %{prereq} before you can see options for %{element}."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
-    cg_and_abil_lock_ok: "%xgYour chargen options and abilities are completed and locked.%xn"
+    cg_abilities_locked: "Your abilities are already locked. If you need to change them, you will need to cg/reset."
     cg_info: "The following options are available for %{element}: %{options}"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
@@ -54,6 +56,7 @@ en:
     heritage_not_set: "You cannot set a lineage until you set your heritage."
 
     lock_info_first: "This command cannot be used until your base chargen options are committed."
+    lock_abil_first: "This command cannot be used until you have set and committed your ability scores."
     lore_options_ok: "%xgNo issues detected with your lores.%xn"
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"

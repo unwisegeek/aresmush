@@ -21,8 +21,8 @@ module AresMUSH
         end
       end
 
-      def check_baseinfolock
-        return t('pf2e.lock_info_first') if !enactor.pf2_baseinfo_locked
+      def check_abilinfolock
+        return t('pf2e.lock_abil_first') if !enactor.pf2_abilities_locked
         return nil
       end
 

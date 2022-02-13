@@ -257,7 +257,9 @@ module AresMUSH
             messages << msg
           end
         else
-          messages << t('pf2e.abil_options_ok')
+          abil_lock = @char.pf2_abilities_locked
+          ok_msg = abil_lock ? t('pf2e.abil_lock_ok') : t('pf2e.abil_options_ok')
+          messages << ok_msg
         end
 
         skill_msgs = Pf2eSkills.skills_messages(@char)
