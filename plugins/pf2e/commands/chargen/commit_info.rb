@@ -331,13 +331,9 @@ module AresMUSH
         # Languages
         languages = enactor.pf2_lang
 
-        client.emit languages
-
         ancestry_info['languages'].each { |l| languages << l }
 
         clang = class_features_info['languages']
-
-        client.emit clang
 
         clang.each { |l| languages << l } if clang
 
@@ -346,9 +342,6 @@ module AresMUSH
         enactor.pf2_lang = languages.uniq
 
         # PC may choose another language to replace a duplicate.
-
-        client.emit languages
-        client.emit languages.uniq
 
         if (languages.count != unique_lang.count)
           extra_lang = languages.count - unique_lang.count
