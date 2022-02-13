@@ -34,6 +34,7 @@ module AresMUSH
         end
 
         enactor.update(pf2_baseinfo_locked: false)
+        enactor.update(pf2_abilities_locked: false)
 
         enactor.update(pf2_base_info: { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" })
         enactor.update(pf2_level: 1)

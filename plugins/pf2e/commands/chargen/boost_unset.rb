@@ -12,7 +12,6 @@ module AresMUSH
       end
 
       def check_chargen_or_advancement
-
         if enactor.chargen_locked && !enactor.advancing || enactor.is_admin?
           return t('pf2e.only_in_chargen')
         elsif enactor.chargen_stage.zero?
@@ -20,7 +19,11 @@ module AresMUSH
         else
           return nil
         end
+      end
 
+      def check_abilinfolock
+        return t('pf2e.cg_abilities_locked') if enactor.pf2_abilities_locked
+        return nil
       end
 
       def handle
