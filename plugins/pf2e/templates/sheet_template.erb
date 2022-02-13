@@ -33,6 +33,8 @@
 <%= left("#{item_color}Temp HP%xn: #{temp_hp}",39) %>
 <%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
+<%= section_line("Movement") %>
+<%= movement %>
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
 <%= section_line("Attacks") %>
 <%= section_line("Defenses") %>
@@ -43,6 +45,7 @@
 <%= section_line("Conditions") %>
 <%= conditions %>
 <% end %>
+
 <% if section == "all" %>
 <%= section_line("Skills") %>
 <% end %>
@@ -56,7 +59,9 @@
 <%= lore -%>
 <% end %>
 <% end %>
-
+<%= "%r" %>
+<%= section_line("Languages") %>
+<%= languages %>
 <% if section == "all" %>
 <%= section_line("Feats") %>
 <% end %>

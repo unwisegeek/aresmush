@@ -239,6 +239,18 @@ module AresMUSH
         list = lang.empty? ? "None set." : lang.sort.join(", ")
       end
 
+      def movement
+
+      end
+
+      def combat_stats
+        @char.combat
+      end
+
+      def magic_stats
+        @char.magic
+      end
+
       def spell_dcs
         dc_list = magic_stats.tradition
 
@@ -249,14 +261,6 @@ module AresMUSH
         end
 
         list.join("%r")
-      end
-
-      def combat_stats
-        @char.combat
-      end
-
-      def magic_stats
-        @char.magic
       end
 
       def format_ability(abil, score, i)
