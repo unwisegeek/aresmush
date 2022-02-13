@@ -33,21 +33,22 @@ module AresMUSH
           return nil
         end
 
-        enactor.update(pf2_baseinfo_locked: false)
-        enactor.update(pf2_abilities_locked: false)
+        enactor.pf2_baseinfo_locked = false
+        enactor.pf2_abilities_locked = false
 
-        enactor.update(pf2_base_info: { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" })
-        enactor.update(pf2_level: 1)
-        enactor.update(pf2_xp: 0)
-        enactor.update(pf2_conditions: {})
-        enactor.update(pf2_features: [])
-        enactor.update(pf2_traits: [])
-        enactor.update(pf2_feats: { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] })
-        enactor.update(pf2_faith: { 'deity'=>"", 'alignment'=>"" })
-        enactor.update(pf2_special: [])
-        enactor.update(pf2_boosts_working: { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[] })
-        enactor.update(pf2_boosts: {})
-        enactor.update(pf2_to_assign: {})
+        enactor.pf2_base_info = { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
+        enactor.pf2_xp = 0
+        enactor.pf2_conditions = {}
+        enactor.pf2_features = []
+        enactor.pf2_traits = []
+        enactor.pf2_feats = { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
+        enactor.pf2_faith = { 'deity'=>"", 'alignment'=>"" }
+        enactor.pf2_special = []
+        enactor.pf2_boosts_working = { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[] }
+        enactor.pf2_boosts = {}
+        enactor.pf2_to_assign = {}
+        enactor.pf2_languages = []
+        enactor.pf2_movement = {}
 
         enactor.abilities&.each { |a| a.delete }
         enactor.skills&.each { |s| s.delete }
@@ -56,7 +57,9 @@ module AresMUSH
         enactor.combat&.delete
         enactor.magic&.delete
 
-        enactor.update(pf2_reset: false)
+        enactor.pf2_reset = false
+
+        enactor.save
 
         client.emit_success t('pf2e.cg_reset_ok')
 
