@@ -35,7 +35,7 @@ module AresMUSH
         case cmd.args
         when "info"
           return PF2CommitInfoCmd
-        when "abilities, abil"
+        when "abilities"
           return PF2CommitAbilCmd
         end
       when "roll"
