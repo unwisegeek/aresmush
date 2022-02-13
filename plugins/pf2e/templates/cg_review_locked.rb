@@ -232,6 +232,11 @@ module AresMUSH
         @to_assign['open skills'].count("open")
       end
 
+      def open_languages
+        extra_lang = @to_assign['open languages']
+        extra_lang ? extra_lang.count("open") : 0
+      end
+
       def bgskill_choice
         options = @to_assign['bgskill']
 
