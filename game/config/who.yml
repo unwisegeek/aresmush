@@ -14,9 +14,9 @@ who:
   - field: charclass
     width: 13
     title: Class
-  - field: level
+  - field: tier
     width: 6
-    title: Level
+    title: Tier
   - field: connected
     width: 7
     title: Conn

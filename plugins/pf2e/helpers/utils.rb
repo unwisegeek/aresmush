@@ -114,7 +114,7 @@ module AresMUSH
     end
 
     def self.get_level_tier(level)
-      1 + level / 5
+      1 + (level / 5)
     end
 
     def self.bonus_from_item(char, type)

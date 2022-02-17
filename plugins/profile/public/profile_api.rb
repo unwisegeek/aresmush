@@ -40,18 +40,12 @@ module AresMUSH
       when 'ancestry'
         char.is_admin? ? "" : char.pf2_base_info['ancestry']
 
-      when 'heritage'
-        char.is_admin? ? "" : char.pf2_base_info['heritage']
-
       when 'charclass'
         char.is_admin? ? "" : char.pf2_base_info['charclass']
 
-      when 'level'
-        char.is_admin? ? "" : char.pf2_level
-
       when 'tier'
         level = char.pf2_level
-        char.is_admin? ? '-' : Pf2e.get_level_tier(level) 
+        char.is_admin? ? '-' : Pf2e.get_level_tier(level)
       else
         nil
       end
@@ -86,7 +80,7 @@ module AresMUSH
       end
       return errors
     end
-    
+
     # The name that shows up as a "title" on profile displays.
     def self.profile_title(char)
       format = Global.read_config("profile", "profile_title_format")
@@ -101,6 +95,6 @@ module AresMUSH
         char.name
       end
     end
-    
+
   end
 end
