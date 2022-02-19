@@ -1,5 +1,12 @@
 ---
 pf2e:
+  shortcuts:
+    sheet/top: sheet/info
+    rollalias: roll/alias
+    remalias: roll/alias
+    listalias: roll/listalias
+    rollfor: roll/for
+    lang: lang/info 
   allowed_alignments:
   - LG
   - NG
@@ -7,35 +14,34 @@ pf2e:
   - LN
   - N
   - CN
+  roll_channel: 'Rolls'
   can_select_language:
   - common
   - uncommon
-  condition_colors:
-    Dying: "%xr"
-    Wounded: "%xy"
-  list_item: "%x229"
-  open_npc_sheets: false
   open_sheets: true
-  roll_channel: Rolls
-  shortcuts:
-    sheet/top: sheet/info
-    rollalias: roll/alias
-    remalias: roll/alias
-    listalias: roll/listalias
-    rollfor: roll/for
-  subclass_names:
-    Alchemist: Research Field
-    Barbarian: Instinct
-    Bard: Muse
-    Champion: Cause
-    Druid: Order
-    Ranger: Hunter's Edge
-    Rogue: Racket
-    Sorcerer: Bloodline
-    Wizard: School
-    Investigator: Methodology
-    Oracle: Mystery
-    Witch: Patron
-  title_color: "%x172"
+  open_npc_sheets: false
+  title_color: '%x172'
+  list_item: '%x229'
   use_alignment: true
   use_encumbrance: true
+  use_untrained_improv: false
+  subclass_names:
+    Alchemist: 'Research Field'
+    Barbarian: 'Instinct'
+    Bard: 'Muse'
+    Champion: 'Cause'
+    Druid: 'Order'
+    Ranger: "Hunter's Edge"
+    Rogue: 'Racket'
+    Sorcerer: 'Bloodline'
+    Wizard: 'School'
+    Investigator: 'Methodology'
+    Oracle: 'Mystery'
+    Witch: 'Patron'
+  condition_colors:
+    Dying: '%xr'
+    Wounded: '%xy'
+    Drained: '%xh%xx'
+    Doomed: '%x172'
+  permissions:
+    modify_sheet: Modify character sheets.
