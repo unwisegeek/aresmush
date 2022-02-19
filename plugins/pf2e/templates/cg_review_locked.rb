@@ -205,7 +205,7 @@ module AresMUSH
       end
 
       def languages
-        @ancestry_info['languages'] ? @ancestry_info['languages'].sort.join(", ") : "Tradespeak"
+        @char.pf2_lang.sort.join(", ")
       end
 
       def existing_skills
