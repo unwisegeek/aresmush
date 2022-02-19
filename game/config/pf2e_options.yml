@@ -41,5 +41,6 @@ pf2e:
     Dying: '%xr'
     Wounded: '%xy'
     Drained: '%xh%xx'
+    Doomed: '%x172'
   permissions:
     modify_sheet: Modify character sheets.
