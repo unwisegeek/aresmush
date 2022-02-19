@@ -22,7 +22,6 @@ Remember: <ability> is always one of Strength, Dexterity, Constitution, Intellig
 
 `cg/review`: See what boosts needs to be assigned still. If you see a number, you can assign it to anything. If you see a list, those are your choices.
 `sheet`: Review your sheet so far. Not everything will be in place, and that is okay.
-`unassigned`: See all the things that still need to be chosen to complete the character.
 `boost/set <type>=<ability>`: Assigns a type of boost to <ability>.
 `boost/unset <type>=<ability>`: Unassigns that ability for that type only. Does not affect other boost types you may have assigned.
 

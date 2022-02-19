@@ -106,7 +106,6 @@ en:
     unassigned_bglore: "%xrYou have not chosen your background lore.%xn"
     unassigned_bgskill: "%xrYou have not chosen your background skill.%xn"
     unassigned_openskill: "%xrYou have free skills left to assign.%xn"
-    unassigned_ftr_msg: "See `help unassigned` for a list of keywords and what they do."
     unassigned_title: "Unassigned Character Options: %{name}"
 
     who_can_see_sheet: "You have granted the following permissions to your sheet:"

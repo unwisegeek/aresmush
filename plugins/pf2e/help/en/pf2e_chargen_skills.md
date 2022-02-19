@@ -15,7 +15,6 @@ Next, choose your open skills. Your choice of ancestry, heritage, character clas
 ## Commands
 
 `cg/review`: Lists the base skills you have available to you.
-`unassigned`: Lists what is left for you to assign, based on your base info.
 `sheet`: Shows your sheet so far.
 
 ### Skills
