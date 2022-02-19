@@ -43,7 +43,7 @@ module AresMUSH
 
         if !avail_lang.include?(self.language)
           client.emit_failure t('pf2e.bad_option',
-            :element=>'lore name',
+            :element=>'language',
             :options=>avail_lang.sort.join(", ")
           )
           return
