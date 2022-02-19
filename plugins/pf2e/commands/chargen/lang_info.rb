@@ -6,7 +6,7 @@ module AresMUSH
       attr_accessor :type
 
       def parse_args
-        self.type = arg ? downcase_arg(cmd.args)
+        self.type = downcase_arg(cmd.args)
       end
 
       def required_args
