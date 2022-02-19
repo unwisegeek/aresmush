@@ -1,0 +1,50 @@
+---
+pf2e_languages:
+  common:
+  - Tradespeak
+  - Veyshanti
+  - Myrrish
+  - Charneth
+  - Stormgardian
+  - Khazdul
+  - Silya
+  - Gnomish
+  - Jotun
+  - Yrch
+  - Handspeech
+  - Draconic
+  - Dranish
+  - Bludguni
+  uncommon:
+  - Sylvan
+  - Terran
+  - Aquan
+  - Auran
+  - Ignan
+  - Infernal
+  - Celestial
+  - Abyssal
+  - Sildanyari
+  - Amsheri
+  secret:
+  - Vantyr
+  - Aiglosian
+  - Mynsandraal
+  - Kulthian
+  - Druidic
+  regional:
+    Stormgard: Stormgardian
+    Dran: Dranish
+    Alexandros: Tradespeak
+    Empire-Myrddion: Myrrish
+    Empire-Bludgun: Bludguni
+    Empire-Charn: Charneth
+    Empire-Desolation: ""
+    Veyshan: Veyshanti
+    Dragonier: Draconic
+    Jade Islands: ""
+    Greatwoods: Sildanyari
+    Khazad Duin: Khazdul
+    Am'shere: Amsheri
+    Vast: ""
+    Rune: ""

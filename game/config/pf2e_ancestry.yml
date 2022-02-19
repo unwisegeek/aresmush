@@ -622,7 +622,7 @@ pf2e_ancestry:
       - Spell Devourer
       17:
       - Rampaging Ferocity
-  Sildanyar:
+  Silya:
     HP: 6
     Size: M
     Speed: 30
@@ -633,7 +633,7 @@ pf2e_ancestry:
     abl_flaw: Constitution
     languages:
     - Tradespeak
-    - Sildanyar
+    - Silya
     traits:
     - sildanyar
     - humanoid
@@ -662,10 +662,10 @@ pf2e_ancestry:
       - Nimble Elf
       - Otherworldly Magic
       - Share Thoughts
-      - Sildanyar Aloofness
-      - Sildanyar Lore
-      - Sildanyar Verve
-      - Sildanyar Weapon Familiarity
+      - Silya Aloofness
+      - Silya Lore
+      - Silya Verve
+      - Silya Weapon Familiarity
       - Unwavering Mien
       - Wildborn Magic
       - Woodcraft
@@ -676,8 +676,8 @@ pf2e_ancestry:
       - Fey Influence
       - Forest Stealth
       - Martial Experience
-      - Sildanyar Instincts
-      - Sildanyar Weapon Elegance
+      - Silya Instincts
+      - Silya Weapon Elegance
       - Wildborn Adept
       9:
       - Brightness Seeker
@@ -688,7 +688,7 @@ pf2e_ancestry:
       - Tree Climber (Elf)
       13:
       - Avenge Ally
-      - Sildanyar Weapon Expertise
+      - Silya Weapon Expertise
       - Universal Longevity
       - Wandering Heart
       17:
