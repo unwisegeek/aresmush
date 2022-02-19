@@ -70,10 +70,6 @@ module AresMUSH
         )
       end
 
-      boosts.each do |k,v|
-        messages << t('pf2e.boost_not_unique', :type => k) if v != v.uniq
-      end
-
       scores = {}
       char.abilities.each do |a|
         k = a.name
