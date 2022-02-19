@@ -24,7 +24,9 @@ module AresMUSH
 
         langs = Global.read_config('pf2e_languages', self.type)
 
-        client.emit t('pf2e.cg_info', :element=>"#{self.type} languages", :options=>langs.sort.join(", "))
+        template = PF2LanguageInfoTemplate.new(langs, self.type)
+
+        client.emit template.render
 
       end
 

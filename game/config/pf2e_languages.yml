@@ -1,45 +1,46 @@
----
+
 pf2e_languages:
   common:
-  - Tradespeak
-  - Veyshanti
-  - Myrrish
-  - Charneth
-  - Stormgardian
-  - Khazdul
-  - Silya
-  - Gnomish
-  - Jotun
-  - Yrch
-  - Handspeech
-  - Draconic
-  - Dranish
-  - Bludguni
+    Tradespeak: Descended from Veyshanti, the language of merchantry across the world.
+    Veyshanti: The language of the desert kingdoms and the nomad clans between.
+    Myrrish: The language of the kingdoms that form Myrddion.
+    Charneth: The language of the Empire of Charn.
+    Stormgardian: The language of the Stormgard kingdoms, far to the north.
+    Khazdul: The language of the dwarven kingdoms.
+    Silya: Sildanyari as it is spoken by those outside of the Greatwoods.
+    Gnomish: The language of the fey-touched gnomes.
+    Jotun: The language of the giants and their kin.
+    Yrch: The language of Gobbers, Oruch, and Arvek.
+    Handspeech: A silent form of Tradespeak, communicated solely by gesture.
+    Draconic: The language of dragons, adopted by Makari, Dragonier, and many others.
+    Dranish: The language of the khanates of Dran.
+    Bludguni: A form of Yrch spoken most commonly in Bludgun.
   uncommon:
-  - Sylvan
-  - Terran
-  - Aquan
-  - Auran
-  - Ignan
-  - Infernal
-  - Celestial
-  - Abyssal
-  - Sildanyari
-  - Amsheri
+    Sylvan: The 'language' of Fey creatures.
+    Terran: The 'language' of elemental Earth.
+    Aquan: The 'language' of elemental Water.
+    Auran: The 'language' of elemental Air.
+    Ignan: The 'language' of elemental Fire.
+    Necril: The 'language' of those undead with the means to speak it.
+    Infernal: The language of the devils of the Iron Hells.
+    Celestial: The language of the heavenly hosts.
+    Abyssal: The language of the demons of the Abyss.
+    Sildanyari: Spoken chiefly in the Greatwoods, this is the tongue that the llyranesi hold as pure.
+    Amsheri: A trade tongue used across the settlements and tribes of the Amshere jungles.
   secret:
-  - Vantyr
-  - Aiglosian
-  - Mynsandraal
-  - Kulthian
-  - Druidic
+    Vantyr: A dead language, spoken in the empire that fell before Tashraan's rise.
+    Aiglosian: The precursor tongue of Myrrish and Charneth.
+    Mynsandraal: The first language of the elves, used when they emerged from the Fey realms.
+    Kulthian: A dead language, used by the artificers of old Kulthos.
+    Druidic: A secret tongue, only taught to Druids.
   regional:
     Stormgard: Stormgardian
     Dran: Dranish
-    Alexandros: Tradespeak
-    Empire-Myrddion: Myrrish
-    Empire-Bludgun: Bludguni
-    Empire-Charn: Charneth
-    Empire-Desolation: ""
+    Alexandros: Myrrish
+    Empire Myrddion: Myrrish
+    Empire Bludgun: Bludguni
+    Empire Charn: Charneth
+    Empire Desolation: ""
     Veyshan: Veyshanti
     Dragonier: Draconic
     Jade Islands: ""
