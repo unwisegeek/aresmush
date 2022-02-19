@@ -87,7 +87,7 @@ module AresMUSH
         to_assign['open languages'] = open_languages
 
         enactor.pf2_lang = char_languages
-        enactor.pf2_to_assign: to_assign
+        enactor.pf2_to_assign = to_assign
 
         enactor.save
 
