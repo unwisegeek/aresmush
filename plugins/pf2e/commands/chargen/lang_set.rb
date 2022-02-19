@@ -29,14 +29,12 @@ module AresMUSH
 
         # Is the argument a language that this character can choose?
 
-        all_lang = Global.read_config('pf2e_languages')
-
         avail_lang_keys = Global.read_config('pf2e', 'can_select_language')
 
         avail_lang = []
 
         avail_lang_keys.each do |key|
-          langs = all_lang[key]
+          langs = all_lang[key].values
           langs.each do |l|
             avail_lang << l
           end
