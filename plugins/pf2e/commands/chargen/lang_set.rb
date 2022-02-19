@@ -35,7 +35,7 @@ module AresMUSH
         avail_lang = []
 
         avail_lang_keys.each do |key|
-          langs = all_lang[key].values
+          langs = all_lang[key]
           langs.each do |l|
             avail_lang << l
           end
