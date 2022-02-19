@@ -72,6 +72,11 @@ module AresMUSH
         when "info"
           return PF2LoreInfoCmd
         end
+      when "lang"
+        case cmd.switch
+        when "set"
+          return PF2LanguageSetCmd
+        end
       end
 
       nil

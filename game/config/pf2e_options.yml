@@ -14,6 +14,9 @@ pf2e:
   - N
   - CN
   roll_channel: 'Rolls'
+  can_select_language:
+  - common
+  - uncommon
   open_sheets: true
   open_npc_sheets: false
   title_color: '%x172'
@@ -37,5 +40,6 @@ pf2e:
   condition_colors:
     Dying: '%xr'
     Wounded: '%xy'
+    Drained: '%xh%xx'
   permissions:
     modify_sheet: Modify character sheets.

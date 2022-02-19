@@ -110,7 +110,7 @@ module AresMUSH
 
         Pf2eLores.create_lore_for_char(self.value, enactor)
 
-        client.emit_success t('pf2e.skill_added', :skill=>self.value)
+        client.emit_success t('pf2e.add_ok', :item=>self.value, :list=>'lores')
       end
 
     end
