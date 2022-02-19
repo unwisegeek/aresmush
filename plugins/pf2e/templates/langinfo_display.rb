@@ -32,6 +32,10 @@ module AresMUSH
         "#{item_color}#{lang}%xn: #{desc}"
       end
 
+      def mush_name
+        Global.read_config('game', 'name')
+      end
+
     end
   end
 end
