@@ -2,6 +2,7 @@ module AresMUSH
   module Pf2e
     class PF2LanguageInfoTemplate < ErbTemplateRenderer
       include CommonTemplateFields
+      include CommonWhoFields
 
       attr_accessor :language_list, :language_type
 
