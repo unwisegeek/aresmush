@@ -7,6 +7,9 @@ pf2e:
   - LN
   - N
   - CN
+  can_select_language:
+  - common
+  - uncommon
   condition_colors:
     Dying: "%xr"
     Wounded: "%xy"
