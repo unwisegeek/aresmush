@@ -298,8 +298,7 @@ pf2e_background:
     abl_boosts:
     - [ Dexterity, Charisma ]
     - open
-    skills:
-    - Nature
+    skills: []
     lores:
     - Fey Lore
     feat: []
