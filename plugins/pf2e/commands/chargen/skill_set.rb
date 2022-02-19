@@ -110,7 +110,7 @@ module AresMUSH
 
         skill_for_char.update(prof_level: 'trained')
 
-        client.emit_success t('pf2e.skill_added', :skill=>self.value)
+        client.emit_success t('pf2e.add_ok', :item=>self.value, :list=>'skills')
       end
 
     end

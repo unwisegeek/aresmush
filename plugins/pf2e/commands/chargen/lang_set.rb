@@ -27,78 +27,71 @@ module AresMUSH
       def handle
         ##### VALIDATION SECTION #####
 
-        # Is the argument a valid language?
+        # Is the argument a language that this character can choose?
 
-        all_lores = Global.read_config('pf2e_lores').values.flatten
+        all_lang = Global.read_config('pf2e_languages')
 
-        if !all_lores.include?(self.value)
-          client.emit_failure t('pf2e.bad_option', :element=>'lore name', :options=>all_lores.join(", "))
+        avail_lang_keys = Global.read_config('pf2e_options', 'can_select_language')
+
+        avail_lang = []
+
+        avail_lang_keys.each do |key|
+          langs = all_lang[key]
+          langs.each do |l|
+            avail_lang << l
+          end
+        end
+
+        if !avail_lang.include?(self.language)
+          client.emit_failure t('pf2e.bad_option',
+            :element=>'lore name',
+            :options=>avail_lang.sort.join(", ")
+          )
           return
         end
 
         # Verify that this character's options left to assign include the listed type.
 
-        assignment_type = lore_types[self.type]
+        to_assign = enactor.pf2_to_assign
 
-        lore_options = to_assign[assignment_type]
+        open_languages = to_assign['open languages']
 
-        if !lore_options
-          client.emit_failure t('pf2e.cannot_assign_type', :element=>"lore")
+        if !open_languages
+          client.emit_failure t('pf2e.cannot_assign_type', :element=>"language")
           return
         end
 
-        # Does that character already have that lore?
+        # Does that character already have that language?
 
-        lore_for_char = Pf2eLores.find_lore(self.value, enactor)
+        char_languages = enactor.pf2_lang
 
-        if lore_for_char
-          client.emit_failure t('pf2e.already_has_lore')
+        if char_languages.include?(self.language)
+          client.emit_failure t('pf2e.already_has', :item => 'language')
           return
         end
 
-        ##### VALIDATION SECTION END #####
+        # Does this character have an available open language to assign?
 
-        # Type-specific handling
-
-        # Background lores, if present, are an array of choices.
-        # Match self.value to a choice in the array and assign it.
-
-        case assignment_type
-        when "bglore"
-          lore_choice = lore_options.select { |lore| lore == self.value }
-
-          if lore_choice.size.zero?
-            client.emit_failure t('pf2e.bad_option', :element=>"lore option", :options=>lore_options.sort.join(", "))
-            return
-          elsif lore_choice.size > 1
-            client.emit_failure t('pf2e.ambiguous_target')
-            return
-          else
-            lore_choice = lore_choice.first
-          end
-
-          lore_options = lore_choice
-
-        # Open lores are a matter of finding an open lore left to assign.
-
-        when "open skills"
-          loc = lore_options.index("open")
+          loc = open_languages.index("open")
 
           if !(loc)
             client.emit_failure t('pf2e.no_free', :element=>self.type)
             return
           end
 
-          lore_options[loc] = self.value
-        end
+        ##### VALIDATION SECTION END #####
 
-        to_assign[assignment_type] = lore_options
+        char_languages << self.language
+        open_languages[loc] = self.language
 
-        enactor.update(pf2_to_assign: to_assign)
+        to_assign['open languages'] = open_languages
 
-        Pf2eLores.create_lore_for_char(self.value, enactor)
+        enactor.pf2_lang = char_languages
+        enactor.pf2_to_assign: to_assign
 
-        client.emit_success t('pf2e.skill_added', :skill=>self.value)
+        enactor.save
+
+        client.emit_success t('pf2e.add_ok', :item=>self.language, :list=>'languages')
       end
 
     end
