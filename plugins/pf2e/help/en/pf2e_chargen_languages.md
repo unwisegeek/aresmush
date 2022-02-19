@@ -19,4 +19,4 @@ Your choice of ancestry, the region you come from, and possibly your character c
 
 `lang/set <skill>`: Chooses an extra language.
 `lang/unset <lang>`: Deletes a skill selected with `lang/set`. You cannot delete languages granted by your base info.
-`lang <type>`: Shows you a list of languages of type <type>.
+`lang/info <type>`: Shows you a list of languages of type <type>.
