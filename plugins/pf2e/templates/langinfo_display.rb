@@ -2,7 +2,6 @@ module AresMUSH
   module Pf2e
     class PF2LanguageInfoTemplate < ErbTemplateRenderer
       include CommonTemplateFields
-      include CommonWhoFields
 
       attr_accessor :language_list, :language_type
 
@@ -31,6 +30,10 @@ module AresMUSH
 
       def format_language(lang, desc)
         "#{item_color}#{lang}%xn: #{desc}"
+      end
+
+      def mush_name
+        Global.read_config('game', 'name')
       end
 
     end
