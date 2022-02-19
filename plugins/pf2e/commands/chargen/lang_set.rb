@@ -31,7 +31,7 @@ module AresMUSH
 
         all_lang = Global.read_config('pf2e_languages')
 
-        avail_lang_keys = Global.read_config('pf2e_options', 'can_select_language')
+        avail_lang_keys = Global.read_config('pf2e', 'can_select_language')
 
         avail_lang = []
 
@@ -87,7 +87,7 @@ module AresMUSH
         to_assign['open languages'] = open_languages
 
         enactor.pf2_lang = char_languages
-        enactor.pf2_to_assign: to_assign
+        enactor.pf2_to_assign = to_assign
 
         enactor.save
 
