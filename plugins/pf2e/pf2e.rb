@@ -78,6 +78,8 @@ module AresMUSH
           return PF2LanguageSetCmd
         when "info"
           return PF2LanguageInfoCmd
+        when "unset"
+          return PF2LanguageUnSetCmd
         end
       end
 
