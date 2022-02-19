@@ -105,6 +105,7 @@ en:
     unassigned_abilities: "%xrYou have unassigned boosts. Still to assign: %{missing}%xn"
     unassigned_bglore: "%xrYou have not chosen your background lore.%xn"
     unassigned_bgskill: "%xrYou have not chosen your background skill.%xn"
+    unassigned_lang: "%xrYou have extra languages to assign."
     unassigned_openskill: "%xrYou have free skills left to assign.%xn"
     unassigned_title: "Unassigned Character Options: %{name}"
 
