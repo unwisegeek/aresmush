@@ -76,6 +76,8 @@ module AresMUSH
         case cmd.switch
         when "set"
           return PF2LanguageSetCmd
+        when "info"
+          return PF2LanguageInfoCmd
         end
       end
 
