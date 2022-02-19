@@ -87,7 +87,7 @@ demographics:
     skin: "%xcskin <complexion>%xn"
     birthdate: "%xcbirthdate <mm/dd/yyy>%xn or %xcage <years>%xn"
     full name: "%xcfullname <name>%xn - Your character's full name."
-  max_age: 500
+  max_age: 1000
   min_age: 10
   nickname_field: ''
   nickname_format: "%{name} (%{nickname})"
@@ -111,3 +111,7 @@ demographics:
     actor: demographic/set played by=
     fullname: demographic/set full name=
     playedby: demographic/set played by=
+    faith: group/set faith=
+    region: group/set region=
+    faith/info: group faith
+    region/info: group region

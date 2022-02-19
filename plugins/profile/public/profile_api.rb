@@ -43,6 +43,12 @@ module AresMUSH
       when 'charclass'
         char.is_admin? ? "" : char.pf2_base_info['charclass']
 
+      when 'heritage'
+        char.is_admin? ? "" : char.pf2_base_info['heritage']
+
+      when 'level'
+        char.pf2_level
+        
       when 'tier'
         level = char.pf2_level
         char.is_admin? ? '-' : Pf2e.get_level_tier(level)
