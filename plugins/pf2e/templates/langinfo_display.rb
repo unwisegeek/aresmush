@@ -15,7 +15,7 @@ module AresMUSH
       def title
         type = @language_type.capitalize
 
-        title = "#{type}"
+        title = "#{type} Languages on #{mush_name}"
       end
 
       def langs
