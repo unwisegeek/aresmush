@@ -24,7 +24,12 @@ module AresMUSH
       gp = (money/100) % 10
       pp = (money/1000)
 
-      "#{pp} pp, #{gp} gp, #{sp} sp, #{cp} cp"
+      cp_msg = cp > 0 ? "#{cp} cp" : ""
+      sp_msg = sp > 0 ? "#{sp} sp" : ""
+      gp_msg = gp > 0 ? "#{gp} gp" : ""
+      pp_msg = pp > 0 ? "#{pp} pp" : ""
+
+      pp_msg + gp_msg + sp_msg + cp_msg
     end
 
   end
