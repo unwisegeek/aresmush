@@ -6,6 +6,7 @@ en:
 
     money_paid_ok: "You pay %{value} %{cointype} to %{payee}."
     money_taken_ok: "You take %{value} %{cointype} from %{payee}."
+    money_totals: "%{name} has the following money totals: %{money}"
 
     not_enough_you: "You do not have enough %{item}."
     not_enough_target: "%{target} does not have enough %{item}."
