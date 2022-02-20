@@ -3,6 +3,8 @@ module AresMUSH
     class PF2MoneyCmd
       include CommandHandler
 
+      attr_accessor :target
+
       def parse_args
         self.target = cmd.args
       end
@@ -31,5 +33,5 @@ module AresMUSH
       end
 
     end
-  end 
+  end
 end
