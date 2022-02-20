@@ -59,7 +59,7 @@ module AresMUSH
         # Does the person paying have enough money?
         from_purse = payer.pf2_money
 
-        has_enough = true if staff || (from_purse - self.value) >= 0
+        has_enough = true if staff_payer || (from_purse - self.value) >= 0
 
         if !has_enough
           fail_msg = taking_money ?
