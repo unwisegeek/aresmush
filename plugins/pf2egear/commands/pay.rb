@@ -10,7 +10,7 @@ module AresMUSH
 
         self.target = titlecase_arg(args.arg1)
 
-        money = list_arg(args.arg2)
+        money = args.arg2 ? list_arg(args.arg2): []
         self.value = integer_arg(money[0])
         self.cointype = downcase_arg(money[1])
       end
