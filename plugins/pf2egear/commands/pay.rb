@@ -41,10 +41,20 @@ module AresMUSH
 
       def handle
 
+        # Which way is the money going?
+
+        if self.value.negative?
+          payer = Character.find_one_by_name(self.target)
+          payee = enactor
+        else
+          payer = enactor
+          payee = Character.find_one_by_name(self.target)
+        end
+
         staff = enactor.is_admin?
 
         # Does the person paying have enough money?
-        from_purse = staff ? 999999999999999 : enactor.pf2_money
+        from_purse = payer.pf2_money
 
         has_enough = true if staff || (from_purse - self.value) >= 0
 
@@ -53,9 +63,8 @@ module AresMUSH
           return
         end
 
-        # Is the payee a valid character?
-        payee = Character.find_one_by_name(self.target)
-
+        # Is the payee a valid character
+        
         if !payee
           client.emit_failure t('pf2e.char_not_found')
           return
@@ -72,7 +81,7 @@ module AresMUSH
         to_purse = to_purse + actual_value
 
         # Don't bother tracking money totals for a staffer.
-        enactor.update(pf2_money: from_purse) unless staff
+        payer.update(pf2_money: from_purse) unless staff
         payee.update(pf2_money: to_purse) unless staff
 
         success_msg = self.value.negative? ?
