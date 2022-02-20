@@ -45,12 +45,21 @@ module AresMUSH
 
         taking_money = self.value.negative?
 
+        target_char = Character.find_one_by_name(self.target)
+
+        # Is the target a valid character?
+
+        if !target_char
+          client.emit_failure t('pf2e.char_not_found')
+          return
+        end
+
         if taking_money
-          payer = Character.find_one_by_name(self.target)
+          payer = target_char
           payee = enactor
         else
           payer = enactor
-          payee = Character.find_one_by_name(self.target)
+          payee = target_char
         end
 
         staff_payer = payer.is_admin?
@@ -74,14 +83,7 @@ module AresMUSH
           client.emit_failure fail_msg
           return
         end
-
-        # Is the payee a valid character?
-
-        if !payee
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
-
+        
         # Let's do it.
 
         to_purse = payee.pf2_money
@@ -102,7 +104,7 @@ module AresMUSH
                 t('pf2egear.money_taken_ok',
                   :cointype => self.cointype,
                   :value => self.value.abs,
-                  :payee => payee.name
+                  :payer => payer.name
                 ) :
                 t('pf2egear.money_paid_ok',
                   :cointype => self.cointype,
@@ -111,6 +113,14 @@ module AresMUSH
                 )
 
         client.emit_success success_msg
+
+        recipient_msg = t('pf2egear.you_got_money',
+          :from => enactor.name,
+          :value => self.value,
+          :cointype => self.cointype
+        )
+
+        Login.notify(target_char, :pf2_money, recipient_msg)
 
       end
 
