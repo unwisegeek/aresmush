@@ -53,7 +53,8 @@ module AresMUSH
           payee = Character.find_one_by_name(self.target)
         end
 
-        staff = enactor.is_admin?
+        staff_payer = payer.is_admin?
+        staff_payee = payee.is_admin?
 
         # Does the person paying have enough money?
         from_purse = payer.pf2_money
@@ -94,8 +95,8 @@ module AresMUSH
         to_purse = to_purse + actual_value
 
         # Don't bother tracking money totals for a staffer.
-        payer.update(pf2_money: from_purse) unless staff
-        payee.update(pf2_money: to_purse) unless staff
+        payer.update(pf2_money: from_purse) unless staff_payer
+        payee.update(pf2_money: to_purse) unless staff_payee
 
         success_msg = taking_money ?
                 t('pf2egear.money_taken_ok',
