@@ -1,0 +1,96 @@
+module AresMUSH
+  module Pf2egear
+    class PF2PayCmd
+      include CommandHandler
+
+      attr_accessor :cointype, :target, :value
+
+      def parse_args
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+
+        self.target = titlecase_arg(args.arg1)
+
+        money = list_arg(args.arg2)
+        self.value = integer_arg(money[0])
+        self.cointype = downcase_arg(money[1])
+      end
+
+      def required_args
+        [ self.target, self.cointype, self.value ]
+      end
+
+      def check_valid_value
+        return nil unless self.value.zero?
+        return t('pf2egear.bad_value')
+      end
+
+      def check_valid_cointype
+        cointypes = %w(pp platinum gp gold sp silver cp copper)
+
+        return nil if cointypes.include?(self.cointype)
+        return t('pf2egear.bad_cointype')
+      end
+
+      def check_can_pay
+        # A negative value in this command takes money.
+        # Usually only admins can do this.
+        return nil if self.value > 0
+        return nil if enactor.has_permission?('take_money')
+        return t('dispatcher.not_allowed')
+      end
+
+      def handle
+
+        staff = enactor.is_admin?
+
+        # Does the person paying have enough money?
+        from_purse = staff ? 999999999999999 : enactor.pf2_money
+
+        has_enough = true if staff || (from_purse - self.value) >= 0
+
+        if !has_enough
+          client.emit_failure t('pf2egear.not_enough', :item=>'money')
+          return
+        end
+
+        # Is the payee a valid character?
+        payee = Character.find_one_by_name(self.target)
+
+        if !payee
+          client.emit_failure t('pf2e.char_not_found')
+          return
+        end
+
+        # Let's do it.
+
+        to_purse = payee.pf2_money
+
+        actual_value = Pf2egear.convert_money(self.value, self.cointype)
+
+        from_purse = from_purse - actual_value
+
+        to_purse = to_purse + actual_value
+
+        # Don't bother tracking money totals for a staffer.
+        enactor.update(pf2_money: from_purse) unless staff
+        payee.update(pf2_money: to_purse) unless staff
+
+        success_msg = self.value.negative? ?
+                t('pf2egear.money_taken_ok',
+                  :cointype => self.cointype,
+                  :value => self.value.abs,
+                  :payee => payee.name
+                ) :
+                t('pf2egear.money_paid_ok',
+                  :cointype => self.cointype,
+                  :value => self.value,
+                  :payee => payee.name
+                )
+
+        client.emit_success success_msg
+
+      end
+
+    end
+  end
+end

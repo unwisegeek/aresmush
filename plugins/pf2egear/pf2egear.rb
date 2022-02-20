@@ -12,6 +12,13 @@ module AresMUSH
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
+      case cmd.root
+      when "pay"
+        return PF2PayCmd
+      when "money"
+        return PF2MoneyCmd
+      end
+
       nil
     end
 

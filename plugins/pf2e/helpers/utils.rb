@@ -122,23 +122,6 @@ module AresMUSH
       return nil
     end
 
-    def self.convert_money(value, type)
-      case type
-      when "platinum", "pp"
-        multiplier = 1000
-      when "gold", "gp"
-        multiplier = 100
-      when "silver", "sp"
-        multiplier = 10
-      when "copper", "cp"
-        multiplier = 1
-      else
-        return nil
-      end
-
-      value * multiplier
-    end
-
     def self.parse_roll_string(target,list)
       aliases = target.pf2_roll_aliases
       roll_list = list.map { |word|

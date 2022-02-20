@@ -23,7 +23,6 @@ module AresMUSH
     attribute :pf2_size, :default => ""
     attribute :pf2_movement, :type => DataType::Hash, :default => {}
     attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
-    attribute :pf2_money, :type => DataType::Integer, :default => 1500
     attribute :pf2_actions, :type => DataType::Hash, :default => {}
 
     attribute :charbadges, :type => DataType::Array, :default => []

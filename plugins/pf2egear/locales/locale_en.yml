@@ -1,3 +1,10 @@
 ---
 en:
-  pf2egear: {}
+  pf2egear:
+    bad_cointype: "That is not a valid coin type. Use one of: pp gp sp cp"
+    bad_value: "That is not a valid monetary value."
+
+    money_paid_ok: "You pay %{value} %{cointype} to %{payee}."
+    money_taken_ok: "You take %{value} %{cointype} from %{payee}."
+
+    not_enough: "You do not have enough %{item}."
