@@ -9,11 +9,14 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Testchar")
+        money = 1234567
         
-        char.update(pf2_abilities_locked: false)
+        cp = money % 10
+        sp = (money/10) % 10
+        gp = (money/100) % 10
+        pp = (money/1000)
         
-        client.emit char.name
+        client.emit "#{pp} pp, #{gp} gp, #{sp} sp, #{cp} cp"
       end
 
     end
