@@ -43,7 +43,9 @@ module AresMUSH
 
         # Which way is the money going?
 
-        if self.value.negative?
+        taking_money = self.value.negative?
+
+        if taking_money
           payer = Character.find_one_by_name(self.target)
           payee = enactor
         else
@@ -59,12 +61,21 @@ module AresMUSH
         has_enough = true if staff || (from_purse - self.value) >= 0
 
         if !has_enough
-          client.emit_failure t('pf2egear.not_enough', :item=>'money')
+          fail_msg = taking_money ?
+            t('pf2egear.not_enough_target',
+            :target => payer.name,
+            :item=>'money'
+            ) :
+            t('pf2egear.not_enough_you',
+            :item => 'money'
+          )
+
+          client.emit_failure fail_msg
           return
         end
 
-        # Is the payee a valid character
-        
+        # Is the payee a valid character?
+
         if !payee
           client.emit_failure t('pf2e.char_not_found')
           return
@@ -76,6 +87,8 @@ module AresMUSH
 
         actual_value = Pf2egear.convert_money(self.value, self.cointype)
 
+        client.emit actual_value
+
         from_purse = from_purse - actual_value
 
         to_purse = to_purse + actual_value
@@ -84,7 +97,7 @@ module AresMUSH
         payer.update(pf2_money: from_purse) unless staff
         payee.update(pf2_money: to_purse) unless staff
 
-        success_msg = self.value.negative? ?
+        success_msg = taking_money ?
                 t('pf2egear.money_taken_ok',
                   :cointype => self.cointype,
                   :value => self.value.abs,
