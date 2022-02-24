@@ -11,7 +11,7 @@ pf2e_languages:
     Gnomish: The language of the fey-touched gnomes.
     Jotun: The language of the giants and their kin.
     Yrch: The language of Gobbers, Oruch, and Arvek.
-    Handspeech: A silent form of Tradespeak, communicated solely by gesture.
+    Handspeech: A silent communication system analogous to Tradespeak.
     Draconic: The language of dragons, adopted by Makari, Dragonier, and many others.
     Dranish: The language of the khanates of Dran.
     Bludguni: A form of Yrch spoken most commonly in Bludgun.
@@ -37,10 +37,10 @@ pf2e_languages:
     Stormgard: Stormgardian
     Dran: Dranish
     Alexandros: Myrrish
-    Empire Myrddion: Myrrish
-    Empire Bludgun: Bludguni
-    Empire Charn: Charneth
-    Empire Desolation: ""
+    Empire_Myrddion: Myrrish
+    Empire_Bludgun: Bludguni
+    Empire_Charn: Charneth
+    Empire_Desolation: ""
     Veyshan: Veyshanti
     Dragonier: Draconic
     Jade Islands: ""

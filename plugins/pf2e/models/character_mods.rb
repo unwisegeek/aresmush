@@ -24,8 +24,7 @@ module AresMUSH
     attribute :pf2_movement, :type => DataType::Hash, :default => {}
     attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
     attribute :pf2_actions, :type => DataType::Hash, :default => {}
-
-    attribute :charbadges, :type => DataType::Array, :default => []
+    attribute :pf2_award_history, :type => DataType::Hash, :default => { 'xp'=>{}, 'money'=>{} }
 
     ### Only some characters will have these attributes, so nil check these.
     attribute :pf2_formula_book, :type => DataType::Hash

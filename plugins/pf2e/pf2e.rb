@@ -20,6 +20,11 @@ module AresMUSH
         else
           return PF2DisplaySheetCmd
         end
+      when "award"
+        case cmd.switch
+        when "xp"
+          return PF2AwardXPCmd
+        end
       when "cg"
         case cmd.switch
         when "set"
