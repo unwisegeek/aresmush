@@ -201,5 +201,20 @@ module AresMUSH
       target.update(pf2_xp: xp)
     end
 
+    def self.record_history(char, record_type, awarded_by, amount, reason)
+      new_record = {
+        'from' => awarded_by,
+        'amount' => amount,
+        'reason' => reason.slice(0,60)
+      }
+      timestamp = Time.now
+
+      full_list = char.pf2_award_history
+      type_list = full_list[record_type]
+      type_list[timestamp] = new_record
+      full_list[record_type] = type_list
+      char.update(pf2_award_history: full_list)
+    end
+
   end
 end

@@ -34,7 +34,7 @@ module AresMUSH
       def check_can_pay
         # A negative value in this command takes money.
         # Usually only admins can do this.
-        return nil if self.value > 0
+        return nil if self.value.positive?
         return nil if enactor.has_permission?('take_money')
         return t('dispatcher.not_allowed')
       end
@@ -83,7 +83,7 @@ module AresMUSH
           client.emit_failure fail_msg
           return
         end
-        
+
         # Let's do it.
 
         to_purse = payee.pf2_money
@@ -119,6 +119,8 @@ module AresMUSH
           :value => self.value,
           :cointype => self.cointype
         )
+
+        Pf2e.record_history(payee.name, 'money', payer.name, actual_value, "Payment from #{payer.name}")
 
         Login.notify(target_char, :pf2_money, recipient_msg)
 

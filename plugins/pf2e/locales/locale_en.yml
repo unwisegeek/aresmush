@@ -19,6 +19,7 @@ en:
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
     bad_option: "Not a valid option. Valid options for %{element}: %{options}."
     bad_section: "Section %{section} is not a valid section."
+    bad_value: "That is not a valid value for %{item}."
     bg_no_options: "Your background does not have any %{element} to set. Moving on..."
     bg_options_set: "Your background does not require any choices. Moving on..."
     boost_bad_type: "Boost type %{type} cannot be changed with this command."
@@ -108,6 +109,8 @@ en:
     unassigned_lang: "%xrYou have extra languages to assign."
     unassigned_openskill: "%xrYou have free skills left to assign.%xn"
     unassigned_title: "Unassigned Character Options: %{name}"
+
+    xp_awarded: "You award %{award} XP to %{awardee}."
 
     who_can_see_sheet: "You have granted the following permissions to your sheet:"
     wrong_feat_type: "You cannot take that feat using the type of feat specified."
