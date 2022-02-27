@@ -284,7 +284,8 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
-        feat: Bardic Lore
+        feat:
+        - Bardic Lore
         magic_stats:
           spell:
             1:
@@ -294,7 +295,8 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
-        feat: Lingering Composition
+        feat:
+        - Lingering Composition
         magic_stats:
           spell:
             1: Soothe
@@ -303,7 +305,8 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
-        feat: Versatile Performance
+        feat:
+        - Versatile Performance
         magic_stats:
           spell:
             1: Unseen Servant
@@ -312,7 +315,8 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
-        feat: Martial Performance
+        feat:
+        - Martial Performance
         magic_stats:
           spell:
             1: Fear
