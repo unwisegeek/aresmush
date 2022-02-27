@@ -1,5 +1,17 @@
 ---
 pf2e:
+  achievements:
+    ran_prps:
+      type: community
+      message: Ran %{count} Player-Run Plots.
+      levels:
+      - 1
+      - 10
+      - 25
+      - 50
+      - 100
+      - 250
+      - 500
   shortcuts:
     sheet/top: sheet/info
     rollalias: roll/alias

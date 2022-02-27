@@ -18,7 +18,7 @@ module AresMUSH
       end
 
       def check_can_award
-        return nil if enactor.has_permission('award_xp')
+        return nil if enactor.has_permission?('award_xp')
         return t('dispatcher.not_allowed')
       end
 
