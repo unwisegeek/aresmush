@@ -6,7 +6,7 @@ module AresMUSH
       attr_accessor :category
 
       def parse_args
-        self.category = downcase_arg(cmd.arg1)
+        self.category = downcase_arg(cmd.args)
       end
 
       def required_args
