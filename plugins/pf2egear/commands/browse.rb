@@ -28,9 +28,9 @@ module AresMUSH
         # The list of items in that category gets filtered by character level.
 
         charlevel = enactor.pf2_level
-        available_items = list.select { |k,v| v['level'] <= charlevel }.sort_by { |k,v| k }
+        available_items = list.select { |k,v| v['level'] <= charlevel }
 
-        template = Pf2eBrowseGearTemplate.new(enactor, self.category, available_items)
+        template = Pf2eBrowseGearTemplate.new(enactor, self.category, available_items.sort.to_h)
 
         client.emit template.render
 
