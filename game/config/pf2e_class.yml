@@ -11,13 +11,13 @@ pf2e_class:
       - Infused Reagents
       - Advanced Alchemy
       combat_stats:
-        wp_simple: trained
-        wp_martial:
-          Alchemical Bombs: trained
-          other: untrained
-        wp_unarmed: trained
-        armor_light: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_martial: untrained
+          wp_unarmed: trained
+        armor_prof:
+          light: trained
+          unarmored: trained
         class_dc: trained
         perception: trained
         saves:
@@ -62,9 +62,8 @@ pf2e_class:
         - skill
       7:
         combat_stats:
-          wp_simple: expert
-          wp_martial:
-            Alchemical Bombs: expert
+          weapon_prof:
+            wp_simple: expert
           saves:
             will: expert
         charclass:
@@ -173,12 +172,14 @@ pf2e_class:
       choose_feat:
       - charclass
       combat_stats:
-        wp_simple: trained
-        wp_martial: trained
-        wp_unarmed: trained
-        armor_light: trained
-        armor_medium: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_martial: trained
+          wp_unarmed: trained
+        armor_prof:
+          light: trained
+          medium: trained
+          unarmored: trained
         class_dc: trained
         perception: expert
         saves:
@@ -219,9 +220,10 @@ pf2e_class:
         choose_feat:
         - ancestry
         combat_stats:
-          wp_simple: expert
-          wp_martial: expert
-          wp_unarmed: expert
+          weapon_prof:
+            wp_simple: expert
+            wp_martial: expert
+            wp_unarmed: expert
       6:
         choose_feat:
         - charclass
@@ -279,12 +281,14 @@ pf2e_class:
         combat_stats:
           saves:
             fortitude: legendary
-          armor_light: expert
-          armor_medium: expert
-          armor_unarmored: expert
-          wp_simple: master
-          wp_martial: master
-          wp_unarmed: master
+          armor_prof:
+            light: expert
+            medium: expert
+            unarmored: expert
+          weapon_prof:
+            wp_simple: master
+            wp_martial: master
+            wp_unarmed: master
         raise:
         - skill
       14:
@@ -330,9 +334,10 @@ pf2e_class:
         - Armor of Fury
         - Devastator
         combat_stats:
-          armor_medium: master
-          armor_light: master
-          armor_unarmored: master
+          armor_prof:
+            medium: master
+            light: master
+            unarmored: master
           class_dc: master
       20:
         choose_feat:
@@ -351,12 +356,13 @@ pf2e_class:
           fortitude: trained
           reflex: trained
           will: expert
-        wp_simple: trained
-        wp_martial:
-          Bard Weapons: trained
-        wp_unarmed: trained
-        armor_light: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+          wp_charclass: trained
+        armor_prof:
+          light: trained
+          unarmored: trained
       skills:
       - Occultism
       - Performance
@@ -498,10 +504,10 @@ pf2e_class:
         raise:
         - skill
         combat_stats:
-          wp_simple: expert
-          wp_martial:
-            Bard Weapons: expert
-          wp_unarmed: expert
+          weapon_prof:
+            wp_simple: expert
+            wp_unarmed: expert
+            wp_charclass: expert
           perception: master
         magic_stats:
           spells_per_day:
@@ -635,14 +641,16 @@ pf2e_class:
       - open
       - open
       combat_stats:
-        wp_simple: trained
-        wp_martial: trained
-        wp_unarmed: trained
-        wp_deity: trained
-        armor_light: trained
-        armor_medium: trained
-        armor_heavy: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_martial: trained
+          wp_unarmed: trained
+          wp_deity: trained
+        armor_prof:
+          light: trained
+          medium: trained
+          heavy: trained
+          unarmored: trained
         class_dc: trained
         perception: trained
         saves:
@@ -694,8 +702,9 @@ pf2e_class:
         charclass:
         - Weapon Expertise
         combat_stats:
-          wp_simple: expert
-          wp_martial: expert
+          weapon_prof:
+            wp_simple: expert
+            wp_martial: expert
       6:
         choose_feat:
         - charclass
@@ -709,10 +718,11 @@ pf2e_class:
         raise:
         - skill
         combat_stats:
-          armor_light: expert
-          armor_medium: expert
-          armor_heavy: expert
-          armor_unarmored: expert
+          armor_prof:
+            light: expert
+            medium: expert
+            heavy: expert
+            unarmored: expert
       8:
         choose_feat:
         - charclass
@@ -761,12 +771,14 @@ pf2e_class:
         - Armor Mastery
         - Weapon Mastery
         combat_stats:
-          armor_light: master
-          armor_medium: master
-          armor_heavy: master
-          armor_unarmored: master
-          wp_simple: master
-          wp_martial: master
+          armor_prof:
+            light: master
+            medium: master
+            heavy: master
+            unarmored: master
+          weapon_prof:
+            wp_simple: master
+            wp_martial: master
         choose_feat:
         - ancestry
         raise:
@@ -795,10 +807,11 @@ pf2e_class:
         - Legendary Armor
         combat_stats:
           class_dc: master
-          armor_medium: legendary
-          armor_light: legendary
-          armor_heavy: legendary
-          armor_unarmored: legendary
+          armor_prof:
+            medium: legendary
+            light: legendary
+            heavy: legendary
+            unarmored: legendary
         magic_stats:
           tradition:
             divine: master
@@ -835,10 +848,12 @@ pf2e_class:
       - open
       - open
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        wp_deity: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+          wp_deity: trained
+        armor_prof:
+          unarmored: trained
         class_dc: trained
         perception: trained
         saves:
@@ -972,7 +987,8 @@ pf2e_class:
         - Weapon Specialization
         - Divine Defense
         combat_stats:
-          armor_unarmored: expert
+          armor_prof:
+            unarmored: expert
         magic_stats:
           spells_per_day:
             7: 2
@@ -1046,11 +1062,13 @@ pf2e_class:
       - open
       - open
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        armor_unarmored: trained
-        armor_light: trained
-        armor_medium: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+        armor_prof:
+          unarmored: trained
+          light: trained
+          medium: trained
         perception: trained
         saves:
           fortitude: trained
@@ -1177,8 +1195,9 @@ pf2e_class:
         - Druid Weapon Expertise
         - Resolve
         combat_stats:
-          wp_unarmed: expert
-          wp_simple: expert
+          weapon_prof:
+            wp_unarmed: expert
+            wp_simple: expert
           saves:
             will: master
         choose_feat:
@@ -1201,9 +1220,10 @@ pf2e_class:
         - Medium Armor Expertise
         - Weapon Specialization
         combat_stats:
-          armor_unarmored: expert
-          armor_light: expert
-          armor_medium: expert
+          armor_prof:
+            unarmored: expert
+            light: expert
+            medium: expert
         choose_feat:
         - general
         magic_stats:
@@ -1283,14 +1303,16 @@ pf2e_class:
       choose_feat:
       - charclass
       combat_stats:
-        wp_simple: expert
-        wp_martial: expert
-        wp_advanced: trained
-        wp_unarmed: expert
-        armor_light: trained
-        armor_medium: trained
-        armor_heavy: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: expert
+          wp_martial: expert
+          wp_advanced: trained
+          wp_unarmed: expert
+        armor_prof:
+          light: trained
+          medium: trained
+          heavy: trained
+          unarmored: trained
         class_dc: trained
         perception: expert
         saves:
@@ -1392,10 +1414,11 @@ pf2e_class:
       raise:
       - skill
       combat_stats:
-        armor_light: expert
-        armor_medium: expert
-        armor_heavy: expert
-        armor_unarmored: expert
+        armor_prof:
+          light: expert
+          medium: expert
+          heavy: expert
+          unarmored: expert
         class_dc: expert
       charclass:
       - Armor Expertise
@@ -1410,10 +1433,11 @@ pf2e_class:
       raise:
       - skill
       combat_stats:
-        wp_simple: master
-        wp_martial: master
-        wp_advanced: expert
-        wp_unarmed: master
+        weapon_prof:
+          wp_simple: master
+          wp_martial: master
+          wp_advanced: expert
+          wp_unarmed: master
       choose:
         choice_name: Weapon Legend
         choice_description: "Choose a weapon group for your weapon legend feat."
@@ -1455,10 +1479,11 @@ pf2e_class:
       raise:
       - skill
       combat_stats:
-        armor_light: master
-        armor_medium: master
-        armor_heavy: master
-        armor_unarmored: master
+        armor_prof:
+          light: master
+          medium: master
+          heavy: master
+          unarmored: master
       charclass:
       - Armor Mastery
     18:
@@ -1473,10 +1498,11 @@ pf2e_class:
       charclass:
       - Versatile Legend
       combat_stats:
-        wp_simple: legendary
-        wp_martial: legendary
-        wp_advanced: master
-        wp_unarmed: legendary
+        weapon_prof:
+          wp_simple: legendary
+          wp_martial: legendary
+          wp_advanced: master
+          wp_unarmed: legendary
     20:
       raise:
       - ability
@@ -1501,11 +1527,13 @@ pf2e_class:
       choose_feat:
       - charclass
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        wp_martial: trained
-        armor_unarmored: trained
-        armor_light: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+          wp_martial: trained
+        armor_prof:
+          unarmored: trained
+          light: trained
         class_dc: trained
         perception: expert
         saves:
@@ -1549,9 +1577,10 @@ pf2e_class:
         charclass:
         - Weapon Expertise
         combat_stats:
-          wp_simple: expert
-          wp_unarmed: expert
-          wp_martial: expert
+          weapon_prof:
+            wp_simple: expert
+            wp_unarmed: expert
+            wp_martial: expert
       6:
         choose_feat:
         - charclass
@@ -1674,8 +1703,9 @@ pf2e_class:
         - Light Armor Mastery
         - Master Detective
         combat_stats:
-          armor_light: master
-          armor_unarmored: master
+          armor_prof:
+            light: master
+            unarmored: master
           class_dc: master
       20:
         choose_feat:
@@ -1696,9 +1726,11 @@ pf2e_class:
       - open
       - open
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        armor_unarmored: expert
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+        armor_prof:
+         unarmored: expert
         class_dc: trained
         perception: trained
         saves:
@@ -1745,8 +1777,9 @@ pf2e_class:
         - Expert Strikes
         combat_stats:
           perception: expert
-          wp_unarmed: expert
-          wp_simple: expert
+          weapon_prof:
+            wp_unarmed: expert
+            wp_simple: expert
       6:
         choose_feat:
         - charclass
@@ -1813,9 +1846,11 @@ pf2e_class:
         - Graceful Mastery
         - Master Strikes
         combat_stats:
-          armor_unarmored: master
-          wp_simple: master
-          wp_unarmed: master
+          armor_prof:
+            unarmored: master
+          weapon_prof:
+            wp_simple: master
+            wp_unarmed: master
       14:
         choose_feat:
         - charclass
@@ -1846,7 +1881,8 @@ pf2e_class:
         - Adamantine Strikes
         - Graceful Legend
         combat_stats:
-          armor_unarmored: legendary
+          armor_prof:
+            unarmored: legendary
           class_dc: master
       18:
         choose_feat:
@@ -1877,10 +1913,12 @@ pf2e_class:
       - open
       - open
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        armor_unarmored: trained
-        armor_light: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+        armor_prof:
+          unarmored: trained
+          light: trained
         class_dc: trained
         perception: trained
         saves:
@@ -2026,8 +2064,9 @@ pf2e_class:
         - Major Curse
         combat_stats:
           perception: expert
-          wp_unarmed: expert
-          wp_simple: expert
+          weapon_prof:
+            wp_unarmed: expert
+            wp_simple: expert
         magic_stats:
           spells_per_day:
             6: 2
@@ -2053,8 +2092,9 @@ pf2e_class:
         - Lightning Reflexes
         - Weapon Specialization
         combat_stats:
-          armor_unarmored: expert
-          armor_light: expert
+          armor_prof:
+            unarmored: expert
+            light: expert
         magic_stats:
           spells_per_day:
             7: 2
@@ -2165,12 +2205,14 @@ pf2e_class:
       choose_feat:
       - charclass
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        wp_martial: trained
-        armor_unarmored: trained
-        armor_light: trained
-        armor_medium: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+          wp_martial: trained
+        armor_prof:
+          unarmored: trained
+          light: trained
+          medium: trained
         class_dc: trained
         perception: expert
         saves:
@@ -2213,9 +2255,10 @@ pf2e_class:
         - Ranger Weapon Expertise
         - Trackless Step
         combat_stats:
-          wp_unarmed: expert
-          wp_simple: expert
-          wp_martial: expert
+          weapon_prof:
+            wp_unarmed: expert
+            wp_simple: expert
+            wp_martial: expert
       6:
         choose_feat:
         - charclass
@@ -2261,9 +2304,10 @@ pf2e_class:
         combat_stats:
           saves:
             fortitude: master
-          armor_unarmored: expert
-          armor_light: expert
-          armor_medium: expert
+          armor_prof:
+            unarmored: expert
+            light: expert
+            medium: expert
         choose_feat:
         - general
         raise:
@@ -2280,9 +2324,10 @@ pf2e_class:
         charclass:
         - Weapon Mastery
         combat_stats:
-          wp_unarmed: master
-          wp_simple: master
-          wp_martial: master
+          weapon_prof:
+            wp_unarmed: master
+            wp_simple: master
+            wp_martial: master
       14:
         choose_feat:
         - charclass
@@ -2327,9 +2372,10 @@ pf2e_class:
         - Second Skin
         - Swift Prey
         combat_stats:
-          armor_unarmored: master
-          armor_light: master
-          armor_medium: master
+          armor_prof:
+            unarmored: master
+            light: master
+            medium: master
       20:
         choose_feat:
         - charclass
@@ -2355,10 +2401,12 @@ pf2e_class:
       - Sneak Attack
       - Surprise Attack
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        armor_unarmored: trained
-        armor_light: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+        armor_prof:
+          unarmored: trained
+          light: trained
         class_dc: trained
         perception: expert
         saves:
@@ -2479,10 +2527,12 @@ pf2e_class:
           saves:
             reflex: legendary
           perception: legendary
-          armor_unarmored: expert
-          armor_light: expert
-          wp_unarmed: master
-          wp_simple: master
+          armor_prof:
+            unarmored: expert
+            light: expert
+          weapon_prof:
+            wp_unarmed: master
+            wp_simple: master
       14:
         raise:
         - skill
@@ -2531,8 +2581,9 @@ pf2e_class:
         - Light Armor Mastery
         - Master Strike
         combat_stats:
-          armor_unarmored: master
-          armor_light: master
+          armor_prof:
+            unarmored: master
+            light: master
       20:
         choose_feat:
         - charclass
@@ -2549,9 +2600,11 @@ pf2e_class:
       - open
       - open
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+        armor_prof:
+          unarmored: trained
         perception: trained
         saves:
           fortitude: trained
@@ -2725,7 +2778,8 @@ pf2e_class:
             7: 1
           max_spell_level: 7
         combat_stats:
-          armor_unarmored: expert
+          armor_prof:
+            unarmored: expert
       14:
         choose_feat:
         - charclass
@@ -2816,9 +2870,11 @@ pf2e_class:
       choose_feat:
       - charclass
       combat_stats:
-        wp_simple: trained
-        wp_unarmed: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_simple: trained
+          wp_unarmed: trained
+        armor_prof:
+          unarmored: trained
         perception: trained
         saves:
           fortitude: trained
@@ -2944,8 +3000,9 @@ pf2e_class:
           max_spell_level: 6
         combat_stats:
           perception: expert
-          wp_simple: expert
-          wp_unarmed: expert
+          weapon_prof:
+            wp_simple: expert
+            wp_unarmed: expert
       12:
         choose_feat:
         - charclass
@@ -2968,7 +3025,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 7
         combat_stats:
-          armor_unarmored: expert
+          armor_prof:
+            unarmored: expert
       14:
         choose_feat:
         - charclass
@@ -3053,10 +3111,11 @@ pf2e_class:
       charclass:
       - Arcane Bond
       combat_stats:
-        wp_simple:
-          Wizard Weapons: trained
-        wp_unarmed: trained
-        armor_unarmored: trained
+        weapon_prof:
+          wp_charclass: trained
+          wp_unarmed: trained
+        armor_prof:
+          unarmored: trained
         perception: trained
         saves:
           fortitude: trained
@@ -3191,8 +3250,8 @@ pf2e_class:
           max_spell_level: 6
         combat_stats:
           perception: expert
-          wp_simple:
-            Wizard Weapons: expert
+          weapon_prof:
+            wp_charclass: expert
       12:
         choose_feat:
         - charclass
@@ -3215,7 +3274,8 @@ pf2e_class:
           spellbook: 2
           max_spell_level: 7
         combat_stats:
-          armor_unarmored: expert
+          armor_prof:
+            unarmored: expert
       14:
         choose_feat:
         - charclass

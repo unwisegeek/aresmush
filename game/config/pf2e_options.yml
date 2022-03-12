@@ -1,9 +1,20 @@
 ---
 pf2e:
   achievements:
-    ran_prps:
+    dungeon_keeper:
       type: community
       message: Ran %{count} Player-Run Plots.
+      levels:
+      - 1
+      - 10
+      - 25
+      - 50
+      - 100
+      - 250
+      - 500
+    master_of_meetups:
+      type: community
+      message: Ran %{count} Meetups.
       levels:
       - 1
       - 10

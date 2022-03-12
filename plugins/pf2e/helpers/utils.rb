@@ -216,5 +216,25 @@ module AresMUSH
       char.update(pf2_award_history: full_list)
     end
 
+    def self.is_proficient?(char, category, name)
+      case category
+      when "weapon"
+        prof = Pf2eCombat.get_weapon_prof(char, name)
+      when "armor"
+        prof = PF2eCombat.get_armor_prof(char, name)
+      else
+        prof = 'untrained'
+      end
+
+      return false if !prof || prof == 'untrained'
+      return true
+    end
+
+    def self.select_best_prof(array)
+      profs = %w{untrained trained expert master legendary}
+
+      best_prof = array.sort_by{ |a,b| profs.index(a) <=> profs.index(b) }.pop
+    end
+
   end
 end

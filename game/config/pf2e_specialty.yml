@@ -392,7 +392,8 @@ pf2e_specialty:
           charclass:
           - 'Second Doctrine (Cloistered)'
           combat_stats:
-            fortitude: expert
+            saves:
+              fortitude: expert
         7:
           magic_stats:
             tradition:
@@ -403,7 +404,8 @@ pf2e_specialty:
           charclass:
           - 'Fourth Doctrine (Cloistered)'
           combat_stats:
-            wp_deity: expert
+            weapon_prof:
+              wp_deity: expert
         15:
           charclass:
           - 'Fifth Doctrine (Cloistered)'
@@ -420,8 +422,9 @@ pf2e_specialty:
         chargen:
           action: []
           combat_stats:
-            armor_light: trained
-            armor_med: trained
+            armor_prof:
+              light: trained
+              medium: trained
             fortitude: expert
           feat:
           - Shield Block
@@ -435,10 +438,12 @@ pf2e_specialty:
             charclass:
             - 'Second Doctrine (Warpriest)'
             combat_stats:
-              wp_martial: trained
+              weapon_prof:
+                wp_martial: trained
           7:
             combat_stats:
-              wp_deity: expert
+              weapon_prof:
+                wp_deity: expert
             charclass:
             - 'Third Doctrine (Warpriest)'
           11:
@@ -451,7 +456,8 @@ pf2e_specialty:
             charclass:
             - 'Fifth Doctrine (Warpriest)'
             combat_stats:
-              fortitude: master
+              saves:
+                fortitude: master
           19:
             charclass:
             - 'Final Doctrine (Warpriest)'
@@ -594,8 +600,9 @@ pf2e_specialty:
         action: []
         reaction: []
         combat_stats:
-          armor_med: trained
-          armor_heavy: trained
+          armor_prof:
+            medium: trained
+            heavy: trained
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -856,7 +863,8 @@ pf2e_specialty:
         skills:
         - Intimidation
         combat_stats:
-          armor_med: trained
+          armor_prof:
+            medium: trained
         action: []
         reaction: []
       key_abil:
