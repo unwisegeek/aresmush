@@ -15,7 +15,7 @@ module AresMUSH
 
       def handle
 
-        list_key = "pf2e" + category
+        list_key = "pf2e_" + category
 
         # Valid category of items?
         list = Global.read_config(list_key)
