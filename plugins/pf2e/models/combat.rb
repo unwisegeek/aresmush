@@ -6,7 +6,7 @@ module AresMUSH
     attribute :reflex, :default => 'untrained'
     attribute :will, :default => 'untrained'
 
-    attribute :saves, :type => DataType::Hash, :default => { 'fortitude' => 'untrained', 'reflex' => 'untrained', 'will' => 'untrained' }
+    attribute :saves, :type => DataType::Hash, :default => {}
 
     attribute :perception, :default => 'untrained'
     attribute :class_dc, :default => 'untrained'
@@ -17,6 +17,8 @@ module AresMUSH
     attribute :armor_medium, :default => 'untrained'
     attribute :armor_heavy, :default => 'untrained'
 
+    attribute :armor_prof, :type => DataType::Hash, :default => {}
+
     attribute :wp_unarmed, :default => 'untrained'
     attribute :wp_simple, :default => 'untrained'
     attribute :wp_martial, :default => 'untrained'
@@ -24,6 +26,8 @@ module AresMUSH
     attribute :wp_rage
     attribute :wp_deity
     attribute :wp_other, :type => DataType::Hash, :default => {}
+
+    attribute :weapon_prof, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
 
@@ -57,13 +61,11 @@ module AresMUSH
         combat.update("#{key}": value)
       end
 
-      # This is a kludge, fix this method later
+      #save_list = info['saves']
+      #saves = {}
+      #save_list.each_pair { |k,v| saves[k] = v }
 
-      save_list = info['saves']
-      saves = {}
-      save_list.each_pair { |k,v| saves[k] = v }
-
-      combat.update(saves: saves)
+      #combat.update(saves: saves)
 
       return combat
     end
@@ -108,6 +110,60 @@ module AresMUSH
       item_bonus = item ? item : 0
 
       abil_mod + prof_bonus + item_bonus
+    end
+
+    def self.get_weapon_prof(char, name)
+      combat = char.combat
+
+      char_wp_prof = combat.weapon_prof
+
+      wp_info = Global.read_config('pf2e_weapons', name)
+      wp_cat = wp_info['category']
+
+      prof_list = [ 'untrained' ]
+
+      case wp_cat
+      when 'unarmed'
+        prof_list < char_wp_prof['wp_unarmed']
+      when 'simple'
+        prof_list < char_wp_prof['wp_simple']
+      when 'martial'
+        prof_list < char_wp_prof['wp_martial']
+      when 'advanced'
+        prof_list < char_wp_prof['wp_advanced']
+      end
+
+      # Does character get a proficiency in that particular weapon from their class?
+      charclass_list = wp_info['charclass']
+
+      if charclass_list
+        if charclass_list.include?(char.pf2_base_info['charclass'])
+          prof_list < char_wp_prof['wp_charclass']
+        end
+      end
+
+      # Does character get a proficiency in that particular weapon from their deity?
+      if char_wp_prof['wp_deity']
+        deity_weapon = Global.read_config('pf2e_deities', char.pf2_faith['deity'], 'fav_weapon')
+
+        prof_list < char_wp_prof['wp_deity'] if name == deity_weapon
+      end
+
+      # Of everything we've accumulated, the character's proficiency with that weapon is the best one in the list.
+      prof = Pf2e.select_best_prof(prof_list)
+
+    end
+
+    def self.get_armor_prof(char, name)
+
+      combat = char.combat
+
+      char_armor_prof = combat.armor_prof
+
+      armor_cat = Global.read_config('pf2e_armor', name, 'category')
+
+      prof = char_armor_prof[armor_cat] ? char_armor_prof[armor_cat] : 'untrained'
+
     end
 
   end
