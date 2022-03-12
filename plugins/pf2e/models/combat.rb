@@ -149,6 +149,8 @@ module AresMUSH
         prof_list << char_wp_prof['wp_deity'] if name == deity_weapon
       end
 
+      prof_list = prof_list.compact
+
       # Of everything we've accumulated, the character's proficiency with that weapon is the best one in the list.
       prof = Pf2e.select_best_prof(prof_list)
 
