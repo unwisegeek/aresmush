@@ -36,7 +36,11 @@ module AresMUSH
       end
 
       def format_item(char, category, name, bulk, price)
-        prof = Pf2e.is_proficient?(char, category, name) ? "" : "%xh%xx"
+        if category == ("weapons" || "armor")
+          prof = Pf2e.is_proficient?(char, category, name) ? "" : "%xh%xx"
+        else
+          prof = ""
+        end
 
         fmt_bulk = bulk == 0.1 ? "L" : bulk.to_i
         fmt_price = Pf2egear.display_money(price)
