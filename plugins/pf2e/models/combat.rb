@@ -124,13 +124,13 @@ module AresMUSH
 
       case wp_cat
       when 'unarmed'
-        prof_list < char_wp_prof['wp_unarmed']
+        prof_list << char_wp_prof['wp_unarmed']
       when 'simple'
-        prof_list < char_wp_prof['wp_simple']
+        prof_list << char_wp_prof['wp_simple']
       when 'martial'
-        prof_list < char_wp_prof['wp_martial']
+        prof_list << char_wp_prof['wp_martial']
       when 'advanced'
-        prof_list < char_wp_prof['wp_advanced']
+        prof_list << char_wp_prof['wp_advanced']
       end
 
       # Does character get a proficiency in that particular weapon from their class?
@@ -138,7 +138,7 @@ module AresMUSH
 
       if charclass_list
         if charclass_list.include?(char.pf2_base_info['charclass'])
-          prof_list < char_wp_prof['wp_charclass']
+          prof_list << char_wp_prof['wp_charclass']
         end
       end
 
@@ -146,7 +146,7 @@ module AresMUSH
       if char_wp_prof['wp_deity']
         deity_weapon = Global.read_config('pf2e_deities', char.pf2_faith['deity'], 'fav_weapon')
 
-        prof_list < char_wp_prof['wp_deity'] if name == deity_weapon
+        prof_list << char_wp_prof['wp_deity'] if name == deity_weapon
       end
 
       # Of everything we've accumulated, the character's proficiency with that weapon is the best one in the list.
