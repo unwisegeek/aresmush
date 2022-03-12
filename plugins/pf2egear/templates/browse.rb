@@ -15,7 +15,7 @@ module AresMUSH
       end
 
       def title
-        t('pf2egear.browse_title', :category => category)
+        t('pf2egear.browse_title', :category => category.capitalize)
       end
 
       def item_list
