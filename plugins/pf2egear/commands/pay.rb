@@ -90,8 +90,6 @@ module AresMUSH
 
         actual_value = Pf2egear.convert_money(self.value, self.cointype)
 
-        client.emit actual_value
-
         from_purse = from_purse - actual_value
 
         to_purse = to_purse + actual_value
