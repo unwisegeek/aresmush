@@ -30,9 +30,7 @@ module AresMUSH
         charlevel = enactor.pf2_level
         available_items = list.select { |k,v| v['level'] <= charlevel }
 
-        client.emit available_items
-
-        template = Pf2eBrowseGearTemplate.new(enactor, self.category, available_items.sort)
+        template = Pf2eBrowseGearTemplate.new(enactor, self.category, available_items)
 
         client.emit template.render
 
