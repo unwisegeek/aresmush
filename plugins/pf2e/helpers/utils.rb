@@ -218,7 +218,7 @@ module AresMUSH
 
     def self.is_proficient?(char, category, name)
       case category
-      when "weapon","weapons"
+      when "weapons"
         prof = Pf2eCombat.get_weapon_prof(char, name)
       when "armor"
         prof = PF2eCombat.get_armor_prof(char, name)
