@@ -8,6 +8,7 @@ en:
     bad_cointype: "Invalid coin type. Use one of: pp gp sp cp"
     bad_quantity: "Invalid quantity. If specified, it should be a number greater than zero."
     bad_value: "Invalid monetary value."
+    browse_title: "Available Items In Category:"
 
     item_bought_ok: "You buy %{quantity} of %{item} at a cost of %{cost}."
 
