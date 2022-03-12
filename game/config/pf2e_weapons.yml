@@ -1,0 +1,1346 @@
+---
+pf2e_weapons:
+  Alchemical Bomb:
+    wp_type: ranged
+    category: martial
+    charclass:
+    - Alchemist
+    traits: []
+    level: 0
+    price: 0
+    wp_damage: 0
+    wp_damage_type: P
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 0.1
+    group: Bomb
+  Bastard Sword:
+    wp_type: melee
+    category: martial
+    traits:
+    - two-hand
+    level: 0
+    price: 400
+    wp_damage: 1d8
+    wp_damage_type: S
+    wp_damage_2h: 1d12
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Battle Axe:
+    wp_type: melee
+    category: martial
+    traits:
+    - sweep
+    level: 0
+    price: 100
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Axe
+  Blowgun:
+    wp_type: ranged
+    category: simple
+    traits:
+    - agile
+    - nonlethal
+    level: 0
+    price: 10
+    wp_damage: 1
+    wp_damage_type: P
+    hands: 1
+    range: 20
+    reload: 1
+    bulk: 0.1
+    group: Dart
+  Bo Staff:
+    wp_type: melee
+    category: martial
+    traits:
+    - monk
+    - parry
+    - reach
+    - trip
+    level: 0
+    price: 20
+    wp_damage: 1d8
+    wp_damage_type: B
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Club
+  Bola:
+    wp_type: ranged
+    category: martial
+    traits:
+    - non-lethal
+    - ranged trip
+    - thrown
+    level: 0
+    price: 50
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 0.1
+    group: Sling
+  Clan Dagger:
+    wp_type: melee
+    category: simple
+    traits:
+    - agile
+    - khazad
+    - parry
+    - versatile_B
+    level: 0
+    price: 200
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Claw Blade:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - deadly_d8
+    - disarm
+    - finesse
+    - oruch
+    - versatile_P
+    level: 0
+    price: 200
+    wp_damage: 1d4
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Club:
+    wp_type: melee
+    category: simple
+    charclass:
+    - Wizard
+    traits:
+    - thrown
+    level: 0
+    price: 0
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 10
+    reload: 0
+    bulk: 1
+    group: Club
+  Composite Longbow:
+    wp_type: ranged
+    category: martial
+    traits:
+    - deadly_d10
+    - propulsive
+    - volley_30
+    level: 0
+    price: 2000
+    wp_damage: 1d8
+    wp_damage_type: P
+    hands: 2
+    range: 100
+    reload: 0
+    bulk: 2
+    group: Bow
+  Composite Shortbow:
+    wp_type: ranged
+    category: martial
+    traits:
+    - deadly_d10
+    - propulsive
+    level: 0
+    price: 1400
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 2
+    range: 60
+    reload: 0
+    bulk: 1
+    group: Bow
+  Crossbow:
+    wp_type: ranged
+    category: simple
+    charclass:
+    - Wizard
+    traits: []
+    level: 0
+    price: 300
+    wp_damage: 1d8
+    wp_damage_type: P
+    hands: 2
+    range: 120
+    reload: 1
+    bulk: 1
+    group: Bow
+  Dagger:
+    wp_type: melee
+    category: simple
+    charclass:
+    - Wizard
+    traits:
+    - agile
+    - finesse
+    - thrown
+    - versatile_S
+    level: 0
+    price: 20
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 10
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Daikyu:
+    wp_type: ranged
+    category: advanced
+    traits: []
+    level: 0
+    price: 800
+    wp_damage: 1d8
+    wp_damage_type: P
+    hands: 2
+    range: 80
+    reload: 0
+    bulk: 2
+    group: Bow
+  Dart:
+    wp_type: ranged
+    category: simple
+    traits:
+    - agile
+    - thrown
+    level: 0
+    price: 1
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 0.1
+    group: Dart
+  Dogslicer:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - backstabber
+    - finesse
+    - gobber
+    level: 0
+    price: 10
+    wp_damage: 1d6
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Sword
+  Khazadi Waraxe:
+    wp_type: melee
+    category: advanced
+    traits:
+    - khazad
+    - sweep
+    - two-hand
+    level: 0
+    price: 300
+    wp_damage: 1d8
+    wp_damage_type: S
+    wp_damage_2h: 1d12
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Axe
+  Curve Blade:
+    wp_type: melee
+    category: martial
+    traits:
+    - finesse
+    - forceful
+    - sildanyar
+    level: 0
+    price: 400
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Sword
+  Falchion:
+    wp_type: melee
+    category: martial
+    traits:
+    - forceful
+    - sweep
+    level: 0
+    price: 300
+    wp_damage: 1d10
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Sword
+  Filcher's Fork:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - backstabber
+    - deadly_d6
+    - finesse
+    - lucht
+    - thrown
+    level: 0
+    price: 100
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 0.1
+    group: Spear
+  Flail:
+    wp_type: melee
+    category: martial
+    traits:
+    - disarm
+    - sweep
+    - trip
+    level: 0
+    price: 80
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Flail
+  Gale Blade:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - disarm
+    - egalrin
+    - finesse
+    level: 0
+    price: 400
+    wp_damage: 1d6
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Sword
+  Gauntlet:
+    wp_type: melee
+    category: simple
+    traits:
+    - agile
+    - free-hand
+    level: 0
+    price: 20
+    wp_damage: 1d4
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Brawling
+  Glaive:
+    wp_type: melee
+    category: martial
+    traits:
+    - deadly_d8
+    - forceful
+    - reach
+    level: 0
+    price: 300
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Polearm
+  Gnome Flickmace:
+    wp_type: melee
+    category: advanced
+    traits:
+    - gnome
+    - reach
+    level: 0
+    price: 300
+    wp_damage: 1d8
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Flail
+  Gnome Hooked Hammer:
+    wp_type: melee
+    category: martial
+    traits:
+    - gnome
+    - trip
+    - two-hand
+    - versatile_P
+    level: 0
+    price: 200
+    wp_damage: 1d6
+    wp_damage_type: B
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Hammer
+  Greataxe:
+    wp_type: melee
+    category: martial
+    traits:
+    - sweep
+    level: 0
+    price: 200
+    wp_damage: 1d12
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Axe
+  Greatclub:
+    wp_type: melee
+    category: martial
+    traits:
+    - backswing
+    - shove
+    level: 0
+    price: 100
+    wp_damage: 1d10
+    wp_damage_type: B
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Club
+  Greatpick:
+    wp_type: melee
+    category: martial
+    traits:
+    - fatal_d12
+    level: 0
+    price: 200
+    wp_damage: 1d10
+    wp_damage_type: P
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Pick
+  Greatsword:
+    wp_type: melee
+    category: martial
+    traits:
+    - versatile_P
+    level: 0
+    price: 200
+    wp_damage: 1d12
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Sword
+  Guisarme:
+    wp_type: melee
+    category: martial
+    traits:
+    - reach
+    - trip
+    level: 0
+    price: 200
+    wp_damage: 1d10
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Polearm
+  Halberd:
+    wp_type: melee
+    category: martial
+    traits:
+    - reach
+    - versatile_S
+    level: 0
+    price: 200
+    wp_damage: 1d10
+    wp_damage_type: P
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Polearm
+  Hatchet:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - sweep
+    - thrown
+    level: 0
+    price: 40
+    wp_damage: 1d6
+    wp_damage_type: S
+    hands: 1
+    range: 10
+    reload: 0
+    bulk: 0.1
+    group: Axe
+  Hand Crossbow:
+    wp_type: ranged
+    category: simple
+    traits: []
+    level: 0
+    price: 300
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 60
+    reload: 1
+    bulk: 0.1
+    group: Sling
+  Heavy Crossbow:
+    wp_type: ranged
+    category: simple
+    charclass:
+    - Wizard
+    traits: []
+    level: 0
+    price: 400
+    wp_damage: 1d10
+    wp_damage_type: P
+    hands: 2
+    range: 120
+    reload: 2
+    bulk: 2
+    group: Bow
+  Horsechopper:
+    wp_type: melee
+    category: martial
+    traits:
+    - gobber
+    - reach
+    - trip
+    - versatile_P
+    level: 0
+    price: 90
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Polearm
+  Javelin:
+    wp_type: ranged
+    category: simple
+    traits:
+    - thrown
+    level: 0
+    price: 10
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 30
+    reload: 0
+    bulk: 0.1
+    group: Dart
+  Kama:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - monk
+    - trip
+    level: 0
+    price: 100
+    wp_damage: 1d6
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Katana:
+    wp_type: melee
+    category: martial
+    traits:
+    - deadly_d8
+    - two-hand
+    - versatile_P
+    level: 0
+    price: 200
+    wp_damage: 1d8
+    wp_damage_type: S
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Katar:
+    wp_type: melee
+    category: simple
+    traits:
+    - agile
+    - deadly_d6
+    - monk
+    level: 0
+    price: 30
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Khakkara:
+    wp_type: melee
+    category: martial
+    traits:
+    - shove
+    - two-hand
+    - versatile_P
+    level: 0
+    price: 200
+    wp_damage: 1d6
+    wp_damage_type: B
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Club
+  Kukri:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - finesse
+    - trip
+    level: 0
+    price: 60
+    wp_damage: 1d6
+    wp_damage_type: S
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Lance:
+    wp_type: melee
+    category: martial
+    traits:
+    - deadly_d8
+    - jousting_d6
+    - reach
+    level: 0
+    price: 100
+    wp_damage: 1d8
+    wp_damage_type: P
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Spear
+  Light Hammer:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - thrown
+    level: 0
+    price: 30
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 0.1
+    group: Hammer
+  Light Mace:
+    wp_type: melee
+    category: simple
+    traits:
+    - agile
+    - finesse
+    - shove
+    level: 0
+    price: 40
+    wp_damage: 1d4
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Club
+  Light Pick:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - fatal_d8
+    level: 0
+    price: 40
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Pick
+  Longbow:
+    wp_type: ranged
+    category: martial
+    traits:
+    - deadly_d10
+    - volley_30
+    level: 0
+    price: 600
+    wp_damage: 1d8
+    wp_damage_type: P
+    hands: 2
+    range: 100
+    reload: 0
+    bulk: 2
+    group: Bow
+  Longspear:
+    wp_type: melee
+    category: martial
+    traits:
+    - reach
+    level: 0
+    price: 50
+    wp_damage: 1d8
+    wp_damage_type: P
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Spear
+  Longsword:
+    wp_type: melee
+    category: martial
+    charclass:
+    - Bard
+    traits:
+    - versatile_P
+    level: 0
+    price: 100
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Mace:
+    wp_type: melee
+    category: simple
+    traits:
+    - shove
+    level: 0
+    price: 100
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Club
+  Main-gauche:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - disarm
+    - finesse
+    - parry
+    - versatile_S
+    level: 0
+    price: 50
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Maul:
+    wp_type: melee
+    category: martial
+    traits:
+    - shove
+    level: 0
+    price: 300
+    wp_damage: 1d12
+    wp_damage_type: B
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Hammer
+  Morningstar:
+    wp_type: melee
+    category: simple
+    traits:
+    - versatile_P
+    level: 0
+    price: 100
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Club
+  Nunchaku:
+    wp_type: melee
+    category: martial
+    traits:
+    - backswing
+    - disarm
+    - finesse
+    - monk
+    level: 0
+    price: 20
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Club
+  Knuckle Dagger:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - disarm
+    - oruch
+    level: 0
+    price: 70
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Necksplitter:
+    wp_type: melee
+    category: advanced
+    traits:
+    - forceful
+    - oruch
+    - sweep
+    level: 0
+    price: 200
+    wp_damage: 1d8
+    wp_damage_type: S
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Axe
+  Pick:
+    wp_type: melee
+    category: martial
+    traits:
+    - fatal_d10
+    level: 0
+    price: 70
+    wp_damage: 1d6
+    wp_damage_type: P
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Pick
+  Ranseur:
+    wp_type: melee
+    category: martial
+    traits:
+    - disarm
+    - reach
+    level: 0
+    price: 200
+    wp_damage: 1d10
+    wp_damage_type: P
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Polearm
+  Rapier:
+    wp_type: melee
+    category: martial
+    charclass:
+    - Bard
+    - Rogue
+    traits:
+    - deadly_d8
+    - disarm
+    - finesse
+    level: 0
+    price: 200
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Sai:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - disarm
+    - finesse
+    - monk
+    - versatile_B
+    level: 0
+    price: 60
+    wp_damage: 1d8
+    wp_damage_type: S
+    wp_damage_2h: 1d10
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Knife
+  Sap:
+    wp_type: melee
+    category: martial
+    charclass:
+    - Bard
+    - Rogue
+    traits:
+    - agile
+    - nonlethal
+    level: 0
+    price: 10
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Club
+  Sawtooth Saber:
+    wp_type: melee
+    category: advanced
+    traits:
+    - agile
+    - finesse
+    - twin
+    level: 0
+    price: 500
+    wp_damage: 1d6
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Scimitar:
+    wp_type: melee
+    category: martial
+    traits:
+    - forceful
+    - sweep
+    level: 0
+    price: 100
+    wp_damage: 1d6
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Scythe:
+    wp_type: melee
+    category: martial
+    traits:
+    - deadly_d10
+    - trip
+    level: 0
+    price: 200
+    wp_damage: 1d10
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Polearm
+  Shield Boss:
+    wp_type: melee
+    category: martial
+    traits:
+    - shield
+    level: 0
+    price: 50
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0
+    group: Shield
+  Shield Spikes:
+    wp_type: melee
+    category: martial
+    traits:
+    - shield
+    level: 0
+    price: 50
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0
+    group: Shield
+  Shortbow:
+    wp_type: ranged
+    category: martial
+    charclass:
+    - Bard
+    - Rogue
+    traits:
+    - deadly_d10
+    level: 0
+    price: 300
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 2
+    range: 60
+    reload: 0
+    bulk: 1
+    group: Bow
+  Shortsword:
+    wp_type: melee
+    category: martial
+    charclass:
+    - Bard
+    - Rogue
+    traits:
+    - agile
+    - finesse
+    - versatile_S
+    level: 0
+    price: 90
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Sword
+  Shuriken:
+    wp_type: ranged
+    category: martial
+    traits:
+    - agile
+    - monk
+    - thrown
+    level: 0
+    price: 1
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 0
+    group: Dart
+  Sickle:
+    wp_type: melee
+    category: martial
+    traits:
+    - shield
+    level: 0
+    price: 50
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0
+    group: Shield
+  Sling:
+    wp_type: ranged
+    category: simple
+    traits:
+    - propulsive
+    level: 0
+    price: 0
+    wp_damage: 1d6
+    wp_damage_type: B
+    hands: 1
+    range: 50
+    reload: 0
+    bulk: 0.1
+    group: Sling
+  Slingstaff:
+    wp_type: ranged
+    category: martial
+    traits:
+    - lucht
+    - propulsive
+    level: 0
+    price: 500
+    wp_damage: 1d10
+    wp_damage_type: B
+    hands: 2
+    range: 80
+    reload: 1
+    bulk: 1
+    group: Sling
+  Spear:
+    wp_type: melee
+    category: simple
+    traits:
+    - thrown
+    level: 0
+    price: 10
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 1
+    group: Spear
+  Spiked Chain:
+    wp_type: melee
+    category: martial
+    traits:
+    - disarm
+    - finesse
+    - trip
+    level: 0
+    price: 300
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 2
+    range: 0
+    reload: 1
+    bulk: 1
+    group: Flail
+  Spiked Gauntlet:
+    wp_type: melee
+    category: simple
+    traits:
+    - agile
+    - free-hand
+    level: 0
+    price: 30
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0.1
+    group: Brawling
+  Staff:
+    wp_type: melee
+    category: simple
+    charclass:
+    - Wizard
+    traits:
+    - two-hand
+    level: 0
+    price: 0
+    wp_damage: 1d4
+    wp_damage_type: B
+    wp_damage_2h: 1d8
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Club
+  Starknife:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - deadly_d6
+    - finesse
+    - thrown
+    - versatile_S
+    level: 0
+    price: 200
+    wp_damage: 1d4
+    wp_damage_type: P
+    hands: 1
+    range: 80
+    reload: 1
+    bulk: 0.1
+    group: Knife
+  Sword Cane:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - concealable
+    - finesse
+    level: 0
+    price: 500
+    wp_damage: 1d6
+    wp_damage_type: P
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Temple Sword:
+    wp_type: melee
+    category: martial
+    traits:
+    - monk
+    - trip
+    level: 0
+    price: 200
+    wp_damage: 1d8
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  Trident:
+    wp_type: melee
+    category: martial
+    traits:
+    - thrown
+    level: 0
+    price: 100
+    wp_damage: 1d4
+    wp_damage_type: S
+    hands: 1
+    range: 20
+    reload: 0
+    bulk: 1
+    group: Spear
+  Unarmed:
+    wp_type: melee
+    category: unarmed
+    traits:
+    - agile
+    - finesse
+    - nonlethal
+    - unarmed
+    level: 0
+    price: 0
+    wp_damage: 1d4
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 0
+    group: Brawling
+  Wakizashi:
+    wp_type: melee
+    category: martial
+    traits:
+    - agile
+    - deadly_d8
+    - finesse
+    - versatile_P
+    level: 0
+    price: 100
+    wp_damage: 1d4
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Sword
+  War Flail:
+    wp_type: melee
+    category: martial
+    traits:
+    - disarm
+    - sweep
+    - trip
+    level: 0
+    price: 200
+    wp_damage: 1d10
+    wp_damage_type: B
+    hands: 2
+    range: 0
+    reload: 0
+    bulk: 2
+    group: Flail
+  Warhammer:
+    wp_type: melee
+    category: martial
+    traits:
+    - shove
+    level: 0
+    price: 100
+    wp_damage: 1d8
+    wp_damage_type: B
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Hammer
+  Whip:
+    wp_type: melee
+    category: martial
+    charclass:
+    - Bard
+    traits:
+    - disarm
+    - finesse
+    - nonlethal
+    - reach
+    - trip
+    level: 0
+    price: 10
+    wp_damage: 1d4
+    wp_damage_type: S
+    hands: 1
+    range: 0
+    reload: 0
+    bulk: 1
+    group: Flail

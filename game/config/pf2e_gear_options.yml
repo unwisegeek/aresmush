@@ -1,0 +1,34 @@
+---
+pf2e_gear_options:
+  shortcuts:
+    i: gear
+    in: gear
+    inv: gear
+  use_encumbrance: true
+  item_classes:
+    weapon: PF2Weapon
+    armor: PF2Armor
+    bag: PF2Bag
+    magicitem: PF2MagicItem
+    shield: PF2Shield
+  weapon_groups:
+  - Axe
+  - Bow
+  - Brawling
+  - Club
+  - Dart
+  - Flail
+  - Hammer
+  - Knife
+  - Pick
+  - Polearm
+  - Shield
+  - Sling
+  - Spear
+  - Sword
+  armor_groups:
+  - Cloth
+  - Leather
+  - Chain
+  - Composite
+  - Plate

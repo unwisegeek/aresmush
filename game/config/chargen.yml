@@ -13,10 +13,11 @@ chargen:
   - profile %{name}
   - bg %{name}
   - hooks %{name}
+  - cg/review %{name}
   - sheet %{name}
-  approval_message: Congratulations!  Your application has been approved.  Type %xhonstage%xn
-    to go forth and RP.  You may want to customize your character profile on the web
-    portal.
+  approval_message: Congratulations! Your character has been approved for play. Type %xhonstage%xn
+    to go forth and RP.  Don't forget to customize your character profile on the webpage and upload
+    a character icon, if you have not already done so.
   arrivals_category: New Arrivals
   bg_blurb: The prologue is your character's story up to the point where they arrive
     on  grid. It does not need to be a novel, but should identify key themes and tie
@@ -29,11 +30,11 @@ chargen:
     you, and a short description that shows your character at a glance. Like your
     prologue,  this does not have to be (and shouldn't be) a novel, just enough to
     get a  sense of what your character looks like.
-  groups_blurb: Groups determine your character's affiliations. For now, put `Illuminators`.
+  groups_blurb: Groups determine your character's affiliations.
   hooks_blurb: RP Hooks are interesting things about your character that others can
     hook into for RP. This could be an odd personality quirk, a reputation your character
     has, or anything else that might inspire someone to connect with you. Looking
-    around at other character's sheets can be a good way to get inspiration for RP
+    around at other characters' profiles can be a good way to get inspiration for RP
     Hooks.
   hooks_required: true
   icon_blurb: Your profile icon appears in scenes and the character gallery to show
@@ -44,7 +45,7 @@ chargen:
     to be killed off, or turned into a NPC, or whatever.
   permissions:
     manage_apps: Approve and reject character apps.
-    view_bgs: Can view other characters' backgrounds
+    view_bgs: Can view other characters' backgrounds.
   post_approval_message: Please make sure they have a profile image for their log
     icon.
   rank_blurb: This game does not use ranks.
