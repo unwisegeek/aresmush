@@ -9,11 +9,11 @@ module AresMUSH
     attribute :price, :type => DataType::Integer, :default => 0
 
     attribute :talisman, :type => DataType::Array, :default => []
-    attribute :wp_damage, :type => DataType::String,:default => "0"
-    attribute :wp_damage_2h, :type => DataType::String,:default => "0"
+    attribute :wp_damage, :default => "0"
+    attribute :wp_damage_2h, :default => "0"
     attribute :wp_damage_type, :type => DataType::String, :default => "B"
-    attribute :wp_type, :type => DataType::String, :default => ""
-    attribute :category, :type => DataType::String, :default => ""
+    attribute :wp_type, :default => ""
+    attribute :category, :default => ""
     attribute :range, :type => DataType::Integer, :default => 0
     attribute :reload, :type => DataType::Integer, :default => 0
     attribute :hands, :type => DataType::Integer, :default => 1
