@@ -9,14 +9,16 @@ module AresMUSH
       end
       
       def handle
-        money = 1234567
+        array = %w{untrained trained expert untrained expert trained}
+      
+        profs = %w{untrained trained expert master legendary}
+
+        sorted_array = array.sort{ |a,b| profs.index(a) <=> profs.index(b) }
+
+        best_prof = sorted_array.pop
         
-        cp = money % 10
-        sp = (money/10) % 10
-        gp = (money/100) % 10
-        pp = (money/1000)
-        
-        client.emit "#{pp} pp, #{gp} gp, #{sp} sp, #{cp} cp"
+        client.emit sorted_array
+        client.emit best_prof
       end
 
     end
