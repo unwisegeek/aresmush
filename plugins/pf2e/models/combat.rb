@@ -115,7 +115,7 @@ module AresMUSH
     def self.get_weapon_prof(char, name)
       combat = char.combat
 
-      char_wp_prof = combat.weapon_prof
+      char_wp_prof = combat.weapon_prof ? combat.weapon_prof : {}
 
       wp_info = Global.read_config('pf2e_weapons', name)
       wp_cat = wp_info['category']
