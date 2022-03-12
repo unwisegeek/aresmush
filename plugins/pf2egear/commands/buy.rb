@@ -34,7 +34,7 @@ module AresMUSH
         # If no quantity is specified, assume they want just one.
         q = self.quantity ? self.quantity : 1
 
-        list_key = "pf2e" + category
+        list_key = "pf2e_" + category
 
         # Valid category of items?
         list = Global.read_config(list_key)
