@@ -217,6 +217,9 @@ module AresMUSH
     end
 
     def self.is_proficient?(char, category, name)
+
+      return true if char.is_admin?
+      
       case category
       when "weapons"
         prof = Pf2eCombat.get_weapon_prof(char, name)
