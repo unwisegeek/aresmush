@@ -130,7 +130,7 @@ module AresMUSH
       end
 
       def header_shields
-        "%b%b#{left("#", 3)}%b#{left("Name", 63)}%b#{left("Bulk", 4)}%b#{left("HP", 10)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 56)}%b#{left("Bulk", 4)}%b#{left("HP", 10)}"
       end
 
       def format_shields(char,s,i)
