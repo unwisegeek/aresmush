@@ -45,7 +45,7 @@ module AresMUSH
         end
 
         # Find the item in the list. How to do that depends on the category.
-        index = self.item_num - 1
+        index = self.item_num
 
         case category
         when "weapons"
