@@ -118,7 +118,7 @@ module AresMUSH
           :cointype => self.cointype
         )
 
-        Pf2e.record_history(payee.name, 'money', payer.name, actual_value, "Payment from #{payer.name}")
+        Pf2e.record_history(payee, 'money', payer.name, actual_value, "Payment from #{payer.name}")
 
         Login.notify(target_char, :pf2_money, recipient_msg)
 
