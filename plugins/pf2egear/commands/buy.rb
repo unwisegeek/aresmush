@@ -78,7 +78,7 @@ module AresMUSH
         source_type = Kernel.const_get("AresMUSH::" + Global.read_config('pf2e_gear_options', 'item_classes', category))
         new_item = source_type.create(character: enactor, name: item_name)
 
-        if quantity > 1
+        if q > 1
           client.emit_ooc t('pf2egear.quantity_one_only')
         end
 
