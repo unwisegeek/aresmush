@@ -9,6 +9,7 @@ module AresMUSH
     attribute :price, :type => DataType::Integer, :default => 0
     attribute :talisman, :type => DataType::Array, :default => []
     attribute :category, :default => ""
+    attribute :nickname
     attribute :ac_bonus, :type => DataType::Integer, :default => 0
     attribute :dex_cap, :type => DataType::Integer, :default => 0
     attribute :check_penalty, :type => DataType::Integer, :default => 0
