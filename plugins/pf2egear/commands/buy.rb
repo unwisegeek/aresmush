@@ -75,7 +75,7 @@ module AresMUSH
         when "weapons", "armor", "shields", "bags", "magicitem"
 
         # These types of items are database models of their own.
-        source_type = Kernel.const_get(Global.read_config('pf2e_gear_options', 'item_classes', category))
+        source_type = Kernel.const_get("AresMUSH::" + Global.read_config('pf2e_gear_options', 'item_classes', category))
         new_item = source_type.create(character: enactor, name: item_name)
 
         if quantity > 1
