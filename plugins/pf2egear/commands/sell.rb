@@ -3,7 +3,7 @@ module AresMUSH
     class PF2SellCmd
       include CommandHandler
 
-      attr_accessor :category, :item_name, :quantity
+      attr_accessor :category, :item_name, :quantity, :item_num
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_optional_arg3)
@@ -73,7 +73,7 @@ module AresMUSH
             itemname = item.keys.first
             item_qty = gear_list[item_name]['quantity']
           end
-        end 
+        end
 
         if !(item_id || itemname)
           client.emit_failure t('pf2egear.not_found')
