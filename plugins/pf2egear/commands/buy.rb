@@ -57,8 +57,8 @@ module AresMUSH
           client.emit_failure t('pf2egear.ambiguous_item')
           return
         else
-          item_name = item.first
-          item_info = Global.read_config(list_key, item_name)
+          item_name = item.keys.first
+          item_info = item.values.first
         end
 
         # Do they have enough money?
@@ -91,9 +91,9 @@ module AresMUSH
 
           if gear_list.key?(item_name)
             old_quant = gear_list[item_name]
-            gear_list[itemname] = old_quant + q
+            gear_list[item_name] = old_quant + q
           else
-            gear_list[itemname] = q
+            gear_list[item_name] = q
           end
 
           enactor.update(pf2_gear: gear_list)
