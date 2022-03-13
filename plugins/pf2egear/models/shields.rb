@@ -12,6 +12,7 @@ module AresMUSH
     attribute :damage, :type => DataType::Integer, :default => 0
     attribute :ac_bonus, :type => DataType::Integer, :default => 0
     attribute :equipped, :type => DataType::Boolean
+    attribute :nickname
 
     reference :character, "AresMUSH::Character"
     reference :weapon, "AresMUSH::PF2Weapon"
