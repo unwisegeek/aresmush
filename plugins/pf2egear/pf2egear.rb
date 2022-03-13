@@ -19,6 +19,8 @@ module AresMUSH
         return PF2MoneyCmd
       when "browse"
         return PF2BrowseGearCmd
+      when "buy"
+        return PF2BuyCmd
       end
 
       nil
