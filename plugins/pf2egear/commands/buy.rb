@@ -57,7 +57,7 @@ module AresMUSH
           client.emit_failure t('pf2egear.ambiguous_item')
           return
         else
-          item = item.first
+          item = item.first.to_h
           itemname = item.keys.first
         end
 
