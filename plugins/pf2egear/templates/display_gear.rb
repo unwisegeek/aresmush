@@ -50,7 +50,7 @@ module AresMUSH
 
         shields_list = @char.shields ? @char.shields : []
 
-        @shields_bulk = weapon_list.map { |s| s.bulk }.sum
+        @shields_bulk = shields_list.map { |s| s.bulk }.sum
 
         shields_list.each_with_index do |s,i|
           list << format_shields(@char,s,i)
