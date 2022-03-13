@@ -73,6 +73,7 @@ module AresMUSH
             itemname = item.keys.first
             item_qty = gear_list[item_name]['quantity']
           end
+        end 
 
         if !(item_id || itemname)
           client.emit_failure t('pf2egear.not_found')
