@@ -61,6 +61,8 @@ module AresMUSH
           item_info = item.values.first
         end
 
+        client.emit item_name
+
         # Do they have enough money?
         cost = item_info['price'] * q
         purse = enactor.pf2_money
@@ -77,6 +79,8 @@ module AresMUSH
         # These types of items are database models of their own.
         source_type = Kernel.const_get("AresMUSH::" + Global.read_config('pf2e_gear_options', 'item_classes', category))
         new_item = source_type.create(character: enactor, name: item_name)
+
+        client.emit new_item.name
 
         if q > 1
           client.emit_ooc t('pf2egear.quantity_one_only')
