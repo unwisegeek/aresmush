@@ -57,12 +57,12 @@ module AresMUSH
           client.emit_failure t('pf2egear.ambiguous_item')
           return
         else
-          item = item.first.to_h
-          itemname = item.keys.first
+          item_name = item.first
+          item_info = Global.read_config(list_key, item_name)
         end
 
         # Do they have enough money?
-        cost = item['price'] * q
+        cost = item_info['price'] * q
         purse = enactor.pf2_money
 
         if cost > purse
@@ -76,21 +76,21 @@ module AresMUSH
 
         # These types of items are database models of their own.
         source_type = Kernel.const_get(Global.read_config('pf2e_gear_options', 'item_classes', category))
-        new_item = source_type.create(character: enactor, name: itemname)
+        new_item = source_type.create(character: enactor, name: item_name)
 
         if quantity > 1
           client.emit_ooc t('pf2egear.quantity_one_only')
         end
 
-        item.values.each_pair do |k,v|
+        item_info.each_pair do |k,v|
           new_item.update("#{k}": v)
         end
 
         when "consumables", "gear"
           gear_list = enactor.pf2_gear
 
-          if gear_list.key?(itemname)
-            old_quant = gear_list[itemname]
+          if gear_list.key?(item_name)
+            old_quant = gear_list[item_name]
             gear_list[itemname] = old_quant + q
           else
             gear_list[itemname] = q
@@ -102,9 +102,9 @@ module AresMUSH
 
         enactor.update(pf2_money: (purse - cost))
 
-        Pf2e.record_history(enactor, 'money', 'Item Vendor', -cost, "Purchase #{itemname}")
+        Pf2e.record_history(enactor, 'money', 'Item Vendor', -cost, "Purchase #{item_name}")
 
-        client.emit_success t('pf2egear.item_bought_ok', :item => itemname, :cost => Pf2egear.display_money(cost), :quantity => q)
+        client.emit_success t('pf2egear.item_bought_ok', :item => item_name, :cost => Pf2egear.display_money(cost), :quantity => q)
 
       end
 
