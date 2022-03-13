@@ -6,11 +6,11 @@ pf2e_gear_options:
     inv: gear
   use_encumbrance: true
   item_classes:
-    weapon: PF2Weapon
+    weapons: PF2Weapon
     armor: PF2Armor
-    bag: PF2Bag
+    bags: PF2Bag
     magicitem: PF2MagicItem
-    shield: PF2Shield
+    shields: PF2Shield
   weapon_groups:
   - Axe
   - Bow
