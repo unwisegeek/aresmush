@@ -6,8 +6,9 @@ module AresMUSH
 
       attr_accessor :char
 
-      def initialize(char)
+      def initialize(char, client)
         @char = char
+        @client = client
 
         super File.dirname(__FILE__) + "/display_gear.erb"
       end

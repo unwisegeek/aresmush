@@ -5,7 +5,7 @@ module AresMUSH
 
       def handle
 
-        template = Pf2eDisplayGearTemplate.new(enactor)
+        template = Pf2eDisplayGearTemplate.new(enactor, client)
 
         client.emit template.render
 
