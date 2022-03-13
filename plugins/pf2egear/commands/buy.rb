@@ -61,7 +61,14 @@ module AresMUSH
           item_info = item.values.first
         end
 
-        client.emit item_name
+        test = item_name ? item_name : "NIL"
+        test_info = item_info ? item_info : "NIL"
+
+        client.emit test
+        client.emit test_info
+
+        client.emit item.keys
+        client.emit item.values
 
         # Do they have enough money?
         cost = item_info['price'] * q
