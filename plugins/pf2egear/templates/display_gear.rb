@@ -36,7 +36,7 @@ module AresMUSH
 
         armor_list = @char.armor ? @char.armor : []
 
-        @armor_bulk = weapon_list.map { |a| a.bulk }.sum
+        @armor_bulk = armor_list.map { |a| a.bulk }.sum
 
         armor_list.each_with_index do |a,i|
           list << format_armor(@char,a,i)
