@@ -22,7 +22,7 @@ module AresMUSH
 
         weapon_list = @char.weapons
 
-        self.weapon_bulk = weapon_list.map { |wp| wp.bulk }.sum
+        @weapon_bulk = weapon_list.map { |wp| wp.bulk }.sum
 
         weapon_list.each_with_index do |wp,i|
           list << format_wp(@char,wp,i)
@@ -36,7 +36,7 @@ module AresMUSH
 
         armor_list = @char.armor
 
-        self.armor_bulk = weapon_list.map { |a| a.bulk }.sum
+        @armor_bulk = weapon_list.map { |a| a.bulk }.sum
 
         armor_list.each_with_index do |a,i|
           list << format_armor(@char,a,i)
@@ -50,7 +50,7 @@ module AresMUSH
 
         shields_list = @char.shields
 
-        self.shields_bulk = weapon_list.map { |s| s.bulk }.sum
+        @shields_bulk = weapon_list.map { |s| s.bulk }.sum
 
         shields_list.each_with_index do |s,i|
           list << format_shields(@char,s,i)
@@ -74,7 +74,7 @@ module AresMUSH
           cons_bulk << game_cons_list[item]['bulk']
         end
 
-        self.consumables_bulk = cons_bulk.sum
+        @consumables_bulk = cons_bulk.sum
 
         con_list.each_with_index do |name,qty,i|
           list << format_cons(name, qty, i)
@@ -98,7 +98,7 @@ module AresMUSH
           gbulk << game_glist[item]['bulk']
         end
 
-        self.gear_bulk = gbulk.sum
+        @gear_bulk = gbulk.sum
 
         con_list.each_with_index do |name,qty,i|
           list << format_cons(name, qty, i)
@@ -108,7 +108,7 @@ module AresMUSH
       end
 
       def total_bulk
-        self.weapon_bulk + self.armor_bulk + self.consumables_bulk + self.gear_bulk
+        @weapon_bulk + @armor_bulk + @consumables_bulk + @gear_bulk
       end
 
       def header_wp_armor
