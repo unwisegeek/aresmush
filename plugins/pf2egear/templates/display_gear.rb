@@ -20,7 +20,7 @@ module AresMUSH
       def weapons
         list = []
 
-        weapon_list = @char.weapons
+        weapon_list = @char.weapons ? @char.weapons  : []
 
         @weapon_bulk = weapon_list.map { |wp| wp.bulk }.sum
 
@@ -34,7 +34,7 @@ module AresMUSH
       def armor
         list = []
 
-        armor_list = @char.armor
+        armor_list = @char.armor ? @char.armor : []
 
         @armor_bulk = weapon_list.map { |a| a.bulk }.sum
 
@@ -48,7 +48,7 @@ module AresMUSH
       def shields
         list = []
 
-        shields_list = @char.shields
+        shields_list = @char.shields ? @char.shields : []
 
         @shields_bulk = weapon_list.map { |s| s.bulk }.sum
 
@@ -62,7 +62,7 @@ module AresMUSH
       def consumables
         list = []
 
-        con_list = @char.pf2_gear['consumables']
+        con_list = @char.pf2_gear['consumables'] ? @char.pf2_gear['consumables'] : {}
 
         char_cons_list = con_list.keys
 
@@ -86,7 +86,7 @@ module AresMUSH
       def gear_list
         list = []
 
-        con_list = @char.pf2_gear['gear']
+        con_list = @char.pf2_gear['gear'] ? @char.pf2_gear['gear'] : {}
 
         char_glist = con_list.keys
 
