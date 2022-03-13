@@ -112,7 +112,7 @@ module AresMUSH
       end
 
       def header_wp_armor
-        "%b%b#{left("#", 3)}%b#{left("Name", 63)}%b#{left("Bulk", 4)}%b#{left(prof, 4)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 63)}%b#{left("Bulk", 4)}%b#{left("Prof", 4)}"
       end
 
       def format_wp(char,w,i)
