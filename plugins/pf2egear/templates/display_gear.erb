@@ -1,0 +1,26 @@
+<%= header %>
+<%= center("#{title_color}Gear Inventory", 78) %>%xn
+<%= section_line("Weapons") %>
+<%= header_wp_armor %>
+<% weapons.each do |item| -%>
+<%= item %>
+<% end %>
+<%= section_line("Armor") %>
+<%= header_wp_armor %>
+<% armor.each do |item| -%>
+<%= item %>
+<% end %>
+<%= section_line("Shields") %>
+<%= header_shields %>
+<% shields.each do |item| -%>
+<%= item %>
+<% end %>
+<%= section_line("Gear and Consumables") %>
+<% consumables.each do |item| -%>
+<%= item -%>
+<% end %>
+
+<% gear_list.each do |item| -%>
+<%= item -%>
+<% end %>
+<%= footer %>

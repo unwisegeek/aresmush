@@ -8,7 +8,7 @@ module AresMUSH
     end
 
     def self.shortcuts
-      Global.read_config("pf2egear", "shortcuts")
+      Global.read_config("pf2e_gear_options", "shortcuts")
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
@@ -23,6 +23,13 @@ module AresMUSH
         return PF2BuyCmd
       when "sell"
         return PF2SellCmd
+      when "gear"
+        case cmd.switch
+        when "rename"
+          nil
+        else
+          return PF2DisplayGearCmd
+        end
       end
 
       nil
