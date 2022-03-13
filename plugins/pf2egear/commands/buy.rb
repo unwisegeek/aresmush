@@ -72,7 +72,7 @@ module AresMUSH
 
         # Some items are classes of their own, some are just stored in the gear list.
         case category
-        when "weapon", "armor", "shield", "bag", "magicitem"
+        when "weapons", "armor", "shields", "bags", "magicitem"
 
         # These types of items are database models of their own.
         source_type = Kernel.const_get(Global.read_config('pf2e_gear_options', 'item_classes', category))
@@ -86,7 +86,7 @@ module AresMUSH
           new_item.update("#{k}": v)
         end
 
-        when "consumable", "gear"
+        when "consumables", "gear"
           gear_list = enactor.pf2_gear
 
           if gear_list.key?(itemname)

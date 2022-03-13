@@ -4,6 +4,7 @@ module AresMUSH
 
     attribute :name, :default => "Bag"
     attribute :bulk, :type => DataType::Float, :default => 0
+    attribute :bulk_bonus, :type => DataType::Float, :default => 0
     attribute :traits, :type => DataType::Array, :default => []
     attribute :level, :type => DataType::Integer, :default => 0
     attribute :price, :type => DataType::Integer, :default => 0
