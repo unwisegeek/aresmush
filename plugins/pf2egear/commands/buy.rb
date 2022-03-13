@@ -34,7 +34,7 @@ module AresMUSH
         # If no quantity is specified, assume they want just one.
         q = self.quantity ? self.quantity : 1
 
-        list_key = "pf2e_" + category
+        list_key = "pf2e_" + self.category
 
         # Valid category of items?
         list = Global.read_config(list_key)
@@ -96,7 +96,7 @@ module AresMUSH
             gear_list[item_name] = q
           end
 
-          enactor.update(pf2_gear: gear_list)
+          enactor.update(pf2_gear: gear_list.sort.to_h)
 
         end
 

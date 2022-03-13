@@ -9,6 +9,7 @@ module AresMUSH
     attribute :price, :type => DataType::Integer, :default => 0
 
     attribute :talisman, :type => DataType::Array, :default => []
+    attribute :nickname
     attribute :wp_damage, :default => "0"
     attribute :wp_damage_2h, :default => "0"
     attribute :wp_damage_type, :default => "B"
