@@ -112,21 +112,21 @@ module AresMUSH
       end
 
       def header_wp_armor
-        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 6)}%b#{left("Prof", 6)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("Prof", 12)}"
       end
 
       def format_wp(char,w,i)
         name = w.nickname ? "#{w.nickname} (#{w.name})" : w.name
         bulk = w.bulk == 0.1 ? "L" : w.bulk.to_i
         prof = Pf2eCombat.get_weapon_prof(char, w.name)[0].upcase
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 6)}%b#{left(prof, 6)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 12)}"
       end
 
       def format_armor(char,a,i)
         name = a.nickname ? "#{a.nickname} (#{a.name})" : a.name
         bulk = a.bulk == 0.1 ? "L" : a.bulk.to_i
         prof = Pf2eCombat.get_armor_prof(char, a.name)[0].upcase
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 6)}%b#{left(prof, 6)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 12)}"
       end
 
       def header_shields
