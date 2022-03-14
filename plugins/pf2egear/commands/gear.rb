@@ -3,7 +3,27 @@ module AresMUSH
     class PF2DisplayGearCmd
       include CommandHandler
 
+      attr_accessor :target
+
+      def parse_args
+        self.target = trim_arg(cmd.args)
+      end
+
+      def check_can_view
+        return nil if !self.target
+        return nil if Global.read_config('pf2e','open_sheets')
+        return nil if enactor.has_permission?("view_sheets")
+        return t('pf2e.cannot_view_sheet')
+      end
+
       def handle
+
+        char = self.target ? Character.find_one_by_name(self.target) : enactor
+
+        if !char
+          client.emit_failure t('pf2e.char_not_found')
+          return
+        end
 
         template = Pf2eDisplayGearTemplate.new(enactor, client)
 

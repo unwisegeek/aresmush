@@ -32,7 +32,7 @@ module AresMUSH
       end
 
       def header_row
-        "#{left('%xhItem Name%xn', 35)}#{left("%xhBulk%xn", 8)}#{left("%xhCost%xn", 15)}"
+        "#{left('%xhItem Name%xn', 45)}%b#{left("%xhBulk%xn", 8)}%b#{left("%xhCost%xn", 15)}"
       end
 
       def format_item(char, category, name, bulk, price)
@@ -45,7 +45,7 @@ module AresMUSH
         fmt_bulk = bulk == 0.1 ? "L" : bulk.to_i
         fmt_price = Pf2egear.display_money(price)
 
-        "#{prof}#{left(name, 35)}#{left(fmt_bulk, 8)}#{left(fmt_price, 15)}%xn"
+        "#{prof}#{left(name, 45)}%b#{left(fmt_bulk, 8)%b}#{left(fmt_price, 15)}%xn"
       end
     end
   end

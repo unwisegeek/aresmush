@@ -1260,23 +1260,6 @@ pf2e_weapons:
     reload: 0
     bulk: 1
     group: Spear
-  Unarmed:
-    wp_type: melee
-    category: unarmed
-    traits:
-    - agile
-    - finesse
-    - nonlethal
-    - unarmed
-    level: 0
-    price: 0
-    wp_damage: 1d4
-    wp_damage_type: B
-    hands: 1
-    range: 0
-    reload: 0
-    bulk: 0
-    group: Brawling
   Wakizashi:
     wp_type: melee
     category: martial

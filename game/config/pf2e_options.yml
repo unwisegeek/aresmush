@@ -66,3 +66,4 @@ pf2e:
     Doomed: '%x172'
   permissions:
     modify_sheet: Modify character sheets.
+    view_sheets: View other people's character sheets (if sheets are closed).
