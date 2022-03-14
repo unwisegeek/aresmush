@@ -2,16 +2,19 @@
 <%= center("#{title_color}Gear Inventory", 78) %>%xn
 <%= section_line("Weapons") %>
 <%= header_wp_armor %>
+<%= divider %>
 <% weapons.each do |item| -%>
 <%= item %>
 <% end %>
 <%= section_line("Armor") %>
 <%= header_wp_armor %>
+<%= divider %>
 <% armor.each do |item| -%>
 <%= item %>
 <% end %>
 <%= section_line("Shields") %>
 <%= header_shields %>
+<%= divider %>
 <% shields.each do |item| -%>
 <%= item %>
 <% end %>
