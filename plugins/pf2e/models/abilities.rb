@@ -27,7 +27,7 @@ module AresMUSH
     def self.get_score(char, ability)
       object = char.abilities.select { |a| a.name_upcase == ability.upcase }.first
 
-      return nil if !object
+      return 10 if !object
 
       object.mod_val ? object.mod_val : object.base_val
     end
