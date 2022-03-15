@@ -54,8 +54,15 @@ module AresMUSH
           client.emit_failure t('pf2egear.not_found')
           return
         elsif item.size > 1
-          client.emit_failure t('pf2egear.ambiguous_item')
-          return
+          item = available_items.select { |k,v| k.downcase == self.item_name }
+
+          if item.size.zero?
+            client.emit_failure t('pf2egear.not_found')
+            return
+          end
+
+          item_name = item.keys.first
+          item_info = item.values.first
         else
           item_name = item.keys.first
           item_info = item.values.first
@@ -88,13 +95,16 @@ module AresMUSH
 
         when "consumables", "gear"
           gear_list = enactor.pf2_gear
+          cat_list = gear_list[category]
 
-          if gear_list.key?(item_name)
-            old_quant = gear_list[item_name]
-            gear_list[item_name] = old_quant + q
+          if cat_list.key?(item_name)
+            old_quant = cat_list[item_name]
+            cat_list[item_name] = old_quant + q
           else
-            gear_list[item_name] = q
+            cat_list[item_name] = q
           end
+
+          gear_list[category] = cat_list.sort.to_h
 
           enactor.update(pf2_gear: gear_list.sort.to_h)
 
