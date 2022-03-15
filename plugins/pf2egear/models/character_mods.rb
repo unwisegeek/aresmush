@@ -2,7 +2,7 @@ module AresMUSH
   class Character
 
     attribute :pf2_money, :type => DataType::Integer, :default => 1500
-    attribute :pf2_gear, :type => DataType::Hash, :default => {}
+    attribute :pf2_gear, :type => DataType::Hash, :default => {'consumables' => {}, 'gear' => {}}
 
 
     collection :weapons, "AresMUSH::PF2Weapon"
@@ -10,6 +10,6 @@ module AresMUSH
     collection :bags, "AresMUSH::PF2Bag"
     collection :shields, "AresMUSH::PF2Shield"
     collection :magic_items, "AresMUSH::PF2MagicItem"
-    
+
   end
 end
