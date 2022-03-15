@@ -107,8 +107,17 @@ module AresMUSH
         list
       end
 
-      def total_bulk
-        @weapon_bulk + @armor_bulk + @consumables_bulk + @gear_bulk
+      def encumbrance
+        char_strmod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Strength"))
+
+        current_bulk = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk
+
+        max_capacity = 10 + char_strmod
+        encumbered = 5 + char_strmod
+
+        enc_state = current_bulk >= encumbered ? "%xh%xyEncumbered%xn" : "%xgUnencumbered%xn"
+
+        "#{item_color}Current Bulk: #{current_bulk} / #{max_capacity} (#{enc_state})"
       end
 
       def header_wp_armor
@@ -147,7 +156,7 @@ module AresMUSH
 
       def format_cons(name,qty,i)
         linebreak = i % 2 == 1 ? "" : "%r"
-        "#{linebreak}#{left(name, 32)} - #{right(qty,3)}%b"
+        "#{linebreak}#{left(name, 32)} - #{right(qty,3)} "
       end
     end
 
