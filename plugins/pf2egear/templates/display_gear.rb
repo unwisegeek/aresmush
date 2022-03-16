@@ -162,7 +162,7 @@ module AresMUSH
 
       def format_cons(name,qty,i)
         linebreak = i % 2 == 1 ? "" : "%r"
-        "#{linebreak}#{left(name, 32)} - #{right(qty,3)} "
+        "#{linebreak}#{left(name, 32)}: #{left(qty,3)} "
       end
     end
 
