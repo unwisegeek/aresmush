@@ -26,6 +26,8 @@
 <% gear_list.each do |item| -%>
 <%= item -%>
 <% end %>
+<% if use_encumbrance %>
 <%= divider %>
 <%= center(encumbrance, 78) %>
+<% end %>
 <%= footer %>
