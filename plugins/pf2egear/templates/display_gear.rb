@@ -74,7 +74,7 @@ module AresMUSH
           cons_bulk << game_cons_list[item]['bulk']
 
           qty = con_list[item]
-          list << format_cons(name, qty, i)
+          list << format_cons(item, qty, i)
         end
 
         @consumables_bulk = cons_bulk.sum
@@ -97,7 +97,7 @@ module AresMUSH
           gbulk << game_glist[item]['bulk']
 
           qty = con_list[item]
-          list << format_cons(name, qty, i)
+          list << format_cons(item, qty, i)
         end
 
         @gear_bulk = gbulk.sum
