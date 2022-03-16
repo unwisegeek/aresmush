@@ -41,7 +41,7 @@ module AresMUSH
       char.armor&.each { |i| i.delete }
       char.bags&.each { |i| i.delete }
       char.shields&.each { |i| i.delete }
-      char.magicitem&.each { |i| i.delete }
+      char.magic_items&.each { |i| i.delete }
 
       char.save
     end
