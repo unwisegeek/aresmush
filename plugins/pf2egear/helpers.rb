@@ -33,5 +33,18 @@ module AresMUSH
       msg.squeeze(" ").strip
     end
 
+    def self.reset_gear(char)
+      char.pf2_gear = {'consumables' => {}, 'gear' => {}}
+      char.pf2_money = 1500
+
+      char.weapons.each { |i| i.delete }
+      char.armor.each { |i| i.delete }
+      char.bags.each { |i| i.delete }
+      char.shields.each { |i| i.delete }
+      char.magicitem.each { |i| i.delete }
+
+      char.save
+    end
+
   end
 end

@@ -50,6 +50,9 @@ module AresMUSH
         enactor.pf2_lang = []
         enactor.pf2_movement = {}
 
+        # Reset money and gear if that plugin is installed.
+        Pf2egear.reset_gear(enactor) if AresMUSH.const_defined?("Pf2egear")
+
         enactor.abilities&.each { |a| a.delete }
         enactor.skills&.each { |s| s.delete }
         enactor.lores&.each { |l| l.delete }
