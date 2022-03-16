@@ -26,6 +26,8 @@
 <% gear_list.each do |item| -%>
 <%= item -%>
 <% end %>
+<%= section_line("Money") %>
+<%= center("#{money}", 78) %>
 <% if use_encumbrance %>
 <%= divider %>
 <%= center(encumbrance, 78) %>
