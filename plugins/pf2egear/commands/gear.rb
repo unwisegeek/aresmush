@@ -25,6 +25,11 @@ module AresMUSH
           return
         end
 
+        if !(char.pf2_baseinfo_locked)
+          client.emit_failure t('pf2e.lock_info_first')
+          return
+        end
+
         template = Pf2eDisplayGearTemplate.new(enactor, client)
 
         client.emit template.render

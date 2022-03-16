@@ -17,9 +17,9 @@ module AresMUSH
       end
 
       # def check_permissions
-        # return nil if enactor.is_approved?
+        # return nil if enactor.pf2_abilities_locked && pf2_baseinfo_locked
         # return nil if enactor.is_admin?
-        # return t('pf2egear.approved_players_only')
+        # return t('pf2e.lock_abil_first')
       # end
 
       def check_valid_quantity
