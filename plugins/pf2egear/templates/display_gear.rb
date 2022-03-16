@@ -71,7 +71,7 @@ module AresMUSH
         cons_bulk = []
 
         if !(char_cons_list.empty?)
-          char_cons_list.each do |item, i|
+          char_cons_list.each_with_index do |item, i|
             cons_bulk << game_cons_list[item]['bulk']
 
             qty = con_list[item]
@@ -96,7 +96,7 @@ module AresMUSH
         gbulk = []
 
         if !(char_glist.empty?)
-          char_glist.each do |item, i|
+          char_glist.each_with_index do |item, i|
             gbulk << game_glist[item]['bulk']
 
             qty = con_list[item]
