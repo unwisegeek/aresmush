@@ -107,6 +107,10 @@ module AresMUSH
         list
       end
 
+      def use_encumbrance
+        Global.read_config('pf2e_gear_options', 'use_encumbrance')
+      end
+
       def encumbrance
         char_strmod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Strength"))
 
