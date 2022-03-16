@@ -70,14 +70,16 @@ module AresMUSH
 
         cons_bulk = []
 
-        char_cons_list.each do |item, i|
-          cons_bulk << game_cons_list[item]['bulk']
+        if !(char_cons_list.empty?)
+          char_cons_list.each do |item, i|
+            cons_bulk << game_cons_list[item]['bulk']
 
-          qty = con_list[item]
-          list << format_cons(item, qty, i)
+            qty = con_list[item]
+            list << format_cons(item, qty, i)
+          end
         end
 
-        @consumables_bulk = cons_bulk.sum
+        @consumables_bulk = cons_bulk.empty? ? cons_bulk.sum : 0
 
         list
       end
@@ -93,14 +95,16 @@ module AresMUSH
 
         gbulk = []
 
-        char_glist.each do |item, i|
-          gbulk << game_glist[item]['bulk']
+        if !(char_glist.empty?)
+          char_glist.each do |item, i|
+            gbulk << game_glist[item]['bulk']
 
-          qty = con_list[item]
-          list << format_cons(item, qty, i)
+            qty = con_list[item]
+            list << format_cons(item, qty, i)
+          end
         end
 
-        @gear_bulk = gbulk.sum
+        @gear_bulk = gbulk.empty? ? gbulk.sum : 0
 
         list
       end
