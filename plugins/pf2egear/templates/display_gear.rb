@@ -126,6 +126,10 @@ module AresMUSH
         "#{item_color}Current Bulk:%xn #{current_bulk} / #{max_capacity} (#{enc_state})"
       end
 
+      def money
+        Pf2egear.display_money(@char.pf2_money)
+      end
+
       def header_wp_armor
         "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("Prof", 12)}"
       end
