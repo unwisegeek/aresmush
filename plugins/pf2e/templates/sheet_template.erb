@@ -34,14 +34,13 @@
 <%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
-<%= section_line("Movement") %>
-<%= movement %>
-<%= section_line("Attacks") %>
 <%= section_line("Defenses") %>
 <% saves.each do |save| %>
 <%= save -%>
 <% end %>
 
+<%= section_line("Movement") %>
+<%= movement %>
 <%= section_line("Conditions") %>
 <%= conditions %>
 <% end %>
