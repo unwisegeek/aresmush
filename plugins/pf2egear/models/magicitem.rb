@@ -11,6 +11,7 @@ module AresMUSH
     attribute :use, :type => DataType::Hash, :default => {}
     attribute :equipped, :type => DataType::Boolean
     attribute :invested, :type => DataType::Boolean
+    attribute :consumable, :type => DataType::Boolean
 
     reference :character, "AresMUSH::Character"
     reference :bag, "AresMUSH::PF2Bag"

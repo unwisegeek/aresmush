@@ -1,7 +1,7 @@
 ---
 toc: Pathfinder Second Edition
 summary: Starting character generation - languages.
-order: 5
+order: 6
 ---
 
 # Pathfinder 2E Chargen - Languages
