@@ -246,6 +246,7 @@ module AresMUSH
 
         movelist.each_pair do |type, speed|
           list << "#{type}: #{speed}'"
+        end
 
         list.join(", ")
       end
