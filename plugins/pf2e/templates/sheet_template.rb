@@ -240,7 +240,14 @@ module AresMUSH
       end
 
       def movement
+        list = []
 
+        movelist = @char.pf2_movement
+
+        movelist.each_pair do |type, speed|
+          list << "#{type}: #{speed}'"
+
+        list.join(", ")
       end
 
       def combat_stats
