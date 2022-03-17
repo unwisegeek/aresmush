@@ -4,5 +4,7 @@ pf2noms:
   daily_noms_per_player: 1
   nom_amount: 1
   dmnom_amount: 3
+  nom_money: 123
+  dmnom_money: 369
   permissions:
     dmnom: Give DM noms to players.

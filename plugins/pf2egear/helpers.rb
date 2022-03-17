@@ -33,6 +33,11 @@ module AresMUSH
       msg.squeeze(" ").strip
     end
 
+    def self.pay_player(char, amount)
+      purse = char.pf2_money
+      char.update(pf2_money: purse + amount) 
+    end
+
     def self.reset_gear(char)
       char.pf2_gear = {'consumables' => {}, 'gear' => {}}
       char.pf2_money = 1500

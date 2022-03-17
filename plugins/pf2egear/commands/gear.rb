@@ -30,7 +30,7 @@ module AresMUSH
           return
         end
 
-        template = Pf2eDisplayGearTemplate.new(enactor, client)
+        template = Pf2eDisplayGearTemplate.new(char, client)
 
         client.emit template.render
 

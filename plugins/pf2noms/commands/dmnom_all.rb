@@ -28,9 +28,11 @@ module AresMUSH
         end
 
         nom_amount = Global.read_config('pf2noms', 'dmnom_amount')
+        nom_money = Global.read_config('pf2noms', 'dmnom_money')
 
         nom_okay.each do |target|
           Pf2e.award_xp(target, nom_amount)
+          Pf2egear.pay_player(target, nom_money)
         end
 
         client.emit_ooc t('pf2noms.dmnomallsuccess')
