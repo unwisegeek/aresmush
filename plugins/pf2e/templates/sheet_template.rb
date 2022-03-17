@@ -245,8 +245,8 @@ module AresMUSH
         movelist = @char.pf2_movement
 
         movelist.each_pair do |type, speed|
-          fmt_type = type.split("_").each { |word| word.capitalize }.join(" ")
-          list << "#{item_color}#{fmt_type}: #{speed}"
+          fmt_type = type.split("_").each { |word| word.to_s.capitalize }.join(" ")
+          list << "#{item_color}#{fmt_type}:%xn #{speed}"
         end
 
         list.sort.join(", ")
