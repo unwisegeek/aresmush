@@ -26,21 +26,20 @@
 <%= "%r" %>
 <% end %>
 <% if section == "all" %>
-<%= section_line("Combat") %>
-<% end %>
-<% if section == "combat" || "all" %>
+<%= section_line("Stats") %>
 <%= left("#{item_color}HP%xn: #{hp}",39) -%>
 <%= left("#{item_color}Temp HP%xn: #{temp_hp}",39) %>
 <%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
+<%= "#{item_color}Movement%xn: #{movement}" %>
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
-<%= section_line("Defenses") %>
+<%= section_line("Offense") %>
+<%= "Full weapon bonuses for each weapon are shown in %x172csheet%xn." %>
+<%= section_line("Defense") %>
 <% saves.each do |save| %>
 <%= save -%>
 <% end %>
 
-<%= section_line("Movement") %>
-<%= movement %>
 <%= section_line("Conditions") %>
 <%= conditions %>
 <% end %>
