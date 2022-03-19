@@ -2,30 +2,13 @@ module AresMUSH
   class Pf2eCombat < Ohm::Model
     include ObjectModel
 
-    attribute :fortitude, :default => 'untrained'
-    attribute :reflex, :default => 'untrained'
-    attribute :will, :default => 'untrained'
-
     attribute :saves, :type => DataType::Hash, :default => {}
 
     attribute :perception, :default => 'untrained'
     attribute :class_dc, :default => 'untrained'
     attribute :key_abil
 
-    attribute :armor_unarmored, :default => 'untrained'
-    attribute :armor_light, :default => 'untrained'
-    attribute :armor_medium, :default => 'untrained'
-    attribute :armor_heavy, :default => 'untrained'
-
     attribute :armor_prof, :type => DataType::Hash, :default => {}
-
-    attribute :wp_unarmed, :default => 'untrained'
-    attribute :wp_simple, :default => 'untrained'
-    attribute :wp_martial, :default => 'untrained'
-    attribute :wp_advanced, :default => 'untrained'
-    attribute :wp_rage
-    attribute :wp_deity
-    attribute :wp_other, :type => DataType::Hash, :default => {}
 
     attribute :weapon_prof, :type => DataType::Hash, :default => {}
 
