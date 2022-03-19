@@ -16,7 +16,7 @@ module AresMUSH
       end
 
       def required_args
-        [ self.category, self.item_num ]
+        [ self.category, self.item_num, self.nickname ]
       end
 
       def check_valid_category
@@ -53,12 +53,8 @@ module AresMUSH
 
         # Give the item its nickname.
         item.update(nickname: self.nickname)
-
-        succ_msg = self.nickname ?
-          t('pf2egear.item_rename_ok', :name => item.name, :nickname => self.nickname) :
-          t('pf2egear.item_removename_ok')
-
-        client.emit_success succ_msg
+        
+        client.emit_success t('pf2egear.item_rename_ok', :name => item.name, :nickname => self.nickname)
       end
 
     end
