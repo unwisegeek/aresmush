@@ -34,8 +34,15 @@
 <%= "#{item_color}Movement%xn: #{movement}" %>
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
 <%= section_line("Offense") %>
-<%= "Full weapon bonuses for each weapon are shown in %x172csheet%xn." %>
+<% weapon_prof.each do |w| %>
+<%= w -%>
+<% end %>
+<%= "%r%rFull weapon bonuses for each weapon are shown in %x172csheet%xn." %>
 <%= section_line("Defense") %>
+<% armor_prof.each do |a| %>
+<%= a -%>
+<% end %>
+
 <% saves.each do |save| %>
 <%= save -%>
 <% end %>
