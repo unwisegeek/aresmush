@@ -256,6 +256,38 @@ module AresMUSH
         @char.combat
       end
 
+      def armor_prof
+        list = []
+
+        armor_profs = combat_stats.armor_prof
+
+        alist = armor_profs.keys.sort
+
+        alist.each_with_index do |atype,i|
+          prof = armor_profs[atype]
+
+          list << format_profs(atype, prof, i)
+        end
+
+        list
+      end
+
+      def weapon_prof
+        list = []
+
+        w_profs = combat_stats.weapon_prof
+
+        wlist = w_profs.keys.sort
+
+        wlist.each_with_index do |wtype,i|
+          prof = w_profs[wtype]
+
+          list << format_profs(wtype, prof, i)
+        end
+
+        list
+      end
+
       def magic_stats
         @char.magic
       end
@@ -305,6 +337,14 @@ module AresMUSH
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = " (#{lore.prof_level[0].upcase})"
         "#{linebreak}#{left(fmt_name + linked_attr,21)} #{left(lore_mod + proflevel, 17)}"
+      end
+
+      def format_profs(name, prof, i)
+        fmt_name = name.split("_")[1].capitalize
+        fmt_prof = prof[0].upcase
+        linebreak = i % 4 == 0 ? "%r" : ""
+
+        "#{linebreak}#{left(fmt_name, 13)}:%xn #{fmt_prof}%b%b"
       end
 
       def format_save(char,name)
