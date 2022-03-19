@@ -11,6 +11,8 @@ module AresMUSH
         self.category = downcase_arg(args.arg1)
         self.item_num = integer_arg(args.arg2)
         self.nickname = trim_arg(args.arg3)
+
+        @numcheck = trim_arg(args.arg2)
       end
 
       def required_args
@@ -22,6 +24,11 @@ module AresMUSH
 
         return nil if cats.include?(self.category)
         return t('pf2egear.bad_category')
+      end
+
+      def check_is_number
+        return nil if @numcheck.to_i.to_s == @numcheck
+        return t('pf2egear.must_specify_by_number')
       end
 
       def handle
