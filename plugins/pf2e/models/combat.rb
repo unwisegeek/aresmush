@@ -107,13 +107,13 @@ module AresMUSH
 
       case wp_cat
       when 'unarmed'
-        prof_list << char_wp_prof['wp_unarmed']
+        prof_list << char_wp_prof['unarmed']
       when 'simple'
-        prof_list << char_wp_prof['wp_simple']
+        prof_list << char_wp_prof['simple']
       when 'martial'
-        prof_list << char_wp_prof['wp_martial']
+        prof_list << char_wp_prof['martial']
       when 'advanced'
-        prof_list << char_wp_prof['wp_advanced']
+        prof_list << char_wp_prof['advanced']
       end
 
       # Does character get a proficiency in that particular weapon from their class?
@@ -121,15 +121,15 @@ module AresMUSH
 
       if charclass_list
         if charclass_list.include?(char.pf2_base_info['charclass'])
-          prof_list << char_wp_prof['wp_charclass']
+          prof_list << char_wp_prof['charclass']
         end
       end
 
       # Does character get a proficiency in that particular weapon from their deity?
-      if char_wp_prof['wp_deity']
+      if char_wp_prof['deity']
         deity_weapon = Global.read_config('pf2e_deities', char.pf2_faith['deity'], 'fav_weapon')
 
-        prof_list << char_wp_prof['wp_deity'] if name == deity_weapon
+        prof_list << char_wp_prof['deity'] if name == deity_weapon
       end
 
       prof_list = prof_list.compact
