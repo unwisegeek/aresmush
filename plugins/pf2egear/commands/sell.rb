@@ -49,15 +49,15 @@ module AresMUSH
 
         case category
         when "weapons"
-          item_id = enactor.weapons.to_a[index]
+          item_id = Pf2egear.items_in_inventory(enactor.weapons).to_a[index]
         when "armor"
-          item_id = enactor.armor.to_a[index]
+          item_id = Pf2egear.items_in_inventory(enactor.armor).to_a[index]
         when "shields"
-          item_id = enactor.shields.to_a[index]
+          item_id = Pf2egear.items_in_inventory(enactor.shields).to_a[index]
         when "bags"
           item_id = enactor.bags.to_a[index]
         when "magicitem"
-          item_id = enactor.weapons.to_a[index]
+          item_id = Pf2egear.items_in_inventory(enactor.magicitem).to_a[index]
         when "consumables", "gear"
           gear_list = enactor.pf2_gear[category]
 

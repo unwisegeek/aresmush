@@ -1,22 +1,19 @@
 module AresMUSH
   module Pf2egear
-    class PF2GearRenameCmd
+    class PF2GearEquipCmd
       include CommandHandler
 
-      attr_accessor :category, :item_num, :nickname
+      attr_accessor :category, :item_num
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
+        args = cmd.parse_args(ArgParser.arg1_slash_arg2)
 
         self.category = downcase_arg(args.arg1)
         self.item_num = integer_arg(args.arg2)
-        self.nickname = trim_arg(args.arg3)
-
-        @numcheck = trim_arg(args.arg2)
       end
 
       def required_args
-        [ self.category, self.item_num, self.nickname ]
+        [ self.category, self.item_num ]
       end
 
       def check_valid_category
@@ -35,16 +32,16 @@ module AresMUSH
 
         case self.category
         when "weapon", "weapons"
-          item_list = Pf2egear.items_in_inventory(enactor.weapons.to_a)
+          item_list = Pf2egear.items_in_inventory(enactor.weapons)
         when "armor"
-          item_list = Pf2egear.items_in_inventory(enactor.armor.to_a)
+          item_list = Pf2egear.items_in_inventory(enactor.armor)
         when "shield", "shields"
-          item_list = Pf2egear.items_in_inventory(enactor.shields.to_a)
+          item_list = Pf2egear.items_in_inventory(enactor.shields)
         end
 
         # Does item_num exist in category?
 
-        item = item_list[self.item_num]
+        item = item_list.to_a[self.item_num]
 
         if !item
           client.emit_failure t('pf2egear.not_found')

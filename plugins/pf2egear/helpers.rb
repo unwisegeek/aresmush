@@ -35,7 +35,7 @@ module AresMUSH
 
     def self.pay_player(char, amount)
       purse = char.pf2_money
-      char.update(pf2_money: purse + amount) 
+      char.update(pf2_money: purse + amount)
     end
 
     def self.reset_gear(char)
@@ -49,6 +49,10 @@ module AresMUSH
       char.magic_items&.each { |i| i.delete }
 
       char.save
+    end
+
+    def self.items_in_inventory(list)
+      list.filter { |item| !(item.bag) }
     end
 
   end
