@@ -26,7 +26,7 @@ module AresMUSH
       when "gear"
         case cmd.switch
         when "rename"
-          nil
+          return PF2GearRenameCmd
         else
           return PF2DisplayGearCmd
         end

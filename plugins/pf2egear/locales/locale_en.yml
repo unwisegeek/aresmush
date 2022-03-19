@@ -4,7 +4,7 @@ en:
     ambiguous_item: "I have more than one item matching that name. Please be more specific."
     approved_players_only: "You must be approved for play to use this command."
 
-    bad_category: "Invalid category. See help vendor for assistance."
+    bad_category: "Invalid category. See help for assistance."
     bad_cointype: "Invalid coin type. Use one of: pp gp sp cp"
     bad_quantity: "Invalid quantity. If specified, it should be a number greater than zero."
     bad_value: "Invalid monetary value."
@@ -19,6 +19,7 @@ en:
 
     not_enough_you: "You do not have enough %{item}."
     not_enough_target: "%{target} does not have enough %{item}."
+    no_items: "You don't have any items in that category."
     not_found: "I didn't find that item in that category."
 
     quantity_one_only: "You can only buy one of this type of item at a time. Creating one item..."
