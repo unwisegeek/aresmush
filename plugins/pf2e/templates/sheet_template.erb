@@ -33,12 +33,13 @@
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
 <%= "#{item_color}Movement%xn: #{movement}" %>
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
-<%= section_line("Weapon Proficiencies") %>
+<%= section_line("Proficiencies") %>
+<%= center("%xhWeapons%xn", 78) %>
 <% weapon_prof.each do |w| %>
 <%= w -%>
 <% end %>
 <%= "%r" %>
-<%= section_line("Armor Proficiencies") %>
+
 <% armor_prof.each do |a| %>
 <%= a -%>
 <% end %>
