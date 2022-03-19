@@ -29,20 +29,15 @@ module AresMUSH
         case self.category
         when "weapon", "weapons"
           item_list = enactor.weapons
-
-          item_class = "AresMUSH::PF2Weapon"
         when "armor"
           item_list = enactor.armor
-
-          item_class = "AresMUSH::PF2Armor"
         when "shield", "shields"
           item_list = enactor.shields
-
-          item_class = "AresMUSH::PF2Shield"
         end
+
         # Does item_num exist in category?
 
-        item = item_list.to_a[self.item_num].first
+        item = item_list.to_a[self.item_num]
 
         client.emit_ooc item
 
