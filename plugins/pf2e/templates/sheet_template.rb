@@ -340,11 +340,11 @@ module AresMUSH
       end
 
       def format_profs(name, prof, i)
-        fmt_name = name.capitalize
+        fmt_name = "#{item_color}#{name.capitalize}%xn"
         fmt_prof = prof[0].upcase
         linebreak = i % 4 == 0 ? "%r" : ""
 
-        "#{linebreak}#{left(fmt_name, 13)}:%xn #{fmt_prof}%b%b"
+        "#{linebreak}#{left("#{fmt_name}: #{fmt_prof}", 19)}"
       end
 
       def format_save(char,name)
