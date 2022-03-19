@@ -42,7 +42,7 @@ module AresMUSH
         end
         # Does item_num exist in category?
 
-        item = item_list[self.item_num].first
+        item = item_list.to_a[self.item_num].first
 
         client.emit_ooc item
 
