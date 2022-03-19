@@ -405,7 +405,7 @@ pf2e_specialty:
           - 'Fourth Doctrine (Cloistered)'
           combat_stats:
             weapon_prof:
-              wp_deity: expert
+              deity: expert
         15:
           charclass:
           - 'Fifth Doctrine (Cloistered)'
@@ -439,11 +439,11 @@ pf2e_specialty:
             - 'Second Doctrine (Warpriest)'
             combat_stats:
               weapon_prof:
-                wp_martial: trained
+                martial: trained
           7:
             combat_stats:
               weapon_prof:
-                wp_deity: expert
+                deity: expert
             charclass:
             - 'Third Doctrine (Warpriest)'
           11:
