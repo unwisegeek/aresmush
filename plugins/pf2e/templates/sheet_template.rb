@@ -340,7 +340,7 @@ module AresMUSH
       end
 
       def format_profs(name, prof, i)
-        fmt_name = name.split("_")[1].capitalize
+        fmt_name = name.capitalize
         fmt_prof = prof[0].upcase
         linebreak = i % 4 == 0 ? "%r" : ""
 
