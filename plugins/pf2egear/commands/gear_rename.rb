@@ -40,11 +40,9 @@ module AresMUSH
 
           item_class = "AresMUSH::PF2Shield"
         end
-        client.emit_ooc item_list
-        client.emit_ooc item_list.to_a
         # Does item_num exist in category?
 
-        item = item_list.to_a[self.item_num]
+        item = item_list[self.item_num].first
 
         client.emit_ooc item
 
