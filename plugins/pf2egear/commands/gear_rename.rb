@@ -41,23 +41,18 @@ module AresMUSH
           item_class = "AresMUSH::PF2Shield"
         end
 
-        # Do they have any items in that category to find?
-        if !item_list
-          client.emit_failure t('pf2egear.no_items')
-          return
-        end
+        # Does item_num exist in category?
 
-        # Does item_num exist in category? Backcheck to ensure that item
-        # is a valid Ohm object ID.
+        item = item_list[self.item_num]
 
-        item = item_list.to_a[self.item_num]
+        client.emit_ooc item
 
-        if !(item.class == item_class.to_s)
+        if !item
           client.emit_failure t('pf2egear.not_found')
           return
         end
 
-        # Give the item its nickname. 
+        # Give the item its nickname.
         item.update(nickname: self.nickname)
 
         client.emit_success t('pf2egear.item_rename_ok', :name => item.name, :nickname => self.nickname)
