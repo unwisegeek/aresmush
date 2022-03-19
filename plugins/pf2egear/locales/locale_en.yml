@@ -11,6 +11,7 @@ en:
     browse_title: "Available Items In Category: %{category}"
 
     item_bought_ok: "You buy %{quantity} of %{item} at a cost of %{cost}."
+    item_rename_ok: "You rename %{name} to %{nickname}."
     item_sold_ok: "You sell %{quantity} of %{item} for %{cost}."
 
     money_paid_ok: "You pay %{value} %{cointype} to %{payee}."
