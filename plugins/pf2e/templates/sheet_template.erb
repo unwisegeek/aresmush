@@ -31,18 +31,12 @@
 <%= left("#{item_color}Temp HP%xn: #{temp_hp}",39) %>
 <%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
+<%= "#{item_color}Size%xn: #{size}" -%>
 <%= "#{item_color}Movement%xn: #{movement}" %>
 <%= "#{item_color}Senses and Special Abilities%xn: #{specials}" %>
 <%= section_line("Proficiencies") %>
-<%= center("%xhWeapons%xn", 78) %>
-<% weapon_prof.each do |w| %>
-<%= w -%>
-<% end %>
-<%= "%r" %>
-<%= center("%xhArmor%xn", 78) %>
-<% armor_prof.each do |a| %>
-<%= a -%>
-<% end %>
+<%= "#{item_color}Weapons%xn: " weapon_prof %>
+<%= "#{item_color}Armor%xn" armor_prof %>
 <%= "%r%rFull calculations for weapons and armor are shown in %x172csheet%xn." %>
 <%= section_line("Saves and Resistances") %>
 <% saves.each do |save| %>
