@@ -1,5 +1,5 @@
 <%= header %>
-<%= center("#{title_color}Gear Inventory", 78) %>%xn
+<%= center("#{title_color}#{bag_title}", 78) %>%xn
 <%= section_line("Weapons") %>
 <%= header_wp_armor %>
 <%= divider %>
@@ -27,10 +27,6 @@
 <%= item -%>
 <% end %>
 
-<%= section_line("Bags") %>
-<%= bags %>
-<%= section_line("Money") %>
-<%= center("#{money}", 78) %>
 <% if use_encumbrance %>
 <%= divider %>
 <%= center(encumbrance, 78) %>
