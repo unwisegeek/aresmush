@@ -249,7 +249,7 @@ module AresMUSH
           next if type == "Size"
 
           fmt_type = type.split("_").each { |word| word.capitalize! }.join(" ")
-          list << "#{item_color}#{fmt_type}%xn: #{speed}"
+          list << "%xh#{fmt_type}%xn: #{speed}"
         end
 
         list.sort.join(", ")
@@ -347,11 +347,11 @@ module AresMUSH
       end
 
       def format_profs(name, prof, i)
-        fmt_name = "#{item_color}#{name.capitalize}%xn"
+        fmt_name = "%xh#{name.capitalize}%xn"
         fmt_prof = prof[0].upcase
         linebreak = i % 4 == 0 ? "%r" : ""
 
-        "#{fmt_name}: #{fmt_prof}%b%b"
+        "#{fmt_name}: #{fmt_prof}"
       end
 
       def format_save(char,name)
