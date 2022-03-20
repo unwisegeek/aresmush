@@ -153,11 +153,11 @@ module AresMUSH
         bulk = a.bulk == 0.1 ? "L" : a.bulk.to_i
         prof = Pf2eCombat.get_armor_prof(char, a.name)[0].upcase
         equip = a.equipped ? "Yes" : "No"
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}%b#{left(equipped, 7)}"
       end
 
       def header_shields
-        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("HP", 10)}%b#{left("Equip?", 7)}%b#{left(equipped, 7)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("HP", 10)}%b#{left("Equip?", 7)}"
       end
 
       def format_shields(char,s,i)
