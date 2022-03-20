@@ -12,10 +12,10 @@ module AresMUSH
     attribute :gear_contents, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
-    collection :weapons, "AresMUSH::PF2Weapon"
-    collection :armor, "AresMUSH::PF2Armor"
-    collection :shields, "AresMUSH::PF2Shields"
-    collection :magicitems, "AresMUSH::PF2MagicItem"
+    collection :weapons, "AresMUSH::PF2Weapon", :pf2weapon
+    collection :armor, "AresMUSH::PF2Armor", :pf2armor
+    collection :shields, "AresMUSH::PF2Shields", :pf2shield
+    collection :magicitems, "AresMUSH::PF2MagicItem", :pf2magicitem
 
   end
 end
