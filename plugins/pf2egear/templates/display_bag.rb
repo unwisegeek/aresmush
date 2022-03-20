@@ -127,7 +127,7 @@ module AresMUSH
 
         char_bulk = (current_load + bag_bulk - capacity_bonus).clamp(0,100)
 
-        "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    Character Load: #{char_bulk}"
+        "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    #{item_color}Character Load%xn: #{char_bulk}"
       end
 
       def header_wp_armor

@@ -245,11 +245,18 @@ module AresMUSH
         movelist = @char.pf2_movement
 
         movelist.each_pair do |type, speed|
+
+          next if type == "Size"
+
           fmt_type = type.split("_").each { |word| word.capitalize! }.join(" ")
-          list << "#{item_color}#{fmt_type}:%xn #{speed}"
+          list << "#{item_color}#{fmt_type}%xn: #{speed}"
         end
 
         list.sort.join(", ")
+      end
+
+      def size
+        @char.pf2_movement["Size"]
       end
 
       def combat_stats
@@ -269,7 +276,7 @@ module AresMUSH
           list << format_profs(atype, prof, i)
         end
 
-        list
+        list.join(", ")
       end
 
       def weapon_prof
@@ -285,7 +292,7 @@ module AresMUSH
           list << format_profs(wtype, prof, i)
         end
 
-        list
+        list.join(", ")
       end
 
       def magic_stats
@@ -344,7 +351,7 @@ module AresMUSH
         fmt_prof = prof[0].upcase
         linebreak = i % 4 == 0 ? "%r" : ""
 
-        "#{linebreak}#{left("#{fmt_name}: #{fmt_prof}", 19)}"
+        "#{fmt_name}: #{fmt_prof}%b%b"
       end
 
       def format_save(char,name)
