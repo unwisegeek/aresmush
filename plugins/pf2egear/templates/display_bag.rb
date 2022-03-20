@@ -17,7 +17,7 @@ module AresMUSH
         @client.screen_reader ? title : line_with_text(title)
       end
 
-      def title
+      def bag_title
         t('pf2egear.bag_title', :bagname => @bag.name)
       end
 
