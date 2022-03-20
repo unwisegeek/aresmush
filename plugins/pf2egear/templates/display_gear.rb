@@ -87,7 +87,7 @@ module AresMUSH
       def bags
         bags = @char.bags ? @char.bags : []
 
-        bag_list = bags.each { |bag| bag.name }.sort
+        bag_list = bags.map { |bag| bag.name }.sort
 
         bag_list.join(", ")
       end
