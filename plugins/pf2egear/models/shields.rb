@@ -11,7 +11,7 @@ module AresMUSH
     attribute :hp, :type => DataType::Integer, :default => 0
     attribute :damage, :type => DataType::Integer, :default => 0
     attribute :ac_bonus, :type => DataType::Integer, :default => 0
-    attribute :equipped, :type => DataType::Boolean
+    attribute :equipped, :type => DataType::Boolean, :default => false
     attribute :nickname
 
     reference :character, "AresMUSH::Character"

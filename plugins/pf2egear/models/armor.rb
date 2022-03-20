@@ -17,7 +17,7 @@ module AresMUSH
     attribute :min_str, :type => DataType::Integer, :default => 10
     attribute :group, :default => ""
     attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => [], 'property' => [] }
-    attribute :equipped, :type => DataType::Boolean
+    attribute :equipped, :type => DataType::Boolean, :default => false
 
     reference :character, "AresMUSH::Character"
     reference :bag, "AresMUSH::PF2Bag"
