@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2egear
-    class PF2GearEquipCmd
+    class PF2GearUnequipCmd
       include CommandHandler
 
       attr_accessor :category, :item_num
@@ -44,11 +44,11 @@ module AresMUSH
         end
 
         # Equip the item.
-        item.update(equipped: true)
+        item.update(equipped: false)
 
         iname = item.nickname ? item.nickname : item.name
 
-        client.emit_success t('pf2egear.item_equip_ok', :name => iname)
+        client.emit_success t('pf2egear.item_unequip_ok', :name => iname)
       end
 
     end

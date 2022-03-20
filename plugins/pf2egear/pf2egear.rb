@@ -27,6 +27,10 @@ module AresMUSH
         case cmd.switch
         when "rename"
           return PF2GearRenameCmd
+        when "equip"
+          return PF2GearEquipCmd
+        when "unequip"
+          return PF2GearUnequipCmd
         else
           return PF2DisplayGearCmd
         end

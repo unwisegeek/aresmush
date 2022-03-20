@@ -19,7 +19,8 @@ There are six categories of gear in Emblem of Ea's inventory system.
 
 `gear [<target>]`: See your gear inventory, or if you're a game admin, someone else's gear inventory by supplying an optional <target>. (Aliases: `i`, `inv`, `inventory`)
 `gear/rename <category>/<item number> = <nickname>`: Give a weapon, armor, or shield a nickname. This can be helpful to identify which item is which at a glance.
-`gear/equip <category> = <item number>`: Equips the identified item in <category>. (Alias: `equip`)
+`gear/equip <category> = <item number>`: Equips the identified item in <category>. (Alias: `unequip`)
+`gear/unequip <category> = <item number>`: Unequips the identified item in <category>. (Alias: `equip`)
 `gear/invest <list of item numbers>`: For magic items only, invests the items identified in the list by number. This is a daily thing, but it will keep the same items invested at daily refresh unless you run this command to change it. The change takes effect at your next refresh. (Alias: `invest`)
 
 Please note that you cannot equip or invest gear that is in a bag, it must be in your main inventory.

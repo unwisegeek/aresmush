@@ -4,6 +4,8 @@ pf2e_gear_options:
     i: gear
     in: gear
     inv: gear
+    equip: gear/equip
+    unequip: gear/unequip
   use_encumbrance: true
   item_classes:
     weapons: PF2Weapon

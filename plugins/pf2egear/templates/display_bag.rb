@@ -1,31 +1,35 @@
 module AresMUSH
   module Pf2egear
 
-    class Pf2eDisplayGearTemplate < ErbTemplateRenderer
+    class PF2BagTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char
+      attr_accessor :bag, :client
 
-      def initialize(char, client)
-        @char = char
+      def initialize(bag, client)
+        @bag = bag
         @client = client
 
-        super File.dirname(__FILE__) + "/display_gear.erb"
+        super File.dirname(__FILE__) + "/display_bag.erb"
       end
 
       def section_line(title)
         @client.screen_reader ? title : line_with_text(title)
       end
 
+      def title
+        t('pf2egear.bag_title', :bagname => @bag.name)
+      end
+
       def weapons
         list = []
 
-        weapon_list = @char.weapons ? Pf2egear.items_in_inventory(@char.weapons.to_a)  : []
+        weapon_list = @bag.weapons ? @bag.weapons : []
 
         @weapon_bulk = weapon_list.map { |wp| wp.bulk }.sum
 
         weapon_list.each_with_index do |wp,i|
-          list << format_wp(@char,wp,i)
+          list << format_wp(@bag,wp,i)
         end
 
         list
@@ -34,12 +38,12 @@ module AresMUSH
       def armor
         list = []
 
-        armor_list = @char.armor ? Pf2egear.items_in_inventory(@char.armor.to_a) : []
+        armor_list = @bag.armor ? @bag.armor : []
 
         @armor_bulk = armor_list.map { |a| a.bulk }.sum
 
         armor_list.each_with_index do |a,i|
-          list << format_armor(@char,a,i)
+          list << format_armor(@bag,a,i)
         end
 
         list
@@ -48,12 +52,12 @@ module AresMUSH
       def shields
         list = []
 
-        shields_list = @char.shields ? Pf2egear.items_in_inventory(@char.shields.to_a) : []
+        shields_list = @bag.shields ? @bag.shields : []
 
         @shields_bulk = shields_list.map { |s| s.bulk }.sum
 
         shields_list.each_with_index do |s,i|
-          list << format_shields(@char,s,i)
+          list << format_shields(@bag,s,i)
         end
 
         list
@@ -62,7 +66,7 @@ module AresMUSH
       def consumables
         list = []
 
-        con_list = @char.pf2_gear['consumables'] ? @char.pf2_gear['consumables'] : {}
+        con_list = @bag.gear_contents['consumables'] ? @bag.gear_contents['consumables'] : {}
 
         char_cons_list = con_list.keys
 
@@ -84,16 +88,10 @@ module AresMUSH
         list
       end
 
-      def bags
-        bag_list = @char.bags.each { |bag| bag.name }.sort
-
-        bag_list.join(", ")
-      end
-
       def gear_list
         list = []
 
-        con_list = @char.pf2_gear['gear'] ? @char.pf2_gear['gear'] : {}
+        con_list = @bag.gear_contents['gear'] ? @bag.gear_contents['gear'] : {}
 
         char_glist = con_list.keys
 
@@ -120,44 +118,38 @@ module AresMUSH
       end
 
       def encumbrance
-        char_strmod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Strength"))
 
-        current_bulk = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk
+        current_load = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk
 
-        max_capacity = 10 + char_strmod
-        encumbered = 5 + char_strmod
+        max_capacity = @bag.capacity
+        capacity_bonus = @bag.bulk_bonus ? @bag.bulk_bonus : 0
+        bag_bulk = @bag.bulk
 
-        enc_state = current_bulk >= encumbered ? "%xh%xyEncumbered%xn" : "%xgUnencumbered%xn"
+        char_bulk = current_load + bag_bulk - bulk_bonus.clamp(0,100)
 
-        "#{item_color}Current Bulk:%xn #{current_bulk} / #{max_capacity} (#{enc_state})"
-      end
-
-      def money
-        Pf2egear.display_money(@char.pf2_money)
+        "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    Character Load: #{char_bulk}"
       end
 
       def header_wp_armor
-        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("Prof", 10)}%b#{left("Equip?", 7)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("Prof", 12)}"
       end
 
       def format_wp(char,w,i)
         name = w.nickname ? "#{w.nickname} (#{w.name})" : w.name
         bulk = w.bulk == 0.1 ? "L" : w.bulk.to_i
         prof = Pf2eCombat.get_weapon_prof(char, w.name)[0].upcase
-        equip = w.equipped ? "Yes" : "No"
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}%b#{left(equipped, 7)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 12)}"
       end
 
       def format_armor(char,a,i)
         name = a.nickname ? "#{a.nickname} (#{a.name})" : a.name
         bulk = a.bulk == 0.1 ? "L" : a.bulk.to_i
         prof = Pf2eCombat.get_armor_prof(char, a.name)[0].upcase
-        equip = a.equipped ? "Yes" : "No"
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 12)}"
       end
 
       def header_shields
-        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("HP", 10)}%b#{left("Equip?", 7)}%b#{left(equipped, 7)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("HP", 12)}"
       end
 
       def format_shields(char,s,i)
@@ -168,9 +160,8 @@ module AresMUSH
         cur_hp = hp - dmg
         broken = (cur_hp <= hp / 2) ? "%xr" : ""
         disp_hp = "#{broken}#{cur_hp}%xn / #{hp}"
-        equip = s.equipped ? "Yes" : "No"
 
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(disp_hp,10)}%b#{left(equipped, 7)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(disp_hp,12)}"
       end
 
       def format_cons(name,qty,i)
