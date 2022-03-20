@@ -147,7 +147,7 @@ module AresMUSH
         bulk = w.bulk == 0.1 ? "L" : w.bulk.to_i
         prof = Pf2eCombat.get_weapon_prof(char, w.name)[0].upcase
         equip = w.equipped ? "Yes" : "No"
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}%b#{left(equipped, 7)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}%b#{left(equip, 7)}"
       end
 
       def format_armor(char,a,i)
@@ -155,7 +155,7 @@ module AresMUSH
         bulk = a.bulk == 0.1 ? "L" : a.bulk.to_i
         prof = Pf2eCombat.get_armor_prof(char, a.name)[0].upcase
         equip = a.equipped ? "Yes" : "No"
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}%b#{left(equipped, 7)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(prof, 10)}%b#{left(equip, 7)}"
       end
 
       def header_shields
@@ -172,7 +172,7 @@ module AresMUSH
         disp_hp = "#{broken}#{cur_hp}%xn / #{hp}"
         equip = s.equipped ? "Yes" : "No"
 
-        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(disp_hp,10)}%b#{left(equipped, 7)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(disp_hp,10)}%b#{left(equip, 7)}"
       end
 
       def format_cons(name,qty,i)
