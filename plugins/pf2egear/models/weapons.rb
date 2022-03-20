@@ -20,7 +20,7 @@ module AresMUSH
     attribute :hands, :type => DataType::Integer, :default => 1
     attribute :group, :default => ""
     attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => [], 'property' => [] }
-    attribute :equipped, :type => DataType::Boolean
+    attribute :equipped, :type => DataType::Boolean, :default => false
     attribute :use, :type => DataType::Hash, :default => {}
     attribute :magic, :type => DataType::Hash, :default => {}
 
