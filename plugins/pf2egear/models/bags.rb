@@ -14,7 +14,7 @@ module AresMUSH
     reference :character, "AresMUSH::Character"
     collection :weapons, "AresMUSH::PF2Weapon", :bag
     collection :armor, "AresMUSH::PF2Armor", :bag
-    collection :shields, "AresMUSH::PF2Shields", :bag
+    collection :shields, "AresMUSH::PF2Shield", :bag
     collection :magicitem, "AresMUSH::PF2MagicItem", :bag
 
   end
