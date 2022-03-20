@@ -125,7 +125,7 @@ module AresMUSH
         capacity_bonus = @bag.bulk_bonus ? @bag.bulk_bonus : 0
         bag_bulk = @bag.bulk
 
-        char_bulk = current_load + bag_bulk - bulk_bonus.clamp(0,100)
+        char_bulk = current_load + bag_bulk - capacity_bonus.clamp(0,100)
 
         "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    Character Load: #{char_bulk}"
       end
