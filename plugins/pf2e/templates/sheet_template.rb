@@ -249,7 +249,7 @@ module AresMUSH
           next if type == "Size"
 
           fmt_type = type.split("_").each { |word| word.capitalize! }.join(" ")
-          list << "%xh#{fmt_type}%xn: #{speed}"
+          list << "%xh#{fmt_type}%xn: #{speed}'"
         end
 
         list.sort.join(", ")

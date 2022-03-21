@@ -11,6 +11,8 @@ module AresMUSH
         self.item_num = integer_arg(args.arg2)
         self.item_name = upcase_arg(args.arg2)
         self.quantity = integer_arg(args.arg3)
+
+        @numcheck = trim_arg(args.arg2)
       end
 
       def required_args
@@ -27,6 +29,12 @@ module AresMUSH
         return nil if !self.quantity
         return nil if self.quantity.positive?
         return t('pf2egear.bad_quantity')
+      end
+
+      def check_is_number
+        return nil if self.category == ("gear" || "consumables")
+        return nil if @numcheck.to_i.to_s == @numcheck
+        return t('pf2egear.must_specify_by_number')
       end
 
       def handle
