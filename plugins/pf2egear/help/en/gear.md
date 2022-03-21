@@ -1,6 +1,14 @@
 ---
 toc: Pathfinder Second Edition
 summary: Managing Gear and Inventory
+aliases:
+- inventory
+- inv
+- bag
+- item
+- equip
+- unequip
+- invest
 ---
 
 # Pathfinder 2E Inventory - Managing Your Gear
@@ -22,6 +30,7 @@ There are six categories of gear in Emblem of Ea's inventory system.
 `gear/equip <category> = <item number>`: Equips the identified item in <category>. (Alias: `unequip`)
 `gear/unequip <category> = <item number>`: Unequips the identified item in <category>. (Alias: `equip`)
 `gear/invest <list of item numbers>`: For magic items only, invests the items identified in the list by number. This is a daily thing, but it will keep the same items invested at daily refresh unless you run this command to change it. The change takes effect at your next refresh. (Alias: `invest`)
+`item/view <category> = <item number>`: See more details about a weapon, armor, shield, or magic item.
 
 Please note that you cannot equip or invest gear that is in a bag, it must be in your main inventory.
 
