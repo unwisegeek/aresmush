@@ -3,7 +3,7 @@ module AresMUSH
 
     # p can be passed to this method as nil
     def self.get_prof_bonus(char, p="untrained")
-      level = char.pf2_level
+      level = p = "untrained" ? 0 : char.pf2_level
 
       allow_untrained_improv = Global.read_config('pf2e', 'use_untrained_improv')
 

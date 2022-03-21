@@ -87,6 +87,8 @@ module AresMUSH
 
         if q > 1
           client.emit_ooc t('pf2egear.quantity_one_only')
+          q = 1
+          cost = item_info['price'] * q
         end
 
         item_info.each_pair do |k,v|
