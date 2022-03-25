@@ -55,5 +55,13 @@ module AresMUSH
       list.filter { |item| !(item.bag) }
     end
 
+    def self.bag_effective_bulk(bag)
+      max_capacity = bag.capacity
+      capacity_bonus = bag.bulk_bonus ? bag.bulk_bonus : 0
+      bag_bulk = bag.bulk
+
+      char_bulk = (current_load + bag_bulk - capacity_bonus).clamp(0,100)
+    end
+
   end
 end
