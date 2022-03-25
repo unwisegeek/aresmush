@@ -4,9 +4,9 @@ module AresMUSH
     class PF2BagTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :bag, :client
+      attr_accessor :char, :bag, :client
 
-      def initialize(bag, client)
+      def initialize(char, bag, client)
         @bag = bag
         @client = client
 
@@ -29,7 +29,7 @@ module AresMUSH
         @weapon_bulk = weapon_list.map { |wp| wp.bulk }.sum
 
         weapon_list.each_with_index do |wp,i|
-          list << format_wp(@bag,wp,i)
+          list << format_wp(@char,wp,i)
         end
 
         list
@@ -43,7 +43,7 @@ module AresMUSH
         @armor_bulk = armor_list.map { |a| a.bulk }.sum
 
         armor_list.each_with_index do |a,i|
-          list << format_armor(@bag,a,i)
+          list << format_armor(@char,a,i)
         end
 
         list
@@ -57,7 +57,7 @@ module AresMUSH
         @shields_bulk = shields_list.map { |s| s.bulk }.sum
 
         shields_list.each_with_index do |s,i|
-          list << format_shields(@bag,s,i)
+          list << format_shields(s,i)
         end
 
         list
@@ -152,7 +152,7 @@ module AresMUSH
         "%b%b#{left("#", 3)}%b#{left("Name", 45)}%b#{left("Bulk", 8)}%b#{left("HP", 12)}"
       end
 
-      def format_shields(char,s,i)
+      def format_shields(s,i)
         name = s.nickname ? "#{s.nickname} (#{s.name})" : s.name
         bulk = s.bulk == 0.1 ? "L" : s.bulk.to_i
         hp = s.hp

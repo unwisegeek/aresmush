@@ -41,7 +41,7 @@ module AresMUSH
             bag = bag_list.first
           end
 
-          template = PF2BagTemplate.new(bag, client)
+          template = PF2BagTemplate.new(enactor, bag, client)
 
           client.emit template.render
         end
