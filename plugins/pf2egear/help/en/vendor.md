@@ -27,7 +27,7 @@ Emblem of Ea's inventory system allows characters to buy and sell items from and
 `buy <category> = <name>[/<quantity>]`: Buys item in <category> named <name>. Quantity is optional, default is 1.
 `sell <category> = <name>[/quantity>]`: Sells item in <category> named <name> for half of its purchase price. Quantity is optional, default is 1.
 
-Weapons, armor, and shields will only permit you to buy one at a time.
+Weapons, armor, magic items, and shields will only permit you to buy or sell one at a time, and you must specify items in these categories by number, not by name.
 
 A few things to be aware of:
  * Items of a higher level than the character cannot be bought or sold through the vendor. Please put in a request for such purchases.
