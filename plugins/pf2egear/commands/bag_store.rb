@@ -3,7 +3,7 @@ module AresMUSH
     class PF2BagStoreCmd
       include CommandHandler
 
-      attr_accessor :bag_id, :category, :item_id
+      attr_accessor :bag_id, :category, :item_id, :item_name
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
@@ -85,15 +85,15 @@ module AresMUSH
             client.emit_failure t('pf2egear.ambiguous_item')
             return
           else
-            item_name = item_list.keys.first
+            itemname = item_list.keys.first
             item_qty = item_list.values.first
           end
         end
 
         client.emit "Item is #{item}"
-        client.emit "Item_name is #{item_name}"
+        client.emit "Item_name is #{itemname}"
 
-        if !(item || item_name)
+        if !(item || itemname)
           client.emit_failure t('pf2egear.not_found')
           return
         end
