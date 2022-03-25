@@ -111,6 +111,7 @@ module AresMUSH
         stored_item = item ? item.name : item_name
 
         client.emit_success t('pf2egear.bag_store_ok', :name => stored_item, :bag => bag.name)
+      end
 
     end
   end
