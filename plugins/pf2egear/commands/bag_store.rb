@@ -90,9 +90,6 @@ module AresMUSH
           end
         end
 
-        client.emit "Item is #{item}"
-        client.emit "Item_name is #{itemname}"
-
         if !(item || itemname)
           client.emit_failure t('pf2egear.not_found')
           return
@@ -102,7 +99,7 @@ module AresMUSH
 
         if item
           item.update(bag: bag)
-        elsif item_name
+        elsif itemname
           contents = bag.gear_contents
 
           contents_cat = contents[self.category]
