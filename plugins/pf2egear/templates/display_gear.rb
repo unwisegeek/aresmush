@@ -90,6 +90,8 @@ module AresMUSH
         bag_list = bags.map { |bag| bag.name }.sort
 
         bag_list.join(", ")
+
+        @bag_bulk = bags.map { |b| Pf2egear.bag_effective_bulk(b) }.sum
       end
 
       def gear_list
@@ -124,7 +126,7 @@ module AresMUSH
       def encumbrance
         char_strmod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Strength"))
 
-        current_bulk = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk
+        current_bulk = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk + @bag_bulk
 
         max_capacity = 10 + char_strmod
         encumbered = 5 + char_strmod

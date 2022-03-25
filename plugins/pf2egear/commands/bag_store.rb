@@ -74,9 +74,11 @@ module AresMUSH
         when "magicitem", "magicitems"
           item = Pf2egear.items_in_inventory(enactor.magicitems.to_a)[self.item_id]
         when "consumables", "gear"
-          gear_list = enactor.pf2_gear[category]
+          gear_list = enactor.pf2_gear
 
-          item_list = gear_list.select { |k,v| k.upcase.match == self.item_name }
+          gear_list_cat = gear_list[category]
+
+          item_list = gear_list_cat.select { |k,v| k.upcase.match == self.item_name }
 
           if item_list.size.zero?
             client.emit_failure t('pf2egear.not_found')
@@ -100,15 +102,25 @@ module AresMUSH
         if item
           item.update(bag: bag)
         elsif itemname
-          contents = bag.gear_contents
+          # Update the bag.
+          bag_contents = bag.gear_contents
 
-          contents_cat = contents[self.category]
-          contents_cat[item_name] = item_qty
-          contents[self.category] = contents_cat
+          bag_contents_cat = contents[self.category]
+          bag_contents_cat[item_name] = item_qty
+          bag_contents[self.category] = contents_cat
           bag.update(gear_contents: contents)
+
+          # Update the user's main inventory.
+
+          gear_list_cat.delete(itemname)
+
+          gear_list[category] = gear_list_cat
+
+          enactor.update(pf2_gear: gear_list)
+
         end
 
-        stored_item = item ? item.name : item_name
+        stored_item = item ? item.name : itemname
 
         client.emit_success t('pf2egear.bag_store_ok', :name => stored_item, :bag => bag.name)
       end

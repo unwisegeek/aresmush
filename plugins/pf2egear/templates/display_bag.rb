@@ -122,11 +122,7 @@ module AresMUSH
 
         current_load = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk
 
-        max_capacity = @bag.capacity
-        capacity_bonus = @bag.bulk_bonus ? @bag.bulk_bonus : 0
-        bag_bulk = @bag.bulk
-
-        char_bulk = (current_load + bag_bulk - capacity_bonus).clamp(0,100)
+        char_bulk = Pf2egear.bag_effective_bulk(@bag)
 
         "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    #{item_color}Character Load%xn: #{char_bulk}"
       end
