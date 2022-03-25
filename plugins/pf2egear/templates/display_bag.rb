@@ -7,6 +7,7 @@ module AresMUSH
       attr_accessor :char, :bag, :client
 
       def initialize(char, bag, client)
+        @char = char
         @bag = bag
         @client = client
 
