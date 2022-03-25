@@ -6,6 +6,8 @@ pf2e_gear_options:
     inv: gear
     equip: gear/equip
     unequip: gear/unequip
+    bag/put: bag/store
+    bag/get: bag/retrieve
   use_encumbrance: true
   item_classes:
     weapons: PF2Weapon
