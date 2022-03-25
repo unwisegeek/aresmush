@@ -40,6 +40,7 @@ module AresMUSH
           return PF2BagStoreCmd
         else
           return PF2BagViewCmd
+        end
       end
 
       nil
