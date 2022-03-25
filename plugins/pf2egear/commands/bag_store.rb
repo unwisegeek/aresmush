@@ -90,6 +90,9 @@ module AresMUSH
           end
         end
 
+        client.emit "Item is #{item}"
+        client.emit "Item_name is #{item_name}"
+
         if !(item || item_name)
           client.emit_failure t('pf2egear.not_found')
           return
