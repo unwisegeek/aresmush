@@ -40,7 +40,7 @@ module AresMUSH
         bag_by_number = self.bag_id.to_i.to_s == self.bag_id
 
         if bag_by_number
-          bagindexindex = self.bag_id.to_i
+          bagindex = self.bag_id.to_i
 
           bag = enactor.bags.to_a[bagindex]
         else
