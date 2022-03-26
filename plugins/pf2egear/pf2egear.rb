@@ -38,6 +38,8 @@ module AresMUSH
         case cmd.switch
         when "store"
           return PF2BagStoreCmd
+        when "retrieve"
+          return PF2BagRetrieveCmd
         else
           return PF2BagViewCmd
         end
