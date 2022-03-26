@@ -171,15 +171,16 @@ module AresMUSH
       end
 
       def header_bags
-        "%b%b#{left("#", 3)}%b#{left("Name", 59)}%b#{left("Current Load", 12)}"
+        "%b%b#{left("#", 3)}%b#{left("Name", 55)}%b#{left("Current Load", 12)}"
       end
 
       def format_bags(bag, i)
         name = bag.nickname ? "#{bag.nickname} (#{bag.name})" : bag.name
         capacity = bag.capacity
         current_load = Pf2egear.calculate_bag_load(bag)
+        disp_load = "#{current_load} / #{capacity}"
 
-        "%b%b#{left(i, 3)}%b#{left(name, 59)}%b#{left(current_load + "/" + capacity, 12)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 55)}%b#{left(disp_load, 12)}"
       end
 
 
