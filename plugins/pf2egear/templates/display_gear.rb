@@ -20,12 +20,12 @@ module AresMUSH
       def weapons
         list = []
 
-        weapon_list = @char.weapons ? Pf2egear.items_in_inventory(@char.weapons.to_a)  : []
+        wp_list = @char.weapons ? Pf2egear.items_in_inventory(@char.weapons.to_a)  : []
 
-        @weapon_bulk = weapon_list.map { |wp| wp.bulk }.sum
+        @weapon_bulk = wp_list.map { |wp| wp.bulk }.sum
 
-        weapon_list.each_with_index do |wp,i|
-          list << format_wp(@char,wp,i)
+        wp_list.each_with_index do |wp,i|
+          list << format_wp()@char,wp,i)
         end
 
         list
@@ -62,59 +62,40 @@ module AresMUSH
       def consumables
         list = []
 
-        con_list = @char.pf2_gear['consumables'] ? @char.pf2_gear['consumables'] : {}
+        consumables_list = @char.consumables ? Pf2egear.items_in_inventory(@char.consumables.to_a) : []
 
-        char_cons_list = con_list.keys
+        @consumables_bulk = consumables_list.map { |c| c.bulk }.sum
 
-        game_cons_list = Global.read_config('pf2e_consumables')
-
-        cons_bulk = []
-
-        if !(char_cons_list.empty?)
-          char_cons_list.each_with_index do |item, i|
-            cons_bulk << game_cons_list[item]['bulk']
-
-            qty = con_list[item]
-            list << format_cons(item, qty, i)
-          end
+        consumables_list.each_with_index do |c,i|
+          list << format_gear(c,i)
         end
-
-        @consumables_bulk = cons_bulk.empty? ? cons_bulk.sum : 0
 
         list
       end
 
       def bags
-        bags = @char.bags ? @char.bags : []
-
-        bag_list = bags.map { |bag| bag.name }.sort
-
-        bag_list.join(", ")
-
-        @bag_bulk = bags.map { |b| Pf2egear.bag_effective_bulk(b) }.sum
-      end
-
-      def gear_list
         list = []
 
-        con_list = @char.pf2_gear['gear'] ? @char.pf2_gear['gear'] : {}
+        bags = @char.bags ? @char.bags : []
 
-        char_glist = con_list.keys
+        @bag_bulk = bags.map { |b| Pf2egear.bag_effective_bulk(b) }.sum
 
-        game_glist = Global.read_config('pf2e_gear')
+        bags.each_with_index do |b,i|
+          list << format_bags(b,i)
 
-        gbulk = []
+        list
+      end
 
-        if !(char_glist.empty?)
-          char_glist.each_with_index do |item, i|
-            gbulk << game_glist[item]['bulk']
+      def gear
+        list = []
 
-            qty = con_list[item]
-            list << format_cons(item, qty, i)
-          end
+        gear_list = @char.gear ? Pf2egear.items_in_inventory(@char.gear.to_a) : []
+
+        @gear_bulk = gear_list.map { |g| g.bulk }.sum
+
+        gear_list.each_with_index do |g,i|
+          list << format_gear(g,i)
         end
-
-        @gear_bulk = gbulk.empty? ? gbulk.sum : 0
 
         list
       end
@@ -177,9 +158,23 @@ module AresMUSH
         "%b%b#{left(i, 3)}%b#{left(name, 43)}%b#{left(bulk, 8)}%b#{left(disp_hp,10)}%b#{left(equip, 9)}"
       end
 
-      def format_cons(name,qty,i)
+      def format_gear(item,i)
+        qty = item.quantity > 99 ? item.quantity : "99+"
+        name = item.name
         linebreak = i % 2 == 1 ? "" : "%r"
-        "#{linebreak}#{left(name, 32)}: #{left(qty,3)} "
+        "#{linebreak}#{left(i, 3)}%b#{left(name, 28)}: #{left(qty,3)} "
+      end
+
+      def header_bags
+        "%b%b#{left("#", 3)}%b#{left("Name", 59)}%b#{left("Current Load", 12)}"
+      end
+
+      def format_bags(bag, i)
+        name = bag.nickname ? "#{bag.nickname} (#{bag.name})" : bag.name
+        capacity = bag.max_capacity
+        current_load = Pf2egear.calculate_bag_load(bag)
+
+        "%b%b#{left(i, 3)}%b#{left(name, 59)}%b#{left(current_load + "/" + capacity, 12)}"
       end
     end
 

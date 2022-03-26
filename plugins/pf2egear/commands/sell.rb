@@ -3,13 +3,12 @@ module AresMUSH
     class PF2SellCmd
       include CommandHandler
 
-      attr_accessor :category, :item_name, :quantity, :item_num
+      attr_accessor :category, :item_num, :quantity
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_optional_arg3)
         self.category = downcase_arg(args.arg1)
         self.item_num = integer_arg(args.arg2)
-        self.item_name = upcase_arg(args.arg2)
         self.quantity = integer_arg(args.arg3)
 
         @numcheck = trim_arg(args.arg2)
@@ -32,14 +31,13 @@ module AresMUSH
       end
 
       def check_is_number
-        return nil if self.category == ("gear" || "consumables")
         return nil if @numcheck.to_i.to_s == @numcheck
         return t('pf2egear.must_specify_by_number')
       end
 
       def handle
 
-        # If no quantity is specified, assume 1
+        # Q is how many you want to sell. If no quantity is specified, assume 1
         q = self.quantity ? self.quantity : 1
 
         list_key = "pf2e_" + self.category
@@ -56,66 +54,57 @@ module AresMUSH
         index = self.item_num
 
         case category
-        when "weapons"
+        when "weapons", "weapon"
           item_id = Pf2egear.items_in_inventory(enactor.weapons).to_a[index]
         when "armor"
           item_id = Pf2egear.items_in_inventory(enactor.armor).to_a[index]
-        when "shields"
+        when "shields", "shield"
           item_id = Pf2egear.items_in_inventory(enactor.shields).to_a[index]
         when "bags"
           item_id = enactor.bags.to_a[index]
-        when "magicitem"
+        when "magicitem", "magicitems"
           item_id = Pf2egear.items_in_inventory(enactor.magicitem).to_a[index]
-        when "consumables", "gear"
-          gear_list = enactor.pf2_gear[category]
-
-          item = gear_list.select { |k,v| k.upcase.match == self.item_name }
-
-          if item.size.zero?
-            client.emit_failure t('pf2egear.not_found')
-            return
-          elsif item.size > 1
-            client.emit_failure t('pf2egear.ambiguous_item')
-            return
-          else
-            itemname = item.keys.first
-            item_qty = gear_list[item_name]['quantity']
-          end
+        when "consumables"
+          item_id = Pf2egear.items_in_inventory(enactor.consumables).to_a[index]
+          item_qty = item_id.quantity
+        when "gear"
+          item_id = Pf2egear.items_in_inventory(enactor.gear).to_a[index]
+          item_qty = item_id.quantity
         end
 
-        if !(item_id || itemname)
+        if !item_id
           client.emit_failure t('pf2egear.not_found')
           return
         end
 
         purse = enactor.pf2_money
 
-        if item_id
-          itemname = item_id.name
-          price = (item_id.price) / 2
-          item_id.delete
-        else
-          if q > item_qty
-            client.emit_failure t('pf2egear.not_enough_you', :item => "of those to sell #{q}")
-            return
-          else
-            price = list[itemname]['price'] * (item_qty - q)
+        itemname = item_id.name
+        price = (item_id.price) / 2
 
-            # If they're selling all of them, blow the item out of the list, else subtract quantity
-            if q == item_qty
-              gear_list.delete[itemname]
-            else
-              gear_list[itemname]['quantity'] = (item_qty - q)
-            end
-          end
+        # Unless it's gear or a consumable, you only have one of that item.
+        item_qty = 1 if !item_qty
+
+        if q > item_qty
+          client.emit_failure t('pf2egear.not_enough_you', :item => "of those to sell #{q}")
+          return
         end
 
-        enactor.update(pf2_money: purse + price)
+        to_be_paid = price * item_qty
 
+        # If they're selling all of them, blow the item out of the list, else subtract quantity
 
-        Pf2e.record_history(enactor, 'money', 'Item Vendor', price, "Item Sale: #{itemname}")
+        if q == item_qty
+          item_id.delete
+        else
+          item_id.update(quantity: item_qty - q)
+        end
 
-        client.emit_success t('pf2egear.item_sold_ok', :item => itemname, :cost => Pf2egear.display_money(price), :quantity => q)
+        enactor.update(pf2_money: purse + to_be_paid)
+
+        Pf2e.record_history(enactor, 'money', 'Item Vendor', to_be_paid, "Item Sale: #{itemname}")
+
+        client.emit_success t('pf2egear.item_sold_ok', :item => itemname, :cost => Pf2egear.display_money(to_be_paid), :quantity => q)
 
       end
 

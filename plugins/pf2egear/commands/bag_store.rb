@@ -3,14 +3,13 @@ module AresMUSH
     class PF2BagStoreCmd
       include CommandHandler
 
-      attr_accessor :bag_id, :category, :item_id, :item_name
+      attr_accessor :bag_id, :category, :item_id
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
-        self.bag_id = trim_arg(args.arg3)
+        self.bag_id = integer_arg(args.arg3)
         self.category = downcase_arg(args.arg1)
         self.item_id = integer_arg(args.arg2)
-        self.item_name = upcase_arg(args.arg2)
 
         @numcheck = trim_arg(args.arg2)
       end
@@ -27,35 +26,13 @@ module AresMUSH
       end
 
       def check_is_number
-        return nil if self.category == ("gear" || "consumables")
         return nil if @numcheck.to_i.to_s == @numcheck
         return t('pf2egear.must_specify_by_number')
       end
 
       def handle
 
-        # Did they specify the bag by number or by name? Either is legal.
-
-        # Either way, bag is the Ohm object ID of the bag.
-        bag_by_number = self.bag_id.to_i.to_s == self.bag_id
-
-        if bag_by_number
-          bagindex = self.bag_id.to_i
-
-          bag = enactor.bags.to_a[bagindex]
-        else
-          bag_list = enactor.bags.select {|b| b.name.downcase == self.bag_id.downcase }
-
-          if bag_list.size.zero?
-            client.emit_failure t('pf2egear.not_found')
-            return
-          elsif bag_list.size > 1
-            client.emit_failure t('pf2egear.ambiguous_item')
-            return
-          else
-            bag = bag_list.first
-          end
-        end
+        bag = enactor.bags.to_a[self.bag_id]
 
         if !bag
           client.emit_failure t('pf2egear.bag_not_found')
@@ -73,56 +50,23 @@ module AresMUSH
           item = Pf2egear.items_in_inventory(enactor.shields.to_a)[self.item_id]
         when "magicitem", "magicitems"
           item = Pf2egear.items_in_inventory(enactor.magicitems.to_a)[self.item_id]
-        when "consumables", "gear"
-          gear_list = enactor.pf2_gear
-
-          gear_list_cat = gear_list[category]
-
-          item_list = gear_list_cat.select { |k,v| k.upcase.match == self.item_name }
-
-          if item_list.size.zero?
-            client.emit_failure t('pf2egear.not_found')
-            return
-          elsif item_list.size > 1
-            client.emit_failure t('pf2egear.ambiguous_item')
-            return
-          else
-            itemname = item_list.keys.first
-            item_qty = item_list.values.first
-          end
+        when "consumables"
+          item_list = Pf2egear.items_in_inventory(enactor.consumables.to_a)[self.item_id]
+        when "gear"
+          item_list = Pf2egear.items_in_inventory(enactor.gear.to_a)[self.item_id]
         end
 
-        if !(item || itemname)
+
+        if !item
           client.emit_failure t('pf2egear.not_found')
           return
         end
 
-        # All right, time to move the item.
+        # Move the item.
 
-        if item
-          item.update(bag: bag)
-        elsif itemname
-          # Update the bag.
-          bag_contents = bag.gear_contents
+        item.update(bag: bag)
 
-          bag_contents_cat = contents[self.category]
-          bag_contents_cat[item_name] = item_qty
-          bag_contents[self.category] = contents_cat
-          bag.update(gear_contents: contents)
-
-          # Update the user's main inventory.
-
-          gear_list_cat.delete(itemname)
-
-          gear_list[category] = gear_list_cat
-
-          enactor.update(pf2_gear: gear_list)
-
-        end
-
-        stored_item = item ? item.name : itemname
-
-        client.emit_success t('pf2egear.bag_store_ok', :name => stored_item, :bag => bag.name)
+        client.emit_success t('pf2egear.bag_store_ok', :name => item.name, :bag => bag.name)
       end
 
     end
