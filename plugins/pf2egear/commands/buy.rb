@@ -81,7 +81,7 @@ module AresMUSH
         source_type = AresMUSH.const_get(Global.read_config('pf2e_gear_options', 'item_classes', self.category))
 
         case self.category
-        when "weapons", "weapon," "armor", "shields", "shield", "bags", "magicitem"
+        when "weapons", "weapon", "armor", "shields", "shield", "bags", "magicitem"
 
           if q > 1
             client.emit_ooc t('pf2egear.quantity_one_only')
