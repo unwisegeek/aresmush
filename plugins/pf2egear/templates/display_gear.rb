@@ -167,7 +167,8 @@ module AresMUSH
         qty = item.quantity > 99 ?  "99+" : item.quantity
         name = item.name
         linebreak = i % 2 == 1 ? "" : "%r"
-        "%b%b#{linebreak}(#{left(i, 3)}) #{left(name, 26)}:#{left(qty,3)}"
+        index = "(#{i}) #{name}"
+        "#{linebreak}%b%b#{left(index, 32)}:#{left(qty,3)}"
       end
 
       def header_bags
