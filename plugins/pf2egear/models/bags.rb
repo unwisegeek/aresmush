@@ -10,6 +10,7 @@ module AresMUSH
     attribute :price, :type => DataType::Integer, :default => 0
     attribute :capacity, :type => DataType::Integer, :default => 0
     attribute :gear_contents, :type => DataType::Hash, :default => {}
+    attribute :nickname
 
     reference :character, "AresMUSH::Character"
     collection :weapons, "AresMUSH::PF2Weapon", :bag
