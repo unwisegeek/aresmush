@@ -20,7 +20,7 @@ module AresMUSH
       end
 
       def check_valid_category
-        cats = %w(weapons weapon armor shields shield)
+        cats = %w(weapons weapon armor shields shield bags bag)
 
         return nil if cats.include?(self.category)
         return t('pf2egear.bad_category')
@@ -40,6 +40,8 @@ module AresMUSH
           item_list = Pf2egear.items_in_inventory(enactor.armor.to_a)
         when "shield", "shields"
           item_list = Pf2egear.items_in_inventory(enactor.shields.to_a)
+        when "bags", "bag"
+          item_list = enactor.bags.to_a
         end
 
         # Does item_num exist in category?
