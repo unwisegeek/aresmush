@@ -176,7 +176,7 @@ module AresMUSH
 
       def format_bags(bag, i)
         name = bag.nickname ? "#{bag.nickname} (#{bag.name})" : bag.name
-        capacity = bag.max_capacity
+        capacity = bag.capacity
         current_load = Pf2egear.calculate_bag_load(bag)
 
         "%b%b#{left(i, 3)}%b#{left(name, 59)}%b#{left(current_load + "/" + capacity, 12)}"
