@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2egear
-    class PF2BagStoreCmd
+    class PF2BagRetrieveCmd
       include CommandHandler
 
       attr_accessor :bag_id, :category, :item_id
@@ -43,19 +43,18 @@ module AresMUSH
 
         case self.category
         when "weapon", "weapons"
-          item = Pf2egear.items_in_inventory(enactor.weapons.to_a)[self.item_id]
+          item = bag.weapons.to_a[self.item_id]
         when "armor"
-          item = Pf2egear.items_in_inventory(enactor.armor.to_a)[self.item_id]
+          item = bag.armor.to_a[self.item_id]
         when "shield", "shields"
-          item = Pf2egear.items_in_inventory(enactor.shields.to_a)[self.item_id]
+          item = bag.shields.to_a[self.item_id]
         when "magicitem", "magicitems"
-          item = Pf2egear.items_in_inventory(enactor.magicitems.to_a)[self.item_id]
+          item = bag.magicitem.to_a[self.item_id]
         when "consumables"
-          item = Pf2egear.items_in_inventory(enactor.consumables.to_a)[self.item_id]
+          item = bag.consumables.to_a[self.item_id]
         when "gear"
-          item = Pf2egear.items_in_inventory(enactor.gear.to_a)[self.item_id]
+          item = bag.gear.to_a[self.item_id]
         end
-
 
         if !item
           client.emit_failure t('pf2egear.not_found')
@@ -64,9 +63,9 @@ module AresMUSH
 
         # Move the item.
 
-        item.update(bag: bag)
+        item.update(bag: nil)
 
-        client.emit_success t('pf2egear.bag_store_ok', :name => item.name, :bag => bag.name)
+        client.emit_success t('pf2egear.bag_retrieve_ok', :name => item.name, :bag => bag.name)
       end
 
     end
