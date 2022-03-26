@@ -55,13 +55,26 @@ module AresMUSH
       list.filter { |item| !(item.bag) }
     end
 
-    def self.bag_effective_bulk(bag)
+    def self.bag_effective_bulk(bag, load)
       max_capacity = bag.capacity
       capacity_bonus = bag.bulk_bonus ? bag.bulk_bonus : 0
       bag_bulk = bag.bulk
 
-      char_bulk = (current_load + bag_bulk - capacity_bonus).clamp(0,100)
+      char_bulk = (load + bag_bulk - capacity_bonus).clamp(0,100)
     end
 
+    def self.calculate_bag_load(bag)
+      wp_load = bag.weapons.map { |w| w.bulk }.sum
+      armor_load = bag.armor.map { |a| a.bulk }.sum
+      shield_load = bag.shields.map { |s| s.bulk }.sum
+      mi_load = bag.magicitems.map { |m| m.bulk }.sum
+      c_load = bag.consumables.map { |c| c.bulk }.sum
+      gear_load = bag.gear.map { |g| g.bulk }.sum
+
+      wp_load + armor_load + shield_load + mi_load + c_load + gear_load
+    end
+
+
+    
   end
 end

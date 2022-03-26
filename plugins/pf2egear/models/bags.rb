@@ -16,6 +16,8 @@ module AresMUSH
     collection :armor, "AresMUSH::PF2Armor", :bag
     collection :shields, "AresMUSH::PF2Shield", :bag
     collection :magicitem, "AresMUSH::PF2MagicItem", :bag
+    collection :gear, "AresMUSH::PF2Gear", :bag
+    collection :consumables, "AresMUSH::PF2Consumable", :bag
 
   end
 end

@@ -67,49 +67,23 @@ module AresMUSH
       def consumables
         list = []
 
-        con_list = @bag.gear_contents['consumables'] ? @bag.gear_contents['consumables'] : {}
+        consumables_list = @bag.consumables ? @bag.consumables.to_a : []
 
-        char_cons_list = con_list.keys
-
-        game_cons_list = Global.read_config('pf2e_consumables')
-
-        cons_bulk = []
-
-        if !(char_cons_list.empty?)
-          char_cons_list.each_with_index do |item, i|
-            cons_bulk << game_cons_list[item]['bulk']
-
-            qty = con_list[item]
-            list << format_cons(item, qty, i)
-          end
+        consumables_list.each_with_index do |c,i|
+          list << format_gear(c,i)
         end
-
-        @consumables_bulk = cons_bulk.empty? ? cons_bulk.sum : 0
 
         list
       end
 
-      def gear_list
+      def gear
         list = []
 
-        con_list = @bag.gear_contents['gear'] ? @bag.gear_contents['gear'] : {}
+        gear_list = @bag.gear ? @bag.gear.to_a : []
 
-        char_glist = con_list.keys
-
-        game_glist = Global.read_config('pf2e_gear')
-
-        gbulk = []
-
-        if !(char_glist.empty?)
-          char_glist.each_with_index do |item, i|
-            gbulk << game_glist[item]['bulk']
-
-            qty = con_list[item]
-            list << format_cons(item, qty, i)
-          end
+        gear_list.each_with_index do |g,i|
+          list << format_gear(g,i)
         end
-
-        @gear_bulk = gbulk.empty? ? gbulk.sum : 0
 
         list
       end
@@ -120,11 +94,11 @@ module AresMUSH
 
       def encumbrance
 
-        current_load = @weapon_bulk + @armor_bulk + @shields_bulk + @consumables_bulk + @gear_bulk
+        current_load = Pf2egear.calculate_bag_load(@bag)
 
-        char_bulk = Pf2egear.bag_effective_bulk(@bag)
+        bag_bulk = Pf2egear.bag_effective_bulk(@bag, current_load)
 
-        "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    #{item_color}Character Load%xn: #{char_bulk}"
+        "#{item_color}Capacity:%xn #{current_load} / #{max_capacity}    #{item_color}Character Load%xn: #{bag_bulk}"
       end
 
       def header_wp_armor
@@ -161,9 +135,11 @@ module AresMUSH
         "%b%b#{left(i, 3)}%b#{left(name, 45)}%b#{left(bulk, 8)}%b#{left(disp_hp,12)}"
       end
 
-      def format_cons(name,qty,i)
+      def format_gear(item,i)
+        qty = item.quantity > 99 ? item.quantity : "99+"
+        name = item.name
         linebreak = i % 2 == 1 ? "" : "%r"
-        "#{linebreak}#{left(name, 32)}: #{left(qty,3)} "
+        "#{linebreak}#{left(i, 3)}%b#{left(name, 28)}: #{left(qty,3)} "
       end
     end
 

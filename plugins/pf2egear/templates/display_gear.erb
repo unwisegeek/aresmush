@@ -23,12 +23,16 @@
 <%= item -%>
 <% end %>
 
-<% gear_list.each do |item| -%>
+<% gear.each do |item| -%>
 <%= item -%>
 <% end %>
 
 <%= section_line("Bags") %>
-<%= bags %>
+<%= header_bags %>
+<%= divider %>
+<% bags.each do |item| -%>
+<%= item %>
+<% end %>
 <%= section_line("Money") %>
 <%= center("#{money}", 78) %>
 <% if use_encumbrance %>
