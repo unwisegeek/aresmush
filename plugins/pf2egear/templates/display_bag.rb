@@ -95,6 +95,7 @@ module AresMUSH
       def encumbrance
 
         current_load = Pf2egear.calculate_bag_load(@bag)
+        max_capacity = @bag.capacity
 
         bag_bulk = Pf2egear.bag_effective_bulk(@bag, current_load)
 
