@@ -78,7 +78,7 @@ module AresMUSH
         end
 
         # Create the item. If it's gear or a consumable, multiples are allowed, otherwise only one.
-        source_type = Kernel.const_get("AresMUSH::" + Global.read_config('pf2e_gear_options', 'item_classes', category))
+        source_type = AresMUSH.const_get(Global.read_config('pf2e_gear_options', 'item_classes', self.category))
 
         case self.category
         when "weapons", "weapon," "armor", "shields", "shield", "bags", "magicitem"
