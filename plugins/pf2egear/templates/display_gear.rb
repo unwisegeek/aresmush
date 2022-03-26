@@ -164,7 +164,8 @@ module AresMUSH
       end
 
       def format_gear(item,i)
-        qty = (item.quantity > 99) ? item.quantity : "99+"
+        # qty = (item.quantity > 99) ? item.quantity : "99+"
+        qty = item.quantity
         name = item.name
         linebreak = i % 2 == 1 ? "" : "%r"
         "#{linebreak}#{left(i, 3)}%b#{left(name, 28)}: #{left(qty,3)} "
