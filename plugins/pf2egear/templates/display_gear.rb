@@ -25,7 +25,7 @@ module AresMUSH
         @weapon_bulk = wp_list.map { |wp| wp.bulk }.sum
 
         wp_list.each_with_index do |wp,i|
-          list << format_wp()@char,wp,i)
+          list << format_wp(@char,wp,i)
         end
 
         list
