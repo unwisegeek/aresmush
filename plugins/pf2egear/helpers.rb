@@ -67,7 +67,7 @@ module AresMUSH
       wp_load = bag.weapons.map { |w| w.bulk }.sum
       armor_load = bag.armor.map { |a| a.bulk }.sum
       shield_load = bag.shields.map { |s| s.bulk }.sum
-      mi_load = bag.magicitems.map { |m| m.bulk }.sum
+      mi_load = bag.magicitem.map { |m| m.bulk }.sum
       c_load = bag.consumables.map { |c| c.bulk }.sum
       gear_load = bag.gear.map { |g| g.bulk }.sum
 
@@ -75,6 +75,6 @@ module AresMUSH
     end
 
 
-    
+
   end
 end
