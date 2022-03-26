@@ -168,7 +168,7 @@ module AresMUSH
         name = item.name
         linebreak = i % 2 == 1 ? "" : "%r"
         index = "(#{i}) #{name}"
-        "#{linebreak}%b%b#{left(index, 32)}:#{left(qty,3)}"
+        "#{linebreak} #{left(index, 30)}: #{left(qty,3)} "
       end
 
       def header_bags
