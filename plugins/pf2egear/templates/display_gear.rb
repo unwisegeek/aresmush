@@ -164,10 +164,10 @@ module AresMUSH
       end
 
       def format_gear(item,i)
-        qty = item.quantity > 99 ?  "99+" : item.quantity 
+        qty = item.quantity > 99 ?  "99+" : item.quantity
         name = item.name
         linebreak = i % 2 == 1 ? "" : "%r"
-        "#{linebreak}#{left(i, 3)}%b#{left(name, 28)}: #{left(qty,3)} "
+        "%b%b#{linebreak}()#{left(i, 3)}) #{left(name, 25)}:#{left(qty,3)} "
       end
 
       def header_bags
