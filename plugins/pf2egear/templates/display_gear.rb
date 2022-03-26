@@ -82,6 +82,7 @@ module AresMUSH
 
         bags.each_with_index do |b,i|
           list << format_bags(b,i)
+        end
 
         list
       end
@@ -176,6 +177,8 @@ module AresMUSH
 
         "%b%b#{left(i, 3)}%b#{left(name, 59)}%b#{left(current_load + "/" + capacity, 12)}"
       end
+
+
     end
 
   end
