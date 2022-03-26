@@ -119,7 +119,7 @@ module AresMUSH
 
         enc_state = current_bulk >= encumbered ? "%xh%xyEncumbered%xn" : "%xgUnencumbered%xn"
 
-        "#{item_color}Current Bulk:%xn #{current_bulk} / #{max_capacity} (#{enc_state})"
+        "#{item_color}Current Bulk:%xn #{current_bulk.to_i} / #{max_capacity} (#{enc_state})"
       end
 
       def money
