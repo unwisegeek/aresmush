@@ -78,7 +78,11 @@ module AresMUSH
 
         bags = @char.bags ? @char.bags : []
 
-        @bag_bulk = bags.map { |b| Pf2egear.bag_effective_bulk(b) }.sum
+        blist = bags.map do |b|
+          Pf2egear.bag_effective_bulk b, PF2egear.calculate_bag_load(b)
+        end
+
+        @bag_bulk = blist.sum
 
         bags.each_with_index do |b,i|
           list << format_bags(b,i)
