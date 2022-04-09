@@ -377,7 +377,7 @@ pf2e_heritage:
   Razortooth:
     attack:
       Jaws:
-        damage: 1d6
+        damage: d6
         damage_type: P
         traits:
         - finesse
@@ -563,7 +563,7 @@ pf2e_heritage:
   Taloned:
     attack:
       Talons:
-        damage: 1d4
+        damage: d4
         damage_type: S
         traits:
         - agile

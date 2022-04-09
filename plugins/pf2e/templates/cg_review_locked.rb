@@ -290,7 +290,7 @@ module AresMUSH
           messages << t('pf2e.lore_options_ok')
         end
 
-        open_lang = @char.pf2_to_assign['open_languages'] ? @char.pf2_to_assign['open_languages'] : []
+        open_lang = @char.pf2_to_assign['open languages'] ? @char.pf2_to_assign['open languages'] : []
 
         if open_lang.include?('open')
           messages << t('pf2e.unassigned_lang')

@@ -76,7 +76,9 @@ module AresMUSH
       wp_load + armor_load + shield_load + mi_load + c_load + gear_load
     end
 
-
+    def self.invested_items(char)
+      item_list = char.magic_items.select { |item| item.invested }.to_a
+    end
 
   end
 end

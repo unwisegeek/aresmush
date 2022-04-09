@@ -36,7 +36,7 @@ pf2e_specialty:
           Ape:
             attack:
               Ape Fist:
-                damage: 1d10
+                damage: d10
                 damage_type: B
                 traits:
                 - grapple
@@ -44,12 +44,12 @@ pf2e_specialty:
           Bear:
             attack:
               Bear Jaws:
-                damage: 1d10
+                damage: d10
                 damage_type: P
                 traits:
                 - unarmed
               Bear Claws:
-                damage: 1d6
+                damage: d6
                 damage_type: S
                 traits:
                 - agile
@@ -57,7 +57,7 @@ pf2e_specialty:
           Bull:
             attack:
               Bull Horn:
-                damage: 1d10
+                damage: d10
                 damage_type: P
                 traits:
                 - shove
@@ -65,12 +65,12 @@ pf2e_specialty:
           Cat:
             attack:
               Cat Jaws:
-                damage: 1d10
+                damage: d10
                 damage_type: P
                 traits:
                 - unarmed
               Cat Claws:
-                damage: 1d6
+                damage: d6
                 damage_type: S
                 traits:
                 - agile
@@ -78,7 +78,7 @@ pf2e_specialty:
           Deer:
             attack:
               Deer Antler:
-                damage: 1d8
+                damage: d8
                 damage_type: P
                 traits:
                 - charge
@@ -86,12 +86,12 @@ pf2e_specialty:
           Frog:
             attack:
               Frog Jaws:
-                damage: 1d10
+                damage: d10
                 damage_type: B
                 traits:
                 - unarmed
               Frog Tongue:
-                damage: 1d4
+                damage: d4
                 damage_type: B
                 traits:
                 - agile
@@ -99,7 +99,7 @@ pf2e_specialty:
           Shark:
             attack:
               Shark Jaws:
-                damage: 1d10
+                damage: d10
                 damage_type: P
                 traits:
                 - grapple
@@ -107,7 +107,7 @@ pf2e_specialty:
           Snake:
             attack:
               Snake Fangs:
-                damage: 1d10
+                damage: d10
                 damage_type: P
                 traits:
                 - grapple
@@ -115,7 +115,7 @@ pf2e_specialty:
           Wolf:
             attack:
               Wolf Jaws:
-                damage: 1d10
+                damage: d10
                 damage_type: P
                 traits:
                 - trip
@@ -128,7 +128,7 @@ pf2e_specialty:
         Ape:
           attack:
             Ape Fist:
-              damage: 1d12
+              damage: d12
               damage_type: B
               traits:
               - grapple
@@ -136,12 +136,12 @@ pf2e_specialty:
         Bear:
           attack:
             Bear Jaws:
-              damage: 1d12
+              damage: d12
               damage_type: P
               traits:
               - unarmed
             Bear Claws:
-              damage: 1d8
+              damage: d8
               damage_type: S
               traits:
               - agile
@@ -149,7 +149,7 @@ pf2e_specialty:
         Bull:
           attack:
             Bull Horn:
-              damage: 1d12
+              damage: d12
               damage_type: P
               traits:
               - shove
@@ -157,12 +157,12 @@ pf2e_specialty:
         Cat:
           attack:
             Cat Jaws:
-              damage: 1d12
+              damage: d12
               damage_type: P
               traits:
               - unarmed
             Cat Claws:
-              damage: 1d8
+              damage: d8
               damage_type: S
               traits:
               - agile
@@ -170,7 +170,7 @@ pf2e_specialty:
         Deer:
           attack:
             Deer Antler:
-              damage: 1d10
+              damage: d10
               damage_type: P
               traits:
               - charge
@@ -179,12 +179,12 @@ pf2e_specialty:
         Frog:
           attack:
             Frog Jaws:
-              damage: 1d12
+              damage: d12
               damage_type: B
               traits:
               - unarmed
             Frog Tongue:
-              damage: 1d6
+              damage: d6
               damage_type: B
               traits:
               - agile
@@ -193,7 +193,7 @@ pf2e_specialty:
         Shark:
           attack:
             Shark Jaws:
-              damage: 1d12
+              damage: d12
               damage_type: P
               traits:
               - grapple
@@ -201,7 +201,7 @@ pf2e_specialty:
         Snake:
           attack:
             Snake Fangs:
-              damage: 1d12
+              damage: d12
               damage_type: P
               traits:
               - grapple
@@ -209,7 +209,7 @@ pf2e_specialty:
         Wolf:
           attack:
             Wolf Jaws:
-              damage: 1d12
+              damage: d12
               damage_type: P
               traits:
               - trip

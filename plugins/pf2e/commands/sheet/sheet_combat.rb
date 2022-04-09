@@ -1,13 +1,12 @@
 module AresMUSH
   module Pf2e
 
-    class PF2DisplaySheetCmd
+    class PF2DisplayCombatSheetCmd
       include CommandHandler
 
-      attr_accessor :section, :target
+      attr_accessor :target
 
       def parse_args
-        self.section = cmd.switch ? downcase_arg(cmd.switch) : "all"
         self.target = trim_arg(cmd.args)
       end
 
@@ -32,14 +31,7 @@ module AresMUSH
           return
         end
 
-        valid_sections = %w{all info ability skills feats features languages magic}
-
-        if valid_sections.include? self.section
-          template = Pf2eSheetTemplate.new(char, self.section, client, char.pf2_base_info, char.pf2_faith)
-        else
-          client.emit_failure t('pf2e.bad_section', :section => self.section)
-          return
-        end
+        template = PF2CombatSheetTemplate.new(char, client)
 
         client.emit template.render
       end

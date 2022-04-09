@@ -320,6 +320,26 @@ module AresMUSH
 
         combat.update(key_abil: key_ability) if key_ability.is_a?(String)
 
+        # Collate and record unarmed attacks. Everyone starts with a fist.
+        # A monk's fist does lethal damage, but everyone else is nonlethal with a fist.
+
+        fist_traits = %w(agile finesse unarmed)
+        fist_traits << 'nonlethal' unless charclass == 'Monk'
+
+        unarmed_attacks = {
+          'Fist' => {
+              'damage' => '1d4',
+              'damage_type' => 'S',
+              'traits' => fist_traits.sort
+          }
+        }
+
+        unarmed_attacks.merge ancestry_info['attack'] if ancestry_info['attack']
+        unarmed_attacks.merge heritage_info['attack'] if heritage_info['attack']
+        unarmed_attacks.merge subclass_option_info['attack'] if subclass_option_info
+
+        combat.update(unarmed_attacks: unarmed_attacks.compact)
+
         # Starting Magic
         magic_stats = class_features_info['magic_stats']
 
