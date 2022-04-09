@@ -29,6 +29,7 @@ pf2e:
     remalias: roll/alias
     listalias: roll/listalias
     rollfor: roll/for
+    csheet: sheet/combat
   allowed_alignments:
   - LG
   - NG
