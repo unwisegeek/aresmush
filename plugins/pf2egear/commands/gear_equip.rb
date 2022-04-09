@@ -51,7 +51,7 @@ module AresMUSH
 
         if equipped_items
           if !equipped_items.empty?
-            client.emit_failure t'pf2egear.already_equipped')
+            client.emit_failure t('pf2egear.already_equipped')
             return
           end
         end
