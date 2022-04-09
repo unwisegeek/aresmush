@@ -77,15 +77,6 @@ module AresMUSH
         # roll_keywords = Global.read_config('pf2e', 'roll_keywords')
         title_word = downcase_word.capitalize
         skills = Global.read_config('pf2e_skills').keys
-
-        # if roll_keywords.has_key?(downcase_word)
-        #   value = roll_keywords[downcase_word]
-        # elsif skills.member?(downcase_word)
-        #   value = Pf2eSkills.get_skill_bonus(char, downcase_word)
-        # elsif downcase_word.match?(/.+\slore$/)
-        #   value = Pf2eSkills.get_lore_bonus(char, downcase_word)
-        # end
-
         if skills.include?(title_word)
           value = Pf2eSkills.get_skill_bonus(char, title_word)
         elsif downcase_word.match?(/.+\slore$/)
@@ -119,7 +110,7 @@ module AresMUSH
     end
 
     def self.bonus_from_item(char, type)
-      return nil
+      return 0
     end
 
     def self.parse_roll_string(target,list)

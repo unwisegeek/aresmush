@@ -12,6 +12,8 @@ module AresMUSH
 
     attribute :weapon_prof, :type => DataType::Hash, :default => {}
 
+    attribute :unarmed_attacks, :type => DataType::Hash, :default => {}
+
     reference :character, "AresMUSH::Character"
 
 
@@ -151,5 +153,64 @@ module AresMUSH
 
     end
 
+    def self.abilmod_with_finesse(char)
+      strength = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Strength"))
+      dexterity = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Dexterity"))
+
+      dexterity > strength ? dexterity : strength
+    end
+
+    def self.get_wpattack_bonus(char, weapon)
+      prof = get_weapon_prof(char, weapon.name)
+      prof_bonus = Pf2e.get_prof_bonus(char, prof)
+
+      if (weapon.wp_type == 'ranged')
+        abil_bonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Dexterity"))
+      else
+        traits = weapon.traits
+        abil_bonus = traits.include?('finesse') ?
+          Pf2eCombat.abilmod_with_finesse(char) :
+          Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Strength"))
+      end
+
+      potency_rune = weapon.runes['fundamental']['potency']
+      potency_rune = 0 if !potency_rune
+
+      prof_bonus + abil_bonus + potency_rune
+    end
+
+    def self.get_natattack_bonus(char, attack)
+
+    end
+
+    def self.get_damage(char, attack, weapon=nil, twohand=false)
+      if weapon
+        # twohanddmg represents a one-handed weapon that does more damage when wielded two-handed
+        # This is called as a switch in roll, so defaults to false.
+        twohanddmg = weapon.wp_damage_2h
+        twohand = false unless twohanddmg
+        base_damage = twohand ? twohanddmg : weapon.wp_damage
+        damage_type = weapon.wp_damage_type
+      else
+        combat = char.combat
+        attack = combat.unarmed_attacks[attack.capitalize]
+        base_damage = attack ? attack['damage'] : 0
+      end
+
+      # Alchemical Bombs are their own animal, will do all the deets later.
+
+      base_info = char.pf2_base_info
+      use_dex_for_dmg = base_info['specialty'] == 'Thief')
+
+      abil_mod = use_dex_for_dmg ? abilmod_with_finesse(char) :
+        Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Strength"))
+
+      striking_rune = weapon ? weapon.runes['fundamental']['striking'] : false
+      striking_rune = 0 if !striking_rune
+
+      number_of_dice = 1 + striking_rune
+
+      ""
+    end
   end
 end

@@ -1,0 +1,27 @@
+<%= header %>
+<%= center("#{title_color}Pathfinder 2E Combat Sheet: #{name}", 78) %>%xn
+<%= divider %>
+<%= section_line("Space and Movement") %>
+<%= left("#{item_color}Size%xn: #{size}", 39) -%>
+<%= left("#{item_color}Movement%xn: #{movement}", 39) %>
+<%= section_line("Offense") %>
+<%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
+<%= left("#{item_color}Perception%xn: #{perception}",39) %>
+
+<% weapons.each do |weapon| %>
+<%= weapon %>
+<% end %>
+<%= section_line("Defense") %>
+<%= left("#{item_color}HP%xn: #{hp}",39) -%>
+<%= left("#{item_color}Temp HP%xn: #{temp_hp}",39) %>
+<%= left("#{item_color}Armor Class (AC)%xn: #{ac}",39) -%>
+<%= left("#{item_color}AC / Shield%xn: #{ac_with_shield}",39) %>
+<%= section_line("Saves and Resistances") %>
+<% saves.each do |save| %>
+<%= save -%>
+<% end %>
+
+<%= section_line("Conditions") %>
+<%= conditions %>
+<% end %>
+<%= footer %>
