@@ -37,7 +37,7 @@ module AresMUSH
           return
         end
 
-        if (invest_list !== list)
+        if (invest_list != list)
           client.emit_ooc t('pf2egear.bad_item_in_list')
         end
 
