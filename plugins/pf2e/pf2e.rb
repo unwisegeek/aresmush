@@ -17,6 +17,8 @@ module AresMUSH
         case cmd.switch
         when "show"
           return PF2ShowSheetCmd
+        when "combat"
+          return PF2DisplayCombatSheetCmd
         else
           return PF2DisplaySheetCmd
         end
