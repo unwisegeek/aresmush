@@ -31,6 +31,10 @@ module AresMUSH
           return PF2GearEquipCmd
         when "unequip"
           return PF2GearUnequipCmd
+        when "invest"
+          return PF2GearInvestCmd
+        when "uninvest"
+          return PF2GearUninvestCmd
         else
           return PF2DisplayGearCmd
         end
