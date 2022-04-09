@@ -129,9 +129,9 @@ module AresMUSH
 
       def format_save(char,name)
         save = "#{item_color}#{name.capitalize}%xn"
-        prof = Pf2eCombat.get_save_from_char(char, name)
+        prof = Pf2eCombat.get_save_from_char(char, name)[0].upcase
         bonus = Pf2eCombat.get_save_bonus(char, name)
-        "#{left("#{save}: #{bonus} (#{prof[0].upcase})", 26)}"
+        "#{left("#{save}: #{bonus} (#{prof})", 26)}"
       end
 
       def format_unarmed(char, atk_name, atk_info, unarmed_prof)
