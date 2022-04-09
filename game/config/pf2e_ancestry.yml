@@ -203,7 +203,7 @@ pf2e_ancestry:
     - Low-Light Vision
     attack:
       Beak:
-        damage: 1d6
+        damage: d6
         damage_type: P
         group: brawling
         traits:
@@ -460,7 +460,7 @@ pf2e_ancestry:
     - humanoid
     attack:
       Claws:
-        damage: 1d4
+        damage: d4
         damage_type: S
         traits:
         - agile
