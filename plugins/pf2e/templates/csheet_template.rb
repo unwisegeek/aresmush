@@ -10,6 +10,9 @@ module AresMUSH
         @char = char
         @client = client
 
+        @armor = Pf2eCombat.get_equipped_armor(@char)
+        @shield = Pf2eCombat.get_equipped_shield(@char)
+
         super File.dirname(__FILE__) + "/csheet_template.erb"
       end
 
@@ -25,24 +28,22 @@ module AresMUSH
         @char.name
       end
 
-      def movement
-        list = []
+      def speed
+        base_speed = @char.pf2_movement['Base Speed']
 
-        movelist = @char.pf2_movement
+        penalty = @armor ? @armor.speed_penalty : 0
 
-        movelist.each_pair do |type, speed|
-
-          next if type == "Size"
-
-          fmt_type = type.split("_").each { |word| word.capitalize! }.join(" ")
-          list << "%xh#{fmt_type}%xn: #{speed}'"
-        end
-
-        list.sort.join(", ")
+        speed = base_speed - penalty
       end
 
-      def size
-        @char.pf2_movement["Size"]
+      def movement
+        movelist = @char.pf2_movement
+
+        if movelist.size > 2
+          return "This character has other forms of movement. Check %x172sheet%xn for details."
+        end
+
+        return false
       end
 
       def hp
@@ -99,19 +100,25 @@ module AresMUSH
       end
 
       def ac
-        armor = @char.armor&.select { |a| a.equipped }.first
-
-        abonus = armor ? armor.ac_bonus : 0
-        a_cat = armor ? armor.category : "unarmored"
+        abonus = @armor ? @armor.ac_bonus : 0
+        a_cat = @armor ? @armor.category : "unarmored"
         prof_with_armor = combat_stats.armor_prof[a_cat]
         pbonus = Pf2e.get_prof_bonus(prof_with_armor)
 
         ibonus = Pf2e.bonus_from_item(char, "ac")
 
-        dex_cap = armor ? armor.dex_cap : 99
+        dex_cap = @armor ? @armor.dex_cap : 99
         dbonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, 'Dexterity')).clamp(-99, dex_cap)
 
         ac = 10 + abonus + pbonus + ibonus + dbonus
+      end
+
+      def ac_with_shield
+        return ac if !(@shield)
+
+        shield_bonus = @shield.ac_bonus
+
+        ac + shield_bonus
       end
 
       def unarmed_attacks

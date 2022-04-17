@@ -83,6 +83,14 @@ module AresMUSH
       10 + prof_bonus + abil_mod + item_bonus
     end
 
+    def self.get_equipped_armor(char)
+      char.armor&.select { |a| a.equipped }.first
+    end
+
+    def self.get_equipped_shield(char)
+      char.shields&.select { |s| s.equipped }.first
+    end
+
     def self.get_perception(char)
       abil_mod = Pf2e.get_linked_attr_mod(char, 'perception')
       combat_stats = char.combat
