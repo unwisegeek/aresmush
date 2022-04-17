@@ -21,6 +21,10 @@ module AresMUSH
         @char.combat
       end
 
+      def name
+        @char.name
+      end
+
       def hp
         hp = @char.hp
 
