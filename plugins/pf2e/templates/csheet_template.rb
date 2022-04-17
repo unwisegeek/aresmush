@@ -29,7 +29,7 @@ module AresMUSH
       end
 
       def speed
-        base_speed = @char.pf2_movement['Base Speed']
+        base_speed = @char.pf2_movement['base_speed']
 
         penalty = @armor ? @armor.speed_penalty : 0
 
