@@ -240,7 +240,7 @@ module AresMUSH
       end
 
       def base_speed
-        @char.pf2_movement['base_speed'] + "feet"
+        @char.pf2_movement['base_speed'].to_s + "feet"
       end
 
       def movement
