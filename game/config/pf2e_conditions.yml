@@ -24,16 +24,12 @@ pf2e_conditions:
     short_descr: You lose your wits and attack wildly.
     descr: "You don’t have your wits about you, and you attack wildly. You are flat-footed,
     you don’t treat anyone as your ally (though they might still treat you as theirs),
-    and you can’t Delay, Ready, or use reactions.
-
-You use all your actions to Strike or
+    and you can’t Delay, Ready, or use reactions.\n\nYou use all your actions to Strike or
     cast offensive cantrips, though the GM can have you use other actions to facilitate attack,
     such as draw a weapon, move so that a target is in reach, and so forth. Your targets are
     determined randomly by the GM. If you have no other viable targets, you target yourself,
     automatically hitting but not scoring a critical hit. If it’s impossible for you to attack or
-    cast spells, you babble incoherently, wasting your actions.
-
-Each time you take damage
+    cast spells, you babble incoherently, wasting your actions.\n\nEach time you take damage
     from an attack or spell, you can attempt a DC 11 flat check to recover from your confusion
     and end the condition."
     value: false
@@ -312,7 +308,7 @@ GAME NOTE: This penalty is not coded.
     your stunned value by the number of actions you lost. For example, if you were
     stunned 4, you would lose all 3 of your actions on your turn, reducing you to
     stunned 1; on your next turn, you would lose 1 more action, and then be able to
-    use your remaining 2 actions normally. 
+    use your remaining 2 actions normally.
 
 Stunned might also have a duration instead
     of a value, such as “stunned for 1 minute.” In this case, you lose all your actions
@@ -355,7 +351,7 @@ If you are unconscious and at 0 Hit Points, but not dying,
     you naturally return to 1 Hit Point and awaken after sufficient time passes. The GM determines how
     long you remain unconscious, from a minimum of 10 minutes to several hours. If
     you receive healing during this time, you lose the unconscious condition and can
-    act normally on your next turn. 
+    act normally on your next turn.
 
 If you’re unconscious and have more than 1 Hit Point
     (typically because you are asleep or unconscious due to an effect), you wake up in one of
