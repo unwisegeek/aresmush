@@ -239,17 +239,21 @@ module AresMUSH
         list = lang.empty? ? "None set." : lang.sort.join(", ")
       end
 
+      def base_speed
+        @char.pf2_movement['base_speed'] + "feet"
+      end
+
       def movement
         list = []
 
         movelist = @char.pf2_movement
 
-        movelist.each_pair do |type, speed|
+        movelist.each_pair do |type, value|
 
-          next if type == "Size"
+          next if type == ("Size" || "base_speed"
 
           fmt_type = type.split("_").each { |word| word.capitalize! }.join(" ")
-          list << "%xh#{fmt_type}%xn: #{speed}'"
+          list << "%xh#{fmt_type}%xn: #{value}'"
         end
 
         list.sort.join(", ")
