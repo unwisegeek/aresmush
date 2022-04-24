@@ -9,16 +9,18 @@ module AresMUSH
       end
       
       def handle
-        array = %w{untrained trained expert untrained expert trained}
-      
-        profs = %w{untrained trained expert master legendary}
-
-        sorted_array = array.sort{ |a,b| profs.index(a) <=> profs.index(b) }
-
-        best_prof = sorted_array.pop
+        char = Character.find_one_by_name("Testchar")
+        armor = Pf2eCombat.get_equipped_armor(char)
         
-        client.emit sorted_array
-        client.emit best_prof
+        client.emit "Armor is nil" if armor == nil
+        
+        if armor 
+            client.emit armor.name
+        else 
+            client.emit "No armor found."
+        end
+        
+        
       end
 
     end
