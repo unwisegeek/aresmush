@@ -16,7 +16,7 @@ module AresMUSH
     attribute :speed_penalty, :type => DataType::Integer, :default => 0
     attribute :min_str, :type => DataType::Integer, :default => 10
     attribute :group, :default => ""
-    attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => [], 'property' => [] }
+    attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => {} , 'property' => {} }
     attribute :equipped, :type => DataType::Boolean, :default => false
 
     reference :character, "AresMUSH::Character"
