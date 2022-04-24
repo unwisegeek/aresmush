@@ -173,7 +173,7 @@ module AresMUSH
         traits = w.traits.join(", ")
 
         "%b%b#{left(i, 3)}%b#{left(name, 40)}%b#{left("#{bonus} (#{prof})",10)}%b#{left(damage, 15)}
-        %b%b#{item_color}Traits:%xn #{traits}"
+        #{item_color}Traits:%xn #{traits}"
       end
 
       def format_save(char,name)
