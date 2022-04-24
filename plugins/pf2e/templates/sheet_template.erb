@@ -17,13 +17,13 @@
 <%= traits %>
 <% end %>
 <% if section == "all" %>
-<%= section_line("Abilities") %>
+<%= section_line("Abilities") -%>
 <% end %>
 <% if section == "ability" || "all" -%>
 <% abilities.each do |a| -%>
 <%= a -%>
 <% end %>
-<%= "%r" %>
+
 <% end %>
 <% if section == "all" %>
 <%= section_line("Stats") %>
@@ -48,19 +48,19 @@
 <%= conditions %>
 <% end %>
 <% if section == "all" %>
-<%= section_line("Skills") %>
+<%= section_line("Skills") -%>
 <% end %>
 <% if section == "skills" || "all" %>
 <% skills.each do |s| %>
 <%= s -%>
 <% end %>
-<%= "%r" %>
-<%= section_line("Lores") %>
+
+<%= section_line("Lores") -%>
 <% lores.each do |lore| %>
 <%= lore -%>
 <% end %>
 <% end %>
-<%= "%r" %>
+
 <%= section_line("Languages") %>
 <%= languages %>
 <% if section == "all" %>
