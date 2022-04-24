@@ -18,15 +18,14 @@
 <% shields.each do |item| -%>
 <%= item %>
 <% end %>
-<%= section_line("Gear and Consumables") %>
-<% consumables.each do |item| -%>
-<%= item -%>
-<% end %>
-
+<%= section_line("Adventuring Gear") %>
 <% gear.each do |item| -%>
 <%= item -%>
 <% end %>
-
+<%= section_line("Consumables") %>
+<% consumables.each do |item| -%>
+<%= item -%>
+<% end %>
 <%= section_line("Bags") %>
 <%= header_bags %>
 <%= divider %>
