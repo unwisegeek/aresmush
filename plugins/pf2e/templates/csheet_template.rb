@@ -149,6 +149,22 @@ module AresMUSH
         list
       end
 
+      def conditions
+        cond = @char.pf2_conditions
+        if cond.empty?
+          value = "None active."
+        else
+          list = []
+          cond.each do |c,v|
+            list << format_condition(c,v)
+          end
+
+          value = list.sort.join(", ")
+        end
+
+        value
+      end
+
       def format_weapon(char,w,i)
         name = w.nickname ? "#{w.nickname} (#{w.name})" : w.name
         bonus = Pf2eCombat.get_wpattack_bonus(char, w)
@@ -168,6 +184,14 @@ module AresMUSH
       def format_unarmed(char, atk_name, atk_info, unarmed_prof)
 
         # UNFINISHED
+      end
+
+      def format_condition(condition, value)
+        colors = Global.read_config('pf2e', 'condition_colors')
+        cond_color = colors[condition.to_s]
+        name = "#{cond_color}#{condition}"
+        value = value ? "%b#{value}" : ""
+        "#{name}#{value}%xn"
       end
 
     end
