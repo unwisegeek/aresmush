@@ -196,6 +196,7 @@ module AresMUSH
         # twohanddmg represents a one-handed weapon that does more damage when wielded two-handed
         # This is called as a switch in roll, so defaults to false.
         twohanddmg = weapon.wp_damage_2h
+        # If the weapon does not change damage for 2h wield, twohand argument is ignored
         twohand = false unless twohanddmg
         base_damage = twohand ? twohanddmg : weapon.wp_damage
         damage_type = weapon.wp_damage_type
@@ -203,6 +204,7 @@ module AresMUSH
         combat = char.combat
         attack = combat.unarmed_attacks[attack.capitalize]
         base_damage = attack ? attack['damage'] : 0
+        damage_type = "B"
       end
 
       # Alchemical Bombs are their own animal, will do all the deets later.
@@ -218,7 +220,9 @@ module AresMUSH
 
       number_of_dice = 1 + striking_rune
 
-      ""
+      dmg_mod = abil_mod + striking_rune
+
+      "#{number_of_dice}#{base_damage}+#{dmg_mod}"
     end
   end
 end
