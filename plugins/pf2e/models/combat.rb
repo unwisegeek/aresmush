@@ -181,7 +181,7 @@ module AresMUSH
           Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Strength"))
       end
 
-      potency_rune = weapon.runes['fundamental']['potency'].to_i
+      potency_rune = weapon.runes['fundamental']['potency']
       potency_rune = 0 if !potency_rune
 
       prof_bonus + abil_bonus + potency_rune
