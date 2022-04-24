@@ -240,7 +240,7 @@ module AresMUSH
       end
 
       def base_speed
-        @char.pf2_movement['base_speed'].to_s + "feet"
+        @char.pf2_movement['base_speed'].to_s + " feet"
       end
 
       def movement
@@ -250,7 +250,8 @@ module AresMUSH
 
         movelist.each_pair do |type, value|
 
-          next if type == ("Size" || "base_speed")
+          next if type == "Size"
+          next if type == "base_speed"
 
           fmt_type = type.split("_").each { |word| word.capitalize! }.join(" ")
           list << "%xh#{fmt_type}%xn: #{value}'"
