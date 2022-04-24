@@ -19,7 +19,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - two-hand
+    - Two-Handed
     level: 0
     price: 400
     wp_damage: d8
@@ -34,7 +34,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - sweep
+    - Sweep
     level: 0
     price: 100
     wp_damage: d8
@@ -48,8 +48,8 @@ pf2e_weapons:
     wp_type: ranged
     category: simple
     traits:
-    - agile
-    - nonlethal
+    - Agile
+    - Nonlethal
     level: 0
     price: 10
     wp_damage: 1
@@ -63,10 +63,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - monk
-    - parry
-    - reach
-    - trip
+    - Monk
+    - Parry
+    - Reach
+    - Trip
     level: 0
     price: 20
     wp_damage: d8
@@ -80,9 +80,9 @@ pf2e_weapons:
     wp_type: ranged
     category: martial
     traits:
-    - non-lethal
-    - ranged trip
-    - thrown
+    - Nonlethal
+    - Ranged Trip
+    - Thrown
     level: 0
     price: 50
     wp_damage: d6
@@ -96,10 +96,10 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - agile
-    - khazad
-    - parry
-    - versatile_B
+    - Agile
+    - Khazad
+    - Parry
+    - Versatile (B)
     level: 0
     price: 200
     wp_damage: d4
@@ -113,12 +113,12 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - deadly_d8
-    - disarm
-    - finesse
-    - oruch
-    - versatile_P
+    - Agile
+    - Deadly (d8)
+    - Disarm
+    - Finesse
+    - Oruch
+    - Versatile (P)
     level: 0
     price: 200
     wp_damage: d4
@@ -134,7 +134,7 @@ pf2e_weapons:
     charclass:
     - Wizard
     traits:
-    - thrown
+    - Thrown
     level: 0
     price: 0
     wp_damage: d6
@@ -148,9 +148,9 @@ pf2e_weapons:
     wp_type: ranged
     category: martial
     traits:
-    - deadly_d10
-    - propulsive
-    - volley_30
+    - Deadly (d10)
+    - Propulsive
+    - Volley (30)
     level: 0
     price: 2000
     wp_damage: d8
@@ -164,8 +164,8 @@ pf2e_weapons:
     wp_type: ranged
     category: martial
     traits:
-    - deadly_d10
-    - propulsive
+    - Deadly (d10)
+    - Propulsive
     level: 0
     price: 1400
     wp_damage: d6
@@ -196,10 +196,10 @@ pf2e_weapons:
     charclass:
     - Wizard
     traits:
-    - agile
-    - finesse
-    - thrown
-    - versatile_S
+    - Agile
+    - Finesse
+    - Thrown
+    - Versatile (S)
     level: 0
     price: 20
     wp_damage: d4
@@ -226,8 +226,8 @@ pf2e_weapons:
     wp_type: ranged
     category: simple
     traits:
-    - agile
-    - thrown
+    - Agile
+    - Thrown
     level: 0
     price: 1
     wp_damage: d4
@@ -241,10 +241,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - backstabber
-    - finesse
-    - gobber
+    - Agile
+    - Backstabber
+    - Finesse
+    - Gobber
     level: 0
     price: 10
     wp_damage: d6
@@ -258,9 +258,9 @@ pf2e_weapons:
     wp_type: melee
     category: advanced
     traits:
-    - khazad
-    - sweep
-    - two-hand
+    - Khazad
+    - Sweep
+    - Two-Handed
     level: 0
     price: 300
     wp_damage: d8
@@ -275,9 +275,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - finesse
-    - forceful
-    - sildanyar
+    - Finesse
+    - Forceful
+    - Sildanyar
     level: 0
     price: 400
     wp_damage: d8
@@ -291,8 +291,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - forceful
-    - sweep
+    - Forceful
+    - Sweep
     level: 0
     price: 300
     wp_damage: d10
@@ -306,12 +306,12 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - backstabber
-    - deadly_d6
-    - finesse
-    - lucht
-    - thrown
+    - Agile
+    - Backstabber
+    - Deadly (d6)
+    - Finesse
+    - Lucht
+    - Thrown
     level: 0
     price: 100
     wp_damage: d4
@@ -325,9 +325,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - disarm
-    - sweep
-    - trip
+    - Disarm
+    - Sweep
+    - Trip
     level: 0
     price: 80
     wp_damage: d6
@@ -341,10 +341,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - disarm
-    - egalrin
-    - finesse
+    - Agile
+    - Disarm
+    - Egalrin
+    - Finesse
     level: 0
     price: 400
     wp_damage: d6
@@ -358,8 +358,8 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - agile
-    - free-hand
+    - Agile
+    - Free Hand
     level: 0
     price: 20
     wp_damage: d4
@@ -373,9 +373,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - deadly_d8
-    - forceful
-    - reach
+    - Deadly (d8)
+    - Forceful
+    - Reach
     level: 0
     price: 300
     wp_damage: d8
@@ -389,8 +389,8 @@ pf2e_weapons:
     wp_type: melee
     category: advanced
     traits:
-    - gnome
-    - reach
+    - Gnome
+    - Reach
     level: 0
     price: 300
     wp_damage: d8
@@ -404,10 +404,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - gnome
-    - trip
-    - two-hand
-    - versatile_P
+    - Gnome
+    - Trip
+    - Two-Handed
+    - Versatile (P)
     level: 0
     price: 200
     wp_damage: d6
@@ -422,7 +422,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - sweep
+    - Sweep
     level: 0
     price: 200
     wp_damage: d12
@@ -436,8 +436,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - backswing
-    - shove
+    - Backswing
+    - Shove
     level: 0
     price: 100
     wp_damage: d10
@@ -451,7 +451,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - fatal_d12
+    - Fatal (d12)
     level: 0
     price: 200
     wp_damage: d10
@@ -465,7 +465,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - versatile_P
+    - Versatile (P)
     level: 0
     price: 200
     wp_damage: d12
@@ -479,8 +479,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - reach
-    - trip
+    - Reach
+    - Trip
     level: 0
     price: 200
     wp_damage: d10
@@ -494,8 +494,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - reach
-    - versatile_S
+    - Reach
+    - Versatile (S)
     level: 0
     price: 200
     wp_damage: d10
@@ -509,9 +509,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - sweep
-    - thrown
+    - Agile
+    - Sweep
+    - Thrown
     level: 0
     price: 40
     wp_damage: d6
@@ -553,10 +553,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - gobber
-    - reach
-    - trip
-    - versatile_P
+    - Gobber
+    - Reach
+    - Trip
+    - Versatile (P)
     level: 0
     price: 90
     wp_damage: d8
@@ -570,7 +570,7 @@ pf2e_weapons:
     wp_type: ranged
     category: simple
     traits:
-    - thrown
+    - Thrown
     level: 0
     price: 10
     wp_damage: d6
@@ -584,9 +584,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - monk
-    - trip
+    - Agile
+    - Monk
+    - Trip
     level: 0
     price: 100
     wp_damage: d6
@@ -600,9 +600,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - deadly_d8
-    - two-hand
-    - versatile_P
+    - Deadly (d8)
+    - Two-Handed
+    - Versatile (P)
     level: 0
     price: 200
     wp_damage: d8
@@ -617,9 +617,9 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - agile
-    - deadly_d6
-    - monk
+    - Agile
+    - Deadly (d6)
+    - Monk
     level: 0
     price: 30
     wp_damage: d4
@@ -633,9 +633,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - shove
-    - two-hand
-    - versatile_P
+    - Shove
+    - Two-Handed
+    - Versatile (P)
     level: 0
     price: 200
     wp_damage: d6
@@ -650,9 +650,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - finesse
-    - trip
+    - Agile
+    - Finesse
+    - Trip
     level: 0
     price: 60
     wp_damage: d6
@@ -667,9 +667,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - deadly_d8
-    - jousting_d6
-    - reach
+    - Deadly (d8)
+    - Jousting (d6)
+    - Reach
     level: 0
     price: 100
     wp_damage: d8
@@ -683,8 +683,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - thrown
+    - Agile
+    - Thrown
     level: 0
     price: 30
     wp_damage: d6
@@ -698,9 +698,9 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - agile
-    - finesse
-    - shove
+    - Agile
+    - Finesse
+    - Shove
     level: 0
     price: 40
     wp_damage: d4
@@ -714,8 +714,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - fatal_d8
+    - Agile
+    - Fatal (d8)
     level: 0
     price: 40
     wp_damage: d4
@@ -729,8 +729,8 @@ pf2e_weapons:
     wp_type: ranged
     category: martial
     traits:
-    - deadly_d10
-    - volley_30
+    - Deadly (d10)
+    - Volley (30)
     level: 0
     price: 600
     wp_damage: d8
@@ -744,7 +744,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - reach
+    - Reach
     level: 0
     price: 50
     wp_damage: d8
@@ -760,7 +760,7 @@ pf2e_weapons:
     charclass:
     - Bard
     traits:
-    - versatile_P
+    - Versatile (P)
     level: 0
     price: 100
     wp_damage: d8
@@ -774,7 +774,7 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - shove
+    - Shove
     level: 0
     price: 100
     wp_damage: d6
@@ -788,11 +788,11 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - disarm
-    - finesse
-    - parry
-    - versatile_S
+    - Agile
+    - Disarm
+    - Finesse
+    - Parry
+    - Versatile (S)
     level: 0
     price: 50
     wp_damage: d4
@@ -806,7 +806,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - shove
+    - Shove
     level: 0
     price: 300
     wp_damage: d12
@@ -820,7 +820,7 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - versatile_P
+    - Versatile (P)
     level: 0
     price: 100
     wp_damage: d6
@@ -834,10 +834,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - backswing
-    - disarm
-    - finesse
-    - monk
+    - Backswing
+    - Disarm
+    - Finesse
+    - Monk
     level: 0
     price: 20
     wp_damage: d6
@@ -851,9 +851,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - disarm
-    - oruch
+    - Agile
+    - Disarm
+    - Oruch
     level: 0
     price: 70
     wp_damage: d6
@@ -867,9 +867,9 @@ pf2e_weapons:
     wp_type: melee
     category: advanced
     traits:
-    - forceful
-    - oruch
-    - sweep
+    - Forceful
+    - Oruch
+    - Sweep
     level: 0
     price: 200
     wp_damage: d8
@@ -884,7 +884,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - fatal_d10
+    - Fatal (d10)
     level: 0
     price: 70
     wp_damage: d6
@@ -899,8 +899,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - disarm
-    - reach
+    - Disarm
+    - Reach
     level: 0
     price: 200
     wp_damage: d10
@@ -917,9 +917,9 @@ pf2e_weapons:
     - Bard
     - Rogue
     traits:
-    - deadly_d8
-    - disarm
-    - finesse
+    - Deadly (d8)
+    - Disarm
+    - Finesse
     level: 0
     price: 200
     wp_damage: d6
@@ -933,11 +933,11 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - disarm
-    - finesse
-    - monk
-    - versatile_B
+    - Agile
+    - Disarm
+    - Finesse
+    - Monk
+    - Versatile (B)
     level: 0
     price: 60
     wp_damage: d8
@@ -955,8 +955,8 @@ pf2e_weapons:
     - Bard
     - Rogue
     traits:
-    - agile
-    - nonlethal
+    - Agile
+    - Nonlethal
     level: 0
     price: 10
     wp_damage: d6
@@ -970,9 +970,9 @@ pf2e_weapons:
     wp_type: melee
     category: advanced
     traits:
-    - agile
-    - finesse
-    - twin
+    - Agile
+    - Finesse
+    - Twin
     level: 0
     price: 500
     wp_damage: d6
@@ -986,8 +986,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - forceful
-    - sweep
+    - Forceful
+    - Sweep
     level: 0
     price: 100
     wp_damage: d6
@@ -1001,8 +1001,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - deadly_d10
-    - trip
+    - Deadly (d10)
+    - Trip
     level: 0
     price: 200
     wp_damage: d10
@@ -1015,8 +1015,8 @@ pf2e_weapons:
   Shield Boss:
     wp_type: melee
     category: martial
-    traits:
-    - shield
+    shield: true
+    traits: []
     level: 0
     price: 50
     wp_damage: d6
@@ -1029,8 +1029,8 @@ pf2e_weapons:
   Shield Spikes:
     wp_type: melee
     category: martial
-    traits:
-    - shield
+    shield: true
+    traits: []
     level: 0
     price: 50
     wp_damage: d6
@@ -1047,7 +1047,7 @@ pf2e_weapons:
     - Bard
     - Rogue
     traits:
-    - deadly_d10
+    - Deadly (d10)
     level: 0
     price: 300
     wp_damage: d6
@@ -1064,9 +1064,9 @@ pf2e_weapons:
     - Bard
     - Rogue
     traits:
-    - agile
-    - finesse
-    - versatile_S
+    - Agile
+    - Finesse
+    - Versatile (S)
     level: 0
     price: 90
     wp_damage: d6
@@ -1080,9 +1080,9 @@ pf2e_weapons:
     wp_type: ranged
     category: martial
     traits:
-    - agile
-    - monk
-    - thrown
+    - Agile
+    - Monk
+    - Thrown
     level: 0
     price: 1
     wp_damage: d4
@@ -1094,23 +1094,25 @@ pf2e_weapons:
     group: Dart
   Sickle:
     wp_type: melee
-    category: martial
+    category: simple
     traits:
-    - shield
+    - Agile
+    - Finesse
+    - Trip
     level: 0
-    price: 50
-    wp_damage: d6
-    wp_damage_type: B
+    price: 20
+    wp_damage: d4
+    wp_damage_type: S
     hands: 1
     range: 0
     reload: 0
-    bulk: 0
-    group: Shield
+    bulk: 0.1
+    group: Knife
   Sling:
     wp_type: ranged
     category: simple
     traits:
-    - propulsive
+    - Propulsive
     level: 0
     price: 0
     wp_damage: d6
@@ -1124,8 +1126,8 @@ pf2e_weapons:
     wp_type: ranged
     category: martial
     traits:
-    - lucht
-    - propulsive
+    - Lucht
+    - Propulsive
     level: 0
     price: 500
     wp_damage: d10
@@ -1139,7 +1141,7 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - thrown
+    - Thrown
     level: 0
     price: 10
     wp_damage: d6
@@ -1153,9 +1155,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - disarm
-    - finesse
-    - trip
+    - Disarm
+    - Finesse
+    - Trip
     level: 0
     price: 300
     wp_damage: d8
@@ -1169,8 +1171,8 @@ pf2e_weapons:
     wp_type: melee
     category: simple
     traits:
-    - agile
-    - free-hand
+    - Agile
+    - Free Hand
     level: 0
     price: 30
     wp_damage: d4
@@ -1186,7 +1188,7 @@ pf2e_weapons:
     charclass:
     - Wizard
     traits:
-    - two-hand
+    - Two-Handed
     level: 0
     price: 0
     wp_damage: d4
@@ -1201,11 +1203,11 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - deadly_d6
-    - finesse
-    - thrown
-    - versatile_S
+    - Agile
+    - Deadly (d6)
+    - Finesse
+    - Thrown
+    - Versatile (S)
     level: 0
     price: 200
     wp_damage: d4
@@ -1219,9 +1221,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
+    - Agile
     - concealable
-    - finesse
+    - Finesse
     level: 0
     price: 500
     wp_damage: d6
@@ -1235,8 +1237,8 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - monk
-    - trip
+    - Monk
+    - Trip
     level: 0
     price: 200
     wp_damage: d8
@@ -1250,7 +1252,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - thrown
+    - Thrown
     level: 0
     price: 100
     wp_damage: d4
@@ -1264,10 +1266,10 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - agile
-    - deadly_d8
-    - finesse
-    - versatile_P
+    - Agile
+    - Deadly (d8)
+    - Finesse
+    - Versatile (P)
     level: 0
     price: 100
     wp_damage: d4
@@ -1281,9 +1283,9 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - disarm
-    - sweep
-    - trip
+    - Disarm
+    - Sweep
+    - Trip
     level: 0
     price: 200
     wp_damage: d10
@@ -1297,7 +1299,7 @@ pf2e_weapons:
     wp_type: melee
     category: martial
     traits:
-    - shove
+    - Shove
     level: 0
     price: 100
     wp_damage: d8
@@ -1313,11 +1315,11 @@ pf2e_weapons:
     charclass:
     - Bard
     traits:
-    - disarm
-    - finesse
-    - nonlethal
-    - reach
-    - trip
+    - Disarm
+    - Finesse
+    - Nonlethal
+    - Reach
+    - Trip
     level: 0
     price: 10
     wp_damage: d4
