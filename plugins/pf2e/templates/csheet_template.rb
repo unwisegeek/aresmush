@@ -170,8 +170,11 @@ module AresMUSH
         bonus = Pf2eCombat.get_wpattack_bonus(char, w)
         prof = Pf2eCombat.get_weapon_prof(char, w.name)[0].upcase
         damage = Pf2eCombat.get_damage(char, w.name, w)
+        traits = w.traits.map { |t| t.capitalize }.join(", ")
 
-        "%b%b#{left(i, 3)}%b#{left(name, 40)}%b#{left("#{bonus} (#{prof})",10)}%b#{left(damage, 15)}"
+        "%b%b#{left(i, 3)}%b#{left(name, 40)}%b#{left("#{bonus} (#{prof})",10)}%b#{left(damage, 15)}
+        %r
+        %b%b#{item_color}Traits:%xn #{traits}"
       end
 
       def format_save(char,name)
