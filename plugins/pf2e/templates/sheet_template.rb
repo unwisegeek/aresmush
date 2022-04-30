@@ -159,13 +159,9 @@ module AresMUSH
 
         return "---" if !hp
 
-        has_temp_hp = hp.temp_max
+        temp_hp = hp.temp_hp
 
-        return "None." if !has_temp_hp
-
-        current = hp.temp_current
-        max = hp.temp_max
-        "#{current}%xn / #{max}"
+        "#{temp_hp}"
       end
 
       def class_dc
