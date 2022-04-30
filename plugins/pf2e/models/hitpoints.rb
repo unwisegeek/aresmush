@@ -8,6 +8,7 @@ module AresMUSH
     attribute :damage, :type => DataType::Integer, :default => 0
     attribute :temp_max, :type => DataType::Integer, :default => 0
     attribute :temp_current, :type => DataType::Integer, :default => 0
+    attribute :temp_hp, :type => DataType::Integer, :default => 0    
 
 
     reference :character, "AresMUSH::Character"
@@ -34,7 +35,7 @@ module AresMUSH
     end
 
     def self.get_current_hp(char)
-      hp = char.hp
+      hp = get_hp_obj(char)
       max_hp = get_max_hp(char)
       damage = hp.damage
 
