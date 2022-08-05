@@ -68,3 +68,4 @@ pf2e:
   permissions:
     modify_sheet: Modify character sheets.
     view_sheets: View other people's character sheets (if sheets are closed).
+    kill_pc: (Associated to DM role) Has the ability to inflict Drained, Doomed, and Dead conditions on PC's.

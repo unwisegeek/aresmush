@@ -25,6 +25,7 @@ module AresMUSH
     attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
     attribute :pf2_actions, :type => DataType::Hash, :default => {}
     attribute :pf2_award_history, :type => DataType::Hash, :default => { 'xp'=>{}, 'money'=>{} }
+    attribute :pf2_is_dead, :type => DataType::Boolean
 
     ### Only some characters will have these attributes, so nil check these.
     attribute :pf2_formula_book, :type => DataType::Hash
@@ -35,6 +36,7 @@ module AresMUSH
     reference :hp, "AresMUSH::Pf2eHP"
     reference :combat, "AresMUSH::Pf2eCombat"
     reference :magic, "AresMUSH::Pf2eMagic"
+    set :encounters, "AresMUSH::PF2Encounters"
 
     before_delete :delete_pf2
 

@@ -20,6 +20,7 @@ en:
     bad_option: "Not a valid option. Valid options for %{element}: %{options}."
     bad_section: "Section %{section} is not a valid section."
     bad_value: "That is not a valid value for %{item}."
+    bad_value_in_list: "WARNING: I didn't find the following %{items}: %{list}"
     bg_no_options: "Your background does not have any %{element} to set. Moving on..."
     bg_options_set: "Your background does not require any choices. Moving on..."
     boost_bad_type: "Boost type %{type} cannot be changed with this command."
@@ -29,6 +30,7 @@ en:
     cannot_assign_type: "You don't have that type of %{element} to assign."
     cannot_cast_charclass: "That character class does not have a spell proficiency."
     cannot_cast_spell_level: "You cannot cast spells of that level."
+    cannot_damage_pc: "You must be a DM or the organizer of an active combat to run this command."
     cannot_find_cginfo: "You must choose %{prereq} before you can see options for %{element}."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_abilities_locked: "Your abilities are already locked. If you need to change them, you will need to cg/reset."
@@ -47,6 +49,7 @@ en:
     class_requires_deity: "%xrYour class requires a deity, but none is set.%xn"
     combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
 
+    damage_applied_ok: "You damage %{list} for %{amount}."
     dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."
     die_roll: "%{roller}%xn rolls %{string} %{dc}and gets: %{parsed} = %x172%{result}%xn %{degree}"
     does_not_have: "You do not have that %{item}."
