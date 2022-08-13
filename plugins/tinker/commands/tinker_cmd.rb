@@ -9,17 +9,19 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Testchar")
-        armor = Pf2eCombat.get_equipped_armor(char)
-        
-        client.emit "Armor is nil" if armor == nil
-        
-        if armor 
-            client.emit armor.name
-        else 
-            client.emit "No armor found."
+        Character.all.each do |char|
+            hp = char.hp
+            
+            next if !hp 
+            
+            hp.temp_max = nil if hp.temp_max
+            hp.temp_current = nil if hp.temp_current
+            hp.temp_hp = 0
+            
+            hp.save
         end
         
+        client.emit "Fix to temp_hp done."
         
       end
 
