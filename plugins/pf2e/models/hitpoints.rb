@@ -8,7 +8,7 @@ module AresMUSH
     attribute :damage, :type => DataType::Integer, :default => 0
     attribute :temp_max, :type => DataType::Integer, :default => 0
     attribute :temp_current, :type => DataType::Integer, :default => 0
-    attribute :temp_hp, :type => DataType::Integer, :default => 0    
+    attribute :temp_hp, :type => DataType::Integer, :default => 0
 
 
     reference :character, "AresMUSH::Character"
@@ -16,6 +16,77 @@ module AresMUSH
 
 
     ##### CLASS METHODS #####
+
+    def self.get_dying_value(char)
+
+      previous_value = char.pf2e_conditions['Dying'] ? Pf2e.get_condition_value(char, 'Dying') : 1
+      wounded_value = Pf2e.get_condition_value(char, 'Wounded')
+      dying_value = previous_value + wounded_value
+      doomed_value = Pf2e.get_condition_value(char, 'Doomed')
+
+    end
+
+    def self.modify_damage(char, amount, healing=false, is_dm=false)
+
+      hp = get_hp_obj(char)
+      max_hp = get_max_hp(char)
+      existing_damage = hp.damage
+
+      if healing
+        if (existing_damage == max_hp)
+          wounded = char.pf2e_conditions['Wounded'] ? Pf2e.get_condition_value(char, 'Wounded') : 0
+          wounded_value = 1 + wounded
+          Pf2e.set_condition(char, 'Wounded', wounded_value)
+          Pf2e.remove_condition(char, 'Dying')
+        end
+
+        hp.update(damage: (existing_damage - amount).clamp(0,max_hp))
+        return
+      end
+
+      # Deduct from temp_hp first, if any, overflow goes to HP.
+
+      temp_hp = hp_obj.temp_hp
+
+      # Amount expects an integer, conversion not required.
+
+      damage = temp_hp - amount
+
+      hp.temp_hp = damage
+
+      if damage.negative?
+
+        extra_damage = damage.abs
+        hp.temp_hp = 0
+
+        new_damage = existing_damage + extra_damage
+
+        # Check to see if this damage puts the character in Dying.
+        if (new_damage >= max_hp)
+          hp.damage = max_hp
+          previous_value = char.pf2e_conditions['Dying'] ? Pf2e.get_condition_value(char, 'Dying') : 1
+          wounded_value = Pf2e.get_condition_value(char, 'Wounded')
+          dying_value = get_dying_value(char)
+          doomed_value = Pf2e.get_condition_value(char, 'Doomed')
+
+          if dying_value >= (4 - doomed_value)
+            # If this is true, the character is dead.
+            if is_dm
+              char.update(pf2_is_dead: true)
+            end
+
+            Pf2e.set_condition char, 'Dying', dying_value.clamp(0,(4 - doomed_value))
+          else
+            Pf2e.set_condition char, 'Dying', dying_value
+          end
+
+          hp.save
+          return
+        end
+
+        hp.damage = new_damage
+        hp.save
+    end
 
     def self.get_hp_obj(char)
       obj = char.hp

@@ -13,6 +13,8 @@ module AresMUSH
 
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
+      when "damage"
+        return PF2DamagePlayerCmd
       when "sheet"
         case cmd.switch
         when "show"
