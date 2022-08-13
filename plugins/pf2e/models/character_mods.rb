@@ -47,6 +47,7 @@ module AresMUSH
       self.hp&.delete
       self.combat&.delete
       self.magic&.delete
+      self.encounters&.delete
     end
 
   end
