@@ -86,6 +86,7 @@ module AresMUSH
 
         hp.damage = new_damage
         hp.save
+      end
     end
 
     def self.get_hp_obj(char)
