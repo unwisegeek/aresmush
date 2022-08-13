@@ -48,7 +48,7 @@ module AresMUSH
           char = ClassTargetFinder.find(item, Character, enactor)
 
           if (char.found?)
-            Pf2eHP.modify_damage(char.target, self.damage,, is_dc)
+            Pf2eHP.modify_damage(char.target, self.damage, is_dc)
             ok_char_list << char.target.name
             Login.notify char.target,:pf2_damage, t('pf2e.you_took_damage', :amount => self.damage, :source => enactor.name), 0
           else

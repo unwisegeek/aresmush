@@ -49,8 +49,7 @@ module AresMUSH
 
         t.empty? ? t.sort.join(", ") : "None attached."
       end
-
-
+    end
 
   end
 end
