@@ -1,5 +1,4 @@
 ---
-game: !ruby/hash:Sinatra::IndifferentHash
   category: Other
   description: 'This is the Ares development site for conversion of  Emblem of Ea
     from BrazilMUX to AresMUSH. When the production site goes live, this will continue
