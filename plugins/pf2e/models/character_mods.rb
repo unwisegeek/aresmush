@@ -36,7 +36,7 @@ module AresMUSH
     reference :hp, "AresMUSH::Pf2eHP"
     reference :combat, "AresMUSH::Pf2eCombat"
     reference :magic, "AresMUSH::Pf2eMagic"
-    set :encounters, "AresMUSH::PF2Encounters"
+    set :encounters, "AresMUSH::PF2Encounter"
 
     before_delete :delete_pf2
 
