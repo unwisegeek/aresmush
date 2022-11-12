@@ -23,7 +23,5 @@ module AresMUSH
       char.update(pf2_conditions: list)
     end
 
-    def
-
   end
 end
