@@ -1,60 +1,297 @@
-/* Import all fonts to be used by any custom class. */
+/* BEGIN CUSTOM_STYLE.SCSS CONFIG */
+/* Written by Riptide */
 
-@import url('https://fonts.googleapis.com/css?family=Philosopher');
+/* Dropdown menus coloration */
+
+button,
+.ember-power-select-search,
+.log-box, 
+.nav > li > a:hover, 
+.nav > li > a:focus,
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus 
+.nav .open > a,
+.table-striped > tbody > tr:nth-of-type(odd),
+ul.dropdown-menu {
+    background-color: #01010a;
+}
+
+.dropdown-item:hover {
+    background-color: #b37066;
+}
+
+.header-wrap nav {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* Float-end user-bar drop-shadow */
+
+.float-end.user-bar {
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Import all fonts to be used by any custom class */
+
 @import url('https://fonts.googleapis.com/css?family=Bilbo');
 @import url('https://fonts.googleapis.com/css?family=Calligraffitti');
+@import url('https://fonts.googleapis.com/css?family=Jim+Nightshade');
+@import url('https://fonts.googleapis.com/css?family=Marcellus');
 
-/* Default font */ 
+/* Default font & background styling */ 
 
 body {    
-  font-family: 'Philosopher', sans-serif;
-  font-size: 100%;
-} 
+    font-family: 'Marcellus', serif;
+    font-size: 100%;
+    background: url("/game/uploads/theme_images/test-bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #01010a;
+    background-position: center-top;
+    width: 90%;
+    margin: auto;
+}
 
-/* Quotes and IC exposition should have its own font and classes. */
+/* Banner removal & jumbotron background removal */
+
+div.header-wrap,
+div.jumbotron {
+    background: none;
+}
+
+/* Title text and server address styling */
+
+div.site-title,
+div.site-subtitle {
+    text-shadow: 2px 2px 5px black;
+}
+
+div.site-title {
+    font-weight: bold;
+}  
+
+div.site-subtitle {
+    font-style: italic;
+}
+
+/* Body semi-transparent background */
+
+div.body-wrap {
+    background: #030324e0;
+}
+
+div.body-wrap,
+div.header-wrap {
+    box-shadow: 0px 0px 20px 0px #05066a
+}
+
+/* Mobile version body styling */
+@media only screen and (max-width: 600px) { 
+    body {
+        background-size: 200%;
+        width: 100%;
+    }
+}
+
+/* Right sidebar styling */
+
+div.col-md-3.right-sidebar {
+    padding-top: 30px;
+}
+
+div.sidebar-box {
+    border-top: 3px solid;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 12%, transparent 72%) 1;
+}
+
+/* Code text styling */
+
+code {
+    color: #df8f84;
+}
+
+/* Page header styling */
+
+h1 {
+    background-color: transparent;
+    padding: .1em 1.2em;
+    font-weight: bold;
+    border: 3px solid #CBC0AD;
+    letter-spacing: 0.1em;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left-style: double;
+    border-left-width: 8px;
+    border-right-style: none;
+    border-image: linear-gradient(to right, #CBC0AD, transparent) 1;
+}
+
+/* Table of contents styling */
+
+.toc {
+    border: 1px solid #74a7bb;
+    box-shadow: 5px 5px 5px #594f4f;
+    border-radius: 4px;
+}
+
+/* Character profile page styling */
+
+.profile-box {
+    background: rgba(0, 0, 0, .9);
+    border-radius: 5px;
+}
+
+.profile-divider {
+    background-color: transparent;
+    padding: 3px;
+    background-image: linear-gradient(to right, transparent,#E1B07E,transparent);
+}
+
+.card-body.status-message {
+    color: #dbd3c6;
+    background-color: transparent;
+    border-color: #89d2e1;
+    background-image: linear-gradient(to right,#43676f,transparent);
+}
+
+/* Quotes and IC exposition should have its own font and classes */
 
 .icquote {
-   font-family: 'Calligraffitti', handwriting;
+    font-family: 'Calligraffitti', handwriting;
 }
 
 div.icquote {
-   font-family: 'Calligraffitti', sans-serif;
-   width: 80%;
-   border-style: none none none none;
-   margin: auto; 
-   text-align: left;
-   font-size: 80%;
+    font-family: 'Calligraffitti', sans-serif;
+    width: 80%;
+    border-style: none none none none;
+    margin: auto; 
+    text-align: left;
+    font-size: 80%;
 }
 
 /* Job category colors */
 
 .job-category-CRAFT {
-   background-color: DarkSeaGreen;
-   color: black;
+    background-color: DarkSeaGreen;
+    color: black;
 }
 
 .job-category-APP {
-   background-color: Turquoise;
+    background-color: Turquoise;
+    color: black;
+}
+
+.job-category-LEGWORK {
+    background-color: MediumVioletRed;
 }
 
 .job-category-PROMPTS {
-   background-color: BurlyWood;
-   color: black;
+    background-color: BurlyWood;
+    color: black;
 }
 
+/* Alert styling */
 
+.alert-info {
+    color: #dbd3c6;
+    background-color: transparent;
+    border-color: #89d2e1;
+    background-image: linear-gradient(to right,#43676f,transparent);
+}
+
+.alert-success {
+    color: #dbd3c6;
+    background-color: transparent;
+    border-color: #badbcc;
+    background-image: linear-gradient(to right, #4e7161, transparent);
+}
+
+.alert-warning {
+    color: #dbd3c6;
+    background-color: transparent;
+    background-image: linear-gradient(to right, #8c7225, transparent);
+}
+
+.alert-danger {
+    color: #dbd3c6;
+    background-color: transparent;
+    border-color: #d06670;
+    background-image: linear-gradient(to right, #842029, transparent);
+}
+
+.alert-danger {
+
+}
 
 /* Wiki custom classes */
 
 div.wiki-callout {
-   margin: auto;
-   text-align: center;
-   font-style: italic;
-   vertical-align: middle;
-   color: $faded-text-color;
-   width: 80%;
-   font-size: 100%;
-   border: 3px solid $secondary-color;
-   border-radius: 10px;
-   padding: 5px;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    vertical-align: middle;
+    color: #82ace3;
+    width: 80%;
+    font-size: 100%;
+    border: 3px solid;
+    padding: 15px;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #82ace3 12%, transparent 100%) 3;
+    background-image: linear-gradient(to right, #0f44c169, transparent);
+}
+
+div.wiki-warning {
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    vertical-align: middle;
+    color: #ff4239;
+    width: 80%;
+    font-size: 100%;
+    border: 3px solid;
+    padding: 15px;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #e12525 12%, transparent 100%) 3;
+    background-image: linear-gradient(to right, #421111, transparent);
+}
+
+/* Scene component styling */
+
+.live-scene-log {
+    background: rgba(0, 0, 0, 0.34);
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1;
+}
+
+.scene-log {
+    border: 1px solid #dbb0b0;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1;
+}
+
+.scene-pose-header {
+    border-top: 1px dashed rgba(221, 207, 193, 0.63);
+    background-image: linear-gradient(to right, #000000ba, transparent);
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.hint.float-end {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.scene-ooc-pose {
+    background-color: #4b2b3178;
+    margin-bottom: 20px;
+}
+
+.scene-controls-box {
+    border: 1px solid;
+    background: transparent;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1;
+}
+
+/* Jobs styling */
+
+div.admin-only-reply,
+div.card.card-default.markdown-editor,
+div.card-body.markdown-editor {
+    background-color: transparent;
 }
