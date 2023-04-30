@@ -163,3 +163,4 @@ website:
     - 3
     minute:
     - 37
+  hide_searchbox: false
