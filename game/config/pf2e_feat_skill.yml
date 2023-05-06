@@ -1,0 +1,1038 @@
+---
+pf2e_feats:
+  skill:
+    acrobatics:
+      Acrobatic Performer:
+        traits:
+        - general
+        - skill
+        shortdesc: Use Acrobatics to Perform.
+        prereq:
+          level: 1
+          skill: Acrobatics/trained
+      Assurance (Acrobatics):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: acrobatics/trained
+      Cat Fall:
+        traits:
+        - general
+        - skill
+        shortdesc: Treat falls as shorter than they are.
+        prereq:
+          level: 1
+          skill: Acrobatics/trained
+    arcana:
+      Arcane Sense:
+        traits:
+        - general
+        - skill
+        shortdesc: Cast detect magic at will as an arcane innate spell.
+        prereq:
+          level: 1
+          skill: Arcana/trained
+      Assurance (Arcana):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: arcana/trained
+      Automatic Knowledge (Arcana):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+      Assured Identification (Arcane):
+        traits:
+        - general
+        - skill
+        shortdesc: Avoid misidentifying magic.
+        prereq:
+          level: 2
+          skill: arcana/expert
+      Magical Shorthand (Arcane):
+        traits:
+        - general
+        - skill
+        shortdesc: Learn spells quickly and at a reduced cost.
+        prereq:
+          level: 2
+          skill: arcana/expert
+    athletics:
+      Armor Assist:
+        traits:
+        - general
+        - skill
+        shortdesc: Don armor more quickly.
+        prereq:
+          level: 1
+          orskill: 
+          - Athletics/trained 
+          - Warfare Lore/trained
+      Assurance (Athletics):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: Athletics/trained
+      Combat Climber:
+        traits:
+        - general
+        - skill
+        shortdesc: Fight more effectively as you Climb.
+        prereq:
+          level: 1
+          skill: Athletics/trained
+      Hefty Hauler:
+        traits:
+        - general
+        - skill
+        shortdesc: Increase your Bulk limits by 2.
+        prereq:
+          level: 1
+          skill: Athletics/trained
+      Quick Jump:
+        traits:
+        - general
+        - skill
+        shortdesc: High Jump or Long Jump as a single action.
+        prereq:
+          level: 1
+          skill: Athletics/trained
+      Titan Wrestler:
+        traits:
+        - general
+        - skill
+        shortdesc: Disarm, Grapple, Shove, or Trip larger creatures.
+        prereq:
+          level: 1
+          skill: Athletics/trained
+      Underwater Marauder:
+        traits:
+        - general
+        - skill
+        shortdesc: Fight more effectively underwater.
+        prereq:
+          level: 1
+          skill: Athletics/trained
+      Lead Climber:
+        traits:
+        - general
+        - skill
+        shortdesc: Make Climbing safer for allies who Follow the Expert.
+        prereq:
+          level: 2
+          skill: Athletics/expert
+      Powerful Leap:
+        traits:
+        - general
+        - skill
+        shortdesc: Jump farther and higher.
+        prereq:
+          level: 2
+          skill: Athletics/expert
+      Rapid Mantel:
+        traits:
+        - general
+        - skill
+        shortdesc: Pull yourself onto ledges quickly.
+        prereq:
+          level: 2
+          skill: Athletics/expert
+    crafting:
+      Alchemical Crafting:
+        traits:
+        - general
+        - skill
+        shortdesc: Craft alchemical items.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Assurance (Crafting):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Crafter's Appraisal:
+        traits:
+        - general
+        - skill
+        shortdesc: Use Crafting to identify magic items.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Improvise Tool:
+        traits:
+        - general
+        - skill
+        shortdesc: Craft basic tools without a basic crafter's book.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Quick Repair:
+        traits:
+        - general
+        - skill
+        shortdesc: Repair items quickly.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Seasoned:
+        traits:
+        - general
+        - skill
+        shortdesc: +1 to Craft food and drink, including potions.
+        prereq:
+          level: 1
+          orskill: 
+          - Crafting/trained 
+          - Alcohol Lore/trained 
+          - Cooking Lore/trained
+      Snare Crafting:
+        traits:
+        - general
+        - skill
+        shortdesc: Craft snares.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Specialty Crafting:
+        traits:
+        - general
+        - skill
+        shortdesc: Gain bonuses to Craft certain items.
+        prereq:
+          level: 1
+          skill: Crafting/trained
+      Automatic Knowledge (Crafting):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+          skill: Crafting/expert
+      Magical Crafting:
+        traits:
+        - general
+        - skill
+        shortdesc: Craft magic items.
+        prereq:
+          level: 2
+          skill: Crafting/expert
+    deception:
+      Assurance (Deception):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: Deception/trained
+      Charming Liar:
+        traits:
+        - general
+        - skill
+        shortdesc: Improve a target's attitude with your lies.
+        prereq:
+          level: 1
+          skill: Deception/trained
+      Confabulator:
+        traits:
+        - general
+        - skill
+        shortdesc: Reduce the bonuses against your repeated lies.
+        prereq:
+          level: 2
+          skill: Deception/expert
+      Discreet Inquiry:
+        traits:
+        - general
+        - skill
+        shortdesc: Gather Information without revealing your motive.
+        prereq:
+          level: 2
+          orskill: 
+          - Deception/expert 
+          - Diplomacy/expert
+    diplomacy:
+      Assurance (Diplomacy):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: diplomacy/trained
+      Bargain Hunter:
+        traits:
+        - general
+        - skill
+        shortdesc: Earn Income by searching for deals.
+        prereq:
+          level: 1
+          skill: Diplomacy/trained
+      Bon Mot:
+        traits:
+        - auditory
+        - concentrate
+        - emotion
+        - general
+        - linguistic
+        - mental
+        - skill
+        shortdesc: Distract a foe with a witty quip.
+        prereq:
+          level: 1
+          skill: Diplomacy/trained
+      Group Impression:
+        traits:
+        - general
+        - skill
+        shortdesc: Make an Impression on multiple targets at once.
+        prereq:
+          level: 1
+          skill: diplomacy/trained
+      Hobnobber:
+        traits:
+        - general
+        - skill
+        shortdesc: Gather Information rapidly.
+        prereq:
+          level: 1
+          skill: diplomacy/trained
+      No Cause for Alarm:
+        traits:
+        - auditory
+        - concentrate
+        - emotion
+        - general
+        - linguistic
+        - mental
+        - skill
+        shortdesc: Reduce creatures’ frightened condition values.
+        prereq:
+          level: 1
+          skill: Diplomacy/trained
+      Discreet Inquiry:
+        traits:
+        - general
+        - skill
+        shortdesc: Gather Information without revealing your motive.
+        prereq:
+          level: 2
+          skill: [ diplomacy/expert deception/expert ]
+      Glad-Hand:
+        traits:
+        - general
+        - skill
+        shortdesc: Make an Impression on a target you've just met.
+        prereq:
+          level: 2
+          skill: diplomacy/expert
+    intimidation:
+      Assurance (Intimidation):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: intimidation/trained
+      Group Coercion:
+        traits:
+        - general
+        - skill
+        shortdesc: Coerce multiple targets simultaneously.
+        prereq:
+          level: 1
+          skill: intimidation/trained
+      Intimidating Glare:
+        traits:
+        - general
+        - skill
+        shortdesc: Demoralize a creature without speaking.
+        prereq:
+          level: 1
+          skill: intimidation/trained
+      Quick Coercion:
+        traits:
+        - general
+        - skill
+        shortdesc: Coerce a creature quickly.
+        prereq:
+          level: 1
+          skill: intimidation/trained
+      Intimidating Prowess:
+        traits:
+        - general
+        - skill
+        shortdesc: Gain bonus to physically Demoralize a target.
+        prereq:
+          level: 2
+          skill: intimidation/expert
+          ability: Strength/16
+      Lasting Coercion:
+        traits:
+        - general
+        - skill
+        shortdesc: Coerce a target into helping you longer.
+        prereq:
+          level: 2
+          skill: intimidation/expert
+      Terrifying Resistance:
+        traits:
+        - general
+        - skill
+        shortdesc: +1 to spell saves from a creature you've Demoralized.
+        prereq:
+          level: 2
+          skill: intimidation/expert
+    lore:
+      Additional Lore:
+        traits:
+        - general
+        - skill
+        shortdesc: Become trained in another Lore subcategory.
+        prereq:
+          level: 1
+          skill: Lore/trained
+      Armor Assist:
+        traits:
+        - general
+        - skill
+        shortdesc: Don armor more quickly.
+        prereq:
+          level: 1
+          skill: warfare lore/trained
+      Assurance (Lore):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: lore/trained
+      Automatic Knowledge (Lore):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+          skill: lore/expert
+      Battle Planner:
+        traits:
+        - general
+        - skill
+        shortdesc: Make a battle plan and roll Warfare Lore for initiative.
+        prereq:
+          level: 2
+          - warfare lore/expert
+      Unmistakable Lore:
+        traits:
+        - general
+        - skill
+        shortdesc:
+        prereq:
+          level: 2
+          skill: lore/expert
+    medicine:
+      Assurance (Medicine):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: medicine/trained
+      Battle Medicine:
+        traits:
+        - general
+        - healing
+        - manipulate
+        - skill
+        shortdesc: Heal yourself or an ally in battle.
+        prereq:
+          level: 1
+          skill: Medicine/trained
+      Forensic Acumen:
+        traits:
+        - general
+        - skill
+        shortdesc: Rapidly examine a body and Recall Knowledge about it.
+        prereq:
+          level: 1
+          skill: medicine/trained
+      Inoculation:
+        traits:
+        - general
+        - healing
+        - skill
+        shortdesc: Grant patients +2 to saves against getting a disease again.
+        prereq:
+          level: 1
+          skill: Medicine/trained
+      Risky Surgery:
+        traits:
+        - general
+        - skill
+        shortdesc: Deal damage toa patient to gain +2 to Treat Wounds.
+        prereq:
+          level: 1
+          skill: medicine/trained
+      Automatic Knowledge (Medicine):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+          skill: medicine/expert
+      Continual Recovery:
+        traits:
+        - general
+        - skill
+        shortdesc: Treat Wounds on a patient more often.
+        prereq:
+          level: 2
+          skill: Medicine/expert
+      Robust Recovery:
+        traits:
+        - general
+        - skill
+        shortdesc: Greater benefits from Treat Disease and Treat Poison.
+        prereq:
+          level: 2
+          skill: medicine/expert
+      Ward Medic:
+        traits:
+        - general
+        - skill
+        shortdesc: Treat several patients at once.
+        prereq:
+          level: 2
+          skill: medicine/expert
+    nature:
+      Assurance (Nature):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: nature/trained
+      Express Rider:
+        traits:
+        - exploration
+        - general
+        - move
+        - skill
+        shortdesc: Increase your mount's travel speed.
+        prereq:
+          level: 1
+          skill: nature/trained
+      Natural Medicine:
+        traits:
+        - general
+        - skill
+        shortdesc: Use Nature to Treat Wounds.
+        prereq:
+          level: 1
+          skill: nature/trained
+      Quick Identification (Primal):
+        traits:
+        - general
+        - skill
+        shortdesc: Identify magic in 1 minute or less.
+        prereq:
+          level: 1
+          skill: nature/trained
+      Recognize Spell (Primal):
+        traits:
+        - general
+        - secret
+        - skill
+        shortdesc: Identify a spell as a reacting as it's being cast.
+        prereq:
+          level: 1
+          skill: nature/trained
+      Train Animal:
+        traits:
+        - downtime
+        - general
+        - manipulate
+        - skill
+        shortdesc: Teach an animal a trick.
+        prereq:
+          level: 1
+          skill: Nature/trained
+      Trick Magic Item (Primal):
+        traits:
+        - general
+        - skill
+        shortdesc: Activate a magic item you normally can't activate.
+        prereq:
+          level: 1
+          skill: nature/trained
+      Assured Identification (Primal):
+        traits:
+        - general
+        - skill
+        shortdesc: Avoid misidentifying magic.
+        prereq:
+          level: 2
+          skill: nature/expert
+      Automatic Knowledge (Nature):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+          skill: nature/expert
+      Bonded Animal:
+        traits:
+        - downtime
+        - general
+        - skill
+        shortdesc: An animal becomes permanently helpful to you.
+        prereq:
+          level: 2
+          skill: Nature/expert
+      Magical Shorthand (Primal):
+        traits:
+        - general
+        - skill
+        shortdesc: Learn spells quickly and at a reduced cost.
+        prereq:
+          level: 2
+          skill: nature/expert
+    occultism:
+      Assurance (Occultism):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: occultism/trained
+      Deceptive Worship:
+        traits:
+        - general
+        - skill
+        shortdesc: Pass yourself off as a member of a religion.
+        prereq:
+          level: 1
+          skill: Occultism/trained
+      Assured Identification (Occult):
+        traits:
+        - general
+        - skill
+        shortdesc: Avoid misidentifying magic.
+        prereq:
+          level: 2
+      Automatic Knowledge:
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+      Magical Shorthand (Occult):
+        traits:
+        - general
+        - skill
+        shortdesc: Learn spells quickly and at a reduced cost.
+        prereq:
+          level: 2
+          skill: occultism/expert
+    performance:
+      Assurance (Performance):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: performance/trained
+      Fascinating Performance:
+        traits
+        - general
+        - skill
+        shortdesc: Perform to fascinate observers.
+        prereq:
+          level: 1
+          skill: performance/trained
+      Impressive Performance:
+        traits
+        - general
+        - skill
+        shortdesc: Make an Impression with Performance.
+        prereq:
+          level: 1
+          skill: performance/trained
+      Virtuosic Performer:
+        traits
+        - general
+        - skill
+        shortdesc: +1 with a certain type of performance.
+        prereq:
+          level: 1
+          skill: performance/trained
+      Distracting Performance:
+        traits:
+        - general
+        - skill
+        shortdesc: Create a Diversion for an ally.
+        prereq:
+          level: 2
+          skill: Performance/expert
+    religion:
+      Assurance (Religion):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: religion/trained
+      Pilgrim's Token:
+        traits:
+        - general
+        - skill
+        shortdesc: A religious token lets you act ﬁrst on a tie for initiative.
+        prereq:
+          level: 1
+          skill: religion/trained
+      Quick Identification (Divine):
+        traits:
+        - general
+        - skill
+        shortdesc: Identify Magic in 1 minute or less.
+        prereq:
+          level: 1
+          skill: religion/trained
+      Recognize Spell (Divine):
+        traits:
+        - general
+        - skill
+        shortdesc: Identify a spell as a reaction as it's being cast.
+        prereq:
+          level: 1
+          skill: religion/trained
+      Student of the Canon:
+        traits:
+        - general
+        - skill
+        shortdesc: More accurately recognize the tenets of your faith or philosophy.
+        prereq:
+          level: 1
+          skill: religion/trained
+      Trick Magic Item (Divine):
+        traits:
+        - general
+        - skill
+        shortdesc: Activate a magic item you normally can't activate.
+        prereq:
+          level: 1
+          skill: religion/trained
+      Assured Identification (Divine):
+        traits:
+        - general
+        - skill
+        shortdesc: Avoid misidentifying magic.
+        prereq:
+          level: 2
+      Automatic Knowledge (Religion):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+      Exhort the Faithful:
+        traits:
+        - general
+        - skill
+        shortdesc: +2 to Request something of or Coerce members of your own faith.
+        prereq:
+          level: 2
+          skill: religion/expert
+      Magical Shorthand (Divine):
+        traits:
+        - general
+        - skill
+        shortdesc: Learn spells quickly and at a reduced cost.
+        prereq:
+          level: 2
+          skill: religion/expert
+    society:
+      Assurance (Society):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: society/trained
+      Courtly Graces:
+        traits:
+        - general
+        - skill
+        shortdesc: Use Society to get along in noble society.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Eye for Numbers:
+        traits:
+        - general
+        - skill
+        shortdesc: +2 to Decipher Writing about math and count items quickly.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Glean Contents:
+        traits:
+        - general
+        - skill
+        shortdesc: Decipher Writing even when you can’t see the document well.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Multilingual:
+        traits:
+        - general
+        - skill
+        shortdesc: Learn two new languages.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Read Lips:
+        traits:
+        - general
+        - skill
+        shortdesc: Read the lips of people you can see.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Sign Language:
+        traits:
+        - general
+        - skill
+        shortdesc: Learn sign languages.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Streetwise:
+        traits:
+        - general
+        - skill
+        shortdesc: Use Society to Gather Information and Recall Knowledge.
+        prereq:
+          level: 1
+          skill: Society/trained
+      Automatic Knowledge (Society):
+        traits:
+        - general
+        - skill
+        shortdesc: Recall Knowledge as a free action once per round.
+        prereq:
+          level: 2
+      Connections:
+        traits:
+        - general
+        - skill
+        shortdesc: Leverage your connections for favors and meetings.
+        prereq:
+          level: 2
+          skill: Society/expert
+          feat: Courtly Graces
+      Criminal Connections:
+        traits:
+        - general
+        - skill
+        shortdesc: Leverage your underworld connections for favors from criminals.
+        prereq:
+          level: 2
+          skill: Society/expert
+          feat: Streetwise
+      Quick Contacts:
+        traits:
+        - general
+        - skill
+        shortdesc: Spend only 1 day to use Connections or Criminal Connections.
+        prereq:
+          level: 2
+          skill: Society/expert
+          feat: [ Connections Criminal Connections ]
+      Underground Network:
+        traits:
+        - general
+        - skill
+        shortdesc: Gather Information without drawing attention and gain a bonus to Recall Knowledge about that subject.
+        prereq:
+          level: 2
+          skill: Society/expert
+          feat: Streetwise
+    stealth:
+      Assurance (Stealth):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: stealth/trained
+      Experienced Smuggler:
+        traits:
+        - general
+        - skill
+        shortdesc: Conceal items from observers more effectively.
+        prereq:
+          level: 1
+          skill: stealth/trained
+      Terrain Stalker:
+        traits:
+        - general
+        - skill
+        shortdesc: Sneak in certain terrain without attempting a check.
+        prereq:
+          level: 1
+          skill: stealth/trained
+      Armored Stealth:
+        traits:
+        - general
+        - skill
+        shortdesc: Reduce the Stealth penalty of your armor.
+        prereq:
+          level: 2
+          skill: Stealth/expert
+      Quiet Allies:
+        traits:
+        - general
+        - skill
+        shortdesc: Roll a single Stealth check when sneaking with allies.
+        prereq:
+          level: 2
+          skill: Stealth/expert
+      Shadow Mark:
+        traits:
+        - general
+        - skill
+        shortdesc: Targets you’re following take a penalty to notice you.
+        prereq:
+          level: 2
+          skill: Stealth/expert
+    survival:
+      Assurance (Survival):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: survival/trained
+      Experienced Tracker:
+        traits:
+        - general
+        - skill
+        shortdesc: Track at your full Speed at a –5 penalty.
+        prereq:
+          level: 1
+          skill: survival/trained
+      Forager:
+        traits:
+        - general
+        - skill
+        shortdesc: Forage for supplies to provide for multiple creatures.
+        prereq:
+          level: 1
+          skill: survival/trained
+      Survey Wildlife:
+        traits:
+        - general
+        - skill
+        shortdesc: Identify nearby creatures through signs and clues.
+        prereq:
+          level: 1
+          skill: survival/trained
+      Terrain Expertise:
+        traits:
+        - general
+        - skill
+        shortdesc: +1 to Survival checks in certain terrain.
+        prereq:
+          level: 1
+          skill: survival/trained
+    thievery:
+      Assurance (Thievery):
+        traits:
+        - fortune
+        - general
+        - skill
+        shortdesc: Receive a fixed result on a skill check.
+        prereq:
+          level: 1
+          skill: thievery/trained
+      Concealing Legerdemain:
+        traits:
+        - general
+        - skill
+        shortdesc: Conceal an Object using Thievery instead of Stealth.
+        prereq:
+          level: 1
+          skill: Thievery/trained
+      Pickpocket:
+        traits:
+        - general
+        - skill
+        shortdesc: Steal or Palm an Object more effectively.
+        prereq:
+          level: 1
+          skill: Thievery/trained
+      Subtle Theft:
+        traits:
+        - general
+        - skill
+        shortdesc: Your thefts are harder to notice.
+        prereq:
+          level: 1
+          skill: Thievery/trained
+      Wary Disarmament:
+        traits:
+        - general
+        - skill
+        shortdesc: +2 to AC or saves against devices or traps you trigger while disarming.
+        prereq:
+          level: 1
+          skill: Thievery/expert
