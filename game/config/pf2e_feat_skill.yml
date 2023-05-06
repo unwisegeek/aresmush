@@ -18,7 +18,7 @@ pf2e_feats:
         shortdesc: Receive a fixed result on a skill check.
         prereq:
           level: 1
-          skill: acrobatics/trained
+          skill: Acrobatics/trained
       Cat Fall:
         traits:
         - general
@@ -44,7 +44,7 @@ pf2e_feats:
         shortdesc: Receive a fixed result on a skill check.
         prereq:
           level: 1
-          skill: arcana/trained
+          skill: Arcana/trained
       Automatic Knowledge (Arcana):
         traits:
         - general
@@ -59,7 +59,7 @@ pf2e_feats:
         shortdesc: Avoid misidentifying magic.
         prereq:
           level: 2
-          skill: arcana/expert
+          skill: Arcana/expert
       Magical Shorthand (Arcane):
         traits:
         - general
@@ -67,7 +67,7 @@ pf2e_feats:
         shortdesc: Learn spells quickly and at a reduced cost.
         prereq:
           level: 2
-          skill: arcana/expert
+          skill: Arcana/expert
     athletics:
       Armor Assist:
         traits:

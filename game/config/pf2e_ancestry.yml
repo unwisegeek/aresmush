@@ -5,10 +5,9 @@ pf2e_ancestry:
     Size: M
     Speed: 25
     abl_boosts:
-    - Constitution
-    - Intelligence
     - open
-    abl_flaws: Wisdom
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
     - Gobber
@@ -33,13 +32,16 @@ pf2e_ancestry:
       - Arvek Weapon Familiarity
       - Leech-Clipper
       - Remorseless Lash
+      - Sneaky
+      - Stone Face
       - Vigorous Health
       5:
       - Agonizing Rebuke
       - Arvek Weapon Discipline
       - Expert Drill Sergeant
-      - Fey Influence
       - Formation Training
+      - Recognize Ambush
+      - Runtsage
       9:
       - Pride In Arms
       13:
@@ -47,15 +49,73 @@ pf2e_ancestry:
       - Formation Master
       17:
       - "Azaersi's Roads"
+  Egalrin:
+    HP: 6
+    Size: M
+    abl_boosts:
+    - open
+    - open
+    abl_flaw: ""
+    languages:
+    - Tradespeak
+    - Egalrin
+    traits:
+    - egalrin
+    - humanoid
+    special:
+    - Low-Light Vision
+    attack:
+      Beak:
+        damage: d6
+        damage_type: P
+        group: brawling
+        traits:
+        - finesse
+        - unarmed
+    heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Dar
+    - Jinxed-egalrin
+    - Mountainkeeper
+    - Skyborn
+    - Stormtossed
+    - Taloned
+    - Tiefling
+    feats:
+      1:
+      - Egalrin Lore
+      - Egalrin Weapon Familiarity
+      - "Mariner's Fire"
+      - "Scavenger's Search"
+      - Squawk!
+      - "Storm's Lash"
+      - Uncanny Agility
+      - Waxed Feathers
+      5:
+      - Dogfang Bite
+      - Eat Fortune
+      - Egalrin Feather Fan
+      - Egalrin Weapon Study
+      - Long-Nosed Form
+      - Magpie Snatch
+      - One-Toed Hop
+      9:
+      - Eclectic Sword Training
+      - Soaring Flight
+      13:
+      - Egalrin Weapon Expertise
+      17:
+      - Great Egalrin Form
   Gnome:
     HP: 8
     Size: S
     Speed: 25
     abl_boosts:
-    - Constitution
-    - Charisma
     - open
-    abl_flaw: Strength
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
     - Gnomish
@@ -98,9 +158,6 @@ pf2e_ancestry:
       - Vibrant Display
       5:
       - Animal Elocutionist
-      - Eclectic Obsession
-      - Energized Font
-      - Fey Influence
       - Gnome Weapon Innovator
       - Intuitive Illusions
       - Natural Illusionist
@@ -121,10 +178,9 @@ pf2e_ancestry:
     Size: S
     Speed: 25
     abl_boosts:
-    - Dexterity
-    - Charisma
     - open
-    abl_flaw: Wisdom
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
     - Gobber
@@ -154,7 +210,7 @@ pf2e_ancestry:
       - Extra Squishy
       - Fang Sharpener
       - Gobber Lore
-      - Gobber Shuttle
+      - Gobber Scuttle
       - Gobber Song
       - Gobber Weapon Familiarity
       - Hard Tail
@@ -164,8 +220,6 @@ pf2e_ancestry:
       - Very Sneaky
       5:
       - Ankle Bite
-      - Chosen of Lamashtu
-      - Fey Influence
       - Gobber Weapon Frenzy
       - Kneecap
       - Loud Singer
@@ -187,59 +241,6 @@ pf2e_ancestry:
       - "Very, Very Sneaky"
       17:
       - Reckless Abandon
-  Egalrin:
-    HP: 6
-    Size: M
-    abl_boosts:
-    - Dexterity
-    - open
-    languages:
-    - Tradespeak
-    - Egalrin
-    traits:
-    - egalrin
-    - humanoid
-    special:
-    - Low-Light Vision
-    attack:
-      Beak:
-        damage: d6
-        damage_type: P
-        group: brawling
-        traits:
-        - finesse
-        - unarmed
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Dar
-    - Jinxed-egalrin
-    - Mountainkeeper
-    - Skyborn
-    - Stormtossed
-    - Taloned
-    - Tiefling
-    feats:
-      1:
-      - Egalrin Lore
-      - Egalrin Weapon Familiarity
-      - "Scavenger's Search"
-      - Squawk!
-      - "Storm's Lash"
-      5:
-      - Eat Fortune
-      - Egalrin Weapon Study
-      - Fey Influence
-      - Long-Nosed Form
-      - One-Toed Hop
-      9:
-      - Eclectic Sword Training
-      - Soaring Flight
-      13:
-      - Egalrin Weapon Expertise
-      17:
-      - Great Egalrin Form
   Human:
     HP: 8
     Size: M
@@ -269,30 +270,16 @@ pf2e_ancestry:
       - Adapted Cantrip
       - Arcane Tattoos
       - Cooperative Nature
-      - Courteous Comeback
-      - "Devil's Advocate"
-      - Dragon Spit
       - General Training
       - Gloomseer
       - Haughty Obstinacy
-      - Keep Up Appearance
-      - Know Oneself
       - Natural Ambition
       - Natural Skill
-      - Quah Bond
-      - Saoc Astrology
-      - Tupilaq Carver
       - Unconventional Weaponry
-      - Viking Shieldbearer
-      - Witch Warden
       5:
       - Adaptive Adept
       - Clever Improviser
-      - Darkseer
-      - Fey Influence
-      - Ornate Tattoo
       - Sense Allies
-      - Wavetouched Paragon
       9:
       - Cooperative Soul
       - Dragon Prince
@@ -313,21 +300,20 @@ pf2e_ancestry:
       - Unconventional Expertise
       17:
       - Heroic Presence
-  Khailli:
+  Kailli:
     HP: 6
     Size: S
     abl_boosts:
-    - Dexterity
-    - Intelligence
     - open
-    abl_flaws: Strength
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
-    - Ysoki
+    - Kailli
     traits:
     - uncommon
     - humanoid
-    - ratfolk
+    - kailli
     special:
     - Low-Light Vision
     heritages:
@@ -348,22 +334,18 @@ pf2e_ancestry:
       - Cheek Pouches
       - Pack Rat
       - Rat Familiar
-      - Ratfolk Lore
+      - Kailli Lore
       - Ratspeak
-      - Skull Creeper
       - Tinkering Fingers
       - Vicious Incisors
-      - Warren Friend
       - Warren Navigator
       5:
-      - Cornered Fury
-      - Fey Influence
       - Gnaw
+      - Kailli Roll
       - Lab Rat
       - Plague Sniffer
-      - Quick Stow (Ratfolk)
+      - Quick Stow (Kailli)
       - Rat Magic
-      - Ratfolk Roll
       9:
       - Big Mouth
       - Overcrowd
@@ -372,16 +354,15 @@ pf2e_ancestry:
       - Shinstabber
       - Skittering Sneak
       - Warren Digger
-      - Ratfolk Growth
+      - Kailli Growth
   Khazad:
     HP: 10
     Size: M
     Speed: 20
     abl_boosts:
-    - Constitution
-    - Wisdom
     - open
-    abl_flaw: Charisma
+    - open
+    abl_flaw: ""
     languages:
     - Khazdul
     - Tradespeak
@@ -406,26 +387,19 @@ pf2e_ancestry:
     - Tiefling
     feats:
       1:
-      - Avenge In Glory
-      - Clan's Edge
       - Khazadi Doughtiness
       - Khazadi Lore
       - Khazadi Weapon Familiarity
       - Eye For Treasure
-      - "Forge-Day's Rest"
       - Rock Runner
       - Stonecunning
-      - Surface Culture
       - Unburdened Iron
       - Vengeful Hatred
       5:
       - Boulder Roll
-      - Clan Protector
       - Defy the Darkness
-      - Fey Influence
       - Khazadi Reinforcement
       - Khazadi Weapon Cunning
-      - Protective Sheath
       - Sheltering Slab
       - "Tomb-Watcher's Glare"
       9:
@@ -443,72 +417,14 @@ pf2e_ancestry:
       - Telluric Power
       17:
       - Stonegate
-  Lizardfolk:
-    HP: 8
-    Size: M
-    Speed: 25
-    abl_boosts:
-    - Strength
-    - Wisdom
-    - open
-    abl_flaw: Intelligence
-    languages:
-    - Tradespeak
-    - Draconic
-    traits:
-    - lizardfolk
-    - humanoid
-    attack:
-      Claws:
-        damage: d4
-        damage_type: S
-        traits:
-        - agile
-        - finesse
-        - unarmed
-    bonus_feats:
-    - Breath Control
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Cliffscale
-    - Dar
-    - Frilled
-    - Sandstrider
-    - Sith-Makar
-    - Unseen
-    - Tiefling
-
-    feats:
-      1:
-      - Lizardfolk Lore
-      - Marsh Runner
-      - Parthenogenetic Hatchling
-      - Razor Claws
-      - Reptile Speaker
-      - Sharp Fangs
-      - Tail Whip
-      5:
-      - Envenom Fangs
-      - Fey Influence
-      - "Gecko's Grip"
-      - Iruxi Unarmed Cunning
-      - Shed Tail
-      - Swift Swimmer
-      9:
-      - Terrain Advantage
-      13:
-      - Iruxi Unarmed Expertise
-  Lucht Siuil:
+  Lucht:
     HP: 6
     Size: S
     Speed: 25
-    able_boosts:
-    - Dexterity
-    - Wisdom
+    abl_boosts:
     - open
-    abl_flaw: Strength
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
     - Lucht
@@ -532,27 +448,19 @@ pf2e_ancestry:
     - Wildwood
     feats:
       1:
-      - Adroit Manipulation
       - Distracting Shadows
       - Folksy Patter
-      - Innocuous
-      - Intuitive Cooperation
       - Lucht Lore
       - Lucht Luck
       - Lucht Weapon Familiarity
       - Prairie Rider
       - Sure Feet
       - Titan Slinger
-      - Unassuming Dedication
       - Unfettered Lucht
       - Watchful Lucht
       5:
       - Cultural Adaptability
-      - Easily Dismissed
-      - Fey Influence
-      - Lucht Ingenuity
       - Lucht Weapon Trickster
-      - "Shared Luck (Lucht)"
       - Step Lively
       9:
       - Cunning Climber
@@ -570,13 +478,68 @@ pf2e_ancestry:
       - Toppling Dance
       17:
       - Shadow Self
+  Makari:
+    HP: 8
+    Size: M
+    Speed: 25
+    abl_boosts:
+    - open
+    - open
+    abl_flaw: ""
+    languages:
+    - Tradespeak
+    - Draconic
+    traits:
+    - makari
+    - humanoid
+    attack:
+      Claws:
+        damage: d4
+        damage_type: S
+        traits:
+        - agile
+        - finesse
+        - unarmed
+    bonus_feats:
+    - Breath Control
+    heritages:
+    - Aasimar
+    - Ashen One
+    - Changeling
+    - Cliffscale
+    - Dar
+    - Frilled
+    - Sandstrider
+    - Sith-Makar
+    - Unseen
+    - Tiefling
+    feats:
+      1:
+      - Makari Lore
+      - Marsh Runner
+      - Parthenogenetic Hatchling
+      - Razor Claws
+      - Reptile Speaker
+      - Sharp Fangs
+      - Tail Whip
+      5:
+      - Envenom Fangs
+      - "Gecko's Grip"
+      - Iruxi Unarmed Cunning
+      - Shed Tail
+      - Swift Swimmer
+      9:
+      - Terrain Advantage
+      13:
+      - Iruxi Unarmed Expertise
   Oruch:
     HP: 10
     Size: M
     Speed: 25
     abl_boosts:
-    - Strength
     - open
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
     - Yrch
@@ -607,7 +570,6 @@ pf2e_ancestry:
       5:
       - Athletic Might
       - Bloody Blows
-      - Fey Influence
       - Hold Mark
       - Oruch Weapon Carnage
       - Victorious Vigor
@@ -627,10 +589,9 @@ pf2e_ancestry:
     Size: M
     Speed: 30
     abl_boosts:
-    - Dexterity
-    - Intelligence
     - open
-    abl_flaw: Constitution
+    - open
+    abl_flaw: ""
     languages:
     - Tradespeak
     - Silya
@@ -656,7 +617,6 @@ pf2e_ancestry:
       1:
       - Ancestral Linguistics
       - Ancestral Longevity
-      - Elemental Wrath
       - Forlorn
       - Know Your Own
       - Nimble Elf
@@ -664,21 +624,12 @@ pf2e_ancestry:
       - Share Thoughts
       - Silya Aloofness
       - Silya Lore
-      - Silya Verve
       - Silya Weapon Familiarity
-      - Unwavering Mien
-      - Wildborn Magic
-      - Woodcraft
       5:
       - Ageless Patience
       - Ancestral Suspicion
-      - Defiance Unto Death
-      - Fey Influence
-      - Forest Stealth
       - Martial Experience
-      - Silya Instincts
       - Silya Weapon Elegance
-      - Wildborn Adept
       9:
       - Brightness Seeker
       - Elf Step
