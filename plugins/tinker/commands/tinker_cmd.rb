@@ -11,7 +11,7 @@ module AresMUSH
       def handle
         feat_info = Global.read_config('pf2e_feats')
         
-        client.emit feat_info.dig('Adopted Ancestry')
+        client.emit feat_info['Adopted Ancestry']
         
         
       end
