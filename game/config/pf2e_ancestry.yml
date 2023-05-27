@@ -1,6 +1,6 @@
 ---
 pf2e_ancestry:
-  Arvek Nar:
+  Arvek:
     HP: 8
     Size: M
     Speed: 25
@@ -417,7 +417,7 @@ pf2e_ancestry:
       - Telluric Power
       17:
       - Stonegate
-  Lucht:
+  Bassin:
     HP: 6
     Size: S
     Speed: 25
@@ -427,9 +427,9 @@ pf2e_ancestry:
     abl_flaw: ""
     languages:
     - Tradespeak
-    - Lucht
+    - Bassin
     traits:
-    - Lucht
+    - bassin
     - humanoid
     special:
     - keen eyes
@@ -440,7 +440,7 @@ pf2e_ancestry:
     - Dar
     - Gutsy
     - Hillock
-    - Jinxed-lucht
+    - Jinxed-bassin
     - Nomadic
     - Observant
     - Tiefling
@@ -450,35 +450,35 @@ pf2e_ancestry:
       1:
       - Distracting Shadows
       - Folksy Patter
-      - Lucht Lore
-      - Lucht Luck
-      - Lucht Weapon Familiarity
+      - Bassin Lore
+      - Bassin Luck
+      - Bassin Weapon Familiarity
       - Prairie Rider
       - Sure Feet
       - Titan Slinger
-      - Unfettered Lucht
-      - Watchful Lucht
+      - Unfettered Bassin
+      - Watchful Bassin
       5:
       - Cultural Adaptability
-      - Lucht Weapon Trickster
+      - Bassin Weapon Trickster
       - Step Lively
       9:
       - Cunning Climber
       - Dance Underfoot
       - Fade Away
       - Guiding Luck
-      - Helpful Lucht
+      - Helpful Bassin
       - Irrepressible
       - Unhampered Passage
       13:
       - Ceaseless Shadows
       - Cobble Dancer
-      - Lucht Weapon Expertise
-      - "Incredible Luck (Lucht)"
+      - Bassin Weapon Expertise
+      - "Incredible Luck (Bassin)"
       - Toppling Dance
       17:
       - Shadow Self
-  Makari:
+  Ciith:
     HP: 8
     Size: M
     Speed: 25
@@ -490,7 +490,7 @@ pf2e_ancestry:
     - Tradespeak
     - Draconic
     traits:
-    - makari
+    - ciith
     - humanoid
     attack:
       Claws:
@@ -515,7 +515,7 @@ pf2e_ancestry:
     - Tiefling
     feats:
       1:
-      - Makari Lore
+      - Ciith Lore
       - Marsh Runner
       - Parthenogenetic Hatchling
       - Razor Claws
