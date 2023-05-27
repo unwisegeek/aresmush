@@ -1,1051 +1,1545 @@
 ---
 pf2e_feats:
-  ancestry:
-    arvek:
-      Alchemical Scholar:
-        traits:
-        - arvek
-        shortdesc: You learn formulas more easily.
-        prereq:
-          level: 1
-      Arvek Lore:
-        traits:
-        - arvek
-        shortdesc: You’ve studied traditional arvek exercises and fieldcraft, all of which have a militaristic bent.
-        prereq:
-          level: 1
-      Arvek Weapon Familiarity:
-        traits:
-        - arvek
-        shortdesc: You are trained with composite longbows, composite shortbows, glaives, longbows, longswords, and shortbows.
-        prereq:
-          level: 1
-      Leech-Clipper:
-        traits:
-        - arvek
-        shortdesc: You are trained to capture deserters, or “leeches”.
-        prereq:
-          level: 1
-      Remoreless Lash:
-        traits:
-        - arvek
-        shortdesc: 'You’re skilled at beating a foe when their morale is already breaking.'
-        prereq:
-          level: 1
-      Sneaky:
-        traits:
-        - arvek
-        shortdesc: Stealth is an important tool in your arsenal.
-        prereq:
-          level: 1
-      Stone Face:
-        traits:
-        - arvek
-        shortdesc: Through conditioning or experience, you've mastered the art of composure, even in the face of fear.
-        prereq:
-          level: 1
-      Vigorous Health:
-        traits:
-        - arvek
-        shortdesc:
-        prereq:
-          level: 1
-      Agonizing Rebuke:
-        traits:
-        - arvek
-        shortdesc: When you terrorize your enemies, you also cause them painful mental distress.
-        prereq:
-          level: 5
-      Arvek Weapon Discipline:
-        traits:
-        - arvek
-        shortdesc: You know how to efficiently utilize the weapons soldiers use in close quarters.
-        prereq:
-          level: 5
-          feat: [ Arvek Weapon Familiarity ]
-      Expert Drill Sergeant:
-        traits:
-        - arvek
-        shortdesc: You know how to get the most out of your allies.
-        prereq:
-          level: 5
-      Formation Training:
-        traits:
-        - arvek
-        shortdesc: You know how to fight in formation with your brethren.
-        prereq:
-          level: 5
-          combat_stats: wp_martial/trained
-      Recognize Ambush:
-        traits:
-        - arvek
-        shortdesc: Your combat training has honed you to be ready for an attack at all times.
-        prereq:
-          level: 5
-      Runtsage:
-        traits:
-        - arvek
-        shortdesc: Unlike most of your kind, who dismiss goblins as embarrassments or expendable annoyances, you have studied the methodology behind their irresponsible and incomprehensible actions.
-        prereq:
-          level: 5
-    egalrin:
-      Egalrin Lore:
-        traits:
-        - egalrin
-        shortdesc: You learned skills for surviving in the place where your people were dispersed.
-        prereq:
-          level: 1
-      Egalrin Weapon Familiarity:
-        traits:
-        - egalrin
-        shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
-        prereq:
-          level: 1
-      Mariner's Fire:
-        traits:
-        - egalrin
-        shortdesc: 
-        prereq:
-          level: 1
-      Scavenger's Search:
-        traits:
-        - egalrin
-        shortdesc: You're always on the lookout for supplies and valuables.
-        prereq:
-          level: 1
-      Squawk!:
-        traits:
-        - egalrin
-        shortdesc: You let out an awkward squawk, ruffle your feathers, or fake some other birdlike tic to cover up a social misstep or faux pas.
-        prereq:
-          level: 1
-      Storm's Lash:
-        traits:
-        - egalrin
-        shortdesc: Wind and lightning have always been close friends to you.
-        prereq:
-          level: 1
-      Uncanny Agility:
-        traits:
-        - egalrin
-        shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
-        prereq:
-          level: 1
-      Waxed Feathers:
-        traits:
-        - egalrin
-        shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
-        prereq:
-          level: 1
-          heritage: Wavediver
-      Dogfang Bite:
-        traits:
-        - egalrin
-        shortdesc: You can swing your beak to slash your foes when piercing attacks won't do.
-        prereq:
-          level: 5
-          heritage: Dogtooth
-      Eat Fortune:
-        traits:
-        - concentrate
-        - divination
-        - divine
-        - egalrin
-        shortdesc: As someone tries to twist fate, you consume the interference.
-        prereq:
-          level: 5
-      Egalrin Feather Fan:
-        traits:
-        - egalrin
-        shortdesc: 	
-  You've learned to bind some of your feathers together into a fan to focus your ancestral magic.
-        prereq:
-          level: 5
-      Egalrin Weapon Study:
-        traits:
-        - egalrin
-        shortdesc: You've learned techniques for using blades and other egalrin weapons.
-        prereq:
-          level: 5
-          feat: [ Egalrin Weapon Familiarity ]
-      Long-Nosed Form:
-        traits:
-        - concentrate
-        - egalrin
-        - polymorph
-        - primal
-        - transmutation
-        shortdesc: You can transform into a specific, curious-looking human form.
-        prereq:
-          level: 5
-      Magpie Snatch:
-        traits:
-        - egalrin
-        shortdesc: You move quickly, snatching a shiny item that catches your eye.
-        prereq:
-          level: 5
-      One-Toed Hop:
-        traits:
-        - egalrin
-        shortdesc: Assuming a peculiar stance, you make a short hop on each toe.
-        prereq:
-          level: 5
-    gnome:
-      Animal Accomplice:
-        traits:
-        - gnome
-        shortdesc: You build a rapport with an animal, which becomes magically bonded to you.
-        prereq:
-          level: 1
-      Burrow Elocutionist:
-        traits:
-        - gnome
-        shortdesc: You recognize the chittering of ground creatures as its own peculiar language.
-        prereq:
-          level: 1
-      Empathetic Plea:
-        traits:
-        - auditory
-        - emotion
-        - gnome
-        - mental
-        - visual
-        shortdesc: The way you cringe or use those puppydog eyes you've been practicing elicits an empathetic response in the attacker.
-        prereq:
-          level: 1
-          skill: Diplomacy/trained
-      Fey Fellowship:
-        traits:
-        - gnome
-        shortdesc: Your enhanced fey connection affords you a warmer reception from creatures of the First World.
-        prereq:
-          level: 1
-      First World Magic:
-        traits:
-        - gnome
-        shortdesc: Your connection to the First World grants you a primal innate spell, much like those of the fey.
-        prereq:
-          level: 1
-      Gnome Obsession:
-        traits:
-        - gnome
-        shortdesc: You might have a flighty nature, but when a topic captures your attention, you dive into it headfirst.
-        prereq:
-          level: 1
-      Gnome Polyglot:
-        traits:
-        - gnome
-        shortdesc: Your extensive travels, curiosity, and love of learning help you to learn languages quickly.
-        prereq:
-          level: 1
-      Gnome Weapon Familiarity:
-        traits:
-        - gnome
-        shortdesc: You favor unusual weapons tied to your people, such as blades with curved and peculiar shapes.
-        prereq:
-          level: 1
-      Grim Insight:
-        traits:
-        - gnome
-        shortdesc: Others’ attempts to scare you often grant you insights about your would-be bullies that you can then exploit.
-        prereq:
-          level: 1
-          heritage: Umbral
-      Illusion Sense:
-        traits:
-        - gnome
-        shortdesc: Your ancestors spent their days cloaked and cradled in illusions, and as a result, sensing illusion magic is second nature to you.
-        prereq:
-          level: 1
-      Inventive Offensive:
-        traits:
-        - gnome
-        shortdesc: You can jury-rig your weapons to perform in unexpected ways.
-        prereq:
-          level: 1
-      Life-Giving Magic:
-        traits:
-        - gnome
-        shortdesc: The upwelling of innate magic refreshes your body.
-        prereq:
-          level: 1
-      Natural Performer:
-        traits:
-        - gnome
-        shortdesc: Entertainment comes naturally to you.
-        prereq:
-          level: 1
-      Razzle-Dazzle:
-        traits:
-        - gnome
-        shortdesc: You've spent considerable time practicing the manipulation of light, weaponizing your blade's reflection or bolstering the luminosity of magical displays to unconventional heights.
-        prereq:
-          level: 1
-      Theoretical Acumen:
-        traits:
-        - gnome
-        shortdesc: You study a creature’s form and behavior to hypothesize likely means of overcoming its strengths.
-        prereq:
-          level: 1
-      Unexpected Shift:
-        traits:
-        - gnome
-        shortdesc: Your supernatural connection sometimes causes you to phase from reality when under threat, disappearing for split seconds before reappearing -- often surprising you as much as your enemies.
-        prereq:
-          level: 1
-      Vibrant Display:
-        traits:
-        - gnome
-        shortdesc: Whereas most gnomes’ coloration is static or changes slowly, you can cause your hair, eye, and skin color to scintillate in brief and disorienting bursts.
-        prereq:
-          level: 1
-          heritage: Chameleon
-      Animal Elocutionist:
-        traits:
-        - gnome
-        shortdesc: You hear animal sounds as conversations instead of unintelligent noise, and can respond in turn.
-        prereq:
-          level: 5
-          feat: [ Burrow Elocutionist ]
-      Gnome Weapon Innovator:
-        traits:
-        - gnome
-        shortdesc: You produce outstanding results when wielding unusual weapons.
-        prereq:
-          level: 5
-          feat: [ Gnome Weapon Familiarity ]
-      Intuitive Illusions:
-        traits:
-        - gnome
-        shortdesc: Illusion magic comes to you so naturally that you can effortlessly sustain your magical ruses.
-        prereq:
-          level: 5
-          feat: [ Illusion Sense ]
-      Natural Illusionist:
-        traits:
-        - gnome
-        shortdesc: By drawing upon the First World’s magic, you can siphon a portion of that malleable world to create a convincing illusion.
-        prereq:
-          level: 5
-          feat: [ Illusion Sense ]
-      Project Persona:
-        traits:
-        - concentrate
-        - gnome
-        - illusion
-        - primal
-        - visual
-        shortdesc: Where others etch their armor to serve as a conduit for their imaginations, your vivid mind and bold personality allow you to project a more fitting persona over your lackluster armor.
-        prereq:
-          level: 5
-    gobber:
-      Bouncy Gobber:
-        traits:
-        - gobber
-        shortdesc: You have a particular elasticity that makes it easy for you to bounce and squish.
-        prereq:
-          level: 1
-          heritage: Unbreakable
-      Burn It!:
-        traits:
-        - gobber
-        shortdesc: Fire fascinates you.
-        prereq:
-          level: 1
-      City Scavenger:
-        traits:
-        - gobber
-        shortdesc: You know that the greatest treasures often look like refuse, and you scoff at those who throw away perfectly good scraps.
-        prereq:
-          level: 1
-      Extra Squishy:
-        traits:
-        - gobber
-        shortdesc: Your rubbery physique makes it easier for you to wedge yourself into tight spaces and more difficult for your enemies to dislodge you.
-        prereq:
-          level: 1
-          heritage: Unbreakable
-      Fang Sharpener:
-        traits:
-        - gobber
-        shortdesc: You have filed your teeth into jagged points and have an unusually powerful jaw, making your mouth a dangerous weapon.
-        prereq:
-          level: 1
-          heritage: Razortooth
-      Gobber Lore:
-        traits:
-        - gobber
-        shortdesc: You’ve picked up skills and tales from your goblin community.
-        prereq:
-          level: 1
-      Gobber Scuttle:
-        traits:
-        - gobber
-        shortdesc: You take advantage of your ally’s movement to adjust your position.
-        prereq:
-          level: 1
-      Gobber Song:
-        traits:
-        - gobber
-        shortdesc: You sing annoying goblin songs, distracting your foes with silly and repetitive lyrics.
-        prereq:
-          level: 1
-      Gobber Weapon Familiarity:
-        traits:
-        - gobber
-        shortdesc: Others might look upon them with disdain, but you know that the weapons of your people are as effective as they are sharp.
-        prereq:
-          level: 1
-      Hard Tail:
-        traits:
-        - gobber
-        shortdesc: Your tail is much stronger than most, and you can lash out with it with the strength of a whip.
-        prereq:
-          level: 1
-          heritage: Tailed
-      Junk Tinker:
-        traits:
-        - gobber
-        shortdesc: You can make useful tools out of even twisted or rusted scraps.
-        prereq:
-          level: 1
-      Rough Rider:
-        traits:
-        - gobber
-        shortdesc: You are especially good at riding traditional gobber mounts.
-        prereq:
-          level: 1
-      Twitchy:
-        traits:
-        - gobber
-        shortdesc: You are naturally suspicious and wary of danger, especially when you suspect someone might be leading you into an ambush.
-        prereq:
-          level: 1
-      Very Sneaky:
-        traits:
-        - gobber
-        shortdesc: Taller folk rarely pay attention to the shadows at their feet, and you take full advantage of this.
-        prereq:
-          level: 1
-      Ankle Bite:
-        traits:
-        - gobber
-        shortdesc: Whenever someone grabs onto you, you instinctively bite down hard.
-        prereq:
-          level: 5
-          heritage: Razorooth
-      Gobber Weapon Frenzy:
-        traits:
-        - gobber
-        shortdesc: You know how to wield your people’s vicious weapons.
-        prereq:
-          level: 5
-      Kneecap:
-        traits:
-        - gobber
-        shortdesc: You deliver a punishing blow to an enemy's knee, shin, or other vulnerable anatomy within your reach.
-        prereq:
-          level: 5
-      Loud Singer:
-        traits:
-        - gobber
-        shortdesc: Staying on pitch, proper breath control, and remembering the words are all less important than the real measure of a good singer: volume! The range of your Goblin Song is increased to 60 feet, and you can target one additional enemy when you use it.
-        prereq:
-          level: 5
-          feat: [ Goblin Song ]
-      Tail Spin:
-        traits:
-        - gobber
-        shortdesc: You excel at using your tail as a weapon to upend your foes.
-        prereq:
-          level: 5
-          feat: [ Hard Tail ]
-      Torch Goblin:
-        traits:
-        - gobber
-        shortdesc: You’ve spent enough time on fire that you know how to use it to your advantage.
-        prereq:
-          level: 5
-          heritage: Charhide
-      Tree Climber (Goblin):
-        traits:
-        - gobber
-        shortdesc: Your time in forest or jungle canopies has taught you how to scramble across branches with sure feet.
-        prereq:
-          level: 5
-          heritage: [ Tailed Treedweller ]
-      Vandal:
-        traits:
-        - gobber
-        shortdesc: You have a knack for breaking and dismantling things.
-        prereq:
-          level: 5
-    
-    human:
-      Adapted Cantrip:
-        traits:
-        - human
-        shortdesc: Through study of multiple magical traditions, you’ve altered a spell to suit your spellcasting style.
-        prereq:
-          level: 1
-      Cooperative Nature:
-        traits:
-        - human
-        shortdesc: The short human life span lends perspective and has taught you from a young age to set aside differences and work with others to achieve greatness.
-        prereq:
-          level: 1
-      General Training:
-        traits:
-        - human
-        shortdesc: Your adaptability manifests in your mastery of a range of useful abilities.
-        prereq:
-          level: 1
-      Haughty Obstinacy:
-        traits:
-        - human
-        shortdesc: Your powerful ego makes it harder for others to order you around.
-        prereq:
-          level: 1
-      Natural Ambition:
-        traits:
-        - human
-        shortdesc: You were raised to be ambitious and always reach for the stars, leading you to progress quickly in your chosen field.
-        prereq:
-          level: 1
-      Natural Skill:
-        traits:
-        - human
-        shortdesc: Your ingenuity allows you to learn a wide variety of skills.
-        prereq:
-          level: 1
-      Unconventional Weaponry:
-        traits:
-        - human
-        shortdesc: You’ve familiarized yourself with a particular weapon, potentially from another ancestry or culture.
-        prereq:
-          level: 1
-      Adaptive Adept:
-        traits:
-        - human
-        shortdesc: You’ve continued adapting your magic to blend your class’s tradition with your adapted tradition.
-        prereq:
-          level: 5
-          feat: [ Adaptive Adept ]
-      Sense Allies:
-        traits:
-        - human
-        shortdesc: Like many humans raised in a close-knit community, you have always been strongly attuned to the presence of others.
-        prereq:
-          level: 5
-      Cooperative Soul:
-        traits:
-        - human
-        shortdesc: You have developed a soul-deep bond with your comrades and maintain an even greater degree of cooperation with them.
-        prereq:
-          level: 5
-    kailli:
-      Cheek Pouches:
-        traits:
-        - kailli
-        shortdesc: Your cheeks are stretchy, and you can store up to four items of light Bulk or less in these cheek pouches.
-        prereq:
-          level: 1
-      Pack Rat:
-        traits:
-        - kailli
-        shortdesc: Years of packing for travel have taught you how to cram vast quantities into small spaces.
-        prereq:
-          level: 1
-      Rat Familiar:
-        traits:
-        - kailli
-        shortdesc: You have a pet rat that has become magically bonded to you.
-        prereq:
-          level: 1
-      Kailli Lore:
-        traits:
-        - kailli
-        shortdesc: Years of experience among ratfolk communities have made you nimble, and you've learned to run and hide when enemies threaten.
-        prereq:
-          level: 1
-      Ratspeak:
-        traits:
-        - kailli
-        shortdesc: To you, the squeaking of rats and other rodents makes a strange kind of sense.
-        prereq:
-          level: 1
-      Tinkering Fingers:
-        traits:
-        - kailli
-        shortdesc: You're good with your hands and can quickly improvise a fix for broken or damaged equipment.
-        prereq:
-          level: 1
-      Vicious Incisors:
-        traits:
-        - kailli
-        shortdesc: You've let your incisors grow long enough to serve as formidable weapons.
-        prereq:
-          level: 1
-      Warren Navigator:
-        traits:
-        - kailli
-        shortdesc: You're particularly good at solving mazes and navigating twists and turns.
-        prereq:
-          level: 1
-      Gnaw:
-        traits:
-        - kailli
-        shortdesc: With enough time and determination, you can chew through nearly anything.
-        prereq:
-          level: 5
-          feat: [ Vicious Incisors ]
-      Kailli Roll:
-        traits:
-        - kailli
-        - move
-        shortdesc: Your ability to curl up into a tight ball comes in handy.
-        prereq:
-          level: 5
-      Lab Rat:
-        traits:
-        - kailli
-        shortdesc: You've spent more than your share of time in an alchemy lab.
-        prereq:
-          level: 5
-      Plague Sniffer:
-        traits:
-        - kailli
-        shortdesc: You can sniff out the pungent tang of disease.
-        prereq:
-          level: 5
-          heritage: Longsnout
-      Quick Stow (Kailli):
-        traits:
-        - kailli
-        shortdesc: You are adept at quickly moving items into your cheek pouches.
-        prereq:
-          level: 5
-          feat: [ Cheek Pouches ]
-      Rat Magic:
-        traits:
-        - kailli
-        shortdesc: There always seems to be a little rat around to carry messages for you.
-        prereq:
-          level: 5
-    khazad:
-      Khazadi Doughtiness:
-        traits:
-        - khazad
-        shortdesc: You are either naturally calm and collected in the face of imminent danger, or you are very good at faking it.
-        prereq:
-          level: 1
-      Khazadi Lore:
-        traits:
-        - khazad
-        shortdesc: You eagerly absorbed the old stories and traditions of your ancestors, your gods, and your people.
-        prereq:
-          level: 1
-      Khazadi Weapon Familiarity:
-        traits:
-        - khazad
-        shortdesc: Your kin have instilled in you an affinity for hard-hitting weapons, and you prefer these to more elegant arms.
-        prereq:
-          level: 1
-      Eye for Treasure:
-        traits:
-        - khazad
-        shortdesc: You know good artisanship when you see it and can wax poetic about crafting techniques and forms.
-        prereq:
-          level: 1
-      Rock Runner:
-        traits:
-        - khazad
-        shortdesc: Your innate connection to stone makes you adept at moving across uneven surfaces.
-        prereq:
-          level: 1
-      Stonecunning:
-        traits:
-        - khazad
-        shortdesc: You have a knack for noticing even small inconsistencies and craftsmanship techniques in the stonework around you.
-        prereq:
-          level: 1
-      Unburdened Iron:
-        traits:
-        - khazad
-        shortdesc: You’ve learned techniques first devised by your ancestors during their ancient wars, allowing you to comfortably wear massive suits of armor.
-        prereq:
-          level: 1
-      Vengeful Hatred:
-        traits:
-        - khazad
-        shortdesc: You heart aches for vengeance against those who have wronged your people.
-        prereq:
-          level: 1
-      Boulder Roll:
-        traits:
-        - khazad
-        shortdesc:
-        prereq:
-          level: 5
-          feat: [ Boulder Roll ]
-      Defy The Darkness:
-        traits:
-        - khazad
-        shortdesc:
-        prereq:
-          level: 5
-          sense_precise: darkvision
-      Khazadi Reinforcement:
-        traits:
-        - khazad
-        shortdesc:
-        prereq:
-          level: 5
-          skill: crafting/expert
-      Khazadi Weapon Cunning:
-        traits:
-        - khazad
-        shortdesc:
-        prereq:
-          level: 5
-          feat: [ Khazadi Weapon Familiarity ]
-      Sheltering Slab:
-        traits:
-        - khazad
-        shortdesc:
-        prereq:
-          level: 5
-      Tomb-Watcher's Glare:
-        traits:
-        - khazad
-        shortdesc:
-        prereq:
-          level: 5
-          heritage: death warden
-    lucht:
-      Lucht Luck:
-        traits:
-        - fortune
-        - lucht
-        shortdesc: Your happy-go-lucky nature makes it seem like misfortune avoids you.
-        prereq:
-          level: 1
-      Distracting Shadows:
-        traits:
-        - halfling
-        shortdesc: You have learned to remain hidden by using larger folk as a distraction to avoid drawing attention to yourself.
-        prereq:
-          level: 1
-      Folksy Patter:
-        traits:
-        - lucht
-        shortdesc: You are adept at disguising coded messages as folksy idioms.
-        prereq:
-          level: 1
-      Lucht Lore:
-        traits:
-        - lucht
-        shortdesc: You’ve dutifully learned important skills passed down through generations of halfling tradition.
-        prereq:
-          level: 1
-      Lucht Weapon Familiarity:
-        traits:
-        - lucht
-        shortdesc: You favor traditional halfling weapons, so you’ve learned how to use them more effectively.
-        prereq:
-          level: 1
-      Prairie Rider:
-        traits:
-        - lucht
-        shortdesc: You grew up riding your clan's shaggy ponies and riding dogs.
-        prereq:
-          level: 1
-      Sure Feet:
-        traits:
-        - lucht
-        shortdesc: Whether keeping your balance or scrambling up a tricky climb, your hairy, calloused feet easily find purchase.
-        prereq:
-          level: 1
-      Titan Slinger:
-        traits:
-        - lucht
-        shortdesc: You have learned how to use your sling to fell enormous creatures.
-        prereq:
-          level: 1
-      Unfettered Lucht:
-        traits:
-        - lucht
-        shortdesc: You were forced into service as a laborer, but you’ve since escaped and have trained to ensure you’ll never be caught again.
-        prereq:
-          level: 1
-      Watchful Lucht:
-        traits:
-        - Lucht
-        shortdesc: Your communal lifestyle causes you to pay close attention to the people around you.
-        prereq:
-          level: 1
-      Cultural Adaptability:
-        traits:
-        - lucht
-        shortdesc: During your adventures, you’ve honed your ability to adapt to the culture of the predominant ancestry around you.
-        prereq:
-          level: 5
-      Lucht Weapon Trickster:
-        traits:
-        - lucht
-        shortdesc: You are particularly adept at fighting with your people’s favored weapons.
-        prereq:
-          level: 5
-          feat: [ Lucht Weapon Familiarity ]
-      Step Lively:
-        traits:
-        - lucht
-        shortdesc: You are an expert at avoiding the lumbering footsteps of larger creatures.
-        prereq:
-          level: 5
-    makari:
-      Makari Lore:
-        traits:
-        - makari
-        shortdesc: You listened carefully to the tales passed down among your community.
-        prereq:
-          level: 1
-      Marsh Runner:
-        traits:
-        - makari
-        shortdesc: You are adept at moving through marshy terrain.
-        prereq:
-          level: 1
-      Parthenogenic Hatchling:
-        traits:
-        - makari
-        shortdesc: You were hatched from an unfertilized egg during hard times for your people, and you are a biological copy of your mother.
-        prereq:
-          level: 1
-      Razor Claws:
-        traits:
-        - makari
-        shortdesc: Your have honed your claws to be deadly.
-        prereq:
-          level: 1
-      Reptile Speaker:
-        traits:
-        - makari
-        shortdesc: You hear the sounds of reptiles as language.
-        prereq:
-          level: 1
-      Sharp Fangs:
-        traits:
-        - makari
-        shortdesc: Your teeth are formidable weapons.
-        prereq:
-          level: 1
-      Tail Whip:
-        traits:
-        - makari
-        shortdesc: By birth or through training, your tail is strong enough to make for a powerful melee weapon.
-        prereq:
-          level: 1
-      Envenom Fangs:
-        traits:
-        - makari
-        shortdesc: You envenom your fangs.
-        prereq:
-          level: 5
-          feat: [ Sharp Fangs ]
-      Gecko's Grip:
-        traits:
-        - makari
-        shortdesc: You stick to walls with a preternatural grip.
-        prereq:
-          level: 5
-          heritage: cliffscale
-      Iruxi Unarmed Cunning:
-        traits:
-        - makari
-        shortdesc: You make the most of your iruxi unarmed attacks.
-        prereq:
-          level: 5
-      Shed Tail:
-        traits:
-        - makari
-        shortdesc: You can shed your tail to escape.
-        prereq:
-          level: 5
-          feat: [ Tail Whip ]
-      Swift Swimmer:
-        traits:
-        - makari
-        shortdesc: You swim faster than most iruxi.
-        prereq:
-          level: 5
-          heritage: wetlander
-    oruch:
-      Oruch Superstition:
-        traits:
-        - concentrate
-        - oruch
-        shortdesc: You defend yourself against magic by relying on techniques derived from oruch cultural superstitions.
-        prereq:
-          level: 1
-      Beast Trainer:
-        traits:
-        - oruch
-        shortdesc: You have an impressive innate ability to tame and command ferocious beasts.
-        prereq:
-          level: 1
-      Iron Fists:
-        traits:
-        - oruch
-        shortdesc: Your fists have been forged by battle, your naturally tough skin and dense bone further hardened by conflict.
-        prereq:
-          level: 1
-      Oruch Ferocity:
-        traits:
-        - oruch
-        shortdesc: Fierceness in battle runs through your blood, and you refuse to fall from your injuries.
-        prereq:
-          level: 1
-      Oruch Lore:
-        traits:
-        - oruch
-        shortdesc: The hold elders taught you your people's histories, told tales of great athletic feats, and shared with you the hardships your ancestors endured so that you can pass this wisdom down to future generations.
-        prereq:
-          level: 1
-      Oruch Weapon Familiarity:
-        traits:
-        - oruch
-        shortdesc: In combat, you favor the brutal weapons that are traditional for your orc ancestors.
-        prereq:
-          level: 1
-      Tusks:
-        traits:
-        - oruch
-        shortdesc: You have particularly long, jagged tusks perfect for tearing meat from bone.
-        prereq:
-          level: 1
-      Athletic Might:
-        traits:
-        - oruch
-        shortdesc: Surviving in hostile terrain has given you a great talent for mobility.
-        prereq:
-          level: 5
-      Bloody Blows:
-        traits:
-        - oruch
-        shortdesc: 	
-  Your lethal unarmed attacks leave bloody gouges or cause severe internal bleeding.
-        prereq:
-          level: 5
-      Defy Death:
-        traits:
-        - oruch
-        shortdesc: You're exceptionally difficult to kill.
-        prereq:
-          level: 5
-          feat: [ Orc Ferocity ]
-      Hold Mark:
-        traits:
-        - oruch
-        shortdesc: You bear scars or tattoos enhanced by the mark of your community's prowess.
-        prereq:
-          level: 5
-      Oruch Weapon Carnage:
-        traits:
-        - oruch
-        shortdesc: You are brutally efficient with the weapons of your orc ancestors.
-        prereq:
-          level: 5
-          feat: [ Orc Weapon Familiarity ]
-      Victorious Vigor:
-        traits:
-        - oruch
-        shortdesc: Your victories in battle fill you with pride and imbue you with the energy to fight a bit longer despite your wounds.
-        prereq:
-          level: 5
-    sildanyar:
-      Ancestral Linguistics:
-        traits:
-        - sildanyar
-        shortdesc: Over your extensive lifespan, you've studied many languages.
-        prereq:
-          level: 1
-      Ancestral Longevity:
-        traits:
-        - sildanyar
-        shortdesc: You have accumulated a vast array of lived knowledge over the years.
-        prereq:
-          level: 1
-      Sildanyari Aloofness:
-        traits:
-        - sildanyar
-        shortdesc: As much as you might care for them, you've come to terms with the ephemeral nature of non-sil, and it makes their threats feel less troublesome.
-        prereq:
-          level: 1
-      Sildanyari Lore:
-        traits:
-        - sildanyar
-        shortdesc: You’ve studied in traditional sildanyari arts, learning about arcane magic and the world around you.
-        prereq:
-          level: 1
-      Sildanyari Weapon Familiarity:
-        traits:
-        - sildanyar
-        shortdesc: You favor bows and other elegant weapons.
-        prereq:
-          level: 1
-      Forlorn:
-        traits:
-        - sildanyar
-        shortdesc: Watching your friends age and die fills you with moroseness that protects you against harmful emotions.
-        prereq:
-          level: 1
-      Know Your Own:
-        traits:
-        - sildanyar
-        shortdesc: You've spent countless hours studying the history of sil on your world and beyond and are a studied expert in your people's ways.
-        prereq:
-          level: 1
-      Nimble Sil:
-        traits:
-        - sildanyar
-        shortdesc: Your muscles are tightly honed.
-        prereq:
-          level: 1
-      Otherworldly Magic:
-        traits:
-        - sildanyar
-        shortdesc: Your sildanyari magic manifests as a simple arcane spell, even if you aren’t formally trained in magic.
-        prereq:
-          level: 1
-      Unwavering Mien:
-        traits:
-        - sildanyar
-        shortdesc: Your mystic control and meditations allow you to resist external influences upon your consciousness.
-        prereq:
-          level: 1
-      Ageless Patience:
-        traits:
-        - sildanyar
-        shortdesc: You work at a pace born from longevity that enhances your thoroughness.
-        prereq:
-          level: 5
-      Ancestral Suspicion:
-        traits:
-        - sildanyar
-        shortdesc: Long-lived elves have seen civilizations rise and fall, often at the hands of outside forces.
-        prereq:
-          level: 5
-      Martial Experience:
-        traits:
-        - sildanyar
-        shortdesc: You've crossed blades with a wide variety of foes wielding a wide variety of weapons, and you've learned the basics of fighting with nearly any of them.
-        prereq:
-          level: 5
-      Sildanyari Weapon Elegance:
-        traits:
-        - sildanyar
-        shortdesc: You are attuned to the weapons of your sil ancestors and are particularly deadly when using them.
-        prereq:
-          level: 5
-          feat: [ Sildanyari Weapon Familiarity ]
+  Alchemical Scholar:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You learn formulas more easily.
+    prereq:
+      level: 1
+  Arvek Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You’ve studied traditional arvek exercises and fieldcraft, all of which have a militaristic bent.
+    prereq:
+      level: 1
+  Arvek Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You are trained with composite longbows, composite shortbows, glaives, longbows, longswords, and shortbows.
+    prereq:
+      level: 1
+  Leech-Clipper:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You are trained to capture deserters, or “leeches”.
+    prereq:
+      level: 1
+  Remorseless Lash:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: 'You’re skilled at beating a foe when their morale is already breaking.'
+    prereq:
+      level: 1
+  Sneaky:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: Stealth is an important tool in your arsenal.
+    prereq:
+      level: 1
+  Stone Face:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: Through conditioning or experience, you've mastered the art of composure, even in the face of fear.
+    prereq:
+      level: 1
+  Vigorous Health:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc:
+    prereq:
+      level: 1
+  Agonizing Rebuke:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: When you terrorize your enemies, you also cause them painful mental distress.
+    prereq:
+      level: 5
+  Arvek Weapon Discipline:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You know how to efficiently utilize the weapons soldiers use in close quarters.
+    prereq:
+      level: 5
+      feat: 
+      - Arvek Weapon Familiarity
+  Expert Drill Sergeant:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You know how to get the most out of your allies.
+    prereq:
+      level: 5
+  Formation Training:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: You know how to fight in formation with your brethren.
+    prereq:
+      level: 5
+      combat_stats: wp_martial/trained
+  Recognize Ambush:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: Your combat training has honed you to be ready for an attack at all times.
+    prereq:
+      level: 5
+  Runtsage:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Arvek
+    traits:
+    - arvek
+    shortdesc: Unlike most of your kind, who dismiss goblins as embarrassments or expendable annoyances, you have studied the methodology behind their irresponsible and incomprehensible actions.
+    prereq:
+      level: 5
+  Egalrin Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You learned skills for surviving in the place where your people were dispersed.
+    prereq:
+      level: 1
+  Egalrin Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
+    prereq:
+      level: 1
+  Mariner's Fire:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: 
+    prereq:
+      level: 1
+  Scavenger's Search:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You're always on the lookout for supplies and valuables.
+    prereq:
+      level: 1
+  Squawk!:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You let out an awkward squawk, ruffle your feathers, or fake some other birdlike tic to cover up a social misstep or faux pas.
+    prereq:
+      level: 1
+  Storm's Lash:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: Wind and lightning have always been close friends to you.
+    prereq:
+      level: 1
+  Uncanny Agility:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
+    prereq:
+      level: 1
+  Waxed Feathers:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
+    prereq:
+      level: 1
+      heritage: Wavediver
+  Dogfang Bite:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You can swing your beak to slash your foes when piercing attacks won't do.
+    prereq:
+      level: 5
+      heritage: Dogtooth
+  Eat Fortune:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - concentrate
+    - divination
+    - divine
+    - egalrin
+    shortdesc: As someone tries to twist fate, you consume the interference.
+    prereq:
+      level: 5
+  Egalrin Feather Fan:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You've learned to bind some of your feathers together into a fan to focus your ancestral magic.
+    prereq:
+      level: 5
+  Egalrin Weapon Study:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You've learned techniques for using blades and other egalrin weapons.
+    prereq:
+      level: 5
+      feat: 
+      - Egalrin Weapon Familiarity
+  Long-Nosed Form:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - concentrate
+    - egalrin
+    - polymorph
+    - primal
+    - transmutation
+    shortdesc: You can transform into a specific, curious-looking human form.
+    prereq:
+      level: 5
+  Magpie Snatch:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: You move quickly, snatching a shiny item that catches your eye.
+    prereq:
+      level: 5
+  One-Toed Hop:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Egalrin
+    traits:
+    - egalrin
+    shortdesc: Assuming a peculiar stance, you make a short hop on each toe.
+    prereq:
+      level: 5
+  Animal Accomplice:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You build a rapport with an animal, which becomes magically bonded to you.
+    prereq:
+      level: 1
+  Burrow Elocutionist:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You recognize the chittering of ground creatures as its own peculiar language.
+    prereq:
+      level: 1
+  Empathetic Plea:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - auditory
+    - emotion
+    - gnome
+    - mental
+    - visual
+    shortdesc: The way you cringe or use those puppydog eyes you've been practicing elicits an empathetic response in the attacker.
+    prereq:
+      level: 1
+      skill: Diplomacy/trained
+  Fey Fellowship:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Your enhanced fey connection affords you a warmer reception from creatures of the First World.
+    prereq:
+      level: 1
+  First World Magic:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Your connection to the First World grants you a primal innate spell, much like those of the fey.
+    prereq:
+      level: 1
+  Gnome Obsession:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You might have a flighty nature, but when a topic captures your attention, you dive into it headfirst.
+    prereq:
+      level: 1
+  Gnome Polyglot:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Your extensive travels, curiosity, and love of learning help you to learn languages quickly.
+    prereq:
+      level: 1
+  Gnome Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You favor unusual weapons tied to your people, such as blades with curved and peculiar shapes.
+    prereq:
+      level: 1
+  Grim Insight:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Others’ attempts to scare you often grant you insights about your would-be bullies that you can then exploit.
+    prereq:
+      level: 1
+      heritage: Umbral
+  Illusion Sense:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Your ancestors spent their days cloaked and cradled in illusions, and as a result, sensing illusion magic is second nature to you.
+    prereq:
+      level: 1
+  Inventive Offensive:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You can jury-rig your weapons to perform in unexpected ways.
+    prereq:
+      level: 1
+  Life-Giving Magic:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: The upwelling of innate magic refreshes your body.
+    prereq:
+      level: 1
+  Natural Performer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Entertainment comes naturally to you.
+    prereq:
+      level: 1
+  Razzle-Dazzle:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You've spent considerable time practicing the manipulation of light, weaponizing your blade's reflection or bolstering the luminosity of magical displays to unconventional heights.
+    prereq:
+      level: 1
+  Theoretical Acumen:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You study a creature’s form and behavior to hypothesize likely means of overcoming its strengths.
+    prereq:
+      level: 1
+  Unexpected Shift:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Your supernatural connection sometimes causes you to phase from reality when under threat, disappearing for split seconds before reappearing -- often surprising you as much as your enemies.
+    prereq:
+      level: 1
+  Vibrant Display:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Whereas most gnomes’ coloration is static or changes slowly, you can cause your hair, eye, and skin color to scintillate in brief and disorienting bursts.
+    prereq:
+      level: 1
+      heritage: Chameleon
+  Animal Elocutionist:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You hear animal sounds as conversations instead of unintelligent noise, and can respond in turn.
+    prereq:
+      level: 5
+      feat: 
+      - Burrow Elocutionist
+  Gnome Weapon Innovator:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: You produce outstanding results when wielding unusual weapons.
+    prereq:
+      level: 5
+      feat: 
+      - Gnome Weapon Familiarity
+  Intuitive Illusions:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: Illusion magic comes to you so naturally that you can effortlessly sustain your magical ruses.
+    prereq:
+      level: 5
+      feat: 
+      - Illusion Sense
+  Natural Illusionist:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - gnome
+    shortdesc: By drawing upon the First World’s magic, you can siphon a portion of that malleable world to create a convincing illusion.
+    prereq:
+      level: 5
+      feat: 
+      - Illusion Sense
+  Project Persona:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gnome
+    traits:
+    - concentrate
+    - gnome
+    - illusion
+    - primal
+    - visual
+    shortdesc: Where others etch their armor to serve as a conduit for their imaginations, your vivid mind and bold personality allow you to project a more fitting persona over your lackluster armor.
+    prereq:
+      level: 5
+  Bouncy Gobber:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You have a particular elasticity that makes it easy for you to bounce and squish.
+    prereq:
+      level: 1
+      heritage: Unbreakable
+  Burn It!:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Fire fascinates you.
+    prereq:
+      level: 1
+  City Scavenger:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You know that the greatest treasures often look like refuse, and you scoff at those who throw away perfectly good scraps.
+    prereq:
+      level: 1
+  Extra Squishy:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Your rubbery physique makes it easier for you to wedge yourself into tight spaces and more difficult for your enemies to dislodge you.
+    prereq:
+      level: 1
+      heritage: Unbreakable
+  Fang Sharpener:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You have filed your teeth into jagged points and have an unusually powerful jaw, making your mouth a dangerous weapon.
+    prereq:
+      level: 1
+      heritage: Razortooth
+  Gobber Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You’ve picked up skills and tales from your goblin community.
+    prereq:
+      level: 1
+  Gobber Scuttle:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You take advantage of your ally’s movement to adjust your position.
+    prereq:
+      level: 1
+  Gobber Song:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You sing annoying goblin songs, distracting your foes with silly and repetitive lyrics.
+    prereq:
+      level: 1
+  Gobber Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Others might look upon them with disdain, but you know that the weapons of your people are as effective as they are sharp.
+    prereq:
+      level: 1
+  Hard Tail:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Your tail is much stronger than most, and you can lash out with it with the strength of a whip.
+    prereq:
+      level: 1
+      heritage: Tailed
+  Junk Tinker:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You can make useful tools out of even twisted or rusted scraps.
+    prereq:
+      level: 1
+  Rough Rider:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You are especially good at riding traditional gobber mounts.
+    prereq:
+      level: 1
+  Twitchy:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You are naturally suspicious and wary of danger, especially when you suspect someone might be leading you into an ambush.
+    prereq:
+      level: 1
+  Very Sneaky:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Taller folk rarely pay attention to the shadows at their feet, and you take full advantage of this.
+    prereq:
+      level: 1
+  Ankle Bite:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Whenever someone grabs onto you, you instinctively bite down hard.
+    prereq:
+      level: 5
+      heritage: Razorooth
+  Gobber Weapon Frenzy:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You know how to wield your people’s vicious weapons.
+    prereq:
+      level: 5
+  Kneecap:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You deliver a punishing blow to an enemy's knee, shin, or other vulnerable anatomy within your reach.
+    prereq:
+      level: 5
+  Loud Singer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Staying on pitch, proper breath control, and remembering the words are all less important than the real measure of a good singer: volume! The range of your Goblin Song is increased to 60 feet, and you can target one additional enemy when you use it.
+    prereq:
+      level: 5
+      feat: 
+      - Goblin Song
+  Tail Spin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You excel at using your tail as a weapon to upend your foes.
+    prereq:
+      level: 5
+      feat: 
+      - Hard Tail
+  Torch Goblin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You’ve spent enough time on fire that you know how to use it to your advantage.
+    prereq:
+      level: 5
+      heritage: Charhide
+  Tree Climber (Gobber):
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: Your time in forest or jungle canopies has taught you how to scramble across branches with sure feet.
+    prereq:
+      level: 5
+      orheritage: 
+      - Tailed 
+      - Treedweller
+  Vandal:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Gobber
+    traits:
+    - gobber
+    shortdesc: You have a knack for breaking and dismantling things.
+    prereq:
+      level: 5
+  Adapted Cantrip:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: Through study of multiple magical traditions, you’ve altered a spell to suit your spellcasting style.
+    prereq:
+      level: 1
+  Cooperative Nature:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: The short human life span lends perspective and has taught you from a young age to set aside differences and work with others to achieve greatness.
+    prereq:
+      level: 1
+  General Training:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: Your adaptability manifests in your mastery of a range of useful abilities.
+    prereq:
+      level: 1
+  Haughty Obstinacy:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: Your powerful ego makes it harder for others to order you around.
+    prereq:
+      level: 1
+  Natural Ambition:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: You were raised to be ambitious and always reach for the stars, leading you to progress quickly in your chosen field.
+    prereq:
+      level: 1
+  Natural Skill:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: Your ingenuity allows you to learn a wide variety of skills.
+    prereq:
+      level: 1
+  Unconventional Weaponry:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: You’ve familiarized yourself with a particular weapon, potentially from another ancestry or culture.
+    prereq:
+      level: 1
+  Adaptive Adept:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: You’ve continued adapting your magic to blend your class’s tradition with your adapted tradition.
+    prereq:
+      level: 5
+      feat: 
+      - Adaptive Adept
+  Sense Allies:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: Like many humans raised in a close-knit community, you have always been strongly attuned to the presence of others.
+    prereq:
+      level: 5
+  Cooperative Soul:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Human
+    traits:
+    - human
+    shortdesc: You have developed a soul-deep bond with your comrades and maintain an even greater degree of cooperation with them.
+    prereq:
+      level: 5
+  Cheek Pouches:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: Your cheeks are stretchy, and you can store up to four items of light Bulk or less in these cheek pouches.
+    prereq:
+      level: 1
+  Pack Rat:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: Years of packing for travel have taught you how to cram vast quantities into small spaces.
+    prereq:
+      level: 1
+  Rat Familiar:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You have a pet rat that has become magically bonded to you.
+    prereq:
+      level: 1
+  Kailli Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: Years of experience among ratfolk communities have made you nimble, and you've learned to run and hide when enemies threaten.
+    prereq:
+      level: 1
+  Ratspeak:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: To you, the squeaking of rats and other rodents makes a strange kind of sense.
+    prereq:
+      level: 1
+  Tinkering Fingers:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You're good with your hands and can quickly improvise a fix for broken or damaged equipment.
+    prereq:
+      level: 1
+  Vicious Incisors:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You've let your incisors grow long enough to serve as formidable weapons.
+    prereq:
+      level: 1
+  Warren Navigator:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You're particularly good at solving mazes and navigating twists and turns.
+    prereq:
+      level: 1
+  Gnaw:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: With enough time and determination, you can chew through nearly anything.
+    prereq:
+      level: 5
+      feat: 
+      - Vicious Incisors
+  Kailli Roll:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    - move
+    shortdesc: Your ability to curl up into a tight ball comes in handy.
+    prereq:
+      level: 5
+  Lab Rat:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You've spent more than your share of time in an alchemy lab.
+    prereq:
+      level: 5
+  Plague Sniffer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You can sniff out the pungent tang of disease.
+    prereq:
+      level: 5
+      heritage: Longsnout
+  Quick Stow (Kailli):
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: You are adept at quickly moving items into your cheek pouches.
+    prereq:
+      level: 5
+      feat: 
+      - Cheek Pouches
+  Rat Magic:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Kailli
+    traits:
+    - kailli
+    shortdesc: There always seems to be a little rat around to carry messages for you.
+    prereq:
+      level: 5
+  Khazadi Doughtiness:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: You are either naturally calm and collected in the face of imminent danger, or you are very good at faking it.
+    prereq:
+      level: 1
+  Khazadi Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: You eagerly absorbed the old stories and traditions of your ancestors, your gods, and your people.
+    prereq:
+      level: 1
+  Khazadi Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: Your kin have instilled in you an affinity for hard-hitting weapons, and you prefer these to more elegant arms.
+    prereq:
+      level: 1
+  Eye for Treasure:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: You know good artisanship when you see it and can wax poetic about crafting techniques and forms.
+    prereq:
+      level: 1
+  Rock Runner:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: Your innate connection to stone makes you adept at moving across uneven surfaces.
+    prereq:
+      level: 1
+  Stonecunning:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: You have a knack for noticing even small inconsistencies and craftsmanship techniques in the stonework around you.
+    prereq:
+      level: 1
+  Unburdened Iron:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: You’ve learned techniques first devised by your ancestors during their ancient wars, allowing you to comfortably wear massive suits of armor.
+    prereq:
+      level: 1
+  Vengeful Hatred:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc: Your heart aches for vengeance against those who have wronged your people.
+    prereq:
+      level: 1
+  Boulder Roll:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc:
+    prereq:
+      level: 5
+      feat: [ Boulder Roll ]
+  Defy The Darkness:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc:
+    prereq:
+      level: 5
+      sense_precise: darkvision
+  Khazadi Reinforcement:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc:
+    prereq:
+      level: 5
+      skill: Crafting/expert
+  Khazadi Weapon Cunning:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc:
+    prereq:
+      level: 5
+      feat: 
+      - Khazadi Weapon Familiarity
+  Sheltering Slab:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc:
+    prereq:
+      level: 5
+  Tomb-Watcher's Glare:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Khazad
+    traits:
+    - khazad
+    shortdesc:
+    prereq:
+      level: 5
+      heritage: Death Warden
+  Bassin Luck:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - fortune
+    - bassin
+    shortdesc: Your happy-go-lucky nature makes it seem like misfortune avoids you.
+    prereq:
+      level: 1
+  Distracting Shadows:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - halfling
+    shortdesc: You have learned to remain hidden by using larger folk as a distraction to avoid drawing attention to yourself.
+    prereq:
+      level: 1
+  Folksy Patter:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You are adept at disguising coded messages as folksy idioms.
+    prereq:
+      level: 1
+  Bassin Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You’ve dutifully learned important skills passed down through generations of halfling tradition.
+    prereq:
+      level: 1
+  Bassin Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You favor traditional halfling weapons, so you’ve learned how to use them more effectively.
+    prereq:
+      level: 1
+  Prairie Rider:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You grew up riding your clan's shaggy ponies and riding dogs.
+    prereq:
+      level: 1
+  Sure Feet:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: Whether keeping your balance or scrambling up a tricky climb, your hairy, calloused feet easily find purchase.
+    prereq:
+      level: 1
+  Titan Slinger:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You have learned how to use your sling to fell enormous creatures.
+    prereq:
+      level: 1
+  Unfettered Bassin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You were forced into service as a laborer, but you’ve since escaped and have trained to ensure you’ll never be caught again.
+    prereq:
+      level: 1
+  Watchful Bassin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - Bassin
+    shortdesc: Your communal lifestyle causes you to pay close attention to the people around you.
+    prereq:
+      level: 1
+  Cultural Adaptability:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: During your adventures, you’ve honed your ability to adapt to the culture of the predominant ancestry around you.
+    prereq:
+      level: 5
+  Bassin Weapon Trickster:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You are particularly adept at fighting with your people’s favored weapons.
+    prereq:
+      level: 5
+      feat: 
+      - Bassin Weapon Familiarity
+  Step Lively:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Bassin
+    traits:
+    - bassin
+    shortdesc: You are an expert at avoiding the lumbering footsteps of larger creatures.
+    prereq:
+      level: 5
+  Ciith Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You listened carefully to the tales passed down among your community.
+    prereq:
+      level: 1
+  Marsh Runner:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You are adept at moving through marshy terrain.
+    prereq:
+      level: 1
+  Parthenogenic Hatchling:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You were hatched from an unfertilized egg during hard times for your people, and you are a biological copy of your mother.
+    prereq:
+      level: 1
+  Razor Claws:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: Your have honed your claws to be deadly.
+    prereq:
+      level: 1
+  Reptile Speaker:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You hear the sounds of reptiles as language.
+    prereq:
+      level: 1
+  Sharp Fangs:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: Your teeth are formidable weapons.
+    prereq:
+      level: 1
+  Tail Whip:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: By birth or through training, your tail is strong enough to make for a powerful melee weapon.
+    prereq:
+      level: 1
+  Envenom Fangs:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You envenom your fangs.
+    prereq:
+      level: 5
+      feat: 
+      - Sharp Fangs
+  Gecko's Grip:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You stick to walls with a preternatural grip.
+    prereq:
+      level: 5
+      heritage: Cliffscale
+  Ciith Unarmed Cunning:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You make the most of your unarmed attacks.
+    prereq:
+      level: 5
+  Shed Tail:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You can shed your tail to escape.
+    prereq:
+      level: 5
+      feat: 
+      - Tail Whip 
+  Swift Swimmer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Ciith
+    traits:
+    - ciith
+    shortdesc: You swim faster than most iruxi.
+    prereq:
+      level: 5
+      heritage: Wetlander
+  Oruch Superstition:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - concentrate
+    - oruch
+    shortdesc: You defend yourself against magic by relying on techniques derived from oruch cultural superstitions.
+    prereq:
+      level: 1
+  Beast Trainer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: You have an impressive innate ability to tame and command ferocious beasts.
+    prereq:
+      level: 1
+  Iron Fists:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: Your fists have been forged by battle, your naturally tough skin and dense bone further hardened by conflict.
+    prereq:
+      level: 1
+  Oruch Ferocity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: Fierceness in battle runs through your blood, and you refuse to fall from your injuries.
+    prereq:
+      level: 1
+  Oruch Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: The hold elders taught you your people's histories, told tales of great athletic feats, and shared with you the hardships your ancestors endured so that you can pass this wisdom down to future generations.
+    prereq:
+      level: 1
+  Oruch Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: In combat, you favor the brutal weapons that are traditional for your orc ancestors.
+    prereq:
+      level: 1
+  Tusks:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: You have particularly long, jagged tusks perfect for tearing meat from bone.
+    prereq:
+      level: 1
+  Athletic Might:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: Surviving in hostile terrain has given you a great talent for mobility.
+    prereq:
+      level: 5
+  Bloody Blows:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: Your lethal unarmed attacks leave bloody gouges or cause severe internal bleeding.
+    prereq:
+      level: 5
+  Defy Death:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: You're exceptionally difficult to kill.
+    prereq:
+      level: 5
+      feat: 
+      - Oruch Ferocity
+  Hold Mark:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: You bear scars or tattoos enhanced by the mark of your community's prowess.
+    prereq:
+      level: 5
+  Oruch Weapon Carnage:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: You are brutally efficient with the weapons of your orc ancestors.
+    prereq:
+      level: 5
+      feat: 
+      - Oruch Weapon Familiarity 
+  Victorious Vigor:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Oruch
+    traits:
+    - oruch
+    shortdesc: Your victories in battle fill you with pride and imbue you with the energy to fight a bit longer despite your wounds.
+    prereq:
+      level: 5
+  Ancestral Linguistics:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: Over your extensive lifespan, you've studied many languages.
+    prereq:
+      level: 1
+  Ancestral Longevity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You have accumulated a vast array of lived knowledge over the years.
+    prereq:
+      level: 1
+  Sildanyari Aloofness:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: As much as you might care for them, you've come to terms with the ephemeral nature of non-sil, and it makes their threats feel less troublesome.
+    prereq:
+      level: 1
+  Sildanyari Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You’ve studied in traditional sildanyari arts, learning about arcane magic and the world around you.
+    prereq:
+      level: 1
+  Sildanyari Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You favor bows and other elegant weapons.
+    prereq:
+      level: 1
+  Forlorn:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: Watching your friends age and die fills you with moroseness that protects you against harmful emotions.
+    prereq:
+      level: 1
+  Know Your Own:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You've spent countless hours studying the history of sil on your world and beyond and are a studied expert in your people's ways.
+    prereq:
+      level: 1
+  Nimble Sil:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: Your muscles are tightly honed.
+    prereq:
+      level: 1
+  Otherworldly Magic:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: Your sildanyari magic manifests as a simple arcane spell, even if you aren’t formally trained in magic.
+    prereq:
+      level: 1
+  Unwavering Mien:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: Your mystic control and meditations allow you to resist external influences upon your consciousness.
+    prereq:
+      level: 1
+  Ageless Patience:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You work at a pace born from longevity that enhances your thoroughness.
+    prereq:
+      level: 5
+  Ancestral Suspicion:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: Long-lived elves have seen civilizations rise and fall, often at the hands of outside forces.
+    prereq:
+      level: 5
+  Martial Experience:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You've crossed blades with a wide variety of foes wielding a wide variety of weapons, and you've learned the basics of fighting with nearly any of them.
+    prereq:
+      level: 5
+  Sildanyari Weapon Elegance:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: Sildanyar
+    traits:
+    - sildanyar
+    shortdesc: You are attuned to the weapons of your sil ancestors and are particularly deadly when using them.
+    prereq:
+      level: 5
+      feat: 
+      - Sildanyari Weapon Familiarity
