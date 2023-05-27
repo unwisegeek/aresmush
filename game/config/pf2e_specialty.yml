@@ -13,7 +13,7 @@ pf2e_specialty:
         action: []
         reaction: []
         formula_book:
-          elixir: 2
+          healing: 2
         skills: []
     Mutagenist:
       chargen:
@@ -21,6 +21,13 @@ pf2e_specialty:
         reaction: []
         formula_book:
           mutagen: 2
+        skills: []
+    Toxicologist:
+      chargen:
+        action: []
+        reaction: []
+        formula_book:
+          poison: 2
         skills: []
   Barbarian:
     Animal:

@@ -1,0 +1,180 @@
+---
+pf2e_feats:
+  Adopted Ancestry:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Gain access to ancestry feats from another ancestry.
+    prereq:
+      level: 1
+  Armor Proficiency:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Become trained in a type of armor.
+    prereq:
+      level: 1
+  Breath Control:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Hold your breath longer and gain benefits against inhaled threats.
+    prereq:
+      level: 1
+  Canny Acumen:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Become an expert in a saving throw or Perception.
+    prereq:
+      level: 1
+  Diehard:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Die at dying 5, rather than dying 4.
+    prereq:
+      level: 1
+  Fast Recovery:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Regain more HP from rest, recover faster from disease and poisons.
+    prereq:
+      level: 1
+      ability: Constitution/14
+  Feather Step:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Step into difficult terrain.
+    prereq:
+      level: 1
+      ability: Dexterity/14
+  Fleet:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Increase your Speed by 5 feet.
+    prereq:
+      level: 1
+  Incredible Initiative:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: +2 to initiative rolls.
+    prereq:
+      level: 1
+  Ride:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Automatically succeed at commanding your mount to move.
+    prereq:
+      level: 1
+  Shield Block:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Ward off a blow with your shield.
+    prereq:
+      level: 1
+  Skill Training:
+    feat_type: 
+    - General
+    traits:
+    - general
+    - skill
+    shortdesc: Become trained in a skill.
+    prereq:
+      level: 1
+      ability: Intelligence/12
+  Toughness:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Increase your maximum HP and reduce the DCs of recovery checks.
+    prereq:
+      level: 1
+  Weapon Proficiency:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Become trained in a weapon type.
+    prereq:
+      level: 1
+  Ancestral Paragon:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Gain a 1st-level ancestry feat.
+    prereq:
+      level: 3
+  Hireling Manager:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Hirelings gain +2 to skill checks.
+    prereq:
+      level: 3
+      ability: Charisma/14
+  Improvised Repair:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Quickly patch a broken item.
+    prereq:
+      level: 3
+  Keen Follower:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Improve bonuses when you Follow the Expert.
+    prereq:
+      level: 3
+  Pick up the Pace:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Your group can Hustle for up to 20 minutes longer.
+    prereq:
+      level: 3
+      ability: Constitution/14
+  Skitter:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: Crawl up to half your Speed.
+    prereq:
+      level: 3
+      feat: 
+      - Fleet
+      ability: Dexterity/16
+  Thorough Search:
+    feat_type: 
+    - General
+    traits:
+    - general
+    shortdesc: +2 to Perception when you spend twice as long Searching.
+    prereq:
+      level: 3
+      combat_stats: Perception/expert

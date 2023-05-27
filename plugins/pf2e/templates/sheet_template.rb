@@ -126,19 +126,6 @@ module AresMUSH
         list
       end
 
-      def lores
-        lores = @char.lores
-
-        return [] if lores.empty?
-
-        list = []
-        lores.each_with_index do |lore,i|
-          list << format_lore(@char, lore, i)
-        end
-
-        list
-      end
-
       def hp
         hp = @char.hp
 
@@ -335,16 +322,6 @@ module AresMUSH
         linebreak = i % 2 == 1 ? "" : "%r"
         proflevel = " (#{s.prof_level[0].upcase})"
         "#{linebreak}#{left(fmt_name + linked_attr,21)} #{left(skill_mod + proflevel, 17)}"
-      end
-
-      def format_lore(char,lore, i)
-        name = lore.name
-        fmt_name = "#{item_color}#{name}%xn"
-        linked_attr = " %xh%xx(INT)%xn"
-        lore_mod = "%xh#{Pf2eLores.get_lore_bonus(char, name)}%xn"
-        linebreak = i % 2 == 1 ? "" : "%r"
-        proflevel = " (#{lore.prof_level[0].upcase})"
-        "#{linebreak}#{left(fmt_name + linked_attr,21)} #{left(lore_mod + proflevel, 17)}"
       end
 
       def format_profs(name, prof, i)
