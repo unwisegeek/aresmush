@@ -656,7 +656,7 @@ pf2e_feats:
     assoc_ancestry: Gobber
     traits:
     - gobber
-    shortdesc: Staying on pitch, proper breath control, and remembering the words are all less important than the real measure of a good singer: volume! The range of your Goblin Song is increased to 60 feet, and you can target one additional enemy when you use it.
+    shortdesc: 'Staying on pitch, proper breath control, and remembering the words are all less important than the real measure of a good singer: volume! The range of your Goblin Song is increased to 60 feet, and you can target one additional enemy when you use it.'
     prereq:
       level: 5
       feat: 
