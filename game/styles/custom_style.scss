@@ -157,16 +157,18 @@ h1 {
 /* Quotes and IC exposition should have its own font and classes */
 
 .icquote {
-    font-family: 'Calligraffitti', handwriting;
+    font-family: 'Jim Nightshade', handwriting;
+    font-size: 20px;
 }
 
 div.icquote {
-    font-family: 'Calligraffitti', sans-serif;
+    font-family: 'Jim Nightshade', handwriting;
     width: 80%;
     border-style: none none none none;
     margin: auto; 
     text-align: left;
     font-size: 80%;
+    font-size: 20px;
 }
 
 /* Job category colors */

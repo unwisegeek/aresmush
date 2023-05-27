@@ -9,19 +9,10 @@ module AresMUSH
       end
       
       def handle
-        Character.all.each do |char|
-            hp = char.hp
-            
-            next if !hp 
-            
-            hp.temp_max = nil if hp.temp_max
-            hp.temp_current = nil if hp.temp_current
-            hp.temp_hp = 0
-            
-            hp.save
-        end
+        feat_info = Global.read_config('pf2e_feats')
         
-        client.emit "Fix to temp_hp done."
+        client.emit feat_info.dig('Adopted Ancestry')
+        
         
       end
 
