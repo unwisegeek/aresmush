@@ -1,6 +1,8 @@
 module AresMUSH
   module Pf2e
 
+    attr_accessor :target
+
     class PF2FeatInfoCmd
       include CommandHandler
 
