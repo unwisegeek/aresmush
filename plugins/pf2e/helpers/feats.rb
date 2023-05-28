@@ -160,7 +160,7 @@ module AresMUSH
 
     def self.generate_list_details(featlist)
 
-      feat_list=featlist.sort
+      feat_list=featlist
 
       @details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
 
