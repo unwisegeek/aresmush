@@ -37,8 +37,8 @@ module AresMUSH
           client.emit_failure t('pf2e.nothing_to_display', :elements => "feats")
           return
         end
-        
-        feat_list = Pf2e.generate_list_details(char.pf2_feats.values.flatten)
+
+        feat_list = char.pf2_feats.values.flatten
 
         if feat_list.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => "feats")
@@ -47,7 +47,9 @@ module AresMUSH
 
         # Do it. 
 
-        paginator = Paginator.paginate(feat_list, cmd.page, 3)
+        list_details = Pf2e.generate_list_details(feat_list)
+
+        paginator = Paginator.paginate(list_details, cmd.page, 3)
 
         if (paginator.out_of_bounds?)
           client.emit_failure paginator.out_of_bounds_msg
