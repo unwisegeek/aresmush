@@ -4,8 +4,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You learn formulas more easily.
     prereq:
       level: 1
@@ -13,8 +12,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You’ve studied traditional arvek exercises and fieldcraft, all of which have a militaristic bent.
     prereq:
       level: 1
@@ -22,8 +20,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You are trained with composite longbows, composite shortbows, glaives, longbows, longswords, and shortbows.
     prereq:
       level: 1
@@ -31,8 +28,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You are trained to capture deserters, or “leeches”.
     prereq:
       level: 1
@@ -40,8 +36,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: 'You’re skilled at beating a foe when their morale is already breaking.'
     prereq:
       level: 1
@@ -49,8 +44,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: Stealth is an important tool in your arsenal.
     prereq:
       level: 1
@@ -58,8 +52,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: Through conditioning or experience, you've mastered the art of composure, even in the face of fear.
     prereq:
       level: 1
@@ -67,8 +60,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc:
     prereq:
       level: 1
@@ -76,8 +68,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: When you terrorize your enemies, you also cause them painful mental distress.
     prereq:
       level: 5
@@ -85,8 +76,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You know how to efficiently utilize the weapons soldiers use in close quarters.
     prereq:
       level: 5
@@ -96,8 +86,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You know how to get the most out of your allies.
     prereq:
       level: 5
@@ -105,8 +94,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: You know how to fight in formation with your brethren.
     prereq:
       level: 5
@@ -115,8 +103,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: Your combat training has honed you to be ready for an attack at all times.
     prereq:
       level: 5
@@ -124,8 +111,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Arvek
-    traits:
-    - arvek
+    traits: []
     shortdesc: Unlike most of your kind, who dismiss goblins as embarrassments or expendable annoyances, you have studied the methodology behind their irresponsible and incomprehensible actions.
     prereq:
       level: 5
@@ -133,8 +119,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You learned skills for surviving in the place where your people were dispersed.
     prereq:
       level: 1
@@ -142,8 +127,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
     prereq:
       level: 1
@@ -151,8 +135,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: 
     prereq:
       level: 1
@@ -160,8 +143,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You're always on the lookout for supplies and valuables.
     prereq:
       level: 1
@@ -169,8 +151,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You let out an awkward squawk, ruffle your feathers, or fake some other birdlike tic to cover up a social misstep or faux pas.
     prereq:
       level: 1
@@ -178,8 +159,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: Wind and lightning have always been close friends to you.
     prereq:
       level: 1
@@ -187,8 +167,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
     prereq:
       level: 1
@@ -196,8 +175,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
     prereq:
       level: 1
@@ -206,8 +184,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You can swing your beak to slash your foes when piercing attacks won't do.
     prereq:
       level: 5
@@ -220,7 +197,6 @@ pf2e_feats:
     - concentrate
     - divination
     - divine
-    - egalrin
     shortdesc: As someone tries to twist fate, you consume the interference.
     prereq:
       level: 5
@@ -228,8 +204,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You've learned to bind some of your feathers together into a fan to focus your ancestral magic.
     prereq:
       level: 5
@@ -237,8 +212,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You've learned techniques for using blades and other egalrin weapons.
     prereq:
       level: 5
@@ -250,7 +224,6 @@ pf2e_feats:
     assoc_ancestry: Egalrin
     traits:
     - concentrate
-    - egalrin
     - polymorph
     - primal
     - transmutation
@@ -261,8 +234,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: You move quickly, snatching a shiny item that catches your eye.
     prereq:
       level: 5
@@ -270,8 +242,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Egalrin
-    traits:
-    - egalrin
+    traits: []
     shortdesc: Assuming a peculiar stance, you make a short hop on each toe.
     prereq:
       level: 5
@@ -279,8 +250,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You build a rapport with an animal, which becomes magically bonded to you.
     prereq:
       level: 1
@@ -288,8 +258,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You recognize the chittering of ground creatures as its own peculiar language.
     prereq:
       level: 1
@@ -300,7 +269,6 @@ pf2e_feats:
     traits:
     - auditory
     - emotion
-    - gnome
     - mental
     - visual
     shortdesc: The way you cringe or use those puppydog eyes you've been practicing elicits an empathetic response in the attacker.
@@ -311,8 +279,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Your enhanced fey connection affords you a warmer reception from creatures of the First World.
     prereq:
       level: 1
@@ -320,8 +287,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Your connection to the First World grants you a primal innate spell, much like those of the fey.
     prereq:
       level: 1
@@ -329,8 +295,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You might have a flighty nature, but when a topic captures your attention, you dive into it headfirst.
     prereq:
       level: 1
@@ -338,8 +303,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Your extensive travels, curiosity, and love of learning help you to learn languages quickly.
     prereq:
       level: 1
@@ -347,8 +311,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You favor unusual weapons tied to your people, such as blades with curved and peculiar shapes.
     prereq:
       level: 1
@@ -356,8 +319,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Others’ attempts to scare you often grant you insights about your would-be bullies that you can then exploit.
     prereq:
       level: 1
@@ -366,8 +328,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Your ancestors spent their days cloaked and cradled in illusions, and as a result, sensing illusion magic is second nature to you.
     prereq:
       level: 1
@@ -375,8 +336,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You can jury-rig your weapons to perform in unexpected ways.
     prereq:
       level: 1
@@ -384,8 +344,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: The upwelling of innate magic refreshes your body.
     prereq:
       level: 1
@@ -393,8 +352,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Entertainment comes naturally to you.
     prereq:
       level: 1
@@ -402,8 +360,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You've spent considerable time practicing the manipulation of light, weaponizing your blade's reflection or bolstering the luminosity of magical displays to unconventional heights.
     prereq:
       level: 1
@@ -411,8 +368,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You study a creature’s form and behavior to hypothesize likely means of overcoming its strengths.
     prereq:
       level: 1
@@ -420,8 +376,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Your supernatural connection sometimes causes you to phase from reality when under threat, disappearing for split seconds before reappearing -- often surprising you as much as your enemies.
     prereq:
       level: 1
@@ -429,8 +384,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Whereas most gnomes’ coloration is static or changes slowly, you can cause your hair, eye, and skin color to scintillate in brief and disorienting bursts.
     prereq:
       level: 1
@@ -439,8 +393,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You hear animal sounds as conversations instead of unintelligent noise, and can respond in turn.
     prereq:
       level: 5
@@ -450,8 +403,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: You produce outstanding results when wielding unusual weapons.
     prereq:
       level: 5
@@ -461,8 +413,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: Illusion magic comes to you so naturally that you can effortlessly sustain your magical ruses.
     prereq:
       level: 5
@@ -472,8 +423,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gnome
-    traits:
-    - gnome
+    traits: []
     shortdesc: By drawing upon the First World’s magic, you can siphon a portion of that malleable world to create a convincing illusion.
     prereq:
       level: 5
@@ -485,7 +435,6 @@ pf2e_feats:
     assoc_ancestry: Gnome
     traits:
     - concentrate
-    - gnome
     - illusion
     - primal
     - visual
@@ -496,8 +445,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You have a particular elasticity that makes it easy for you to bounce and squish.
     prereq:
       level: 1
@@ -506,8 +454,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Fire fascinates you.
     prereq:
       level: 1
@@ -515,8 +462,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You know that the greatest treasures often look like refuse, and you scoff at those who throw away perfectly good scraps.
     prereq:
       level: 1
@@ -524,8 +470,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Your rubbery physique makes it easier for you to wedge yourself into tight spaces and more difficult for your enemies to dislodge you.
     prereq:
       level: 1
@@ -534,8 +479,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You have filed your teeth into jagged points and have an unusually powerful jaw, making your mouth a dangerous weapon.
     prereq:
       level: 1
@@ -544,8 +488,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You’ve picked up skills and tales from your goblin community.
     prereq:
       level: 1
@@ -553,8 +496,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You take advantage of your ally’s movement to adjust your position.
     prereq:
       level: 1
@@ -562,8 +504,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You sing annoying goblin songs, distracting your foes with silly and repetitive lyrics.
     prereq:
       level: 1
@@ -571,8 +512,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Others might look upon them with disdain, but you know that the weapons of your people are as effective as they are sharp.
     prereq:
       level: 1
@@ -580,8 +520,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Your tail is much stronger than most, and you can lash out with it with the strength of a whip.
     prereq:
       level: 1
@@ -590,8 +529,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You can make useful tools out of even twisted or rusted scraps.
     prereq:
       level: 1
@@ -599,8 +537,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You are especially good at riding traditional gobber mounts.
     prereq:
       level: 1
@@ -608,8 +545,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You are naturally suspicious and wary of danger, especially when you suspect someone might be leading you into an ambush.
     prereq:
       level: 1
@@ -617,8 +553,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Taller folk rarely pay attention to the shadows at their feet, and you take full advantage of this.
     prereq:
       level: 1
@@ -626,8 +561,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Whenever someone grabs onto you, you instinctively bite down hard.
     prereq:
       level: 5
@@ -636,8 +570,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You know how to wield your people’s vicious weapons.
     prereq:
       level: 5
@@ -645,8 +578,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You deliver a punishing blow to an enemy's knee, shin, or other vulnerable anatomy within your reach.
     prereq:
       level: 5
@@ -654,8 +586,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: 'Staying on pitch, proper breath control, and remembering the words are all less important than the real measure of a good singer: volume! The range of your Goblin Song is increased to 60 feet, and you can target one additional enemy when you use it.'
     prereq:
       level: 5
@@ -665,8 +596,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You excel at using your tail as a weapon to upend your foes.
     prereq:
       level: 5
@@ -676,8 +606,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You’ve spent enough time on fire that you know how to use it to your advantage.
     prereq:
       level: 5
@@ -686,8 +615,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: Your time in forest or jungle canopies has taught you how to scramble across branches with sure feet.
     prereq:
       level: 5
@@ -698,8 +626,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Gobber
-    traits:
-    - gobber
+    traits: []
     shortdesc: You have a knack for breaking and dismantling things.
     prereq:
       level: 5
@@ -707,8 +634,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: Through study of multiple magical traditions, you’ve altered a spell to suit your spellcasting style.
     prereq:
       level: 1
@@ -716,8 +642,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: The short human life span lends perspective and has taught you from a young age to set aside differences and work with others to achieve greatness.
     prereq:
       level: 1
@@ -725,8 +650,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: Your adaptability manifests in your mastery of a range of useful abilities.
     prereq:
       level: 1
@@ -734,8 +658,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: Your powerful ego makes it harder for others to order you around.
     prereq:
       level: 1
@@ -743,8 +666,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: You were raised to be ambitious and always reach for the stars, leading you to progress quickly in your chosen field.
     prereq:
       level: 1
@@ -752,8 +674,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: Your ingenuity allows you to learn a wide variety of skills.
     prereq:
       level: 1
@@ -761,8 +682,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: You’ve familiarized yourself with a particular weapon, potentially from another ancestry or culture.
     prereq:
       level: 1
@@ -770,8 +690,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: You’ve continued adapting your magic to blend your class’s tradition with your adapted tradition.
     prereq:
       level: 5
@@ -781,8 +700,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: Like many humans raised in a close-knit community, you have always been strongly attuned to the presence of others.
     prereq:
       level: 5
@@ -790,8 +708,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Human
-    traits:
-    - human
+    traits: []
     shortdesc: You have developed a soul-deep bond with your comrades and maintain an even greater degree of cooperation with them.
     prereq:
       level: 5
@@ -799,8 +716,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: Your cheeks are stretchy, and you can store up to four items of light Bulk or less in these cheek pouches.
     prereq:
       level: 1
@@ -808,8 +724,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: Years of packing for travel have taught you how to cram vast quantities into small spaces.
     prereq:
       level: 1
@@ -817,8 +732,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You have a pet rat that has become magically bonded to you.
     prereq:
       level: 1
@@ -826,8 +740,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: Years of experience among ratfolk communities have made you nimble, and you've learned to run and hide when enemies threaten.
     prereq:
       level: 1
@@ -835,8 +748,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: To you, the squeaking of rats and other rodents makes a strange kind of sense.
     prereq:
       level: 1
@@ -844,8 +756,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You're good with your hands and can quickly improvise a fix for broken or damaged equipment.
     prereq:
       level: 1
@@ -853,8 +764,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You've let your incisors grow long enough to serve as formidable weapons.
     prereq:
       level: 1
@@ -862,8 +772,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You're particularly good at solving mazes and navigating twists and turns.
     prereq:
       level: 1
@@ -871,8 +780,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: With enough time and determination, you can chew through nearly anything.
     prereq:
       level: 5
@@ -883,7 +791,6 @@ pf2e_feats:
     - Ancestry
     assoc_ancestry: Kailli
     traits:
-    - kailli
     - move
     shortdesc: Your ability to curl up into a tight ball comes in handy.
     prereq:
@@ -892,8 +799,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You've spent more than your share of time in an alchemy lab.
     prereq:
       level: 5
@@ -901,8 +807,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You can sniff out the pungent tang of disease.
     prereq:
       level: 5
@@ -911,8 +816,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: You are adept at quickly moving items into your cheek pouches.
     prereq:
       level: 5
@@ -922,8 +826,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Kailli
-    traits:
-    - kailli
+    traits: []
     shortdesc: There always seems to be a little rat around to carry messages for you.
     prereq:
       level: 5
@@ -931,8 +834,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: You are either naturally calm and collected in the face of imminent danger, or you are very good at faking it.
     prereq:
       level: 1
@@ -940,8 +842,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: You eagerly absorbed the old stories and traditions of your ancestors, your gods, and your people.
     prereq:
       level: 1
@@ -949,8 +850,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: Your kin have instilled in you an affinity for hard-hitting weapons, and you prefer these to more elegant arms.
     prereq:
       level: 1
@@ -958,8 +858,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: You know good artisanship when you see it and can wax poetic about crafting techniques and forms.
     prereq:
       level: 1
@@ -967,8 +866,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: Your innate connection to stone makes you adept at moving across uneven surfaces.
     prereq:
       level: 1
@@ -976,8 +874,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: You have a knack for noticing even small inconsistencies and craftsmanship techniques in the stonework around you.
     prereq:
       level: 1
@@ -985,8 +882,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: You’ve learned techniques first devised by your ancestors during their ancient wars, allowing you to comfortably wear massive suits of armor.
     prereq:
       level: 1
@@ -994,8 +890,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
+    traits: []
     shortdesc: Your heart aches for vengeance against those who have wronged your people.
     prereq:
       level: 1
@@ -1003,29 +898,27 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
-    shortdesc:
+    traits: []
+    shortdesc: Your dwarven build allows you to push foes around, just like a mighty boulder tumbles through a subterranean cavern. 
     prereq:
       level: 5
-      feat: [ Boulder Roll ]
+      feat: 
+      - Rock Runner
   Defy The Darkness:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
-    shortdesc:
+    traits: []
+    shortdesc: Using ancient dwarven methods developed to fight enemies wielding magical darkness, you've honed your darkvision and sworn not to use such magic yourself.
     prereq:
       level: 5
-      sense_precise: darkvision
+      special: Darkvision
   Khazadi Reinforcement:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
-    shortdesc:
+    traits: []
+    shortdesc: You can use your knowledge of engineering and metalwork to temporarily strengthen thick objects and structures.
     prereq:
       level: 5
       skill: Crafting/expert
@@ -1033,9 +926,8 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
-    shortdesc:
+    traits: []
+    shortdesc: You’ve learned cunning techniques to get the best effects out of your dwarven weapons.
     prereq:
       level: 5
       feat: 
@@ -1044,18 +936,16 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
-    shortdesc:
+    traits: []
+    shortdesc: The stone around you is your ally, and you have learned to use it to shore up your weaknesses.
     prereq:
       level: 5
   Tomb-Watcher's Glare:
     feat_type: 
     - Ancestry
     assoc_ancestry: Khazad
-    traits:
-    - khazad
-    shortdesc:
+    traits: []
+    shortdesc: When you critically hit an undead creature, or an undead creature critically fails a saving throw against one of your abilities, you drive your divine wrath home in your enemy’s heart. The undead is enfeebled 1 for 1 round.
     prereq:
       level: 5
       heritage: Death Warden
@@ -1065,7 +955,6 @@ pf2e_feats:
     assoc_ancestry: Bassin
     traits:
     - fortune
-    - bassin
     shortdesc: Your happy-go-lucky nature makes it seem like misfortune avoids you.
     prereq:
       level: 1
@@ -1073,8 +962,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - halfling
+    traits: []
     shortdesc: You have learned to remain hidden by using larger folk as a distraction to avoid drawing attention to yourself.
     prereq:
       level: 1
@@ -1082,8 +970,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You are adept at disguising coded messages as folksy idioms.
     prereq:
       level: 1
@@ -1091,8 +978,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You’ve dutifully learned important skills passed down through generations of halfling tradition.
     prereq:
       level: 1
@@ -1100,8 +986,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You favor traditional halfling weapons, so you’ve learned how to use them more effectively.
     prereq:
       level: 1
@@ -1109,8 +994,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You grew up riding your clan's shaggy ponies and riding dogs.
     prereq:
       level: 1
@@ -1127,8 +1011,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You have learned how to use your sling to fell enormous creatures.
     prereq:
       level: 1
@@ -1136,8 +1019,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You were forced into service as a laborer, but you’ve since escaped and have trained to ensure you’ll never be caught again.
     prereq:
       level: 1
@@ -1145,8 +1027,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - Bassin
+    traits: []
     shortdesc: Your communal lifestyle causes you to pay close attention to the people around you.
     prereq:
       level: 1
@@ -1154,8 +1035,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: During your adventures, you’ve honed your ability to adapt to the culture of the predominant ancestry around you.
     prereq:
       level: 5
@@ -1163,8 +1043,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You are particularly adept at fighting with your people’s favored weapons.
     prereq:
       level: 5
@@ -1174,8 +1053,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Bassin
-    traits:
-    - bassin
+    traits: []
     shortdesc: You are an expert at avoiding the lumbering footsteps of larger creatures.
     prereq:
       level: 5
@@ -1183,8 +1061,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You listened carefully to the tales passed down among your community.
     prereq:
       level: 1
@@ -1192,8 +1069,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You are adept at moving through marshy terrain.
     prereq:
       level: 1
@@ -1201,8 +1077,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You were hatched from an unfertilized egg during hard times for your people, and you are a biological copy of your mother.
     prereq:
       level: 1
@@ -1210,8 +1085,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: Your have honed your claws to be deadly.
     prereq:
       level: 1
@@ -1219,8 +1093,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You hear the sounds of reptiles as language.
     prereq:
       level: 1
@@ -1228,8 +1101,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: Your teeth are formidable weapons.
     prereq:
       level: 1
@@ -1237,8 +1109,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: By birth or through training, your tail is strong enough to make for a powerful melee weapon.
     prereq:
       level: 1
@@ -1246,8 +1117,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You envenom your fangs.
     prereq:
       level: 5
@@ -1257,8 +1127,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You stick to walls with a preternatural grip.
     prereq:
       level: 5
@@ -1267,8 +1136,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You make the most of your unarmed attacks.
     prereq:
       level: 5
@@ -1276,8 +1144,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You can shed your tail to escape.
     prereq:
       level: 5
@@ -1287,8 +1154,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Ciith
-    traits:
-    - ciith
+    traits: []
     shortdesc: You swim faster than most iruxi.
     prereq:
       level: 5
@@ -1299,7 +1165,6 @@ pf2e_feats:
     assoc_ancestry: Oruch
     traits:
     - concentrate
-    - oruch
     shortdesc: You defend yourself against magic by relying on techniques derived from oruch cultural superstitions.
     prereq:
       level: 1
@@ -1307,8 +1172,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: You have an impressive innate ability to tame and command ferocious beasts.
     prereq:
       level: 1
@@ -1316,8 +1180,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: Your fists have been forged by battle, your naturally tough skin and dense bone further hardened by conflict.
     prereq:
       level: 1
@@ -1325,8 +1188,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: Fierceness in battle runs through your blood, and you refuse to fall from your injuries.
     prereq:
       level: 1
@@ -1334,8 +1196,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: The hold elders taught you your people's histories, told tales of great athletic feats, and shared with you the hardships your ancestors endured so that you can pass this wisdom down to future generations.
     prereq:
       level: 1
@@ -1343,8 +1204,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: In combat, you favor the brutal weapons that are traditional for your orc ancestors.
     prereq:
       level: 1
@@ -1352,8 +1212,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: You have particularly long, jagged tusks perfect for tearing meat from bone.
     prereq:
       level: 1
@@ -1370,8 +1229,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: Your lethal unarmed attacks leave bloody gouges or cause severe internal bleeding.
     prereq:
       level: 5
@@ -1379,8 +1237,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: You're exceptionally difficult to kill.
     prereq:
       level: 5
@@ -1390,8 +1247,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: You bear scars or tattoos enhanced by the mark of your community's prowess.
     prereq:
       level: 5
@@ -1399,8 +1255,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: You are brutally efficient with the weapons of your orc ancestors.
     prereq:
       level: 5
@@ -1410,8 +1265,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Oruch
-    traits:
-    - oruch
+    traits: []
     shortdesc: Your victories in battle fill you with pride and imbue you with the energy to fight a bit longer despite your wounds.
     prereq:
       level: 5
@@ -1419,8 +1273,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: Over your extensive lifespan, you've studied many languages.
     prereq:
       level: 1
@@ -1428,8 +1281,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You have accumulated a vast array of lived knowledge over the years.
     prereq:
       level: 1
@@ -1437,8 +1289,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: As much as you might care for them, you've come to terms with the ephemeral nature of non-sil, and it makes their threats feel less troublesome.
     prereq:
       level: 1
@@ -1446,8 +1297,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You’ve studied in traditional sildanyari arts, learning about arcane magic and the world around you.
     prereq:
       level: 1
@@ -1455,8 +1305,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You favor bows and other elegant weapons.
     prereq:
       level: 1
@@ -1464,8 +1313,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: Watching your friends age and die fills you with moroseness that protects you against harmful emotions.
     prereq:
       level: 1
@@ -1473,8 +1321,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You've spent countless hours studying the history of sil on your world and beyond and are a studied expert in your people's ways.
     prereq:
       level: 1
@@ -1482,8 +1329,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: Your muscles are tightly honed.
     prereq:
       level: 1
@@ -1491,8 +1337,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: Your sildanyari magic manifests as a simple arcane spell, even if you aren’t formally trained in magic.
     prereq:
       level: 1
@@ -1500,8 +1345,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: Your mystic control and meditations allow you to resist external influences upon your consciousness.
     prereq:
       level: 1
@@ -1509,8 +1353,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You work at a pace born from longevity that enhances your thoroughness.
     prereq:
       level: 5
@@ -1518,8 +1361,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: Long-lived elves have seen civilizations rise and fall, often at the hands of outside forces.
     prereq:
       level: 5
@@ -1527,8 +1369,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You've crossed blades with a wide variety of foes wielding a wide variety of weapons, and you've learned the basics of fighting with nearly any of them.
     prereq:
       level: 5
@@ -1536,8 +1377,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: Sildanyar
-    traits:
-    - sildanyar
+    traits: []
     shortdesc: You are attuned to the weapons of your sil ancestors and are particularly deadly when using them.
     prereq:
       level: 5
