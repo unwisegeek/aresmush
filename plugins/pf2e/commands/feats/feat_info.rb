@@ -20,7 +20,16 @@ module AresMUSH
 
       def handle
 
+        # If a name was entered, does that player exist?
+
         char = self.target ? Character.find_one_by_name(self.target) : enactor
+
+        if !char
+          client.emit_failure t('pf2e.char_not_found')
+          return
+        end
+
+        # Does this character have feats to view? 
         
         feat_list = Pf2e.generate_list_details(char.pf2_feats.values.flatten)
 
@@ -28,6 +37,8 @@ module AresMUSH
           client.emit_failure t('pf2e.nothing_to_display', :elements => "feats")
           return
         end
+
+        # Do it. 
 
         paginator = Paginator.paginate(feat_list, cmd.page, 3)
 
