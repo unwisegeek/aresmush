@@ -3,48 +3,42 @@ pf2e_feats:
   Adopted Ancestry:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Gain access to ancestry feats from another ancestry.
     prereq:
       level: 1
   Armor Proficiency:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Become trained in a type of armor.
     prereq:
       level: 1
   Breath Control:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Hold your breath longer and gain benefits against inhaled threats.
     prereq:
       level: 1
   Canny Acumen:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Become an expert in a saving throw or Perception.
     prereq:
       level: 1
   Diehard:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Die at dying 5, rather than dying 4.
     prereq:
       level: 1
   Fast Recovery:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Regain more HP from rest, recover faster from disease and poisons.
     prereq:
       level: 1
@@ -52,8 +46,7 @@ pf2e_feats:
   Feather Step:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Step into difficult terrain.
     prereq:
       level: 1
@@ -61,41 +54,36 @@ pf2e_feats:
   Fleet:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Increase your Speed by 5 feet.
     prereq:
       level: 1
   Incredible Initiative:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: +2 to initiative rolls.
     prereq:
       level: 1
   Ride:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Automatically succeed at commanding your mount to move.
     prereq:
       level: 1
   Shield Block:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Ward off a blow with your shield.
     prereq:
       level: 1
   Skill Training:
     feat_type: 
     - General
-    traits:
-    - general
-    - skill
+    - Skill
+    traits: []
     shortdesc: Become trained in a skill.
     prereq:
       level: 1
@@ -103,32 +91,28 @@ pf2e_feats:
   Toughness:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Increase your maximum HP and reduce the DCs of recovery checks.
     prereq:
       level: 1
   Weapon Proficiency:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Become trained in a weapon type.
     prereq:
       level: 1
   Ancestral Paragon:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Gain a 1st-level ancestry feat.
     prereq:
       level: 3
   Hireling Manager:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Hirelings gain +2 to skill checks.
     prereq:
       level: 3
@@ -136,24 +120,21 @@ pf2e_feats:
   Improvised Repair:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Quickly patch a broken item.
     prereq:
       level: 3
   Keen Follower:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Improve bonuses when you Follow the Expert.
     prereq:
       level: 3
   Pick up the Pace:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Your group can Hustle for up to 20 minutes longer.
     prereq:
       level: 3
@@ -161,8 +142,7 @@ pf2e_feats:
   Skitter:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: Crawl up to half your Speed.
     prereq:
       level: 3
@@ -172,8 +152,7 @@ pf2e_feats:
   Thorough Search:
     feat_type: 
     - General
-    traits:
-    - general
+    traits: []
     shortdesc: +2 to Perception when you spend twice as long Searching.
     prereq:
       level: 3
