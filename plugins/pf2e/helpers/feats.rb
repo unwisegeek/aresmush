@@ -1,30 +1,36 @@
 module AresMUSH
-  module Pf2eFeats
+  module Pf2e
 
-    def self.find_feat(type,term)
+    def self.get_feat_details(term)
 
-      string = term.upcase
-      all_feats = Global.read_config('pf2e_feats', type)
+      string = term.upcase 
 
-      return nil if !all_feats
+      feat_info = Global.read_config('pf2e_feats')
 
-      details = {}
-      all_feats = all_feats.keys.map { |f| f.upcase }
+      match = feat_info.select { |name, deets| name.match?(string) }
 
-      match = all_feats.select { |f| f.match?(string) }
+      return 'no_match' if match.empty?
 
-      return nil if match.empty?
-
-      values = match.each do |f|
-        k = f.split.each { |word| word.capitalize }
-        v = all_feats[k]
-        details[k] = v
-      end
-
-      details
+      match
     end
 
-    def self.find_feat_by_term(search_type, term)
+    def self.search_feats(search_type, term)
+      valid_search_types = [ 'name' ]
+
+      return 'bad_search_type' unless valid_search_types.include? search_type
+
+      feat_info = Global.read_config('pf2e_feats')
+
+      case search_type
+      when 'name'
+
+        feat_names=feat_info.keys.map { |n| n.upcase }
+
+        match = feat_names.select { |n| n.match? term }
+
+      end
+
+      return 'no_match' if match.empty?
 
     end
 
@@ -82,7 +88,6 @@ module AresMUSH
 
     def self.meets_prereqs?(char, prereqs, level)
       msg = []
-      orlist = {}
 
       prereqs.each_pair do |ptype, required|
 
@@ -90,12 +95,6 @@ module AresMUSH
           string = required.split("/")
           factor = string[0]
           minimum = string[1]
-        end
-
-        if ptype.start_with?("or")
-          keytype = ptype.delete("or")
-          orlist[keytype] = required
-          next
         end
 
         case ptype
@@ -155,6 +154,52 @@ module AresMUSH
       feat_list = enactor.pf2_feats.values.flatten.map { |f| f.upcase }
 
       feat_list.include?(feat.upcase)
+    end
+
+    def self.generate_list_details(featlist)
+
+      feat_list = featlist.sort
+
+        @details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
+
+        list = []
+        @details.each_pair do |feat, details|
+          list << format_feat(feat, details)
+        end
+
+    end
+
+    def format_feat(feat, details)
+      fmt_name = "#{title_color}#{feat}%xn"
+      feat_type = "#{item_color}Feat Type:%xn #{details[feat_type].sort.join(", ")}"
+      
+      # Depending on feat type, this may be different keys with different formats.
+
+      if details.has_key? assoc_charclass
+        associated = "#{item_color}Associated To:%xn #{details[assoc_charclass].sort.join(", ")}"
+      elsif details.has_key? assoc_ancestry
+        associated = "#{item_color}Associated To:%xn #{details[assoc_ancestry].sort.join(", ")}"
+      elsif details.has_key? assoc_skill
+        associated = "#{item_color}Associated To:%xn #{details[assoc_skill]}"
+      else
+        associated = "Any"
+      end
+
+      traits = "#{item_color}Traits:%xn #{details[traits].sort.join(", ")}"
+      
+      # Prerequisites needs its own level of formatting.
+
+      prereq_list = []
+      
+      details[prereq].each_pair do |k,v|
+        prereq_list << "%r%t#{k.capitalize}: #{v}"
+      end
+
+      prereqs = "#{item_color}Prerequisites:%xn #{prereq_list.join()}"
+
+      desc = "#{item_color}Description:%xn #{details[shortdesc]}"
+
+      "#{fmt_name}%r%r#{feat_type}%r#{associated}%r#{traits}%r#{prereqs}%r#{desc}"
     end
 
   end

@@ -3,9 +3,9 @@ module AresMUSH
     class PF2eFeatDisplay < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :feats, :paginator
+      attr_accessor :paginator, :title
 
-      def initialize(feats, paginator, title)
+      def initialize(paginator, title)
         @feats = feats
         @paginator = paginator
         @title = title

@@ -17,6 +17,8 @@ en:
     assignment_ok: "Open option %{type} assigned to %{value}."
 
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
+    bad_feat_name: "I didn't find a feat named %{name} of type %{type} in my list. Check to be sure that you have the correct type."
+    bad_feat_type: "Invalid feat type '%{type}''. Choose one of: %{keys}"
     bad_option: "Not a valid option. Valid options for %{element}: %{options}."
     bad_section: "Section %{section} is not a valid section."
     bad_value: "That is not a valid value for %{item}."
@@ -57,6 +59,8 @@ en:
     dup_feats: "%xyYour chargen options include one or more duplicate feats. Be sure to bring this up with your appstaffer.%xn"
 
     element_cglocked: "That %{element} is part of your chargen options and cannot be changed."
+    
+    feat_set_ok: "Feat %{name} added to list %{type}."
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."

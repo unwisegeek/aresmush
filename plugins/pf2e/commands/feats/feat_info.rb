@@ -5,10 +5,11 @@ module AresMUSH
       include CommandHandler
 
       def handle
-        feat_list = enactor.pf2_feats
+        feat_list = generate_list_details(enactor.pf2_feats.values)
 
         if feat_list.empty?
-          return t('pf2e.nothing_to_display', :elements => "feats")
+          client.emit_failure t('pf2e.nothing_to_display', :elements => "feats")
+          return
         end
 
         paginator = Paginator.paginate(feat_list, cmd.page, 3)
@@ -20,7 +21,7 @@ module AresMUSH
 
         title = "Feat Info for #{enactor.name}"
 
-        template = PF2eFeatDisplay.new(feat_list, paginator, title)
+        template = PF2eFeatDisplay.new(paginator, title)
 
         client.emit template.render
       end
