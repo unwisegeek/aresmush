@@ -162,12 +162,12 @@ module AresMUSH
 
       feat_list = featlist.sort
 
-        @details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
+      @details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
 
-        list = []
-        @details.each_pair do |feat, details|
-          list << format_feat(feat, details)
-        end
+      list = []
+      @details.each_pair do |feat, details|
+        list << format_feat(feat, details)
+      end
 
     end
 
@@ -176,33 +176,33 @@ module AresMUSH
       return t('pf2e.feat_details_missing', :name => feat.upcase) if !details
 
       fmt_name = "%x172#{feat}%xn"
-      feat_type = "%xh%xwFeat Type:%xn #{details[feat_type].sort.join(", ")}"
+      feat_type = "%xh%xwFeat Type:%xn #{details['feat_type'].sort.join(", ")}"
       
       # Depending on feat type, this may be different keys with different formats.
 
-      if details.has_key? assoc_charclass
-        associated = "%xh%xwAssociated To:%xn #{details[assoc_charclass].sort.join(", ")}"
-      elsif details.has_key? assoc_ancestry
-        associated = "%xh%xwAssociated To:%xn #{details[assoc_ancestry].sort.join(", ")}"
-      elsif details.has_key? assoc_skill
-        associated = "%xh%xwAssociated To:%xn #{details[assoc_skill]}"
+      if details.has_key? 'assoc_charclass'
+        associated = "%xh%xwAssociated To:%xn #{details['assoc_charclass'].sort.join(", ")}"
+      elsif details.has_key? 'assoc_ancestry'
+        associated = "%xh%xwAssociated To:%xn #{details['assoc_ancestry'].sort.join(", ")}"
+      elsif details.has_key? 'assoc_skill'
+        associated = "%xh%xwAssociated To:%xn #{details['assoc_skill']}"
       else
         associated = "Any"
       end
 
-      traits = "%xh%xwTraits:%xn #{details[traits].sort.join(", ")}"
+      traits = "%xh%xwTraits:%xn #{details['traits'].sort.join(", ")}"
       
       # Prerequisites needs its own level of formatting.
 
       prereq_list = []
       
-      details[prereq].each_pair do |k,v|
+      details['prereq'].each_pair do |k,v|
         prereq_list << "%r%t#{k.capitalize}: #{v}"
       end
 
       prereqs = "%xh%xwPrerequisites:%xn #{prereq_list.join()}"
 
-      desc = "%xh%xwDescription:%xn #{details[shortdesc]}"
+      desc = "%xh%xwDescription:%xn #{details['shortdesc']}"
 
       "#{fmt_name}%r%r#{feat_type}%r#{associated}%r#{traits}%r#{prereqs}%r#{desc}"
     end
