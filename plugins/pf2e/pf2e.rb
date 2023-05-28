@@ -90,6 +90,13 @@ module AresMUSH
         when "unset"
           return PF2LanguageUnSetCmd
         end
+      when "feat"
+        case cmd.switch
+        when "set"
+          return PF2FeatSetCmd
+        when "info"
+          return PF2FeatInfoCmd
+        end
       end
 
       nil
