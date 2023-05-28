@@ -9,9 +9,12 @@ module AresMUSH
       end
       
       def handle
-        feat_info = Global.read_config('pf2e_feats')
+        feat_list = [ "Wary Disarmament", "Diehard", "Vibrant Display", "Adopted Ancestry" ]
+
+        @details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
         
-        client.emit feat_info['Adopted Ancestry']
+        client.emit "Feat List: #{feat_list.sort.join(", ")}"
+        client.emit "Feat Details Hash: #{@details}"
         
         
       end
