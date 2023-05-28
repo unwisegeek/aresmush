@@ -30,6 +30,13 @@ module AresMUSH
         end
 
         # Does this character have feats to view? 
+
+        char_has_feats = char.pf2_feats
+
+        if !char_has_feats
+          client.emit_failure t('pf2e.nothing_to_display', :elements => "feats")
+          return
+        end
         
         feat_list = Pf2e.generate_list_details(char.pf2_feats.values.flatten)
 
