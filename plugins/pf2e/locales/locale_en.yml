@@ -60,7 +60,9 @@ en:
 
     element_cglocked: "That %{element} is part of your chargen options and cannot be changed."
     
+    feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
     feat_set_ok: "Feat %{name} added to list %{type}."
+    
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
