@@ -11,7 +11,7 @@ module AresMUSH
       def handle
         char = Character.find_one_by_name("Testchar")
         
-        feat_list = char.pf2_feats.values
+        feat_list = char.pf2_feats.values.flatten
         
         client.emit feat_list
         
