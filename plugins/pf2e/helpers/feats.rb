@@ -187,7 +187,7 @@ module AresMUSH
       elsif details.has_key? 'assoc_skill'
         associated = "%xh%xwAssociated To:%xn #{details['assoc_skill']}"
       else
-        associated = "Any"
+        associated = "%xh%xwAssociated To:%xn Any"
       end
 
       traits = "%xh%xwTraits:%xn #{details['traits'].sort.join(", ")}"
