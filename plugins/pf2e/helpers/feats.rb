@@ -172,6 +172,9 @@ module AresMUSH
     end
 
     def self.format_feat(feat, details)
+
+      return t('pf2e.feat_details_missing', :name => feat.upcase) if !details
+
       fmt_name = "%x172#{feat}%xn"
       feat_type = "%xh%xwFeat Type:%xn #{details[feat_type].sort.join(", ")}"
       
