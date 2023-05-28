@@ -1,10 +1,10 @@
 module AresMUSH
   module Pf2e
 
-    attr_accessor :target
-
     class PF2FeatInfoCmd
       include CommandHandler
+
+      attr_accessor :target
 
       def parse_args
         self.target = trim_arg(cmd.args)
