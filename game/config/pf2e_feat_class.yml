@@ -610,7 +610,7 @@ pf2e_feats:
     - Charclass
     assoc_charclass: 
     - Champion
-    traits: []
+    traits: 
     - oath
     shortdesc: You’ve sworn to slay evil dragons.
     prereq:
