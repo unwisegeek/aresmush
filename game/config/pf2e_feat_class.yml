@@ -1515,7 +1515,7 @@ pf2e_feats:
     - Charclass
     assoc_charclass: 
     - Monk
-    traits: []
+    traits: 
     - stance
     shortdesc: You enter the stance of an implacable mountain allowing you to strike with the weight of an avalanche.
     prereq:
