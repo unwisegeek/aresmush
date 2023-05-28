@@ -1,7 +1,10 @@
 <%= header %>
 <%= "%xh#{title}%xn%r%r" -%>
-<% @paginator.page_items.each do |l| %>
-<%= l %>
+<%= divider %>
+<% paginator.page_items.each do |feat| %>
+<%= feat %>
+<%= divider %>
 <% end %>
-<%= @paginator.page_footer %>
+<%= divider %>
+<%= paginator.page_footer %>
 <%= footer %>
