@@ -6,7 +6,6 @@ module AresMUSH
       attr_accessor :paginator, :title
 
       def initialize(paginator, title)
-        @feats = feats
         @paginator = paginator
         @title = title
 
