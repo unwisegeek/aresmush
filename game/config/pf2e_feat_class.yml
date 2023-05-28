@@ -1,1974 +1,2495 @@
 ---
 pf2e_feats:
-  charclass:
-    alchemist:
-      Alchemical Familiar:
-        traits:
-        - alchemist
-        shortdesc: You have used alchemy to create life, a simple creature formed from alchemical materials, reagents, and a bit of your own blood.
-        prereq:
-          level: 1
-      Alchemical Savant:
-        traits:
-        - alchemist
-        shortdesc: You can identify alchemical items quickly.
-        prereq:
-          level: 1
-          skill: Crafting/trained
-      Far Lobber:
-        traits:
-        - alchemist
-        shortdesc: You’ve learned how to throw a longer distance.
-        prereq:
-          level: 1
-      Quick Bomber:
-        traits:
-        - alchemist
-        shortdesc: You keep your bombs in easy-to-reach pouches from which you draw without thinking.
-        prereq:
-          level: 1
-      Subtle Delivery:
-        traits:
-        - alchemist
-        shortdesc: You can capably deliver toxins with a blowgun.
-        prereq:
-          level: 1
-      Demolition Charge:
-        traits:
-        - alchemist
-        shortdesc: You can rig your bombs to inanimate objects in order to cause destruction to the surrounding area.
-        prereq:
-          level: 2
-      Poison Resistance:
-        traits:
-        - alchemist
-        - druid
-        shortdesc: Repeated exposure to toxic reagents has fortified your body against poisons of all kinds.
-        prereq:
-          level: 2
-      Revivifying Mutagen:
-        traits:
-        - alchemist
-        shortdesc: While under the effect of a mutagen, you can metabolize that mutagen’s power to heal yourself.
-        prereq:
-          level: 2
-      Smoke Bomb:
-        traits:
-        - additive 1
-        - alchemist
-        shortdesc: You cause the bomb to create a cloud of thick smoke, in addition to its normal effects.
-        prereq:
-          level: 2
-      Calculated Splash:
-        traits:
-        - alchemist
-        shortdesc: You have calculated all the angles to maximize a bomb’s splash.
-        prereq:
-          level: 4
-      Efficient Alchemy (Alchemist):
-        traits:
-        - alchemist
-        shortdesc: Thanks to the time you’ve spent studying and experimenting, you know how to scale your formulas into larger batches that don’t require any additional attention.
-        prereq:
-          level: 4
-      Enduring Alchemy:
-        traits:
-        - alchemist
-        shortdesc: You’ve learned how to make your personal energy last just a little bit longer when quickly brewing ad hoc concoctions.
-        prereq:
-          level: 4
-      Healing Bomb:
-        traits:
-        - additive 2
-        - alchemist
-        shortdesc: By adding a special catalyst, you transform a healing elixir into a topical projectile.
-        prereq:
-          level: 4
-      Tenacious Toxins:
-        traits:
-        - alchemist
-        shortdesc: Your victims tend to expire long before your poisons, since the latter have been specifically formulated to last longer.
-        prereq:
-          level: 4
-    barbarian:
-      Acute Vision:
-        traits:
-        - barbarian
-        shortdesc: Your senses improve when you are raging.
-        prereq:
-          level: 1
-      Adrenaline Rush:
-        traits:
-        - barbarian
-        - rage
-        shortdesc: In the heat of battle, you are capable of amazing feats of strength.
-        prereq:
-          level: 1
-      Draconic Arrogance:
-        traits:
-        - barbarian
-        - rage
-        shortdesc: Few can sway you from your goals while the fury of combat fills you.
-        prereq:
-          level: 1
-          specialize: dragon
-      Moment of Clarity:
-        traits:
-        - barbarian
-        - concentrate
-        - rage
-        shortdesc: You push back your rage for a moment in order to think clearly.
-        prereq:
-          level: 1
-      Raging Intimidation:
-        traits:
-        - barbarian
-        shortdesc: Your fury fills your foes with fear.
-        prereq:
-          level: 1
-      Raging Thrower:
-        traits:
-        - barbarian
-        shortdesc: Thrown weapons become especially deadly in your fury. You apply the additional damage from Rage to your thrown weapon attacks. If you have the Brutal Critical feat or the devastator class feature, apply their benefits to thrown weapon attacks.
-        prereq:
-          level: 1
-      Sudden Charge:
-        traits:
-        - barbarian
-        - fighter
-        - flourish
-        - open
-        shortdesc: With a quick sprint, you dash up to your foe and swing.
-        prereq:
-          level: 1
-      Acute Scent:
-        traits:
-        - barbarian
-        shortdesc: When you Rage, your sense of smell improves.
-        prereq:
-          level: 2
-          feat: 
-          - Acute Vision
-      Bashing Charge:
-        traits:
-        - barbarian
-        - flourish
-        shortdesc: You smash, bust, and charge through solid obstacles without hesitation.
-        prereq:
-          level: 2
-          skill: Athletics/trained
-      Furious Finish:
-        traits:
-        - barbarian
-        - rage
-        shortdesc: Desperate to finish the fight, you pour all your rage into one final blow.
-        prereq:
-          level: 2
-      No Escape:
-        traits:
-        - barbarian
-        - rage
-        shortdesc: You keep pace with a retreating foe.
-        prereq:
-          level: 2
-      Second Wind:
-        traits:
-        - barbarian
-        shortdesc: You can enter a second rage, but afterward you need to catch your breath.
-        prereq:
-          level: 2
-      Shake it Off:
-        traits:
-        - barbarian
-        - concentrate
-        - rage
-        shortdesc: You concentrate on your rage, overcoming fear and fighting back sickness.
-        prereq:
-          level: 2
-      Barreling Charge:
-        traits:
-        - barbarian
-        - fighter
-        - flourish
-        shortdesc: You rush forward, moving enemies aside to reach your foe.
-        prereq:
-          level: 4
-          skill: Athletics/trained
-      Fast Movement:
-        traits:
-        - barbarian
-        shortdesc: Your rage is a frenzy of rapid movements.
-        prereq:
-          level: 4
-      Oversized Throw:
-        traits:
-        - barbarian
-        - rage
-        shortdesc: With a great heave, you seize a piece of your surroundings, such as a boulder, log, table, wagon, or chunk of earth, and hurl it at your foes.
-        prereq:
-          level: 4
-      Raging Athlete:
-        traits:
-        - barbarian
-        shortdesc: Physical obstacles can’t hold back your fury.
-        prereq:
-          level: 4
-          skill: Athletics/expert
-      Spiritual Guides:
-        traits:
-        - barbarian
-        - concentrate
-        - fortune
-        shortdesc: Though no one sees them and only you can hear them, the spirits around you constantly chatter, save when you are raging.
-        prereq:
-          level: 4
-          specialize: spirit
-      Supernatural Senses:
-        traits:
-        - barbarian
-        - rage
-        shortdesc: Your scent is preternaturally sharp, and you can always rely on your sense of smell to help guide you when your vision is compromised.
-        prereq:
-          level: 4
-          feat: 
-          - Acute Senses
-      Swipe:
-        traits:
-        - barbarian
-        - fighter
-        - flourish
-        shortdesc: You make a wide, arcing swing.
-        prereq:
-          level: 4
-      Wounded Rage:
-        traits:
-        - barbarian
-        shortdesc: You roar in pain, awakening the rage within you.
-        prereq:
-          level: 4
-    bard:
-      Bardic Lore:
-        traits:
-        - bard
-        shortdesc: Your studies make you informed on every subject.
-        prereq:
-          level: 1
-          specialize: enigma
-      Hymn of Healing:
-        traits:
-        - bard
-        shortdesc: You learn the hymn of healing composition spell (page 228), which imbues your music with rich melodies that help your allies recover from harm.
-        prereq:
-          level: 1
-      Lingering Composition:
-        traits:
-        - bard
-        shortdesc: By adding a flourish, you make your compositions last longer.
-        prereq:
-          level: 1
-          specialize: maestro
-      Martial Performance:
-        traits:
-        - bard
-        shortdesc: Your muse has taught you how to handle a wider variety of weapons than most bards, empowering you to effortlessly blend your performance into combat even with the most inelegant tools.
-        prereq:
-          level: 1
-          specialize: warrior
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You can extend your spells’ range.
-        prereq:
-          level: 1
-      Versatile Performance:
-        traits:
-        - bard
-        shortdesc: You can rely on the grandeur of your performances rather than ordinary social skills.
-        prereq:
-          level: 1
-          specialize: polymath
-      Well-Versed:
-        traits:
-        - bard
-        shortdesc: You're resilient to performative influences that aren't your own.
-        prereq:
-          level: 1
-      Directed Audience:
-        traits:
-        - bard
-        shortdesc: You can shape the area of your composition spells.
-        prereq:
-          level: 2
-      Esoteric Polymath:
-        traits:
-        - bard
-        shortdesc: You keep a book of occult spells, similar to a wizard’s spellbook.
-        prereq:
-          level: 2
-          specialize: polymath
-      Inspire Competence:
-        traits:
-        - bard
-        shortdesc: You learn to aid your allies’ skills with your performance.
-        prereq:
-          level: 2
-          specialize: maestro
-      Loremaster's Etude:
-        traits:
-        - bard
-        - fortune
-        shortdesc: You magically unlock memories, making them easier to recall.
-        prereq:
-          level: 2
-          specialize: enigma
-      Multifarious Muse:
-        traits:
-        - bard
-        shortdesc: Your muse doesn’t fall into a single label.
-        prereq:
-          level: 2
-      Song of Strength:
-        traits:
-        - bard
-        shortdesc: Your performances inspire strength in your allies.
-        prereq:
-          level: 2
-          specialize: warrior
-      Combat Reading:
-        traits:
-        - bard
-        - secret
-        shortdesc: You use a performer's cold reading techniques, aura reading, and other tricks to discover your foe's strengths and weaknesses.
-        prereq:
-          level: 4
-      Courageous Advance:
-        traits:
-        - auditory
-        - bard
-        - concentrate
-        - metamagic
-        shortdesc: With a rousing call, you exhort an ally to advance.
-        prereq:
-          level: 4
-          specialize: warrior
-      Inspire Defense:
-        traits:
-        - bard
-        shortdesc: You learn to protect yourself and your allies with your performance.
-        prereq:
-          level: 4
-          specialize: maestro
-      Melodious Spell:
-        traits:
-        - bard
-        - concentrate
-        - manipulate
-        - metamagic
-        shortdesc: You subtly weave your spellcasting into your performance.
-        prereq:
-          level: 4
-      Ritual Researcher:
-        traits:
-        - bard
-        - uncommon
-        shortdesc: Careful research into the art of rituals has made you better at performing them.
-        prereq:
-          level: 4
-          specialize: enigma
-          skill: occultism/expert
-      Triple Time:
-        traits:
-        - bard
-        shortdesc: You learn to speed up yourself and your allies with your performance.
-        prereq:
-          level: 4
-      Versatile Signature:
-        traits:
-        - bard
-        shortdesc: You’re always tweaking your available repertoire.
-        prereq:
-          level: 4
-          specialize: polymath
-    champion:
-      Deity's Domain:
-        traits:
-        - champion
-        shortdesc: You embody an aspect of your deity.
-        prereq:
-          level: 1
-      Desperate Prayer:
-        traits:
-        - champion
-        shortdesc: You call out to your deity in a plea for their aid.
-        prereq:
-          level: 1
-      Ranged Reprisal:
-        traits:
-        - champion
-        shortdesc: You can use Retributive Strike with a ranged weapon.
-        prereq:
-          level: 1
-          specialize: paladin
-      Unimpeded Step:
-        traits:
-        - champion
-        shortdesc: With a burst of divine liberation, your spur your ally’s movement.
-        prereq:
-          level: 1
-          specialize: liberator
-      Weight of Guilt:
-        traits:
-        - champion
-        shortdesc: Guilt clouds the minds of those who ignore your Glimpse of Redemption.
-        prereq:
-          level: 1
-          specialize: redeemer
-      Divine Grace:
-        traits:
-        - champion
-        shortdesc: You call upon your deity’s grace.
-        prereq:
-          level: 2
-      Dragonslayer Oath:
-        traits:
-        - champion
-        - oath
-        shortdesc: You’ve sworn to slay evil dragons.
-        prereq:
-          level: 2
-          specialize: good
-      Esoteric Oath:
-        traits:
-        - champion
-        - oath
-        shortdesc: You've sworn an oath to slay the alien abominations that lurk in the remote corners of Golarion.
-        prereq:
-          level: 2
-      Fiendsbane Oath:
-        traits:
-        - champion
-        - oath
-        shortdesc: You’ve sworn an oath to banish the corruption of fiends to the dark planes they call home.
-        prereq:
-          level: 2
-          specialize: good
-      Shining Oath:
-        traits:
-        - champion
-        - oath
-        shortdesc: You’ve sworn an oath to put the undead to rest.
-        prereq:
-          level: 2
-          specialize: good
-      Vengeful Oath:
-        traits:
-        - champion
-        - oath
-        shortdesc: You’ve sworn an oath to hunt down wicked evildoers and bring them to judgment.
-        prereq:
-          level: 2
-          specialize: paladin
-      Accelerating Touch:
-        traits:
-        - champion
-        shortdesc: Your healing energies are infused with bounding energy.
-        prereq:
-          level: 4
-          specialize: good
-      Aura of Courage:
-        traits:
-        - champion
-        shortdesc: You stand strong in the face of danger and inspire your allies to do the same.
-        prereq:
-          level: 4
-          specialize: good
-      Divine Health:
-        traits:
-        - champion
-        shortdesc: Your faith makes you resistant to disease.
-        prereq:
-          level: 4
-          specialize: good
-      Mercy:
-        traits:
-        - champion
-        - concentrate
-        - metamagic
-        shortdesc: Your touch relieves fear and restores movement.
-        prereq:
-          level: 4
-    cleric:
-      Deadly Simplicity:
-        traits:
-        - cleric
-        shortdesc: Your deity’s weapon is especially powerful in your hands.
-        prereq:
-          level: 1
-      Domain Initiate:
-        traits:
-        - cleric
-        shortdesc: Your deity bestows a special spell related to their powers.
-        prereq:
-          level: 1
-      Harming Hands:
-        traits:
-        - cleric
-        shortdesc: The mordant power of your negative energy grows.
-        prereq:
-          level: 1
-          divine_font: harm
-      Healing Hands:
-        traits:
-        - cleric
-        shortdesc: Your positive energy is even more vibrant and restorative.
-        prereq:
-          level: 1
-          divine_font: heal
-      Holy Castigation:
-        traits:
-        - cleric
-        shortdesc: You combine holy energy with positive energy to damage demons, devils, and their evil ilk.
-        prereq:
-          level: 1
-          alignment: good
-      Premonition of Avoidance:
-        traits:
-        - cleric
-        shortdesc: Your deity grants you limited foresight, warning you of dangers an instant before they occur.
-        prereq:
-          level: 1
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You can extend your spells’ range.
-        prereq:
-          level: 1
-      Communal Healing:
-        traits:
-        - cleric
-        - healing
-        - positive
-        shortdesc: You’re a conduit for positive energy, and as you channel it through you, it heals some of your minor injuries.
-        prereq:
-          level: 2
-      Emblazon Armament:
-        traits:
-        - cleric
-        - exploration
-        shortdesc: Carefully etching a sacred image into a physical object, you steel yourself for battle.
-        prereq:
-          level: 2
-      Rapid Response:
-        traits:
-        - cleric
-        shortdesc: You work quickly and efficiently in times of danger to deliver needed assistance.
-        prereq:
-          level: 2
-      Sap Life:
-        traits:
-        - cleric
-        - healing
-        shortdesc: You draw the life force out of your enemies to heal your own wounds.
-        prereq:
-          level: 2
-      Turn Undead:
-        traits:
-        - cleric
-        shortdesc: Undead harmed by your positive energy might flee, compelled by an innate aversion to the force opposite undeath.
-        prereq:
-          level: 2
-      Versatile Font:
-        traits:
-        - cleric
-        shortdesc: As you explore your deity’s aspects, you move beyond restrictions on healing or harming.
-        prereq:
-          level: 2
-      Channel Smite:
-        traits:
-        - cleric
-        - divine
-        - necromancy
-        shortdesc: You siphon the destructive energies of positive or negative energy through a melee attack and into your foe.
-        prereq:
-          level: 4
-          deity: 
-          - Angoron 
-          - Gilead 
-          - Animus 
-          - Ceinara 
-          - Dana 
-          - Rada 
-          - Reos 
-          - Serriel 
-          - Vardama 
-          - Deimos 
-      Directed Channel:
-        traits:
-        - cleric
-        shortdesc: You can shape the energy you channel in a single direction, reaching farther and in a more directed fashion.
-        prereq:
-          level: 4
-      Improved Communal Healing:
-        traits:
-        - cleric
-        shortdesc: You can direct excess channeled energy outward to benefit an ally.
-        prereq:
-          level: 4
-          feat: 
-          - Communal Healing
-      Radiant Infusion:
-        traits:
-        - cleric
-        shortdesc: You pour invigorating positive energy into a living ally.
-        prereq:
-          level: 4
-          divine_font: heal
-          oralignment: 
-          - LG
-          - CG
-          - NG
-    druid:
-      Animal Companion:
-        traits:
-        - druid
-        - ranger
-        shortdesc: You gain the service of a young animal companion that travels with you.
-        prereq:
-          level: 1
-          specialize: animal
-      Leshy Familiar:
-        traits:
-        - druid
-        shortdesc: You gain a leshy familiar, a tiny plant that embodies one of the many spirits of nature.
-        prereq:
-          level: 1
-          specialize: leaf
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You can extend your spells’ range.
-        prereq:
-          level: 1
-      Storm Born:
-        traits:
-        - druid
-        shortdesc: You are at home out in the elements, reveling in the power of nature unleashed.
-        prereq:
-          level: 1
-          specialize: storm
-      Verdant Weapon:
-        traits:
-        - druid
-        - exploration
-        shortdesc: You cultivate a seed that can sprout into a wooden staff, vine whip, or another weapon.
-        prereq:
-          level: 1
-      Widen Spell:
-        traits:
-        - druid
-        - manipulate
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You manipulate the energy of your spell, causing it to spread out and affect a wider area.
-        prereq:
-          level: 1
-      Wild Shape:
-        traits:
-        - druid
-        shortdesc: You are one with the wild, always changing and adapting to meet any challenge.
-        prereq:
-          level: 1
-          specialize: wild
-      Call of the Wild:
-        traits:
-        - druid
-        shortdesc: You call upon the creatures of nature to come to your aid.
-        prereq:
-          level: 2
-      Order Explorer:
-        traits:
-        - druid
-        shortdesc: You have learned the secrets of another druidic order.
-        prereq:
-          level: 2
-      Poison Resistance:
-        traits:
-        - alchemist
-        - druid
-        shortdesc: Repeated exposure to toxic reagents has fortified your body against poisons of all kinds.
-        prereq:
-          level: 2
-      Elemental Summons:
-        traits:
-        - druid
-        shortdesc: You can call the four elements to you.
-        prereq:
-          level: 4
-      Form Control:
-        traits:
-        - druid
-        - manipulate
-        - metamagic
-        shortdesc: With additional care and effort, you can take on an alternate form for a longer period of time.
-        prereq:
-          level: 4
-          strength: 14
-          feat: 
-          - Wild Shape
-      Leshy Familiar Secrets:
-        traits:
-        - druid
-        shortdesc: The leaf order's secrets allow your familiar to take advantage of its leshy form.
-        prereq:
-          level: 4
-          specialize: leaf
-      Mature Animal Companion (Druid):
-        traits:
-        - druid
-        shortdesc: Your animal companion grows up, becoming a mature animal companion, which grants it additional capabilities.
-        prereq:
-          level: 4
-          feat: 
-          - Animal Companion
-      Order Magic:
-        traits:
-        - druid
-        shortdesc: You have delved deeper into the teaching of a new order, gaining access to a coveted order spell.
-        prereq:
-          level: 4
-          feat: 
-          - Order Explorer
-      Thousand Faces:
-        traits:
-        - druid
-        shortdesc: Your form is as mutable as the weather, changing to meet your whim.
-        prereq:
-          level: 4
-          feat: 
-          - Wild Shape
-      Woodland Stride:
-        traits:
-        - druid
-        shortdesc: You can always find a path, almost as if foliage parted before you.
-        prereq:
-          level: 4
-          specialize: leaf
-    fighter:
-      Combat Assessment:
-        traits:
-        - fighter
-        shortdesc: You make a telegraphed attack to learn about your foe.
-        prereq:
-          level: 1
-      Double Slice:
-        traits:
-        - fighter
-        shortdesc: You lash out at your foe with both weapons.
-        prereq:
-          level: 1
-      Exacting Strike:
-        traits:
-        - fighter
-        - press
-        shortdesc: You make a controlled attack, fully accounting for your momentum.
-        prereq:
-          level: 1
-      Point-Blank Shot:
-        traits:
-        - fighter
-        - open
-        - stance
-        shortdesc: You take aim to pick off nearby enemies quickly.
-        prereq:
-          level: 1
-      Power Attack:
-        traits:
-        - fighter
-        - flourish
-        shortdesc: You unleash a particularly powerful attack that clobbers your foe but leaves you a bit unsteady.
-        prereq:
-          level: 1
-      Reactive Shield:
-        traits:
-        - fighter
-        shortdesc: You can snap your shield into place just as you would take a blow, avoiding the hit at the last second.
-        prereq:
-          level: 1
-      Snagging Strike:
-        traits:
-        - fighter
-        shortdesc: You combine an attack with quick grappling moves to throw an enemy off balance as long as it stays in your reach.
-        prereq:
-          level: 1
-      Sudden Charge:
-        traits:
-        - barbarian
-        - fighter
-        - flourish
-        - open
-        shortdesc: With a quick sprint, you dash up to your foe and swing.
-        prereq:
-          level: 1
-      Aggressive Block:
-        traits:
-        - fighter
-        shortdesc: You push back as you block the attack, knocking your foe away or off balance.
-        prereq:
-          level: 2
-      Assisting Shot:
-        traits:
-        - fighter
-        - press
-        shortdesc: With a quick shot, you interfere with a foe in combat.
-        prereq:
-          level: 2
-      Brutish Shove:
-        traits:
-        - fighter
-        - press
-        shortdesc: Throwing your weight behind your attack, you hit you opponent hard enough to make it stumble back.
-        prereq:
-          level: 2
-      Combat Grab:
-        traits:
-        - fighter
-        - press
-        shortdesc: You swipe at your opponent and grab at them.
-        prereq:
-          level: 2
-      Dragging Strike:
-        traits:
-        - fighter
-        - press
-        shortdesc: You aim your weapon to snag a foe's armor, clothing, or flesh to pull them closer.
-        prereq:
-          level: 2
-      Dueling Parry (Fighter):
-        traits:
-        - fighter
-        shortdesc: You can parry attacks against you with your one-handed weapon.
-        prereq:
-          level: 2
-      Intimidating Strike:
-        traits:
-        - emotion
-        - fear
-        - fighter
-        - mental
-        shortdesc: Your blow not only wounds creatures but also shatters their confidence.
-        prereq:
-          level: 2
-      Lunge:
-        traits:
-        - fighter
-        shortdesc: Extending your body to its limits, you attack an enemy that would normally be beyond your reach.
-        prereq:
-          level: 2
-      Rebounding Toss:
-        traits:
-        - fighter
-        - flourish
-        shortdesc: You bounce your weapon off one foe to strike another.
-        prereq:
-          level: 2
-      Barreling Charge:
-        traits:
-        - barbarian
-        - fighter
-        - flourish
-        shortdesc: You rush forward, moving enemies aside to reach your foe.
-        prereq:
-          level: 4
-          skill: Athletics/trained
-      Double Shot:
-        traits:
-        - fighter
-        - flourish
-        shortdesc: You shoot twice in blindingly fast succession.
-        prereq:
-          level: 4
-      Dual-Handed Assault:
-        traits:
-        - fighter
-        - flourish
-        shortdesc: You snap your free hand over to grip your weapon just long enough to add momentum and deliver a more powerful blow to your opponent.
-        prereq:
-          level: 4
-      Knockdown:
-        traits:
-        - fighter
-        - flourish
-        shortdesc: You make an attack to knock a foe off balance, then follow up immediately with a sweep to topple them.
-        prereq:
-          level: 4
-          skill: Athletics/trained
-      Parting Shot:
-        traits:
-        - fighter
-        shortdesc: You jump back and fire a quick shot that catches your opponent off guard.
-        prereq:
-          level: 4
-      Powerful Shove:
-        traits:
-        - fighter
-        shortdesc: You can push larger foes around with your attack.
-        prereq:
-          level: 4
-          orfeat: [ Aggressive Block, Brutish Shove ]
-      Quick Reversal:
-        traits:
-        - fighter
-        - flourish
-        - press
-        shortdesc: "You turn your foes’ flanking against them with a quick reverse."
-        prereq:
-          level: 4
-      Shielded Stride:
-        traits:
-        - fighter
-        shortdesc: "When your shield is up, your enemies’ blows can’t touch you."
-        prereq:
-          level: 4
-      Swipe:
-        traits:
-        - barbarian
-        - fighter
-        - flourish
-        shortdesc: You make a wide, arcing swing.
-        prereq:
-          level: 4
-      Twin Parry:
-        traits:
-        - fighter
-        - ranger
-        shortdesc: You use your two weapons to parry attacks.
-        prereq:
-          level: 4
-    investigator:
-      Flexible Studies:
-        traits:
-        - investigator
-        shortdesc: You've collected a cross-section of information on various disciplines you can refer to when preparing for various tasks.
-        prereq:
-          level: 1
-      Known Weaknesses:
-        traits:
-        - investigator
-        shortdesc: Whenever you Devise a Stratagem, you can also attempt a check to Recall Knowledge as part of that action.
-        prereq:
-          level: 1
-      Takedown Expert:
-        traits:
-        - investigator
-        shortdesc: You've mastered combat practices that let you get up close and bring down perpetrators alive.
-        prereq:
-          level: 1
-      That's Odd:
-        traits:
-        - investigator
-        shortdesc: When you enter a new location, such as a room or corridor, you immediately notice one thing out of the ordinary.
-        prereq:
-          level: 1
-      Trap Finder:
-        traits:
-        - investigator
-        - rogue
-        shortdesc: You have an intuitive sense that alerts you to the dangers and presence of traps.
-        prereq:
-          level: 1
-      Underworld Investigator:
-        traits:
-        - investigator
-        shortdesc: Your work as an investigator makes you familiar with the criminal element.
-        prereq:
-          level: 1
-      Athletic Strategist:
-        traits:
-        - investigator
-        shortdesc: You know how to calculatedly manipulate joints and body weight.
-        prereq:
-          level: 2
-          skill: Athletics/trained
-      Red Herring:
-        traits:
-        - investigator
-        shortdesc: You have a keen sense for avoiding spurious lines of inquiry.
-        prereq:
-          level: 2
-      Shared Stratagem:
-        traits:
-        - investigator
-        shortdesc: The plans you make include your allies as well as yourself.
-        prereq:
-          level: 2
-      Solid Lead:
-        traits:
-        - investigator
-        shortdesc: Sometimes your case splinters into smaller mysteries, but you never lose sight of the big picture.
-        prereq:
-          level: 2
-      Alchemical Discoveries:
-        traits:
-        - investigator
-        shortdesc: You've devoted extra time in the lab to improve your knowledge of alchemy.
-        prereq:
-          level: 4
-      Detective's Readiness:
-        traits:
-        - investigator
-        shortdesc: When you're on a case, you stay watchful and resolute to avoid tricks your suspect might pull.
-        prereq:
-          level: 4
-      Lie Detector:
-        - investigator
-        shortdesc: You're adept at noticing the tells of a liar—sweat, flushing, a quavering voice, a quickening pulse.
-        prereq:
-          level: 4
-          orspecialize: 
-          - empiricism 
-          - interrogation
-      Ongoing Investigation:
-        - investigator
-        shortdesc: You're always investigating what's around you, even as you perform other activities.
-        prereq:
-          level: 4
-      Scalpel's Point:
-        - investigator
-        shortdesc: Your stratagems benefit from your precise knowledge of anatomy.
-        prereq:
-          level: 4
-          specialize: forensic medicine
-      Strategic Assessment:
-        - investigator
-        shortdesc: You learn your foes' strengths and weaknesses by watching them move.
-        prereq:
-          level: 4
-    monk:
-      Crane Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter the stance of a crane, holding your arms in an imitation of a crane’s wings.
-        prereq:
-          level: 1
-      Dragon Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter the stance of a dragon and make powerful leg strikes like a lashing dragon’s tail.
-        prereq:
-          level: 1
-      Gorilla Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You lower yourself to the ground and take an imposing, knuckle-walking stance.
-        prereq:
-          level: 1
-      Ki Rush:
-        traits:
-        - monk
-        shortdesc: You can use ki to move with extraordinary speed and make yourself harder to hit.
-        prereq:
-          level: 1
-      Ki Strike:
-        traits:
-        - monk
-        shortdesc: Your study of the flow of mystical energy allows you to harness it into your physical strikes.
-        prereq:
-          level: 1
-      Monastic Archer Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter a specialized stance for a unique martial art centered around the use of a bow.
-        prereq:
-          level: 1
-      Monastic Weaponry:
-        traits:
-        - monk
-        shortdesc: You have trained with the traditional weaponry of your monastery or school.
-        prereq:
-          level: 1
-      Mountain Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter the stance of an implacable mountain allowing you to strike with the weight of an avalanche.
-        prereq:
-          level: 1
-      Stumbling Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter a seemingly unfocused stance that mimics the movements of the inebriated—bobbing, weaving, leaving false openings, and distracting your enemies from your true movements.
-        prereq:
-          level: 1
-          skill: Deception/trained
-      Tiger Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter the stance of a tiger and can make tiger claw attacks.
-        prereq:
-          level: 1
-      Wolf Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter the stance of a wolf, low to the ground with your hands held like fanged teeth.
-        prereq:
-          level: 1
-      Ancestral Weaponry:
-        traits:
-        - monk
-        shortdesc: You blend monastic techniques with the ancestral fighting styles of your people.
-        prereq:
-          level: 2
-          feat: 
-          - Monastic Weaponry
-      Brawling Focus:
-        traits:
-        - monk
-        shortdesc: You know how to make the most of your attacks when fighting hand-to-hand.
-        prereq:
-          level: 2
-      Crushing Grab:
-        traits:
-        - monk
-        shortdesc: Like a powerful constrictor, you crush targets in your unyielding grasp.
-        prereq:
-          level: 2
-      Dancing Leaf:
-        traits:
-        - monk
-        shortdesc: You are as light as a leaf whirling in the breeze.
-        prereq:
-          level: 2
-      Elemental Fist:
-        traits:
-        - monk
-        shortdesc: You call upon the power of the elements, infusing your ki with elemental energy and allowing your attacks to deal energy damage.
-        prereq:
-          level: 2
-          feat: 
-          - Ki Strike
-      Shooting Stars Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter a stance that lets you throw shuriken with lightning speed.
-        prereq:
-          level: 2
-          feat: 
-          - Monastic Weaponry
-      Stunning Fist:
-        traits:
-        - monk
-        shortdesc: The focused power of your flurry threatens to overwhelm your opponent.
-        prereq:
-          level: 2
-      Cobra Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter a tight stance, coiled up like a lashing cobra with your hands poised as venomous fangs.
-        prereq:
-          level: 4
-      Deflect Arrow:
-        traits:
-        - monk
-        shortdesc: Your reflexes allow you to deflect ranged attacks.
-        prereq:
-          level: 4
-      Flurry of Maneuvers:
-        traits:
-        - monk
-        shortdesc: You flurry is a combination of maneuvers.
-        prereq:
-          level: 4
-          skill: Athletics/expert
-      Flying Kick:
-        traits:
-        - monk
-        shortdesc: You launch yourself at a foe.
-        prereq:
-          level: 4
-      Guarded Movement:
-        traits:
-        - monk
-        shortdesc: Your guard is up, even while moving.
-        prereq:
-          level: 4
-      Peafowl Stance:
-        traits:
-        - monk
-        - stance
-        shortdesc: You enter a tall and proud stance while remaining mobile, with all the grace and composure of a peafowl.
-        prereq:
-          level: 4
-          feat: 
-          - Monastic Weaponry
-      Stand Still:
-        traits:
-        - monk
-        shortdesc: You strike out when your foe tries to flee.
-        prereq:
-          level: 4
-      Wholeness of Body:
-        traits:
-        - monk
-        shortdesc: You can restore your health by tapping into your ki.
-        prereq:
-          level: 4
-    oracle:
-      Widen Spell:
-        traits:
-        - druid
-        - manipulate
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You manipulate the energy of your spell, causing it to spread out and affect a wider area.
-        prereq:
-          level: 1
-      Glean Lore:
-        traits:
-        - divination
-        - divine
-        - oracle
-        - secret
-        shortdesc: You tap into the collected lore of the divine, accessing a variety of potentially useful information.
-        prereq:
-          level: 1
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: "You can extend your spells’ range."
-        prereq:
-          level: 1
-      Divine Aegis:
-        traits:
-        - abjuration
-        - divine
-        - oracle
-        shortdesc: You summon divine energy to shield yourself, offering protection against other traditions but leaving you exposed to other divine effects.
-        prereq:
-          level: 2
-      Domain Acumen:
-        traits:
-        - oracle
-        shortdesc: Every oracle's mystery touches on a divine domain of the deities that fuel it; you can access that power.
-        prereq:
-          level: 2
-      Bespell Weapon:
-        traits:
-        - oracle
-        - sorcerer
-        - wizard
-        shortdesc: "You siphon the residual energy from the last spell you cast into one weapon you’re wielding."
-        prereq:
-          level: 4
-      Divine Access:
-        traits:
-        - oracle
-        shortdesc: Your ability to tap into divine magic surpasses the spells traditionally available to you (the divine spell list).
-        prereq:
-          level: 4
-      Vision of Weakness:
-        traits:
-        - oracle
-        shortdesc: You can call upon divine insights to single out your foes' weak points.
-        prereq:
-          level: 4
-    ranger:
-      Crossbow Ace:
-        traits:
-        - ranger
-        shortdesc: You have a deep understanding of the crossbow.
-        prereq:
-          level: 1
-      Gravity Weapon:
-        traits:
-        - ranger
-        shortdesc: Your expertise with your weapons and commitment to taking out your targets lends you magical power.
-        prereq:
-          level: 1
-      Heal Companion:
-        traits:
-        - ranger
-        shortdesc: You have a deep devotion to your animal companion that enables you to magically heal their wounds.
-        prereq:
-          level: 1
-      Hunted Shot:
-        traits:
-        - flourish
-        - ranger
-        shortdesc: You take two quick shots against the one you hunt.
-        prereq:
-          level: 1
-      Monster Hunter:
-        traits:
-        - ranger
-        shortdesc: You swiftly assess your prey and apply what you know.
-        prereq:
-          level: 1
-      Twin Takedown:
-        traits:
-        - flourish
-        - ranger
-        shortdesc: You swiftly attack your hunted prey with both weapons.
-        prereq:
-          level: 1
-      Favored Terrain:
-        traits:
-        - ranger
-        shortdesc: You have studied a specific terrain to overcome its challenges.
-        prereq:
-          level: 2
-      Hunter's Aim:
-        traits:
-        - concentrate
-        - ranger
-        shortdesc: When you focus on aiming, your attack becomes particularly accurate.
-        prereq:
-          level: 2
-      Magic Hide:
-        traits:
-        - ranger
-        shortdesc: You can defend your companion in battle.
-        prereq:
-          level: 2
-      Monster Warden:
-        traits:
-        - ranger
-        shortdesc: You understand how to defend yourself and others against your prey.
-        prereq:
-          level: 2
-          feat: 
-          - Monster Hunter
-      Snare Hopping:
-        traits:
-        - ranger
-        shortdesc: You can magically move your snares around.
-        prereq:
-          level: 2
-          feat: 
-          - Snare Crafting
-      Wild Empathy:
-        traits:
-        - ranger
-        shortdesc: You have a connection to the creatures of the natural world.
-        prereq:
-          level: 2
-      Animal Feature:
-        traits:
-        - ranger
-        shortdesc: You are so connected with the animal world that you can grant yourself an animal's features and abilities.
-        prereq:
-          level: 4
-      Companion's Cry:
-        traits:
-        - ranger
-        shortdesc: You can urge your companion to do its utmost.
-        prereq:
-          level: 4
-          feat: 
-          - Animal Companion 
-      Disrupt Prey:
-        traits:
-        - ranger
-        shortdesc: Make a melee Strike against your prey.
-        prereq:
-          level: 4
-      Far Shot:
-        traits:
-        - ranger
-        shortdesc: Your experience in the field has taught you how to focus your aim at a distance.
-        prereq:
-          level: 4
-      Favored Enemy:
-        traits:
-        - ranger
-        shortdesc: You have studied a specific type of wild creature and can hunt it more easily.
-        prereq:
-          level: 4
-      Hunter's Luck:
-        traits:
-        - ranger
-        shortdesc: Your recollection of monsters is magically enhanced by luck.
-        prereq:
-          level: 4
-      Running Reload:
-        traits:
-        - ranger
-        shortdesc: You can reload your weapon on the move.
-        prereq:
-          level: 4
-      Scout's Warning:
-        traits:
-        - ranger
-        shortdesc: You visually or audibly warn your allies of danger.
-        prereq:
-          level: 4
-      Snare Specialist:
-        traits:
-        - ranger
-        shortdesc: You specialize in creating quick traps to obstruct your enemies on the battlefield.
-        prereq:
-          level: 4
-          skill: Crafting/expert
-          feat: 
-          - Snare Crafting 
-      Soothing Mist:
-        traits:
-        - ranger
-        shortdesc: You have a connection to the healing properties of nature and can produce a magical mist to heal damage and stop burning or bleeding.
-        prereq:
-          level: 4
-      Twin Parry:
-        traits:
-        - fighter
-        - ranger
-        shortdesc: You use your two weapons to parry attacks.
-        prereq:
-          level: 4
-    rogue:
-      Nimble Dodge:
-        traits:
-        - rogue
-        shortdesc: You deftly dodge out of the way.
-        prereq:
-          level: 1
-      Overextending Feint:
-        traits:
-        - rogue
-        shortdesc: When you trick a foe, instead of catching them off guard, you goad them into overextending their next attack.
-        prereq:
-          level: 1
-          skill: Deception/trained
-      Plant Evidence:
-        traits:
-        - rogue
-        shortdesc: You can put a single item you're holding of light or negligible Bulk onto a person without them noticing.
-        prereq:
-          level: 1
-          feat: 
-          - Pickpocket
-      Tumble Behind (Rogue):
-        traits:
-        - rogue
-        shortdesc: You tumble under and behind your foe to catch them off guard.
-        prereq:
-          level: 1
-      Twin Feint:
-        traits:
-        - rogue
-        shortdesc: You make a dazzling series of attacks with both weapons, using the first attack to throw your foe off guard against a second attack at a different angle.
-        prereq:
-          level: 1
-      You're Next:
-        traits:
-        - emotion
-        - fear
-        - mental
-        - rogue
-        shortdesc: "After downing a foe, you menacingly remind another foe that you’re coming after them next."
-        prereq:
-          level: 1
-          skill: Intimidation/trained
-      Brutal Beating:
-        traits:
-        - rogue
-        shortdesc: "The brutality of your critical hits shakes your foes’ confidence."
-        prereq:
-          level: 2
-      Clever Gambit:
-        traits:
-        - rogue
-        shortdesc: Your battle tactics are aided by your assessment of your foes' capabilities, allowing you to instantly adjust your movements to maximum advantage.
-        prereq:
-          level: 2
-      Distracting Feint:
-        traits:
-        - rogue
-        shortdesc: "Your Feints are far more distracting than normal, drawing your foes’ attention and allowing you and your allies to take greater advantage."
-        prereq:
-          level: 2
-      Minor Magic:
-        traits:
-        - rogue
-        shortdesc: You’ve dabbled in a variety of tricks, gaining minor magical abilities from a particular tradition.
-        prereq:
-          level: 2
-      Mobility:
-        traits:
-        - rogue
-        shortdesc: You move in a way that denies your enemies the opportunity to retaliate.
-        prereq:
-          level: 2
-      Strong Arm:
-        traits:
-        - rogue
-        shortdesc: When you Strike with a thrown weapon, the weapon's range increment increases 10 feet.
-        prereq:
-          level: 2
-      Unbalancing Blow:
-        traits:
-        - rogue
-        shortdesc: Interweaving your most powerful attacks in a graceful flow, you temporarily unbalance your foes. Whenever your Strike is a critical hit and deals damage, the target is flat-footed against your attacks until the end of your next turn.
-        prereq:
-          level: 2
-      Underhanded Assault:
-        traits:
-        - rogue
-        shortdesc: You capitalize on the distraction provided by an ally.
-        prereq:
-          level: 2
-          skill: Stealth/trained
-      Battle Assessment:
-        traits:
-        - rogue
-        - secret
-        shortdesc: With careful observation during battle, you identify an enemy’s strengths and weaknesses.
-        prereq:
-          level: 4
-      Dread Striker:
-        traits:
-        - rogue
-        shortdesc: You capitalize on your enemies’ fear to slip past their defenses.
-        prereq:
-          level: 4
-      Head Stomp:
-        traits:
-        - rogue
-        shortdesc: Make an unarmed melee attack against a prone target.
-        prereq:
-          level: 4
-      Magical Trickster:
-        traits:
-        - rogue
-        shortdesc: You can sneak spells past your foes’ defenses as easily as any blade.
-        prereq:
-          level: 4
-      Poison Weapon:
-        traits:
-        - manipulate
-        - rogue
-        shortdesc: You apply poison to a weapon.
-        prereq:
-          level: 4
-      Predictable!:
-        traits:
-        - rogue
-        shortdesc: By observing an opponent, you can get a sense of their next move and prepare to counter or resist it.
-        prereq:
-          level: 4
-      Reactive Pursuit:
-        traits:
-        - rogue
-        shortdesc: You keep pace with a retreating foe.
-        prereq:
-          level: 4
-      Sabotage:
-        traits:
-        - incapacitation
-        - rogue
-        shortdesc: You subtly damage others’ equipment.
-        prereq:
-          level: 4
-      Scout's Warning:
-        traits:
-        - ranger
-        - rogue
-        shortdesc: You visually or audibly warn your allies of danger.
-        prereq:
-          level: 4
-      The Harder They Fall (Rogue):
-        traits:
-        - rogue
-        shortdesc: You make your foes fall painfully when you trip them.
-        prereq:
-          level: 4
-      Twin Distraction:
-        traits:
-        - rogue
-        shortdesc: Your movements with two weapons are so swift and disorienting that they befuddle your opponent.
-        prereq:
-          level: 4
-          feat: 
-          - Twin Feint
-    sorcerer:
-      Counterspell:
-        traits:
-        - abjuration
-        - arcane
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: When a foe Casts a Spell and you can see its manifestations, you can use your own magic to disrupt it.
-        prereq:
-          level: 1
-      Ancestral Blood Magic:
-        traits:
-        - sorcerer
-        shortdesc: The magic of your bloodline mixes with that of your ancestry.
-        prereq:
-          level: 1
-      Dangerous Sorcery:
-        traits:
-        - sorcerer
-        shortdesc: Your legacy grants you great destructive power.
-        prereq:
-          level: 1
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You can extend your spells’ range.
-        prereq:
-          level: 1
-      Widen Spell:
-        traits:
-        - druid
-        - manipulate
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You manipulate the energy of your spell, causing it to spread out and affect a wider area.
-        prereq:
-          level: 1
-      Anoint Ally:
-        traits:
-        - manipulate
-        - sorcerer
-        shortdesc: You forge a mystical connection with an ally using your body as a focus, allowing them to benefit from your magic.
-        prereq:
-          level: 2
-      Entreat with Forebears:
-        traits:
-        - sorcerer
-        shortdesc: Something about your presence causes creatures of your bloodline to, consciously or not, recognize you as one of their own, and you become inured to their tricks.
-        prereq:
-          level: 2
-      Arcane Evolution:
-        traits:
-        - arcane
-        - sorcerer
-        shortdesc: Your arcane legacy grants you an exceptional aptitude for intellectual and academic pursuits.
-        prereq:
-          level: 4
-          tradition: arcane
-      Bespell Weapon:
-        traits:
-        - oracle
-        - sorcerer
-        - wizard
-        shortdesc: You siphon the residual energy from the last spell you cast into one weapon you’re wielding.
-        prereq:
-          level: 4
-      Divine Evolution:
-        traits:
-        - divine
-        - sorcerer
-        shortdesc: The divine might provided by your bloodline flows through you.
-        prereq:
-          level: 4
-          tradition: arcane
-      Elaborate Flourish:
-        traits:
-        - concentrate
-        - manipulate
-        - metamagic
-        - sorcerer
-        shortdesc: You embellish your spellcasting with entrancing flourishes and grand pronouncements, making it harder to identify or counter.
-        prereq:
-          level: 4
-      Occult Evolution:
-        traits:
-        - occult
-        - sorcerer
-        shortdesc: Glimpses of the obscure secrets of the universe loan you power.
-        prereq:
-          level: 4
-          tradition: occult
-      Primal Evolution:
-        traits:
-        - primal
-        - sorcerer
-        shortdesc: You can call upon the creatures of the wild for aid.
-        prereq:
-          level: 4
-          tradition: primal
-      Split Shot:
-        traits:
-        - concentrate
-        - metamagic
-        - sorcerer
-        shortdesc: You fragment a ranged spell into a pair of smaller shots.
-        prereq:
-          level: 4
-    witch:
-      Basic Lesson:
-        traits:
-        - witch
-        shortdesc: Your patron grants you a special lesson, revealing a hidden facet of its nature.
-        prereq:
-          level: 2
-      Cackle:
-        traits:
-        - witch
-        shortdesc: You can extend one of your spells with a quick burst of laughter.
-        prereq:
-          level: 1
-      Cauldron:
-        traits:
-        - witch
-        shortdesc: You can use the Craft activity to create oils and potions.
-        prereq:
-          level: 1
-      Counterspell:
-        traits:
-        - abjuration
-        - arcane
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: When a foe Casts a Spell and you can see its manifestations, you can use your own magic to disrupt it.
-        prereq:
-          level: 1
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You can extend your spells’ range.
-        prereq:
-          level: 1
-      Widen Spell:
-        traits:
-        - druid
-        - manipulate
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You manipulate the energy of your spell, causing it to spread out and affect a wider area.
-        prereq:
-          level: 1
-      Wortwitch:
-        traits:
-        - witch
-        shortdesc: You have a particular affinity for leafy plants.
-        prereq:
-          level: 1
-      Conceal Spell:
-        traits:
-        - concentrate
-        - manipulate
-        - metamagic
-        - witch
-        - wizard
-        shortdesc: Hiding your gestures and incantations within other speech and movement, you attempt to conceal the fact that you are casting a spell.
-        prereq:
-          level: 2
-      Familiar's Language:
-        traits:
-        - divination
-        - witch
-        shortdesc: You've learned to speak with your familiar and other creatures like it.
-        prereq:
-          level: 2
-      Living Hair:
-        traits:
-        - witch
-        shortdesc: You can instantly grow or shrink your hair, eyebrows, beard, or mustache by up to several feet and manipulate your hair for use as a weapon, though your control isn't fine enough for more dexterous tasks.
-        prereq:
-          level: 2
-      Eldritch Nails:
-        traits:
-        - witch
-        shortdesc: Your nails are supernaturally long and sharp.
-        prereq:
-          level: 4
-      Improved Familiar (Witch):
-        traits:
-        - witch
-        shortdesc: You find it easy to attract a powerful and unusual familiar to your side.
-        prereq:
-          level: 4
-      Rites of Convocation:
-        traits:
-        - witch
-        shortdesc: Your patron grants you the power to summon other creatures to aid you.
-        prereq:
-          level: 4
-    wizard:
-      Counterspell:
-        traits:
-        - abjuration
-        - arcane
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: When a foe Casts a Spell and you can see its manifestations, you can use your own magic to disrupt it.
-        prereq:
-          level: 1
-      Eschew Materials:
-        traits:
-        - wizard
-        shortdesc: You can use clever workarounds to replicate the arcane essence of certain materials.
-        prereq:
-          level: 1
-      Hand of the Apprentice:
-        traits:
-        - wizard
-        shortdesc: You can magically hurl your weapon at your foe.
-        prereq:
-          level: 1
-      Reach Spell:
-        traits:
-        - bard
-        - cleric
-        - concentrate
-        - druid
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You can extend your spells’ range.
-        prereq:
-          level: 1
-      Spellbook Prodigy:
-        traits:
-        - wizard
-        shortdesc: You are particularly adept at learning spells to add to your spellbook.
-        prereq:
-          level: 1
-          skill: Arcana/trained
-      Widen Spell:
-        traits:
-        - druid
-        - manipulate
-        - metamagic
-        - oracle
-        - sorcerer
-        - witch
-        - wizard
-        shortdesc: You manipulate the energy of your spell, causing it to spread out and affect a wider area.
-        prereq:
-          level: 1
-      Conceal Spell:
-        traits:
-        - concentrate
-        - manipulate
-        - metamagic
-        - witch
-        - wizard
-        shortdesc: Hiding your gestures and incantations within other speech and movement, you attempt to conceal the fact that you are casting a spell.
-        prereq:
-          level: 2
-    metamagic:
-      Energy Ablation:
-        traits:
-        - metamagic
-        - wizard
-        shortdesc: When you cast energy spells, you retain some of that energy as a protective barrier.
-        prereq:
-          level: 2
-      Nonlethal Spell:
-        traits:
-        - manipulate
-        - metamagic
-        - wizard
-        shortdesc: You can alter offensive spells to be less deadly.
-        prereq:
-          level: 2
-      Bespell Weapon:
-        traits:
-        - oracle
-        - sorcerer
-        - wizard
-        shortdesc: 	
-  You siphon the residual energy from the last spell you cast into one weapon you’re wielding.
-        prereq:
-          level: 4
-      Call Bonded Item:
-        traits:
-        - concentrate
-        - conjuration
-        - teleportation
-        - wizard
-        shortdesc: You're mystically connected to your bonded item and can call it to your hand.
-        prereq:
-          level: 4
-      Linked Focus:
-        traits:
-        - wizard
-        shortdesc: You have linked your bonded item to the well of energy that powers your school spells.
-        prereq:
-          level: 4
-      Silent Spell:
-        traits:
-        - concentrate
-        - metamagic
-        - wizard
-        shortdesc: You’ve learned how to cast many of your spells without speaking the words of power you would normally need to provide.
-        prereq:
-          level: 4
-          feat: 
-          - Conceal Spell
+  Alchemical Familiar:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You have used alchemy to create life, a simple creature formed from alchemical materials, reagents, and a bit of your own blood.
+    prereq:
+      level: 1
+  Alchemical Savant:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You can identify alchemical items quickly.
+    prereq:
+      level: 1
+      skill: Crafting/trained
+  Far Lobber:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You’ve learned how to throw a longer distance.
+    prereq:
+      level: 1
+  Quick Bomber:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You keep your bombs in easy-to-reach pouches from which you draw without thinking.
+    prereq:
+      level: 1
+  Subtle Delivery:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You can capably deliver toxins with a blowgun.
+    prereq:
+      level: 1
+  Demolition Charge:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You can rig your bombs to inanimate objects in order to cause destruction to the surrounding area.
+    prereq:
+      level: 2
+  Revivifying Mutagen:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: While under the effect of a mutagen, you can metabolize that mutagen’s power to heal yourself.
+    prereq:
+      level: 2
+  Smoke Bomb:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits:
+    - additive 1
+    shortdesc: You cause the bomb to create a cloud of thick smoke, in addition to its normal effects.
+    prereq:
+      level: 2
+  Calculated Splash:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You have calculated all the angles to maximize a bomb’s splash.
+    prereq:
+      level: 4
+  Efficient Alchemy (Alchemist):
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: Thanks to the time you’ve spent studying and experimenting, you know how to scale your formulas into larger batches that don’t require any additional attention.
+    prereq:
+      level: 4
+  Enduring Alchemy:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: You’ve learned how to make your personal energy last just a little bit longer when quickly brewing ad hoc concoctions.
+    prereq:
+      level: 4
+  Healing Bomb:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits:
+    - additive 2
+    shortdesc: By adding a special catalyst, you transform a healing elixir into a topical projectile.
+    prereq:
+      level: 4
+  Tenacious Toxins:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Alchemist
+    traits: []
+    shortdesc: Your victims tend to expire long before your poisons, since the latter have been specifically formulated to last longer.
+    prereq:
+      level: 4
+  Acute Vision:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: Your senses improve when you are raging.
+    prereq:
+      level: 1
+  Adrenaline Rush:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - rage
+    shortdesc: In the heat of battle, you are capable of amazing feats of strength.
+    prereq:
+      level: 1
+  Draconic Arrogance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: 
+    - rage
+    shortdesc: Few can sway you from your goals while the fury of combat fills you.
+    prereq:
+      level: 1
+      specialize: dragon
+  Moment of Clarity:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - concentrate
+    - rage
+    shortdesc: You push back your rage for a moment in order to think clearly.
+    prereq:
+      level: 1
+  Raging Intimidation:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: Your fury fills your foes with fear.
+    prereq:
+      level: 1
+  Raging Thrower:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: Thrown weapons become especially deadly in your fury. You apply the additional damage from Rage to your thrown weapon attacks. If you have the Brutal Critical feat or the devastator class feature, apply their benefits to thrown weapon attacks.
+    prereq:
+      level: 1
+  Sudden Charge:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    - Fighter
+    traits:
+    - flourish
+    - open
+    shortdesc: With a quick sprint, you dash up to your foe and swing.
+    prereq:
+      level: 1
+  Acute Scent:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: When you Rage, your sense of smell improves.
+    prereq:
+      level: 2
+      feat: 
+      - Acute Vision
+  Bashing Charge:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - flourish
+    shortdesc: You smash, bust, and charge through solid obstacles without hesitation.
+    prereq:
+      level: 2
+      skill: Athletics/trained
+  Furious Finish:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - rage
+    shortdesc: Desperate to finish the fight, you pour all your rage into one final blow.
+    prereq:
+      level: 2
+  No Escape:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - rage
+    shortdesc: You keep pace with a retreating foe.
+    prereq:
+      level: 2
+  Second Wind:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: You can enter a second rage, but afterward you need to catch your breath.
+    prereq:
+      level: 2
+  Shake it Off:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - concentrate
+    - rage
+    shortdesc: You concentrate on your rage, overcoming fear and fighting back sickness.
+    prereq:
+      level: 2
+  Barreling Charge:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You rush forward, moving enemies aside to reach your foe.
+    prereq:
+      level: 4
+      skill: Athletics/trained
+  Fast Movement:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: Your rage is a frenzy of rapid movements.
+    prereq:
+      level: 4
+  Oversized Throw:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - rage
+    shortdesc: With a great heave, you seize a piece of your surroundings, such as a boulder, log, table, wagon, or chunk of earth, and hurl it at your foes.
+    prereq:
+      level: 4
+  Raging Athlete:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: Physical obstacles can’t hold back your fury.
+    prereq:
+      level: 4
+      skill: Athletics/expert
+  Spiritual Guides:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - concentrate
+    - fortune
+    shortdesc: Though no one sees them and only you can hear them, the spirits around you constantly chatter, save when you are raging.
+    prereq:
+      level: 4
+      specialize: spirit
+  Supernatural Senses:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits:
+    - rage
+    shortdesc: Your scent is preternaturally sharp, and you can always rely on your sense of smell to help guide you when your vision is compromised.
+    prereq:
+      level: 4
+      feat: 
+      - Acute Senses
+  Swipe:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You make a wide, arcing swing.
+    prereq:
+      level: 4
+  Wounded Rage:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Barbarian
+    traits: []
+    shortdesc: You roar in pain, awakening the rage within you.
+    prereq:
+      level: 4
+  Bardic Lore:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: Your studies make you informed on every subject.
+    prereq:
+      level: 1
+      specialize: enigma
+  Hymn of Healing:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You learn the hymn of healing composition spell (page 228), which imbues your music with rich melodies that help your allies recover from harm.
+    prereq:
+      level: 1
+  Lingering Composition:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: By adding a flourish, you make your compositions last longer.
+    prereq:
+      level: 1
+      specialize: maestro
+  Martial Performance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: Your muse has taught you how to handle a wider variety of weapons than most bards, empowering you to effortlessly blend your performance into combat even with the most inelegant tools.
+    prereq:
+      level: 1
+      specialize: Warrior
+  Reach Spell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    - Cleric
+    - Druid
+    - Oracle
+    - Sorcerer
+    - Witch
+    - Wizard
+    traits:
+    - concentrate
+    - metamagic
+    shortdesc: You can extend your spells’ range.
+    prereq:
+      level: 1
+  Versatile Performance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You can rely on the grandeur of your performances rather than ordinary social skills.
+    prereq:
+      level: 1
+      specialize: Polymath
+  Well-Versed:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You're resilient to performative influences that aren't your own.
+    prereq:
+      level: 1
+  Directed Audience:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You can shape the area of your composition spells.
+    prereq:
+      level: 2
+  Esoteric Polymath:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You keep a book of occult spells, similar to a wizard’s spellbook.
+    prereq:
+      level: 2
+      specialize: Polymath
+  Inspire Competence:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You learn to aid your allies’ skills with your performance.
+    prereq:
+      level: 2
+      specialize: Maestro
+  Loremaster's Etude:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits:
+    - fortune
+    shortdesc: You magically unlock memories, making them easier to recall.
+    prereq:
+      level: 2
+      specialize: Enigma
+  Multifarious Muse:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: Your muse doesn’t fall into a single label.
+    prereq:
+      level: 2
+  Song of Strength:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: Your performances inspire strength in your allies.
+    prereq:
+      level: 2
+      specialize: Warrior
+  Combat Reading:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits:
+    - secret
+    shortdesc: You use a performer's cold reading techniques, aura reading, and other tricks to discover your foe's strengths and weaknesses.
+    prereq:
+      level: 4
+  Courageous Advance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits:
+    - auditory
+    - concentrate
+    - metamagic
+    shortdesc: With a rousing call, you exhort an ally to advance.
+    prereq:
+      level: 4
+      specialize: Warrior
+  Inspire Defense:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You learn to protect yourself and your allies with your performance.
+    prereq:
+      level: 4
+      specialize: Maestro
+  Melodious Spell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits:
+    - concentrate
+    - manipulate
+    - metamagic
+    shortdesc: You subtly weave your spellcasting into your performance.
+    prereq:
+      level: 4
+  Ritual Researcher:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits:
+    - uncommon
+    shortdesc: Careful research into the art of rituals has made you better at performing them.
+    prereq:
+      level: 4
+      specialize: enigma
+      skill: Occultism/expert
+  Triple Time:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You learn to speed up yourself and your allies with your performance.
+    prereq:
+      level: 4
+  Versatile Signature:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Bard
+    traits: []
+    shortdesc: You’re always tweaking your available repertoire.
+    prereq:
+      level: 4
+      specialize: Polymath
+  Deity's Domain:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: You embody an aspect of your deity.
+    prereq:
+      level: 1
+  Desperate Prayer:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: You call out to your deity in a plea for their aid.
+    prereq:
+      level: 1
+  Ranged Reprisal:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: You can use Retributive Strike with a ranged weapon.
+    prereq:
+      level: 1
+      specialize: Paladin
+  Unimpeded Step:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: With a burst of divine liberation, your spur your ally’s movement.
+    prereq:
+      level: 1
+      specialize: Liberator
+  Weight of Guilt:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: Guilt clouds the minds of those who ignore your Glimpse of Redemption.
+    prereq:
+      level: 1
+      specialize: Redeemer
+  Divine Grace:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: You call upon your deity’s grace.
+    prereq:
+      level: 2
+  Dragonslayer Oath:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    - oath
+    shortdesc: You’ve sworn to slay evil dragons.
+    prereq:
+      level: 2
+      oralign: 
+      - LG
+      - CG
+      - NG
+  Esoteric Oath:
+    assoc_charclass: 
+    - Champion
+    traits:
+    - oath
+    shortdesc: You've sworn an oath to slay the alien abominations that lurk in the remote corners of Golarion.
+    prereq:
+      level: 2
+  Fiendsbane Oath:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits:
+    - oath
+    shortdesc: You’ve sworn an oath to banish the corruption of fiends to the dark planes they call home.
+    prereq:
+      level: 2
+      oralign: 
+      - LG
+      - CG
+      - NG
+  Shining Oath:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits:
+    - oath
+    shortdesc: You’ve sworn an oath to put the undead to rest.
+    prereq:
+      level: 2
+      oralign: 
+      - LG
+      - CG
+      - NG
+  Vengeful Oath:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits:
+    - oath
+    shortdesc: You’ve sworn an oath to hunt down wicked evildoers and bring them to judgment.
+    prereq:
+      level: 2
+      specialize: Paladin
+  Accelerating Touch:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: Your healing energies are infused with bounding energy.
+    prereq:
+      level: 4
+      oralign: 
+      - LG
+      - CG
+      - NG
+  Aura of Courage:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: You stand strong in the face of danger and inspire your allies to do the same.
+    prereq:
+      level: 4
+      oralign: 
+      - LG
+      - CG
+      - NG
+  Divine Health:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits: []
+    shortdesc: Your faith makes you resistant to disease.
+    prereq:
+      level: 4
+      oralign: 
+      - LG
+      - CG
+      - NG
+  Mercy:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Champion
+    traits:
+    - champion
+    - concentrate
+    - metamagic
+    shortdesc: Your touch relieves fear and restores movement.
+    prereq:
+      level: 4
+  Deadly Simplicity:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: Your deity’s weapon is especially powerful in your hands.
+    prereq:
+      level: 1
+  Domain Initiate:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: Your deity bestows a special spell related to their powers.
+    prereq:
+      level: 1
+  Harming Hands:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: The mordant power of your negative energy grows.
+    prereq:
+      level: 1
+      divine_font: harm
+  Healing Hands:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: Your positive energy is even more vibrant and restorative.
+    prereq:
+      level: 1
+      divine_font: heal
+  Holy Castigation:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: You combine holy energy with positive energy to damage demons, devils, and their evil ilk.
+    prereq:
+      level: 1
+      alignment: good
+  Premonition of Avoidance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: Your deity grants you limited foresight, warning you of dangers an instant before they occur.
+    prereq:
+      level: 1
+  Communal Healing:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits:
+    - healing
+    - positive
+    shortdesc: You’re a conduit for positive energy, and as you channel it through you, it heals some of your minor injuries.
+    prereq:
+      level: 2
+  Emblazon Armament:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: 
+    - exploration
+    shortdesc: Carefully etching a sacred image into a physical object, you steel yourself for battle.
+    prereq:
+      level: 2
+  Rapid Response:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: You work quickly and efficiently in times of danger to deliver needed assistance.
+    prereq:
+      level: 2
+  Sap Life:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits:
+    - healing
+    shortdesc: You draw the life force out of your enemies to heal your own wounds.
+    prereq:
+      level: 2
+  Turn Undead:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: Undead harmed by your positive energy might flee, compelled by an innate aversion to the force opposite undeath.
+    prereq:
+      level: 2
+  Versatile Font:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: As you explore your deity’s aspects, you move beyond restrictions on healing or harming.
+    prereq:
+      level: 2
+  Channel Smite:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits:
+    - divine
+    - necromancy
+    shortdesc: You siphon the destructive energies of positive or negative energy through a melee attack and into your foe.
+    prereq:
+      level: 4
+      deity: 
+      - Angoron 
+      - Gilead 
+      - Animus 
+      - Ceinara 
+      - Dana 
+      - Rada 
+      - Reos 
+      - Serriel 
+      - Vardama 
+      - Deimos 
+  Directed Channel:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: You can shape the energy you channel in a single direction, reaching farther and in a more directed fashion.
+    prereq:
+      level: 4
+  Improved Communal Healing:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: You can direct excess channeled energy outward to benefit an ally.
+    prereq:
+      level: 4
+      feat: 
+      - Communal Healing
+  Radiant Infusion:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Cleric
+    traits: []
+    shortdesc: You pour invigorating positive energy into a living ally.
+    prereq:
+      level: 4
+      divine_font: heal
+      oralignment: 
+      - LG
+      - CG
+      - NG
+  Animal Companion:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    - Ranger
+    traits: []
+    shortdesc: You gain the service of a young animal companion that travels with you.
+    prereq:
+      level: 1
+      specialize: Animal
+  Leshy Familiar:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You gain a leshy familiar, a tiny plant that embodies one of the many spirits of nature.
+    prereq:
+      level: 1
+      specialize: Leaf
+  Storm Born:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You are at home out in the elements, reveling in the power of nature unleashed.
+    prereq:
+      level: 1
+      specialize: Storm
+  Verdant Weapon:
+    assoc_charclass: 
+    - Druid
+    traits:
+    - exploration
+    shortdesc: You cultivate a seed that can sprout into a wooden staff, vine whip, or another weapon.
+    prereq:
+      level: 1
+  Widen Spell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    - Oracle
+    - Sorcerer
+    - Witch
+    - Wizard
+    traits:
+    - manipulate
+    - metamagic
+    shortdesc: You manipulate the energy of your spell, causing it to spread out and affect a wider area.
+    prereq:
+      level: 1
+  Wild Shape:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You are one with the wild, always changing and adapting to meet any challenge.
+    prereq:
+      level: 1
+      specialize: Wild
+  Call of the Wild:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You call upon the creatures of nature to come to your aid.
+    prereq:
+      level: 2
+  Order Explorer:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You have learned the secrets of another druidic order.
+    prereq:
+      level: 2
+  Poison Resistance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    - Alchemist
+    traits: []
+    shortdesc: Repeated exposure to toxic reagents has fortified your body against poisons of all kinds.
+    prereq:
+      level: 2
+  Elemental Summons:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You can call the four elements to you.
+    prereq:
+      level: 4
+  Form Control:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits:
+    - manipulate
+    - metamagic
+    shortdesc: With additional care and effort, you can take on an alternate form for a longer period of time.
+    prereq:
+      level: 4
+      ability: Strength/14
+      feat: 
+      - Wild Shape
+  Leshy Familiar Secrets:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: The leaf order's secrets allow your familiar to take advantage of its leshy form.
+    prereq:
+      level: 4
+      specialize: Leaf
+  Mature Animal Companion (Druid):
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: Your animal companion grows up, becoming a mature animal companion, which grants it additional capabilities.
+    prereq:
+      level: 4
+      feat: 
+      - Animal Companion
+  Order Magic:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You have delved deeper into the teaching of a new order, gaining access to a coveted order spell.
+    prereq:
+      level: 4
+      feat: 
+      - Order Explorer
+  Thousand Faces:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits:
+    - druid
+    shortdesc: Your form is as mutable as the weather, changing to meet your whim.
+    prereq:
+      level: 4
+      feat: 
+      - Wild Shape
+  Woodland Stride:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Druid
+    traits: []
+    shortdesc: You can always find a path, almost as if foliage parted before you.
+    prereq:
+      level: 4
+      specialize: Leaf
+  Combat Assessment:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You make a telegraphed attack to learn about your foe.
+    prereq:
+      level: 1
+  Double Slice:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You lash out at your foe with both weapons.
+    prereq:
+      level: 1
+  Exacting Strike:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - press
+    shortdesc: You make a controlled attack, fully accounting for your momentum.
+    prereq:
+      level: 1
+  Point-Blank Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - open
+    - stance
+    shortdesc: You take aim to pick off nearby enemies quickly.
+    prereq:
+      level: 1
+  Power Attack:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You unleash a particularly powerful attack that clobbers your foe but leaves you a bit unsteady.
+    prereq:
+      level: 1
+  Reactive Shield:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You can snap your shield into place just as you would take a blow, avoiding the hit at the last second.
+    prereq:
+      level: 1
+  Snagging Strike:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You combine an attack with quick grappling moves to throw an enemy off balance as long as it stays in your reach.
+    prereq:
+      level: 1
+  Aggressive Block:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You push back as you block the attack, knocking your foe away or off balance.
+    prereq:
+      level: 2
+  Assisting Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - press
+    shortdesc: With a quick shot, you interfere with a foe in combat.
+    prereq:
+      level: 2
+  Brutish Shove:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: 
+    - press
+    shortdesc: Throwing your weight behind your attack, you hit you opponent hard enough to make it stumble back.
+    prereq:
+      level: 2
+  Combat Grab:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - press
+    shortdesc: You swipe at your opponent and grab at them.
+    prereq:
+      level: 2
+  Dragging Strike:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - press
+    shortdesc: You aim your weapon to snag a foe's armor, clothing, or flesh to pull them closer.
+    prereq:
+      level: 2
+  Dueling Parry (Fighter):
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You can parry attacks against you with your one-handed weapon.
+    prereq:
+      level: 2
+  Intimidating Strike:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - emotion
+    - fear
+    - mental
+    shortdesc: Your blow not only wounds creatures but also shatters their confidence.
+    prereq:
+      level: 2
+  Lunge:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: Extending your body to its limits, you attack an enemy that would normally be beyond your reach.
+    prereq:
+      level: 2
+  Rebounding Toss:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You bounce your weapon off one foe to strike another.
+    prereq:
+      level: 2
+  Double Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You shoot twice in blindingly fast succession.
+    prereq:
+      level: 4
+  Dual-Handed Assault:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You snap your free hand over to grip your weapon just long enough to add momentum and deliver a more powerful blow to your opponent.
+    prereq:
+      level: 4
+  Knockdown:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - flourish
+    shortdesc: You make an attack to knock a foe off balance, then follow up immediately with a sweep to topple them.
+    prereq:
+      level: 4
+      skill: Athletics/trained
+  Parting Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You jump back and fire a quick shot that catches your opponent off guard.
+    prereq:
+      level: 4
+  Powerful Shove:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: You can push larger foes around with your attack.
+    prereq:
+      level: 4
+      orfeat: 
+      - Aggressive Block
+      - Brutish Shove
+  Quick Reversal:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits:
+    - flourish
+    - press
+    shortdesc: "You turn your foes’ flanking against them with a quick reverse."
+    prereq:
+      level: 4
+  Shielded Stride:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Fighter
+    traits: []
+    shortdesc: "When your shield is up, your enemies’ blows can’t touch you."
+    prereq:
+      level: 4
+  Twin Parry:
+    assoc_charclass: 
+    - Fighter
+    - Ranger
+    traits: []
+    shortdesc: You use your two weapons to parry attacks.
+    prereq:
+      level: 4
+  Flexible Studies:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You've collected a cross-section of information on various disciplines you can refer to when preparing for various tasks.
+    prereq:
+      level: 1
+  Known Weaknesses:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: Whenever you Devise a Stratagem, you can also attempt a check to Recall Knowledge as part of that action.
+    prereq:
+      level: 1
+  Takedown Expert:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You've mastered combat practices that let you get up close and bring down perpetrators alive.
+    prereq:
+      level: 1
+  That's Odd:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: When you enter a new location, such as a room or corridor, you immediately notice one thing out of the ordinary.
+    prereq:
+      level: 1
+  Trap Finder:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    - Rogue
+    traits: []
+    shortdesc: You have an intuitive sense that alerts you to the dangers and presence of traps.
+    prereq:
+      level: 1
+  Underworld Investigator:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: Your work as an investigator makes you familiar with the criminal element.
+    prereq:
+      level: 1
+  Athletic Strategist:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You know how to calculatedly manipulate joints and body weight.
+    prereq:
+      level: 2
+      skill: Athletics/trained
+  Red Herring:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You have a keen sense for avoiding spurious lines of inquiry.
+    prereq:
+      level: 2
+  Shared Stratagem:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: The plans you make include your allies as well as yourself.
+    prereq:
+      level: 2
+  Solid Lead:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: Sometimes your case splinters into smaller mysteries, but you never lose sight of the big picture.
+    prereq:
+      level: 2
+  Alchemical Discoveries:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You've devoted extra time in the lab to improve your knowledge of alchemy.
+    prereq:
+      level: 4
+  Detective's Readiness:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: When you're on a case, you stay watchful and resolute to avoid tricks your suspect might pull.
+    prereq:
+      level: 4
+  Lie Detector:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You're adept at noticing the tells of a liar—sweat, flushing, a quavering voice, a quickening pulse.
+    prereq:
+      level: 4
+      orspecialize: 
+      - empiricism 
+      - interrogation
+  Ongoing Investigation:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You're always investigating what's around you, even as you perform other activities.
+    prereq:
+      level: 4
+  Scalpel's Point:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: Your stratagems benefit from your precise knowledge of anatomy.
+    prereq:
+      level: 4
+      specialize: forensic medicine
+  Strategic Assessment:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Investigator
+    traits: []
+    shortdesc: You learn your foes' strengths and weaknesses by watching them move.
+    prereq:
+      level: 4
+  Crane Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You enter the stance of a crane, holding your arms in an imitation of a crane’s wings.
+    prereq:
+      level: 1
+  Dragon Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You enter the stance of a dragon and make powerful leg strikes like a lashing dragon’s tail.
+    prereq:
+      level: 1
+  Gorilla Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You lower yourself to the ground and take an imposing, knuckle-walking stance.
+    prereq:
+      level: 1
+  Ki Rush:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You can use ki to move with extraordinary speed and make yourself harder to hit.
+    prereq:
+      level: 1
+  Ki Strike:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: Your study of the flow of mystical energy allows you to harness it into your physical strikes.
+    prereq:
+      level: 1
+  Monastic Archer Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You enter a specialized stance for a unique martial art centered around the use of a bow.
+    prereq:
+      level: 1
+  Monastic Weaponry:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You have trained with the traditional weaponry of your monastery or school.
+    prereq:
+      level: 1
+  Mountain Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    - stance
+    shortdesc: You enter the stance of an implacable mountain allowing you to strike with the weight of an avalanche.
+    prereq:
+      level: 1
+  Stumbling Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: 
+    - stance
+    shortdesc: You enter a seemingly unfocused stance that mimics the movements of the inebriated—bobbing, weaving, leaving false openings, and distracting your enemies from your true movements.
+    prereq:
+      level: 1
+      skill: Deception/trained
+  Tiger Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You enter the stance of a tiger and can make tiger claw attacks.
+    prereq:
+      level: 1
+  Wolf Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You enter the stance of a wolf, low to the ground with your hands held like fanged teeth.
+    prereq:
+      level: 1
+  Ancestral Weaponry:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You blend monastic techniques with the ancestral fighting styles of your people.
+    prereq:
+      level: 2
+      feat: 
+      - Monastic Weaponry
+  Brawling Focus:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You know how to make the most of your attacks when fighting hand-to-hand.
+    prereq:
+      level: 2
+  Crushing Grab:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: Like a powerful constrictor, you crush targets in your unyielding grasp.
+    prereq:
+      level: 2
+  Dancing Leaf:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You are as light as a leaf whirling in the breeze.
+    prereq:
+      level: 2
+  Elemental Fist:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You call upon the power of the elements, infusing your ki with elemental energy and allowing your attacks to deal energy damage.
+    prereq:
+      level: 2
+      feat: 
+      - Ki Strike
+  Shooting Stars Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits:
+    - stance
+    shortdesc: You enter a stance that lets you throw shuriken with lightning speed.
+    prereq:
+      level: 2
+      feat: 
+      - Monastic Weaponry
+  Stunning Fist:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: The focused power of your flurry threatens to overwhelm your opponent.
+    prereq:
+      level: 2
+  Cobra Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: 
+    - stance
+    shortdesc: You enter a tight stance, coiled up like a lashing cobra with your hands poised as venomous fangs.
+    prereq:
+      level: 4
+  Deflect Arrow:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: Your reflexes allow you to deflect ranged attacks.
+    prereq:
+      level: 4
+  Flurry of Maneuvers:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You flurry is a combination of maneuvers.
+    prereq:
+      level: 4
+      skill: Athletics/expert
+  Flying Kick:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You launch yourself at a foe.
+    prereq:
+      level: 4
+  Guarded Movement:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: Your guard is up, even while moving.
+    prereq:
+      level: 4
+  Peafowl Stance:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: 
+    - stance
+    shortdesc: You enter a tall and proud stance while remaining mobile, with all the grace and composure of a peafowl.
+    prereq:
+      level: 4
+      feat: 
+      - Monastic Weaponry
+  Stand Still:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You strike out when your foe tries to flee.
+    prereq:
+      level: 4
+  Wholeness of Body:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Monk
+    traits: []
+    shortdesc: You can restore your health by tapping into your ki.
+    prereq:
+      level: 4 
+  Glean Lore:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Oracle
+    traits:
+    - divination
+    - divine
+    - secret
+    shortdesc: You tap into the collected lore of the divine, accessing a variety of potentially useful information.
+    prereq:
+      level: 1
+  Divine Aegis:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Oracle
+    traits:
+    - abjuration
+    - divine
+    shortdesc: You summon divine energy to shield yourself, offering protection against other traditions but leaving you exposed to other divine effects.
+    prereq:
+      level: 2
+  Domain Acumen:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Oracle
+    traits: []
+    shortdesc: Every oracle's mystery touches on a divine domain of the deities that fuel it; you can access that power.
+    prereq:
+      level: 2
+  Bespell Weapon:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Oracle
+    - Sorcerer
+    - Wizard
+    traits: []
+    shortdesc: "You siphon the residual energy from the last spell you cast into one weapon you’re wielding."
+    prereq:
+      level: 4
+  Divine Access:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Oracle
+    traits: []
+    shortdesc: Your ability to tap into divine magic surpasses the spells traditionally available to you (the divine spell list).
+    prereq:
+      level: 4
+  Vision of Weakness:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Oracle
+    traits: []
+    shortdesc: You can call upon divine insights to single out your foes' weak points.
+    prereq:
+      level: 4
+  Crossbow Ace:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You have a deep understanding of the crossbow.
+    prereq:
+      level: 1
+  Gravity Weapon:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: Your expertise with your weapons and commitment to taking out your targets lends you magical power.
+    prereq:
+      level: 1
+  Heal Companion:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You have a deep devotion to your animal companion that enables you to magically heal their wounds.
+    prereq:
+      level: 1
+  Hunted Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits:
+    - flourish
+    shortdesc: You take two quick shots against the one you hunt.
+    prereq:
+      level: 1
+  Monster Hunter:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You swiftly assess your prey and apply what you know.
+    prereq:
+      level: 1
+  Twin Takedown:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits:
+    - flourish
+    shortdesc: You swiftly attack your hunted prey with both weapons.
+    prereq:
+      level: 1
+  Favored Terrain:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You have studied a specific terrain to overcome its challenges.
+    prereq:
+      level: 2
+  Hunter's Aim:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits:
+    - concentrate
+    shortdesc: When you focus on aiming, your attack becomes particularly accurate.
+    prereq:
+      level: 2
+  Magic Hide:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You can defend your companion in battle.
+    prereq:
+      level: 2
+  Monster Warden:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You understand how to defend yourself and others against your prey.
+    prereq:
+      level: 2
+      feat: 
+      - Monster Hunter
+  Snare Hopping:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You can magically move your snares around.
+    prereq:
+      level: 2
+      feat: 
+      - Snare Crafting
+  Wild Empathy:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You have a connection to the creatures of the natural world.
+    prereq:
+      level: 2
+  Animal Feature:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You are so connected with the animal world that you can grant yourself an animal's features and abilities.
+    prereq:
+      level: 4
+  Companion's Cry:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You can urge your companion to do its utmost.
+    prereq:
+      level: 4
+      feat: 
+      - Animal Companion 
+  Disrupt Prey:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: Make a melee Strike against your prey.
+    prereq:
+      level: 4
+  Far Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: Your experience in the field has taught you how to focus your aim at a distance.
+    prereq:
+      level: 4
+  Favored Enemy:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You have studied a specific type of wild creature and can hunt it more easily.
+    prereq:
+      level: 4
+  Hunter's Luck:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: Your recollection of monsters is magically enhanced by luck.
+    prereq:
+      level: 4
+  Running Reload:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You can reload your weapon on the move.
+    prereq:
+      level: 4
+  Scout's Warning:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You visually or audibly warn your allies of danger.
+    prereq:
+      level: 4
+  Snare Specialist:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You specialize in creating quick traps to obstruct your enemies on the battlefield.
+    prereq:
+      level: 4
+      skill: Crafting/expert
+      feat: 
+      - Snare Crafting 
+  Soothing Mist:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Ranger
+    traits: []
+    shortdesc: You have a connection to the healing properties of nature and can produce a magical mist to heal damage and stop burning or bleeding.
+    prereq:
+      level: 4
+  Nimble Dodge:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You deftly dodge out of the way.
+    prereq:
+      level: 1
+  Overextending Feint:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: When you trick a foe, instead of catching them off guard, you goad them into overextending their next attack.
+    prereq:
+      level: 1
+      skill: Deception/trained
+  Plant Evidence:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You can put a single item you're holding of light or negligible Bulk onto a person without them noticing.
+    prereq:
+      level: 1
+      feat: 
+      - Pickpocket
+  Tumble Behind (Rogue):
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You tumble under and behind your foe to catch them off guard.
+    prereq:
+      level: 1
+  Twin Feint:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You make a dazzling series of attacks with both weapons, using the first attack to throw your foe off guard against a second attack at a different angle.
+    prereq:
+      level: 1
+  You're Next:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits:
+    - emotion
+    - fear
+    - mental
+    shortdesc: "After downing a foe, you menacingly remind another foe that you’re coming after them next."
+    prereq:
+      level: 1
+      skill: Intimidation/trained
+  Brutal Beating:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: "The brutality of your critical hits shakes your foes’ confidence."
+    prereq:
+      level: 2
+  Clever Gambit:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: Your battle tactics are aided by your assessment of your foes' capabilities, allowing you to instantly adjust your movements to maximum advantage.
+    prereq:
+      level: 2
+  Distracting Feint:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: "Your Feints are far more distracting than normal, drawing your foes’ attention and allowing you and your allies to take greater advantage."
+    prereq:
+      level: 2
+  Minor Magic:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You’ve dabbled in a variety of tricks, gaining minor magical abilities from a particular tradition.
+    prereq:
+      level: 2
+  Mobility:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You move in a way that denies your enemies the opportunity to retaliate.
+    prereq:
+      level: 2
+  Strong Arm:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: When you Strike with a thrown weapon, the weapon's range increment increases 10 feet.
+    prereq:
+      level: 2
+  Unbalancing Blow:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: Interweaving your most powerful attacks in a graceful flow, you temporarily unbalance your foes. Whenever your Strike is a critical hit and deals damage, the target is flat-footed against your attacks until the end of your next turn.
+    prereq:
+      level: 2
+  Underhanded Assault:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You capitalize on the distraction provided by an ally.
+    prereq:
+      level: 2
+      skill: Stealth/trained
+  Battle Assessment:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits:
+    - secret
+    shortdesc: With careful observation during battle, you identify an enemy’s strengths and weaknesses.
+    prereq:
+      level: 4
+  Dread Striker:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You capitalize on your enemies’ fear to slip past their defenses.
+    prereq:
+      level: 4
+  Head Stomp:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: Make an unarmed melee attack against a prone target.
+    prereq:
+      level: 4
+  Magical Trickster:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You can sneak spells past your foes’ defenses as easily as any blade.
+    prereq:
+      level: 4
+  Poison Weapon:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits:
+    - manipulate 
+    shortdesc: You apply poison to a weapon.
+    prereq:
+      level: 4
+  Predictable!:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: By observing an opponent, you can get a sense of their next move and prepare to counter or resist it.
+    prereq:
+      level: 4
+  Reactive Pursuit:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You keep pace with a retreating foe.
+    prereq:
+      level: 4
+  Sabotage:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits:
+    - incapacitation
+    shortdesc: You subtly damage others’ equipment.
+    prereq:
+      level: 4
+  The Harder They Fall (Rogue):
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: You make your foes fall painfully when you trip them.
+    prereq:
+      level: 4
+  Twin Distraction:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Rogue
+    traits: []
+    shortdesc: Your movements with two weapons are so swift and disorienting that they befuddle your opponent.
+    prereq:
+      level: 4
+      feat: 
+      - Twin Feint
+  Counterspell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    - Witch
+    - Wizard
+    traits:
+    - abjuration
+    - arcane
+    shortdesc: When a foe Casts a Spell and you can see its manifestations, you can use your own magic to disrupt it.
+    prereq:
+      level: 1
+  Ancestral Blood Magic:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits: []
+    shortdesc: The magic of your bloodline mixes with that of your ancestry.
+    prereq:
+      level: 1
+  Dangerous Sorcery:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits: []
+    shortdesc: Your legacy grants you great destructive power.
+    prereq:
+      level: 1
+  Anoint Ally:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - manipulate
+    shortdesc: You forge a mystical connection with an ally using your body as a focus, allowing them to benefit from your magic.
+    prereq:
+      level: 2
+  Entreat with Forebears:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits: []
+    shortdesc: Something about your presence causes creatures of your bloodline to, consciously or not, recognize you as one of their own, and you become inured to their tricks.
+    prereq:
+      level: 2
+  Arcane Evolution:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - arcane
+    shortdesc: Your arcane legacy grants you an exceptional aptitude for intellectual and academic pursuits.
+    prereq:
+      level: 4
+      tradition: arcane
+  Divine Evolution:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - divine
+    shortdesc: The divine might provided by your bloodline flows through you.
+    prereq:
+      level: 4
+      tradition: divine
+  Elaborate Flourish:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - concentrate
+    - manipulate
+    - metamagic
+    shortdesc: You embellish your spellcasting with entrancing flourishes and grand pronouncements, making it harder to identify or counter.
+    prereq:
+      level: 4
+  Occult Evolution:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - occult
+    shortdesc: Glimpses of the obscure secrets of the universe loan you power.
+    prereq:
+      level: 4
+      tradition: occult
+  Primal Evolution:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - primal
+    shortdesc: You can call upon the creatures of the wild for aid.
+    prereq:
+      level: 4
+      tradition: primal
+  Split Shot:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Sorcerer
+    traits:
+    - concentrate
+    - metamagic
+    shortdesc: You fragment a ranged spell into a pair of smaller shots.
+    prereq:
+      level: 4
+  Basic Lesson:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: Your patron grants you a special lesson, revealing a hidden facet of its nature.
+    prereq:
+      level: 2
+  Cackle:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: You can extend one of your spells with a quick burst of laughter.
+    prereq:
+      level: 1
+  Cauldron:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: You can use the Craft activity to create oils and potions.
+    prereq:
+      level: 1
+  Wortwitch:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: You have a particular affinity for leafy plants.
+    prereq:
+      level: 1
+  Conceal Spell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    - Wizard
+    traits:
+    - concentrate
+    - manipulate
+    - metamagic
+    shortdesc: Hiding your gestures and incantations within other speech and movement, you attempt to conceal the fact that you are casting a spell.
+    prereq:
+      level: 2
+  Familiar's Language:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits:
+    - divination
+    shortdesc: You've learned to speak with your familiar and other creatures like it.
+    prereq:
+      level: 2
+  Living Hair:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: You can instantly grow or shrink your hair, eyebrows, beard, or mustache by up to several feet and manipulate your hair for use as a weapon, though your control isn't fine enough for more dexterous tasks.
+    prereq:
+      level: 2
+  Eldritch Nails:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: Your nails are supernaturally long and sharp.
+    prereq:
+      level: 4
+  Improved Familiar (Witch):
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: You find it easy to attract a powerful and unusual familiar to your side.
+    prereq:
+      level: 4
+  Rites of Convocation:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Witch
+    traits: []
+    shortdesc: Your patron grants you the power to summon other creatures to aid you.
+    prereq:
+      level: 4
+  Eschew Materials:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits: []
+    shortdesc: You can use clever workarounds to replicate the arcane essence of certain materials.
+    prereq:
+      level: 1
+  Hand of the Apprentice:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits: []
+    shortdesc: You can magically hurl your weapon at your foe.
+    prereq:
+      level: 1
+  Spellbook Prodigy:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits: []
+    shortdesc: You are particularly adept at learning spells to add to your spellbook.
+    prereq:
+      level: 1
+      skill: Arcana/trained
+  Energy Ablation:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits:
+    - metamagic
+    shortdesc: When you cast energy spells, you retain some of that energy as a protective barrier.
+    prereq:
+      level: 2
+  Nonlethal Spell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits:
+    - manipulate
+    - metamagic
+    shortdesc: You can alter offensive spells to be less deadly.
+    prereq:
+      level: 2
+  Call Bonded Item:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits:
+    - concentrate
+    - conjuration
+    - teleportation
+    shortdesc: You're mystically connected to your bonded item and can call it to your hand.
+    prereq:
+      level: 4
+  Linked Focus:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits: []
+    shortdesc: You have linked your bonded item to the well of energy that powers your school spells.
+    prereq:
+      level: 4
+  Silent Spell:
+    feat_type: 
+    - Charclass
+    assoc_charclass: 
+    - Wizard
+    traits:
+    - concentrate
+    - metamagic
+    shortdesc: You’ve learned how to cast many of your spells without speaking the words of power you would normally need to provide.
+    prereq:
+      level: 4
+      feat: 
+      - Conceal Spell
