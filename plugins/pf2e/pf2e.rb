@@ -72,15 +72,6 @@ module AresMUSH
         when "unset"
           return PF2SkillUnSetCmd
         end
-      when "lore"
-        case cmd.switch
-        when "set"
-          return PF2LoreSetCmd
-        when "unset"
-          return PF2LoreUnSetCmd
-        when "info"
-          return PF2LoreInfoCmd
-        end
       when "lang"
         case cmd.switch
         when "set"
@@ -96,6 +87,8 @@ module AresMUSH
           return PF2FeatSetCmd
         when "info"
           return PF2FeatInfoCmd
+        else
+          return PF2FeatDisplayOneCmd
         end
       end
 
