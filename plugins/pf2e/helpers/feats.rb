@@ -169,7 +169,7 @@ module AresMUSH
 
     end
 
-    def format_feat(feat, details)
+    def self.format_feat(feat, details)
       fmt_name = "#{title_color}#{feat}%xn"
       feat_type = "#{item_color}Feat Type:%xn #{details[feat_type].sort.join(", ")}"
       
