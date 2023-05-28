@@ -40,6 +40,7 @@ module AresMUSH
         template = PF2eFeatDisplay.new(paginator, title)
 
         client.emit template.render
+      end
 
     end
 
