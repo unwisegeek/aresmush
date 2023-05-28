@@ -172,22 +172,22 @@ module AresMUSH
     end
 
     def self.format_feat(feat, details)
-      fmt_name = "#{title_color}#{feat}%xn"
-      feat_type = "#{item_color}Feat Type:%xn #{details[feat_type].sort.join(", ")}"
+      fmt_name = "%x172#{feat}%xn"
+      feat_type = "%xh%xwFeat Type:%xn #{details[feat_type].sort.join(", ")}"
       
       # Depending on feat type, this may be different keys with different formats.
 
       if details.has_key? assoc_charclass
-        associated = "#{item_color}Associated To:%xn #{details[assoc_charclass].sort.join(", ")}"
+        associated = "%xh%xwAssociated To:%xn #{details[assoc_charclass].sort.join(", ")}"
       elsif details.has_key? assoc_ancestry
-        associated = "#{item_color}Associated To:%xn #{details[assoc_ancestry].sort.join(", ")}"
+        associated = "%xh%xwAssociated To:%xn #{details[assoc_ancestry].sort.join(", ")}"
       elsif details.has_key? assoc_skill
-        associated = "#{item_color}Associated To:%xn #{details[assoc_skill]}"
+        associated = "%xh%xwAssociated To:%xn #{details[assoc_skill]}"
       else
         associated = "Any"
       end
 
-      traits = "#{item_color}Traits:%xn #{details[traits].sort.join(", ")}"
+      traits = "%xh%xwTraits:%xn #{details[traits].sort.join(", ")}"
       
       # Prerequisites needs its own level of formatting.
 
@@ -197,9 +197,9 @@ module AresMUSH
         prereq_list << "%r%t#{k.capitalize}: #{v}"
       end
 
-      prereqs = "#{item_color}Prerequisites:%xn #{prereq_list.join()}"
+      prereqs = "%xh%xwPrerequisites:%xn #{prereq_list.join()}"
 
-      desc = "#{item_color}Description:%xn #{details[shortdesc]}"
+      desc = "%xh%xwDescription:%xn #{details[shortdesc]}"
 
       "#{fmt_name}%r%r#{feat_type}%r#{associated}%r#{traits}%r#{prereqs}%r#{desc}"
     end
