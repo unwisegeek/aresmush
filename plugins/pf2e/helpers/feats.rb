@@ -1,6 +1,8 @@
 module AresMUSH
   module Pf2e
 
+    include CommonTemplateFields
+
     def self.get_feat_details(term)
 
       string = term.upcase 
