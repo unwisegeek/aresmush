@@ -56,7 +56,7 @@ module AresMUSH
           return
         end
 
-        title = "Feat Info for #{enactor.name}"
+        title = "Feat Info for #{char.name}"
 
         template = PF2eFeatDisplay.new(paginator, title)
 

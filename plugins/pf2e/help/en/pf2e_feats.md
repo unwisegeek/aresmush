@@ -12,14 +12,18 @@ Feats in Pathfinder are special abilities that are tied to a character's develop
 
 These commands can be used to review the feats you have or determine which ones you qualify for.
 
-`feat/info`: Shows details for all feats the character currently possesses.
+`feat/info [<character name>]`: Shows details for all feats <character name> currently possesses. If <character name> is omitted, it will show the details for all of your feats.
 `feat <name>`: Shows details for the named feat.
-`feat/search <category> = <term>`: Shows all feats in <category> matching <term>.
+`feat/search <type> = <term>`: Shows all feats where <term> is found in the <type> field. Possible types include:
 
-Feat category may be one of:
+* name: Search feats by name.
+* type: Search for feats by type. Types include "charclass", "ancestry", "dedication", "archetype", "general", or "skill".
+* trait: Search for feats with a particular trait. 
+* desc: Search for keywords in the description of a feat. 
+* prereq: Search for feats with a particular prerequisite.
 
-* %xgGeneral%xn - General feats that are open to any character who meets the prerequisites.
-* %xgSkill%xn - As with general, but these feats apply specifically to a skill.
-* %xgAncestry%xn - These feats are available only to members of that ancestry.
-* %xgCharclass%xn - These feats are specific to a character class.
-* %xgDedication%xn - These feats relate to multiclassing and archetypes.
+`feat/qualify`: Shows all feats for which the character qualifies but does not yet have.
+
+
+
+
