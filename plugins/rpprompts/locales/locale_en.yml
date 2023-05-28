@@ -1,3 +1,11 @@
 ---
 en:
-  rpprompts: {}
+  rpprompts: 
+    area_updated_ok: "Area type updated."
+
+    invalid_prompt_type: "Invalid prompt type. Valid prompt categories: %{valid}"
+
+    no_such_area: "I didn't find an area named %{name}. Check your spelling."
+
+    prompts_showing_type: 'The prompts above are drawn from the list %{type}. Other types of prompts can be seen by typing %xcprompt <type>%xn.'
+    prompts_title: "Random RP Prompts"
