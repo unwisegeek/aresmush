@@ -5,7 +5,7 @@ module AresMUSH
       include CommandHandler
 
       def handle
-        feat_list = Pf2e.generate_list_details(enactor.pf2_feats.values.flatten)
+        feat_list = Pf2e.generate_list_details(enactor.pf2_feats.values.flatten.sort)
 
         if feat_list.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => "feats")
