@@ -6,7 +6,6 @@ pf2e_background:
     - open
     skills:
     - Religion
-    lores:
     - Scribing Lore
     feat:
     - Student of the Canon
@@ -19,7 +18,6 @@ pf2e_background:
     - open
     skills:
     - Acrobatics
-    lores:
     - Circus Lore
     feat:
     - Steady Balance
@@ -32,7 +30,6 @@ pf2e_background:
     - open
     skills:
     - Society
-    lores:
     - Architecture Lore
     feat:
     - Additional Lore
@@ -44,7 +41,6 @@ pf2e_background:
     - open
     skills:
     - Crafting
-    lores:
     - Guild Lore
     feat:
     - Specialty Crafting
@@ -57,7 +53,6 @@ pf2e_background:
     - open
     skills:
     - Crafting
-    lores:
     - Art Lore
     feat:
     - Specialty Crafting
@@ -83,7 +78,6 @@ pf2e_background:
     - open
     skills:
     - Medicine
-    lores:
     - Surgery Lore
     feat:
     - Risky Surgery
@@ -96,7 +90,6 @@ pf2e_background:
     - open
     skills:
     - Diplomacy
-    lores:
     - Alcohol Lore
     feat:
     - Hobnobber
@@ -109,7 +102,6 @@ pf2e_background:
     - open
     skills:
     - Diplomacy
-    lores:
     - Legal Lore
     feat:
     - Group Impression
@@ -132,7 +124,6 @@ pf2e_background:
     - open
     skills:
     - Society
-    lores:
     - Accounting Lore
     feat:
     - Eye For Numbers
@@ -145,7 +136,6 @@ pf2e_background:
     - open
     skills:
     - Survival
-    lores:
     - Legal Lore
     feat:
     - Experienced Tracker
@@ -156,7 +146,6 @@ pf2e_background:
     - open
     skills:
     - Deception
-    lores:
     - Underworld Lore
     feat:
     - Charming Liar
@@ -169,7 +158,6 @@ pf2e_background:
     - open
     skills:
     - Survival
-    lores:
     - Cooking Lore
     feat:
     - Seasoned
@@ -195,7 +183,6 @@ pf2e_background:
     - open
     skills:
     - Stealth
-    lores:
     - Underworld Lore
     feat:
     - Experienced Smuggler
@@ -221,7 +208,6 @@ pf2e_background:
     - open
     skills:
     - Occultism
-    lores:
     - Curse Lore
     feat: []
     reaction:
@@ -234,7 +220,6 @@ pf2e_background:
     - open
     skills:
     - Society
-    lores:
     - Underworld Lore
     feat:
     - Streetwise
@@ -260,7 +245,6 @@ pf2e_background:
     - open
     skills:
     - Performance
-    lores:
     - Theater Lore
     feat:
     - Fascinating Performance
@@ -273,7 +257,6 @@ pf2e_background:
     - open
     skills:
     - Athletics
-    lores:
     - Farming Lore
     feat:
     - Assurance - Athletics
@@ -298,8 +281,7 @@ pf2e_background:
     abl_boosts:
     - [ Dexterity, Charisma ]
     - open
-    skills: []
-    lores:
+    skills: 
     - Fey Lore
     feat: []
     action:
@@ -313,7 +295,6 @@ pf2e_background:
     - open
     skills:
     - Medicine
-    lores:
     - Warfare Lore
     feat:
     - Battle Medicine
@@ -326,7 +307,6 @@ pf2e_background:
     - open
     skills:
     - Occultism
-    lores:
     - Fortune-Telling Lore
     feat:
     - Lie To Me
@@ -337,7 +317,6 @@ pf2e_background:
     - open
     skills:
     - Deception
-    lores:
     - Games Lore
     feat:
     - Lie To Me
@@ -348,21 +327,30 @@ pf2e_background:
     - open
     skills:
     - Performance
-    lores:
     - Gladiatorial Lore
     feat:
     - Impressive Performance
     special: []
     action: []
     reaction: []
-  Guard:
+  Guard (Legal Lore):
     abl_boosts:
     - [ Strength, Charisma ]
     - open
     skills:
     - Intimidation
-    lores:
     - Legal Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Guard (Warfare Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
     - Warfare Lore
     feat:
     - Quick Coercion
@@ -376,7 +364,6 @@ pf2e_background:
     - Occultism
     - Performance
     - Society
-    lores:
     - Harrow Lore
     feat:
     - Dubious Knowledge
@@ -402,7 +389,6 @@ pf2e_background:
     - open
     skills:
     - Nature
-    lores:
     - Herbalism Lore
     feat:
     - Natural Medicine
@@ -429,7 +415,6 @@ pf2e_background:
     - open
     skills:
     - Survival
-    lores:
     - Tanning Lore
     feat:
     - Survey Wildlife
@@ -442,7 +427,6 @@ pf2e_background:
     - open
     skills:
     - Deception
-    lores:
     - Warfare Lore
     feat:
     - Lengthy Diversion
@@ -455,7 +439,6 @@ pf2e_background:
     - open
     skills:
     - Athletics
-    lores:
     - Labor Lore
     feat:
     - Hefty Hauler
@@ -469,7 +452,6 @@ pf2e_background:
     skills:
     - Acrobatics
     - Athletics
-    lores:
     - Warfare Lore
     feat:
     - Cat Fall
@@ -483,7 +465,6 @@ pf2e_background:
     - open
     skills:
     - Diplomacy
-    lores:
     - Mercantile Lore
     feat:
     - Bargain Hunter
@@ -496,7 +477,6 @@ pf2e_background:
     - open
     skills:
     - Survival
-    lores:
     - Mining Lore
     feat:
     - Terrain Expertise/Underground
@@ -509,7 +489,6 @@ pf2e_background:
     - open
     skills:
     - Society
-    lores:
     - Genealogy Lore
     feat:
     - Courtly Graces
@@ -535,7 +514,6 @@ pf2e_background:
     - open
     skills:
     - Nature
-    lores:
     - Plains Lore
     feat:
     - Express Rider
@@ -561,7 +539,6 @@ pf2e_background:
     - open
     skills:
     - Stealth
-    lores:
     - Underworld Lore
     feat:
     - Experienced Smuggler
@@ -585,7 +562,8 @@ pf2e_background:
     abl_boosts:
     - [ Constitution, Wisdom ]
     - open
-    skills: []
+    skills: 
+    - Boneyard Lore
     feat:
     - Diehard
     - Additional Lore/Boneyard Lore
@@ -599,7 +577,6 @@ pf2e_background:
     - open
     skills:
     - Occultism
-    lores:
     - Herbalism Lore
     feat:
     - Root Magic
@@ -612,7 +589,6 @@ pf2e_background:
     - open
     skills:
     - Athletics
-    lores:
     - Sailing Lore
     feat:
     - Underwater Marauder
@@ -642,7 +618,6 @@ pf2e_background:
     - Nature
     - Occultism
     - Religion
-    lores:
     - Academia Lore
     feat: []
     special: []
@@ -667,7 +642,6 @@ pf2e_background:
     - open
     skills:
     - Society
-    lores:
     - Labor Lore
     feat:
     - Read Lips
@@ -681,21 +655,30 @@ pf2e_background:
     skills:
     - Arcana
     - Occultism
-    lores:
     - Library Lore
     feat:
     - Recognize Spell
     special: []
     action: []
     reaction: []
-  Squire:
+  Squire (Heraldry Lore):
     abl_boosts:
     - [ Strength, Constitution ]
     - open
     skills:
     - Athletics
-    lores:
     - Heraldry Lore
+    feat:
+    - Armor Assist
+    special: []
+    action: []
+    reaction: []
+  Squire (Warfare Lore):
+    abl_boosts:
+    - [ Strength, Constitution ]
+    - open
+    skills:
+    - Athletics
     - Warfare Lore
     feat:
     - Armor Assist
@@ -735,7 +718,6 @@ pf2e_background:
     skills:
     - Performance
     - Society
-    lores:
     - Academia Lore
     feat:
     - Experienced Professional
@@ -748,7 +730,6 @@ pf2e_background:
     - open
     skills:
     - Crafting
-    lores:
     - Engineering Lore
     feat:
     - Specialty Crafting
@@ -761,7 +742,6 @@ pf2e_background:
     - open
     skills:
     - Survival
-    lores:
     - Cartography Lore
     feat: []
     special: []
@@ -773,7 +753,6 @@ pf2e_background:
     - open
     skills:
     - Society
-    lores:
     - Scribing Lore
     feat:
     - Multilingual
@@ -786,7 +765,6 @@ pf2e_background:
     - open
     skills:
     - Performance
-    lores:
     - Genealogy Lore
     feat:
     - Fascinating Performance
@@ -799,7 +777,6 @@ pf2e_background:
     - open
     skills:
     - Intimidation
-    lores:
     - Warfare Lore
     feat:
     - Intimidating Glare
