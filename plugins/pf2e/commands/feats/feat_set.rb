@@ -21,7 +21,7 @@ module AresMUSH
 
         return nil if feat_types.include?(self.feat_type)
 
-        return t('pf2e.bad_feat_type', :type => self.feat_type, :keys => feat_types.sort.join(, ))
+        return t('pf2e.bad_feat_type', :type => self.feat_type, :keys => feat_types.sort.join(", "))
       end
 
       def check_valid_feat
