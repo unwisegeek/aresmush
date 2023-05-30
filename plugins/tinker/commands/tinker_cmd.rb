@@ -13,11 +13,11 @@ module AresMUSH
         
         feat_list = char.pf2_feats.values.flatten
         
-        client.emit feat_list
+        required = [ "Intimidating Glare" ]
         
-        details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
+        eval = required.all? { |f| feat_list.include? f }
         
-        client.emit details
+        client.emit "Tinker check returns #{eval}."
         
         
       end
