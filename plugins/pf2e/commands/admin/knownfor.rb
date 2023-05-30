@@ -31,7 +31,7 @@ module AresMUSH
           return
         end
 
-        char_is_known_for = char.pf2_known_for ? char.known_for : []
+        char_is_known_for = char.pf2_known_for ? char.pf2_known_for : []
 
         char_is_known_for << self.blurb
 
