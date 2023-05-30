@@ -6,7 +6,7 @@ module AresMUSH
       attr_accessor :category, :item_id
 
       def parse_args
-        args = cmd.parse_args(arg1_equals_arg2)
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
         self.category = downcase_arg(args.arg1)
         self.item_id = integer_arg(args.arg2)
 
