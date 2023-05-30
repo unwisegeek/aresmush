@@ -299,6 +299,18 @@ module AresMUSH
         list.join("%r")
       end
 
+      def known_for
+        known_for = @char.known_for.sort
+
+        list = []
+
+        known_for.each_with_index do |k,i|
+          list << format_known_for(k,i)
+        end
+
+        list
+      end
+
       def format_ability(abil, score, i)
         name = "#{item_color}#{abil.capitalize}%xn"
         linebreak = i % 3 == 0 ? "%r" : ""
@@ -312,6 +324,12 @@ module AresMUSH
         name = "#{cond_color}#{condition}"
         value = value ? "%b#{value}" : ""
         "#{name}#{value}%xn"
+      end
+
+      def format_known_for(string, i)
+        linebreak = i % 2 == 0 ? "%r" : ""
+
+        "#{linebreak}#{left(string, 37)}%b"
       end
 
       def format_skill(char, s, i)
