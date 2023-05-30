@@ -67,6 +67,8 @@ en:
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
 
+    knownfor_set_ok: "Known For %{blurb} set on sheet for %{name}."
+
     lock_info_first: "This command cannot be used until your base chargen options are committed."
     lock_abil_first: "This command cannot be used until you have set and committed your ability scores."
     lore_options_ok: "%xgNo issues detected with your lores.%xn"

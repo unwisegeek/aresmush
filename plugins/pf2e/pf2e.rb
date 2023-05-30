@@ -90,6 +90,8 @@ module AresMUSH
         else
           return PF2FeatDisplayOneCmd
         end
+      when "knownfor"
+        return PF2KnownForCmd
       end
 
       nil
