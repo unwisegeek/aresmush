@@ -31,11 +31,11 @@ module AresMUSH
           return
         end
 
-        char_is_known_for = char.known_for ? char.known_for : []
+        char_is_known_for = char.pf2_known_for ? char.known_for : []
 
         char_is_known_for << self.blurb
 
-        char.update(known_for: char_is_known_for)
+        char.update(pf2_known_for: char_is_known_for)
 
         client.emit_success t('pf2e.knownfor_set_ok', :name => char.name, :blurb => self.blurb)
 
