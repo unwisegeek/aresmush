@@ -9,15 +9,10 @@ module AresMUSH
       end
       
       def handle
-        char = Character.find_one_by_name("Testchar")
+        feat_list = Global.read_config('pf2e_feats')
+    
         
-        feat_list = char.pf2_feats.values.flatten
-        
-        required = [ "Intimidating Glare" ]
-        
-        eval = required.all? { |f| feat_list.include? f }
-        
-        client.emit "Tinker check returns #{eval}."
+        client.emit feat_list
         
         
       end
