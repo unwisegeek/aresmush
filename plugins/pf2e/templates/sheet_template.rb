@@ -300,7 +300,7 @@ module AresMUSH
       end
 
       def known_for
-        known_for = @char.known_for.sort
+        known_for = @char.pf2_known_for.sort
 
         list = []
 
