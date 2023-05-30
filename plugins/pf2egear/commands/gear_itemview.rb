@@ -42,7 +42,7 @@ module AresMUSH
           item = Pf2egear.items_in_inventory(enactor.magic_items).to_a[index]
         end
 
-        template = Pf2eDisplayItemTemplate.new(char, item, client)
+        template = Pf2eDisplayItemTemplate.new(enactor, item, client)
 
         client.emit template.render
 
