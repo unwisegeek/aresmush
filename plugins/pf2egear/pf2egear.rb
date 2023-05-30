@@ -47,6 +47,11 @@ module AresMUSH
         else
           return PF2BagViewCmd
         end
+      when "item"
+        case cmd.switch
+        when "view"
+          return PF2ItemViewCmd
+        end
       end
 
       nil
