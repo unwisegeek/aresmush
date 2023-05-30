@@ -286,3 +286,6 @@ pf2e_skills:
   Woodworking Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+  Slayer Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true

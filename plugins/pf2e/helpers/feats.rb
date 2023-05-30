@@ -36,50 +36,47 @@ module AresMUSH
 
     end
 
-    def self.can_take_feat?(char, type, feat)
+    def self.can_take_feat?(char, feat)
       msg = []
 
       name = feat.split.map { |word| word.capitalize }
 
-      details = Global.read_config('pf2e_feats', type, name)
+      details = get_feat_details(name)
 
-      if !details
-        msg = "No such feat or bad feat type."
+      # Does the feat actually exist? get_feat_details returns a hash 
+      # if it does and a string if it doesn't.
+
+      if details.is_a? String
+        msg << details
         return msg
       end
 
       # Ancestry and character class checks
-      is_from_dedication = false
+      # Dedication check for class feats is not done in this function.
 
-      if type == "ancestry"
-        cinfo = char.pf2_base_info
-        ancestry = [ cinfo["ancestry"], cinfo["heritage"] ].map { |a| a.downcase }
-        match = details["traits"] && ancestry
+      cinfo = char.pf2_base_info
+      feat_type = details['feat_type']
 
-        msg << "ancestry" if match.empty?
-      elsif type == "charclass"
-        cinfo = char.pf2_base_info
-        charclass = [ cinfo["charclass"], cinfo["dedication"] ].flatten.map { |c| c.downcase }
-        dmatch = details['traits'] && charclass
+      if feat_type.include? 'Charclass'
+        charclass = cinfo['charclass']
+        allowed_charclasses = details['assoc_charclass']
 
-        if dmatch.empty?
-          msg << "charclass"
-          return msg
-        end
+        msg << 'charclass' unless allowed_charclasses.include? charclass
+      elsif feat_type.include? 'Ancestry'
+        ancestry = cinfo['ancestry']
+        allowed_ancestry = details['assoc_ancestry']
 
-        is_from_dedication = true if !dmatch.include?(cinfo['charclass'])
+        msg << 'ancestry' unless allowed_ancestry == ancestry
       end
 
       # Prereq check, prerequisites includes level
-
-      effective_level = is_from_dedication ? (char.pf2_level / 2) : char.pf2_level
 
       prereqs = details["prereqs"]
 
       meets_prereqs = true
 
-      if !(prereqs.empty?)
-        meets_prereqs = meets_prereqs?(char, prereqs, effective_level)
+      if prereqs 
+        meets_prereqs = meets_prereqs?(char, prereqs)
       end
 
       msg << "prerequisites" if !meets_prereqs
@@ -88,7 +85,7 @@ module AresMUSH
       return false
     end
 
-    def self.meets_prereqs?(char, prereqs, level)
+    def self.meets_prereqs?(char, prereqs)
       msg = []
 
       prereqs.each_pair do |ptype, required|
@@ -101,6 +98,8 @@ module AresMUSH
 
         case ptype
         when "level"
+          level = char.pf2_level
+
           msg << "level" if prereqs['level'] > level
         when "ability"
           char_score = Pf2eAbilities.get_score(char, factor)
@@ -112,7 +111,7 @@ module AresMUSH
           msg << "skill" if char_prof < min_prof
         when "specialize"
           if required.start_with?('!')
-            banned = required.delete('!').set_upcase_name
+            banned = required.delete('!').upcase
             msg << "specialize" if banned == kit
           else
             kit = char.pf2_base_info["specialize"].upcase
@@ -120,19 +119,11 @@ module AresMUSH
           end
         when "has_focus_pool"
           nil
-        when "charclass"
-          features = enactor.pf2_features.map { |word| word.upcase }
-          req = required.upcase
-          msg << "charclass" if !(features.include? req)
         when "feat"
-          feats = enactor.pf2_feats.map { |word| word.upcase }
-          req = required.upcase
-          msg << "feat" if !(feats.include? req)
-        when "lore"
-          char_proficiency = Pf2e.get_prof_bonus(char, Pf2eLores.get_lore_prof(char, factor))
-          min_proficiency = Pf2e.get_prof_bonus(char, minimum)
+          feats = enactor.pf2_feats.values.flatten.map { |word| word.upcase }
+          req = required.map { |word| word.upcase }
 
-          msg << "lore" if char_proficiency < min_proficiency
+          msg << "feat" unless req.all? { |f| feats.include? f }
         when "heritage"
           if required.start_with?('!')
             banned = required.delete('!').set_upcase_name
@@ -143,7 +134,33 @@ module AresMUSH
           end
         when "special"
           char_specials = char.pf2_special.each { |s| s.upcase }
-          msg << "special" if !(char_specials.include?(required.upcase))
+          msg << "special" unless char_specials.include?(required.upcase)
+        when "tradition"
+          magic = char.magic
+          traditions = magic.tradition
+
+          msg << "tradition" unless traditions.include? required
+        when "combat_stats"
+          combat = char.combat
+
+          case factor
+          when "Perception"
+            prof = Pf2e.get_prof_bonus(char, combat.perception)
+            min = Pf2e.get_prof_bonus(char, minimum)
+
+            passes_check = min > prof ? false : true
+          end
+
+          msg << "combat_stats" unless passes_check
+        when "orfeat"
+          feats = enactor.pf2_feats.values.flatten.map { |word| word.upcase }
+          req = required.map { |word| word.upcase }
+
+          msg << "feat" unless req.any? { |f| feats.include? f }
+        when "orheritage"
+          heritage = char.pf2_base_info["heritage"]
+          
+          msg << "heritage" unless required.include? heritage
         end
       end
 
@@ -169,7 +186,7 @@ module AresMUSH
         list << format_feat(feat, details)
       end
 
-      list
+      list.sort
 
     end
 
@@ -183,28 +200,28 @@ module AresMUSH
       # Depending on feat type, this may be different keys with different formats.
 
       if details.has_key? 'assoc_charclass'
-        associated = "%xh%xwAssociated To:%xn #{details['assoc_charclass'].sort.join(", ")}"
+        associated = "%x229Associated To:%xn #{details['assoc_charclass'].sort.join(", ")}"
       elsif details.has_key? 'assoc_ancestry'
-        associated = "%xh%xwAssociated To:%xn #{details['assoc_ancestry'].sort.join(", ")}"
+        associated = "%x229Associated To:%xn #{details['assoc_ancestry'].sort.join(", ")}"
       elsif details.has_key? 'assoc_skill'
-        associated = "%xh%xwAssociated To:%xn #{details['assoc_skill']}"
+        associated = "%x229Associated To:%xn #{details['assoc_skill']}"
       else
-        associated = "%xh%xwAssociated To:%xn Any"
+        associated = "%x229Associated To:%xn Any"
       end
 
-      traits = "%xh%xwTraits:%xn #{details['traits'].sort.join(", ")}"
+      traits = "%x229Traits:%xn #{details['traits'].sort.join(", ")}"
       
       # Prerequisites needs its own level of formatting.
 
       prereq_list = []
       
       details['prereq'].each_pair do |k,v|
-        prereq_list << "%r%t#{k.capitalize}: #{v}"
+        prereq_list << "%r%t%xh%xw#{k.capitalize}:%xn #{v}"
       end
 
-      prereqs = "%xh%xwPrerequisites:%xn #{prereq_list.join()}"
+      prereqs = "%x229Prerequisites:%xn #{prereq_list.join()}"
 
-      desc = "%xh%xwDescription:%xn #{details['shortdesc']}"
+      desc = "%x229Description:%xn #{details['shortdesc']}"
 
       "#{fmt_name}%r%r#{feat_type}%r#{associated}%r#{traits}%r#{prereqs}%r#{desc}"
     end
