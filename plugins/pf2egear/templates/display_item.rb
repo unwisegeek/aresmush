@@ -39,7 +39,7 @@ module AresMUSH
       end
 
       def sell_price
-        Pf2egear.display_money(@item.price / 2).to_i
+        Pf2egear.display_money(@item.price / 2)
       end
 
       def talisman
