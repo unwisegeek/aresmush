@@ -74,13 +74,32 @@ module AresMUSH
 
         else
 
-          return [ "Information on runes and talismans goes here." ]
-          
+          list = []
+
+          talismans = format_talismans(@item.talisman)
+          fund_runes = format_fund_runes(@item.runes["fundamental"])
+          prop_runes = format_prop_runes(@item.runes["property"])
+
+          list << talismans
+          list << "#{item_color}Runes:%xn"
+          list << fund_runes
+          list << prop_runes
+
+          list.join("%r")
         end
 
+      end
 
-        
+      def format_talismans(talismans)
+        "#{item_color}Talismans:%xn #{talismans.sort.join(",")}"
+      end
 
+      def format_fund_runes(runes)
+        "%t%xh%xwFundamental:%xn #{runes}"
+      end
+
+      def format_prop_runes(runes)
+        "%t%xh%xwProperty:%xn #{runes}"
       end
 
     end
