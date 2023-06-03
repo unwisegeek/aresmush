@@ -92,15 +92,21 @@ module AresMUSH
       end
 
       def format_talismans(talismans)
-        "#{item_color}Talismans:%xn #{talismans.sort.join(",")}%r"
+        "#{item_color}Talismans:%xn #{talismans.sort.join(",")}"
       end
 
       def format_fund_runes(runes)
-        "%t%xh%xwFundamental:%xn #{runes}%r"
+
+        return "%t%xh%xwFundamental:%xn None." if runes.empty?
+
+        "%t%xh%xwFundamental:%xn #{runes}"
       end
 
       def format_prop_runes(runes)
-        "%t%xh%xwProperty:%xn #{runes}%r"
+
+        return "%t%xh%xwProperty:%xn None." if runes.empty? 
+        
+        "%t%xh%xwProperty:%xn #{runes}"
       end
 
     end
