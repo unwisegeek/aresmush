@@ -85,8 +85,9 @@ module AresMUSH
           list << fund_runes
           list << prop_runes
 
-          list.join("%r")
         end
+
+        list
 
       end
 
