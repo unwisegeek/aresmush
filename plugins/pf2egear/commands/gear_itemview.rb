@@ -13,6 +13,10 @@ module AresMUSH
         @numcheck = trim_arg(args.arg2)
       end
 
+      def required_args
+        [ self.category, self.item_id ]
+      end
+
       def check_valid_category
         cats = %w(weapons weapon armor shields shield magicitem)
 
