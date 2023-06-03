@@ -17,7 +17,7 @@ module AresMUSH
         cats = %w(weapons weapon armor shields shield magicitem)
 
         return nil if cats.include?(self.category)
-        return t('pf2egear.bad_category')
+        return t('pf2egear.no_detailed_item_info')
       end
 
       def check_is_number

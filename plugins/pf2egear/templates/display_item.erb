@@ -4,11 +4,14 @@
 <% item_info.each do |item| -%>
 <%= item %>
 <% end %>
-<%= divider %>
+<%= section_line("Magical Properties") %>
+<% magical_properties.each do |magic| -%>
+<%= magic %>
+<% end %>
+<%= section_line("General Info") %>
 <%= "#{item_color}Traits:%xn #{traits}" %>
 
 <%= left("#{item_color}Bulk:%xn #{bulk}", 26) -%>
 <%= left("#{item_color}Level:%xn #{level}", 26) -%>
 <%= left("#{item_color}Sale Price:%xn #{sell_price}", 26) %>
-
 <%= footer %>

@@ -47,21 +47,39 @@ module AresMUSH
 
         return [ "Item Info Goes Here Based On Type" ]
 
-        list = []
+        list_to_format = {}
+
+        fmt_list = []
 
         case @category 
-        when "weapon"
-          talisman = @item.talisman
-
-
+        when "weapon", "weapons"
         when "armor"
         when "magicitem"
-        when "shield"
-        else 
-          return t('pf2egear.no_detailed_item_info')
+        when "shield", "shields"
         end
 
-        list 
+        fmt_list 
+
+      end
+
+      def magical_properties
+
+        if @category == "magicitem"
+
+          return [ "Properties for magic items, like uses and investments and whether it's a consumable." ]
+          
+        elsif @category == ("shield" || "shields")
+          
+          return [ "Shields don't have magical properties, but an attached weapon such as a shield boss can. This will hold information on attached weapons / properties." ]
+
+        else
+
+          return [ "Information on runes and talismans goes here." ]
+          
+        end
+
+
+        
 
       end
 
