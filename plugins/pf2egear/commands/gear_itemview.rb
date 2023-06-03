@@ -42,6 +42,11 @@ module AresMUSH
           item = Pf2egear.items_in_inventory(enactor.magic_items).to_a[index]
         end
 
+        if !item
+          client.emit_failure t('pf2egear.not_found')
+          return
+        end
+
         template = Pf2eDisplayItemTemplate.new(enactor, item, self.category, client)
 
         client.emit template.render
