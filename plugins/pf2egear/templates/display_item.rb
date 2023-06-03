@@ -91,15 +91,15 @@ module AresMUSH
       end
 
       def format_talismans(talismans)
-        "#{item_color}Talismans:%xn #{talismans.sort.join(",")}"
+        "#{item_color}Talismans:%xn #{talismans.sort.join(",")}%r"
       end
 
       def format_fund_runes(runes)
-        "%t%xh%xwFundamental:%xn #{runes}"
+        "%t%xh%xwFundamental:%xn #{runes}%r"
       end
 
       def format_prop_runes(runes)
-        "%t%xh%xwProperty:%xn #{runes}"
+        "%t%xh%xwProperty:%xn #{runes}%r"
       end
 
     end

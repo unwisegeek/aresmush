@@ -5,7 +5,9 @@
 <%= item %>
 <% end %>
 <%= section_line("Magical Properties") %>
-<%= magical_properties %>
+<% magical_properties.each do |magic| -%>
+<%= magic %>
+<% end %>
 <%= section_line("General Info") %>
 <%= "#{item_color}Traits:%xn #{traits}" %>
 
