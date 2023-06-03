@@ -1,10 +1,14 @@
 <%= header %>
 <%= center("#{title_color}#{title}%xn", 78) %>
 <%= divider %>
+<% item_info.each do |item| -%>
+<%= item %>
+<% end %>
+<%= divider %>
+<%= "#{item_color}Traits:%xn #{traits}" %>
+
 <%= left("#{item_color}Bulk:%xn #{bulk}", 26) -%>
 <%= left("#{item_color}Level:%xn #{level}", 26) -%>
 <%= left("#{item_color}Sale Price:%xn #{sell_price}", 26) %>
-<%= "#{item_color}Traits:%xn #{traits}" %>
-
 
 <%= footer %>

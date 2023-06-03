@@ -161,6 +161,8 @@ module AresMUSH
           heritage = char.pf2_base_info["heritage"]
           
           msg << "heritage" unless required.include? heritage
+        else
+          msg << "missing_prereq_check #{ptype}"
         end
       end
 

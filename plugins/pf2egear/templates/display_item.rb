@@ -4,11 +4,12 @@ module AresMUSH
     class Pf2eDisplayItemTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :char, :item, :client
+      attr_accessor :char, :item, :client, :category
 
-      def initialize(char, item, client)
+      def initialize(char, item, category, client)
         @char = char
         @item = item
+        @category = category
         @client = client
 
         super File.dirname(__FILE__) + "/display_item.erb"
@@ -42,12 +43,26 @@ module AresMUSH
         Pf2egear.display_money(@item.price / 2)
       end
 
-      def talisman
-        t = @item.talisman
+      def item_info
 
-        return false if !t
+        return "Item Info Goes Here Based On Type"
 
-        t.empty? ? t.sort.join(", ") : "None attached."
+        list = []
+
+        case @category 
+        when "weapon"
+          talisman = @item.talisman
+
+
+        when "armor"
+        when "magicitem"
+        when "shield"
+        else 
+          return t('pf2egear.no_detailed_item_info')
+        end
+
+        list 
+
       end
 
     end
