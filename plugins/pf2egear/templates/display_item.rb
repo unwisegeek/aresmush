@@ -45,7 +45,7 @@ module AresMUSH
 
       def item_info
 
-        return [ "Item Info Goes Here Based On Type" ]
+        return [ "Item info goes here based on type. This is a #{@category}." ]
 
         list_to_format = {}
 
