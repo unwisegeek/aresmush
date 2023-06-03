@@ -3,6 +3,7 @@ module AresMUSH
     include ObjectModel
 
     attribute :name, :default => "Magic Item"
+    attribute :nickname
     attribute :bulk, :type => DataType::Float, :default => 0
     attribute :traits, :type => DataType::Array, :default => []
     attribute :level, :type => DataType::Integer, :default => 1
