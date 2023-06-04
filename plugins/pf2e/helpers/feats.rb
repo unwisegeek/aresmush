@@ -153,7 +153,7 @@ module AresMUSH
         end
       end
 
-      return true if msgs.empty?
+      return true if msg.empty?
       return false
     end
    
@@ -188,7 +188,7 @@ module AresMUSH
       feats.each_pair do |name, details|
 
         can_take = Pf2e.can_take_feat?(char, name)
-        is_of_type = (details['feat_type'].include? feat_type) ? true : false
+        is_of_type = details['feat_type'].include? feat_type
 
         list << name if (can_take && is_of_type)
 
