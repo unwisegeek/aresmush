@@ -16,6 +16,16 @@ module AresMUSH
         [ self.feat_type, self.feat_name ]
       end
 
+      def check_chargen_or_advancement
+        if enactor.chargen_locked && !enactor.advancing || enactor.is_admin?
+          return t('pf2e.only_in_chargen')
+        elsif enactor.chargen_stage.zero?
+          return t('chargen.not_started')
+        else
+          return nil
+        end
+      end
+
       def check_valid_feat_type
         feat_types = [ "General", "Skill", "Archetype", "Dedication", "Charclass", "Ancestry"]
 
