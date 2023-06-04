@@ -41,7 +41,7 @@ module AresMUSH
 
     def self.get_skill_prof(char, name)
       skill = find_skill(name, char)
-      prof = skill.prof_level
+      prof = skill ? skill.prof_level : "untrained"
     end
 
     def self.create_skill_for_char(name, char)
