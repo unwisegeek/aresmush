@@ -11,18 +11,28 @@ module AresMUSH
       def handle
       
         char = Character.find_one_by_name("Testchar")
-        type = 'cHaRcLaSs'
-      
-        options = Pf2e.get_feat_options(char, type)
         
-        list = []
+        required = "Society/trained"
         
-        options.each do |name|
-          prereqs = Global.read_config('pf2e_feats', name, 'prereq')
-          list << name if Pf2e.meets_prereqs?(char, prereqs)
+        if required =~ /\//
+          string = required.split("/")
+          factor = string[0]
+          minimum = string[1]
         end
         
-        client.emit "List: #{list.sort}"
+        client.emit string
+        client.emit factor
+        client.emit minimum
+      
+        char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
+        min_prof = Pf2e.get_prof_bonus(char, minimum)
+
+        client.emit char_prof
+        client.emit min_prof
+        
+        check = (char_prof < min_prof) ? "fail" : "pass"
+        
+        client.emit check
         
       end
 
