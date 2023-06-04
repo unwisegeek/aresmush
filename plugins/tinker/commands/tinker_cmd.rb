@@ -10,17 +10,19 @@ module AresMUSH
       
       def handle
       
-        feats = Global.read_config('pf2e_feats')
-
+        char = Character.find_one_by_name("Testchar")
+        type = 'cHaRcLaSs'
+      
+        options = Pf2e.get_feat_options(char, type)
+        
         list = []
-
-        feats.each_pair do |name, details|
-
-            list << name unless details['feat_type']
-
+        
+        options.each do |name|
+          prereqs = Global.read_config('pf2e_feats', name, 'prereq')
+          list << name unless Pf2e.meets_prereqs?(char, prereqs)
         end
         
-        client.emit list.sort.join(", ")
+        client.emit "List: #{list.sort}"
         
       end
 
