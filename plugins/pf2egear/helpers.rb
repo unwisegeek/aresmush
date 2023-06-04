@@ -53,6 +53,15 @@ module AresMUSH
       char.save
     end
 
+    def self.display_shield_hp(item)
+      hp = item.hp
+      dmg = item.damage
+      cur_hp = hp - dmg
+      broken = (cur_hp <= hp / 2) ? "%xr" : ""
+
+      "#{broken}#{cur_hp}%xn / #{hp}"
+    end
+
     def self.items_in_inventory(list)
       list.filter { |item| !(item.bag) }
     end

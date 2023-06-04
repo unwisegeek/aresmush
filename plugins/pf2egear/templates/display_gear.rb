@@ -153,11 +153,7 @@ module AresMUSH
       def format_shields(char,s,i)
         name = s.nickname ? "#{s.nickname} (#{s.name})" : s.name
         bulk = s.bulk == 0.1 ? "L" : s.bulk.to_i
-        hp = s.hp
-        dmg = s.damage
-        cur_hp = hp - dmg
-        broken = (cur_hp <= hp / 2) ? "%xr" : ""
-        disp_hp = "#{broken}#{cur_hp}%xn / #{hp}"
+        disp_hp = Pf2egear.display_shield_hp(s)
         equip = s.equipped ? "Yes" : "No"
 
         "%b%b#{left(i, 3)}%b#{left(name, 43)}%b#{left(bulk, 8)}%b#{left(disp_hp,10)}%b#{left(equip, 9)}"
