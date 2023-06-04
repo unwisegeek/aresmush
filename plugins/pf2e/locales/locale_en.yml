@@ -60,6 +60,7 @@ en:
 
     element_cglocked: "That %{element} is part of your chargen options and cannot be changed."
     
+    feat_available_options: "You qualify to take the following feats in that category: %{options}"
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
     feat_set_ok: "Feat %{name} added to list %{type}."
     
