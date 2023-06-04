@@ -124,6 +124,9 @@ module AresMUSH
           msg << "special" unless char_specials.include?(required.upcase)
         when "tradition"
           magic = char.magic
+
+          msg << "tradition" && next unless magic
+
           traditions = magic.tradition
 
           msg << "tradition" unless traditions.include? required
