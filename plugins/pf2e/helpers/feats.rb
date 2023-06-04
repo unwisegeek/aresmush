@@ -5,8 +5,6 @@ module AresMUSH
 
     def self.get_feat_details(name)
 
-      string = name.upcase 
-
       feat_info = Global.read_config('pf2e_feats', name)
     end
 
@@ -33,15 +31,10 @@ module AresMUSH
     def self.can_take_feat?(char, feat)
       msg = []
 
-      name = feat.split.map { |word| word.capitalize }.join
+      details = Pf2e.get_feat_details(feat)
 
-      details = Pf2e.get_feat_details(name)
-
-      # Does the feat actually exist? get_feat_details returns a hash 
-      # if it does and a string if it doesn't.
-
-      if details.is_a? String
-        msg << details
+      if !details
+        msg << 'feat_does_not_exist'
         return msg
       end
 
