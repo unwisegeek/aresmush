@@ -220,14 +220,6 @@ module AresMUSH
         list.sort.join(", ")
       end
 
-      def existing_lores
-        char_lores = @char.lores
-
-        return "None." if char_lores.empty?
-
-        lores = char_lores.map { |lore| lore.name }.sort.join(", ")
-      end
-
       def open_skills
         @to_assign['open skills'].count("open")
       end
