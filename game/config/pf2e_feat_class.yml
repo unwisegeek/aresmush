@@ -841,6 +841,8 @@ pf2e_feats:
     shortdesc: You can use clever workarounds to replicate the arcane essence of certain materials.
     traits: []
   Esoteric Oath:
+    feat_type:
+      - Charclass
     assoc_charclass:
       - Champion
     prereq:
@@ -2268,6 +2270,8 @@ pf2e_feats:
     shortdesc: You make a dazzling series of attacks with both weapons, using the first attack to throw your foe off guard against a second attack at a different angle.
     traits: []
   Twin Parry:
+    feat_type:
+      - Charclass
     assoc_charclass:
       - Fighter
       - Ranger
@@ -2335,6 +2339,8 @@ pf2e_feats:
     traits:
       - oath
   Verdant Weapon:
+    feat_type:
+      - Charclass
     assoc_charclass:
       - Druid
     prereq:
