@@ -55,7 +55,6 @@ module AresMUSH
 
         enactor.abilities&.each { |a| a.delete }
         enactor.skills&.each { |s| s.delete }
-        enactor.lores&.each { |l| l.delete }
         enactor.hp&.delete
         enactor.combat&.delete
         enactor.magic&.delete
