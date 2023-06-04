@@ -62,9 +62,9 @@ module AresMUSH
           fmt_list << "%b#{left("#{item_color}Range:%xn #{@item.hands}", 18)}%r"
 
           # Can this item be used? 
-          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}%r"
+          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}"
 
-          fmt_list << "%b%b#{usable}"
+          fmt_list << "%b%b#{usable}%r"
         when "armor"
           fmt_list << "%b%b#{left("#{item_color}Category:%xn #{@item.category}", 37)}"
           fmt_list << "%b#{left("#{item_color}Group:%xn #{@item.group}", 37)}%r"
@@ -83,9 +83,9 @@ module AresMUSH
           fmt_list << "%b#{left("#{item_color}Consumable?:%xn #{consumable}", 37)}%r"
 
           # Can this item be used? 
-          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}%r"
+          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}"
 
-          fmt_list << "%b%b#{usable}"
+          fmt_list << "%b%b#{usable}%r"
         when "shield", "shields"
 
           # Calculate shield HP display.
