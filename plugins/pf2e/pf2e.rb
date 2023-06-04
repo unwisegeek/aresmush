@@ -87,6 +87,8 @@ module AresMUSH
           return PF2FeatSetCmd
         when "info"
           return PF2FeatInfoCmd
+        when "options"
+          return PF2FeatOptionsCmd
         else
           return PF2FeatDisplayOneCmd
         end

@@ -192,6 +192,25 @@ module AresMUSH
 
     end
 
+    def self.get_feat_options(char, type)
+      feats = Global.read_config('pf2e_feats')
+      feat_type = type.capitalize
+
+      list = []
+
+      feats.each_pair do |name, details|
+
+        can_take = Pf2e.can_take_feat?(char, name)
+        is_of_type = (details['feat_type'].include? feat_type) ? true : false
+
+        list << name if (can_take && is_of_type)
+
+      end
+
+      list.sort
+
+    end
+
     def self.format_feat(feat, details)
 
       return t('pf2e.feat_details_missing', :name => feat.upcase) if !details
