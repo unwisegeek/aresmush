@@ -35,7 +35,7 @@ module AresMUSH
 
       name = feat.split.map { |word| word.capitalize }.join
 
-      details = get_feat_details(name)
+      details = Pf2e.get_feat_details(name)
 
       # Does the feat actually exist? get_feat_details returns a hash 
       # if it does and a string if it doesn't.
