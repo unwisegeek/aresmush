@@ -38,4 +38,6 @@ en:
 
     quantity_one_only: "You can only buy one of this type of item at a time. Creating one item..."
 
+    shields_dont_have_magic: "Shields do not have magical properties."
+
     you_got_money: "%{from} paid you %{value} %{cointype}."
