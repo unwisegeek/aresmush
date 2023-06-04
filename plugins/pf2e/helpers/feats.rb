@@ -37,6 +37,8 @@ module AresMUSH
         return false
       end
 
+      return details
+
       # Ancestry and character class checks
       # Dedication check for class feats is not done in this function.
 
