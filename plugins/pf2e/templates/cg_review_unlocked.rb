@@ -268,12 +268,6 @@ module AresMUSH
         all_skills.size - unique_skills.size
       end
 
-      def unique_lores
-        blore = @background_info["lores"] ? @background_info["lores"] : []
-
-        blore.join(" or ")
-      end
-
       def errors
         msgs = Pf2e.chargen_messages(@ancestry, @heritage, @background, @charclass, @subclass, @char.pf2_faith, @subclass_option, @to_assign)
         msgs ? msgs : t('pf2e.cg_options_ok')

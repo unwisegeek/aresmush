@@ -273,15 +273,6 @@ module AresMUSH
           messages << t('pf2e.skill_options_ok')
         end
 
-        lore_msgs = Pf2eLores.lores_messages(@char)
-        if lore_msgs
-          lore_msgs.each do |msg|
-            messages << msg
-          end
-        else
-          messages << t('pf2e.lore_options_ok')
-        end
-
         open_lang = @char.pf2_to_assign['open languages'] ? @char.pf2_to_assign['open languages'] : []
 
         if open_lang.include?('open')
