@@ -168,6 +168,8 @@ module AresMUSH
         ary = []
         open_skills = ary.fill("open", nil, extra_skills)
 
+        to_assign['open skills'] = open_skills
+
         # Some backgrounds require you to choose a lore from a list. Stash these into to_assign.
 
         if background_info['lores']
