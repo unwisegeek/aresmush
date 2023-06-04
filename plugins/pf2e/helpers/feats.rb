@@ -3,17 +3,11 @@ module AresMUSH
 
     include CommonTemplateFields
 
-    def self.get_feat_details(term)
+    def self.get_feat_details(name)
 
-      string = term.upcase 
+      string = name.upcase 
 
-      feat_info = Global.read_config('pf2e_feats')
-
-      match = feat_info.select { |name, deets| name.match?(string) }
-
-      return 'no_match' if match.empty?
-
-      match
+      feat_info = Global.read_config('pf2e_feats', name)
     end
 
     def self.search_feats(search_type, term)
@@ -39,7 +33,7 @@ module AresMUSH
     def self.can_take_feat?(char, feat)
       msg = []
 
-      name = feat.split.map { |word| word.capitalize }
+      name = feat.split.map { |word| word.capitalize }.join
 
       details = get_feat_details(name)
 
