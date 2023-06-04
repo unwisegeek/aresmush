@@ -132,7 +132,7 @@ module AresMUSH
           prop_runes = format_prop_runes(@item.runes["property"])
 
           list << talismans
-          list << "#{item_color}Runes:%xn"
+          list << "%b%b#{item_color}Runes:%xn"
           list << fund_runes
           list << prop_runes
 
@@ -143,7 +143,7 @@ module AresMUSH
       end
 
       def format_talismans(talismans)
-        "#{item_color}Talismans:%xn #{talismans.sort.join(",")}"
+        "%b%b#{item_color}Talismans:%xn #{talismans.sort.join(",")}"
       end
 
       def format_fund_runes(runes)
