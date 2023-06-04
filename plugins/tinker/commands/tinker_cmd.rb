@@ -19,7 +19,7 @@ module AresMUSH
         
         options.each do |name|
           prereqs = Global.read_config('pf2e_feats', name, 'prereq')
-          list << name unless Pf2e.meets_prereqs?(char, prereqs)
+          list << name if Pf2e.meets_prereqs?(char, prereqs)
         end
         
         client.emit "List: #{list.sort}"
