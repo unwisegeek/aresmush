@@ -52,10 +52,9 @@ module AresMUSH
           fmt_list << "%b%b#{left("#{item_color}Category:%xn #{@item.category}", 37)}"
           fmt_list << "%b#{left("#{item_color}Group:%xn #{@item.group}", 37)}%r"
 
-          # Damage display 
-          2h_dmg = @item.wp_damage_2h ? " (#{@item.wp_damage_2h} 2H)" : ""
+          twoh_dmg = @item.wp_damage_2h ? " (#{@item.wp_damage_2h} 2H)" : ""
 
-          fmt_list << "%b%b#{left("#{item_color}Damage:%xn #{@item.wp_damage} #{@item.wp_damage_type}#{2h_dmg}", 18)}"
+          fmt_list << "%b%b#{left("#{item_color}Damage:%xn #{@item.wp_damage} #{@item.wp_damage_type}#{twoh_dmg}", 18)}"
 
           # Other stuff
           fmt_list << "%b#{left("#{item_color}Range:%xn #{@item.range}", 18)}"
