@@ -58,7 +58,7 @@ module AresMUSH
 
       # Prereq check, prerequisites includes level
 
-      prereqs = details["prereqs"]
+      prereqs = details["prereq"]
 
       if prereqs 
         meets_prereqs = Pf2e.meets_prereqs?(char, prereqs)
