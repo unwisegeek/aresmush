@@ -126,11 +126,7 @@ module AresMUSH
 
         bg_skills = background_info["skills"] ? background_info["skills"] : []
 
-        if bg_skills.size > 1
-          client.emit_ooc t('pf2e.multiple_options', :element=>"skill")
-          to_assign['bgskill'] = bg_skills
-          bg_skills = []
-        elsif bg_skills.size == 0
+        if bg_skills.size == 0
           client.emit_ooc t('pf2e.bg_no_options', :element => "skills")
         end
 
