@@ -44,8 +44,6 @@ module AresMUSH
       cinfo = char.pf2_base_info
       feat_type = details['feat_type']
 
-      return feat_type
-
       if feat_type.include? 'Charclass'
         charclass = cinfo['charclass']
         allowed_charclasses = details['assoc_charclass']
