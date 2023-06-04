@@ -12,9 +12,9 @@ module AresMUSH
       
         char = Character.find_one_by_name("Testchar")
       
-        feat = "sdfsdg"
+        feat = "Adopted Ancestry"
       
-        can_take = Pf2e.can_take_feat?(char,feat) ? "Yes" : "No"
+        can_take = Pf2e.can_take_feat?(char,feat) 
         
         client.emit can_take
         
