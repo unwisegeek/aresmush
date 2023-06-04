@@ -62,7 +62,7 @@ module AresMUSH
           fmt_list << "%b#{left("#{item_color}Range:%xn #{@item.hands}", 18)}%r"
 
           # Can this item be used? 
-          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}"
+          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}%r"
 
           fmt_list << "%b%b#{usable}"
         when "armor"
@@ -73,7 +73,7 @@ module AresMUSH
           fmt_list << "%b#{left("#{item_color}Minimum Strength Score:%xn #{@item.min_str}", 37)}%r"
           fmt_list << "%b%b#{left("#{item_color}Check Penalty:%xn #{@item.check_penalty}", 26)}"
           fmt_list << "%b#{left("#{item_color}Speed Penalty:%xn #{@item.speed_penalty}", 26)}"
-          fmt_list << "%b#{left("#{item_color}Max Dex Bonus:%xn #{@item.dex_cap}", 26)}"
+          fmt_list << "%b#{left("#{item_color}Max Dex Bonus:%xn #{@item.dex_cap}", 26)}%r"
         when "magicitem"
           fmt_list << "%b%b#{left("#{item_color}Slot:%xn #{@item.slot}",37)}"
 
@@ -83,7 +83,7 @@ module AresMUSH
           fmt_list << "%b#{left("#{item_color}Consumable?:%xn #{consumable}", 37)}%r"
 
           # Can this item be used? 
-          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}"
+          usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}%r"
 
           fmt_list << "%b%b#{usable}"
         when "shield", "shields"
@@ -103,7 +103,7 @@ module AresMUSH
           if att_weapon
             weapon_name = att_weapon.nickname ? "#{att_weapon.nickname} (#{att_weapon.name})" : att_weapon.name
 
-            fmt_list << "%b%b#{item_color}Attached Weapon:%xn #{weapon_name}"
+            fmt_list << "%b%b#{item_color}Attached Weapon:%xn #{weapon_name}%r"
           end
 
         end
