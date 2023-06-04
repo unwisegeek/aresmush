@@ -34,8 +34,7 @@ module AresMUSH
       details = Pf2e.get_feat_details(feat)
 
       if !details
-        msg << 'feat_does_not_exist'
-        return msg
+        return false
       end
 
       # Ancestry and character class checks
