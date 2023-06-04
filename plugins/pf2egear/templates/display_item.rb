@@ -121,7 +121,7 @@ module AresMUSH
           
         elsif @category == ("shield" || "shields")
           
-          return [ "Shields don't have magical properties, but an attached weapon such as a shield boss can. This will hold information on attached weapons / properties." ]
+          return [ "#{t('pf2egear.shields_dont_have_magic')}" ]
 
         else
 
