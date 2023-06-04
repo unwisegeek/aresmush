@@ -120,7 +120,7 @@ module AresMUSH
           
         elsif @category == ("shield" || "shields")
           
-          return [ "#{t('pf2egear.shields_dont_have_magic')}" ]
+          return [ "%b%b#{t('pf2egear.shields_dont_have_magic')}" ]
 
         else
 
