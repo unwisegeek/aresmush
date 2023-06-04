@@ -107,7 +107,7 @@ module AresMUSH
         when "has_focus_pool"
           nil
         when "feat"
-          feats = enactor.pf2_feats.values.flatten.map { |word| word.upcase }
+          feats = char.pf2_feats.values.flatten.map { |word| word.upcase }
           req = required.map { |word| word.upcase }
 
           msg << "feat" unless req.all? { |f| feats.include? f }
@@ -140,7 +140,7 @@ module AresMUSH
 
           msg << "combat_stats" unless passes_check
         when "orfeat"
-          feats = enactor.pf2_feats.values.flatten.map { |word| word.upcase }
+          feats = char.pf2_feats.values.flatten.map { |word| word.upcase }
           req = required.map { |word| word.upcase }
 
           msg << "feat" unless req.any? { |f| feats.include? f }
@@ -158,8 +158,8 @@ module AresMUSH
     end
    
 
-    def self.has_feat?(enactor, feat)
-      feat_list = enactor.pf2_feats.values.flatten.map { |f| f.upcase }
+    def self.has_feat?(char, feat)
+      feat_list = char.pf2_feats.values.flatten.map { |f| f.upcase }
 
       feat_list.include?(feat.upcase)
     end
