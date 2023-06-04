@@ -9,15 +9,14 @@ module AresMUSH
       end
       
       def handle
-        feats = Global.read_config('pf2e_feats').keys
-    
-        feats.each do |name|
-            feat_type = Pf2e.get_feat_details(name)['feat_type']
-            client.emit "#{name} #{feat_type}"
-        end
+      
+        char = Character.find_one_by_name("Testchar")
+      
+        feat = "sdfsdg"
+      
+        can_take = Pf2e.can_take_feat?(char,feat) ? "Yes" : "No"
         
-        
-        
+        client.emit can_take
         
       end
 
