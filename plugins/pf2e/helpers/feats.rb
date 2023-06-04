@@ -37,13 +37,14 @@ module AresMUSH
         return false
       end
 
-      return details
 
       # Ancestry and character class checks
       # Dedication check for class feats is not done in this function.
 
       cinfo = char.pf2_base_info
       feat_type = details['feat_type']
+
+      return feat_type
 
       if feat_type.include? 'Charclass'
         charclass = cinfo['charclass']
