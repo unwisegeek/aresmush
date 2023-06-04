@@ -49,7 +49,7 @@ module AresMUSH
 
         case @category 
         when "weapon", "weapons"
-          fmt_list << "%b%b#{left("#{item_color}Category:%xn #{@item.category}", 37)}"
+          fmt_list << "%b%b#{left("#{item_color}Category:%xn #{@item.category.capitalize}", 37)}"
           fmt_list << "%b#{left("#{item_color}Group:%xn #{@item.group}", 37)}%r"
 
           twoh_dmg = @item.wp_damage_2h ? " (#{@item.wp_damage_2h} 2H)" : ""
@@ -66,13 +66,13 @@ module AresMUSH
 
           fmt_list << "%b%b#{usable}%r"
         when "armor"
-          fmt_list << "%b%b#{left("#{item_color}Category:%xn #{@item.category}", 37)}"
+          fmt_list << "%b%b#{left("#{item_color}Category:%xn #{@item.category.capitalize}", 37)}"
           fmt_list << "%b#{left("#{item_color}Group:%xn #{@item.group}", 37)}%r"
 
           fmt_list << "%b%b#{left("#{item_color}AC Bonus:%xn #{@item.ac_bonus}", 37)}"
           fmt_list << "%b#{left("#{item_color}Minimum Strength Score:%xn #{@item.min_str}", 37)}%r"
           fmt_list << "%b%b#{left("#{item_color}Check Penalty:%xn #{@item.check_penalty}", 26)}"
-          fmt_list << "%b#{left("#{item_color}Speed Penalty:%xn #{@item.speed_penalty}", 26)}"
+          fmt_list << "%b#{left("#{item_color}Speed Penalty:%xn #{@item.speed_penalty} feet", 26)}"
           fmt_list << "%b#{left("#{item_color}Max Dex Bonus:%xn #{@item.dex_cap}", 26)}%r"
         when "magicitem"
           fmt_list << "%b%b#{left("#{item_color}Slot:%xn #{@item.slot}",37)}"
