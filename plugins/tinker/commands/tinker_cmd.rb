@@ -10,13 +10,17 @@ module AresMUSH
       
       def handle
       
-        char = Character.find_one_by_name("Testchar")
-      
-        feat = "Adopted Ancestry"
-      
-        can_take = Pf2e.can_take_feat?(char,feat) 
+        feats = Global.read_config('pf2e_feats')
+
+        list = []
+
+        feats.each_pair do |name, details|
+
+            list << name unless details['feat_type']
+
+        end
         
-        client.emit can_take
+        client.emit list.sort.join(", ")
         
       end
 
