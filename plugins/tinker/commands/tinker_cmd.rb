@@ -9,10 +9,14 @@ module AresMUSH
       end
       
       def handle
-        feat_list = Global.read_config('pf2e_feats')
+        feats = Global.read_config('pf2e_feats').keys
     
+        feats.each do |name|
+            feat_type = Pf2e.get_feat_details(name)['feat_type']
+            client.emit "#{name} #{feat_type}"
+        end
         
-        client.emit feat_list
+        
         
         
       end
