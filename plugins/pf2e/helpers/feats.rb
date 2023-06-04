@@ -90,7 +90,7 @@ module AresMUSH
           msg << "level" if prereqs['level'] > level
         when "ability"
           char_score = Pf2eAbilities.get_score(char, factor)
-          msg << "ability" if char_score < minimum
+          msg << "ability" if char_score < minimum.to_i
         when "skill"
           char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
           min_prof = Pf2e.get_prof_bonus(char, minimum)
