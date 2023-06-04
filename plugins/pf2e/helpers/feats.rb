@@ -60,10 +60,10 @@ module AresMUSH
 
       prereqs = details["prereqs"]
 
-      meets_prereqs = true
-
       if prereqs 
-        meets_prereqs = meets_prereqs?(char, prereqs)
+        meets_prereqs = Pf2e.meets_prereqs?(char, prereqs)
+      else
+        meets_prereqs = true
       end
 
       msg << "prerequisites" if !meets_prereqs
