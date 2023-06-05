@@ -243,12 +243,6 @@ module AresMUSH
         subclass_skills = @subclass_features_info['skills'] ? @subclass_features_info['skills'] : []
       end
 
-      def bg_skills
-        return [] if !@background_info
-
-        bgskills = @background_info['skills'] ? @background_info['skills'] : []
-      end
-
       def deity_skills
         return [] if (!use_deity || @faith_info['deity'].blank?)
 
