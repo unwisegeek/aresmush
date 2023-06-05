@@ -14,7 +14,7 @@ module AresMUSH
       end
 
       def required_args
-        [ self.search_type ]
+        [ arg ]
       end
 
       def check_chargen_or_advancement
