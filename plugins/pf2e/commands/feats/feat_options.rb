@@ -8,9 +8,9 @@ module AresMUSH
 
       def parse_args
         arg = downcase_arg(cmd.args)
-        self.valid_arg = arg
+        self.search_type = arg.capitalize
 
-        self.search_type = arg + " feat"
+        self.find_in_list = arg + " feat"
       end
 
       def required_args
@@ -33,7 +33,7 @@ module AresMUSH
 
         # Does the character need to assign this feat? 
 
-        if !(to_assign[self.search_type])
+        if !(to_assign[self.find_in_list])
           client.emit t('pf2e.no_free', :element => self.search_type)
           return
         end
@@ -42,7 +42,7 @@ module AresMUSH
 
         options = Pf2e.get_feat_options(enactor, self.search_type)
 
-        client.emit t('pf2e.feat_available_options', :options => options.join(", "))
+        client.emit t('pf2e.feat_available_options', :options => options.sort.join(", "))
         
 
       end
