@@ -4,17 +4,17 @@ module AresMUSH
     class PF2FeatOptionsCmd
       include CommandHandler
 
-      attr_accessor :search_type
+      attr_accessor :search_type, :valid_arg
 
       def parse_args
         arg = downcase_arg(cmd.args)
+        self.valid_arg = arg
 
         self.search_type = arg + " feat"
-
       end
 
       def required_args
-        [ arg ]
+        [ self.valid_arg ]
       end
 
       def check_chargen_or_advancement
