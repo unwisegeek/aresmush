@@ -229,20 +229,16 @@ module AresMUSH
         extra_lang ? extra_lang.count("open") : 0
       end
 
-      def bgskill_choice
-        options = @to_assign['bgskill']
-
-        return false if !options
-
-        options.sort.join(" or ")
-      end
-
       def bglore_choice
         options = @to_assign['bglore']
 
         return false if !options
 
         options.sort.join(" or ")
+      end
+
+      def feats
+        @char.pf2_feats.values.flatten.sort.join(", ")
       end
 
       def lock_msg
@@ -253,6 +249,7 @@ module AresMUSH
       def errors
         messages = []
 
+        # Abilities
         abil_msgs = Pf2eAbilities.abilities_messages(@char)
         if abil_msgs
           abil_msgs.each do |msg|
@@ -264,6 +261,7 @@ module AresMUSH
           messages << ok_msg
         end
 
+        # Skills
         skill_msgs = Pf2eSkills.skills_messages(@char)
         if skill_msgs
           skill_msgs.each do |msg|
@@ -273,10 +271,21 @@ module AresMUSH
           messages << t('pf2e.skill_options_ok')
         end
 
+        # Languages
         open_lang = @char.pf2_to_assign['open languages'] ? @char.pf2_to_assign['open languages'] : []
 
         if open_lang.include?('open')
           messages << t('pf2e.unassigned_lang')
+        end
+
+        # Feats
+        feat_msgs = Pf2e.feat_messages(@char)
+        if feat_msgs
+          feat_msgs.each do |msg|
+            messages << msg
+          end
+        else
+          messages << t('pf2e.feats_are_ok')
         end
 
         messages.join("%r")
