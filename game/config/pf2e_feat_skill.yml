@@ -1060,7 +1060,8 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Society/expert
-      feat: Courtly Graces
+      feat: 
+      - Courtly Graces
   Criminal Connections:
     feat_type: 
     - Skill
@@ -1071,7 +1072,8 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Society/expert
-      feat: Streetwise
+      feat: 
+      - Streetwise
   Quick Contacts:
     feat_type: 
     - Skill
@@ -1095,7 +1097,8 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Society/expert
-      feat: Streetwise
+      feat: 
+      - Streetwise
   Assurance (Stealth):
     feat_type: 
     - Skill
