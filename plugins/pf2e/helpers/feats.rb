@@ -245,10 +245,11 @@ module AresMUSH
 
       if to_assign['charclass feat'] 
         msgs << t('pf2e.unassigned_class_feat') if to_assign['charclass feat'] == charclass
-      elsif to_assign['ancestry feat']
-        msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'] == ancestry
       end
       
+      if to_assign['ancestry feat']
+        msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'] == ancestry
+      end
 
       return nil if msgs.empty?
       return msgs
