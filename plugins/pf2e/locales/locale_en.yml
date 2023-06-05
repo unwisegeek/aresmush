@@ -62,8 +62,8 @@ en:
     
     feat_available_options: "You qualify to take the following feats in that category: %{options}"
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
+    feats_are_ok: "%xgYou have no unassigned feats."
     feat_set_ok: "Feat %{name} added to list %{type}."
-    
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
@@ -121,6 +121,8 @@ en:
     unassigned_lang: "%xrYou have extra languages to assign."
     unassigned_openskill: "%xrYou have free skills left to assign.%xn"
     unassigned_title: "Unassigned Character Options: %{name}"
+    unassigned_class_feat: "%xrYou still need to choose a class feat.%xn"
+    unassigned_ancestry_feat: "%xrYou still need to choose an ancestry feat.%xn"
 
     xp_awarded: "You award %{award} XP to %{awardee}."
 
