@@ -151,6 +151,21 @@ module AresMUSH
           heritage = char.pf2_base_info["heritage"]
           
           msg << "heritage" unless required.include? heritage
+        when "orskill"
+          check = []
+          required.each do |s|
+
+          string = s.split("/")
+          factor = string[0]
+          minimum = string[1]
+
+          char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
+          min_prof = Pf2e.get_prof_bonus(char, minimum)
+
+          check << char_prof - min_prof
+          end
+
+          msg << "orskill" unless check.any? { |i| i>= 0 }
         else
           msg << "missing_prereq_check #{ptype}"
         end

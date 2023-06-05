@@ -341,7 +341,7 @@ pf2e_feats:
     shortdesc: Receive a fixed result on a skill check.
     prereq:
       level: 1
-      skill: diplomacy/trained
+      skill: Diplomacy/trained
   Bargain Hunter:
     feat_type: 
     - Skill
@@ -376,7 +376,7 @@ pf2e_feats:
     shortdesc: Make an Impression on multiple targets at once.
     prereq:
       level: 1
-      skill: diplomacy/trained
+      skill: Diplomacy/trained
   Hobnobber:
     feat_type: 
     - Skill
@@ -386,7 +386,7 @@ pf2e_feats:
     shortdesc: Gather Information rapidly.
     prereq:
       level: 1
-      skill: diplomacy/trained
+      skill: Diplomacy/trained
   No Cause for Alarm:
     feat_type: 
     - Skill
@@ -435,7 +435,7 @@ pf2e_feats:
     shortdesc: Receive a fixed result on a skill check.
     prereq:
       level: 1
-      skill: intimidation/trained
+      skill: Intimidation/trained
   Group Coercion:
     feat_type: 
     - Skill
@@ -496,7 +496,7 @@ pf2e_feats:
     shortdesc: +1 to spell saves from a creature you've Demoralized.
     prereq:
       level: 2
-      skill: intimidation/expert
+      skill: Intimidation/expert
   Additional Lore:
     feat_type: 
     - Skill
@@ -539,8 +539,7 @@ pf2e_feats:
     shortdesc: Make a battle plan and roll Warfare Lore for initiative.
     prereq:
       level: 2
-      skill:
-      - Warfare Lore/expert
+      skill: Warfare Lore/expert
   Unmistakable Lore:
     feat_type: 
     - Skill
