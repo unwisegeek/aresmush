@@ -4,17 +4,17 @@ module AresMUSH
     class PF2FeatOptionsCmd
       include CommandHandler
 
-      attr_accessor :search_type, :valid_arg
+      attr_accessor :search_type, :assign_type
 
       def parse_args
         arg = downcase_arg(cmd.args)
         self.search_type = arg.capitalize
 
-        self.find_in_list = arg + " feat"
+        self.assign_type = arg + " feat"
       end
 
       def required_args
-        [ self.valid_arg ]
+        [ self.search_type ]
       end
 
       def check_chargen_or_advancement
@@ -33,8 +33,8 @@ module AresMUSH
 
         # Does the character need to assign this feat? 
 
-        if !(to_assign[self.find_in_list])
-          client.emit t('pf2e.no_free', :element => self.search_type)
+        if !(to_assign[self.assign_type])
+          client.emit t('pf2e.no_free', :element => self.assign_type)
           return
         end
 
