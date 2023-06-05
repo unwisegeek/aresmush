@@ -205,10 +205,11 @@ module AresMUSH
 
       feats.each_pair do |name, details|
 
-        can_take = Pf2e.can_take_feat?(char, name)
+        can_take = can_take_feat?(char, name)
         is_of_type = details['feat_type'].include? ftype
+        has_feat = has_feat?(char, name)
 
-        list << name if (can_take && is_of_type)
+        list << name if (can_take && is_of_type && !has_feat)
 
       end
 
