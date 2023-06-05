@@ -10,29 +10,22 @@ module AresMUSH
       
       def handle
       
-        char = Character.find_one_by_name("Testchar")
+        feats = Global.read_config('pf2e_feats')
         
-        required = "Society/trained"
+        list = {}
         
-        if required =~ /\//
-          string = required.split("/")
-          factor = string[0]
-          minimum = string[1]
+        feats.each_pair do |k,v|
+            name = k
+            skill_req = v.dig('prereq', 'skill')
+            
+            (list[name] = skill_req) if skill_req
         end
         
-        client.emit string
-        client.emit factor
-        client.emit minimum
-      
-        char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
-        min_prof = Pf2e.get_prof_bonus(char, minimum)
-
-        client.emit char_prof
-        client.emit min_prof
+        client.emit list
         
-        check = (char_prof < min_prof) ? "fail" : "pass"
-        
-        client.emit check
+        list.each_pair do |k,v|
+            client.emit "#{k}: #{v}"
+        end
         
       end
 
