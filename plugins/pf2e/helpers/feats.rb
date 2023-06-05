@@ -199,14 +199,14 @@ module AresMUSH
 
     def self.get_feat_options(char, type)
       feats = Global.read_config('pf2e_feats')
-      feat_type = type.capitalize
+      ftype = type.capitalize
 
       list = []
 
       feats.each_pair do |name, details|
 
         can_take = Pf2e.can_take_feat?(char, name)
-        is_of_type = details['feat_type'].include? feat_type
+        is_of_type = details['feat_type'].include? ftype
 
         list << name if (can_take && is_of_type)
 
