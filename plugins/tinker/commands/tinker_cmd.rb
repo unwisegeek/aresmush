@@ -10,22 +10,20 @@ module AresMUSH
       
       def handle
       
+        char = Character.find_one_by_name("Testchar") 
+      
         feats = Global.read_config('pf2e_feats')
         
-        list = {}
+        list = []
         
-        feats.each_pair do |k,v|
-            name = k
-            feat_req = v.dig('prereq', 'feat')
+        feats.each do |f,d|
+            can_take = Pf2e.can_take_feat?(char, f)
+            is_charclass = d['feat_type'].include? 'Charclass' 
             
-            (list[name] = feat_req) if feat_req
+            list << f if can_take && is_charclass
         end
         
         client.emit list
-        
-        list.each_pair do |k,v|
-            client.emit "#{k}: #{v}"
-        end
         
       end
 
