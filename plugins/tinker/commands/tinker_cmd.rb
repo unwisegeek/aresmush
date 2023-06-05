@@ -16,9 +16,9 @@ module AresMUSH
         
         feats.each_pair do |k,v|
             name = k
-            skill_req = v.dig('prereq', 'skill')
+            feat_req = v.dig('prereq', 'feat')
             
-            (list[name] = skill_req) if skill_req
+            (list[name] = feat_req) if feat_req
         end
         
         client.emit list
