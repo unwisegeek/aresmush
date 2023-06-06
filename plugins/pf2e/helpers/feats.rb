@@ -50,10 +50,14 @@ module AresMUSH
 
         msg << 'charclass' unless allowed_charclasses.include? charclass
       elsif feat_type.include? 'Ancestry'
-        ancestry = cinfo['ancestry']
+        ancestry = []
+
+        ancestry << cinfo['ancestry']
+        ancestry << cinfo['adopted ancestry'] if cinfo['adopted ancestry']
+
         allowed_ancestry = details['assoc_ancestry']
 
-        msg << 'ancestry' unless allowed_ancestry == ancestry
+        msg << 'ancestry' unless allowed_ancestry.intersect? ancestry
       end
 
       # Prereq check, prerequisites includes level
