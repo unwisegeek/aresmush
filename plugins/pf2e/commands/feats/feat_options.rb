@@ -9,7 +9,7 @@ module AresMUSH
       def parse_args
         self.search_type = titlecase_arg(cmd.args)
         arg = downcase_arg(cmd.args)
-        self.assign_type = arg + " feat"
+        self.assign_type = arg ? arg + " feat" : nil
       end
 
       def required_args
