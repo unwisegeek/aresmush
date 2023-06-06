@@ -2457,12 +2457,12 @@ pf2e_feats:
     - Khazad
     - Oruch
     - Sildanyar
-      traits:
-      - tiefling
-      shortdesc: Your legs end in hooves rather than feet, with joints and tendons that allow you to move with great haste.
-      prereq:
-        level: 1
-        heritage: Tiefling
+    traits:
+    - tiefling
+    shortdesc: Your legs end in hooves rather than feet, with joints and tendons that allow you to move with great haste.
+    prereq:
+      level: 1
+      heritage: Tiefling
   Pitborn:
     feat_type: 
     - Ancestry
