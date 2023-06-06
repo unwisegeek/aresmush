@@ -18,9 +18,9 @@ module AresMUSH
         
         feats.each do |f,d|
             can_take = Pf2e.can_take_feat?(char, f)
-            is_charclass = d['feat_type'].include? 'Charclass' 
+            is_ancestry = d['feat_type'].include? 'Ancestry' 
             
-            list << f if can_take && is_charclass
+            list << f if can_take && is_ancestry
         end
         
         client.emit list
