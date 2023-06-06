@@ -79,20 +79,31 @@ module AresMUSH
         end
 
         ##### VALIDATION SECTION END #####
-
         # Do it.
-        # Modify the key in to_assign
-        to_assign[key] = self.feat_name
 
+        old_value = to_assign[key]
+        # Modify the key in to_assign
+        # Do I need to replace the feat in the list or add to the list? 
+
+        replace = old_value == 'unassigned' ? false : true
+        
         sublist = feat_list[ftype]
+
+        if replace
+          index = sublist.index(old_value)
+
+          sublist.delete_at index if index
+        end
+
         sublist << self.feat_name
+        to_assign[key] = self.feat_name
 
         feat_list[ftype] = sublist
 
         enactor.update(pf2_feats: feat_list)
 
 
-        client.emit_success t('pf2e.feat_set_ok', :name => 'self.name', :type => self.feat_type)
+        client.emit_success t('pf2e.feat_set_ok', :name => self.name, :type => self.feat_type)
 
         # Does this feat leave you with something else to assign? 
 

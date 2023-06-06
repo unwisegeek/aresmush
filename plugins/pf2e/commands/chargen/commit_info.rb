@@ -194,10 +194,10 @@ module AresMUSH
         feats['ancestry'] = heritage_feats
         feats['charclass'] = class_feats + subclass_feats + subclass_info_feats
 
-        to_assign['ancestry feat'] = ancestry
+        to_assign['ancestry feat'] = 'unassigned'
 
         if class_features_info['choose_feat']&.include? 'charclass'
-          to_assign['charclass feat'] = charclass
+          to_assign['charclass feat'] = 'unassigned'
         end
 
         enactor.pf2_feats = feats

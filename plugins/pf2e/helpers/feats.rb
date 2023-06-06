@@ -260,15 +260,13 @@ module AresMUSH
     def self.feat_messages(char)
       msgs = []
       to_assign = char.pf2_to_assign
-      charclass = char.pf2_base_info['charclass']
-      ancestry = char.pf2_base_info['ancestry']
 
       if to_assign['charclass feat'] 
-        msgs << t('pf2e.unassigned_class_feat') if to_assign['charclass feat'] == charclass
+        msgs << t('pf2e.unassigned_class_feat') if to_assign['charclass feat'] == 'unassigned'
       end
       
       if to_assign['ancestry feat']
-        msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'] == ancestry
+        msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'] == 'unassigned'
       end
 
       return nil if msgs.empty?
