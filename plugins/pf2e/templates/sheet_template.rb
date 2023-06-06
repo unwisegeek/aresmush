@@ -123,7 +123,7 @@ module AresMUSH
           list << format_skill(@char, s, i) unless s.prof_level == 'untrained'
         end
 
-        list
+        list.compact
       end
 
       def hp
