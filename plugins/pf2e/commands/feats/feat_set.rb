@@ -3,7 +3,7 @@ module AresMUSH
     class PF2FeatSetCmd
       include CommandHandler
 
-      attr_accessor :type, :value
+      attr_accessor :feat_type, :feat_name
       
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
