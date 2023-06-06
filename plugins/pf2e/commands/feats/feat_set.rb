@@ -58,6 +58,17 @@ module AresMUSH
           return nil
         end
 
+        # Does the enactor have one of the requested feat type free to select? 
+
+        to_assign = enactor.pf2_to_assign
+
+        key = ftype + " feat"
+
+        if !to_assign[key]
+          client.emit_failure t('pf2e.no_free', :element => key)
+          return
+        end
+
         # Does the enactor qualify to take this feat?
 
         qualify = Pf2e.can_take_feat?(enactor, self.feat_name)
@@ -70,6 +81,8 @@ module AresMUSH
         ##### VALIDATION SECTION END #####
 
         # Do it.
+        # Modify the key in to_assign
+        to_assign[key] = self.feat_name
 
         sublist = feat_list[ftype]
         sublist << self.feat_name
@@ -78,8 +91,20 @@ module AresMUSH
 
         enactor.update(pf2_feats: feat_list)
 
+
         client.emit_success t('pf2e.feat_set_ok', :name => 'self.name', :type => self.feat_type)
 
+        # Does this feat leave you with something else to assign? 
+
+        cascade = Global.read_config('pf2e_feats', self.feat_name, 'assign')
+
+        if cascade
+          assign_key = cascade[0]
+          to_assign[assign_key] = cascade[1]
+          client.emit_ooc t('pf2e.feat_grants_addl', :element => assign_key)
+        end
+
+        enactor.update(pf2_to_assign: to_assign)
       end
 
     end
