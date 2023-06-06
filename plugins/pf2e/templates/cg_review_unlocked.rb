@@ -249,6 +249,12 @@ module AresMUSH
         divine_skill = Global.read_config('pf2e_deities', deity, 'divine_skill').split
       end
 
+      def bg_skills
+        return [] if !@background_info
+
+        bg_skills = @background_info['skills'] ? @background_info['skills'] : []
+      
+      end
 
       def all_skills
         charclass_skills + subclass_skills + bg_skills + deity_skills
