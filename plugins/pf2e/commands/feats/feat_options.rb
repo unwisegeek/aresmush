@@ -7,9 +7,8 @@ module AresMUSH
       attr_accessor :search_type, :assign_type
 
       def parse_args
+        self.search_type = titlecase_arg(cmd.args)
         arg = downcase_arg(cmd.args)
-        self.search_type = arg.capitalize
-
         self.assign_type = arg + " feat"
       end
 
