@@ -120,7 +120,7 @@ module AresMUSH
 
         list = []
         sort_skills.each_with_index do |s,i|
-          list << format_skill(@char, s, i)
+          list << format_skill(@char, s, i) unless s.prof_level == 'untrained'
         end
 
         list
