@@ -2082,7 +2082,7 @@ pf2e_feats:
       level: 5
       heritage: Changeling
 
-  Eyes of the Night:
+  Eyes Of The Night:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
@@ -2189,7 +2189,7 @@ pf2e_feats:
     prereq:
       level: 1
       heritage: Dar
-  Voice of the Night:
+  Voice Of The Night:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
