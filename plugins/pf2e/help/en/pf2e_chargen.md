@@ -28,7 +28,7 @@ _An element marked with the * character is a mandatory element._ Note that some 
 
 `cg/info <element>`: This command lists the options available to you, based on either all items available or on the choices you have already made. 
 
-`cg/review`: This command is your friend and guidebook through the sheet generation process. Watch especially the warning messages at the bottom - if you see something in red, you are either missing a choice, or have made an illegal one.  Remember that your prologue should reflect the options chosen here.
+`cg/review`: This command is your friend and guidebook through the sheet generation process. Watch especially the warning messages at the bottom - if you see something in red, you are either missing a choice, or you have made an illegal one.  Remember that your prologue should reflect the options chosen here.
 
 `commit info`: Once you're happy with what you have, type this to finalize it and set up the next phase of chargen. **BEWARE**: If you change your mind on these later, you'll have to `cg/reset` and start your sheet over from the beginning.
 

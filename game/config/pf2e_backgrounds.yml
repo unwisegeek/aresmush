@@ -259,7 +259,7 @@ pf2e_background:
     - Athletics
     - Farming Lore
     feat:
-    - Assurance - Athletics
+    - Assurance (Athletics)
     special: []
     action: []
     reaction: []
@@ -357,12 +357,34 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Harrow-Led:
+  Harrow-Led (Occultism):
     abl_boost:
     - open
     skills:
     - Occultism
+    - Harrow Lore
+    feat:
+    - Dubious Knowledge
+    special:
+    - Harrow
+    action: []
+    reaction: []
+  Harrow-Led (Performance):
+    abl_boost:
+    - open
+    skills:
     - Performance
+    - Harrow Lore
+    feat:
+    - Dubious Knowledge
+    special:
+    - Harrow
+    action: []
+    reaction: []
+  Harrow-Led (Society):
+    abl_boost:
+    - open
+    skills:
     - Society
     - Harrow Lore
     feat:
@@ -395,12 +417,24 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Hermit:
+  Hermit (Nature):
     abl_boosts:
     - [ Constitution, Intelligence ]
     - open
     skills:
     - Nature
+    lores:
+    - terrain
+    feat:
+    - Dubious Knowledge
+    special: []
+    action: []
+    reaction: []
+  Hermit (Occultism):
+    abl_boosts:
+    - [ Constitution, Intelligence ]
+    - open
+    skills:
     - Occultism
     lores:
     - terrain
@@ -445,12 +479,24 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Martial Disciple:
+  Martial Disciple (Acrobatics):
     abl_boosts:
     - [ Strength, Dexterity ]
     - open
     skills:
     - Acrobatics
+    - Warfare Lore
+    feat:
+    - Cat Fall
+    - Quick Jump
+    special: []
+    action: []
+    reaction: []
+  Martial Disciple (Athletics):
+    abl_boosts:
+    - [ Strength, Dexterity ]
+    - open
+    skills:
     - Athletics
     - Warfare Lore
     feat:
@@ -609,14 +655,44 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Scholar:
+  Scholar (Arcana):
     abl_boosts:
     - [ Intelligence, Wisdom ]
     - open
     skills:
     - Arcana
+    - Academia Lore
+    feat: []
+    special: []
+    action: []
+    reaction: []
+  Scholar (Nature):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
     - Nature
+    - Academia Lore
+    feat: []
+    special: []
+    action: []
+    reaction: []
+  Scholar (Occultism):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
     - Occultism
+    - Academia Lore
+    feat: []
+    special: []
+    action: []
+    reaction: []
+  Scholar (Religion):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
     - Religion
     - Academia Lore
     feat: []
@@ -648,12 +724,23 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Spell Seeker:
+  Spell Seeker (Arcana):
     abl_boosts:
     - [ Intelligence, Wisdom ]
     - open
     skills:
     - Arcana
+    - Library Lore
+    feat:
+    - Recognize Spell
+    special: []
+    action: []
+    reaction: []
+  Spell Seeker (Occultism):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
     - Occultism
     - Library Lore
     feat:
@@ -711,12 +798,23 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Teacher:
+  Teacher (Performance):
     abl_boosts:
     - [ Intelligence, Wisdom ]
     - open
     skills:
     - Performance
+    - Academia Lore
+    feat:
+    - Experienced Professional
+    special: []
+    action: []
+    reaction: []
+  Teacher (Society):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
     - Society
     - Academia Lore
     feat:

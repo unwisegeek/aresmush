@@ -34,7 +34,7 @@ module AresMUSH
         # Does the character need to assign this feat? 
 
         if !(to_assign[self.assign_type])
-          client.emit t('pf2e.no_free', :element => self.assign_type)
+          client.emit_failure t('pf2e.no_free', :element => self.assign_type)
           return
         end
 
