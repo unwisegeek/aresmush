@@ -2314,7 +2314,7 @@ pf2e_feats:
       level: 1
       heritage: Half-Oruch
   Oruch Sight:
-   feat_type: 
+    feat_type: 
     - Ancestry
     assoc_ancestry: 
     - Arvek
