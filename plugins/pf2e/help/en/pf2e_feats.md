@@ -14,16 +14,6 @@ These commands can be used to review the feats you have or determine which ones 
 
 `feat/info [<character name>]`: Shows details for all feats <character name> currently possesses. If <character name> is omitted, it will show the details for all of your feats.
 `feat <name>`: Shows details for the named feat.
-`feat/search <type> = <term>`: Shows all feats where <term> is found in the <type> field. Possible types include:
-
-* name: Search feats by name.
-* type: Search for feats by type. Types include "charclass", "ancestry", "dedication", "archetype", "general", or "skill".
-* trait: Search for feats with a particular trait. 
-* desc: Search for keywords in the description of a feat. 
-* prereq: Search for feats with a particular prerequisite.
-
+`feat/options <type>`: Usable only in chargen. Shows all feats for which the character qualifies but does not yet have.
 `feat/qualify`: Shows all feats for which the character qualifies but does not yet have.
-
-
-
 

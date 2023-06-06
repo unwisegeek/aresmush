@@ -62,6 +62,7 @@ en:
     
     feat_available_options: "You qualify to take the following feats in that category: %{options}"
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
+    feat_grants_addl: "This feat grants an additional %{element}."
     feats_are_ok: "%xgYou have no unassigned feats."
     feat_set_ok: "Feat %{name} added to list %{type}."
 
