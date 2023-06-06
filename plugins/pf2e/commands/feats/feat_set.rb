@@ -103,7 +103,7 @@ module AresMUSH
         enactor.update(pf2_feats: feat_list)
 
 
-        client.emit_success t('pf2e.feat_set_ok', :name => self.name, :type => self.feat_type)
+        client.emit_success t('pf2e.feat_set_ok', :name => self.feat_name, :type => self.feat_type)
 
         # Does this feat leave you with something else to assign? 
 
