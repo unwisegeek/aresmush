@@ -226,7 +226,7 @@ module AresMUSH
       return t('pf2e.feat_details_missing', :name => feat.upcase) if !details
 
       fmt_name = "%x172#{feat}%xn"
-      feat_type = "%xh%xwFeat Type:%xn #{details['feat_type'].sort.join(", ")}"
+      feat_type = "%%x229Feat Type:%xn #{details['feat_type'].sort.join(", ")}"
       
       # Depending on feat type, this may be different keys with different formats.
 

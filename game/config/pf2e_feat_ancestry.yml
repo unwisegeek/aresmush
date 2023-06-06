@@ -1546,3 +1546,984 @@ pf2e_feats:
       level: 5
       feat: 
       - Sildanyari Weapon Familiarity
+
+  Angelkin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    - lineage
+    shortdesc: You descend from an angel—a winged messenger from Nirvana or one of the other celestial realms—which gives you a knack for cultures and languages.
+    prereq:
+      level: 1
+      heritage: Aasimar
+  Celestial Eyes:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: You can see through darkness.
+    prereq:
+      level: 1
+      heritage: Aasimar
+  Celestial Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: You were raised with an aasimar or celestial relative, or you've devoted yourself to researching the secrets of the celestial realms.
+    prereq:
+      level: 1
+      heritage: Aasimar
+  Halo:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: You are surrounded by a halo of light and goodness at all times.
+    prereq:
+      level: 1
+      heritage: Aasimar
+  Lawbringer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    - lineage
+    shortdesc: You trace your lineage to archons: embodiments of heavenly virtues, guardians of the seven-tiered mountain of Heaven, and nurturers of law and virtue within mortals.
+    prereq:
+      level: 1
+      heritage: Aasimar
+  Musetouched:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    - lineage
+    shortdesc: Your blood sings with the liberating power of the azatas, living embodiments of freedom from the wild realm of Elysium.
+    prereq:
+      level: 1
+      heritage: Aasimar
+  Blessed Blood (Aasimar):
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: Your freshly spilled blood is sanctified, and ingesting it causes effects similar to those of holy water.
+    prereq:
+      level: 5
+      heritage: Aasimar
+  Celestial Resistance:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: Your growing connection to your celestial forebears has granted you one of their resistances as well.
+    prereq:
+      level: 5
+      heritage: Aasimar
+  Empyreal Blessing:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: You can call forth a benediction upon your allies, whether you pray to a deity of the celestial realms or just find the power within yourself.
+    prereq:
+      level: 5
+      heritage: Aasimar
+  Healer's Halo:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - aasimar
+    shortdesc: Your halo can enhance positive energy.
+    prereq:
+      level: 5
+      heritage: Aasimar
+  Ashen Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - ashen one
+    shortdesc: You either found another ashen one who taught you the secrets of your kind, or you managed to research your unusual heritage.
+    prereq:
+      level: 1
+      heritage: Ashen One
+  Ghost Hunter:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - ashen one
+    shortdesc: Your connection to the Boneyard ensures that your blows strike true against spectral beings.
+    prereq:
+      level: 1
+      heritage: Ashen One
+  Gravesight:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - ashen one
+    shortdesc: You can see in the darkness as easily as a psychopomp.
+    prereq:
+      level: 1
+      heritage: Ashen One
+  Lifesense:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - ashen one
+    - divination
+    - divine
+    shortdesc: You have a limited ability to sense life force, like your psychopomp forebears.
+    prereq:
+      level: 5
+      heritage: Ashen One
+  Spirit Soother:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - ashen one
+    shortdesc: You are attuned to the minute sounds and sensations of restless spirits.
+    prereq:
+      level: 5
+      heritage: Ashen One
+  Ward Against Corruption:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - ashen one
+    shortdesc: Your soul is warded against the power of undeath and plague, as well as that of the evil former psychopomps known as sahkils.
+    prereq:
+      level: 5
+      heritage: Ashen One
+  Brine May:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    - lineage
+    shortdesc: Your mother was a sea hag, granting you one sea-green or blue eye.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Callow May:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    - lineage
+    shortdesc: You are among the most common of changelings—those born to green hags—and a vibrant green eye signifies that parentage.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Changeling Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    shortdesc: All too aware of your true nature, you’ve studied hags and their powers.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Dream May:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    - lineage
+    shortdesc: You are the child of a night hag, making one of your eyes violet or even black.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Hag Claws:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    shortdesc: When you came of age, your fingernails grew long and sharp.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Hag's Sight:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    shortdesc: You've nurtured the supernatural abilities gifted by your hag mother, particularly your sight.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Slag May:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    - lineage
+    shortdesc: Your mother was an annis hag, known for physical prowess, and you have one violet or steel-gray eye.
+    prereq:
+      level: 1
+      heritage: Changeling
+  Called:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    shortdesc: You have heard the Call, and in constantly resisting that persistent demand, you've developed a mental bulwark against effects that would target your mind.
+    prereq:
+      level: 5
+      heritage: Changeling
+  Mist Child:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - changeling
+    shortdesc: You blend in with unnatural subtlety.
+    prereq:
+      level: 5
+      heritage: Changeling
+
+  Eyes of the Night:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: You can see in the darkness as easily as a true vampire.
+    prereq:
+      level: 1  
+      heritage: Dar
+  Fangs:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: 'Your incisors have grown into true fangs: long, sharp, and well-suited to drawing blood.'
+    prereq:
+      level: 1
+      heritage: Dar
+  Straveika:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    - lineage
+    shortdesc: You descend from one of the truly ancient vampires, a nosferatu cursed to eternal life but not eternal youth.
+    prereq:
+      level: 1
+      heritage: Dar
+  Svetocher:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    - lineage
+    shortdesc: You were born to one of the moroi, the most common vampires, and you share their supernatural fortitude and power of persuasion.
+    prereq:
+      level: 1
+      heritage: Dar
+  Vampire Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: You were raised by your vampiric parent, or you've invested substantial time and energy researching the secrets of your undead progenitors.
+    prereq:
+      level: 1
+      heritage: Dar
+  Voice of the Night:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: You hear and understand the words of creatures you share the darkness with.
+    prereq:
+      level: 1
+      heritage: Dar
+  Earned Glory:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - half-sil
+    shortdesc: Sildanyari are often skeptical of their half-sil kin, and you are experienced at telling stories of your accomplishments to gain their respect.
+    prereq:
+      level: 1
+      heritage: Half-Sil
+  Sil Atavism:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - half-sil
+    shortdesc: Your sildanyari blood runs particularly strong, granting you features far more sil than those of a typical half-sil.
+    prereq:
+      level: 1
+      heritage: Half-Sil
+  Inspire Imitation:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - half-sil
+    shortdesc: Your own actions inspire your allies to great achievements.
+    prereq:
+      level: 5
+      heritage: Half-Sil
+  Supernatural Charm:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    shortdesc: The elven magic in your blood manifests as a force you can use to become more appealing or alluring.
+    prereq:
+      level: 5
+      heritage: Half-Sil
+  Monstrous Peacemaker:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+      - half-oruch
+    shortdesc: Your dual human and orc nature has given you a unique perspective.
+    prereq:
+      level: 1
+      heritage: Half-Oruch
+  Oruch Sight:
+   feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - half-oruch
+    shortdesc: Your orc blood is strong enough to grant you the keen vision of your orc forebears.
+    prereq:
+      level: 1
+      heritage: Half-Oruch
+
+  Fiendish Eyes:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - tiefling
+    shortdesc: You can see in the darkness as easily as a fiend.
+    prereq:
+      level: 1
+      heritage: Tiefling
+  Fiendish Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - tiefling
+    shortdesc: You were raised by a tiefling or a fiendish relative, or you've devoted yourself to researching the secrets of the fiendish realms.
+    prereq:
+      level: 1
+      heritage: Tiefling
+  Form of the Fiend:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - tiefling
+    shortdesc: Part of your body has an obvious, fiendish appearance.
+    prereq:
+      level: 1
+      heritage: Tiefling
+  Grimspawn:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - lineage
+    - tiefling
+    shortdesc: Your lineage traces back to a daemon, one of the manifestations of horrific forms of death that devour souls within their foul home of Abaddon.
+    prereq:
+      level: 1
+      heritage: Tiefling
+  Hellspawn:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - lineage
+    - tiefling
+    shortdesc: Your lineage descends from devils, the conniving schemers of Hell's malevolent hierarchy.
+    prereq:
+      level: 1
+      heritage: Tiefling
+  Nimble Hooves:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+      traits:
+      - tiefling
+      shortdesc: Your legs end in hooves rather than feet, with joints and tendons that allow you to move with great haste.
+      prereq:
+        level: 1
+        heritage: Tiefling
+  Pitborn:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - lineage
+    - tiefling
+    shortdesc: Your blood bears the mark of a demon, a living embodiment of sin from the fetid depths of the Abyss.
+    prereq:
+      level: 1
+      heritage: Tiefling
+  Fiendish Resistance:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - tiefling
+    shortdesc: Your connection to your fiendish forebears has granted you one of their resistances as well.
+    prereq:
+      level: 5
+      heritage: Tiefling
+  Malicious Bane:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Gobber
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - tiefling
+    shortdesc: Whether your heart is pure or corrupt, you can call forth a malediction upon your foes.
+    prereq:
+      level: 5
+      heritage: Tiefling
