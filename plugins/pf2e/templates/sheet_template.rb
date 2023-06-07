@@ -116,14 +116,16 @@ module AresMUSH
 
         return [] if skills.empty?
 
-        sort_skills = skills.to_a.sort_by { |s| s.name }
+        filter_skills = skills.to_a.delete_if? { |s| s.prof_level == 'untrained' }
+
+        sort_skills = filter_skills.sort_by { |s| s.name }
 
         list = []
         sort_skills.each_with_index do |s,i|
-          list << format_skill(@char, s, i) unless s.prof_level == 'untrained'
+          list << format_skill(@char, s, i) 
         end
 
-        list.compact
+        list
       end
 
       def hp
