@@ -62,9 +62,10 @@
 <%= section_line("Feats") %>
 <% end %>
 <% if section == "feats" || "all" %>
-<% feats.each do |feat| %>
+<% feats.each do |feat| -%>
 <%= feat -%>
 <% end %>
+
 <% end %>
 <% if section == "all" %>
 <%= section_line("Known For...") -%>
