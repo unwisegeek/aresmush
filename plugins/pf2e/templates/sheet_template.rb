@@ -116,7 +116,7 @@ module AresMUSH
 
         return [] if skills.empty?
 
-        filter_skills = skills.to_a.delete_if? { |s| s.prof_level == 'untrained' }
+        filter_skills = skills.to_a.delete_if { |s| s.prof_level == 'untrained' }
 
         sort_skills = filter_skills.sort_by { |s| s.name }
 
