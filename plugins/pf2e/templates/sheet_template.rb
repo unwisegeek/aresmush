@@ -198,35 +198,35 @@ module AresMUSH
       end
 
       def feats
-        charclass_list = @char.pf2_feats['charclass'].sort
-        ancestry_list = @char.pf2_feats['ancestry'].sort
-        general_list = @char.pf2_feats['general'].sort
-        skill_list = @char.pf2_feats['skill'].sort
-        dedication_list = @char.pf2_feats.has_key?('dedication') ?  @char.pf2_feats['dedication'].sort : []
+        charclass_list = @char.pf2_feats['charclass']
+        ancestry_list = @char.pf2_feats['ancestry']
+        general_list = @char.pf2_feats['general']
+        skill_list = @char.pf2_feats['skill']
+        dedication_list = @char.pf2_feats.has_key?('dedication') ?  @char.pf2_feats['dedication'] : []
 
         list = []
 
-        charclass_list.each_with_index do |c,i|
-          list << format_feat(c,'charclass',i)
+        charclass_list.each do |c|
+          list << format_feat(c,'charclass')
         end
 
-        ancestry_list.each_with_index do |a,i|
-          list << format_feat(a,'ancestry',i)
+        ancestry_list.each do |a|
+          list << format_feat(a,'ancestry')
         end
 
-        general_list.each_with_index do |g,i|
-          list << format_feat(g,'general',i)
+        general_list.each do |g|
+          list << format_feat(g,'general')
         end
 
-        skill_list.each_with_index do |s,i|
-          list << format_feat(s,'skill',i)
+        skill_list.each do |s|
+          list << format_feat(s,'skill')
         end
 
-        dedication_list.each_with_index do |d,i|
-          list << format_feat(d,'dedication',i)
+        dedication_list.each do |d|
+          list << format_feat(d,'dedication')
         end
 
-        list
+        list.sort.join(", ")
       end
 
       def features
@@ -366,11 +366,10 @@ module AresMUSH
         "#{fmt_name}: #{fmt_prof}"
       end
 
-      def format_feat(name, type, i)
+      def format_feat(name, type)
         fmt_type = type.upcase[0..1]
-        linebreak = i % 2 == 1 ? "" : "%r"
 
-        "#{linebreak}#{left("#{name} (#{fmt_type})",39)}"
+        "#{name} (%xh%xx#{fmt_type}%xn)"
       end
 
       def format_save(char,name)
