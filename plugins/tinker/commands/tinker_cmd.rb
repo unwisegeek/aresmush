@@ -9,19 +9,12 @@ module AresMUSH
       end
       
       def handle
-      
-        char = Character.find_one_by_name("Testchar") 
-      
-        feats = Global.read_config('pf2e_feats')
         
-        list = []
+        category = "weapon"
+      
+        list_key = "pf2e_" + category
         
-        feats.each do |f,d|
-            can_take = Pf2e.can_take_feat?(char, f)
-            is_ancestry = d['feat_type'].include? 'Ancestry' 
-            
-            list << f if can_take && is_ancestry
-        end
+        list = Global.read_config(list_key)
         
         client.emit list
         
