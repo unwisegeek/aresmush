@@ -82,10 +82,6 @@ module AresMUSH
 
           fmt_list << "%b%b#{usable}%r"
 
-          desc = @item.shortdesc
-
-          fmt_list << "%b%b#{item_color}Description:%xn#{desc}%r"
-
         when "shield", "shields"
 
           # Calculate shield HP display.
@@ -116,7 +112,18 @@ module AresMUSH
 
         if @category == "magicitem"
 
-          return [ "Properties for magic items, like uses and investments and whether it's a consumable." ]
+          list = []
+
+          bonus_list = []
+
+          bonuses = @item.bonus.each_pair do |k,v|
+
+            bonus_list << "+#{v} to #{k}"
+
+          end
+
+          list << "%b%b#{item_color}Bonuses:%xn #{bonus_list.join(", ")}"
+
           
         elsif @category == ("shield" || "shields")
           
