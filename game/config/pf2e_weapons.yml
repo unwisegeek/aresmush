@@ -506,6 +506,7 @@ pf2e_weapons:
     bulk: 2
     group: Polearm
   Handwraps of Mighty Blows:
+    level: 3
     wp_type: melee
     category: simple
     group: Brawling
