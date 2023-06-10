@@ -24,7 +24,7 @@ module AresMUSH
 
         format_check = []
 
-        self.to_invest.each do |item|
+        self.to_uninvest.each do |item|
 
           args = item.split("/")
           category = args[0]
