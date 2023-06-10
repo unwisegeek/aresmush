@@ -66,7 +66,7 @@ module AresMUSH
           if item_id&.traits.include? 'invested'
             invest_list << item_id 
           else
-            client.emit_ooc t('pf2egear.not_investible_item', :item => Pf2egear.get_item_name item_id)
+            client.emit_ooc t('pf2egear.not_investible_item', :item => Pf2egear.get_item_name(item_id))
           end
         end
 
