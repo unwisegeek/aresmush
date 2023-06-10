@@ -128,5 +128,9 @@ module AresMUSH
 
     end
 
+    def self.get_item_name(item)
+      item.nickname ? "#{item.nickname} (#{item.name})" : item.name
+    end
+
   end
 end

@@ -131,7 +131,7 @@ module AresMUSH
       end
 
       def format_wp(char,w,i)
-        name = w.nickname ? "#{w.nickname} (#{w.name})" : w.name
+        name = Pf2egear.get_item_name(w)
         bulk = w.bulk == 0.1 ? "L" : w.bulk.to_i
         prof = Pf2eCombat.get_weapon_prof(char, w.name)[0].upcase
         equip = w.equipped ? "Yes" : "No"
@@ -139,7 +139,7 @@ module AresMUSH
       end
 
       def format_armor(char,a,i)
-        name = a.nickname ? "#{a.nickname} (#{a.name})" : a.name
+        name = Pf2egear.get_item_name(a)
         bulk = a.bulk == 0.1 ? "L" : a.bulk.to_i
         prof = Pf2eCombat.get_armor_prof(char, a.name)[0].upcase
         equip = a.equipped ? "Yes" : "No"
@@ -151,7 +151,7 @@ module AresMUSH
       end
 
       def format_shields(char,s,i)
-        name = s.nickname ? "#{s.nickname} (#{s.name})" : s.name
+        name = Pf2egear.get_item_name(s)
         bulk = s.bulk == 0.1 ? "L" : s.bulk.to_i
         disp_hp = Pf2egear.display_shield_hp(s)
         equip = s.equipped ? "Yes" : "No"
@@ -172,7 +172,7 @@ module AresMUSH
       end
 
       def format_bags(bag, i)
-        name = bag.nickname ? "#{bag.nickname} (#{bag.name})" : bag.name
+        name = Pf2egear.get_item_name(bag)
         capacity = bag.capacity
         current_load = Pf2egear.calculate_bag_load(bag)
         disp_load = "#{current_load} / #{capacity}"
