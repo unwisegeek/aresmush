@@ -126,6 +126,22 @@ module AresMUSH
         Pf2egear.display_money(@char.pf2_money)
       end
 
+      def magic_items
+
+        list = []
+
+        mi_list = @char.magic_items ? Pf2egear.items_in_inventory(@char.magic_items.to_a) : []
+
+        @mi_bulk = mi_list.map { |m| m.bulk }.sum
+
+        mi_list.each_with_index do |m,i|
+          list << format_mi(m,i)
+        end
+
+        list
+
+      end
+
       def header_wp_armor
         "%b%b#{left("#", 3)}%b#{left("Name", 43)}%b#{left("Bulk", 8)}%b#{left("Prof", 10)}%b#{left("Equip?", 9)}"
       end
@@ -165,6 +181,18 @@ module AresMUSH
         linebreak = i % 2 == 1 ? "" : "%r"
         index = "(#{i}) #{name}"
         "#{linebreak} #{left(index, 30)}: #{left(qty,3)} "
+      end
+
+      def header_mi
+        "%b%b#{left("#", 3)}%b#{left("Name", 52)}%b#{left("Bulk", 8)}%b#{left("Invest?", 10)}"
+      end
+
+      def format_mi(mi, i)
+        name = Pf2egear.get_item_name(mi)
+        bulk = mi.bulk == 0.1 ? "L" : mi.bulk.to_i
+        invest = mi.invested ? "Yes" : "No"
+
+        "%b%b#{left(i, 3)}%b#{left(name, 52)}%b#{left(bulk, 8)}%b#{left(invest, 10)}"
       end
 
       def header_bags
