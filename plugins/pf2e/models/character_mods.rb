@@ -4,6 +4,7 @@ module AresMUSH
     attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
     attribute :advancing, :type => DataType::Boolean
+    attribute :pf2_last_refresh
 
     attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"", 'specialize_info'=>""}
     attribute :pf2_level, :type => DataType::Integer, :default => 1
@@ -28,12 +29,12 @@ module AresMUSH
     attribute :pf2_is_dead, :type => DataType::Boolean
     attribute :pf2_known_for, :type => DataType::Array, :default => []
 
+
     ### Only some characters will have these attributes, so nil check these.
     attribute :pf2_formula_book, :type => DataType::Hash
 
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"
-    collection :lores, "AresMUSH::Pf2eLores"
     reference :hp, "AresMUSH::Pf2eHP"
     reference :combat, "AresMUSH::Pf2eCombat"
     reference :magic, "AresMUSH::Pf2eMagic"
@@ -44,7 +45,6 @@ module AresMUSH
     def delete_pf2
       self.abilities&.each { |a| a.delete } if self.abilities
       self.skills&.each { |s| s.delete } if self.skills
-      self.lores&.each { |l| l.delete } if self.lores
       self.hp&.delete
       self.combat&.delete
       self.magic&.delete
