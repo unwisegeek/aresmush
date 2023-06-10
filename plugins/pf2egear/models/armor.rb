@@ -18,6 +18,7 @@ module AresMUSH
     attribute :group, :default => ""
     attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => {} , 'property' => {} }
     attribute :invested, :type => DataType::Boolean, :default => false
+    attribute :invest_on_refresh, :type => DataType::Boolean
     attribute :equipped, :type => DataType::Boolean, :default => false
 
     reference :character, "AresMUSH::Character"
