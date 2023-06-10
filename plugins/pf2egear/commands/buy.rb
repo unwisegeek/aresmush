@@ -68,6 +68,16 @@ module AresMUSH
           item_info = item.values.first
         end
 
+        #  If it's gear or a consumable, multiples are allowed, otherwise only one. 
+
+        case self.category
+        when "weapons", "weapon", "armor", "shields", "shield", "bags", "magicitem"
+          if q > 1
+            client.emit_ooc t('pf2egear.quantity_one_only')
+            q = 1
+          end
+        end
+
         # Do they have enough money?
         cost = item_info['price'] * q
         purse = enactor.pf2_money
@@ -77,43 +87,9 @@ module AresMUSH
           return
         end
 
-        # Create the item. If it's gear or a consumable, multiples are allowed, otherwise only one.
-        source_type = AresMUSH.const_get(Global.read_config('pf2e_gear_options', 'item_classes', self.category))
+        # Create the item. 
 
-        case self.category
-        when "weapons", "weapon", "armor", "shields", "shield", "bags", "magicitem"
-
-          if q > 1
-            client.emit_ooc t('pf2egear.quantity_one_only')
-            q = 1
-            cost = item_info['price'] * q
-          end
-
-          new_item = source_type.create(character: enactor, name: item_name)
-
-          item_info.each_pair do |k,v|
-            new_item.update("#{k}": v)
-          end
-
-        when "consumables", "gear"
-
-          ilist = self.category == "gear" ? enactor.gear : enactor.consumables
-
-          has_item = ilist.select { |item| item.name == item_name }.first
-
-          if has_item
-            old_qty = has_item.quantity
-            has_item.update(quantity: q + old_qty)
-          else
-            new_item = source_type.create(character: enactor, name: item_name)
-              item_info.each_pair do |k,v|
-                new_item.update("#{k}": v)
-              end
-
-            new_item.update(quantity: q)
-          end
-
-        end
+        Pf2egear.create_item(enactor, self.category, item_name, q, item_info)
 
         enactor.update(pf2_money: (purse - cost))
 

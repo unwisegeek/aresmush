@@ -86,7 +86,46 @@ module AresMUSH
     end
 
     def self.invested_items(char)
-      item_list = char.magic_items.select { |item| item.invested }.to_a
+      magic_items = char.magic_items.select { |item| item.invested }.to_a
+      weapons = char.weapons.select { |item| item.invested }.to_a
+      armor = char.magic_items.select { |item| item.invested }.to_a
+
+      magic_items + weapons + armor
+    end
+
+    def self.create_item(char, category, name, quantity, item_info)
+
+      source_type = AresMUSH.const_get(Global.read_config('pf2e_gear_options', 'item_classes', category))
+
+      case category
+      when "weapons", "weapon", "armor", "shields", "shield", "bags", "magicitem"
+
+        new_item = source_type.create(character: char, name: name)
+
+        item_info.each_pair do |k,v|
+          new_item.update("#{k}": v)
+        end
+
+      when "consumables", "gear"
+
+        ilist = category == "gear" ? char.gear : char.consumables
+
+        has_item = ilist.select { |item| item.name == name }.first
+
+        if has_item
+          old_qty = has_item.quantity
+          has_item.update(quantity: quantity + old_qty)
+        else
+          new_item = source_type.create(character: char, name: name)
+            item_info.each_pair do |k,v|
+              new_item.update("#{k}": v)
+            end
+
+          new_item.update(quantity: quantity)
+        end
+
+      end
+
     end
 
   end
