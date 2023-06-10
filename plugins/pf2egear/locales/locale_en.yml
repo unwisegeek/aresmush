@@ -40,4 +40,6 @@ en:
 
     shields_dont_have_magic: "%xh%xmShields do not have magical properties.%xn"
 
+    too_many_invested: "You can only invest 10 items at a time."
+
     you_got_money: "%{from} paid you %{value} %{cointype}."

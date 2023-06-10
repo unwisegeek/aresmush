@@ -26,8 +26,12 @@ module AresMUSH
 
         char_inventory = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
 
+        # De-invest everything first and reset the list of what is invested.
+
+        char_inventory.each.update(invested: false)
+
         self.item_list.each do |i|
-            list << char_inventory[i]
+          list << char_inventory[i]
         end
 
         invest_list = list.compact
@@ -39,6 +43,18 @@ module AresMUSH
 
         if (invest_list != list)
           client.emit_ooc t('pf2egear.bad_item_in_list')
+        end
+
+        # Handling for weapons that can be invested, e.g. handwraps of mighty blows.
+        # If a weapon is equipped, it is considered invested.
+
+        invested_weapons = enactor.weapons.select { |w| w.traits.include? 'invested' && w.equipped }
+
+        # Only 10 items can be invested in a day. 
+
+        if (invest_list + invested_weapons).size > 10
+          client.emit_failure t('pf2egear.too_many_invested')
+          return
         end
 
         # Invest the items that are valid.
