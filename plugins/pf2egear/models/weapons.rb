@@ -22,7 +22,6 @@ module AresMUSH
     attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => {}, 'property' => {} }
     attribute :equipped, :type => DataType::Boolean, :default => false
     attribute :use, :type => DataType::Hash, :default => {}
-    attribute :magic, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
     reference :shield, "AresMUSH::PF2Shield"

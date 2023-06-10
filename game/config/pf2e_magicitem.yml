@@ -1,0 +1,235 @@
+---
+pf2e_magicitem:
+  Aeon Stone (Dull Gray): 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    - uncommon
+    level: 1
+    price: 900
+    bulk: 0
+    shortdesc: "This aeon stone has lost all magical properties, but it's still useful as a hands-free target for _light_ spells and similar."
+  Wayfinder: 
+    traits: 
+    - uncommon
+    - evocation
+    - invested
+    - magical
+    level: 2
+    price: 2800
+    bulk: 0
+    shortdesc: "This compact compass holds a single indentation meant to hold an aeon stone."
+  Brooch of Shielding: 
+    traits: 
+    - uncommon
+    - abjuration
+    - invested
+    - magical
+    level: 2
+    price: 3000
+    bulk: 0
+    use: 
+      spell: Automatically absorbs magic missiles targeting the wearer.
+      charges: 30
+    shortdesc: "This piece of silver or gold jewelry can be used to fasten a cloak or cape. It automatically absorbs _magic missile_ spells targeting the wearer."
+  Hand of the Mage: 
+    traits: 
+    - evocation
+    - invested
+    - magical
+    level: 2
+    price: 3000
+    bulk: 0.1
+    use: 
+      spell: Mage Hand
+      frequency: on command
+    shortdesc: "This mummified elf hand hangs on a golden chain, its gnarled fingers locked in a peculiar pattern."
+  Hat of Disguise: 
+    traits: 
+    - illusion
+    - invested
+    - magical
+    level: 2
+    price: 3000
+    bulk: 0
+    use: 
+      spell: "Casts a 1st-level" _illusory disguise_ on the wearer.
+      frequency: 1/day
+    shortdesc: "This ordinary-looking hat allows you to cloak yourself in illusions."
+  Doubling Rings: 
+    traits:
+    - evocation
+    - invested
+    - magical
+    level: 3
+    price: 5000
+    bulk: 0
+    shortdesc: "Two magically-linked rings, one golden, one iron. Replicates fundamental runes from one melee weapon to another when both are worn."
+  Hat of the Magi: 
+    traits: 
+    - arcane
+    - conjuration
+    - invested
+    level: 3
+    price: 5000
+    bulk: 0
+    use: 
+      spell: Prestidigitation
+    bonus: 
+      Arcana: 1
+    shortdesc: "This hat comes in many forms, such as a colorful turban or a pointy hat with a brim, and can bear symbols or runes. It grants you a +1 item bonus to Arcana checks and allows you to cast the prestidigitation cantrip as an arcane innate spell."
+  Persona Mask: 
+    traits: 
+    - fortune
+    - illusion
+    - invested
+    - magical
+    level: 3
+    price: 5000
+    bulk: 0
+    use: 
+      spell: "Changes the mask's appearance to an artistic rendition of the dramatic character of the player's choice."
+    shortdesc: "Despite covering the entire face, this alabaster mask does not hinder vision or other senses. Wearing the mask grants a +1 item bonus to Performance checks while acting, orating, performing comedy, or singing."
+  Bracers of Missile Deflection: 
+    traits: 
+    - abjuration
+    - invested
+    - magical
+    level: 3
+    price: 5200
+    bulk: 0.1
+    use: 
+      spell: Deflects a ranged weapon attack that does not critically hit. (Requirements)
+      frequency: 1/day
+    shortdesc: These bracers are made from plates of durable mithral and gleam like the summer sun.
+  Channel Protection Amulet: 
+    traits: 
+    - uncommon
+    - abjuration
+    - invested
+    - magical
+    level: 3
+    price: 5600
+    shortdesc: "This nugget of polished tektite is trapped in a cage of braided wire and hangs from a silken cord. When wearing this amulet, you gain resistance 5 against damage from harm spells if you’re living, or against heal spells if you’re undead."
+  Bracelet of Dashing: 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    level: 3
+    price: 5800
+    bulk: 0.1
+    use: 
+      spell: "Frequency once per day; Effect You gain a +10-foot status bonus to Speed for 1 minute."
+      frequency: 1/day
+    bonus:
+      Acrobatics: 1
+    shortdesc: "This jangling, silvery bracelet makes you lighter on your feet, giving you a +1 item bonus to Acrobatics checks."
+  Coyote Cloak: 
+    traits: 
+    - divination
+    - invested
+    - magical
+    level: 03
+    price: 6000
+    bonus: 
+      Survival: 1
+    shortdesc: "This dusty coat is made of mangy brown-and-gray coyote fur. You gain a +1 item bonus to Survival checks. If you critically succeed at your Survival check to Subsist, you can feed twice as many additional creatures."
+  Crafter's Eyepiece: 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    level: 3
+    price: 6000
+    bonus: 
+      Crafting: 1
+    shortdesc: "This rugged metal eyepiece aids a crafter in making repairs."
+  Dancing Scarf: 
+    traits: 
+    - illusion
+    - invested
+    - magical
+    - visual
+    level: 3
+    price: 6000
+    use: 
+      spell: Become concealed after a successful Performance check to dance.
+    shortdesc: "This long and billowing scarf is typically woven of silk or sheer fabric and adorned with bells or other jangling bits of shiny metal. It grants a +1 item bonus to Performance checks to dance."
+  Pendant of the Occult: 
+    traits: 
+    - divination
+    - invested
+    - occult
+    level: 3
+    price: 6000
+    use: 
+      spell: Cast _guidance_
+    bonus:
+      Occultism: 1
+    shortdesc: "This amulet is hollow and shaped in the form of an unblinking eye. Its cavity typically holds some fragment of occult text."
+  Tracker's Goggles: 
+    traits: 
+    - divination
+    - invested
+    - magical
+    level: 3
+    price: 6000
+    shortdesc: "These lenses of forest-green glass are bound in rough leather stitched with crude twine. While wearing these goggles, you gain a +1 bonus to Survival checks to Sense Direction and Track. If you fail a check to Track, you can try again after 30 minutes rather than an hour."
+  Ventriloquist's Ring: 
+    traits: 
+    - illusion
+    - invested
+    - magical
+    level: 3
+    price: 6000
+    use: 
+      spell: Twist the ring to produce the effect of a _ventriloquism_ spell.
+      frequency: 1/day
+    bonus:
+      Deception: 1
+    shortdesc: "This elegant copper ring has miniature images of songbirds engraved around its circumference."
+  Healer's Gloves: 
+    traits: 
+    - invested
+    - magical
+    - necromancy
+    level: 4
+    price: 8000
+    bulk: 0.1
+    use: 
+      spell: Restore 2d6+7 HP to a willing, living, adjacent creature.
+      frequency: 1/day
+    bonus:
+      Medicine: 1
+    shortdesc: "These clean, white gloves never show signs of blood, even when used to stitch up wounds or treat other ailments."
+  Lifting Belt: 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    level: 4
+    price: 8000
+    bulk: 0.1
+    bonus:
+      Athletics: 1
+      encumbered: 1
+      max_capacity: 1
+    use: 
+      spell: Lift an object of up to 8 Bulk as though it were weightless.
+    shortdesc: "This wide leather belt grants you a +1 item bonus to Athletics checks and increases the amount you can easily carry. You can carry Bulk equal to 6 + your Strength modifier before becoming encumbered, and you can hold and carry a total Bulk up to 11 + your Strength modifier."
+  Demon Mask: 
+    traits: 
+    - enchantment
+    - invested
+    - magical
+    level: 4
+    price: 8500
+    bulk: 0.1
+    use: 
+      spell: Casts _fear_, DC 20.
+      frequency: 1/day
+    bonus:
+      Intimidation: 1
+    shortdesc: "This terrifying mask is crafted in the visage of a leering demon and grants a +1 item bonus to Intimidation checks."
