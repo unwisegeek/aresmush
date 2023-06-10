@@ -17,6 +17,7 @@ module AresMUSH
     attribute :min_str, :type => DataType::Integer, :default => 10
     attribute :group, :default => ""
     attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => {} , 'property' => {} }
+    attribute :invested, :type => DataType::Boolean, :default => false
     attribute :equipped, :type => DataType::Boolean, :default => false
 
     reference :character, "AresMUSH::Character"
