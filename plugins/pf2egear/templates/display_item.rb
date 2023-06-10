@@ -75,17 +75,16 @@ module AresMUSH
           fmt_list << "%b#{left("#{item_color}Speed Penalty:%xn #{@item.speed_penalty} feet", 26)}"
           fmt_list << "%b#{left("#{item_color}Max Dex Bonus:%xn #{@item.dex_cap}", 26)}%r"
         when "magicitem"
-          fmt_list << "%b%b#{left("#{item_color}Slot:%xn #{@item.slot}",37)}"
-
-          # Is this a consumable item? 
-          consumable = @item.consumable ? "Yes" : "No"
-
-          fmt_list << "%b#{left("#{item_color}Consumable?:%xn #{consumable}", 37)}%r"
 
           # Can this item be used? 
           usable = @item.use.empty? ? "This item cannot be used." : "#{item_color}Use Effects:%xn #{@item.use}"
 
           fmt_list << "%b%b#{usable}%r"
+
+          desc = @item.shortdesc
+
+          fmt_list << "%b%b#{item_color}Description:%xn#{desc}%r"
+
         when "shield", "shields"
 
           # Calculate shield HP display.
