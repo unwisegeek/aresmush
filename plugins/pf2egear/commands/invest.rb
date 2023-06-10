@@ -61,10 +61,10 @@ module AresMUSH
             item_list = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
           end
 
-          item_id = item_list[num].first
+          item_id = item_list[num]
 
           if item_id&.traits.include? 'invested'
-            invest_list << item_id 
+            invest_list << item_id.first
           else
             client.emit_ooc t('pf2egear.not_investible_item', :item => Pf2egear.get_item_name(item_id))
           end

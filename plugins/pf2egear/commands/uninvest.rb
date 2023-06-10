@@ -63,9 +63,9 @@ module AresMUSH
             item_list = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
           end
 
-          item_id = item_list[num].first
+          item_id = item_list[num]
 
-          uninvest_list << item_id
+          uninvest_list << item_id.first
 
         end
 
