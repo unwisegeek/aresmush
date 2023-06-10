@@ -10,7 +10,7 @@ module AresMUSH
       
       def handle
         
-        category = "weapon"
+        category = "weapons"
       
         list_key = "pf2e_" + category
         
