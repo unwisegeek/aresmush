@@ -10,13 +10,11 @@ module AresMUSH
       
       def handle
         
-        category = "weapons"
-      
-        list_key = "pf2e_" + category
+        char = Character.find_one_by_name("Testchar")
         
-        list = Global.read_config(list_key)
+        item_list = Pf2egear.items_in_inventory(char.magic_items.to_a)
         
-        client.emit list
+        client.emit item_list
         
       end
 
