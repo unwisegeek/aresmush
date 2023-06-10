@@ -61,10 +61,16 @@ module AresMUSH
             item_list = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
           end
 
+          client.emit item_list
+
           item_id = item_list[num]
+
+          client.emit item_id
 
           invest_list << item_id if item_id&.traits.include? 'invested'
         end
+
+        client.emit invest_list
 
         # Invest_list is now a list of object ID's, but you can only have ten invested at a time.
         
