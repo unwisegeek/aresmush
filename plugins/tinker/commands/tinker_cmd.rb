@@ -13,13 +13,23 @@ module AresMUSH
         
         char = Character.find_one_by_name("Testchar")
         
-        char.pf2_invested_list = []
+        char_wp_list = Pf2egear.items_in_inventory(char.weapons.to_a)
+        char_a_list = Pf2egear.items_in_inventory(char.armor.to_a)
+        char_mi_list = Pf2egear.items_in_inventory(char.magic_items.to_a)
+
+        investable_list = char_wp_list + char_a_list + char_mi_list
         
-        char.save
+        client.emit investable_list
+
+        already_invested = investable_list.select {|i| i.invest_on_refresh }
         
-        item_list = Pf2egear.items_in_inventory(char.magic_items.to_a)
+        client.emit already_invested
+
+        counter = already_invested.size
         
-        client.emit item_list.first
+        client.emit counter
+        
+        
         
       end
 
