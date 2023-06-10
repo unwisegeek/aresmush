@@ -54,7 +54,7 @@ pf2e_magicitem:
     price: 3000
     bulk: 0
     use: 
-      spell: "Casts a 1st-level" _illusory disguise_ on the wearer.
+      spell: Casts a 1st-level _illusory disguise_ on the wearer.
       frequency: 1/day
     shortdesc: "This ordinary-looking hat allows you to cloak yourself in illusions."
   Doubling Rings: 
