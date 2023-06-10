@@ -37,14 +37,24 @@ module AresMUSH
           format_check << "bad category" unless valid_cats.include? category
         end
 
-        # Assemble list of object ID's to be invested.
+        # Mark objects for investment at next refresh. 
         
         if !format_check.empty? 
           client.emit_failure t('pf2egear.bad_format')
           return
         end
 
-        invest_list = enactor.pf2_invested_list ? enactor.pf2_invested_list : []
+        max_investable = Pf2e.has_feat?(enactor, 'Incredible Investiture') ? 12 : 10
+
+        char_wp_list = Pf2egear.items_in_inventory(enactor.weapons.to_a)
+        char_a_list = Pf2egear.items_in_inventory(enactor.armor.to_a)
+        char_mi_list = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
+
+        investable_list = char_wp_list + char_a_list + char_mi_list
+
+        already_invested = investable_list.select {|i| i.invest_on_refresh }
+
+        counter = already_invested.size
 
         self.to_invest.each do |item|
 
@@ -54,38 +64,35 @@ module AresMUSH
 
           case category
           when "weapon", "weapons"
-            item_list = Pf2egear.items_in_inventory(enactor.weapons.to_a)
+            item_list = char_wp_list
           when "armor"
-            item_list = Pf2egear.items_in_inventory(enactor.armor.to_a)
+            item_list = char_a_list
           when "magicitem"
-            item_list = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
+            item_list = char_mi_list
           end
 
           item_id = item_list[num]
 
           if item_id&.traits.include? 'invested'
-            invest_list << item_id.first
-          else
+
+            counter = counter + 1
+
+            if counter > max_investable
+              client.emit_failure t('pf2egear.too_many_invested', :max => max_investable)
+              return
+            end
+
+            item_id.update(invest_on_refresh: true)
+
+          else   
             client.emit_ooc t('pf2egear.not_investible_item', :item => Pf2egear.get_item_name(item_id))
           end
+
+          client.emit_success t('pf2egear.items_invested_ok', :count => counter)
+
+
         end
 
-        # Invest_list is now a list of object ID's, but you can only have ten invested at a time.
-        
-        invest_list = invest_list.uniq
-
-        max_investable = Pf2e.has_feat?(enactor, 'Incredible Investiture') ? 12 : 10
-
-        if invest_list.size > max_investable
-          client.emit_failure t('pf2egear.too_many_invested')
-          return
-        end
-            
-        # Mark this list for investiture at next refresh.
-
-        enactor.update(pf2_invested_list: invest_list)
-
-        client.emit_success t('pf2egear.items_invested_ok', :count => invest_list.size)
 
       end
     

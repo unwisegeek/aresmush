@@ -22,8 +22,8 @@ en:
     item_sold_ok: "You sell %{quantity} of %{item} for %{cost}."
     item_unequip_ok: "You unequip %{name}."
     item_view_title: "Detailed Item View for %{name}"
-    items_invested_ok: "%{count} items successfully invested."
-    items_uninvested_ok: "%{count} items successfully uninvested."
+    items_invested_ok: "Successful. %{count} items successfully invested."
+    items_uninvested_ok: "Successful. %{count} items successfully uninvested."
 
     money_paid_ok: "You pay %{value} %{cointype} to %{payee}."
     money_taken_ok: "You take %{value} %{cointype} from %{payer}."
@@ -42,6 +42,6 @@ en:
 
     shields_dont_have_magic: "%xh%xmShields do not have magical properties.%xn"
 
-    too_many_invested: "You can only invest 10 items at a time."
+    too_many_invested: "You can only invest %{max} items at a time."
 
     you_got_money: "%{from} paid you %{value} %{cointype}."
