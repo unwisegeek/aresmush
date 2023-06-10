@@ -81,9 +81,7 @@ module AresMUSH
 
         enactor.update(pf2_invested_list: invest_list)
 
-        invest_names = invest_list.map { |i| Pf2egear.get_item_name(i) }.sort.join(", ")
-
-        client.emit_success t('pf2egear.items_invested_ok', :list => invest_names)
+        client.emit_success t('pf2egear.items_invested_ok', :count => invest_list.size)
 
       end
     
