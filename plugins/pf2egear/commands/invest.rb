@@ -50,7 +50,7 @@ module AresMUSH
 
           args = item.split("/")
           category = args[0]
-          num = args[1]
+          num = args[1].to_i
 
           case category
           when "weapon", "weapons"
