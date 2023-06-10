@@ -297,3 +297,15 @@ div.card.card-default.markdown-editor,
 div.card-body.markdown-editor {
     background-color: transparent;
 }
+
+/* Characters/Admin directory page styling */
+
+.log-icon-title-container {
+    -webkit-border-radius: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 2px solid white;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #CBC0AD 75%, transparent 100%) 1;
+}
