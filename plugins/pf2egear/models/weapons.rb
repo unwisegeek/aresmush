@@ -21,6 +21,7 @@ module AresMUSH
     attribute :group, :default => ""
     attribute :runes, :type => DataType::Hash, :default => { 'fundamental' => {}, 'property' => {} }
     attribute :equipped, :type => DataType::Boolean, :default => false
+    attribute :invested, :type => DataType::Boolean, :default => false    
     attribute :use, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
