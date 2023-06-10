@@ -10,6 +10,7 @@ module AresMUSH
     attribute :price, :type => DataType::Integer, :default => 0
     attribute :use, :type => DataType::Hash, :default => {}
     attribute :invested, :type => DataType::Boolean
+    attribute :invest_on_refresh, :type => DataType::Boolean
     attribute :bonus, :type => DataType::Hash, :default => {}
     attribute :consumable, :type => DataType::Boolean
 
