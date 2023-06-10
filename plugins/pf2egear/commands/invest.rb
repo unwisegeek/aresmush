@@ -61,7 +61,7 @@ module AresMUSH
             item_list = Pf2egear.items_in_inventory(enactor.magic_items.to_a)
           end
 
-          item_id = item_list[num]
+          item_id = item_list[num].first
 
           if item_id&.traits.include? 'invested'
             invest_list << item_id 
