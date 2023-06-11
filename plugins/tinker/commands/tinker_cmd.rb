@@ -21,7 +21,7 @@ module AresMUSH
         
         client.emit investable_list
 
-        already_invested = investable_list.select {|i| i.invest_on_refresh }
+        already_invested = investable_list.select {|i| i.invest_on_refresh }.to_a
         
         client.emit already_invested
 
