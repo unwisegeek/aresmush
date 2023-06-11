@@ -44,8 +44,6 @@ module AresMUSH
           return
         end
 
-        invested_list = enactor.pf2_invested_list ? enactor.pf2_invested_list : []
-
         uninvest_list = []
 
         self.to_uninvest.each do |item|
@@ -65,13 +63,12 @@ module AresMUSH
 
           item_id = item_list[num]
 
-          uninvest_list << item_id.first
+          item_id.update(invest_on_refresh: false)
+
+          uninvest_list << item_id.name
 
         end
 
-        new_investment_list = invested_list - uninvest_list
-
-        enactor.update(pf2_invested_list: new_investment_list)
 
         client.emit_success t('pf2egear.items_uninvested_ok', :count => uninvest_list.size)
 
