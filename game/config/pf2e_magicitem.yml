@@ -233,3 +233,73 @@ pf2e_magicitem:
     bonus:
       Intimidation: 1
     shortdesc: "This terrifying mask is crafted in the visage of a leering demon and grants a +1 item bonus to Intimidation checks."
+  Alchemist Goggles: 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    level: 4
+    price: 10000
+    bulk: 0.1
+    bonus:
+      Alchemical Bombs: 1
+    shortdesc: "These brass goggles are engraved with flame patterns and have thick, heavy lenses. While worn, they give you a +1 item bonus to Crafting checks to Craft alchemical items and a +1 item bonus to attack rolls with alchemical bombs. You can also ignore lesser cover when making Strikes with alchemical bombs."
+  Necklace of Fireballs I: 
+    traits: 
+    - evocation
+    - invested
+    - magical
+    level: 5
+    price: 4400
+    use: 
+      choose:
+        6d6: 
+          spell: 6d6 _fireball_, DC 21 Reflex
+          charges: 1
+        4d6 1: 
+          spell: 4d6 _fireball_, DC 21 Reflex
+          charges: 1
+        4d6 2: 
+          spell: 4d6 _fireball_, DC 21 Reflex
+          charges: 1
+    shortdesc: "This string of beads appears to be a hemp string with lustrous red beads of various sizes hanging from it. When activated, it briefly appears in its true form: a golden chain with golden spheres attached by fine threads."
+  Diplomat's Badge: 
+    traits: 
+    - enchantment 
+    - invested
+    - magical
+    level: 5
+    price: 12500
+    use: 
+      spell: "Attempt a DC 20 check to Recall Knowledge about people of a human ethnicity, a non-human ancestry, or some other type of creature. (The GM determines what your options are.) If you succeed, the badge’s bonus increases to +2 for Diplomacy checks with creatures of that group for the rest of the day."
+      frequency: 1/day
+    bonus:
+      Diplomacy: 1
+    shortdesc:  "When displayed prominently, this brass badge makes creatures find you more agreeable. You gain a +1 item bonus to Diplomacy checks."
+  Boots of Elvenkind: 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    level: 5
+    price: 14500
+    bulk: 0.1
+    use: 
+      spell: "Until the end of your turn, you ignore difficult terrain when moving on the ground. If you’re wearing a cloak of elvenkind, you also gain a +5-foot status bonus to your land Speed until the end of your turn."
+      frequency: 1/hour
+    bonus:
+      Acrobatics: 1
+    shortdesc: "These tall, pointed boots are made from soft, supple black or green leather and are decorated with trim and buckles of gold. When worn, the boots allow you to move more nimbly, granting you a +1 item bonus to Acrobatics checks."
+  Goggles of Night: 
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    level: 5
+    price: 15000
+    use: 
+      spell: Rotating the lenses 90 degrees, you gain darkvision for 1 hour.
+      frequency: 1/day
+    bonus:
+      Crafting: 1
+    shortdesc: "The opaque crystal lenses of these sleek goggles do not obscure vision, but rather enhance it. While wearing the goggles, you gain a +1 item bonus to Perception checks involving sight."
