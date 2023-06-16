@@ -46,12 +46,6 @@ module AresMUSH
         combat.update("#{key}": value)
       end
 
-      #save_list = info['saves']
-      #saves = {}
-      #save_list.each_pair { |k,v| saves[k] = v }
-
-      #combat.update(saves: saves)
-
       return combat
     end
 
@@ -181,8 +175,7 @@ module AresMUSH
           Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Strength"))
       end
 
-      potency_rune = weapon.runes['fundamental']['potency']
-      potency_rune = 0 if !potency_rune
+      potency_rune = Pf2egear.get_rune_value(weapon, 'fundamental', 'potency')
 
       prof_bonus + abil_bonus + potency_rune
     end

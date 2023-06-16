@@ -132,5 +132,35 @@ module AresMUSH
       item.nickname ? "#{item.nickname} (#{item.name})" : item.name
     end
 
+    def self.get_rune_value(object, type, subtype)
+      value = object.runes&.dig(type, subtype)
+
+      value ? value : 0
+    end
+
+    def self.get_invested_items(char)
+      invested_items = []
+
+      char.magic_items.each do |i|
+
+        invested_items << i if i.invested
+      end
+
+      invested_items
+    end
+
+    def self.bonus_from_item(char, roll)
+      invested_items = get_invested_items(char)
+
+      blist = [ 0 ]
+
+      invested_items.each do |i|
+        bonus = i.bonus[roll]
+
+        blist << bonus if bonus
+      end
+
+      blist.sort.pop
+    end
   end
 end

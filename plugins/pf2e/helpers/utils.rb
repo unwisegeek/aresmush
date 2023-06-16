@@ -47,19 +47,18 @@ module AresMUSH
       # Word could be many things - figure out which
       case downcase_word
       when 'will', 'fort', 'fortitude', 'ref', 'reflex'
-        Pf2eCombat.get_save_bonus(char, downcase_word)
+        value = Pf2eCombat.get_save_bonus(char, downcase_word)
 
-      # This will change when I establish attack code
       when 'melee', 'ranged', 'unarmed', 'finesse' then 0
 
       when 'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'
-        Pf2eAbilities.abilmod Pf2eAbilities.get_score(char, word)
+        value = Pf2eAbilities.abilmod Pf2eAbilities.get_score(char, word)
 
       when 'str', 'dex', 'con', 'int', 'wis', 'cha'
         shortname = word.upcase
         obj = char.abilities.select { |a| a.shortname == shortname }
         return 0 if !obj
-        Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, obj.name))
+        value = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, obj.name))
 
       when 'sneak attack'
         value = char.combat&.sneak_attack
@@ -70,7 +69,7 @@ module AresMUSH
         amount = dice[0].to_i
         sides = dice[1].to_i
 
-        result = Pf2e.roll_dice(amount, sides)
+        value = Pf2e.roll_dice(amount, sides)
 
       else
 
@@ -78,9 +77,7 @@ module AresMUSH
         title_word = downcase_word.capitalize
         skills = Global.read_config('pf2e_skills').keys
         if skills.include?(title_word)
-          value = Pf2eSkills.get_skill_bonus(char, title_word)
-        elsif downcase_word.match?(/.+\slore$/)
-          value = Pf2eLores.get_lore_bonus(char, downcase_word)
+          value = Pf2eSkills.get_skill_bonus(char, title_word) + Pf2egear.bonus_from_item(char, title_word)
         else
           value = 0
         end
@@ -107,10 +104,6 @@ module AresMUSH
 
     def self.get_level_tier(level)
       1 + (level / 5)
-    end
-
-    def self.bonus_from_item(char, type)
-      return 0
     end
 
     def self.parse_roll_string(target,list)
