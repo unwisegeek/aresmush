@@ -179,10 +179,12 @@ module AresMUSH
       whirldice = result.join(", ")
 
       if list[0] == '1d20'
-        if result[0] == "%xc20%xn"
+
+        int_result = result[0].delete_prefix("(%xc").delete_suffix("%xn)").to_i
+        if result[0] == 20
           succ_mod = 1
           whirldice = "I WAS A 20"
-        elsif result[0] == "%xc1%xn"
+        elsif result[0] == 1
           succ_mod = -1
           whirldice = " %x200*** YOU'VE BEEN WHIRLDICED! ***%xn" 
         end
