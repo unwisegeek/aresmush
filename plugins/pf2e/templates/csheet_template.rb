@@ -101,7 +101,7 @@ module AresMUSH
         prof_with_armor = combat_stats.armor_prof[a_cat]
         pbonus = Pf2e.get_prof_bonus(prof_with_armor)
 
-        ibonus = Pf2e.bonus_from_item(char, "ac")
+        ibonus = Pf2egear.get_rune_value(@armor, 'fundamental', 'potency')
 
         dex_cap = @armor ? @armor.dex_cap : 99
         dbonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, 'Dexterity')).clamp(-99, dex_cap)

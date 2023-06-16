@@ -520,6 +520,9 @@ pf2e_weapons:
     reload: 0
     wp_damage: 1d4
     wp_damage_type: B
+    runes:
+      fundamental:
+        potency: 1
   Hatchet:
     wp_type: melee
     category: martial
@@ -1344,3 +1347,22 @@ pf2e_weapons:
     reload: 0
     bulk: 1
     group: Flail
+  Handwraps of Mighty Blows (+1 Striking):
+    level: 4
+    wp_type: melee
+    category: simple
+    group: Brawling
+    bulk: 0.1
+    traits: 
+    - invested
+    - magical
+    - transmutation
+    hands: 0
+    range: 0
+    reload: 0
+    wp_damage: 1d4
+    wp_damage_type: B
+    runes:
+      fundamental:
+        potency: 1
+        striking: 1
