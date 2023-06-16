@@ -55,7 +55,7 @@ module AresMUSH
       mod = Pf2e.get_linked_attr_mod(char, save)
       mod = 0 if !mod
 
-      item = Pf2e.bonus_from_item(char, save)
+      item = Pf2egear.get_rune_value(Pf2eCombat.get_equipped_armor(char), 'fundamental', 'resilient')
       item_bonus = item ? item : 0
 
       prof_bonus + mod + item_bonus
@@ -70,9 +70,6 @@ module AresMUSH
 
       key_ability = combat_stats.key_abil ? combat_stats.key_abil : "Strength"
       abil_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, key_ability))
-
-      item = Pf2e.bonus_from_item(@char, 'class_dc')
-      item_bonus = item ? item : 0
 
       10 + prof_bonus + abil_mod + item_bonus
     end
@@ -93,7 +90,7 @@ module AresMUSH
 
       prof_bonus = Pf2e.get_prof_bonus(char, combat_stats.perception)
 
-      item = Pf2e.bonus_from_item(@char, 'perception')
+      item = Pf2egear.bonus_from_item(@char, 'Perception')
       item_bonus = item ? item : 0
 
       abil_mod + prof_bonus + item_bonus
