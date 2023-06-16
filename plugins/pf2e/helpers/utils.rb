@@ -173,12 +173,15 @@ module AresMUSH
         scase = 1
       end
 
-      if list[0] == '1d20'
-        succ_mod = 0
-        succ_mod = 1 if result[0].flatten == 20
-        succ_mod = -1 if result[0].flatten == 1
+      #### Success modifiers happen only if the first item in the list is a 1d20. 
 
-        whirl = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0].flatten == 1
+      succ_mod = 0
+
+      if list[0] == '1d20'
+        succ_mod = 1 if result[0] == 20
+        succ_mod = -1 if result[0] == 1
+
+        whirl = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0] == 1
       end
 
       whirldice = whirl ? whirl : ""
