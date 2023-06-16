@@ -9,27 +9,16 @@ module AresMUSH
       end
       
       def handle
-      
+        t = Time.now
         
-        char = Character.find_one_by_name("Testchar")
-        
-        char_wp_list = Pf2egear.items_in_inventory(char.weapons.to_a)
-        char_a_list = Pf2egear.items_in_inventory(char.armor.to_a)
-        char_mi_list = Pf2egear.items_in_inventory(char.magic_items.to_a)
+        sides = [ 2, 3, 4, 6, 8, 10, 12, 20, 30, 100, 1000 ].sample
+        amount = rand(1..50)
 
-        investable_list = char_wp_list + char_a_list + char_mi_list
+        die_roll = Pf2e.roll_dice(amount, sides).sum
         
-        client.emit investable_list
-
-        already_invested = investable_list.select {|i| i.invest_on_refresh }.to_a
+        value = t.to_i.odd? ? die_roll : -die_roll
         
-        client.emit already_invested
-
-        counter = already_invested.size
-        
-        client.emit counter
-        
-        
+        client.emit value
         
       end
 
