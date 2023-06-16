@@ -133,7 +133,7 @@ module AresMUSH
     end
 
     def self.get_rune_value(object, type, subtype)
-      value = object.runes&.dig(type, subtype)
+      value = object&.runes.dig(type, subtype)
 
       value ? value : 0
     end
