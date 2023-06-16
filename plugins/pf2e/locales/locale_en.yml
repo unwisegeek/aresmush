@@ -127,5 +127,6 @@ en:
 
     xp_awarded: "You award %{award} XP to %{awardee}."
 
+    whirldice: "*** WHIRLDICE ALERT ***"
     who_can_see_sheet: "You have granted the following permissions to your sheet:"
     wrong_feat_type: "You cannot take that feat using the type of feat specified."
