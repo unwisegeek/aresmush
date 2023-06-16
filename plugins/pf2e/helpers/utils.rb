@@ -183,10 +183,9 @@ module AresMUSH
         int_result = result[0].delete_prefix("(%xc").delete_suffix("%xn)").to_i
         if int_result == 20
           succ_mod = 1
-          whirldice = "I WAS A 20"
         elsif int_result == 1
           succ_mod = -1
-          whirldice = " %x200*** YOU'VE BEEN WHIRLDICED! ***%xn" 
+          whirldice = t('pf2e.whirldice')
         end
       end
 

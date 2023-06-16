@@ -71,7 +71,7 @@ module AresMUSH
       key_ability = combat_stats.key_abil ? combat_stats.key_abil : "Strength"
       abil_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, key_ability))
 
-      10 + prof_bonus + abil_mod + item_bonus
+      10 + prof_bonus + abil_mod
     end
 
     def self.get_equipped_armor(char)
