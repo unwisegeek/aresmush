@@ -60,6 +60,8 @@ module AresMUSH
         when "view"
           return PF2ItemViewCmd
         end
+      when "use"
+        return PF2UseItemCmd
       end
 
       nil
