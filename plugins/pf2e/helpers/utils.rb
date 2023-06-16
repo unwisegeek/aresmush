@@ -179,12 +179,13 @@ module AresMUSH
       whirldice = ""
 
       if list[0] == '1d20'
-        whirldice = "I GOT INVOKED"
-
-        succ_mod = 1 if result[0] == 20
-        succ_mod = -1 if result[0] == 1
-
-        # whirldice = " %x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0] == 1
+        if result[0] == 20
+          succ_mod = 1
+          whirldice = "I WAS A 20"
+        elsif result[0] == 1
+          succ_mod = -1
+          whirldice = " %x200*** YOU'VE BEEN WHIRLDICED! ***%xn" 
+        end
       end
 
       success_case = (scase + succ_mod).clamp(0,3)
