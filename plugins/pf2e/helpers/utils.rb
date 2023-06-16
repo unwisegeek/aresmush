@@ -177,10 +177,14 @@ module AresMUSH
         succ_mod = 0
         succ_mod = 1 if result[0] == 20
         succ_mod = -1 if result[0] == 1
+
+        whirl = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0] == 1
       end
 
+      whirldice = whirl ? whirl : ""
+
       success_case = (scase + succ_mod).clamp(0,3)
-      degree = degrees[success_case]
+      degree = degrees[success_case] + whirldice
     end
 
     def self.pretty_string(string)
