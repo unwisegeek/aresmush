@@ -46,6 +46,13 @@ module AresMUSH
 
       # Word could be many things - figure out which
       case downcase_word
+      when 'shenanigans'
+        t = Time.now
+        sides = [ 2, 3, 4, 6, 8, 10, 12, 20, 30, 100, 1000 ].sample
+        amount = rand(1..50)
+
+        die_roll = Pf2e.roll_dice(amount, sides).sum
+        value = t.to_i.odd? ? die_roll : -die_roll
       when 'will', 'fort', 'fortitude', 'ref', 'reflex'
         value = Pf2eCombat.get_save_bonus(char, downcase_word)
 
@@ -61,11 +68,11 @@ module AresMUSH
         value = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, obj.name))
 
       when 'sneak attack'
-        value = char.combat&.sneak_attack
+        sa_dice = char.combat&.sneak_attack
 
-        return 0 if !value
+        return 0 if !sa_dice
 
-        dice = value.gsub("d"," ").split
+        dice = sa_dice.gsub("d"," ").split
         amount = dice[0].to_i
         sides = dice[1].to_i
 
