@@ -9,16 +9,12 @@ module AresMUSH
       end
       
       def handle
-        t = Time.now
+        string = "(%xc1%xn)"
         
-        sides = [ 2, 3, 4, 6, 8, 10, 12, 20, 30, 100, 1000 ].sample
-        amount = rand(1..50)
-
-        die_roll = Pf2e.roll_dice(amount, sides).sum
+        new_string = string.delete_prefix("(%xc").delete_suffix("%xn)")
         
-        value = t.to_i.odd? ? die_roll : -die_roll
-        
-        client.emit value
+        client.emit string
+        client.emit new_string
         
       end
 
