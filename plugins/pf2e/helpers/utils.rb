@@ -176,15 +176,14 @@ module AresMUSH
       #### Success modifiers happen only if the first item in the list is a 1d20. 
 
       succ_mod = 0
+      whirldice = "TEST WHIRLDICE"
 
       if list[0] == '1d20'
         succ_mod = 1 if result[0] == 20
         succ_mod = -1 if result[0] == 1
 
-        whirl = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0] == 1
+        whirldice = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0] == 1
       end
-
-      whirldice = whirl ? whirl : ""
 
       success_case = (scase + succ_mod).clamp(0,3)
       degree = degrees[success_case] + whirldice
