@@ -90,7 +90,7 @@ module AresMUSH
 
       prof_bonus = Pf2e.get_prof_bonus(char, combat_stats.perception)
 
-      item = Pf2egear.bonus_from_item(@char, 'Perception')
+      item = Pf2egear.bonus_from_item(char, 'Perception')
       item_bonus = item ? item : 0
 
       abil_mod + prof_bonus + item_bonus
