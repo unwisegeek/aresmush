@@ -176,7 +176,7 @@ module AresMUSH
       #### Success modifiers happen only if the first item in the list is a 1d20. 
 
       succ_mod = 0
-      whirldice = result.join(", ")
+      whirldice = ""
 
       if list[0] == '1d20'
 
