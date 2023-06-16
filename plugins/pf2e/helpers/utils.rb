@@ -175,10 +175,10 @@ module AresMUSH
 
       if list[0] == '1d20'
         succ_mod = 0
-        succ_mod = 1 if result[0] == 20
-        succ_mod = -1 if result[0] == 1
+        succ_mod = 1 if result[0].flatten == 20
+        succ_mod = -1 if result[0].flatten == 1
 
-        whirl = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0] == 1
+        whirl = "%x200*** YOU'VE BEEN WHIRLDICED! ***%xn" if result[0].flatten == 1
       end
 
       whirldice = whirl ? whirl : ""
