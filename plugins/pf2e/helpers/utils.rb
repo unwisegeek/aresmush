@@ -178,7 +178,7 @@ module AresMUSH
       succ_mod = 0
       whirldice = ""
 
-      if list[0] == '1d20'
+      if list[0].flatten == '1d20'
         succ_mod = 1 if result[0] == 20
         succ_mod = -1 if result[0] == 1
 
