@@ -10,7 +10,7 @@ module AresMUSH
 
         self.category = downcase_arg(args.arg1)
         second_parse = trimmed_list_arg(args.arg2, "=")
-        self.item_num = second_parse.empty ? integer_arg(second_parse[0]) : nil
+        self.item_num = second_parse ? integer_arg(second_parse[0]) : nil
         self.use_options = trim_arg(second_parse[1])
 
         @numcheck = trim_arg(second_parse[0])
