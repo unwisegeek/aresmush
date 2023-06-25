@@ -70,6 +70,12 @@ module AresMUSH
           Channels.send_to_channel(channel, roll_msg)
         end
 
+        # Add to the encounter, if in an active encounter in the scene.
+        active_encounter = PF2Encounter.active_encounter_in_scene(enactor, scene)
+        if active_encounter
+          PF2Encounter.send_to_encounter(active_encounter, roll_msg)
+        end
+
         Global.logger.info "PF2 ROLL: #{roll_msg}"
       end
 

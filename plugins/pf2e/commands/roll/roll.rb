@@ -11,7 +11,7 @@ module AresMUSH
 
         self.string = trim_arg(args.arg1)
         mod_list = args.arg1.gsub("-", "+-").gsub("--","-").split("+")
-        self.mods = mod_list.map { |v| v.strip }
+        self.mods = trimmed_list_arg(mod_list)
 
         self.dc = args.arg2 ? args.arg2.to_i : nil
       end
@@ -52,14 +52,24 @@ module AresMUSH
         if cmd.switch == "me"
           client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
+          # Send it to the room, and to the room scene if there is one. 
           enactor_room.emit roll_msg
-          if (enactor_room.scene)
-            Scenes.add_to_scene(enactor_room.scene, roll_msg)
+
+          scene = enactor_room.scene
+          if scene
+            Scenes.add_to_scene(scene, roll_msg)
           end
 
+          # Send to the roll channel if one is defined.
           channel = Global.read_config("pf2e", "roll_channel")
           if (channel)
             Channels.send_to_channel(channel, roll_msg)
+          end
+
+          # Add to the encounter, if in an active encounter in the scene.
+          active_encounter = PF2Encounter.active_encounter_in_scene(enactor, scene)
+          if active_encounter
+            PF2Encounter.send_to_encounter(active_encounter, roll_msg)
           end
 
         end
