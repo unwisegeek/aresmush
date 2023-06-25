@@ -15,39 +15,27 @@ module AresMUSH
         return t('dispatcher.not_allowed')
       end
 
-      def check_is_in_scene
-        return nil if enactor_room.scene
-        return t('pf2e.must_be_in_scene')
-      end
-
       def handle
+        # Demand that the organizer be in a scene. 
+
+        scene = enactor_room.scene
+
+        if !scene 
+          client.emit_failure t('pf2e.must_be_in_scene')
+          return
+        end
+
         # If no argument, initiative is based on Perception.
         init_stat = self.init ? self.init : 'Perception'
 
-        # DMs may ask for any ability, any skill, or Perception. This list is subject to expansion.
-        abilities = [ 'Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma' ]
-        skills = Global.read_config('pf2e_skills').keys
-        combat_stats = ['Perception']
+        valid_init_stat = Pf2e.is_valid_init_stat(init_stat)
 
-        valid_init_stat = abilities + skills + combat_stats
-
-        # Is there a unique match? Error if no match or multiple matches
-
-        usable_init_stat = valid_init_stat.map { |s| s.match? init_stat }
-
-        if usable_init_stat.size > 1
+        if !valid_init_stat 
           client.emit_failure t('pf2e.not_unique')
           return
-
-        elsif usable_init_stat.empty?
-          client.emit_failure t('pf2e.bad_value', :item => self.init)
-        else 
-          init_stat = usable_init_stat.first
         end
 
-        # Do it. 
-
-        scene = enactor_room.scene
+        # Do it.
 
         encounter = PF2Encounter.create(
           organizer: enactor.name,
