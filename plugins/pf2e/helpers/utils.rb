@@ -80,7 +80,6 @@ module AresMUSH
 
       else
 
-        # roll_keywords = Global.read_config('pf2e', 'roll_keywords')
         title_word = downcase_word.capitalize
         skills = Global.read_config('pf2e_skills').keys
         if skills.include?(title_word)

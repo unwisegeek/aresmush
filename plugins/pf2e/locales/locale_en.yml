@@ -59,6 +59,8 @@ en:
     dup_feats: "%xyYour chargen options include one or more duplicate feats. Be sure to bring this up with your appstaffer.%xn"
 
     element_cglocked: "That %{element} is part of your chargen options and cannot be changed."
+    encounter_start_title: "*** ENCOUNTER STARTED ***"
+    encounter_complete: "*** END OF ENCOUNTER ***"
     
     feat_available_options: "You qualify to take the following feats in that category: %{options}"
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
@@ -81,6 +83,7 @@ en:
     msg_cglock: "Your base info is committed. You can now assign abilities."
     msg_cgandabil_lock: "Your base info and abilities are locked. You can now assign skills, languages, feats, etc."
     multiple_options: "You have multiple options for %{element}. Remember to assign this in the next stage."
+    must_be_in_scene: "You must be in a scene to use this command."
     must_be_word: "The first character of your alias must be a letter."
     must_confirm: "Type 'cg/reset confirm' to confirm that you want to wipe your sheet."
 

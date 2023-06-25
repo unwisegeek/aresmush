@@ -9,7 +9,7 @@ pf2e_magicitem:
     level: 1
     price: 900
     bulk: 0
-    shortdesc: "This aeon stone has lost all magical properties, but it's still useful as a hands-free target for _light_ spells and similar."
+    shortdesc: "This aeon stone has lost all magical properties, but it's still useful as a hands-free target for _light_ use_descrs and similar."
   Wayfinder: 
     traits: 
     - uncommon
@@ -30,9 +30,9 @@ pf2e_magicitem:
     price: 3000
     bulk: 0
     use: 
-      spell: Automatically absorbs magic missiles targeting the wearer.
+      use_descr: Automatically absorbs magic missiles targeting the wearer.
       charges: 30
-    shortdesc: "This piece of silver or gold jewelry can be used to fasten a cloak or cape. It automatically absorbs _magic missile_ spells targeting the wearer."
+    shortdesc: "This piece of silver or gold jewelry can be used to fasten a cloak or cape. It automatically absorbs _magic missile_ use_descrs targeting the wearer."
   Hand of the Mage: 
     traits: 
     - evocation
@@ -42,7 +42,7 @@ pf2e_magicitem:
     price: 3000
     bulk: 0.1
     use: 
-      spell: Mage Hand
+      use_descr: Mage Hand
       frequency: on command
     shortdesc: "This mummified elf hand hangs on a golden chain, its gnarled fingers locked in a peculiar pattern."
   Hat of Disguise: 
@@ -54,7 +54,7 @@ pf2e_magicitem:
     price: 3000
     bulk: 0
     use: 
-      spell: Casts a 1st-level _illusory disguise_ on the wearer.
+      use_descr: Casts a 1st-level _illusory disguise_ on the wearer.
       frequency: 1/day
     shortdesc: "This ordinary-looking hat allows you to cloak yourself in illusions."
   Doubling Rings: 
@@ -75,10 +75,10 @@ pf2e_magicitem:
     price: 5000
     bulk: 0
     use: 
-      spell: Prestidigitation
+      use_descr: Prestidigitation
     bonus: 
       Arcana: 1
-    shortdesc: "This hat comes in many forms, such as a colorful turban or a pointy hat with a brim, and can bear symbols or runes. It grants you a +1 item bonus to Arcana checks and allows you to cast the prestidigitation cantrip as an arcane innate spell."
+    shortdesc: "This hat comes in many forms, such as a colorful turban or a pointy hat with a brim, and can bear symbols or runes. It grants you a +1 item bonus to Arcana checks and allows you to cast the prestidigitation cantrip as an arcane innate use_descr."
   Persona Mask: 
     traits: 
     - fortune
@@ -89,7 +89,7 @@ pf2e_magicitem:
     price: 5000
     bulk: 0
     use: 
-      spell: "Changes the mask's appearance to an artistic rendition of the dramatic character of the player's choice."
+      use_descr: "Changes the mask's appearance to an artistic rendition of the dramatic character of the player's choice."
     shortdesc: "Despite covering the entire face, this alabaster mask does not hinder vision or other senses. Wearing the mask grants a +1 item bonus to Performance checks while acting, orating, performing comedy, or singing."
   Bracers of Missile Deflection: 
     traits: 
@@ -100,7 +100,7 @@ pf2e_magicitem:
     price: 5200
     bulk: 0.1
     use: 
-      spell: Deflects a ranged weapon attack that does not critically hit. (Requirements)
+      use_descr: Deflects a ranged weapon attack that does not critically hit. (Requirements)
       frequency: 1/day
     shortdesc: These bracers are made from plates of durable mithral and gleam like the summer sun.
   Channel Protection Amulet: 
@@ -111,7 +111,7 @@ pf2e_magicitem:
     - magical
     level: 3
     price: 5600
-    shortdesc: "This nugget of polished tektite is trapped in a cage of braided wire and hangs from a silken cord. When wearing this amulet, you gain resistance 5 against damage from harm spells if you’re living, or against heal spells if you’re undead."
+    shortdesc: "This nugget of polished tektite is trapped in a cage of braided wire and hangs from a silken cord. When wearing this amulet, you gain resistance 5 against damage from harm use_descrs if you’re living, or against heal use_descrs if you’re undead."
   Bracelet of Dashing: 
     traits: 
     - invested
@@ -121,7 +121,7 @@ pf2e_magicitem:
     price: 5800
     bulk: 0.1
     use: 
-      spell: "Frequency once per day; Effect You gain a +10-foot status bonus to Speed for 1 minute."
+      use_descr: "Frequency once per day; Effect You gain a +10-foot status bonus to Speed for 1 minute."
       frequency: 1/day
     bonus:
       Acrobatics: 1
@@ -155,7 +155,7 @@ pf2e_magicitem:
     level: 3
     price: 6000
     use: 
-      spell: Become concealed after a successful Performance check to dance.
+      use_descr: Become concealed after a successful Performance check to dance.
     shortdesc: "This long and billowing scarf is typically woven of silk or sheer fabric and adorned with bells or other jangling bits of shiny metal. It grants a +1 item bonus to Performance checks to dance."
   Pendant of the Occult: 
     traits: 
@@ -165,7 +165,7 @@ pf2e_magicitem:
     level: 3
     price: 6000
     use: 
-      spell: Cast _guidance_
+      use_descr: Cast _guidance_
     bonus:
       Occultism: 1
     shortdesc: "This amulet is hollow and shaped in the form of an unblinking eye. Its cavity typically holds some fragment of occult text."
@@ -185,7 +185,7 @@ pf2e_magicitem:
     level: 3
     price: 6000
     use: 
-      spell: Twist the ring to produce the effect of a _ventriloquism_ spell.
+      use_descr: Twist the ring to produce the effect of a _ventriloquism_ use_descr.
       frequency: 1/day
     bonus:
       Deception: 1
@@ -199,7 +199,7 @@ pf2e_magicitem:
     price: 8000
     bulk: 0.1
     use: 
-      spell: Restore 2d6+7 HP to a willing, living, adjacent creature.
+      use_descr: Restore 2d6+7 HP to a willing, living, adjacent creature.
       frequency: 1/day
     bonus:
       Medicine: 1
@@ -217,7 +217,7 @@ pf2e_magicitem:
       encumbered: 1
       max_capacity: 1
     use: 
-      spell: Lift an object of up to 8 Bulk as though it were weightless.
+      use_descr: Lift an object of up to 8 Bulk as though it were weightless.
     shortdesc: "This wide leather belt grants you a +1 item bonus to Athletics checks and increases the amount you can easily carry. You can carry Bulk equal to 6 + your Strength modifier before becoming encumbered, and you can hold and carry a total Bulk up to 11 + your Strength modifier."
   Demon Mask: 
     traits: 
@@ -228,7 +228,7 @@ pf2e_magicitem:
     price: 8500
     bulk: 0.1
     use: 
-      spell: Casts _fear_, DC 20.
+      use_descr: Casts _fear_, DC 20.
       frequency: 1/day
     bonus:
       Intimidation: 1
@@ -252,16 +252,16 @@ pf2e_magicitem:
     level: 5
     price: 4400
     use: 
-      choose:
-        6d6: 
-          spell: 6d6 _fireball_, DC 21 Reflex
-          charges: 1
-        4d6 1: 
-          spell: 4d6 _fireball_, DC 21 Reflex
-          charges: 1
-        4d6 2: 
-          spell: 4d6 _fireball_, DC 21 Reflex
-          charges: 1
+      choose: true
+      6d6: 
+        use_descr: 6d6 _fireball_, DC 21 Reflex
+        charges: 1
+      4d6 1: 
+        use_descr: 4d6 _fireball_, DC 21 Reflex
+        charges: 1
+      4d6 2: 
+        use_descr: 4d6 _fireball_, DC 21 Reflex
+        charges: 1
     shortdesc: "This string of beads appears to be a hemp string with lustrous red beads of various sizes hanging from it. When activated, it briefly appears in its true form: a golden chain with golden spheres attached by fine threads."
   Diplomat's Badge: 
     traits: 
@@ -271,7 +271,7 @@ pf2e_magicitem:
     level: 5
     price: 12500
     use: 
-      spell: "Attempt a DC 20 check to Recall Knowledge about people of a human ethnicity, a non-human ancestry, or some other type of creature. (The GM determines what your options are.) If you succeed, the badge’s bonus increases to +2 for Diplomacy checks with creatures of that group for the rest of the day."
+      use_descr: "Attempt a DC 20 check to Recall Knowledge about people of a human ethnicity, a non-human ancestry, or some other type of creature. (The GM determines what your options are.) If you succeed, the badge’s bonus increases to +2 for Diplomacy checks with creatures of that group for the rest of the day."
       frequency: 1/day
     bonus:
       Diplomacy: 1
@@ -285,7 +285,7 @@ pf2e_magicitem:
     price: 14500
     bulk: 0.1
     use: 
-      spell: "Until the end of your turn, you ignore difficult terrain when moving on the ground. If you’re wearing a cloak of elvenkind, you also gain a +5-foot status bonus to your land Speed until the end of your turn."
+      use_descr: "Until the end of your turn, you ignore difficult terrain when moving on the ground. If you’re wearing a cloak of elvenkind, you also gain a +5-foot status bonus to your land Speed until the end of your turn."
       frequency: 1/hour
     bonus:
       Acrobatics: 1
@@ -298,7 +298,7 @@ pf2e_magicitem:
     level: 5
     price: 15000
     use: 
-      spell: Rotating the lenses 90 degrees, you gain darkvision for 1 hour.
+      use_descr: Rotating the lenses 90 degrees, you gain darkvision for 1 hour.
       frequency: 1/day
     bonus:
       Crafting: 1

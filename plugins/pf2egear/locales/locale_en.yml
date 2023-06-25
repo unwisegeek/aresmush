@@ -16,6 +16,8 @@ en:
     bag_title: "Contents of %{bagname}"
     browse_title: "Available Items In Category: %{category}"
 
+    cannot_use_now: "This item must be %{action} to be used."
+
     item_equip_ok: "You equip %{name}."
     item_bought_ok: "You buy %{quantity} of %{item} at a cost of %{cost}."
     item_rename_ok: "You rename %{name} to %{nickname}."
@@ -30,12 +32,14 @@ en:
     money_totals: "%{name} has the following money totals: %{money}"
     must_specify_by_number: "Please specify that category of item by number."
 
+    needs_use_option: "This item requires you to specify which use you want to invoke. Options: %{options}"
     not_enough_you: "You do not have enough %{item}."
     not_enough_target: "%{target} does not have enough %{item}."
     no_detailed_item_info: "Please consult the PRD for detailed information on this item type."
     no_items: "You don't have any items in that category."
     not_investible_item: "%{item} is not an investible item."
     not_found: "I didn't find that item in that category."
+    not_usable: "This item has no properties that allow it to be used."
     nothing_to_do: "Nothing to do."
 
     quantity_one_only: "You can only buy one of this type of item at a time. Creating one item..."
