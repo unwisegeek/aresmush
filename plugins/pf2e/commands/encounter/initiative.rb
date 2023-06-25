@@ -57,7 +57,7 @@ module AresMUSH
 
         template = PF2EncounterStart.new(encounter)
 
-        message = t('pf2e.encounter_started', :enc_id => encounter.id, :stat => init_stat)
+        message = template.render
 
         # Log the init start in the encounter. 
         PF2Encounter.send_to_encounter(encounter, message)

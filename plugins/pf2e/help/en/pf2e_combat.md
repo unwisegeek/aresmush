@@ -13,12 +13,12 @@ aliases:
 
 Invoking encounter mode (or, for the grognards out there, initiative rounds) changes the time flow of a scene. It is used when time must be closely tracked in order to understand the outcome.
 
-The following commands in Pathfinder are useful only in encounter mode.
+The following commands are used to manage encounter mode in a scene. Note that all participants in an encounter must also be participants in the associated scene to use these commands. 
 
 ## For Participants
 
-`initiative [<stat>]`: Joins an encounter in progress, using the stat specified by the organizer by default. If the organizer tells you that you should use a different stat, specify <stat>. (Alias: `init`)
-
+`init <encounter ID>[=<stat>]`: Joins an encounter in progress, using the stat specified by the organizer by default. If the organizer tells you that you should use a different stat, specify <stat>. 
+`initlist <encounter ID>`: View the initiative table for the encounter in question. 
 
 ## For Organizers
 
