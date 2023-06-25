@@ -50,14 +50,14 @@ module AresMUSH
         scene = enactor_room.scene
 
         encounter = PF2Encounter.create(
-          organizer: enactor.name
-          scene: scene
+          organizer: enactor.name,
+          scene: scene,
           init_stat: init_stat
         )
 
         template = PF2EncounterStart.new(encounter)
 
-        message = t('pf2e.encounter_started', :enc_id => encounter.id, :stat => init_stat)
+        message = template.render
 
         # Log the init start in the encounter. 
         PF2Encounter.send_to_encounter(encounter, message)

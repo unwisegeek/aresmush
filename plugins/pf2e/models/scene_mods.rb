@@ -1,8 +1,7 @@
 module AresMUSH
-  
-  class Scene
+  class Scene < Ohm::Model
 
-    collection :encounters, "AresMUSH::Pf2Encounter"
+    collection :encounters, "AresMUSH::PF2Encounter"
 
   end
 end
