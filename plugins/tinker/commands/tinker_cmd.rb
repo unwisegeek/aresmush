@@ -9,13 +9,12 @@ module AresMUSH
       end
       
       def handle
-        string = "(%xc1%xn)"
+      
+        char = Character.find_one_by_name "Testchar"
         
-        new_string = string.delete_prefix("(%xc").delete_suffix("%xn)")
+        client.emit char.instance_of? Character
         
-        client.emit string
-        client.emit new_string
-        
+
       end
 
     end
