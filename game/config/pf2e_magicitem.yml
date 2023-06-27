@@ -30,8 +30,9 @@ pf2e_magicitem:
     price: 3000
     bulk: 0
     use: 
-      use_descr: Automatically absorbs magic missiles targeting the wearer.
-      charges: 30
+      shield:
+        use_descr: Automatically absorbs magic missiles targeting the wearer.
+        charges: 30
     shortdesc: "This piece of silver or gold jewelry can be used to fasten a cloak or cape. It automatically absorbs _magic missile_ use_descrs targeting the wearer."
   Hand of the Mage: 
     traits: 
@@ -42,8 +43,9 @@ pf2e_magicitem:
     price: 3000
     bulk: 0.1
     use: 
-      use_descr: Mage Hand
-      frequency: on command
+      hand:
+        use_descr: Mage Hand
+        frequency: on command
     shortdesc: "This mummified elf hand hangs on a golden chain, its gnarled fingers locked in a peculiar pattern."
   Hat of Disguise: 
     traits: 
@@ -54,8 +56,9 @@ pf2e_magicitem:
     price: 3000
     bulk: 0
     use: 
-      use_descr: Casts a 1st-level _illusory disguise_ on the wearer.
-      frequency: 1/day
+      disguise:
+        use_descr: Casts a 1st-level _illusory disguise_ on the wearer.
+        frequency: 1/day
     shortdesc: "This ordinary-looking hat allows you to cloak yourself in illusions."
   Doubling Rings: 
     traits:
@@ -75,7 +78,8 @@ pf2e_magicitem:
     price: 5000
     bulk: 0
     use: 
-      use_descr: Prestidigitation
+      hat:
+        use_descr: Prestidigitation
     bonus: 
       Arcana: 1
     shortdesc: "This hat comes in many forms, such as a colorful turban or a pointy hat with a brim, and can bear symbols or runes. It grants you a +1 item bonus to Arcana checks and allows you to cast the prestidigitation cantrip as an arcane innate use_descr."
@@ -89,7 +93,8 @@ pf2e_magicitem:
     price: 5000
     bulk: 0
     use: 
-      use_descr: "Changes the mask's appearance to an artistic rendition of the dramatic character of the player's choice."
+      mask:
+        use_descr: "Changes the mask's appearance to an artistic rendition of the dramatic character of the player's choice."
     shortdesc: "Despite covering the entire face, this alabaster mask does not hinder vision or other senses. Wearing the mask grants a +1 item bonus to Performance checks while acting, orating, performing comedy, or singing."
   Bracers of Missile Deflection: 
     traits: 
@@ -100,8 +105,9 @@ pf2e_magicitem:
     price: 5200
     bulk: 0.1
     use: 
-      use_descr: Deflects a ranged weapon attack that does not critically hit. (Requirements)
-      frequency: 1/day
+    bracers:
+        use_descr: Deflects a ranged weapon attack that does not critically hit. (Requirements)
+        frequency: 1/day
     shortdesc: These bracers are made from plates of durable mithral and gleam like the summer sun.
   Channel Protection Amulet: 
     traits: 
@@ -121,8 +127,9 @@ pf2e_magicitem:
     price: 5800
     bulk: 0.1
     use: 
-      use_descr: "Frequency once per day; Effect You gain a +10-foot status bonus to Speed for 1 minute."
-      frequency: 1/day
+    bracelet:
+        use_descr: "Frequency once per day; Effect You gain a +10-foot status bonus to Speed for 1 minute."
+        frequency: 1/day
     bonus:
       Acrobatics: 1
     shortdesc: "This jangling, silvery bracelet makes you lighter on your feet, giving you a +1 item bonus to Acrobatics checks."
@@ -155,7 +162,8 @@ pf2e_magicitem:
     level: 3
     price: 6000
     use: 
-      use_descr: Become concealed after a successful Performance check to dance.
+      scarf:
+        use_descr: Become concealed after a successful Performance check to dance.
     shortdesc: "This long and billowing scarf is typically woven of silk or sheer fabric and adorned with bells or other jangling bits of shiny metal. It grants a +1 item bonus to Performance checks to dance."
   Pendant of the Occult: 
     traits: 
@@ -165,7 +173,8 @@ pf2e_magicitem:
     level: 3
     price: 6000
     use: 
-      use_descr: Cast _guidance_
+      pendant:
+        use_descr: Cast _guidance_.
     bonus:
       Occultism: 1
     shortdesc: "This amulet is hollow and shaped in the form of an unblinking eye. Its cavity typically holds some fragment of occult text."
@@ -185,8 +194,9 @@ pf2e_magicitem:
     level: 3
     price: 6000
     use: 
-      use_descr: Twist the ring to produce the effect of a _ventriloquism_ use_descr.
-      frequency: 1/day
+      ring:
+        use_descr: Twist the ring to produce the effect of a _ventriloquism_ spell.
+        frequency: 1/day
     bonus:
       Deception: 1
     shortdesc: "This elegant copper ring has miniature images of songbirds engraved around its circumference."
@@ -199,8 +209,9 @@ pf2e_magicitem:
     price: 8000
     bulk: 0.1
     use: 
-      use_descr: Restore 2d6+7 HP to a willing, living, adjacent creature.
-      frequency: 1/day
+      gloves:
+        use_descr: Restore 2d6+7 HP to a willing, living, adjacent creature.
+        frequency: 1/day
     bonus:
       Medicine: 1
     shortdesc: "These clean, white gloves never show signs of blood, even when used to stitch up wounds or treat other ailments."
@@ -217,7 +228,8 @@ pf2e_magicitem:
       encumbered: 1
       max_capacity: 1
     use: 
-      use_descr: Lift an object of up to 8 Bulk as though it were weightless.
+      belt:
+        use_descr: Lift an object of up to 8 Bulk as though it were weightless.
     shortdesc: "This wide leather belt grants you a +1 item bonus to Athletics checks and increases the amount you can easily carry. You can carry Bulk equal to 6 + your Strength modifier before becoming encumbered, and you can hold and carry a total Bulk up to 11 + your Strength modifier."
   Demon Mask: 
     traits: 
@@ -228,8 +240,9 @@ pf2e_magicitem:
     price: 8500
     bulk: 0.1
     use: 
-      use_descr: Casts _fear_, DC 20.
-      frequency: 1/day
+      mask:
+        use_descr: Casts _fear_, DC 20.
+        frequency: 1/day
     bonus:
       Intimidation: 1
     shortdesc: "This terrifying mask is crafted in the visage of a leering demon and grants a +1 item bonus to Intimidation checks."
@@ -252,7 +265,6 @@ pf2e_magicitem:
     level: 5
     price: 4400
     use: 
-      choose: true
       6d6: 
         use_descr: 6d6 _fireball_, DC 21 Reflex
         charges: 1
@@ -271,8 +283,9 @@ pf2e_magicitem:
     level: 5
     price: 12500
     use: 
-      use_descr: "Attempt a DC 20 check to Recall Knowledge about people of a human ethnicity, a non-human ancestry, or some other type of creature. (The GM determines what your options are.) If you succeed, the badge’s bonus increases to +2 for Diplomacy checks with creatures of that group for the rest of the day."
-      frequency: 1/day
+      badge:
+        use_descr: "Attempt a DC 20 check to Recall Knowledge about people of a human ethnicity, a non-human ancestry, or some other type of creature. (The GM determines what your options are.) If you succeed, the badge’s bonus increases to +2 for Diplomacy checks with creatures of that group for the rest of the day."
+        frequency: 1/day
     bonus:
       Diplomacy: 1
     shortdesc:  "When displayed prominently, this brass badge makes creatures find you more agreeable. You gain a +1 item bonus to Diplomacy checks."
@@ -285,8 +298,9 @@ pf2e_magicitem:
     price: 14500
     bulk: 0.1
     use: 
-      use_descr: "Until the end of your turn, you ignore difficult terrain when moving on the ground. If you’re wearing a cloak of elvenkind, you also gain a +5-foot status bonus to your land Speed until the end of your turn."
-      frequency: 1/hour
+    boots:
+        use_descr: "Until the end of your turn, you ignore difficult terrain when moving on the ground. If you’re wearing a cloak of elvenkind, you also gain a +5-foot status bonus to your land Speed until the end of your turn."
+        frequency: 1/hour
     bonus:
       Acrobatics: 1
     shortdesc: "These tall, pointed boots are made from soft, supple black or green leather and are decorated with trim and buckles of gold. When worn, the boots allow you to move more nimbly, granting you a +1 item bonus to Acrobatics checks."
@@ -298,8 +312,9 @@ pf2e_magicitem:
     level: 5
     price: 15000
     use: 
-      use_descr: Rotating the lenses 90 degrees, you gain darkvision for 1 hour.
-      frequency: 1/day
+      goggles:
+        use_descr: Rotating the lenses 90 degrees, you gain darkvision for 1 hour.
+        frequency: 1/day
     bonus:
       Crafting: 1
     shortdesc: "The opaque crystal lenses of these sleek goggles do not obscure vision, but rather enhance it. While wearing the goggles, you gain a +1 item bonus to Perception checks involving sight."

@@ -163,5 +163,9 @@ module AresMUSH
 
       blist.sort.pop
     end
+
+    def self.destroy_item(item)
+      item.delete
+    end
   end
 end
