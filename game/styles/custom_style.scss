@@ -126,6 +126,10 @@ h1 {
     border-image: linear-gradient(to right, #CBC0AD, transparent) 1;
 }
 
+h2 {
+    padding-top: 0px;
+}
+
 /* Table of contents styling */
 
 .toc {
@@ -301,11 +305,47 @@ div.card-body.markdown-editor {
 /* Characters/Admin directory page styling */
 
 .log-icon-title-container {
-    -webkit-border-radius: 0;
+    -webkit-border-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border: 2px solid white;
-    border-image: radial-gradient(ellipse farthest-corner at top left, #CBC0AD 75%, transparent 100%) 1;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-radius: 0px;
+    border: 1.5px solid white;
+    border-image: linear-gradient(to bottom right, rgba(203, 192, 173, 1), rgba(203, 192, 173, .4), rgba(203, 192, 173, 1)) 1;
+}
+
+.log-icon-container {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+.log-icon-container:hover {
+    filter: brightness(120%);
+}
+
+/* Tabs styling */
+
+.nav-link.nav-link {
+    border-image: radial-gradient(ellipse farthest-corner at top left, #0d0b6a 45%, transparent 100%) 1; 
+}
+  
+a.nav-link.active {
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 15%, transparent 80%) 1; 
+}
+  
+.nav-tabs {
+    background: linear-gradient(to right, #000000 80%, transparent 100%);
+    height: 40px;
+}
+
+.nav-link.nav-link:hover, a.nav-link.active:hover {
+    background-color: #040429;
+}
+
+/* Wiki content styling */
+
+.tab-content {
+    padding-top: 0px;
+    border-image: linear-gradient(to bottom right, #0d0b6a, #0d0b6a33, #0d0b6a) 1;
 }

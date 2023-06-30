@@ -10,9 +10,11 @@ module AresMUSH
       
       def handle
       
-        char = Character.find_one_by_name "Testchar"
+        time = Time.now
         
-        client.emit char.instance_of? Character
+        client.emit time
+        client.emit time.strftime("(%k:%M)")
+        client.emit time.strftime("Date of Encounter: %B %e, %Y")
         
 
       end
