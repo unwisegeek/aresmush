@@ -102,6 +102,7 @@ en:
     not_in_active_encounter: "You are not in an active encounter. Specify the encounter by ID to view completed encounters."
     not_in_encounter_scene: "Not in scene associated to encounter."
     not_in_list: "%{option} is not in the list of items you have assigned."
+    not_organizer: "You are not the organizer for the encounter in question."
     not_selected_yet: "%{element} not selected yet."
     not_unique: "The selected argument is not valid or has more than one valid match."
     nothing_to_assign: "You have no character options left unassigned."

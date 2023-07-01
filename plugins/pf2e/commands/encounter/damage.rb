@@ -27,11 +27,22 @@ module AresMUSH
         # Validate that the enactor has the right to run this command in this situation.
         # When the initiative code is created, this will call it. For now, you need the permission to run this command.
 
-        is_dm = enactor.has_permission?(kill_pc)
+        encounter = PF2e.active_encounter(enactor)
+        is_dm = enactor.has_permission?('kill_pc')
 
-        is_encounter = false
+        if is_dm
+          can_damage_pc = true
+        elsif encounter
+          is_organizer = encounter.organizer == enactor.name
+          participants = encounter.participants.collect { |p| p[1] }
+          targets_in_encounter = self.target.all? { |t| participants.include? t }
 
-        if !is_dm
+          can_damage_pc = is_organizer && targets_in_encounter
+        else
+          can_damage_pc = false
+        end
+
+        if !can_damage_pc
           client.emit_failure t('pf2e.cannot_damage_pc')
           return
         end
