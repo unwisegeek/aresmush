@@ -96,11 +96,15 @@ module AresMUSH
         return PF2KnownForCmd
       when "initiative", "init"
         case cmd.switch
+        when "view"
+          return PF2InitViewCmd
         when "join"
           return PF2InitJoinCmd
         else 
           return PF2InitiateCombatCmd
         end
+      when "tinit"
+        return PF2InitViewCmd
       end
 
       nil
