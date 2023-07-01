@@ -38,6 +38,20 @@ module AresMUSH
       enc.update(messages: message_list)
     end
 
+    def self.add_to_initiative(encounter, name, roll, is_adversary=false)
+      list = encounter.participants
+
+      adversary_mod = is_adversary ? 0.2 : 0
+
+      init = roll + adversary_mod
+
+      list << [ init, name ]
+
+      list_sort = list.sort_by { |p| -p[0] }
+
+      encounter.update(participants: list_sort)
+    end
+
 
 
   end

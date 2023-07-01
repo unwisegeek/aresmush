@@ -78,6 +78,8 @@ module AresMUSH
 
         value = Pf2e.roll_dice(amount, sides)
 
+      when 'perception'
+        value = Pf2eCombat.get_perception(char)
       else
 
         title_word = downcase_word.capitalize

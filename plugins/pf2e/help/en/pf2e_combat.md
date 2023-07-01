@@ -13,12 +13,12 @@ aliases:
 
 Invoking encounter mode (or, for the grognards out there, initiative rounds) changes the time flow of a scene. It is used when time must be closely tracked in order to understand the outcome.
 
-The following commands are used to manage encounter mode in a scene. Note that all participants in an encounter must also be participants in the associated scene to use these commands. 
+The following commands are used to manage encounter mode in a scene. Note that in order to participate in an encounter, you must join the scene (not just watch).
 
 ## For Participants
 
-`init <encounter ID>[=<stat>]`: Joins an encounter in progress, using the stat specified by the organizer by default. If the organizer tells you that you should use a different stat, specify <stat>. 
-`initlist <encounter ID>`: View the initiative table for the encounter in question. 
+`init/join <encounter ID>[=<stat>]`: Joins an encounter in progress, using the stat specified by the organizer by default. If the organizer tells you that you should use a different stat, specify <stat>. 
+`init/list <encounter ID>`: View the initiative table for the encounter in question. (Alias `initlist <encounter ID>`)
 
 ## For Organizers
 
