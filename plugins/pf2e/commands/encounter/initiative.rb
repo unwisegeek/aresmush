@@ -53,8 +53,10 @@ module AresMUSH
         # Log the initiative message to the scene as an OOC message. 
         Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
         
-        # Emit the message to the room. 
-        enactor_room.emit message
+        # Notify all participants that an encounter has started.
+        Global.notifier.notify_ooc(:pf2_combat, message) do |char|
+          char && scene.participants.include?(char)
+        end
 
       end
 

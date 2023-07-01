@@ -73,6 +73,7 @@ module AresMUSH
           if !item.equipped
             client.emit_failure t('pf2egear.cannot_use_now', :action => 'equipped')
             return
+          end
         when "magicitem"
           if !item.invested
             client.emit_failure t('pf2egear.cannot_use_now', :action => 'invested')
@@ -148,13 +149,10 @@ module AresMUSH
           item.update(use: use)
 
           if use.empty?
-            Pf2egear.destroy_item(item) 
+            Pf2egear.destroy_item(item, client, enactor) 
           end
 
         end
-
-
-
 
       end
 
