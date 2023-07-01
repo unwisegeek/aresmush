@@ -25,11 +25,11 @@ module AresMUSH
       end
 
       def organizer
-        @encounter.organizer
+        @encounter.organizer.name
       end 
 
       def roll_init_cmd
-        "init #{encounter_id}"
+        "init/join #{encounter_id}[=<alternate stat>]"
       end
 
     end

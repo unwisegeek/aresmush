@@ -28,7 +28,7 @@ module AresMUSH
         # If no argument, initiative is based on Perception.
         init_stat = self.init ? self.init : 'Perception'
 
-        valid_init_stat = Pf2e.is_valid_init_stat(init_stat)
+        valid_init_stat = Pf2e.is_valid_init_stat?(init_stat)
 
         if !valid_init_stat 
           client.emit_failure t('pf2e.not_unique')
