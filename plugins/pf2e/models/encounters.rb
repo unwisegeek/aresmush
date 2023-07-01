@@ -34,7 +34,7 @@ module AresMUSH
 
     def self.send_to_encounter(enc, msg)
       message_list = enc.messages
-      message_list < msg
+      message_list < [ Time.now, msg ]
       enc.update(messages: message_list)
     end
 

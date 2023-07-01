@@ -149,13 +149,10 @@ module AresMUSH
           item.update(use: use)
 
           if use.empty?
-            Pf2egear.destroy_item(item) 
+            Pf2egear.destroy_item(item, client, enactor) 
           end
 
         end
-
-
-
 
       end
 

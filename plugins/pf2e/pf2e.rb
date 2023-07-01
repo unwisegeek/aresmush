@@ -94,6 +94,13 @@ module AresMUSH
         end
       when "knownfor"
         return PF2KnownForCmd
+      when "initiative", "init"
+        case cmd.switch
+        when "join"
+          return PF2InitJoinCmd
+        else 
+          return PF2InitiateCombatCmd
+        end
       end
 
       nil
@@ -104,6 +111,11 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
+      case request.cmd
+      when "pf2_feats_all"
+        return PF2FeatsAllHandler
+      end
+
       nil
     end
 

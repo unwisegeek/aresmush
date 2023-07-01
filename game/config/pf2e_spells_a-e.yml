@@ -2,9 +2,9 @@
 pf2e_spells:
   Acid Splash:
     base_level: cantrip
-    school: Evocation
+    school: evocation
     traits:
-    - Acid
+    - acid
     - attack
     - cantrip
     - evocation
