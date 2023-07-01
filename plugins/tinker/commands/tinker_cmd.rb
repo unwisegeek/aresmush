@@ -10,15 +10,13 @@ module AresMUSH
       
       def handle
       
-        targets = [ "Amy", "Bob", "David" ]
-      
-        participants = [[10.0, "Bob"], [15.0, "Amy"], [8.0, "Charlie"], [10.2, "Bad Guy"]].collect { |p| p[1] }
+        char = Character.named("Testchar")
         
-        targets_in_encounter = targets.all? { |t| participants.include? t }
+        player = char.player
         
-        client.emit targets_in_encounter
+        # email = player.email
         
-        client.emit participants.join(",")
+        client.emit [char, player].join(" -- ")
         
       end
 
