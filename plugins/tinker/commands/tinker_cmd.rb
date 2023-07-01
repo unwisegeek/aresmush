@@ -10,13 +10,9 @@ module AresMUSH
       
       def handle
       
-        time = Time.now
+        list = [[10.0, "Bob"], [15.0, "Amy"], [8.0, "Charlie"], [10.2, "Bad Guy"]]
         
-        client.emit time
-        client.emit time.strftime("(%k:%M)")
-        client.emit time.strftime("Date of Encounter: %B %e, %Y")
-        
-
+        client.emit list.sort_by { |p| -p[0] }
       end
 
     end
