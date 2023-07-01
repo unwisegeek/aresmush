@@ -1,0 +1,16 @@
+<%= header %>
+<%= center("#{title_color}#{title}%xn", 78)%>
+<%= header_line %>
+<%= divider %>
+<% initiative_list.each do |i| %>
+<%= i %>
+<% end %>
+<%= section_line("Bonuses") %>
+<% bonuses.each do |bonus| %>
+<%= bonus %>
+<% end %>
+<%= section_line("Penalties") %>
+<%= penalties.each do |penalty| %>
+<%= penalty %>
+<% end %>
+<%= footer %>

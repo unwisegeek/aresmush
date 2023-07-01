@@ -11,6 +11,8 @@ module AresMUSH
     attribute :current
     attribute :messages, :type => DataType::Array, :default => []
     attribute :init_stat
+    attribute :bonuses, :type => DataType::Hash, :default => {}
+    attribute :penalties, :type => DataType::Hash, :default => {}
 
     set :characters, "AresMUSH::Character"
     reference :scene, "AresMUSH::Scene"
