@@ -20,7 +20,7 @@ module AresMUSH
           else
             altlist = AltTracker.get_altlist_by_object(char.player).join(", ")
             player_email = char.player.email ? char.player.email : "No email set."
-            return { registration: Website.format_markdown_for_html(player_email), alts: Website.format_markdown_for_html(altlist) }
+            return { alttracker_register: Website.format_markdown_for_html(player_email), alttracker_alts: Website.format_markdown_for_html(altlist) }
           end
         else
           return {}
