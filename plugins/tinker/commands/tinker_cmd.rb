@@ -10,9 +10,16 @@ module AresMUSH
       
       def handle
       
-        list = [[10.0, "Bob"], [15.0, "Amy"], [8.0, "Charlie"], [10.2, "Bad Guy"]]
+        targets = [ "Amy", "Bob", "David" ]
+      
+        participants = [[10.0, "Bob"], [15.0, "Amy"], [8.0, "Charlie"], [10.2, "Bad Guy"]].collect { |p| p[1] }
         
-        client.emit list.sort_by { |p| -p[0] }
+        targets_in_encounter = targets.all? { |t| participants.include? t }
+        
+        client.emit targets_in_encounter
+        
+        client.emit participants.join(",")
+        
       end
 
     end
