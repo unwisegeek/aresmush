@@ -74,6 +74,22 @@ module AresMUSH
       10 + prof_bonus + abil_mod
     end
 
+    def self.calculate_ac(char)
+      armor = get_equipped_armor(char)
+
+      abonus = armor ? armor.ac_bonus : 0
+      a_cat = armor ? armor.category : "unarmored"
+      prof_with_armor = char.combat.armor_prof[a_cat]
+      pbonus = Pf2e.get_prof_bonus(prof_with_armor)
+
+      ibonus = Pf2egear.get_rune_value(armor, 'fundamental', 'potency')
+
+      dex_cap = armor ? armor.dex_cap : 99
+      dbonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, 'Dexterity')).clamp(-99, dex_cap)
+
+      ac = 10 + abonus + pbonus + ibonus + dbonus
+    end 
+
     def self.get_equipped_armor(char)
       char.armor&.select { |a| a.equipped }.first
     end
