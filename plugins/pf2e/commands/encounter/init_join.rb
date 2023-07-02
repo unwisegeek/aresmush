@@ -59,6 +59,11 @@ module AresMUSH
 
         PF2Encounter.add_to_initiative(encounter, enactor.name, initiative)
 
+        # Set management for later use.
+
+        enactor.encounters.add encounter
+        encounter.characters.add enactor
+
         client.emit_success t('pf2e.encounter_joined_ok', :roll => initiative, :encounter => encounter.id)
 
       end 

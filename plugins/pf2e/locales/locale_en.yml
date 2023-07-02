@@ -64,6 +64,7 @@ en:
     encounter_start_title: "*** ENCOUNTER STARTED ***"
     encounter_complete: "*** END OF ENCOUNTER ***"
     encounter_joined_ok: "You join encounter %{encounter} with an initiative of %{roll}."
+    encounter_table_title: "Encounter Information for Encounter %{id}"
     
     feat_available_options: "You qualify to take the following feats in that category: %{options}"
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"

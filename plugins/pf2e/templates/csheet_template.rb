@@ -47,18 +47,7 @@ module AresMUSH
       end
 
       def hp
-        hp = @char.hp
-
-        return "---" if !hp
-
-        current = Pf2eHP.get_current_hp(@char)
-        max = Pf2eHP.get_max_hp(@char)
-        percent = max.zero? ? 0 : (current / max) * 100.floor
-        hp_color = "%xg" if percent > 75
-        hp_color = "%xc" if percent.between?(50,75)
-        hp_color = "%xy" if percent.between?(25,50)
-        hp_color = "%xr" if percent < 25
-        "#{hp_color}#{current}%xn / #{max} (#{percent}%)"
+        Pf2eHP.display_character_hp(@char)
       end
 
       def temp_hp
@@ -96,17 +85,7 @@ module AresMUSH
       end
 
       def ac
-        abonus = @armor ? @armor.ac_bonus : 0
-        a_cat = @armor ? @armor.category : "unarmored"
-        prof_with_armor = combat_stats.armor_prof[a_cat]
-        pbonus = Pf2e.get_prof_bonus(prof_with_armor)
-
-        ibonus = Pf2egear.get_rune_value(@armor, 'fundamental', 'potency')
-
-        dex_cap = @armor ? @armor.dex_cap : 99
-        dbonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, 'Dexterity')).clamp(-99, dex_cap)
-
-        ac = 10 + abonus + pbonus + ibonus + dbonus
+        Pf2eCombat.calculate_ac(@char)
       end
 
       def ac_with_shield

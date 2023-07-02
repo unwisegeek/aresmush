@@ -17,6 +17,22 @@ module AresMUSH
 
     ##### CLASS METHODS #####
 
+    def self.display_character_hp(char)
+      hp = char.hp
+
+      return "---" if !hp
+
+      current = get_current_hp(char)
+      max = get_max_hp(char)
+      percent = max.zero? ? 0 : (current / max) * 100.floor
+      hp_color = "%xg" if percent > 75
+      hp_color = "%xc" if percent.between?(50,75)
+      hp_color = "%xy" if percent.between?(25,50)
+      hp_color = "%xr" if percent < 25
+      "#{hp_color}#{current}%xn / #{max} (#{percent}%)"
+
+    end 
+
     def self.get_dying_value(char)
 
       previous_value = char.pf2e_conditions['Dying'] ? Pf2e.get_condition_value(char, 'Dying') : 1
