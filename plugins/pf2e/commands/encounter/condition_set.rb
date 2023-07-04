@@ -74,7 +74,7 @@ module AresMUSH
         end
 
         client.emit_success t('pf2e.condition_set_ok', 
-          :condition => self.condition
+          :condition => self.condition,
           :target => target_list.map { |t| t.name }.sort.join(", ")
         )
 
