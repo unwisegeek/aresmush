@@ -10,13 +10,25 @@ module AresMUSH
       
       def handle
       
-        char = Character.named("Testchar")
+        initlist = [[10.0, "Bob"], [9.2, "Bad Guy"], [8.0, "Charlie"], [6.0, "Amy"]]
         
-        player = char.player
+        this_init = 2
         
-        # email = player.email
+        next_init = (this_init + 1) % initlist.size
         
-        client.emit [char, player].join(" -- ")
+        next_name = initlist[next_init][1]
+        this_name = initlist[this_init][1]
+        
+        round_text = "Initiative advances!"
+        
+        message = t('pf2e.advance_init', 
+          :current => this_name, 
+          :next => next_name, 
+          :init => initlist[this_init][0].to_i,
+          :round => round_text
+        )
+        
+        client.emit message
         
       end
 
