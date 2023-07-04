@@ -30,6 +30,10 @@ module AresMUSH
         
         client.emit message
         
+        init_msg = t('pf2e.your_init', :id => '1234')
+        
+        client.emit init_msg
+        
       end
 
     end
