@@ -7,7 +7,7 @@ en:
     ability_too_high: "%xrAt least one of your ability scores is too high. Too high: %{score}%xn"
     add_ok: "You add %{item} to your %{list}."
     admin_no_sheet: "That character is a game admin and does not have a sheet."
-    advance_init: "%{round} Current initiative: %xc%{init}%xn%r%b%b%bCurrent turn: %x229%{current}%xn Next turn: %xh%c%{next}"
+    advance_init: "%{round} Current initiative: %xc%{init}%xn%r%b%b%bCurrent turn: %x229%{current}%xn Next turn: %xh%c%{next}%xn"
     alias_set_ok: "You set %{alias} to %{value}."
     alias_deleted_ok: "You delete %{alias}."
     already_has_skill: "You already have that skill. Pick another."
