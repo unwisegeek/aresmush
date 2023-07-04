@@ -3,7 +3,13 @@ module AresMUSH
 
     def self.get_condition_value(char, condition)
       # Returns 0 if that condition does not have a value, nil if that condition is not present.
-      char.pf2_conditions[condition]['value']
+      c = char.pf2_conditions[condition]
+      return nil if !c
+
+      v = c['value']
+      return 0 if !v
+
+      return v
     end
 
     def self.set_condition(char, condition, value=0, duration=false)

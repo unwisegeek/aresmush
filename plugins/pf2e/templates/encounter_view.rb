@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    class PF2InitViewTemplate < ErbTemplateRenderer
+    class PF2EncounterViewTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
       attr_accessor :encounter
@@ -9,7 +9,7 @@ module AresMUSH
       def initialize(encounter)
         @encounter = encounter
 
-        super File.dirname(__FILE__) + "/init_view.erb"
+        super File.dirname(__FILE__) + "/encounter_view.erb"
       end
 
       def title

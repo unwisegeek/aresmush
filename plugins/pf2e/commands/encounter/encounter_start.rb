@@ -25,6 +25,15 @@ module AresMUSH
           return
         end
 
+        # Only one encounter can be active in a scene at a time.
+
+        active_encounter = PF2Encounter.scene_active_encounter(scene)
+
+        if active_encounter
+          client.emit_failure t('pf2e.scene_has_active_encounter')
+          return
+        end
+
         # If no argument, initiative is based on Perception.
         init_stat = self.init ? self.init : 'Perception'
 
@@ -38,10 +47,11 @@ module AresMUSH
         # Do it.
 
         encounter = PF2Encounter.create(
-          organizer: enactor.name,
+          organizer: enactor,
           scene: scene,
           init_stat: init_stat
         )
+
 
         template = PF2EncounterStart.new(encounter)
 
