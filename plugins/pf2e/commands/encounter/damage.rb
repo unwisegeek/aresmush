@@ -25,22 +25,10 @@ module AresMUSH
       def handle
 
         # Validate that the enactor has the right to run this command in this situation.
-        # When the initiative code is created, this will call it. For now, you need the permission to run this command.
 
-        encounter = PF2e.active_encounter(enactor)
-        is_dm = enactor.has_permission?('kill_pc')
+        target_list = self.target.map { |t| Character.find_one_by_name(t).name }.compact
 
-        if is_dm
-          can_damage_pc = true
-        elsif encounter
-          is_organizer = encounter.organizer == enactor.name
-          participants = encounter.participants.collect { |p| p[1] }
-          targets_in_encounter = self.target.all? { |t| participants.include? t }
-
-          can_damage_pc = is_organizer && targets_in_encounter
-        else
-          can_damage_pc = false
-        end
+        can_damage_pc = Pf2e.can_damage_pc?(enactor, target_list)
 
         if !can_damage_pc
           client.emit_failure t('pf2e.cannot_damage_pc')
@@ -55,7 +43,7 @@ module AresMUSH
         ok_char_list = []
         bad_char_list = []
 
-        self.target.each do |item|
+        target_list.each do |item|
           char = ClassTargetFinder.find(item, Character, enactor)
 
           if (char.found?)

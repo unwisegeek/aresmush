@@ -7,7 +7,7 @@ module AresMUSH
     attribute :next_init, :type => DataType::Integer, :default => 0
     attribute :organizer
     attribute :is_active, :type => DataType::Boolean, :default => true
-    attribute :round, :type => DataType::Integer, :default => 1
+    attribute :round, :type => DataType::Integer, :default => 0
     attribute :current
     attribute :messages, :type => DataType::Array, :default => []
     attribute :init_stat
@@ -23,12 +23,15 @@ module AresMUSH
       char.encounters.any? { |e| e.is_active }
     end
 
-    def self.active_encounter_in_scene(char, scene) 
-      char_active_encounters = char.encounters.select { |e| e.is_active }
-      scene_active_encounters = scene.encounters.select { |e| e.is_active }
-
-      char_active_encounters.intersection(scene_active_encounters).first
+    def scene_active_encounter(scene) 
+      scene_active_encounters = scene.encounters.select { |e| e.is_active }.first
     end
+
+    def self.get_encounter_ID(char)
+      scene = char.room.scene
+      return nil if !scene
+      scene_active_encounter(scene)
+    end 
 
     def self.active_encounter(char)
       char.encounters.select { |e| e.is_active }.first
@@ -54,7 +57,9 @@ module AresMUSH
       encounter.update(participants: list_sort)
     end
 
-
+    def self.is_organizer?(char, encounter)
+      char == encounter.organizer
+    end 
 
   end
 end
