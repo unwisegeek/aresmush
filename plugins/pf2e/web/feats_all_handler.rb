@@ -11,7 +11,7 @@ module AresMUSH
 
         feat_list = Global.read_config('pf2e_feats').sort_by { |k,v| k }
 
-        { feats: feat_list }
+        { pf2_feats: feat_list }
       end
     end
   end
