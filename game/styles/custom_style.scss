@@ -1,6 +1,43 @@
 /* BEGIN CUSTOM_STYLE.SCSS CONFIG */
 /* Written by Riptide */
 
+/* Color scheme is as follows:
+
+**BLUES**
+Status message, info alert: Deep Space Sparkle 2 #43676f
+Status message border, info alert border: Sky Blue #89d2e1
+secondary-color: Moonstone Blue #74a7bb
+Info wiki callout text and border: Light Cobalt Blue #82ace3
+Info wiki callout bg: Sapphire #0F44C1
+body-wrap, header-wrap: Navy Blue #05066a
+nav-link and inactive tabs: Imperial Blue #0d0b6a
+**BROWNS**
+scene-ooc-pose: Brown Coffee #4b2b31
+dropdown menu hover: Copper Penny #b37066
+**CREAMS**
+primary-outline-color, H1 border styling: Dark Vanilla #CBC0AD
+primary-words-color, status and alert text: Bone #dbd3c6
+**GRAYS**
+TOC box shadow: Dark Liver #594f4f
+**GREENS**
+Success alert: Hooker's Green #4e7161
+Success alert border: Jet Stream #badbcc
+**NEAR-BLACKS**
+body semi-transparent background, scene pose header: Eerie Black #201a1a
+**PINKS**
+faded-text-color: New York Pink #df8f84
+Danger alert border: Fuzzy Wuzzy #d06670
+**REDS**
+Danger alert: Antique Ruby #842029
+Warning wiki callout text: Coral Red #ff4239
+Warning wiki border color: Lust #e12525
+Warning wiki bg color: Dark Sienna #421111
+**YELLOWS**
+text-color: Tumbleweed #E1B07E
+Warning alert: Bistre Brown #8c7225
+
+Update as needed. */
+
 /* Dropdown menus coloration */
 
 button,
@@ -18,7 +55,7 @@ ul.dropdown-menu {
 }
 
 .dropdown-item:hover {
-    background-color: #b37066;
+    background-color: #b37066; /* Copper Penny */
 }
 
 .header-wrap nav {
@@ -82,7 +119,7 @@ div.body-wrap {
 
 div.body-wrap,
 div.header-wrap {
-    box-shadow: 0px 0px 20px 0px #05066a
+    box-shadow: 0px 0px 20px 0px #05066a /* Navy Blue */
 }
 
 /* Mobile version body styling */
@@ -116,14 +153,14 @@ h1 {
     background-color: transparent;
     padding: .1em 1.2em;
     font-weight: bold;
-    border: 3px solid #CBC0AD;
+    border: 3px solid #CBC0AD; /* Dark Vanilla */
     letter-spacing: 0.1em;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-left-style: double;
     border-left-width: 8px;
     border-right-style: none;
-    border-image: linear-gradient(to right, #CBC0AD, transparent) 1;
+    border-image: linear-gradient(to right, #CBC0AD, transparent) 1; /* Dark Vanilla */
 }
 
 h2 {
@@ -133,30 +170,30 @@ h2 {
 /* Table of contents styling */
 
 .toc {
-    border: 1px solid #74a7bb;
-    box-shadow: 5px 5px 5px #594f4f;
+    border: 1px solid #74a7bb; /* Moonstone Blue */
+    box-shadow: 5px 5px 5px #594f4f; /* Dark Liver */
     border-radius: 4px;
 }
 
 /* Character profile page styling */
 
 .profile-box {
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, .9); /* Solid Black (semi-transparent) */
     border-radius: 5px;
 }
 
 .profile-divider {
     background-color: transparent;
     padding: 3px;
-    background-image: linear-gradient(to right, transparent,#E1B07E,transparent);
+    background-image: linear-gradient(to right, transparent,#E1B07E,transparent); /* Tumbleweed */
 }
 
 .card-body.status-message {
-    color: #dbd3c6;
+    color: #dbd3c6; /* Bone */
     background-color: transparent;
-    border-color: #89d2e1;
+    border-color: #89d2e1; /* Sky Blue */
     background-image: linear-gradient(to right,#43676f,transparent);
-}
+} /* Deep Space Sparkle 2 */
 
 /* Quotes and IC exposition should have its own font and classes */
 
@@ -199,34 +236,30 @@ div.icquote {
 /* Alert styling */
 
 .alert-info {
-    color: #dbd3c6;
+    color: #dbd3c6; /* Bone */
     background-color: transparent;
-    border-color: #89d2e1;
+    border-color: #89d2e1; /* Sky Blue */
     background-image: linear-gradient(to right,#43676f,transparent);
-}
+} /* Deep Space Sparkle 2 */
 
 .alert-success {
-    color: #dbd3c6;
+    color: #dbd3c6; /* Bone */
     background-color: transparent;
-    border-color: #badbcc;
-    background-image: linear-gradient(to right, #4e7161, transparent);
+    border-color: #badbcc; /* Jet Stream */
+    background-image: linear-gradient(to right, #4e7161, transparent); /* Hooker's Green */
 }
 
 .alert-warning {
-    color: #dbd3c6;
+    color: #dbd3c6; /* Bone */
     background-color: transparent;
-    background-image: linear-gradient(to right, #8c7225, transparent);
+    background-image: linear-gradient(to right, #8c7225, transparent); /* Bistre Brown */
 }
 
 .alert-danger {
-    color: #dbd3c6;
+    color: #dbd3c6; /* Bone */
     background-color: transparent;
-    border-color: #d06670;
-    background-image: linear-gradient(to right, #842029, transparent);
-}
-
-.alert-danger {
-
+    border-color: #d06670; /* Fuzzy Wuzzy */
+    background-image: linear-gradient(to right, #842029, transparent); /* Antique Ruby */
 }
 
 /* Wiki custom classes */
@@ -236,13 +269,15 @@ div.wiki-callout {
     text-align: center;
     font-style: italic;
     vertical-align: middle;
-    color: #82ace3;
+    color: #82ace3; /* Light Cobalt Blue */
     width: 80%;
     font-size: 100%;
     border: 3px solid;
     padding: 15px;
-    border-image: radial-gradient(ellipse farthest-corner at top left, #82ace3 12%, transparent 100%) 3;
-    background-image: linear-gradient(to right, #0f44c169, transparent);
+    border-image: radial-gradient(ellipse farthest-corner at top left, #82ace3 12%, transparent 100%) 3; /* Light Cobalt Blue */
+    background-image: linear-gradient(to right, #0f44c169, transparent); /* Sapphire (semi-transparent) */
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 div.wiki-warning {
@@ -250,30 +285,32 @@ div.wiki-warning {
     text-align: center;
     font-style: italic;
     vertical-align: middle;
-    color: #ff4239;
+    color: #ff4239; /* Coral Red */
     width: 80%;
     font-size: 100%;
     border: 3px solid;
     padding: 15px;
-    border-image: radial-gradient(ellipse farthest-corner at top left, #e12525 12%, transparent 100%) 3;
-    background-image: linear-gradient(to right, #421111, transparent);
+    border-image: radial-gradient(ellipse farthest-corner at top left, #e12525 12%, transparent 100%) 3; /* Lust */
+    background-image: linear-gradient(to right, #421111, transparent); /* Dark Sienna */
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* Scene component styling */
 
 .live-scene-log {
-    background: rgba(0, 0, 0, 0.34);
-    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1;
+    background: rgba(0, 0, 0, 0.34); /* Black (semi-transparent) */
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1; /* Tumbleweed */
 }
 
 .scene-log {
-    border: 1px solid #dbb0b0;
-    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1;
+    border: 1px solid #dbb0b0; /* Pale Chestnut */
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1; /* Tumbleweed */
 }
 
 .scene-pose-header {
-    border-top: 1px dashed rgba(221, 207, 193, 0.63);
-    background-image: linear-gradient(to right, #000000ba, transparent);
+    border-top: 1px dashed rgba(221, 207, 193, 0.63); /* Eerie Black */
+    background-image: linear-gradient(to right, #000000ba, transparent); /* Solid Black (semi-transparent) */
     padding-bottom: 10px;
     padding-left: 10px;
 }
@@ -284,14 +321,14 @@ div.wiki-warning {
 }
 
 .scene-ooc-pose {
-    background-color: #4b2b3178;
+    background-color: #4b2b3178; /* Brown Coffee (semi-transparent) */
     margin-bottom: 20px;
 }
 
 .scene-controls-box {
     border: 1px solid;
     background: transparent;
-    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1;
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 40%, transparent 100%) 1; /* Tumbleweed */
 }
 
 /* Jobs styling */
@@ -312,7 +349,7 @@ div.card-body.markdown-editor {
     border-bottom-right-radius: 0px;
     border-radius: 0px;
     border: 1.5px solid white;
-    border-image: linear-gradient(to bottom right, rgba(203, 192, 173, 1), rgba(203, 192, 173, .4), rgba(203, 192, 173, 1)) 1;
+    border-image: linear-gradient(to bottom right, rgba(203, 192, 173, 1), rgba(203, 192, 173, .4), rgba(203, 192, 173, 1)) 1; /* Dark Vanilla - Transparent - Dark Vanilla gradient */
 }
 
 .log-icon-container {
@@ -327,11 +364,11 @@ div.card-body.markdown-editor {
 /* Tabs styling */
 
 .nav-link.nav-link {
-    border-image: radial-gradient(ellipse farthest-corner at top left, #0d0b6a 45%, transparent 100%) 1; 
+    border-image: radial-gradient(ellipse farthest-corner at top left, #0d0b6a 45%, transparent 100%) 1; /* Imperial Blue */
 }
   
 a.nav-link.active {
-    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 15%, transparent 80%) 1; 
+    border-image: radial-gradient(ellipse farthest-corner at top left, #E1B07E 15%, transparent 80%) 1; /* Tumbleweed */
 }
   
 .nav-tabs {
@@ -340,12 +377,22 @@ a.nav-link.active {
 }
 
 .nav-link.nav-link:hover, a.nav-link.active:hover {
-    background-color: #040429;
+    background-color: #040429; /* Rich Black */
+}
+
+/* Locations page styling */
+
+div.area-entry {
+    border-image: linear-gradient(to bottom right, #0d0b6a, #0d0b6a45, #0d0b6a) 1; /* Imperial Blue */
+}
+  
+div.area-entry h2 {
+    background: linear-gradient(to right, #0d0b6a, transparent); /* Imperial Blue */ 
 }
 
 /* Wiki content styling */
 
 .tab-content {
     padding-top: 0px;
-    border-image: linear-gradient(to bottom right, #0d0b6a, #0d0b6a33, #0d0b6a) 1;
+    border-image: linear-gradient(to bottom right, #0d0b6a, #0d0b6a33, #0d0b6a) 1; /* Imperial Blue gradient */
 }

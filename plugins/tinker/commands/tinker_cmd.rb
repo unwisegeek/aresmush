@@ -19,7 +19,7 @@ module AresMUSH
         next_name = initlist[next_init][1]
         this_name = initlist[this_init][1]
         
-        round_text = "Initiative advances!"
+        round_text = "New round! Round 3"
         
         message = t('pf2e.advance_init', 
           :current => this_name, 
