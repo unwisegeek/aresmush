@@ -10,29 +10,13 @@ module AresMUSH
       
       def handle
       
-        initlist = [[10.0, "Bob"], [9.2, "Bad Guy"], [8.0, "Charlie"], [6.0, "Amy"]]
+        arg_raw = "Test=6"
         
-        this_init = 2
+        args = trimmed_list_arg(arg_raw, "=")
         
-        next_init = (this_init + 1) % initlist.size
+        args.unshift(nil) unless args[2]
         
-        next_name = initlist[next_init][1]
-        this_name = initlist[this_init][1]
-        
-        round_text = "New round! Round 3"
-        
-        message = t('pf2e.advance_init', 
-          :current => this_name, 
-          :next => next_name, 
-          :init => initlist[this_init][0].to_i,
-          :round => round_text
-        )
-        
-        client.emit message
-        
-        init_msg = t('pf2e.your_init', :id => '1234')
-        
-        client.emit init_msg
+        client.emit args
         
       end
 
