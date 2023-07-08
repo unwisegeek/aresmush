@@ -4,41 +4,35 @@ module AresMUSH
     class PF2InitJoinCmd
       include CommandHandler
 
-      attr_accessor :enc_id, :init_stat
+      attr_accessor :encounter_id, :init_stat
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_optional_arg2)
+        args = trimmed_list_arg(cmd.args, "=")
 
-        self.enc_id = integer_arg(args.arg1)
-        self.init_stat = titlecase_arg(args.arg2)
+        self.encounter_id = integer_arg(args[0])
+        self.init_stat = args[1]
 
-      end
-
-      def required_args
-        [self.enc_id]
-      end
-
-      def check_used_encounter_ID
-        return nil unless self.enc_id.zero?
-        return t('pf2e.bad_id', :type => 'encounter')
       end
 
       def handle
-        # Is this a valid encounter?
+        # If they didn't specify encounter ID, go get it. 
 
-        encounter = PF2Encounter[self.enc_id]
+        scene = enactor_room.scene
+
+        encounter = self.encounter_id ? 
+          PF2Encounter[self.encounter_id] : 
+          PF2Encounter.get_encounter_ID(enactor, scene)
 
         if !encounter
           client.emit_failure t('pf2e.bad_id', :type => 'encounter')
           return
-        end 
+        end
 
         # Can the character join this encounter? 
 
-        scene = encounter.scene
-        cannot_join = Pf2e.check_encounter_join(enactor, scene)
+        can_join = Pf2e.can_join_encounter?(enactor, encounter)
 
-        if cannot_join
+        if !can_join
           client.emit_failure t('pf2e.cannot_join_encounter', :reason => cannot_join.join(", "))
           return
         end

@@ -23,13 +23,13 @@ module AresMUSH
       char.encounters.any? { |e| e.is_active }
     end
 
-    def scene_active_encounter(scene) 
+    def self.scene_active_encounter(scene) 
       scene_active_encounters = scene.encounters.select { |e| e.is_active }.first
     end
 
-    def self.get_encounter_ID(char)
-      scene = char.room.scene
+    def self.get_encounter_ID(char, scene=nil)
       return nil if !scene
+      return nil unless scene.participants.include? char
       scene_active_encounter(scene)
     end 
 
@@ -56,6 +56,13 @@ module AresMUSH
 
       encounter.update(participants: list_sort)
     end
+
+    def self.remove_from_initiative(encounter,index)
+      
+      new_list = encounter.participants.delete_at(index)
+
+      encounter.update(participants: new_list)
+    end 
 
     def self.is_organizer?(char, encounter)
       char == encounter.organizer

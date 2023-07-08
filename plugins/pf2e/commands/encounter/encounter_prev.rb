@@ -14,9 +14,11 @@ module AresMUSH
       
         # If they didn't specify the encounter ID, go get it.
 
+        scene = enactor_room.scene
+
         encounter = self.encounter_id ? 
           PF2Encounter[self.encounter_id] : 
-          PF2Encounter.get_encounter_ID(enactor)
+          PF2Encounter.get_encounter_ID(enactor, scene)
 
         if !encounter
           client.emit_failure t('pf2e.bad_id', :type => 'encounter')
@@ -30,17 +32,20 @@ module AresMUSH
 
         initlist = encounter.participants
 
-        round = encounter.round
-        this_init = encounter.next_init - 1
-        round_text = "Initiative backs up."
-        next_init = (this_init + 1) % initlist.size
+        # Going back might back us up a round.
 
         if encounter.next_init.zero?
           round = round - 1
           this_init = initlist.size
+          next_init = 0
           encounter.update(round: round)
-        end 
+        else 
+          round = encounter.round
+          this_init = encounter.next_init - 1
+          next_init = (this_init + 1) % initlist.size
+        end
 
+        round_text = "Initiative backs up."
         this_name = initlist[this_init][1]
         next_name = initlist[next_init][1]
 
