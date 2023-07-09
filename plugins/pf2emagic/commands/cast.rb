@@ -19,7 +19,7 @@ module AresMUSH
 
       def handle
         # Can you even cast spells at all?
-        magic = Pf2eMagic.get_magic_obj(enactor)
+        magic = PF2Magic.get_magic_obj(enactor)
 
         if !magic
           client.emit_failure t('pf2e.not_caster')

@@ -19,7 +19,7 @@ module AresMUSH
 
       def handle
 
-        encounter = self.encounter_id ? PF2Encounter[self.encounter_id] : Pf2e.active_encounter(enactor)
+        encounter = self.encounter_id ? PF2Encounter[self.encounter_id] : PF2Encounter.get_encounter_ID(enactor, enactor_room.scene)
 
         # You need to either specify the encounter to view by ID or be in an active encounter.
 

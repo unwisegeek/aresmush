@@ -32,8 +32,8 @@ module AresMUSH
 
       return obj if obj
 
-      obj = Pf2eMagic.create(character: char)
-      char.magic = obj
+      obj = PF2Magic.create(character: char)
+      char.update(magic: obj)
 
       return obj
     end
