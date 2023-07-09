@@ -1,5 +1,5 @@
 module AresMUSH
-  class Pf2eMagic < Ohm::Model
+  class PF2Magic < Ohm::Model
     include ObjectModel
 
     attribute :class_case, :type => DataType::Hash, :default => {}
