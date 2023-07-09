@@ -58,7 +58,20 @@ module AresMUSH
         enactor.encounters.add encounter
         encounter.characters.add enactor
 
-        client.emit_success t('pf2e.encounter_joined_ok', :roll => initiative, :encounter => encounter.id)
+        message t('pf2e.encounter_joined_ok', 
+          :roll => initiative, 
+          :encounter => encounter.id, 
+          :name => enactor.name
+        )
+
+        # Emit to the room. 
+        enactor_room.emit message
+
+        # Log to the encounter.
+        PF2Encounter.send_to_encounter(encounter, message)
+
+        # Log to the scene as an OOC message. 
+        Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
 
       end 
     end 

@@ -112,6 +112,10 @@ module AresMUSH
           return PF2EncounterAddCmd
         when "scan"
           return PF2EncounterScanCmd
+        when "end"
+          return PF2EncounterEndCmd
+        when "restart"
+          return PF2EncounterRestartCmd
         else 
           return PF2InitiateCombatCmd
         end
@@ -127,6 +131,8 @@ module AresMUSH
         return PF2EncounterAddCmd
       when "tscan"
         return PF2EncounterScanCmd
+      when "resume"
+        return PF2EncounterEndCmd
       end
 
       nil

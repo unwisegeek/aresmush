@@ -57,13 +57,14 @@ module AresMUSH
           :round => round_text
         )
 
+        # Emit to the room. 
         enactor_room.emit message
 
-        # Log to the encounter. 
+        # Log message to the encounter. 
         PF2Encounter.send_to_encounter(encounter, message)
 
-        # Log the initiative message to the scene as an OOC message. 
-        Scenes.add_to_scene(encounter.scene, message, Game.master.system_character, false, true)
+        # Log the message to the scene as an OOC message. 
+        Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
 
         # If the current initiative is a PC, shoot them a global notifier. 
 

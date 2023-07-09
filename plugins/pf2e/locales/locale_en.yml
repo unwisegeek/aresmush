@@ -66,10 +66,11 @@ en:
 
     element_cglocked: "That %{element} is part of your chargen options and cannot be changed."
     encounter_start_title: "*** ENCOUNTER STARTED ***"
-    encounter_complete: "*** END OF ENCOUNTER ***"
+    encounter_complete: "*** END OF ENCOUNTER %{id} ***"
     encounter_add_ok: "You add %{name} to encounter %{encounter} at initiative %{roll}."
     encounter_remove_ok: "You remove %{name} from encounter %{encounter}."
-    encounter_joined_ok: "You join encounter %{encounter} with an initiative of %{roll}."
+    encounter_restarted: "*** ENCOUNTER %{id} RESTARTED ***"
+    encounter_joined_ok: "%{name} joins encounter %{encounter} at initiative %{roll}."
     encounter_mod_ok: "You change the initiative for %{name} to %{init} in encounter %{encounter}."
     encounter_table_title: "Encounter Information for Encounter %{id}"
     
