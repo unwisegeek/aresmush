@@ -13,8 +13,8 @@ module AresMUSH
 
       case search_type
       when 'name'
-        feat_names = feat_info.keys.map { |n| n.upcase }
-        match = feat_names.select { |n| n.match? term.upcase }
+        feat_names = feat_info.keys
+        match = feat_names.select { |n| n.upcase.match? term.upcase }
       when 'traits'
         match = feat_info.select { |k,v| v['traits'].include? term.downcase }
       when 'level'
