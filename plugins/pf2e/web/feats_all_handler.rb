@@ -3,11 +3,14 @@ module AresMUSH
     class PF2FeatsAllHandler
       def handle(request)
 
-        feat_list = Global.read_config('pf2e_feats').sort_by { |k,v| k }.to_h
-
         request.log_request
 
-        feat_list
+        { 
+          general: Pf2e.search_feats('feat_type', 'General'),
+          skill: Pf2e.search_feats('feat_type', 'Skill'),
+          charclass: Pf2e.search_feats('feat_type', 'charclass')
+          ancestry: Pf2e.search_feats('feat_type', 'ancestry')
+        }
 
       end
     end
