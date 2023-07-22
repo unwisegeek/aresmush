@@ -8,7 +8,7 @@ module AresMUSH
         { 
           general: Pf2e.search_feats('feat_type', 'General'),
           skill: Pf2e.search_feats('feat_type', 'Skill'),
-          charclass: Pf2e.search_feats('feat_type', 'charclass')
+          charclass: Pf2e.search_feats('feat_type', 'charclass'),
           ancestry: Pf2e.search_feats('feat_type', 'ancestry')
         }
 
