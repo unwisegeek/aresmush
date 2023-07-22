@@ -3,15 +3,12 @@ module AresMUSH
     class PF2FeatsAllHandler
       def handle(request)
 
-        # Players not logged in should be able to run this command.
-        error = WebHelpers.check_login(request, true)
-        return error if error
-        
+        feat_list = Global.read_config('pf2e_feats').sort_by { |k,v| k }.to_h
+
         request.log_request
 
-        feat_list = Global.read_config('pf2e_feats').sort_by { |k,v| k }
+        { pf2_feats_all: feat_list }
 
-        { pf2_feats: feat_list }
       end
     end
   end
