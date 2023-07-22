@@ -8,23 +8,37 @@ module AresMUSH
       feat_info = Global.read_config('pf2e_feats', name)
     end
 
-    def self.search_feats(search_type, term)
-      valid_search_types = [ 'name' ]
-
-      return 'bad_search_type' unless valid_search_types.include? search_type
-
+    def self.search_feats(search_type, term, operator='=')
       feat_info = Global.read_config('pf2e_feats')
 
       case search_type
       when 'name'
-
-        feat_names=feat_info.keys.map { |n| n.upcase }
-
-        match = feat_names.select { |n| n.match? term }
-
+        feat_names = feat_info.keys.map { |n| n.upcase }
+        match = feat_names.select { |n| n.match? term.upcase }
+      when 'traits'
+        match = feat_info.select { |k,v| v['traits'].include? term.downcase }
+      when 'level'
+        case operator
+        when '<'
+          match = feat_info.select { |k,v| v['prereq']['level'] < term.to_i }
+        when '='
+          match = feat_info.select { |k,v| v['prereq']['level'] == term.to_i }
+        when '>'
+          match = feat_info.select { |k,v| v['prereq']['level'] > term.to_i }
+        end
+      when 'feat_type'
+        match = feat_info.select { |k,v| v['feat_type'].include? term.capitalize }
+      when 'class'
+        match = feat_info.select { |k,v| v['assoc_charclass']&.include? term.capitalize }
+      when 'ancestry'
+        match = feat_info.select { |k,v| v['assoc_ancestry']&.include? term.capitalize }
+      when 'skill'
+        match = feat_info.select { |k,v| v['assoc_skill']&.include? term.capitalize }
+      when 'description', 'desc'
+        match = feat_info.select { |k,v| v['shortdesc'].upcase.match? term.upcase }
       end
 
-      return 'no_match' if match.empty?
+      match
 
     end
 
