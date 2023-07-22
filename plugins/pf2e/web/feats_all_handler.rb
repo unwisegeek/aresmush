@@ -7,7 +7,7 @@ module AresMUSH
 
         request.log_request
 
-        { pf2_feats_all: feat_list }
+        feat_list
 
       end
     end
