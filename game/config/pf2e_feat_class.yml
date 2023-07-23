@@ -525,7 +525,7 @@ pf2e_feats:
     prereq:
       level: 2
     shortdesc: You can rig your bombs to inanimate objects in order to cause destruction to the surrounding area.
-    traits: vscode-yaml-sort.array.5
+    traits: []
   Desperate Prayer:
     assoc_charclass:
       - Champion
