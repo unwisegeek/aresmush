@@ -57,6 +57,9 @@ module AresMUSH
 
         message = template.render
 
+        # Emit to the room. 
+        enactor_room.emit message
+
         # Log the init start in the encounter. 
         PF2Encounter.send_to_encounter(encounter, message)
 

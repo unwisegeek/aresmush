@@ -243,3 +243,8 @@ pf2e_magic:
       description: "Your inner fire increases your combat prowess."
       initial: Weapon Surge
       advanced: Zeal for Battle
+  prepared_casters:
+  - cleric
+  - druid
+  - witch
+  - wizard

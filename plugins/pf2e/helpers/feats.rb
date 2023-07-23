@@ -17,13 +17,14 @@ module AresMUSH
       when 'traits'
         match = feat_info.select { |k,v| v['traits'].include? term.downcase }
       when 'level'
+        # Invalid operator defaults to =.
         case operator
         when '<'
           match = feat_info.select { |k,v| v['prereq']['level'] < term.to_i }
-        when '='
-          match = feat_info.select { |k,v| v['prereq']['level'] == term.to_i }
         when '>'
           match = feat_info.select { |k,v| v['prereq']['level'] > term.to_i }
+        else 
+          match = feat_info.select { |k,v| v['prereq']['level'] == term.to_i }
         end
       when 'feat_type'
         match = feat_info.select { |k,v| v['feat_type'].include? term.capitalize }
