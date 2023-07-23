@@ -79,7 +79,7 @@ pf2e_feats:
       level: 1
       skill: Crafting/trained
     shortdesc: You can identify alchemical items quickly.
-    traits: vscode-yaml-sort.array.1
+    traits: []
   Ancestral Blood Magic:
     assoc_charclass:
       - Sorcerer
@@ -282,7 +282,7 @@ pf2e_feats:
     prereq:
       level: 4
     shortdesc: You have calculated all the angles to maximize a bomb’s splash.
-    traits: vscode-yaml-sort.array.7
+    traits: []
   Call Bonded Item:
     assoc_charclass:
       - Wizard
@@ -1668,7 +1668,7 @@ pf2e_feats:
     prereq:
       level: 1
     shortdesc: You keep your bombs in easy-to-reach pouches from which you draw without thinking.
-    traits: vscode-yaml-sort.array.3
+    traits: []
   Quick Reversal:
     assoc_charclass:
       - Fighter
@@ -1712,7 +1712,7 @@ pf2e_feats:
     prereq:
       level: 1
     shortdesc: Your fury fills your foes with fear.
-    traits: vscode-yaml-sort.array.12
+    traits: []
   Raging Thrower:
     assoc_charclass:
       - Barbarian
@@ -1721,7 +1721,7 @@ pf2e_feats:
     prereq:
       level: 1
     shortdesc: Thrown weapons become especially deadly in your fury. You apply the additional damage from Rage to your thrown weapon attacks. If you have the Brutal Critical feat or the devastator class feature, apply their benefits to thrown weapon attacks.
-    traits: vscode-yaml-sort.array.13
+    traits: []
   Ranged Reprisal:
     assoc_charclass:
       - Champion
@@ -1803,7 +1803,7 @@ pf2e_feats:
     prereq:
       level: 2
     shortdesc: While under the effect of a mutagen, you can metabolize that mutagen’s power to heal yourself.
-    traits: vscode-yaml-sort.array.6
+    traits: []
   Rites of Convocation:
     assoc_charclass:
       - Witch
