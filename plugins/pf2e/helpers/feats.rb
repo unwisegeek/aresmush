@@ -204,7 +204,7 @@ module AresMUSH
 
       feat_list=featlist
 
-      @details = Global.read_config('pf2e_feats').keep_if { |k,v| feat_list.include? k }
+      @details = Global.read_config('pf2e_feats').select { |k,v| feat_list.include? k }
 
       list = []
       @details.each_pair do |feat, details|
