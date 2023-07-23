@@ -8,9 +8,7 @@ module AresMUSH
       feat_info = Global.read_config('pf2e_feats', name)
     end
 
-    def self.search_feats(search_type, term, operator='=')
-      feat_info = Global.read_config('pf2e_feats').sort_by {|k,v| k}.to_h
-
+    def self.search_feats(feat_info, search_type, term, operator='=')
       case search_type
       when 'name'
         match = feat_info.select { |k,v| k.upcase.match? term.upcase }
