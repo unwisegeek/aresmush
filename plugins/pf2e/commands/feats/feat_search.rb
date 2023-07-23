@@ -44,9 +44,7 @@ module AresMUSH
           term = self.search_term[0].upcase
         end
 
-        feat_info = Global.read_config('pf2e_feats')
-
-        match = Pf2e.search_feats(feat_info, self.search_type, term, operator)
+        match = Pf2e.search_feats(self.search_type, term, operator)
 
         if match.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'feats')
