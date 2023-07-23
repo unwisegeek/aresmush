@@ -240,7 +240,7 @@ module AresMUSH
       return t('pf2e.feat_details_missing', :name => feat.upcase) if !details
 
       fmt_name = "%x172#{feat}%xn"
-      feat_type = "%%x229Feat Type:%xn #{details['feat_type'].sort.join(", ")}"
+      feat_type = "%x229Feat Type:%xn #{details['feat_type'].sort.join(", ")}"
       
       # Depending on feat type, this may be different keys with different formats.
 
@@ -249,7 +249,7 @@ module AresMUSH
       elsif details.has_key? 'assoc_ancestry'
         associated = "%x229Associated To:%xn #{details['assoc_ancestry'].sort.join(", ")}"
       elsif details.has_key? 'assoc_skill'
-        associated = "%x229Associated To:%xn #{details['assoc_skill']}"
+        associated = "%x229Associated To:%xn #{details['assoc_skill'].sort.join(", ")}"
       else
         associated = "%x229Associated To:%xn Any"
       end

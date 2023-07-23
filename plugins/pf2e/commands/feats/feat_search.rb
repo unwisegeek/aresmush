@@ -60,7 +60,7 @@ module AresMUSH
           return
         end
 
-        title = "Feat Search Results (#{self.search_type}=#{self.search_term})"
+        title = "Feat Search Results (#{self.search_type}=#{operator} #{term})"
 
         template = PF2eFeatDisplay.new(paginator, title)
 
