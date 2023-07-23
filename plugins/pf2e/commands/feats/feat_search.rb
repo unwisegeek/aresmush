@@ -31,7 +31,7 @@ module AresMUSH
         ]
 
         return nil if valid_types.include? self.search_type
-        return t('pf2e.bad_option', :options => valid_types.sort, :element => "search type")
+        return t('pf2e.bad_option', :options => valid_types.sort.join, :element => "search type")
       end
 
       def handle
@@ -47,7 +47,7 @@ module AresMUSH
         match = Pf2e.search_feats(self.search_type, term, operator)
 
         if match.empty?
-          client.emit t('pf2e.nothing_to_display', :elements => 'feats')
+          client.emit_failure t('pf2e.nothing_to_display', :elements => 'feats')
           return
         end
 

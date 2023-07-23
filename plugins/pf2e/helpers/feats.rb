@@ -9,7 +9,7 @@ module AresMUSH
     end
 
     def self.search_feats(search_type, term, operator='=')
-      feat_info = Global.read_config('pf2e_feats')
+      feat_info = Global.read_config('pf2e_feats').sort_by {|k,v| k}.to_h
 
       case search_type
       when 'name'
