@@ -2,21 +2,19 @@ module AresMUSH
   class PF2Magic < Ohm::Model
     include ObjectModel
 
-    attribute :class_case, :type => DataType::Hash, :default => {}
     attribute :focus_spells, :type => DataType::Hash, :default => {}
     attribute :focus_pool, :type => DataType::Hash, :default => { "max"=>0, "current"=>0 }
     attribute :innate_spells, :type => DataType::Hash, :default => {}
-    attribute :max_spell_level, :type => DataType::Integer, :default => 0
-    attribute :repertoire, :type => DataType::Hash, :default => {}
     attribute :revelation_locked, :type => DataType::Boolean
     attribute :signature_spells, :type => DataType::Hash, :default => {}
+    attribute :repertoire, :type => DataType::Array, :default => []
     attribute :spell_abil, :type => DataType::Hash, :default => {}
-    attribute :spell_slots_today, :type => DataType::Hash, :default => {}
-    attribute :spellbook, :type => DataType::Hash, :default => {}
+    attribute :spellbook, :type => DataType::Array, :default => []
     attribute :spells_per_day, :type => DataType::Hash, :default => {}
     attribute :spells_prepared, :type => DataType::Hash, :default => {}
     attribute :spells_today, :type => DataType::Hash, :default => {}
     attribute :tradition, :type => DataType::Hash, :default => {}
+    attribute :prepared_lists, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
 
@@ -50,11 +48,7 @@ module AresMUSH
           magic.spell_abil[charclass] = value
 
         when "tradition"
-
-          trad = value.keys[0]
-          prof = value.values_at(trad)
-
-          magic.tradition[charclass][trad] = prof
+          # FIX ME
 
         when "spells_per_day"
 
