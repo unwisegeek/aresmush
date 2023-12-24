@@ -101,7 +101,7 @@ module AresMUSH
 
       obj.spells_prepared[level] = spell_list_for_level
 
-      obj.save && return nil
+      obj.save && return
 
     end
 
@@ -130,7 +130,7 @@ module AresMUSH
 
       return t('pf2emagic.not_prepared') if prepared_levels.empty?
       return t('pf2emagic.specify_level') if (prepared_levels.uniq[1] && !level)
-      return t('pf2emagic.not_prepared_at_level') if (level && !prepared_levels.include? level)
+      return t('pf2emagic.not_prepared_at_level') if (level && (!prepared_levels.include? level))
 
       level_to_mod = level ? level : prepared_levels[0]
 
@@ -143,7 +143,7 @@ module AresMUSH
 
       magic.prepared_spells[castclass] = prepared_spells
 
-      magic.save && return nil
+      magic.save && return
     end
 
     def spellbook_check(obj, spell)
@@ -156,7 +156,7 @@ module AresMUSH
 
       repertoire = obj.repertoire
 
-      prepare_ok if spellbook + repertoire.include? spell
+      prepare_ok if (spellbook + repertoire).include? spell
 
       make_signature = true if repertoire.include? spell
 

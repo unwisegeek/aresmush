@@ -32,7 +32,7 @@ module AresMUSH
           # If a type is requested, check validity
             if !(available_prompt_types.include self.requested_type)
               client.emit_failure t('rpprompts.invalid_prompt_type', 
-                  :valid => available_prompt_types.sort.join(, )
+                  :valid => available_prompt_types.sort.join("," )
                 )
               return
             end
