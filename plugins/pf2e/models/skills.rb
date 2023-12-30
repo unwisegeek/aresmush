@@ -22,10 +22,14 @@ module AresMUSH
     def self.get_linked_attr(name)
       skill = Global.read_config('pf2e_skills', name)
       linked_attr = skill['key_abil']
+
+      linked_attr
     end
 
     def self.find_skill(name, char)
       skill = char.skills.select { |s| s.name_upcase == name.upcase }.first
+
+      skill
     end
 
     def self.get_skill_bonus(char, name)
@@ -42,6 +46,8 @@ module AresMUSH
     def self.get_skill_prof(char, name)
       skill = find_skill(name, char)
       prof = skill ? skill.prof_level : "untrained"
+
+      prof
     end
 
     def self.create_skill_for_char(name, char)

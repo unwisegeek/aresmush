@@ -135,6 +135,11 @@ module AresMUSH
         return PF2EncounterScanCmd
       when "resume"
         return PF2EncounterEndCmd
+      when "admin"
+        case cmd.switch
+        when "set"
+          return PF2AdminSetCmd
+        end
       end
 
       nil

@@ -6,7 +6,6 @@ idle:
   idle_category: Announcements
   idle_exempt_roles:
   - admin
-  - emeritus
   - builder
   - coder
   - guest
