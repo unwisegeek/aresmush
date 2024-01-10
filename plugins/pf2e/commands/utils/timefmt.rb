@@ -29,8 +29,10 @@ module AresMUSH
           return
         end 
 
+        zone = enactor.ooctime_timezone
+
         time_string = default_formats[self.fmt_str]
-        time_now_sample = Time.now.strftime(time_string)
+        time_now_sample = Time.now(in: zone).strftime(time_string)
 
         enactor.update(time_format: time_string)
 
