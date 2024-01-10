@@ -142,6 +142,8 @@ en:
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."
 
+    timefmt_ok: "You set your time format string. Current date format: %{time}"
+
     unassigned_abilities: "%xrYou have unassigned boosts. Still to assign: %{missing}%xn"
     unassigned_bglore: "%xrYou have not chosen your background lore.%xn"
     unassigned_lang: "%xrYou have extra languages to assign."
