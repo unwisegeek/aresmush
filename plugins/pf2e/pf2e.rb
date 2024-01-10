@@ -13,6 +13,8 @@ module AresMUSH
 
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
+      when 'timefmt'
+        return PF2TimeFmtCmd
       when "damage"
         return PF2DamagePlayerCmd
       when "sheet"
