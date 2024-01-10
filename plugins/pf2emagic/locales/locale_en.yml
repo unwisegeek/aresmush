@@ -3,6 +3,7 @@ en:
   pf2emagic: 
     cant_prepare_trad: "Cannot prepare that spell as a %{cc}."
     cant_prepare_level: "Base level higher than specified level."
+    char_not_caster: "%{char} is not a spellcaster and should not be requesting spells in a job."
 
     does_not_prepare: "Specified class does not prepare spells."
 
