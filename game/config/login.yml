@@ -15,7 +15,7 @@ login:
     - 0
   creation_not_allowed_message: This game is still under development and creation
     is not allowed.
-  disable_nonadmin_login: false
+  disable_nonadmin_logins: false
   guest_disabled_message: This game is still under development and is not open to
     guests at this time.
   guest_role: guest

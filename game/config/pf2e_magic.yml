@@ -248,3 +248,7 @@ pf2e_magic:
   - druid
   - witch
   - wizard
+  spontaneous_casters:
+  - bard
+  - oracle
+  - sorcerer
