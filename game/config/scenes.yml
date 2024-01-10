@@ -73,7 +73,6 @@ scenes:
     - 15
     - 45
   scene_trash_timeout_days: 15
-
   scene_types:
   - Social
   - Event
