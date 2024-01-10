@@ -28,6 +28,7 @@ module AresMUSH
     attribute :pf2_award_history, :type => DataType::Hash, :default => { 'xp'=>{}, 'money'=>{} }
     attribute :pf2_is_dead, :type => DataType::Boolean
     attribute :pf2_known_for, :type => DataType::Array, :default => []
+    attribute :time_format
 
 
     ### Only some characters will have these attributes, so nil check these.
