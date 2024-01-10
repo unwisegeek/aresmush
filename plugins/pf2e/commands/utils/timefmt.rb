@@ -25,7 +25,7 @@ module AresMUSH
         options = default_formats.keys
 
         if !(options.include? self.fmt_str)
-          client.emit_failure t('pf2e.bad_option', :element => 'time format string', :options => options)
+          client.emit_failure t('pf2e.bad_option', :element => 'time format string', :options => options.sort.join(", "))
           return
         end 
 
