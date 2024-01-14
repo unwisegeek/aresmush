@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-    module Pf2noms
+  module Pf2noms
 
     def self.plugin_dir
       File.dirname(__FILE__)

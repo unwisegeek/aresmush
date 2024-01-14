@@ -12,7 +12,10 @@ en:
     not_enough_noms: "You need %{noms} noms available to do that, but you only have %{available} left this week. Try again."
     not_a_number: "Awards must be a number."
 
+    rpp_award_ok: "You award %{award} RPP to %{char} for %{reason}."
+    rpp_spend_ok: "You spend %{spend} RPP for %{char} for %{reason}."
     rpp_title: "RPP Information For %{char}"
+    rpphist_title: "RPP History For %{char}"
 
     success: "You nominate %{list} for good RP."
 

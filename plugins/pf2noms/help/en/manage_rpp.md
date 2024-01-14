@@ -18,5 +18,5 @@ To understand what these commands are for, please refer to [[[rules:rpp|RPP Rule
 Note that this is a paginated command, and you can go back further by specifying a page number. For example, to 
 see the third page of the history, you'd type `rpphist3 <name>`. 
 
-`rpp/award <name>=<award>=<reason>`: Awards a PC RPP. Note that RPP is tracked per player, not per character.
-`rpp/spend <name>=<award>=<reason>`: Spends RPP for a player.
+`rpp/award <name>=<award>[/<reason>]`: Awards a PC RPP. Note that RPP is tracked per player, not per character.
+`rpp/spend <name>=<spend>[/<reason>]`: Spends RPP for a player.

@@ -29,13 +29,15 @@ module AresMUSH
 
       award_history = player.rpp_history
 
-      award_history << [ time, char.name, award, reason ]
+      award_history.unshift [ time, char.name, award, reason ]
 
       player.rpp_history = award_history
       player.total_rpp = total_rpp
       player.available_rpp = available_rpp
 
-      player.save
+      player.save 
+      
+      return nil
     end
 
     def self.spend_rpp(char, spend, reason)
@@ -61,7 +63,7 @@ module AresMUSH
 
       spend_history = player.rpp_history
 
-      spend_history << [ time, char.name, -spend, reason ]
+      spend_history.unshift [ time, char.name, -spend, reason ]
 
       player.rpp_history = spend_history
       player.available_rpp = available_rpp

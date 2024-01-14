@@ -1,0 +1,13 @@
+<%= textline(title) %>
+<%= divider %>
+<%= left("#{item_color}Total RPP For Player%xn: #{total_rpp}",39) -%>
+<%= left("#{item_color}Available RPP%xn: #{available_rpp}",39) %>
+<%= divider %>
+<% page_items.each do |item| %>
+  <%= left(time(item),18) -%>
+  <%= left(char(item),22) -%>
+  <%= left(award(item),3) -%>
+  <%= left(reason(item),35) %>
+<% end %>
+
+<%= page_footer %>
