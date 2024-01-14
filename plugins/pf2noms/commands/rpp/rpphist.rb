@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2noms
 
-    class PF2RPPCmd
+    class PF2RPPHistCmd
       include CommandHandler
 
       attr_accessor :character

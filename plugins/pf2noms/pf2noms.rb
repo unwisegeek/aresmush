@@ -26,9 +26,15 @@ module AresMUSH
         return PF2NomDisplayCommand
       when "rpp"
         case cmd.switch
+        when "award"
+          return PF2AwardRPPCmd
+        when "spend"
+          return PF2SpendRPPCmd
         when nil
           return PF2RPPCmd
         end
+      when "rpphist", "listrpp"
+        return PF2RPPHistCmd
       end
 
       nil
