@@ -109,6 +109,33 @@ module AresMUSH
 
         when "feature"
         when "spell"
+          # Expected structure of self.value: <charclass> [add|delete] <spell name> <spell level>
+
+          magic_obj = PF2Magic.get_magic_obj(char)
+
+          if !magic_obj
+            client.emit_failure t('pf2emagic.char_not_caster', :char => char.name)
+            return
+          end
+
+          castclass = self.value[0].downcase
+          instruction = self.value[1]
+          spell = self.value[2]
+          spell_level = self.value[3].downcase
+
+          # Spells for prepared casters go in a spellbook.
+          if (Global.read_config("pf2e_magic", "prepared_casters").include? castclass)
+
+          # Spells for spontaneous casters go in a repertoire.
+          elsif (Global.read_config("pf2e_magic", "spontaneous_casters").include? castclass)
+
+          # If they're not one of these two, the correct keyword is "focus". End.
+          else
+          end
+
+
+
+
         when "ability"
           # Expected structure of self.value: <ability name> <new score>
 

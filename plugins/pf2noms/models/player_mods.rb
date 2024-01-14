@@ -74,13 +74,17 @@ module AresMUSH
 
       # Track how much RPP has been spent on the character.
 
-      char_spend_tracker = player.rpp_spent_by_char[char.name]
+      char_spend_tracker = player.rpp_spent_by_char
 
-      char_spend_tracker = 0 unless char_spend_tracker # Set to 0 if nil
+      sptracker_for_char = char_spend_tracker[char.name]
 
-      char_total_spent = char_spend_tracker + spend
+      sptracker_for_char = 0 unless sptracker_for_char # Set to 0 if nil
 
-      player.rpp_spent_by_char[char.name] = char_total_spent
+      char_total_spent = sptracker_for_char + spend
+
+      char_spend_tracker[char.name] = char_total_spent
+
+      player.rpp_spent_by_char = char_spend_tracker
 
       player.save
 
