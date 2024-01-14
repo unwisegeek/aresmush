@@ -147,16 +147,15 @@ module AresMUSH
     end
 
     def spellbook_check(obj, spell)
-      return true
-
-      spellbook = obj.spellbook
 
       # Some classes may have their repertoire automatically written in a spellbook.
       # This is sometimes treated differently if prepared.
 
+      spellbook = obj.spellbook
+
       repertoire = obj.repertoire
 
-      prepare_ok if (spellbook + repertoire).include? spell
+      prepare_ok = true if (spellbook + repertoire).include? spell
 
       make_signature = true if repertoire.include? spell
 

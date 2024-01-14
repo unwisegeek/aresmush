@@ -24,7 +24,7 @@ For skills: `<skill name> <proficiency level>`
 
 where proficiency level is one of: untrained trained expert master legendary
 
-For spells: `<charclass> <spell level> <spell name>`
+For spells: `<charclass> [add|delete] <spell name> <spell level>`
 
 For ability: `<ability name> <new value>` Value needs to be an integer, command will charf if not
 
