@@ -44,7 +44,7 @@ module AresMUSH
           return
         end
 
-        template = PF2RPPHistoryTemplate.new(char, player, paginator, client)
+        template = PF2RPPHistTemplate.new(char, player, paginator, client)
 
         client.emit template.render
 

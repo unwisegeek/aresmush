@@ -29,6 +29,8 @@ module AresMUSH
 
       award_history = player.rpp_history
 
+      # History is displayed in reverse chrono, so prepending makes more sense
+
       award_history.unshift [ time, char.name, award, reason ]
 
       player.rpp_history = award_history
@@ -36,7 +38,7 @@ module AresMUSH
       player.available_rpp = available_rpp
 
       player.save 
-      
+
       return nil
     end
 
@@ -62,6 +64,8 @@ module AresMUSH
       time = Time.now.to_i
 
       spend_history = player.rpp_history
+
+      # History is displayed in reverse chrono, so prepending makes more sense
 
       spend_history.unshift [ time, char.name, -spend, reason ]
 
