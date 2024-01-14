@@ -26,8 +26,9 @@ module AresMUSH
         return PF2NomDisplayCommand
       when "rpp"
         case cmd.switch
-        else 
+        when nil
           return PF2RPPCmd
+        end
       end
 
       nil
