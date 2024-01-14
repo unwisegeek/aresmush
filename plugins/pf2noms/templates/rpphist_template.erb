@@ -4,10 +4,10 @@
 <%= left("#{item_color}Available RPP%xn: #{available_rpp}",39) %>
 <%= divider %>
 <% page_items.each do |item| %>
-  <%= left(time(item),18) -%>
-  <%= left(char(item),22) -%>
-  <%= left(award(item),3) -%>
-  <%= left(reason(item),35) %>
+  <%= left(time(item),15) -%>
+  <%= left(char(item),20) -%>
+  <%= right(award(item),3) -%>
+  <%= left(reason(item),41) %>
 <% end %>
 
 <%= page_footer %>

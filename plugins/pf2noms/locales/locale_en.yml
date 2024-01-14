@@ -10,6 +10,7 @@ en:
 
     nom_check: "Character %{char} has %{weekly_noms_available} / %{weekly_noms} left this week and has nommed %{noms_given_today} people today."
     not_enough_noms: "You need %{noms} noms available to do that, but you only have %{available} left this week. Try again."
+    not_enough_rpp: "That player does not have enough RPP to make this spend."
     not_a_number: "Awards must be a number."
 
     rpp_award_ok: "You award %{award} RPP to %{char} for %{reason}."
