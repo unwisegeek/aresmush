@@ -6,12 +6,13 @@ module AresMUSH
 
       attr_accessor :caster, :spell, :tradition, :level, :target
 
-      def initialize(caster, spell, tradition, level, target)
+      def initialize(caster, spell, tradition, level, target, client)
         @caster = caster
         @spell = spell
         @tradition = tradition
         @level = level
         @target = target
+        @client = client
 
         @details = Global.read_config('pf2e_spells', spell)
 
