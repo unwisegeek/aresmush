@@ -7,6 +7,7 @@ module AresMUSH
       player_rpp = player.total_rpp
 
       addl_alts = tierlist.rindex { |a| a < player_rpp }
+      addl_alts = 0 unless addl_alts
 
       base_alts + addl_alts
     end
