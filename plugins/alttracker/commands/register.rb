@@ -18,7 +18,6 @@ module AresMUSH
 
       def handle
         valid_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-        max_alts = Global.read_config('alttracker','max_alts_allowed')
 
         # Use safe navigation operator to force player to nil if character not found.
         player = self.target =~ valid_email ?
@@ -38,6 +37,8 @@ module AresMUSH
             return
           end
         end
+
+        max_alts = Pf2noms.calculate_max_alts(player)
 
         if player.banned
           client.emit_failure t('alttracker.player_banned')

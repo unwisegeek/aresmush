@@ -36,6 +36,14 @@ module AresMUSH
         spent ? spent : 0
       end
 
+      def alts
+        current_alts = @player.characters.size
+
+        max_alts = Pf2noms.calculate_max_alts(@player)
+
+        "#{current_alts} / #{max_alts}"
+      end
+
 
     end
   end
