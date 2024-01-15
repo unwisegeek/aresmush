@@ -128,6 +128,8 @@ en:
 
     reset_first: "Type cg/reset before using this command."
     reset_ok: "Reset of %{element} '%{option}' complete."
+    respec_refused_scenes: "This character is in at least one scene currently in progress."
+    respec_refused_approval: "This character is not approved and should be able to reset themselves."
     restricted_option: "%xyYour chargen options include a rare element. Be sure to reflect this in your prologue.%xn"
     review_cg_issues: "%xrIncomplete sheet!%xn"
     review_dup_feats: "%xyPC's character options include duplicate feats.%xn"

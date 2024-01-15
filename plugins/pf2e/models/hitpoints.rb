@@ -31,7 +31,7 @@ module AresMUSH
       hp_color = "%xr" if percent < 25
       "#{hp_color}#{current}%xn / #{max} (#{percent}%)"
 
-    end 
+    end
 
     def self.get_dying_value(char)
 
@@ -128,6 +128,21 @@ module AresMUSH
       damage = hp.damage
 
       cur_hp = max_hp - damage
+    end
+
+    def self.factory_default(char)
+      # This may or may not exist, nothing to do if not.
+      hp = char.hp
+      return unless hp
+
+      hp.damage = 0
+      hp.ancestry_hp = 0
+      hp.charclass_hp = 0
+      hp.temp_max = 0
+      hp.temp_current = 0
+      hp.temp_hp = 0
+
+      hp.save
     end
 
   end

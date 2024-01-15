@@ -90,6 +90,13 @@ module AresMUSH
       return messages
     end
 
+    def self.factory_default(char)
+      char.abilities.each do |abil|
+        abil.update(base_val: 10)
+        abil.update(mod_val: false)
+      end
+    end
+
 
   end
 end
