@@ -24,7 +24,6 @@ pf2e_class:
           fortitude: expert
           reflex: expert
           will: trained
-      magic_stats: {}
       skills:
       - Crafting
       - open
@@ -186,7 +185,6 @@ pf2e_class:
           fortitude: expert
           reflex: trained
           will: expert
-      magic_stats: {}
       skills:
       - Athletics
       - open
@@ -370,6 +368,7 @@ pf2e_class:
       - open
       - open
       - open
+      init_magic: true
       magic_stats:
         max_spell_level: 1
         tradition:
@@ -379,9 +378,12 @@ pf2e_class:
         repertoire:
           cantrip: 5
           1: 2
-      composition:
-        cantrip: Inspire Courage
-        spell: Counter Performance
+        focus_cantrip:
+          composition:
+            cantrip: Inspire Courage
+        focus_spell:
+          composition:
+          - Counter Performance
       action:
       - Cast a Spell
       reaction: []
@@ -394,7 +396,7 @@ pf2e_class:
           spells_per_day:
             1: 3
           repertoire:
-            1: 1
+            1: 3
       3:
         choose_feat:
         - general
@@ -657,6 +659,7 @@ pf2e_class:
           fortitude: expert
           reflex: trained
           will: expert
+      init_magic: true
       magic_stats:
         tradition:
           divine: trained
@@ -825,8 +828,9 @@ pf2e_class:
         charclass:
         - Hero's Defiance
         magic_stats:
-          devotion:
-            spell: Hero's Defiance
+          focus_spell:
+            devotion:
+              spell: Hero's Defiance
         choose_feat:
         - general
         raise:
@@ -860,6 +864,7 @@ pf2e_class:
           fortitude: trained
           reflex: trained
           will: expert
+      init_magic: true
       magic_stats:
         spell_abil: Wisdom
         tradition:
@@ -1081,6 +1086,7 @@ pf2e_class:
         - Shield Block
       reaction:
       - Shield Block
+      init_magic: true
       magic_stats:
         tradition:
           primal: trained
@@ -1319,7 +1325,6 @@ pf2e_class:
           fortitude: expert
           reflex: expert
           will: trained
-      magic_stats: {}
       skills:
       - Acrobatics
       - Athletics
@@ -1540,7 +1545,6 @@ pf2e_class:
           fortitude: trained
           reflex: expert
           will: expert
-      magic_stats: {}
       action:
       - Pursue A Lead
       reaction:
@@ -1741,14 +1745,6 @@ pf2e_class:
       - Flurry of Blows
       - Powerful Fist
       reaction: []
-      magic_stats: {}
-    choose:
-      choice_name: Spell Tradition
-      choice_description: Do you draw ki spells from divine or occult magic?
-      choice_type: magic_stats
-      options:
-      - divine
-      - occult
     advance:
       2:
         choose_feat:
@@ -1925,6 +1921,7 @@ pf2e_class:
           fortitude: trained
           reflex: trained
           will: expert
+      init_magic: true
       magic_stats:
         tradition:
           divine: trained
@@ -2414,7 +2411,6 @@ pf2e_class:
           reflex: expert
           will: expert
         sneak_attack: 1d6
-      magic_stats: {}
       action: []
       reaction: []
     advance:
@@ -2610,6 +2606,7 @@ pf2e_class:
           fortitude: trained
           reflex: trained
           will: expert
+      init_magic: true
       magic_stats:
         spell_abil: Charisma
         spells_per_day:
@@ -2880,6 +2877,7 @@ pf2e_class:
           fortitude: trained
           reflex: trained
           will: expert
+      init_magic: true
       magic_stats:
         max_spell_level: 1
         spell_abil: Intelligence
@@ -3121,6 +3119,7 @@ pf2e_class:
           fortitude: trained
           reflex: trained
           will: expert
+      init_magic: true
       magic_stats:
         tradition:
           arcane: trained

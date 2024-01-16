@@ -1,15 +1,6 @@
 module AresMUSH
   module Pf2e
 
-    def self.can_take_feat?(char, feat)
-      error = FeatValidator.req_check(char, feat)
-      if error
-        return false
-      else
-        return true
-      end
-    end
-
     def self.check_alignment(align, charclass, subclass, deity=nil)
       return nil if !(Global.read_config('pf2e', 'use_alignment'))
 

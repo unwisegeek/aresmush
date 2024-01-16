@@ -259,7 +259,7 @@ module AresMUSH
     end
 
     def self.respec_character(char)
-      # A respect does not delete XP, level, or character wealth, but does clear all stats and inventory.
+      # A respec does not delete XP, level, or character wealth, but does clear all stats and inventory.
 
 
 

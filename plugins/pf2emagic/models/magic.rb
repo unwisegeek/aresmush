@@ -2,14 +2,15 @@ module AresMUSH
   class PF2Magic < Ohm::Model
     include ObjectModel
 
+    attribute :focus_cantrips, :type => DataType::Hash, :default => {}
     attribute :focus_spells, :type => DataType::Hash, :default => {}
     attribute :focus_pool, :type => DataType::Hash, :default => { "max"=>0, "current"=>0 }
     attribute :innate_spells, :type => DataType::Hash, :default => {}
     attribute :revelation_locked, :type => DataType::Boolean
     attribute :signature_spells, :type => DataType::Hash, :default => {}
-    attribute :repertoire, :type => DataType::Array, :default => []
+    attribute :repertoire, :type => DataType::Hash, :default => {}
     attribute :spell_abil, :type => DataType::Hash, :default => {}
-    attribute :spellbook, :type => DataType::Array, :default => []
+    attribute :spellbook, :type => DataType::Hash, :default => {}
     attribute :spells_per_day, :type => DataType::Hash, :default => {}
     attribute :spells_prepared, :type => DataType::Hash, :default => {}
     attribute :spells_today, :type => DataType::Hash, :default => {}
@@ -90,5 +91,6 @@ module AresMUSH
 
       dc = 10 + abil_mod + prof_bonus
     end
+
   end
 end

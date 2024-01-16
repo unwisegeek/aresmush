@@ -252,3 +252,16 @@ pf2e_magic:
   - bard
   - oracle
   - sorcerer
+  focus_casting_stat: 
+    bloodline: Charisma
+    composition: Charisma
+    devotion: Wisdom
+    domain: Wisdom
+    hex: Intelligence
+    ki: Wisdom
+    order: Wisdom
+    revelation: Charisma
+    school: Intelligence  
+    warden: Wisdom
+
+

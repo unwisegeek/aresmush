@@ -133,7 +133,7 @@ module AresMUSH
     end
 
     def self.get_rune_value(object, type, subtype)
-      return 0 if !object 
+      return 0 if !object
       value = object.runes.dig(type, subtype)
 
       value ? value : 0
@@ -170,5 +170,7 @@ module AresMUSH
       Login.notify(enactor, :pf2_gear, dest_msg)
       client.emit_ooc dest_msg
     end
+
+
   end
 end

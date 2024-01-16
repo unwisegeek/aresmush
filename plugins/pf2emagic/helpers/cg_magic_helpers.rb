@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2emagic
 
-    def self.generate_spells_today(obj, charclass)
+    def generate_spells_today(obj, charclass)
       # Function assumes that calling code has already validated the magic object.
 
       caster_class = charclass.downcase
@@ -21,7 +21,7 @@ module AresMUSH
 
     end
 
-    def self.generate_blank_spell_list(obj)
+    def generate_blank_spell_list(obj)
       prepared_list = {}
       spells_per_day = obj.spells_per_day
 
@@ -34,9 +34,9 @@ module AresMUSH
       prepared_list
     end
 
-    def self.prepare_spell(spell, char, castclass, level)
+    def prepare_spell(spell, char, castclass, level, use_arcane_evo=false)
       # All validations are done in the helper.
-      magic = char.magic 
+      magic = char.magic
 
       return t('pf2emagic.not_caster') if !magic
 
@@ -48,9 +48,7 @@ module AresMUSH
       prepared_cc_list = Global.read_config('pf2e_magic', 'prepared_casters')
 
       if !(prepared_cc_list.include? cc)
-        if Pf2e.has_feat?(char, "Arcane Evolution")
-          use_arcane_evo = true
-        else
+        if !use_arcane_evo
           return t('pf2emagic.does_not_prepare')
         end
       end
@@ -80,11 +78,14 @@ module AresMUSH
 
       spell_level = spell_details['base_level']
 
+      # Level can be passed as nil, if it is, default to the base level of the spell.
+      level = spell_level unless level
+
       return t('pf2emagic.cant_prepare_level') if spell_level > level
 
       if use_arcane_evo
         repertoire = obj.repertoire
-        repertoire['arcane evolution'] = [ spell ]
+        repertoire['Arcane Evolution'] = [ spell ]
         obj.update(repertoire: repertoire)
         return
       end
@@ -97,17 +98,26 @@ module AresMUSH
 
       return t('pf2emagic.no_available_slots') unless open_slot
 
+      # If all checks succeed, prepare the spell and return a hash.
+
+      return_msg = {
+         "level" => spell_level,
+         "name" => spell,
+         "caster class" => cc
+         "is_signature" => make_signature,
+      }
+
       spell_list_for_level[open_slot] = spell
 
       obj.spells_prepared[level] = spell_list_for_level
 
-      obj.save && return
+      obj.save && return return_msg
 
     end
 
-    def self.unprepare_spell(spell, char, castclass, level=nil)
+    def unprepare_spell(spell, char, castclass, level=nil)
       # All validations are done in the helper.
-      magic = char.magic 
+      magic = char.magic
 
       return t('pf2emagic.not_caster') if !magic
 
@@ -117,13 +127,13 @@ module AresMUSH
       return t('pf2emagic.not_casting_class', :cc => cc) if !tradition
 
       prepared_cc_list = Global.read_config('pf2e_magic', 'prepared_casters')
-  
+
       return t('pf2emagic.does_not_prepare') if !(prepared_cc_list.include? cc)
 
       prepared_spells = magic.prepared_spells[castclass]
 
       prepared_levels = []
-      
+
       prepared_spells.each_pair do |level, list|
         prepared_levels << level if list.include? spell
       end
@@ -160,6 +170,10 @@ module AresMUSH
       make_signature = true if repertoire.include? spell
 
       [prepare_ok, make_signature]
+    end
+
+    def get_focus_casting_stat(stype)
+      Global.read_config('pf2e_magic', 'focus_casting_stat', stype)
     end
 
   end
