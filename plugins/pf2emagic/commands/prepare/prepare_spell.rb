@@ -42,13 +42,6 @@ module AresMUSH
           return
         end
 
-        return_msg = {
-          "level" => spell_level,
-          "name" => spell,
-          "caster class" => cc
-          "is_signature" => make_signature,
-       }
-
        if return_msg["is_signature"]
         client.emit_success t('spell_prepare_as_signature_ok',
           :name => return_msg["name"],
