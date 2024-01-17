@@ -79,17 +79,42 @@ module AresMUSH
       return magic
     end
 
-    def self.get_spell_dc(char, charclass, prof)
+    def self.get_spell_dc(char, charclass, is_focus=false)
+
+      # is_focus should be the focus spell type if given.
 
       magic = char.magic
-      spell_abil = magic.spell_abil[charclass]
+      return nil unless magic
+
+      spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+
+      prof = magic.tradition[charclass][1]
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
       abil_mod = Pf2eAbilities.abilmod(
         Pf2eAbilities.get_score char, spell_abil
       )
 
-      dc = 10 + abil_mod + prof_bonus
+      10 + abil_mod + prof_bonus
+    end
+
+    def self.get_spell_attack_bonus(char, charclass, is_focus=false)
+
+      # is_focus should be the focus spell type if given.
+
+      magic = char.magic
+      return nil unless magic
+
+      spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+
+      prof = magic.tradition[charclass][1]
+      prof_bonus = Pf2e.get_prof_bonus(char, prof)
+
+      abil_mod = Pf2eAbilities.abilmod(
+        Pf2eAbilities.get_score char, spell_abil
+      )
+
+      abil_mod + prof_bonus
     end
 
   end

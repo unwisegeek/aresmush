@@ -122,7 +122,7 @@ module AresMUSH
 
         list = []
         sort_skills.each_with_index do |s,i|
-          list << format_skill(@char, s, i) 
+          list << format_skill(@char, s, i)
         end
 
         list
@@ -292,16 +292,20 @@ module AresMUSH
         @char.magic
       end
 
+      def no_magic_msg
+        t('pf2emagic.not_caster')
+      end
+
       def spell_dcs
         dc_list = magic_stats.tradition
 
         list = []
 
-        dc_list.each_pair do |charclass, dc|
-          list << format_spell_dc(charclass, dc[0], dc[1])
+        dc_list.each_pair do |key, value|
+          list << format_spell_dc(key, value)
         end
 
-        list.join("%r")
+        list.join
       end
 
       def known_for
@@ -368,12 +372,12 @@ module AresMUSH
         "#{left("#{save}: #{bonus} (#{prof[0].upcase})", 26)}"
       end
 
-      def format_spell_dc(c, t, p)
-        dc = Pf2eMagic.get_spell_dc(char, c, p)
-        trad = Pf2e.pretty_string(t)
-        atk = dc - 10
+      def format_spell_dc(charclass, trad_info)
+        dc = Pf2eMagic.get_spell_dc(@char, charclass)
+        trad = Pf2e.pretty_string(trad_info[0])
+        atk = Pf2emagic.get_spell_attack_bonus(@char, charclass)
 
-        "#{item_color}#{c}: Tradition - #{trad} Spell Attack Roll: #{atk} Spell DC: #{dc}"
+        "#{item_color}#{charclass}: Tradition - #{trad} Spell Attack Roll: #{atk} Spell DC: #{dc}"
       end
 
       def print_linked_attr(skill)
