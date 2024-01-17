@@ -68,8 +68,8 @@ module AresMUSH
       return_msg = {
         "level" => spell_level,
         "name" => spell,
-        "caster class" => cc
-        "is_signature" => make_signature,
+        "caster class" => cc,
+        "is_signature" => make_signature
      }
 
       if make_signature
