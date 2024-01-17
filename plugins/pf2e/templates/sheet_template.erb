@@ -69,8 +69,9 @@
 <% known_for.each do |kf| %>
 <%= kf -%>
 <% end %>
+
 <% if section == "all" %>
-<%= section_line("Magic") -%>
+<%= section_line("Magic") %>
 <% if magic_stats %>
 <% spell_dcs.each do |dcs| %>
 <%= dcs %>
@@ -79,6 +80,5 @@
 <%= no_magic_msg %>
 <% end %>
 <% end %>
-
 <% end %>
 <%= footer %>
