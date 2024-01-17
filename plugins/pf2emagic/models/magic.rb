@@ -37,40 +37,37 @@ module AresMUSH
       return obj
     end
 
-    def self.update_magic_stats(char, info)
+    def self.update_magic_for_class(char, charclass, info)
       magic = get_create_magic_obj(char)
-
-      charclass = char.pf2_base_info['charclass']
 
       info.each_pair do |key, value|
         case key
         when "spell_abil"
-
           magic.spell_abil[charclass] = value
-
         when "tradition"
-          # FIX ME
-
+          # magic.tradition structure: { charclass => [ trad, prof ] }
+          value.each_pair do |trad, prof|
+            magic.tradition[charclass] = [ trad, prof ]
+          end
         when "spells_per_day"
-
           value.each_pair do |level, num|
             magic.spells_per_day[level] = num
           end
-
-        when "spellbook"
-        when "max_spell_level"
         when "focus_pool"
+          pool = magic.focus_pool
+          add = value
+
+          new_max_pool = (pool["max"] + add).clamp(1,3)
+          pool["max"] = new_max_pool
+          magic.focus_pool = pool
         when "repertoire"
-        when "composition"
-        when "devotion"
-        when "ki"
-        when "hex"
-        when "revelation"
-        when "bloodline"
+        when "focus_spell"
+        when "focus_cantrip"
         when "addspell"
+          # Addspell means add a spell to the spellbook.
         when "signature_spells"
         else
-          client.emit_ooc "Unknown key #{key} in update_magic_stats. Please inform staff."
+          client.emit_ooc "Unknown key #{key} in update_magic_for_class. Please inform staff."
         end
       end
 
