@@ -293,7 +293,7 @@ module AresMUSH
       end
 
       def no_magic_msg
-        t('pf2emagic.not_caster')
+        "%r#{t('pf2emagic.not_caster')}"
       end
 
       def spell_dcs
