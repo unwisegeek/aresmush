@@ -1,5 +1,6 @@
 ---
 pf2e_feats:
+# Level 1 General Feats
   Adopted Ancestry:
     feat_type: 
     - General
@@ -79,15 +80,6 @@ pf2e_feats:
     shortdesc: Ward off a blow with your shield.
     prereq:
       level: 1
-  Skill Training:
-    feat_type: 
-    - General
-    - Skill
-    traits: []
-    shortdesc: Become trained in a skill.
-    prereq:
-      level: 1
-      ability: Intelligence/12
   Toughness:
     feat_type: 
     - General
@@ -102,6 +94,7 @@ pf2e_feats:
     shortdesc: Become trained in a weapon type.
     prereq:
       level: 1
+# Level 3 General Feats
   Ancestral Paragon:
     feat_type: 
     - General

@@ -1,5 +1,6 @@
 ---
 pf2e_feats:
+# A Class Feats
   Accelerating Touch:
     assoc_charclass:
       - Champion
@@ -52,7 +53,7 @@ pf2e_feats:
       level: 2
     shortdesc: You push back as you block the attack, knocking your foe away or off balance.
     traits: []
-  Alchemical Discoveries:
+  Alchemical Discoveries: #Formula Revisit
     assoc_charclass:
       - Investigator
     feat_type:
@@ -120,6 +121,7 @@ pf2e_feats:
       level: 4
     shortdesc: You are so connected with the animal world that you can grant yourself an animal's features and abilities.
     traits: []
+    init_magic: true
   Anoint Ally:
     assoc_charclass:
       - Sorcerer
@@ -174,6 +176,7 @@ pf2e_feats:
         - NG
     shortdesc: You stand strong in the face of danger and inspire your allies to do the same.
     traits: []
+# B Class Feats
   Bardic Lore:
     assoc_charclass:
       - Bard
@@ -216,6 +219,7 @@ pf2e_feats:
       level: 2
     shortdesc: Your patron grants you a special lesson, revealing a hidden facet of its nature.
     traits: []
+    init_magic: true
   Battle Assessment:
     assoc_charclass:
       - Rogue
@@ -265,6 +269,7 @@ pf2e_feats:
     shortdesc: Throwing your weight behind your attack, you hit you opponent hard enough to make it stumble back.
     traits:
       - press
+# C Class Feats
   Cackle:
     assoc_charclass:
       - Witch
@@ -274,6 +279,7 @@ pf2e_feats:
       level: 1
     shortdesc: You can extend one of your spells with a quick burst of laughter.
     traits: []
+    init_magic: true
   Calculated Splash:
     assoc_charclass:
       - Alchemist
@@ -304,7 +310,7 @@ pf2e_feats:
       level: 2
     shortdesc: You call upon the creatures of nature to come to your aid.
     traits: []
-  Cauldron:
+  Cauldron: #Crafting Revist
     assoc_charclass:
       - Witch
     feat_type:
@@ -472,6 +478,7 @@ pf2e_feats:
       level: 2
     shortdesc: Like a powerful constrictor, you crush targets in your unyielding grasp.
     traits: []
+# D Class Feats
   Dancing Leaf:
     assoc_charclass:
       - Monk
@@ -517,6 +524,7 @@ pf2e_feats:
       level: 1
     shortdesc: You embody an aspect of your deity.
     traits: []
+    init_magic: true
   Demolition Charge:
     assoc_charclass:
       - Alchemist
@@ -589,6 +597,7 @@ pf2e_feats:
       level: 4
     shortdesc: Your ability to tap into divine magic surpasses the spells traditionally available to you (the divine spell list).
     traits: []
+    init_magic: true
   Divine Aegis:
     assoc_charclass:
       - Oracle
@@ -642,6 +651,7 @@ pf2e_feats:
       level: 2
     shortdesc: Every oracle's mystery touches on a divine domain of the deities that fuel it; you can access that power.
     traits: []
+    init_magic: true
   Domain Initiate:
     assoc_charclass:
       - Cleric
@@ -651,6 +661,7 @@ pf2e_feats:
       level: 1
     shortdesc: Your deity bestows a special spell related to their powers.
     traits: []
+    init_magic: true
   Double Shot:
     assoc_charclass:
       - Fighter
@@ -743,7 +754,8 @@ pf2e_feats:
       level: 2
     shortdesc: You can parry attacks against you with your one-handed weapon.
     traits: []
-  Efficient Alchemy (Alchemist):
+# E Class Feats
+  Efficient Alchemy (Alchemist): #Crafting Revisit
     assoc_charclass:
       - Alchemist
     feat_type:
@@ -847,7 +859,7 @@ pf2e_feats:
       - Champion
     prereq:
       level: 2
-    shortdesc: You've sworn an oath to slay the alien abominations that lurk in the remote corners of Golarion.
+    shortdesc: You've sworn an oath to slay the alien abominations that lurk in the remote corners of Ea.
     traits:
       - oath
   Esoteric Polymath:
@@ -870,6 +882,7 @@ pf2e_feats:
     shortdesc: You make a controlled attack, fully accounting for your momentum.
     traits:
       - press
+# F Class Feats
   Familiar's Language:
     assoc_charclass:
       - Witch
@@ -991,6 +1004,7 @@ pf2e_feats:
     shortdesc: Desperate to finish the fight, you pour all your rage into one final blow.
     traits:
       - rage
+# G Class Feats
   Glean Lore:
     assoc_charclass:
       - Oracle
@@ -1022,6 +1036,7 @@ pf2e_feats:
       level: 1
     shortdesc: Your expertise with your weapons and commitment to taking out your targets lends you magical power.
     traits: []
+    init_magic: true
   Guarded Movement:
     assoc_charclass:
       - Monk
@@ -1031,6 +1046,7 @@ pf2e_feats:
       level: 4
     shortdesc: Your guard is up, even while moving.
     traits: []
+# H Class Feats
   Hand of the Apprentice:
     assoc_charclass:
       - Wizard
@@ -1040,6 +1056,7 @@ pf2e_feats:
       level: 1
     shortdesc: You can magically hurl your weapon at your foe.
     traits: []
+    init_magic: true
   Harming Hands:
     assoc_charclass:
       - Cleric
@@ -1068,7 +1085,8 @@ pf2e_feats:
       level: 1
     shortdesc: You have a deep devotion to your animal companion that enables you to magically heal their wounds.
     traits: []
-  Healing Bomb:
+    init_magic: true
+  Healing Bomb: #Crafting Revisit
     assoc_charclass:
       - Alchemist
     feat_type:
@@ -1127,6 +1145,7 @@ pf2e_feats:
       level: 4
     shortdesc: Your recollection of monsters is magically enhanced by luck.
     traits: []
+    init_magic: true
   Hymn of Healing:
     assoc_charclass:
       - Bard
@@ -1134,8 +1153,10 @@ pf2e_feats:
       - Charclass
     prereq:
       level: 1
-    shortdesc: You learn the hymn of healing composition spell (page 228), which imbues your music with rich melodies that help your allies recover from harm.
+    shortdesc: You learn the hymn of healing composition spell, which imbues your music with rich melodies that help your allies recover from harm.
     traits: []
+    init_magic: true
+# I Class Feats
   Improved Communal Healing:
     assoc_charclass:
       - Cleric
@@ -1188,6 +1209,7 @@ pf2e_feats:
       - emotion
       - fear
       - mental
+# K Class Feats
   Ki Rush:
     assoc_charclass:
       - Monk
@@ -1197,6 +1219,7 @@ pf2e_feats:
       level: 1
     shortdesc: You can use ki to move with extraordinary speed and make yourself harder to hit.
     traits: []
+    init_magic: true
   Ki Strike:
     assoc_charclass:
       - Monk
@@ -1206,6 +1229,7 @@ pf2e_feats:
       level: 1
     shortdesc: Your study of the flow of mystical energy allows you to harness it into your physical strikes.
     traits: []
+    init_magic: true
   Knockdown:
     assoc_charclass:
       - Fighter
@@ -1226,6 +1250,7 @@ pf2e_feats:
       level: 1
     shortdesc: Whenever you Devise a Stratagem, you can also attempt a check to Recall Knowledge as part of that action.
     traits: []
+# L Class Feats
   Leshy Familiar:
     assoc_charclass:
       - Druid
@@ -1266,8 +1291,9 @@ pf2e_feats:
     prereq:
       level: 1
       specialize: maestro
-    shortdesc: By adding a flourish, you make your compositions last longer.
+    shortdesc: By adding a flourish, you make your compositions last longer with the lingering composition spell.
     traits: []
+    init_magic: true
   Linked Focus:
     assoc_charclass:
       - Wizard
@@ -1306,6 +1332,7 @@ pf2e_feats:
       level: 2
     shortdesc: Extending your body to its limits, you attack an enemy that would normally be beyond your reach.
     traits: []
+# M Class Feats
   Magic Hide:
     assoc_charclass:
       - Ranger
@@ -1315,6 +1342,7 @@ pf2e_feats:
       level: 2
     shortdesc: You can defend your companion in battle.
     traits: []
+    init_magic: true
   Magical Trickster:
     assoc_charclass:
       - Rogue
@@ -1456,6 +1484,7 @@ pf2e_feats:
       level: 2
     shortdesc: Your muse doesn’t fall into a single label.
     traits: []
+# N Class Feats
   Nimble Dodge:
     assoc_charclass:
       - Rogue
@@ -1486,6 +1515,7 @@ pf2e_feats:
     traits:
       - manipulate
       - metamagic
+# O Class Feats
   Occult Evolution:
     assoc_charclass:
       - Sorcerer
@@ -1546,6 +1576,7 @@ pf2e_feats:
     shortdesc: With a great heave, you seize a piece of your surroundings, such as a boulder, log, table, wagon, or chunk of earth, and hurl it at your foes.
     traits:
       - rage
+# P Class Feats
   Parting Shot:
     assoc_charclass:
       - Fighter
@@ -1660,6 +1691,7 @@ pf2e_feats:
     shortdesc: You can call upon the creatures of the wild for aid.
     traits:
       - primal
+# Q Class Feats
   Quick Bomber:
     assoc_charclass:
       - Alchemist
@@ -1680,6 +1712,7 @@ pf2e_feats:
     traits:
       - flourish
       - press
+# R Class Feats
   Radiant Infusion:
     assoc_charclass:
       - Cleric
@@ -1834,6 +1867,7 @@ pf2e_feats:
       level: 4
     shortdesc: You can reload your weapon on the move.
     traits: []
+# S Class Feats
   Sabotage:
     assoc_charclass:
       - Rogue
@@ -1980,6 +2014,7 @@ pf2e_feats:
       level: 2
     shortdesc: You can magically move your snares around.
     traits: []
+    init_magic: true
   Snare Specialist:
     assoc_charclass:
       - Ranger
@@ -2009,8 +2044,9 @@ pf2e_feats:
     prereq:
       level: 2
       specialize: Warrior
-    shortdesc: Your performances inspire strength in your allies.
+    shortdesc: Your performances inspire strength in your allies with the song of strength composition cantrip.
     traits: []
+    init_magic: true
   Soothing Mist:
     assoc_charclass:
       - Ranger
@@ -2020,6 +2056,7 @@ pf2e_feats:
       level: 4
     shortdesc: You have a connection to the healing properties of nature and can produce a magical mist to heal damage and stop burning or bleeding.
     traits: []
+    init_magic: true
   Spellbook Prodigy:
     assoc_charclass:
       - Wizard
@@ -2229,8 +2266,9 @@ pf2e_feats:
       - Charclass
     prereq:
       level: 4
-    shortdesc: You learn to speed up yourself and your allies with your performance.
+    shortdesc: You learn to speed up yourself and your allies with your performance with the triple time composition cantrip.
     traits: []
+    init_magic: true
   Tumble Behind (Rogue):
     assoc_charclass:
       - Rogue
@@ -2289,6 +2327,7 @@ pf2e_feats:
     shortdesc: You swiftly attack your hunted prey with both weapons.
     traits:
       - flourish
+# U Class Feats
   Unbalancing Blow:
     assoc_charclass:
       - Rogue
@@ -2327,6 +2366,7 @@ pf2e_feats:
       specialize: Liberator
     shortdesc: With a burst of divine liberation, your spur your ally’s movement.
     traits: []
+# V Class Feats
   Vengeful Oath:
     assoc_charclass:
       - Champion
@@ -2386,6 +2426,8 @@ pf2e_feats:
       level: 4
     shortdesc: You can call upon divine insights to single out your foes' weak points.
     traits: []
+    init_magic: true
+# W Class Feats
   Weight of Guilt:
     assoc_charclass:
       - Champion
@@ -2414,6 +2456,7 @@ pf2e_feats:
       level: 4
     shortdesc: You can restore your health by tapping into your ki.
     traits: []
+    init_magic: true
   Widen Spell:
     assoc_charclass:
       - Druid
@@ -2448,6 +2491,7 @@ pf2e_feats:
       specialize: Wild
     shortdesc: You are one with the wild, always changing and adapting to meet any challenge.
     traits: []
+    init_magic: true
   Wolf Stance:
     assoc_charclass:
       - Monk
@@ -2486,6 +2530,7 @@ pf2e_feats:
       level: 4
     shortdesc: You roar in pain, awakening the rage within you.
     traits: []
+# Y Class Feats
   You're Next:
     assoc_charclass:
       - Rogue

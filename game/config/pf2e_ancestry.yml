@@ -9,21 +9,23 @@ pf2e_ancestry:
     - open
     languages:
     - Tradespeak
-    - Gobber
+    - Goblin
     traits:
     - arvek
     - humanoid
     special:
     - darkvision
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Changeling
     - Dar
     - Elfbane
+    - Niasa
     - Runtboss
     - Smokeworker
-    - Tiefling
+    - Warmarch
+    - Warrenbred
     feats:
       1:
       - Alchemical Scholar
@@ -31,30 +33,130 @@ pf2e_ancestry:
       - Arvek Weapon Familiarity
       - Leech-Clipper
       - Remorseless Lash
-      - Sneaky
-      - Stone Face
       - Vigorous Health
       5:
       - Agonizing Rebuke
       - Arvek Weapon Discipline
       - Expert Drill Sergeant
       - Formation Training
-      - Recognize Ambush
-      - Runtsage
       9:
       - Pride In Arms
       13:
       - Arvek Weapon Expertise
       - Formation Master
+  Bassin:
+    HP: 6
+    Size: S
+    Speed: 25
+    able_boosts:
+    - open
+    - open
+    languages:
+    - Tradespeak
+    - Bassin
+    traits:
+    - bassin
+    - humanoid
+    special:
+    - keen eyes
+    heritages:
+    - Aesa
+    - Ashen One
+    - Changeling
+    - Dar
+    - Gutsy
+    - Hillock
+    - Jinxed-bassin
+    - Niasa
+    - Nomadic
+    - Twilight
+    - Wildwood
+    feats:
+      1:
+      - Bassin Lore
+      - Bassin Luck
+      - Bassin Weapon Familiarity
+      - Distracting Shadows
+      - Folksy Patter
+      - Prairie Rider
+      - Sure Feet
+      - Titan Slinger
+      - Unfettered Bassin
+      - Watchful Bassin
+      5:
+      - Bassin Weapon Trickster
+      - Cultural Adaptability
+      - Step Lively
+      9:
+      - Dance Underfoot
+      - Guiding Luck
+      - Irrepressible
+      - Unhampered Passage
+      13:
+      - Ceaseless Shadows
+      - Bassin Weapon Expertise
+      - Toppling Dance
       17:
-      - "Azaersi's Roads"
+      - Shadow Self
+  Ciith:
+    HP: 8
+    Size: M
+    Speed: 25
+    abl_boosts:
+    - open
+    - open
+    languages:
+    - Tradespeak
+    - Draconic
+    traits:
+    - ciith
+    - humanoid
+    attack:
+      Claws:
+        damage: d4
+        damage_type: S
+        traits:
+        - agile
+        - finesse
+        - unarmed
+    bonus_feats:
+    - Breath Control
+    heritages:
+    - Aesa
+    - Ashen One
+    - Changeling
+    - Cliffscale
+    - Dar
+    - Frilled
+    - Makar
+    - Niasa
+    - Sandstrider
+    - Unseen
+    feats:
+      1:
+      - Ciith Lore
+      - Marsh Runner
+      - Parthenogenic Hatchling
+      - Razor Claws
+      - Reptile Speaker
+      - Sharp Fangs
+      - Tail Whip
+      5:
+      - Ciith Unarmed Cunning
+      - Envenom Fangs
+      - "Gecko's Grip"
+      - Shed Tail
+      - Swift Swimmer
+      9:
+      - Terrain Advantage
+      13:
+      - Primal Rampage
   Egalrin:
     HP: 6
     Size: M
     abl_boosts:
     - open
     - open
-    abl_flaw: ""
     languages:
     - Tradespeak
     - Egalrin
@@ -72,30 +174,25 @@ pf2e_ancestry:
         - finesse
         - unarmed
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Changeling
     - Dar
     - Jinxed-egalrin
     - Mountainkeeper
+    - Niasa    
     - Skyborn
     - Stormtossed
     - Taloned
-    - Tiefling
     feats:
       1:
       - Egalrin Lore
       - Egalrin Weapon Familiarity
-      - "Mariner's Fire"
       - "Scavenger's Search"
       - Squawk!
       - "Storm's Lash"
-      - Uncanny Agility
-      - Waxed Feathers
       5:
-      - Dogfang Bite
       - Eat Fortune
-      - Egalrin Feather Fan
       - Egalrin Weapon Study
       - Long-Nosed Form
       - Magpie Snatch
@@ -124,16 +221,15 @@ pf2e_ancestry:
     special:
     - Low-Light Vision
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Chameleon
     - Changeling
     - Dar
     - Fey-Touched
+    - Niasa
     - Sensate
-    - Tiefling
     - Umbral
-    - Vivacious
     - Wellspring
     feats:
       1:
@@ -143,27 +239,17 @@ pf2e_ancestry:
       - Fey Fellowship
       - First World Magic
       - Gnome Obsession
-      - Gnome Polyglot
       - Gnome Weapon Familiarity
-      - Grim Insight
       - Illusion Sense
-      - Inventive Offensive
-      - Life-Giving Magic
-      - Natural Performer
       - Razzle-Dazzle
-      - Theoretical Acumen
-      - Unexpected Shift
-      - Vibrant Display
       5:
       - Animal Elocutionist
+      - Energized Font
       - Gnome Weapon Innovator
-      - Intuitive Illusions
-      - Natural Illusionist
       - Project Persona
       9:
       - Cautious Curiosity
       - First World Adept
-      - Fortuitous Shift
       - Life Leap
       - Vivacious Conduit
       13:
@@ -171,7 +257,7 @@ pf2e_ancestry:
       - Instinctive Obfuscation
       17:
       - Homeward Bound
-  Gobber:
+  Goblin:
     HP: 6
     Size: S
     Speed: 25
@@ -180,117 +266,50 @@ pf2e_ancestry:
     - open
     languages:
     - Tradespeak
-    - Gobber
+    - Goblin
     traits:
     - goblin
     - humanoid
     special:
     - darkvision
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Changeling
     - Charhide
     - Dar
     - Irongut
+    - Niasa
     - Razortooth
     - Snow
-    - Tailed
-    - Tiefling
-    - Treedweller
     - Unbreakable
     feats:
       1:
-      - Bouncy Gobber
       - Burn It!
       - City Scavenger
       - Extra Squishy
-      - Fang Sharpener
-      - Gobber Lore
-      - Gobber Scuttle
-      - Gobber Song
-      - Gobber Weapon Familiarity
-      - Hard Tail
+      - Goblin Lore
+      - Goblin Scuttle
+      - Goblin Song
+      - Goblin Weapon Familiarity
       - Junk Tinker
       - Rough Rider
       - Twitchy
       - Very Sneaky
       5:
-      - Ankle Bite
-      - Gobber Weapon Frenzy
+      - Goblin Weapon Frenzy
       - Kneecap
       - Loud Singer
-      - Tail Spin
-      - Torch Gobber
-      - "Tree Climber (Gobber)"
       - Vandal
       9:
       - Cave Climber
       - Cling
-      - Freeze It!
-      - Hungry Gobber
-      - Roll With It
-      - Scalding Spit
       - Skittering Scuttle
       13:
-      - Gobber Weapon Expertise
-      - Unbreakable-er Gobber
+      - Goblin Weapon Expertise
       - "Very, Very Sneaky"
       17:
-      - Reckless Abandon
-  Egalrin:
-    HP: 6
-    Size: M
-    abl_boosts:
-    - open
-    - open
-    languages:
-    - Tradespeak
-    - Egalrin
-    traits:
-    - egalrin
-    - humanoid
-    special:
-    - Low-Light Vision
-    attack:
-      Beak:
-        damage: d6
-        damage_type: P
-        group: brawling
-        traits:
-        - finesse
-        - unarmed
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Dar
-    - Jinxed-egalrin
-    - Mountainkeeper
-    - Skyborn
-    - Stormtossed
-    - Taloned
-    - Tiefling
-    feats:
-      1:
-      - Egalrin Lore
-      - Egalrin Weapon Familiarity
-      - "Scavenger's Search"
-      - Squawk!
-      - "Storm's Lash"
-      5:
-      - Eat Fortune
-      - Egalrin Weapon Study
-      - Fey Influence
-      - Long-Nosed Form
-      - One-Toed Hop
-      9:
-      - Eclectic Sword Training
-      - Soaring Flight
-      13:
-      - Egalrin Weapon Expertise
-      17:
-      - Great Egalrin Form
+      - "Reckless Abandon (Goblin)"
   Human:
     HP: 8
     Size: M
@@ -304,47 +323,35 @@ pf2e_ancestry:
     - human
     - humanoid
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Changeling
     - Dar
     - Half-Sil
     - Half-Oruch
+    - Niasa
     - Skilled
-    - Tiefling
     - Versatile
-    - Wintertouched
     feats:
       1:
       - Adapted Cantrip
-      - Arcane Tattoos
       - Cooperative Nature
       - General Training
-      - Gloomseer
       - Haughty Obstinacy
       - Natural Ambition
       - Natural Skill
       - Unconventional Weaponry
       5:
       - Adaptive Adept
-      - Clever Improviser
       - Sense Allies
       9:
       - Cooperative Soul
-      - Dragon Prince
       - Group Aid
       - Hardy Traveler
-      - Heir of the Saoc
-      - Incredible Improvisation
       - Multitalented
-      - Shory Aeromancer
-      - Virtue-Forged Tattoos
       13:
       - Advanced General Training
       - Bounce Back
-      - Irriseni Ice-Witch
-      - Shadow Pact
-      - Shory Aerialist
       - Stubborn Persistence
       - Unconventional Expertise
       17:
@@ -365,18 +372,16 @@ pf2e_ancestry:
     special:
     - Low-Light Vision
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Changeling
     - Dar
     - Deep Rat
     - Desert Rat
     - Longsnout Rat
+    - Niasa
     - Sewer Rat
     - Shadow Rat
-    - Snow Rat
-    - Tiefling
-    - Tunnel Rat
     feats:
       1:
       - Cheek Pouches
@@ -388,21 +393,15 @@ pf2e_ancestry:
       - Vicious Incisors
       - Warren Navigator
       5:
-      - Gnaw
-      - Kailli Roll
       - Lab Rat
-      - Plague Sniffer
-      - Quick Stow (Kailli)
+      - "Quick Stow (Kailli)"
       - Rat Magic
       9:
       - Big Mouth
       - Overcrowd
       - Rat Form
       13:
-      - Shinstabber
-      - Skittering Sneak
       - Warren Digger
-      - Kailli Growth
   Khazad:
     HP: 10
     Size: M
@@ -419,25 +418,23 @@ pf2e_ancestry:
     special:
     - Darkvision
     heritages:
-    - Aasimar
+    - Aesa
     - Ancient-Blooded
     - Anvil
     - Ashen One
     - Changeling
     - Dar
     - Death Warden
-    - Elemental Heart
     - Forge
-    - Oathkeeper
+    - Niasa
     - Rock
     - Strong-Blooded
-    - Tiefling
     feats:
       1:
+      - Eye For Treasure
       - Khazadi Doughtiness
       - Khazadi Lore
       - Khazadi Weapon Familiarity
-      - Eye For Treasure
       - Rock Runner
       - Stonecunning
       - Unburdened Iron
@@ -448,13 +445,8 @@ pf2e_ancestry:
       - Khazadi Reinforcement
       - Khazadi Weapon Cunning
       - Sheltering Slab
-      - "Tomb-Watcher's Glare"
       9:
-      - Battleforger
       - Echoes in Stone
-      - Energy Blessed
-      - "Heroes' Call"
-      - Kneel for No God
       - "Mountain's Stoutness"
       - Returning Throw
       - Stone Bones
@@ -464,175 +456,6 @@ pf2e_ancestry:
       - Telluric Power
       17:
       - Stonegate
-  Lizardfolk:
-    HP: 8
-    Size: M
-    Speed: 25
-    abl_boosts:
-    - open
-    - open
-    languages:
-    - Tradespeak
-    - Draconic
-    traits:
-    - lizardfolk
-    - humanoid
-    attack:
-      Claws:
-        damage: d4
-        damage_type: S
-        traits:
-        - agile
-        - finesse
-        - unarmed
-    bonus_feats:
-    - Breath Control
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Cliffscale
-    - Dar
-    - Frilled
-    - Sandstrider
-    - Sith-Makar
-    - Unseen
-    - Tiefling
-
-    feats:
-      1:
-      - Lizardfolk Lore
-      - Marsh Runner
-      - Parthenogenetic Hatchling
-      - Razor Claws
-      - Reptile Speaker
-      - Sharp Fangs
-      - Tail Whip
-      5:
-      - Envenom Fangs
-      - Fey Influence
-      - "Gecko's Grip"
-      - Iruxi Unarmed Cunning
-      - Shed Tail
-      - Swift Swimmer
-      9:
-      - Terrain Advantage
-      13:
-      - Iruxi Unarmed Expertise
-  Lucht Siuil:
-    HP: 6
-    Size: S
-    Speed: 25
-    able_boosts:
-    - open
-    - open
-    languages:
-    - Tradespeak
-    - Bassin
-    traits:
-    - bassin
-    - humanoid
-    special:
-    - keen eyes
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Dar
-    - Gutsy
-    - Hillock
-    - Jinxed-bassin
-    - Nomadic
-    - Observant
-    - Tiefling
-    - Twilight
-    - Wildwood
-    feats:
-      1:
-      - Distracting Shadows
-      - Folksy Patter
-      - Bassin Lore
-      - Bassin Luck
-      - Bassin Weapon Familiarity
-      - Prairie Rider
-      - Sure Feet
-      - Titan Slinger
-      - Unfettered Bassin
-      - Watchful Bassin
-      5:
-      - Cultural Adaptability
-      - Bassin Weapon Trickster
-      - Step Lively
-      9:
-      - Cunning Climber
-      - Dance Underfoot
-      - Fade Away
-      - Guiding Luck
-      - Helpful Bassin
-      - Irrepressible
-      - Unhampered Passage
-      13:
-      - Ceaseless Shadows
-      - Cobble Dancer
-      - Bassin Weapon Expertise
-      - "Incredible Luck (Bassin)"
-      - Toppling Dance
-      17:
-      - Shadow Self
-  Ciith:
-    HP: 8
-    Size: M
-    Speed: 25
-    abl_boosts:
-    - open
-    - open
-    abl_flaw: ""
-    languages:
-    - Tradespeak
-    - Draconic
-    traits:
-    - ciith
-    - humanoid
-    attack:
-      Claws:
-        damage: d4
-        damage_type: S
-        traits:
-        - agile
-        - finesse
-        - unarmed
-    bonus_feats:
-    - Breath Control
-    heritages:
-    - Aasimar
-    - Ashen One
-    - Changeling
-    - Cliffscale
-    - Dar
-    - Frilled
-    - Sandstrider
-    - Sith-Makar
-    - Unseen
-    - Tiefling
-    feats:
-      1:
-      - Ciith Lore
-      - Marsh Runner
-      - Parthenogenetic Hatchling
-      - Razor Claws
-      - Reptile Speaker
-      - Sharp Fangs
-      - Tail Whip
-      5:
-      - Envenom Fangs
-      - "Gecko's Grip"
-      - Iruxi Unarmed Cunning
-      - Shed Tail
-      - Swift Swimmer
-      9:
-      - Terrain Advantage
-      13:
-      - Iruxi Unarmed Expertise
   Oruch:
     HP: 10
     Size: M
@@ -640,8 +463,6 @@ pf2e_ancestry:
     abl_boosts:
     - open
     - open
-    - open
-    abl_flaw: ""
     languages:
     - Tradespeak
     - Yrch
@@ -651,15 +472,15 @@ pf2e_ancestry:
     special:
     - darkvision
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
     - Badlands
     - Changeling
     - Dar
     - Deep
     - Hold-Scarred
+    - Niasa
     - Rainfall
-    - Tiefling
     feats:
       1:
       - Beast Trainer
@@ -702,16 +523,14 @@ pf2e_ancestry:
     special:
     - Low-Light Vision
     heritages:
-    - Aasimar
+    - Aesa
     - Ashen One
-    - Ancient
     - Arctic
     - Cavern
     - Changeling
     - Dar
-    - Desert
+    - Niasa
     - Seer
-    - Tiefling
     - Whisper
     - Woodland
     feats:
@@ -720,28 +539,25 @@ pf2e_ancestry:
       - Ancestral Longevity
       - Forlorn
       - Know Your Own
-      - Nimble Elf
+      - Nimble Sil
       - Otherworldly Magic
-      - Share Thoughts
-      - Silya Aloofness
-      - Silya Lore
-      - Silya Weapon Familiarity
+      - Sildanyari Aloofness
+      - Sildanyari Lore
+      - Sildanyari Weapon Familiarity
+      - Unwavering Mien
       5:
       - Ageless Patience
       - Ancestral Suspicion
       - Martial Experience
-      - Silya Weapon Elegance
+      - Sildanyari Weapon Elegance
       9:
-      - Brightness Seeker
-      - Elf Step
       - Expert Longevity
       - Otherworldly Acumen
-      - Sense Thoughts
-      - Tree Climber (Elf)
+      - Sildanyar Step
+      - Tree Climber (Sildanyar)
       13:
       - Avenge Ally
-      - Silya Weapon Expertise
+      - Sildanyari Weapon Expertise
       - Universal Longevity
-      - Wandering Heart
       17:
       - Magic Rider

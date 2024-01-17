@@ -11,7 +11,7 @@ pf2e_armor:
     bulk: 0.1
     check_penalty: 0
     speed_penalty: 0
-    min_str: 8
+    min_str: 0
     group: Cloth
   Padded:
     category: light
@@ -30,6 +30,18 @@ pf2e_armor:
     category: light
     traits: []
     level: 0
+    price: 200
+    ac_bonus: 1
+    dex_cap: 4
+    check_penalty: -1
+    speed_penalty: 0
+    min_str: 10
+    bulk: 1
+    group: Leather
+  Studded Leather:
+    category: light
+    traits: []
+    level: 0
     price: 300
     ac_bonus: 2
     dex_cap: 3
@@ -38,18 +50,6 @@ pf2e_armor:
     min_str: 12
     bulk: 1
     group: Leather
-  Studded Leather:
-    category: light
-    traits: []
-    level: 0
-    price: 20
-    ac_bonus: 1
-    dex_cap: 3
-    check_penalty: -1
-    speed_penalty: 0
-    min_str: 10
-    bulk: 1
-    group: Cloth
   Chain Shirt:
     category: light
     traits:
@@ -61,7 +61,7 @@ pf2e_armor:
     dex_cap: 3
     check_penalty: -1
     speed_penalty: 0
-    min_str: 2
+    min_str: 12
     bulk: 1
     group: Chain
   Hide:
@@ -142,7 +142,7 @@ pf2e_armor:
     category: heavy
     traits:
     - bulwark
-    level: 02
+    level: 2
     price: 3000
     ac_bonus: 6
     dex_cap: 0

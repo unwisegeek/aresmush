@@ -1,5 +1,6 @@
 ---
 pf2e_feats:
+# Level 1 Feats
   Acrobatic Performer:
     feat_type: 
     - Skill
@@ -9,28 +10,25 @@ pf2e_feats:
     shortdesc: Use Acrobatics to Perform.
     prereq:
       level: 1
-      skill: Acrobatics/trained
-  Assurance (Acrobatics):
-    feat_type: 
+      skill: Acrobatics/trained  
+  Additional Lore:
+    feat_type:
     - Skill
     - General
-    assoc_skill: Acrobatics
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Acrobatics/trained
-  Cat Fall:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Acrobatics
     traits: []
-    shortdesc: Treat falls as shorter than they are.
+    shortdesc: Become trained in another Lore subcategory.
     prereq:
       level: 1
-      skill: Acrobatics/trained
+  Alchemical Crafting:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Crafting
+    traits: []
+    shortdesc: Craft alchemical items.
+    prereq:
+      level: 1
+      skill: Crafting/trained
   Arcane Sense:
     feat_type: 
     - Skill
@@ -41,46 +39,6 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Arcana/trained
-  Assurance (Arcana):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Arcana
-    traits:
-    - fortune 
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Arcana/trained
-  Automatic Knowledge (Arcana):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Arcana
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
-    prereq:
-      level: 2
-  Assured Identification (Arcane):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Arcana
-    traits: []
-    shortdesc: Avoid misidentifying magic.
-    prereq:
-      level: 2
-      skill: Arcana/expert
-  Magical Shorthand (Arcane):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Arcana
-    traits: []
-    shortdesc: Learn spells quickly and at a reduced cost.
-    prereq:
-      level: 2
-      skill: Arcana/expert
   Armor Assist:
     feat_type: 
     - Skill
@@ -93,6 +51,28 @@ pf2e_feats:
       orskill: 
       - Athletics/trained 
       - Warfare Lore/trained
+  Assurance (Acrobatics):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Acrobatics
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Acrobatics/trained
+  Assurance (Arcana):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits:
+    - fortune 
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Arcana/trained
   Assurance (Athletics):
     feat_type: 
     - Skill
@@ -104,96 +84,6 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Athletics/trained
-  Combat Climber:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Fight more effectively as you Climb.
-    prereq:
-      level: 1
-      skill: Athletics/trained
-  Hefty Hauler:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Increase your Bulk limits by 2.
-    prereq:
-      level: 1
-      skill: Athletics/trained
-  Quick Jump:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: High Jump or Long Jump as a single action.
-    prereq:
-      level: 1
-      skill: Athletics/trained
-  Titan Wrestler:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Disarm, Grapple, Shove, or Trip larger creatures.
-    prereq:
-      level: 1
-      skill: Athletics/trained
-  Underwater Marauder:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Fight more effectively underwater.
-    prereq:
-      level: 1
-      skill: Athletics/trained
-  Lead Climber:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Make Climbing safer for allies who Follow the Expert.
-    prereq:
-      level: 2
-      skill: Athletics/expert
-  Powerful Leap:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Jump farther and higher.
-    prereq:
-      level: 2
-      skill: Athletics/expert
-  Rapid Mantel:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Athletics
-    traits: []
-    shortdesc: Pull yourself onto ledges quickly.
-    prereq:
-      level: 2
-      skill: Athletics/expert
-  Alchemical Crafting:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Crafting
-    traits: []
-    shortdesc: Craft alchemical items.
-    prereq:
-      level: 1
-      skill: Crafting/trained
   Assurance (Crafting):
     feat_type: 
     - Skill
@@ -205,6 +95,215 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Crafting/trained
+  Assurance (Deception):
+    feat_type: 
+    - General
+    - Skill
+    assoc_skill: Deception
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Deception/trained
+  Assurance (Diplomacy):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Diplomacy
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Diplomacy/trained
+  Assurance (Intimidation):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Intimidation
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Intimidation/trained
+  Assurance (Medicine):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Medicine
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Medicine/trained
+  Assurance (Nature):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  Assurance (Occultism):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Assurance (Performance):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Performance
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Performance/trained
+  Assurance (Religion):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Assurance (Society):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Society/trained
+  Assurance (Stealth):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Stealth
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Stealth/trained
+  Assurance (Survival):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Assurance (Thievery):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Thievery
+    traits:
+    - fortune
+    shortdesc: Receive a fixed result on a skill check.
+    prereq:
+      level: 1
+      skill: Thievery/trained
+  Battle Medicine:
+    feat_type: 
+    - General
+    - Skill
+    assoc_skill: Medicine
+    traits:
+    - healing
+    - manipulate
+    shortdesc: Heal yourself or an ally in battle.
+    prereq:
+      level: 1
+      skill: Medicine/trained
+  Bon Mot:
+    feat_type: 
+    - Skill
+    assoc_skill: Diplomacy
+    traits:
+    - auditory
+    - concentrate
+    - emotion
+    - general
+    - linguistic
+    - mental
+    shortdesc: Distract a foe with a witty quip.
+    prereq:
+      level: 1
+      skill: Diplomacy/trained
+  Cat Fall:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Acrobatics
+    traits: []
+    shortdesc: Treat falls as shorter than they are.
+    prereq:
+      level: 1
+      skill: Acrobatics/trained
+  Charming Liar:
+    feat_type: 
+    - General
+    - Skill
+    assoc_skill: Deception
+    traits: []
+    shortdesc: Improve a target's attitude with your lies.
+    prereq:
+      level: 1
+      skill: Deception/trained
+  Combat Climber:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: Fight more effectively as you Climb.
+    prereq:
+      level: 1
+      skill: Athletics/trained
+  Concealing Legerdemain:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Thievery
+    traits: []
+    shortdesc: Conceal an Object using Thievery instead of Stealth.
+    prereq:
+      level: 1
+      skill: Thievery/trained
+  Courtly Graces:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Use Society to get along in noble society.
+    prereq:
+      level: 1
+      skill: Society/trained
   Crafter's Appraisal:
     feat_type: 
     - Skill
@@ -215,6 +314,218 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Crafting/trained
+  Deceptive Worship:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Pass yourself off as a member of a religion.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Dubious Knowledge (Arcana):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Arcana/trained
+  Dubious Knowledge (Crafting):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Crafting
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Crafting/trained
+  Dubious Knowledge (Medicine):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Medicine
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Medicine/trained
+  Dubious Knowledge (Nature):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  Dubious Knowledge (Occultism):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Dubious Knowledge (Religion):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Dubious Knowledge (Society):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Learn true and erroneous knowledge on failed Recall Knowledge check.
+    prereq:
+      level: 1
+      skill: Society/trained
+  Experienced Smuggler:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Stealth
+    traits: []
+    shortdesc: Conceal items from observers more effectively.
+    prereq:
+      level: 1
+      skill: Stealth/trained
+  Experienced Tracker:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: Track at your full Speed at a –5 penalty.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Express Rider:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits:
+    - exploration
+    - move
+    shortdesc: Increase your mount's travel speed.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  Eye for Numbers:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: +2 to Decipher Writing about math and count items quickly.
+    prereq:
+      level: 1
+      skill: Society/trained
+  Fascinating Performance:
+    feat_type: 
+    - General
+    - Skill
+    assoc_skill: Performance
+    traits: []
+    shortdesc: Perform to fascinate observers.
+    prereq:
+      level: 1
+      skill: Performance/trained
+  Forager:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: Forage for supplies to provide for multiple creatures.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Forensic Acumen:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Medicine
+    traits: []
+    shortdesc: Rapidly examine a body and Recall Knowledge about it.
+    prereq:
+      level: 1
+      skill: Medicine/trained
+  Glean Contents:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Decipher Writing even when you can’t see the document well.
+    prereq:
+      level: 1
+      skill: Society/trained
+  Group Coercion:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Intimidation
+    traits: []
+    shortdesc: Coerce multiple targets simultaneously.
+    prereq:
+      level: 1
+      skill: Intimidation/trained
+  Group Impression:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Diplomacy
+    traits: []
+    shortdesc: Make an Impression on multiple targets at once.
+    prereq:
+      level: 1
+      skill: Diplomacy/trained  
+  Hefty Hauler:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: Increase your Bulk limits by 2.
+    prereq:
+      level: 1
+      skill: Athletics/trained
+  Hobnobber:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Diplomacy
+    traits: []
+    shortdesc: Gather Information rapidly.
+    prereq:
+      level: 1
+      skill: Diplomacy/trained
+  Impressive Performance:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Performance
+    traits: []
+    shortdesc: Make an Impression with Performance.
+    prereq:
+      level: 1
+      skill: Performance/trained
   Improvise Tool:
     feat_type: 
     - Skill
@@ -225,6 +536,163 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Crafting/trained
+  Inoculation:
+    feat_type: 
+    - General
+    - Skill
+    assoc_skill: Medicine
+    traits:
+    - healing
+    shortdesc: Grant patients +2 to saves against getting a disease again.
+    prereq:
+      level: 1
+      skill: Medicine/trained
+  Intimidating Glare:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Intimidation
+    traits: []
+    shortdesc: Demoralize a creature without speaking.
+    prereq:
+      level: 1
+      skill: Intimidation/trained
+  Lengthy Diversion:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Deception
+    traits: []
+    shortdesc: Remain hidden after you Create a Diversion.
+    prereq:
+      level: 1
+      skill: Deception/trained
+  Multilingual:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Learn two new languages.
+    prereq:
+      level: 1
+      skill: Society/trained
+  Natural Medicine:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits: []
+    shortdesc: Use Nature to Treat Wounds.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  No Cause for Alarm:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Diplomacy
+    traits:
+    - auditory
+    - concentrate
+    - emotion
+    - general
+    - linguistic
+    - mental
+    shortdesc: 'Reduce creatures’ frightened condition values.'
+    prereq:
+      level: 1
+      skill: Diplomacy/trained
+  Oddity Identification:
+    feat_type:
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: +2 to Occultism checks to Identify Magic with certain traits.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Pickpocket:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Thievery
+    traits: []
+    shortdesc: Steal or Palm an Object more effectively.
+    prereq:
+      level: 1
+      skill: Thievery/trained
+  Pilgrim's Token:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: A religious token lets you act ﬁrst on a tie for initiative.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Quick Coercion:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Intimidation
+    traits: []
+    shortdesc: Coerce a creature quickly.
+    prereq:
+      level: 1
+      skill: Intimidation/trained
+  Quick Identification (Arcane):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits: []
+    shortdesc: Identify Magic in 1 minute or less.
+    prereq:
+      level: 1
+      skill: Arcana/trained
+  Quick Identification (Divine):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: Identify Magic in 1 minute or less.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Quick Identification (Occult):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Identify Magic in 1 minute or less.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Quick Identification (Primal):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits: []
+    shortdesc: Identify Magic in 1 minute or less.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  Quick Jump:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: High Jump or Long Jump as a single action.
+    prereq:
+      level: 1
+      skill: Athletics/trained
   Quick Repair:
     feat_type: 
     - Skill
@@ -235,6 +703,97 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Crafting/trained
+  Quick Squeeze:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Acrobatics
+    traits: []
+    shortdesc: Move swiftly as you Squeeze.
+    prereq:
+      level: 1
+      skill: Acrobatics/trained  
+  Read Lips:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Read the lips of people you can see.
+    prereq:
+      level: 1
+      skill: Society/trained  
+  Recognize Spell (Arcane):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits: []
+    shortdesc: Identify a spell as a reaction as it's being cast.
+    prereq:
+      level: 1
+      skill: Arcana/trained
+  Recognize Spell (Divine):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: Identify a spell as a reaction as it's being cast.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Recognize Spell (Occult):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Identify a spell as a reaction as it's being cast.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Recognize Spell (Primal):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits:
+    - secret
+    shortdesc: Identify a spell as a reaction as it's being cast.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  Risky Surgery:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Medicine
+    traits: []
+    shortdesc: Deal damage to a patient to gain +2 to Treat Wounds.
+    prereq:
+      level: 1
+      skill: Medicine/trained
+  Root Magic:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Create a token that grants a bonus against a spell or haunt.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Schooled in Secrets:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Gather Information about secret societies and mystery cults.
+    prereq:
+      level: 1
+      skill: Occultism/trained
   Seasoned:
     feat_type: 
     - Skill
@@ -248,6 +807,15 @@ pf2e_feats:
       - Crafting/trained 
       - Alcohol Lore/trained 
       - Cooking Lore/trained
+  Skill Training:
+    feat_type: 
+    - General
+    - Skill
+    traits: []
+    shortdesc: Become trained in a skill.
+    prereq:
+      level: 1
+      ability: Intelligence/12
   Snare Crafting:
     feat_type: 
     - Skill
@@ -268,6 +836,301 @@ pf2e_feats:
     prereq:
       level: 1
       skill: Crafting/trained
+  Steady Balance:
+    feat_type:
+    - Skill
+    - General
+    assoc_skill: Acrobatics
+    traits: []
+    shortdesc: Maintain your balance in adverse conditions.
+    prereq:
+      level: 1
+      skill: Acrobatics/trained
+  Streetwise:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Use Society to Gather Information and Recall Knowledge.
+    prereq:
+      level: 1
+      skill: Society/trained
+  Student of the Canon:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: More accurately recognize the tenets of your faith or philosophy.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Subtle Theft:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Thievery
+    traits: []
+    shortdesc: Your thefts are harder to notice.
+    prereq:
+      level: 1
+      skill: Thievery/trained
+  Survey Wildlife:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: Identify nearby creatures through signs and clues.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Aquatic):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Arctic):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Desert):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Forest):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Mountain):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Plains):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Sky):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Swamp):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Expertise (Underground):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Survival
+    traits: []
+    shortdesc: +1 to Survival checks in certain terrain.
+    prereq:
+      level: 1
+      skill: Survival/trained
+  Terrain Stalker:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Stealth
+    traits: []
+    shortdesc: Sneak in certain terrain without attempting a check.
+    prereq:
+      level: 1
+      skill: Stealth/trained
+  Titan Wrestler:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: Disarm, Grapple, Shove, or Trip larger creatures.
+    prereq:
+      level: 1
+      skill: Athletics/trained
+  Train Animal:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits:
+    - downtime
+    - manipulate
+    shortdesc: Teach an animal a trick.
+    prereq:
+      level: 1
+      skill: Nature/trained  
+  Trick Magic Item (Arcane):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits: []
+    shortdesc: Activate a magic item you normally can't activate.
+    prereq:
+      level: 1
+      skill: Arcana/trained
+  Trick Magic Item (Divine):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: Activate a magic item you normally can't activate.
+    prereq:
+      level: 1
+      skill: Religion/trained
+  Trick Magic Item (Occult):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occutltism
+    traits: []
+    shortdesc: Activate a magic item you normally can't activate.
+    prereq:
+      level: 1
+      skill: Occultism/trained
+  Trick Magic Item (Primal):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits: []
+    shortdesc: Activate a magic item you normally can't activate.
+    prereq:
+      level: 1
+      skill: Nature/trained
+  Underwater Marauder:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: Fight more effectively underwater.
+    prereq:
+      level: 1
+      skill: Athletics/trained
+  Virtuosic Performer:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Performance
+    traits: []
+    shortdesc: +1 with a certain type of performance.
+    prereq:
+      level: 1
+      skill: Performance/trained
+# Level 2 Feats
+  Armored Stealth:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Stealth
+    traits: []
+    shortdesc: Reduce the Stealth penalty of your armor.
+    prereq:
+      level: 2
+      skill: Stealth/expert
+  Assured Identification (Arcane):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits: []
+    shortdesc: Avoid misidentifying magic.
+    prereq:
+      level: 2
+      skill: Arcana/expert
+  Assured Identification (Divine):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: Avoid misidentifying magic.
+    prereq:
+      level: 2
+      skill: Divine/expert
+  Assured Identification (Primal):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits: []
+    shortdesc: Avoid misidentifying magic.
+    prereq:
+      level: 2
+      skill: Nature/expert
+  Assured Identification (Occult):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Avoid misidentifying magic.
+    prereq:
+      level: 2
+      skill: Occult/expert
+  Automatic Knowledge (Arcana):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Arcana
+    traits: []
+    shortdesc: Recall Knowledge as a free action once per round.
+    prereq:
+      level: 2
+      skill: Arcana/expert
+      feat:
+      - Assurance (Arcana)      
   Automatic Knowledge (Crafting):
     feat_type: 
     - Skill
@@ -278,37 +1141,91 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Crafting/expert
-  Magical Crafting:
+      feat:
+      - Assurance (Crafting)
+  Automatic Knowledge (Medicine):
     feat_type: 
     - Skill
     - General
-    assoc_skill: Crafting
+    assoc_skill: Medicine
     traits: []
-    shortdesc: Craft magic items.
+    shortdesc: Recall Knowledge as a free action once per round.
     prereq:
       level: 2
-      skill: Crafting/expert
-  Assurance (Deception):
+      skill: Medicine/expert
+      feat:
+      - Assurance (Medicine)
+  Automatic Knowledge (Nature):
     feat_type: 
-    - General
     - Skill
-    assoc_skill: Deception
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Deception/trained
-  Charming Liar:
-    feat_type: 
     - General
-    - Skill
-    assoc_skill: Deception
+    assoc_skill: Nature
     traits: []
-    shortdesc: Improve a target's attitude with your lies.
+    shortdesc: Recall Knowledge as a free action once per round.
     prereq:
-      level: 1
-      skill: Deception/trained
+      level: 2
+      skill: Nature/expert
+      feat:
+      - Assurance (Nature)
+  Automatic Knowledge (Occultism):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Occultism
+    traits: []
+    shortdesc: Recall Knowledge as a free action once per round.
+    prereq:
+      level: 2
+      skill: Occultism/expert
+      feat:
+      - Assurance (Occultism)
+  Automatic Knowledge (Religion):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: Recall Knowledge as a free action once per round.
+    prereq:
+      level: 2
+      skill: Religion/expert
+      feat:
+      - Assurance (Crafting)
+  Automatic Knowledge (Society):
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Recall Knowledge as a free action once per round.
+    prereq:
+      level: 2
+      skill: Society/expert
+      feat:
+      - Assurance (Society)
+  Battle Planner:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Warfare Lore
+    traits:
+    - general
+    - skill
+    shortdesc: Make a battle plan and roll Warfare Lore for initiative.
+    prereq:
+      level: 2
+      skill: Warfare Lore/expert
+  Bonded Animal:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Nature
+    traits:
+    - downtime
+    shortdesc: An animal becomes permanently helpful to you.
+    prereq:
+      level: 2
+      skill: Nature/expert
   Confabulator:
     feat_type: 
     - General
@@ -318,8 +1235,44 @@ pf2e_feats:
     shortdesc: Reduce the bonuses against your repeated lies.
     prereq:
       level: 2
-      skill: Deception/expert
-  Discreet Inquiry:
+      skill: Deception/expert  
+  Connections:
+    feat_type: 
+    - General
+    - Skill
+    assoc_skill: Society
+    traits: []
+    shortdesc: Leverage your connections for favors and meetings.
+    prereq:
+      level: 2
+      skill: Society/expert
+      feat:
+      - Courtly Graces
+    uncommon: true
+  Continual Recovery:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Medicine
+    traits: []
+    shortdesc: Treat Wounds on a patient more often.
+    prereq:
+      level: 2
+      skill: Medicine/expert
+  Criminal Connections:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Society
+    traits: []
+    shortdesc: Leverage your underworld connections for favors from criminals.
+    prereq:
+      level: 2
+      skill: Society/expert
+      feat:
+      - Streetwise
+    uncommon: true
+  Discreet Inquiry (Deception):
     feat_type: 
     - General
     - Skill
@@ -331,79 +1284,7 @@ pf2e_feats:
       orskill: 
       - Deception/expert 
       - Diplomacy/expert
-  Assurance (Diplomacy):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Diplomacy
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Diplomacy/trained
-  Bargain Hunter:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Diplomacy
-    traits: []
-    shortdesc: Earn Income by searching for deals.
-    prereq:
-      level: 1
-      skill: Diplomacy/trained
-  Bon Mot:
-    feat_type: 
-    - Skill
-    assoc_skill: Diplomacy
-    traits:
-    - auditory
-    - concentrate
-    - emotion
-    - general
-    - linguistic
-    - mental
-    shortdesc: Distract a foe with a witty quip.
-    prereq:
-      level: 1
-      skill: Diplomacy/trained
-  Group Impression:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Diplomacy
-    traits: []
-    shortdesc: Make an Impression on multiple targets at once.
-    prereq:
-      level: 1
-      skill: Diplomacy/trained
-  Hobnobber:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Diplomacy
-    traits: []
-    shortdesc: Gather Information rapidly.
-    prereq:
-      level: 1
-      skill: Diplomacy/trained
-  No Cause for Alarm:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Diplomacy
-    traits:
-    - auditory
-    - concentrate
-    - emotion
-    - general
-    - linguistic
-    - mental
-    shortdesc: 'Reduce creatures’ frightened condition values.'
-    prereq:
-      level: 1
-      skill: Diplomacy/trained
-  Discreet Inquiry:
+  Discreet Inquiry (Diplomacy):
     feat_type: 
     - Skill
     - General
@@ -415,6 +1296,26 @@ pf2e_feats:
       orskill: 
       - Diplomacy/expert 
       - Deception/expert
+  Distracting Performance:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Performance
+    traits: []
+    shortdesc: Create a Diversion for an ally.
+    prereq:
+      level: 2
+      skill: Performance/expert
+  Exhort the Faithful:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Religion
+    traits: []
+    shortdesc: +2 to Request something of or Coerce members of your own faith.
+    prereq:
+      level: 2
+      skill: Religion/expert  
   Glad-Hand:
     feat_type: 
     - Skill
@@ -425,47 +1326,6 @@ pf2e_feats:
     prereq:
       level: 2
       skill: diplomacy/expert
-  Assurance (Intimidation):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Intimidation
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Intimidation/trained
-  Group Coercion:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Intimidation
-    traits: []
-    shortdesc: Coerce multiple targets simultaneously.
-    prereq:
-      level: 1
-      skill: Intimidation/trained
-  Intimidating Glare:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Intimidation
-    traits: []
-    shortdesc: Demoralize a creature without speaking.
-    prereq:
-      level: 1
-      skill: Intimidation/trained
-  Quick Coercion:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Intimidation
-    traits: []
-    shortdesc: Coerce a creature quickly.
-    prereq:
-      level: 1
-      skill: Intimidation/trained
   Intimidating Prowess:
     feat_type: 
     - Skill
@@ -487,469 +1347,36 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Intimidation/expert
-  Terrifying Resistance:
+  Lead Climber:
     feat_type: 
     - Skill
     - General
-    assoc_skill: Intimidation
+    assoc_skill: Athletics
     traits: []
-    shortdesc: +1 to spell saves from a creature you've Demoralized.
+    shortdesc: Make Climbing safer for allies who Follow the Expert.
     prereq:
       level: 2
-      skill: Intimidation/expert
-  Additional Lore:
+      skill: Athletics/expert
+  Magical Crafting:
     feat_type: 
     - Skill
     - General
-    assoc_skill: Lore
+    assoc_skill: Crafting
     traits: []
-    shortdesc: Become trained in another Lore subcategory.
-    prereq:
-      level: 1
-      skill: Lore/trained
-  Assurance (Lore):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Lore
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Lore/trained
-  Automatic Knowledge (Lore):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Lore
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
+    shortdesc: Craft magic items.
     prereq:
       level: 2
-      skill: Lore/expert
-  Battle Planner:
+      skill: Crafting/expert
+  Magical Shorthand (Arcane):
     feat_type: 
     - Skill
     - General
-    assoc_skill: Warfare Lore
-    traits:
-    - general
-    - skill
-    shortdesc: Make a battle plan and roll Warfare Lore for initiative.
-    prereq:
-      level: 2
-      skill: Warfare Lore/expert
-  Unmistakable Lore:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Lore
-    traits: []
-    shortdesc: FIND MY FUCKING SHORTDESC ALREADY
-    prereq:
-      level: 2
-      skill: Lore/expert
-  Assurance (Medicine):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Medicine/trained
-  Battle Medicine:
-    feat_type: 
-    - General
-    - Skill
-    assoc_skill: Medicine
-    traits:
-    - healing
-    - manipulate
-    shortdesc: Heal yourself or an ally in battle.
-    prereq:
-      level: 1
-      skill: Medicine/trained
-  Forensic Acumen:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits: []
-    shortdesc: Rapidly examine a body and Recall Knowledge about it.
-    prereq:
-      level: 1
-      skill: Medicine/trained
-  Inoculation:
-    feat_type: 
-    - General
-    - Skill
-    assoc_skill: Medicine
-    traits:
-    - healing
-    shortdesc: Grant patients +2 to saves against getting a disease again.
-    prereq:
-      level: 1
-      skill: Medicine/trained
-  Risky Surgery:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits: []
-    shortdesc: Deal damage toa patient to gain +2 to Treat Wounds.
-    prereq:
-      level: 1
-      skill: Medicine/trained
-  Automatic Knowledge (Medicine):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
-    prereq:
-      level: 2
-      skill: Medicine/expert
-  Continual Recovery:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits: []
-    shortdesc: Treat Wounds on a patient more often.
-    prereq:
-      level: 2
-      skill: Medicine/expert
-  Robust Recovery:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits: []
-    shortdesc: Greater benefits from Treat Disease and Treat Poison.
-    prereq:
-      level: 2
-      skill: Medicine/expert
-  Ward Medic:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Medicine
-    traits: []
-    shortdesc: Treat several patients at once.
-    prereq:
-      level: 2
-      skill: Medicine/expert
-  Assurance (Nature):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Express Rider:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits:
-    - exploration
-    - move
-    shortdesc: Increase your mount's travel speed.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Natural Medicine:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits: []
-    shortdesc: Use Nature to Treat Wounds.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Quick Identification (Primal):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits: []
-    shortdesc: Identify magic in 1 minute or less.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Recognize Spell (Primal):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits:
-    - secret
-    shortdesc: Identify a spell as a reacting as it's being cast.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Train Animal:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits:
-    - downtime
-    - manipulate
-    shortdesc: Teach an animal a trick.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Trick Magic Item (Primal):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits: []
-    shortdesc: Activate a magic item you normally can't activate.
-    prereq:
-      level: 1
-      skill: Nature/trained
-  Assured Identification (Primal):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits: []
-    shortdesc: Avoid misidentifying magic.
-    prereq:
-      level: 2
-      skill: Nature/expert
-  Automatic Knowledge (Nature):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
-    prereq:
-      level: 2
-      skill: Nature/expert
-  Bonded Animal:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
-    traits:
-    - downtime
-    shortdesc: An animal becomes permanently helpful to you.
-    prereq:
-      level: 2
-      skill: Nature/expert
-  Magical Shorthand (Primal):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Nature
+    assoc_skill: Arcana
     traits: []
     shortdesc: Learn spells quickly and at a reduced cost.
     prereq:
       level: 2
-      skill: Nature/expert
-  Assurance (Occultism):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Occultism
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Occultism/trained
-  Deceptive Worship:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Occultism
-    traits: []
-    shortdesc: Pass yourself off as a member of a religion.
-    prereq:
-      level: 1
-      skill: Occultism/trained
-  Assured Identification (Occult):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Occultism
-    traits: []
-    shortdesc: Avoid misidentifying magic.
-    prereq:
-      level: 2
-  Automatic Knowledge (Occultism):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Occultism
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
-    prereq:
-      level: 2
-  Magical Shorthand (Occult):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Occultism
-    traits: []
-    shortdesc: Learn spells quickly and at a reduced cost.
-    prereq:
-      level: 2
-      skill: Occultism/expert
-  Assurance (Performance):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Performance
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Performance/trained
-  Fascinating Performance:
-    feat_type: 
-    - General
-    - Skill
-    assoc_skill: Performance
-    traits: []
-    shortdesc: Perform to fascinate observers.
-    prereq:
-      level: 1
-      skill: Performance/trained
-  Impressive Performance:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Performance
-    traits: []
-    shortdesc: Make an Impression with Performance.
-    prereq:
-      level: 1
-      skill: Performance/trained
-  Virtuosic Performer:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Performance
-    traits: []
-    shortdesc: +1 with a certain type of performance.
-    prereq:
-      level: 1
-      skill: Performance/trained
-  Distracting Performance:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Performance
-    traits: []
-    shortdesc: Create a Diversion for an ally.
-    prereq:
-      level: 2
-      skill: Performance/expert
-  Assurance (Religion):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Religion/trained
-  Pilgrim's Token:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: A religious token lets you act ﬁrst on a tie for initiative.
-    prereq:
-      level: 1
-      skill: Religion/trained
-  Quick Identification (Divine):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: Identify Magic in 1 minute or less.
-    prereq:
-      level: 1
-      skill: Religion/trained
-  Recognize Spell (Divine):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: Identify a spell as a reaction as it's being cast.
-    prereq:
-      level: 1
-      skill: Religion/trained
-  Student of the Canon:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: More accurately recognize the tenets of your faith or philosophy.
-    prereq:
-      level: 1
-      skill: Religion/trained
-  Trick Magic Item (Divine):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: Activate a magic item you normally can't activate.
-    prereq:
-      level: 1
-      skill: Religion/trained
-  Assured Identification (Divine):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: Avoid misidentifying magic.
-    prereq:
-      level: 2
-  Automatic Knowledge (Religion):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
-    prereq:
-      level: 2
-  Exhort the Faithful:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Religion
-    traits: []
-    shortdesc: +2 to Request something of or Coerce members of your own faith.
-    prereq:
-      level: 2
-      skill: Religion/expert
+      skill: Arcana/expert
   Magical Shorthand (Divine):
     feat_type: 
     - Skill
@@ -960,120 +1387,46 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Religion/expert
-  Assurance (Society):
+  Magical Shorthand (Occult):
     feat_type: 
     - Skill
     - General
-    assoc_skill: Society
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Courtly Graces:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
+    assoc_skill: Occultism
     traits: []
-    shortdesc: Use Society to get along in noble society.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Eye for Numbers:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
-    traits: []
-    shortdesc: +2 to Decipher Writing about math and count items quickly.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Glean Contents:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
-    traits: []
-    shortdesc: Decipher Writing even when you can’t see the document well.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Multilingual:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
-    traits: []
-    shortdesc: Learn two new languages.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Read Lips:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
-    traits: []
-    shortdesc: Read the lips of people you can see.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Sign Language:
-    feat_type: 
-    - General
-    - Skill
-    assoc_skill: Society
-    traits: []
-    shortdesc: Learn sign languages.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Streetwise:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
-    traits: []
-    shortdesc: Use Society to Gather Information and Recall Knowledge.
-    prereq:
-      level: 1
-      skill: Society/trained
-  Automatic Knowledge (Society):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Society
-    traits: []
-    shortdesc: Recall Knowledge as a free action once per round.
+    shortdesc: Learn spells quickly and at a reduced cost.
     prereq:
       level: 2
-  Connections:
-    feat_type: 
-    - General
-    - Skill
-    assoc_skill: Society
-    traits: []
-    shortdesc: Leverage your connections for favors and meetings.
-    prereq:
-      level: 2
-      skill: Society/expert
-      feat: 
-      - Courtly Graces
-  Criminal Connections:
+      skill: Occultism/expert  
+  Magical Shorthand (Primal):
     feat_type: 
     - Skill
     - General
-    assoc_skill: Society
+    assoc_skill: Nature
     traits: []
-    shortdesc: Leverage your underworld connections for favors from criminals.
+    shortdesc: Learn spells quickly and at a reduced cost.
     prereq:
       level: 2
-      skill: Society/expert
-      feat: 
-      - Streetwise
+      skill: Nature/expert
+  Nimble Crawl:
+    feat_type:
+    - Skill
+    - General
+    assoc_skill: Acrobatics
+    traits: []
+    shortdesc: Crawl at a faster rate.
+    prereq: 
+      level: 2
+      skill: Acrobatics/expert
+  Powerful Leap:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: Jump farther and higher.
+    prereq:
+      level: 2
+      skill: Athletics/expert
   Quick Contacts:
     feat_type: 
     - Skill
@@ -1084,62 +1437,19 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Society/expert
-      orfeat: 
+      orfeat:
       - Connections 
       - Criminal Connections
-  Underground Network:
-    feat_type: 
-    - General
+  Quick Disguise:
+    feat_type:
     - Skill
-    assoc_skill: Society
+    - General
+    assoc_skill: Deception
     traits: []
-    shortdesc: Gather Information without drawing attention and gain a bonus to Recall Knowledge about that subject.
+    shortdesc: Set up a disguise in only half the time.
     prereq:
       level: 2
-      skill: Society/expert
-      feat: 
-      - Streetwise
-  Assurance (Stealth):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Stealth
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Stealth/trained
-  Experienced Smuggler:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Stealth
-    traits: []
-    shortdesc: Conceal items from observers more effectively.
-    prereq:
-      level: 1
-      skill: Stealth/trained
-  Terrain Stalker:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Stealth
-    traits: []
-    shortdesc: Sneak in certain terrain without attempting a check.
-    prereq:
-      level: 1
-      skill: Stealth/trained
-  Armored Stealth:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Stealth
-    traits: []
-    shortdesc: Reduce the Stealth penalty of your armor.
-    prereq:
-      level: 2
-      skill: Stealth/expert
+      skill: Deception/expert
   Quiet Allies:
     feat_type: 
     - Skill
@@ -1150,6 +1460,26 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Stealth/expert
+  Rapid Mantel:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Athletics
+    traits: []
+    shortdesc: Pull yourself onto ledges quickly.
+    prereq:
+      level: 2
+      skill: Athletics/expert
+  Robust Recovery:
+    feat_type: 
+    - Skill
+    - General
+    assoc_skill: Medicine
+    traits: []
+    shortdesc: Greater benefits from Treat Disease and Treat Poison.
+    prereq:
+      level: 2
+      skill: Medicine/expert
   Shadow Mark:
     feat_type: 
     - Skill
@@ -1160,98 +1490,47 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Stealth/expert
-  Assurance (Survival):
+  Terrifying Resistance:
     feat_type: 
     - Skill
     - General
-    assoc_skill: Survival
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Survival/trained
-  Experienced Tracker:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Survival
+    assoc_skill: Intimidation
     traits: []
-    shortdesc: Track at your full Speed at a –5 penalty.
+    shortdesc: +1 to spell saves from a creature you've Demoralized.
     prereq:
-      level: 1
-      skill: Survival/trained
-  Forager:
+      level: 2
+      skill: Intimidation/expert
+  Underground Network:
     feat_type: 
-    - Skill
     - General
-    assoc_skill: Survival
+    - Skill
+    assoc_skill: Society
     traits: []
-    shortdesc: Forage for supplies to provide for multiple creatures.
+    shortdesc: Gather Information without drawing attention and gain a bonus to Recall Knowledge about that subject.
     prereq:
-      level: 1
-      skill: Survival/trained
-  Survey Wildlife:
-    feat_type: 
-    - Skill
+      level: 2
+      skill: Society/expert
+      feat:
+      - Streetwise
+    uncommon: true
+  Unmistakable Lore:
+    feat_type:
     - General
-    assoc_skill: Survival
+    - Skill
     traits: []
-    shortdesc: Identify nearby creatures through signs and clues.
+    shortdesc: Recall Knowledge about your Lore more effectively.
     prereq:
-      level: 1
-      skill: Survival/trained
-  Terrain Expertise:
+      level: 2
+  Ward Medic:
     feat_type: 
     - Skill
     - General
-    assoc_skill: Survival
+    assoc_skill: Medicine
     traits: []
-    shortdesc: +1 to Survival checks in certain terrain.
+    shortdesc: Treat several patients at once.
     prereq:
-      level: 1
-      skill: Survival/trained
-  Assurance (Thievery):
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Thievery
-    traits:
-    - fortune
-    shortdesc: Receive a fixed result on a skill check.
-    prereq:
-      level: 1
-      skill: Thievery/trained
-  Concealing Legerdemain:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Thievery
-    traits: []
-    shortdesc: Conceal an Object using Thievery instead of Stealth.
-    prereq:
-      level: 1
-      skill: Thievery/trained
-  Pickpocket:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Thievery
-    traits: []
-    shortdesc: Steal or Palm an Object more effectively.
-    prereq:
-      level: 1
-      skill: Thievery/trained
-  Subtle Theft:
-    feat_type: 
-    - Skill
-    - General
-    assoc_skill: Thievery
-    traits: []
-    shortdesc: Your thefts are harder to notice.
-    prereq:
-      level: 1
-      skill: Thievery/trained
+      level: 2
+      skill: Medicine/expert
   Wary Disarmament:
     feat_type: 
     - Skill
@@ -1260,5 +1539,5 @@ pf2e_feats:
     traits: []
     shortdesc: +2 to AC or saves against devices or traps you trigger while disarming.
     prereq:
-      level: 1
+      level: 2
       skill: Thievery/expert
