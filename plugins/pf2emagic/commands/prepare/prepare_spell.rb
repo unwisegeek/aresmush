@@ -54,6 +54,7 @@ module AresMUSH
           :as => return_msg["caster class"]
           )
        end
+      end
 
     end
   end
