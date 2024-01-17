@@ -112,8 +112,9 @@ module AresMUSH
       spell_list_for_level[open_slot] = spell
 
       magic.spells_prepared[level] = spell_list_for_level
+      magic.save
 
-      magic.save && return return_msg
+      return_msg
 
     end
 
