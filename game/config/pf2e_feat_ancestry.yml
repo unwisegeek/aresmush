@@ -1,5 +1,6 @@
 ---
 pf2e_feats:
+# Arvek Ancestry Feats
   Alchemical Scholar:
     feat_type: 
     - Ancestry
@@ -43,24 +44,6 @@ pf2e_feats:
     - Arvek
     traits: []
     shortdesc: 'You’re skilled at beating a foe when their morale is already breaking.'
-    prereq:
-      level: 1
-  Sneaky:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Arvek
-    traits: []
-    shortdesc: Stealth is an important tool in your arsenal.
-    prereq:
-      level: 1
-  Stone Face:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Arvek
-    traits: []
-    shortdesc: Through conditioning or experience, you've mastered the art of composure, even in the face of fear.
     prereq:
       level: 1
   Vigorous Health:
@@ -111,24 +94,244 @@ pf2e_feats:
     prereq:
       level: 5
       combat_stats: wp_martial/trained
-  Recognize Ambush:
+# Bassin Ancestry Feats
+  Bassin Lore:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Arvek
+    - Bassin
     traits: []
-    shortdesc: Your combat training has honed you to be ready for an attack at all times.
+    shortdesc: You’ve dutifully learned important skills passed down through generations of halfling tradition.
     prereq:
-      level: 5
-  Runtsage:
+      level: 1
+  Bassin Luck:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Arvek
+    - Bassin
+    traits:
+    - fortune
+    shortdesc: Your happy-go-lucky nature makes it seem like misfortune avoids you.
+    prereq:
+      level: 1
+  Bassin Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
     traits: []
-    shortdesc: Unlike most of your kind, who dismiss goblins as embarrassments or expendable annoyances, you have studied the methodology behind their irresponsible and incomprehensible actions.
+    shortdesc: You favor traditional halfling weapons, so you’ve learned how to use them more effectively.
+    prereq:
+      level: 1
+  Distracting Shadows:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You have learned to remain hidden by using larger folk as a distraction to avoid drawing attention to yourself.
+    prereq:
+      level: 1
+  Folksy Patter:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You are adept at disguising coded messages as folksy idioms.
+    prereq:
+      level: 1
+  Prairie Rider:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You grew up riding your clan's shaggy ponies and riding dogs.
+    prereq:
+      level: 1
+  Sure Feet:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits:
+    - bassin
+    shortdesc: Whether keeping your balance or scrambling up a tricky climb, your hairy, calloused feet easily find purchase.
+    prereq:
+      level: 1
+  Titan Slinger:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You have learned how to use your sling to fell enormous creatures.
+    prereq:
+      level: 1
+  Unfettered Bassin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You were forced into service as a laborer, but you’ve since escaped and have trained to ensure you’ll never be caught again.
+    prereq:
+      level: 1
+  Watchful Bassin:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: Your communal lifestyle causes you to pay close attention to the people around you.
+    prereq:
+      level: 1
+  Bassin Weapon Trickster:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You are particularly adept at fighting with your people’s favored weapons.
     prereq:
       level: 5
+      feat: 
+      - Bassin Weapon Familiarity
+  Cultural Adaptability:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: During your adventures, you’ve honed your ability to adapt to the culture of the predominant ancestry around you.
+    prereq:
+      level: 5
+  Step Lively:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Bassin
+    traits: []
+    shortdesc: You are an expert at avoiding the lumbering footsteps of larger creatures.
+    prereq:
+      level: 5
+# Ciith Ancestry Feats
+  Ciith Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You listened carefully to the tales passed down among your community.
+    prereq:
+      level: 1
+  Marsh Runner:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You are adept at moving through marshy terrain.
+    prereq:
+      level: 1
+  Parthenogenic Hatchling:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You were hatched from an unfertilized egg during hard times for your people, and you are a biological copy of your mother.
+    prereq:
+      level: 1
+  Razor Claws:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: Your have honed your claws to be deadly.
+    prereq:
+      level: 1
+  Reptile Speaker:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You hear the sounds of reptiles as language.
+    prereq:
+      level: 1
+  Sharp Fangs:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: Your teeth are formidable weapons.
+    prereq:
+      level: 1
+  Tail Whip:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: By birth or through training, your tail is strong enough to make for a powerful melee weapon.
+    prereq:
+      level: 1
+  Ciith Unarmed Cunning:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You make the most of your unarmed attacks.
+    prereq:
+      level: 5
+  Envenom Fangs:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You envenom your fangs.
+    prereq:
+      level: 5
+      feat: 
+      - Sharp Fangs
+  Gecko's Grip:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You stick to walls with a preternatural grip.
+    prereq:
+      level: 5
+      heritage: Cliffscale
+  Shed Tail:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You can shed your tail to escape.
+    prereq:
+      level: 5
+      feat: 
+      - Tail Whip 
+  Swift Swimmer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Ciith
+    traits: []
+    shortdesc: You swim faster than most ciith.
+    prereq:
+      level: 5
+      heritage: Makar
+# Egalrin Ancestry Feats
   Egalrin Lore:
     feat_type: 
     - Ancestry
@@ -145,15 +348,6 @@ pf2e_feats:
     - Egalrin
     traits: []
     shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
-    prereq:
-      level: 1
-  Mariner's Fire:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Egalrin
-    traits: []
-    shortdesc: 
     prereq:
       level: 1
   Scavenger's Search:
@@ -183,35 +377,6 @@ pf2e_feats:
     shortdesc: Wind and lightning have always been close friends to you.
     prereq:
       level: 1
-  Uncanny Agility:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Egalrin
-    traits: []
-    shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
-    prereq:
-      level: 1
-  Waxed Feathers:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Egalrin
-    traits: []
-    shortdesc: You've trained with a blade and other tengu weapons ever since you hatched.
-    prereq:
-      level: 1
-      heritage: Wavediver
-  Dogfang Bite:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Egalrin
-    traits: []
-    shortdesc: You can swing your beak to slash your foes when piercing attacks won't do.
-    prereq:
-      level: 5
-      heritage: Dogtooth
   Eat Fortune:
     feat_type: 
     - Ancestry
@@ -222,15 +387,6 @@ pf2e_feats:
     - divination
     - divine
     shortdesc: As someone tries to twist fate, you consume the interference.
-    prereq:
-      level: 5
-  Egalrin Feather Fan:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Egalrin
-    traits: []
-    shortdesc: You've learned to bind some of your feathers together into a fan to focus your ancestral magic.
     prereq:
       level: 5
   Egalrin Weapon Study:
@@ -275,6 +431,7 @@ pf2e_feats:
     shortdesc: Assuming a peculiar stance, you make a short hop on each toe.
     prereq:
       level: 5
+# Gnome Ancestry Feats
   Animal Accomplice:
     feat_type: 
     - Ancestry
@@ -325,6 +482,7 @@ pf2e_feats:
     shortdesc: Your connection to the First World grants you a primal innate spell, much like those of the fey.
     prereq:
       level: 1
+    init_magic: true
   Gnome Obsession:
     feat_type: 
     - Ancestry
@@ -332,15 +490,6 @@ pf2e_feats:
     - Gnome
     traits: []
     shortdesc: You might have a flighty nature, but when a topic captures your attention, you dive into it headfirst.
-    prereq:
-      level: 1
-  Gnome Polyglot:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: Your extensive travels, curiosity, and love of learning help you to learn languages quickly.
     prereq:
       level: 1
   Gnome Weapon Familiarity:
@@ -352,16 +501,6 @@ pf2e_feats:
     shortdesc: You favor unusual weapons tied to your people, such as blades with curved and peculiar shapes.
     prereq:
       level: 1
-  Grim Insight:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: Others’ attempts to scare you often grant you insights about your would-be bullies that you can then exploit.
-    prereq:
-      level: 1
-      heritage: Umbral
   Illusion Sense:
     feat_type: 
     - Ancestry
@@ -369,33 +508,6 @@ pf2e_feats:
     - Gnome
     traits: []
     shortdesc: Your ancestors spent their days cloaked and cradled in illusions, and as a result, sensing illusion magic is second nature to you.
-    prereq:
-      level: 1
-  Inventive Offensive:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: You can jury-rig your weapons to perform in unexpected ways.
-    prereq:
-      level: 1
-  Life-Giving Magic:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: The upwelling of innate magic refreshes your body.
-    prereq:
-      level: 1
-  Natural Performer:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: Entertainment comes naturally to you.
     prereq:
       level: 1
   Razzle-Dazzle:
@@ -407,34 +519,6 @@ pf2e_feats:
     shortdesc: You've spent considerable time practicing the manipulation of light, weaponizing your blade's reflection or bolstering the luminosity of magical displays to unconventional heights.
     prereq:
       level: 1
-  Theoretical Acumen:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: You study a creature’s form and behavior to hypothesize likely means of overcoming its strengths.
-    prereq:
-      level: 1
-  Unexpected Shift:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: Your supernatural connection sometimes causes you to phase from reality when under threat, disappearing for split seconds before reappearing -- often surprising you as much as your enemies.
-    prereq:
-      level: 1
-  Vibrant Display:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: Whereas most gnomes’ coloration is static or changes slowly, you can cause your hair, eye, and skin color to scintillate in brief and disorienting bursts.
-    prereq:
-      level: 1
-      heritage: Chameleon
   Animal Elocutionist:
     feat_type: 
     - Ancestry
@@ -446,6 +530,16 @@ pf2e_feats:
       level: 5
       feat: 
       - Burrow Elocutionist
+  Energized Font:
+    feat_type:
+    - Ancestry
+    assoc_ancestry:
+    - Gnome
+    traits: []
+    shortdesc: The magic within you provides increased energy you can use to focus.
+    prereq:
+      level: 5
+    init_magic: true
   Gnome Weapon Innovator:
     feat_type: 
     - Ancestry
@@ -457,28 +551,6 @@ pf2e_feats:
       level: 5
       feat: 
       - Gnome Weapon Familiarity
-  Intuitive Illusions:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: Illusion magic comes to you so naturally that you can effortlessly sustain your magical ruses.
-    prereq:
-      level: 5
-      feat: 
-      - Illusion Sense
-  Natural Illusionist:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gnome
-    traits: []
-    shortdesc: By drawing upon the First World’s magic, you can siphon a portion of that malleable world to create a convincing illusion.
-    prereq:
-      level: 5
-      feat: 
-      - Illusion Sense
   Project Persona:
     feat_type: 
     - Ancestry
@@ -492,21 +564,12 @@ pf2e_feats:
     shortdesc: Where others etch their armor to serve as a conduit for their imaginations, your vivid mind and bold personality allow you to project a more fitting persona over your lackluster armor.
     prereq:
       level: 5
-  Bouncy Gobber:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: You have a particular elasticity that makes it easy for you to bounce and squish.
-    prereq:
-      level: 1
-      heritage: Unbreakable
+# Goblin Ancestry Feats
   Burn It!:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: Fire fascinates you.
     prereq:
@@ -515,7 +578,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You know that the greatest treasures often look like refuse, and you scoff at those who throw away perfectly good scraps.
     prereq:
@@ -524,73 +587,53 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: Your rubbery physique makes it easier for you to wedge yourself into tight spaces and more difficult for your enemies to dislodge you.
     prereq:
       level: 1
       heritage: Unbreakable
-  Fang Sharpener:
+  Goblin Lore:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: You have filed your teeth into jagged points and have an unusually powerful jaw, making your mouth a dangerous weapon.
-    prereq:
-      level: 1
-      heritage: Razortooth
-  Gobber Lore:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You’ve picked up skills and tales from your goblin community.
     prereq:
       level: 1
-  Gobber Scuttle:
+  Goblin Scuttle:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You take advantage of your ally’s movement to adjust your position.
     prereq:
       level: 1
-  Gobber Song:
+  Goblin Song:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You sing annoying goblin songs, distracting your foes with silly and repetitive lyrics.
     prereq:
       level: 1
-  Gobber Weapon Familiarity:
+  Goblin Weapon Familiarity:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: Others might look upon them with disdain, but you know that the weapons of your people are as effective as they are sharp.
     prereq:
       level: 1
-  Hard Tail:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: Your tail is much stronger than most, and you can lash out with it with the strength of a whip.
-    prereq:
-      level: 1
-      heritage: Tailed
   Junk Tinker:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You can make useful tools out of even twisted or rusted scraps.
     prereq:
@@ -599,7 +642,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You are especially good at riding traditional gobber mounts.
     prereq:
@@ -608,7 +651,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You are naturally suspicious and wary of danger, especially when you suspect someone might be leading you into an ambush.
     prereq:
@@ -617,26 +660,16 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: Taller folk rarely pay attention to the shadows at their feet, and you take full advantage of this.
     prereq:
       level: 1
-  Ankle Bite:
+  Goblin Weapon Frenzy:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: Whenever someone grabs onto you, you instinctively bite down hard.
-    prereq:
-      level: 5
-      heritage: Razorooth
-  Gobber Weapon Frenzy:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You know how to wield your people’s vicious weapons.
     prereq:
@@ -645,7 +678,7 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You deliver a punishing blow to an enemy's knee, shin, or other vulnerable anatomy within your reach.
     prereq:
@@ -654,55 +687,23 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: 'Staying on pitch, proper breath control, and remembering the words are all less important than the real measure of a good singer: volume! The range of your Goblin Song is increased to 60 feet, and you can target one additional enemy when you use it.'
     prereq:
       level: 5
       feat: 
       - Goblin Song
-  Tail Spin:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: You excel at using your tail as a weapon to upend your foes.
-    prereq:
-      level: 5
-      feat: 
-      - Hard Tail
-  Torch Goblin:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: You’ve spent enough time on fire that you know how to use it to your advantage.
-    prereq:
-      level: 5
-      heritage: Charhide
-  Tree Climber (Gobber):
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Gobber
-    traits: []
-    shortdesc: Your time in forest or jungle canopies has taught you how to scramble across branches with sure feet.
-    prereq:
-      level: 5
-      orheritage: 
-      - Tailed 
-      - Treedweller
   Vandal:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Gobber
+    - Goblin
     traits: []
     shortdesc: You have a knack for breaking and dismantling things.
     prereq:
       level: 5
+# Human Ancestry Feats
   Adapted Cantrip:
     feat_type: 
     - Ancestry
@@ -712,6 +713,7 @@ pf2e_feats:
     shortdesc: Through study of multiple magical traditions, you’ve altered a spell to suit your spellcasting style.
     prereq:
       level: 1
+    init_magic: true
   Cooperative Nature:
     feat_type: 
     - Ancestry
@@ -794,7 +796,8 @@ pf2e_feats:
     traits: []
     shortdesc: You have developed a soul-deep bond with your comrades and maintain an even greater degree of cooperation with them.
     prereq:
-      level: 5
+      level: 9
+# Kailli Ancestry Feats
   Cheek Pouches:
     feat_type: 
     - Ancestry
@@ -867,27 +870,6 @@ pf2e_feats:
     shortdesc: You're particularly good at solving mazes and navigating twists and turns.
     prereq:
       level: 1
-  Gnaw:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Kailli
-    traits: []
-    shortdesc: With enough time and determination, you can chew through nearly anything.
-    prereq:
-      level: 5
-      feat: 
-      - Vicious Incisors
-  Kailli Roll:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Kailli
-    traits:
-    - move
-    shortdesc: Your ability to curl up into a tight ball comes in handy.
-    prereq:
-      level: 5
   Lab Rat:
     feat_type: 
     - Ancestry
@@ -897,16 +879,6 @@ pf2e_feats:
     shortdesc: You've spent more than your share of time in an alchemy lab.
     prereq:
       level: 5
-  Plague Sniffer:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Kailli
-    traits: []
-    shortdesc: You can sniff out the pungent tang of disease.
-    prereq:
-      level: 5
-      heritage: Longsnout
   Quick Stow (Kailli):
     feat_type: 
     - Ancestry
@@ -927,6 +899,17 @@ pf2e_feats:
     shortdesc: There always seems to be a little rat around to carry messages for you.
     prereq:
       level: 5
+    init_magic: true
+# Khazadi Ancestry Feats
+  Eye for Treasure:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Khazad
+    traits: []
+    shortdesc: You know good artisanship when you see it and can wax poetic about crafting techniques and forms.
+    prereq:
+      level: 1
   Khazadi Doughtiness:
     feat_type: 
     - Ancestry
@@ -952,15 +935,6 @@ pf2e_feats:
     - Khazad
     traits: []
     shortdesc: Your kin have instilled in you an affinity for hard-hitting weapons, and you prefer these to more elegant arms.
-    prereq:
-      level: 1
-  Eye for Treasure:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Khazad
-    traits: []
-    shortdesc: You know good artisanship when you see it and can wax poetic about crafting techniques and forms.
     prereq:
       level: 1
   Rock Runner:
@@ -1050,261 +1024,7 @@ pf2e_feats:
     shortdesc: The stone around you is your ally, and you have learned to use it to shore up your weaknesses.
     prereq:
       level: 5
-  Tomb-Watcher's Glare:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Khazad
-    traits: []
-    shortdesc: When you critically hit an undead creature, or an undead creature critically fails a saving throw against one of your abilities, you drive your divine wrath home in your enemy’s heart. The undead is enfeebled 1 for 1 round.
-    prereq:
-      level: 5
-      heritage: Death Warden
-  Bassin Luck:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits:
-    - fortune
-    shortdesc: Your happy-go-lucky nature makes it seem like misfortune avoids you.
-    prereq:
-      level: 1
-  Distracting Shadows:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You have learned to remain hidden by using larger folk as a distraction to avoid drawing attention to yourself.
-    prereq:
-      level: 1
-  Folksy Patter:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You are adept at disguising coded messages as folksy idioms.
-    prereq:
-      level: 1
-  Bassin Lore:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You’ve dutifully learned important skills passed down through generations of halfling tradition.
-    prereq:
-      level: 1
-  Bassin Weapon Familiarity:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You favor traditional halfling weapons, so you’ve learned how to use them more effectively.
-    prereq:
-      level: 1
-  Prairie Rider:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You grew up riding your clan's shaggy ponies and riding dogs.
-    prereq:
-      level: 1
-  Sure Feet:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits:
-    - bassin
-    shortdesc: Whether keeping your balance or scrambling up a tricky climb, your hairy, calloused feet easily find purchase.
-    prereq:
-      level: 1
-  Titan Slinger:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You have learned how to use your sling to fell enormous creatures.
-    prereq:
-      level: 1
-  Unfettered Bassin:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You were forced into service as a laborer, but you’ve since escaped and have trained to ensure you’ll never be caught again.
-    prereq:
-      level: 1
-  Watchful Bassin:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: Your communal lifestyle causes you to pay close attention to the people around you.
-    prereq:
-      level: 1
-  Cultural Adaptability:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: During your adventures, you’ve honed your ability to adapt to the culture of the predominant ancestry around you.
-    prereq:
-      level: 5
-  Bassin Weapon Trickster:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You are particularly adept at fighting with your people’s favored weapons.
-    prereq:
-      level: 5
-      feat: 
-      - Bassin Weapon Familiarity
-  Step Lively:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Bassin
-    traits: []
-    shortdesc: You are an expert at avoiding the lumbering footsteps of larger creatures.
-    prereq:
-      level: 5
-  Ciith Lore:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You listened carefully to the tales passed down among your community.
-    prereq:
-      level: 1
-  Marsh Runner:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You are adept at moving through marshy terrain.
-    prereq:
-      level: 1
-  Parthenogenic Hatchling:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You were hatched from an unfertilized egg during hard times for your people, and you are a biological copy of your mother.
-    prereq:
-      level: 1
-  Razor Claws:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: Your have honed your claws to be deadly.
-    prereq:
-      level: 1
-  Reptile Speaker:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You hear the sounds of reptiles as language.
-    prereq:
-      level: 1
-  Sharp Fangs:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: Your teeth are formidable weapons.
-    prereq:
-      level: 1
-  Tail Whip:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: By birth or through training, your tail is strong enough to make for a powerful melee weapon.
-    prereq:
-      level: 1
-  Envenom Fangs:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You envenom your fangs.
-    prereq:
-      level: 5
-      feat: 
-      - Sharp Fangs
-  Gecko's Grip:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You stick to walls with a preternatural grip.
-    prereq:
-      level: 5
-      heritage: Cliffscale
-  Ciith Unarmed Cunning:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You make the most of your unarmed attacks.
-    prereq:
-      level: 5
-  Shed Tail:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You can shed your tail to escape.
-    prereq:
-      level: 5
-      feat: 
-      - Tail Whip 
-  Swift Swimmer:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Ciith
-    traits: []
-    shortdesc: You swim faster than most iruxi.
-    prereq:
-      level: 5
-      heritage: Wetlander
-  Oruch Superstition:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Oruch
-    traits:
-    - concentrate
-    shortdesc: You defend yourself against magic by relying on techniques derived from oruch cultural superstitions.
-    prereq:
-      level: 1
+# Oruch Ancestry Feats
   Beast Trainer:
     feat_type: 
     - Ancestry
@@ -1339,6 +1059,16 @@ pf2e_feats:
     - Oruch
     traits: []
     shortdesc: The hold elders taught you your people's histories, told tales of great athletic feats, and shared with you the hardships your ancestors endured so that you can pass this wisdom down to future generations.
+    prereq:
+      level: 1
+  Oruch Superstition:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Oruch
+    traits:
+    - concentrate
+    shortdesc: You defend yourself against magic by relying on techniques derived from oruch cultural superstitions.
     prereq:
       level: 1
   Oruch Weapon Familiarity:
@@ -1418,6 +1148,7 @@ pf2e_feats:
     shortdesc: Your victories in battle fill you with pride and imbue you with the energy to fight a bit longer despite your wounds.
     prereq:
       level: 5
+# Sildanyar Ancestry Feats
   Ancestral Linguistics:
     feat_type: 
     - Ancestry
@@ -1434,33 +1165,6 @@ pf2e_feats:
     - Sildanyar
     traits: []
     shortdesc: You have accumulated a vast array of lived knowledge over the years.
-    prereq:
-      level: 1
-  Sildanyari Aloofness:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Sildanyar
-    traits: []
-    shortdesc: As much as you might care for them, you've come to terms with the ephemeral nature of non-sil, and it makes their threats feel less troublesome.
-    prereq:
-      level: 1
-  Sildanyari Lore:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Sildanyar
-    traits: []
-    shortdesc: You’ve studied in traditional sildanyari arts, learning about arcane magic and the world around you.
-    prereq:
-      level: 1
-  Sildanyari Weapon Familiarity:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Sildanyar
-    traits: []
-    shortdesc: You favor bows and other elegant weapons.
     prereq:
       level: 1
   Forlorn:
@@ -1497,6 +1201,34 @@ pf2e_feats:
     - Sildanyar
     traits: []
     shortdesc: Your sildanyari magic manifests as a simple arcane spell, even if you aren’t formally trained in magic.
+    prereq:
+      level: 1
+    init_magic: true
+  Sildanyari Aloofness:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Sildanyar
+    traits: []
+    shortdesc: As much as you might care for them, you've come to terms with the ephemeral nature of non-sil, and it makes their threats feel less troublesome.
+    prereq:
+      level: 1
+  Sildanyari Lore:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Sildanyar
+    traits: []
+    shortdesc: You’ve studied in traditional sildanyari arts, learning about arcane magic and the world around you.
+    prereq:
+      level: 1
+  Sildanyari Weapon Familiarity:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Sildanyar
+    traits: []
+    shortdesc: You favor bows and other elegant weapons.
     prereq:
       level: 1
   Unwavering Mien:
@@ -1546,7 +1278,8 @@ pf2e_feats:
       level: 5
       feat: 
       - Sildanyari Weapon Familiarity
-
+# Heritage and Versatile Heritage Feats
+# Aesa Ancestry Feats
   Angelkin:
     feat_type: 
     - Ancestry
@@ -1555,7 +1288,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1563,12 +1296,12 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     - lineage
-    shortdesc: You descend from an angel—a winged messenger from Nirvana or one of the other celestial realms—which gives you a knack for cultures and languages.
+    shortdesc: You descend from an angel, which gives you a knack for cultures and languages.
     prereq:
       level: 1
-      heritage: Aasimar
+      heritage: Aesa
   Celestial Eyes:
     feat_type: 
     - Ancestry
@@ -1577,7 +1310,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1585,11 +1318,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     shortdesc: You can see through darkness.
     prereq:
       level: 1
-      heritage: Aasimar
+      heritage: Aesa
   Celestial Lore:
     feat_type: 
     - Ancestry
@@ -1598,7 +1331,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1606,11 +1339,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
-    shortdesc: You were raised with an aasimar or celestial relative, or you've devoted yourself to researching the secrets of the celestial realms.
+    - aesa
+    shortdesc: You were raised with an aesa or celestial relative, or you've devoted yourself to researching the secrets of the celestial realms.
     prereq:
       level: 1
-      heritage: Aasimar
+      heritage: Aesa
   Halo:
     feat_type: 
     - Ancestry
@@ -1619,7 +1352,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1627,11 +1360,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     shortdesc: You are surrounded by a halo of light and goodness at all times.
     prereq:
       level: 1
-      heritage: Aasimar
+      heritage: Aesa
   Lawbringer:
     feat_type: 
     - Ancestry
@@ -1640,7 +1373,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1648,12 +1381,12 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     - lineage
     shortdesc: 'You trace your lineage to archons: embodiments of heavenly virtues, guardians of the seven-tiered mountain of Heaven, and nurturers of law and virtue within mortals.'
     prereq:
       level: 1
-      heritage: Aasimar
+      heritage: Aesa
   Musetouched:
     feat_type: 
     - Ancestry
@@ -1662,7 +1395,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1670,13 +1403,13 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     - lineage
     shortdesc: Your blood sings with the liberating power of the azatas, living embodiments of freedom from the wild realm of Elysium.
     prereq:
       level: 1
-      heritage: Aasimar
-  Blessed Blood (Aasimar):
+      heritage: Aesa
+  Blessed Blood (Aesa):
     feat_type: 
     - Ancestry
     assoc_ancestry: 
@@ -1684,7 +1417,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1692,11 +1425,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     shortdesc: Your freshly spilled blood is sanctified, and ingesting it causes effects similar to those of holy water.
     prereq:
       level: 5
-      heritage: Aasimar
+      heritage: Aesa
   Celestial Resistance:
     feat_type: 
     - Ancestry
@@ -1705,7 +1438,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1713,11 +1446,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     shortdesc: Your growing connection to your celestial forebears has granted you one of their resistances as well.
     prereq:
       level: 5
-      heritage: Aasimar
+      heritage: Aesa
   Empyreal Blessing:
     feat_type: 
     - Ancestry
@@ -1726,7 +1459,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1734,32 +1467,12 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - aasimar
+    - aesa
     shortdesc: You can call forth a benediction upon your allies, whether you pray to a deity of the celestial realms or just find the power within yourself.
     prereq:
       level: 5
-      heritage: Aasimar
-  Healer's Halo:
-    feat_type: 
-    - Ancestry
-    assoc_ancestry: 
-    - Arvek
-    - Bassin
-    - Ciith 
-    - Egalrin
-    - Gobber
-    - Gnome
-    - Human
-    - Kailli
-    - Khazad
-    - Oruch
-    - Sildanyar
-    traits:
-    - aasimar
-    shortdesc: Your halo can enhance positive energy.
-    prereq:
-      level: 5
-      heritage: Aasimar
+      heritage: Aesa
+# Ashen One Ancestry Feats
   Ashen Lore:
     feat_type: 
     - Ancestry
@@ -1768,7 +1481,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1789,7 +1502,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1810,7 +1523,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1831,7 +1544,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1854,7 +1567,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1875,7 +1588,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1888,6 +1601,7 @@ pf2e_feats:
     prereq:
       level: 5
       heritage: Ashen One
+# Changeling Ancestry Feats
   Brine May:
     feat_type: 
     - Ancestry
@@ -1896,7 +1610,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1918,7 +1632,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1940,7 +1654,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1961,7 +1675,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -1983,7 +1697,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2004,7 +1718,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2025,7 +1739,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2047,7 +1761,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2068,7 +1782,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2081,7 +1795,7 @@ pf2e_feats:
     prereq:
       level: 5
       heritage: Changeling
-
+# Dar Ancestry Feats
   Eyes Of The Night:
     feat_type: 
     - Ancestry
@@ -2090,7 +1804,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2111,7 +1825,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2132,7 +1846,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2154,7 +1868,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2176,7 +1890,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2197,7 +1911,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2210,6 +1924,70 @@ pf2e_feats:
     prereq:
       level: 1
       heritage: Dar
+  Enthralling Allure:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Goblin
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: The powers of domination employed by your progenitors have manifested in you as well.
+    prereq:
+      level: 5
+      heritage: Dar
+  Necromantic Physiology:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Goblin
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: Your unusual physiology has developed in a way that makes it difficult for parasites and other infestations to prey upon you.
+    prereq:
+      level: 5
+      heritage: Dar
+  Undead Slayer:
+    feat_type: 
+    - Ancestry
+    assoc_ancestry: 
+    - Arvek
+    - Bassin
+    - Ciith 
+    - Egalrin
+    - Goblin
+    - Gnome
+    - Human
+    - Kailli
+    - Khazad
+    - Oruch
+    - Sildanyar
+    traits:
+    - dar
+    shortdesc: Your knowledge of your own not-quite-living anatomy, combined with your experience in combat, helps you take down undead foes with ease.
+    prereq:
+      level: 5
+      heritage: Dar   
+# Half-Sil Ancestry Feats
   Earned Glory:
     feat_type: 
     - Ancestry
@@ -2218,7 +1996,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2239,7 +2017,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2260,7 +2038,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2277,21 +2055,13 @@ pf2e_feats:
     feat_type: 
     - Ancestry
     assoc_ancestry: 
-    - Arvek
-    - Bassin
-    - Ciith 
-    - Egalrin
-    - Gobber
-    - Gnome
     - Human
-    - Kailli
-    - Khazad
-    - Oruch
-    - Sildanyar
     shortdesc: The elven magic in your blood manifests as a force you can use to become more appealing or alluring.
     prereq:
       level: 5
       heritage: Half-Sil
+    init_magic: true
+# Half-Oruch Ancestry Feats
   Monstrous Peacemaker:
     feat_type: 
     - Ancestry
@@ -2300,7 +2070,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2321,7 +2091,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2334,7 +2104,7 @@ pf2e_feats:
     prereq:
       level: 1
       heritage: Half-Oruch
-
+# Niasa Ancestry Feats
   Fiendish Eyes:
     feat_type: 
     - Ancestry
@@ -2343,7 +2113,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2351,11 +2121,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - tiefling
+    - niasa
     shortdesc: You can see in the darkness as easily as a fiend.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Fiendish Lore:
     feat_type: 
     - Ancestry
@@ -2364,7 +2134,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2372,11 +2142,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - tiefling
-    shortdesc: You were raised by a tiefling or a fiendish relative, or you've devoted yourself to researching the secrets of the fiendish realms.
+    - niasa
+    shortdesc: You were raised by a niasa or a fiendish relative, or you've devoted yourself to researching the secrets of the fiendish realms.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Form of the Fiend:
     feat_type: 
     - Ancestry
@@ -2385,7 +2155,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2393,11 +2163,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - tiefling
+    - niasa
     shortdesc: Part of your body has an obvious, fiendish appearance.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Grimspawn:
     feat_type: 
     - Ancestry
@@ -2406,7 +2176,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2415,11 +2185,11 @@ pf2e_feats:
     - Sildanyar
     traits:
     - lineage
-    - tiefling
+    - niasa
     shortdesc: Your lineage traces back to a daemon, one of the manifestations of horrific forms of death that devour souls within their foul home of Abaddon.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Hellspawn:
     feat_type: 
     - Ancestry
@@ -2428,7 +2198,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2437,11 +2207,11 @@ pf2e_feats:
     - Sildanyar
     traits:
     - lineage
-    - tiefling
+    - niasa
     shortdesc: Your lineage descends from devils, the conniving schemers of Hell's malevolent hierarchy.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Nimble Hooves:
     feat_type: 
     - Ancestry
@@ -2450,7 +2220,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2458,11 +2228,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - tiefling
+    - niasa
     shortdesc: Your legs end in hooves rather than feet, with joints and tendons that allow you to move with great haste.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Pitborn:
     feat_type: 
     - Ancestry
@@ -2471,7 +2241,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2480,11 +2250,11 @@ pf2e_feats:
     - Sildanyar
     traits:
     - lineage
-    - tiefling
+    - niasa
     shortdesc: Your blood bears the mark of a demon, a living embodiment of sin from the fetid depths of the Abyss.
     prereq:
       level: 1
-      heritage: Tiefling
+      heritage: Niasa
   Fiendish Resistance:
     feat_type: 
     - Ancestry
@@ -2493,7 +2263,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2501,11 +2271,11 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - tiefling
+    - niasa
     shortdesc: Your connection to your fiendish forebears has granted you one of their resistances as well.
     prereq:
       level: 5
-      heritage: Tiefling
+      heritage: Niasa
   Malicious Bane:
     feat_type: 
     - Ancestry
@@ -2514,7 +2284,7 @@ pf2e_feats:
     - Bassin
     - Ciith 
     - Egalrin
-    - Gobber
+    - Goblin
     - Gnome
     - Human
     - Kailli
@@ -2522,8 +2292,8 @@ pf2e_feats:
     - Oruch
     - Sildanyar
     traits:
-    - tiefling
+    - niasa
     shortdesc: Whether your heart is pure or corrupt, you can call forth a malediction upon your foes.
     prereq:
       level: 5
-      heritage: Tiefling
+      heritage: Niasa

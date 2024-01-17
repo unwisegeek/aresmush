@@ -39,7 +39,7 @@ pf2e_skills:
     key_abil: Wisdom
   Thievery:
     key_abil: Dexterity
-
+# Deity Lores
   Althean Lore: 
     key_abil: Intelligence
     recall_knowledge: true
@@ -103,7 +103,8 @@ pf2e_skills:
   Thulite Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Alexandrian Lore: 
+# City Lores
+  Alexandria Lore: 
     key_abil: Intelligence
     recall_knowledge: true
   Bryn Myridorn Lore: 
@@ -121,28 +122,91 @@ pf2e_skills:
   Vandalheim Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Cave Lore: 
+# Region Lores
+  Alexandros Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Desert Lore: 
+  Am'shere Lore:
     key_abil: Intelligence
     recall_knowledge: true
-  Plains Lore: 
+  Bludgun Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Swamp Lore: 
+  Charn Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Winterland Lore: 
+  Dragonier Lore:
     key_abil: Intelligence
     recall_knowledge: true
-  Mountains Lore: 
+  Dran Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Hills Lore: 
+  Desolation Lore:
     key_abil: Intelligence
     recall_knowledge: true
-  Island Lore: 
+  Greatwoods Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Jade Islands Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Khazad Duin Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Myrddion Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Rune Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Sturmvargd Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Vast Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Veyshan Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+# Terrain Lores
+  Aquatic Terrain Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Arctic Terrain Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Desert Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Forest Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Mountain Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Plains Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Sky Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Swamp Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Underground Terrain Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+# Creature Lores
+  Angel Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Azata Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Beast Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Daemon Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Demon Lore: 
@@ -151,13 +215,99 @@ pf2e_skills:
   Devil Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+  Dragon Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Fey Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Fey Bullshit Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Genie Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Giant Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Hag Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Qlippoth Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Rakshasa Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Serpentfolk Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Spirit Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
   Vampire Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+  Velstrac Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+# PC Ancestry and Heritage Lores
+  Aesa Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Arvek Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Ashen One Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Bassin Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Changeling Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Ciith Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Dar Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Egalrin Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Gnome Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Goblin Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Human Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Kailli Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Khazad Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Niasa Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Oruch Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Sildanyar Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+# General/Profession Lores
   Academia Lore: 
     key_abil: Intelligence
     recall_knowledge: true
   Accounting Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Alcohol Lore: 
     key_abil: Intelligence
     recall_knowledge: true
   Architecture Lore: 
@@ -166,19 +316,19 @@ pf2e_skills:
   Art Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+  Cartography Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
   Circus Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Engineering Lore: 
+  Curse Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Engineering Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Farming Lore: 
-    key_abil: Intelligence
-    recall_knowledge: true
-  Fey Lore: 
-    key_abil: Intelligence
-    recall_knowledge: true
-  Fey Bullshit Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Fishing Lore: 
@@ -197,6 +347,9 @@ pf2e_skills:
     key_abil: Intelligence
     recall_knowledge: true
   Guild Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
+  Great Halls Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Heraldry Lore: 
@@ -235,10 +388,7 @@ pf2e_skills:
   Scouting Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Scribing Lore: 
-    key_abil: Intelligence
-    recall_knowledge: true
-  Tanning Lore: 
+  Slayer Lore: 
     key_abil: Intelligence
     recall_knowledge: true
   Theater Lore: 
@@ -250,6 +400,7 @@ pf2e_skills:
   Warfare Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+# Crafting Lores
   Alchemy Lore: 
     key_abil: Intelligence
     recall_knowledge: true
@@ -271,6 +422,9 @@ pf2e_skills:
   Pottery Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+  Scribing Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
   Shipbuilding Lore: 
     key_abil: Intelligence
     recall_knowledge: true
@@ -280,12 +434,16 @@ pf2e_skills:
   Tailoring Lore: 
     key_abil: Intelligence
     recall_knowledge: true
+  Tanning Lore: 
+    key_abil: Intelligence
+    recall_knowledge: true
   Weaving Lore: 
     key_abil: Intelligence
     recall_knowledge: true
   Woodworking Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Slayer Lore: 
+# Special/Class Specific Lores
+  Bardic Lore:
     key_abil: Intelligence
     recall_knowledge: true
