@@ -32,13 +32,17 @@ module AresMUSH
           return nil
         end
 
-        # Create abilities
+        # Create abilities. Might already exist if the character reset, so check for that.
 
-        client.emit_ooc "Setting up your abilities..."
+        if enactor.abilities.empty?
+          client.emit_ooc "Setting up your abilities..."
 
-        abilities = %w{Strength Dexterity Constitution Intelligence Wisdom Charisma}
-        abilities.each do |a|
-          Pf2eAbilities.create(name: a, character: enactor, shortname: a.slice(0,3).upcase)
+          abilities = %w{Strength Dexterity Constitution Intelligence Wisdom Charisma}
+          abilities.each do |a|
+            Pf2eAbilities.create(name: a, character: enactor, shortname: a.slice(0,3).upcase)
+          end
+        else
+          client.emit_ooc "Your abilities are already set up. Skipping..."
         end
 
         # Gather info for chargen options
@@ -114,12 +118,17 @@ module AresMUSH
 
         # Opening Skills
 
-        ## Create all skills with default values.
+        ## Create all skills with default values. Skills might already exist, check for that.
 
-        skill_list = Global.read_config('pf2e_skills').keys
+        if enactor.skills.empty?
+          client.emit_ooc "Setting up your skills..."
+          skill_list = Global.read_config('pf2e_skills').keys
 
-        skill_list.each do |s|
-          Pf2eSkills.create_skill_for_char(s, enactor)
+          skill_list.each do |s|
+            Pf2eSkills.create_skill_for_char(s, enactor)
+          end
+        else
+          client.emit_ooc "Your skills are already set up. Cool. Skipping..."
         end
 
         ## Determine what skills come with the character's base info, and set those.
@@ -206,19 +215,28 @@ module AresMUSH
         # Final HP is calculated and set on chargen lock
 
         # Check for heritage override of base ancestry HP
+
+        client.emit_ooc "Calculating HP..."
+
         ancestry_hp = heritage_info['ancestry_HP'] ?
                       heritage_info['ancestry_HP'] :
                       ancestry_info["HP"]
 
         class_hp = charclass_info["HP"]
 
-        obj = Pf2eHP.create(
-          character: enactor,
-          ancestry_hp: ancestry_hp,
-          charclass_hp: class_hp,
-        )
-
-        enactor.hp = obj
+        # This object could already exist, check for that-
+        if enactor.hp
+          hp = enactor.hp
+          hp.update(ancestry_hp: ancestry_hp)
+          hp.update(charclass_hp: class_hp)
+        else
+          obj = Pf2eHP.create(
+            character: enactor,
+            ancestry_hp: ancestry_hp,
+            charclass_hp: class_hp,
+          )
+          enactor.hp = obj
+        end
 
         # Senses and other specials
 
