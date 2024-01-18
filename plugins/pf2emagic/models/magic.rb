@@ -37,7 +37,7 @@ module AresMUSH
       return obj
     end
 
-    def self.update_magic_for_class(char, charclass, info)
+    def self.update_magic_for_class(char, charclass, info, client)
       magic = get_create_magic_obj(char)
 
       info.each_pair do |key, value|

@@ -182,6 +182,9 @@ module AresMUSH
         end
 
         # Feats
+
+        client.emit_ooc "Looking for feats..."
+
         feats = enactor.pf2_feats
 
         bg_feats = background_info["feat"]
@@ -240,6 +243,8 @@ module AresMUSH
 
         # Senses and other specials
 
+        client.emit_ooc "Setting up a few other items..."
+
         a_specials = ancestry_info["special"] ? ancestry_info["special"] : []
         h_specials = heritage_info["special"]
         b_specials = background_info["special"]
@@ -283,6 +288,9 @@ module AresMUSH
         enactor.pf2_faith = faith_info
 
         # Combat information - attacks, defenses, perception, class DC, saves
+
+        client.emit_ooc "Initiating combat stats...
+        "
         combat_stats = class_features_info['combat_stats']
 
         combat = Pf2eCombat.update_combat_stats(enactor,combat_stats)
@@ -322,7 +330,7 @@ module AresMUSH
         if magic_stats.empty?
           client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
         else
-          PF2Magic.update_magic_for_class(enactor, charclass, magic_stats)
+          PF2Magic.update_magic_for_class(enactor, charclass, magic_stats, client)
           client.emit_ooc "Setting up magic..."
         end
 
