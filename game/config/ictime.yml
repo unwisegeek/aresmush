@@ -1,28 +1,28 @@
 ---
 ictime:
   day_names:
-  - Eliday
-  - Variday
-  - Tariday
-  - Gilday
-  - Korday
-  - Kesenday
-  - Ceriday
+  - Navosday
+  - Coyotesday
+  - Titansday
+  - Sunsday
+  - Telmensday
+  - Moonsday
+  - Bowmansday
   day_offset: 0
   game_start_date: ''
   hour_offset: 0
   month_names:
-  - Vhast
-  - Pryntar
-  - Eatonis
-  - Bernfleur
-  - Hattanan
-  - Firetide
-  - Aestry
-  - Callem
-  - Daeshen
-  - Rhaltaas
-  - Quintoos
-  - Khael
+  - Darkfeast
+  - Balefire
+  - Shadowfall
+  - Starmask
+  - Paramount
+  - Highsun
+  - Skydance
+  - Firestide
+  - Revel
+  - Highhunt
+  - Gathering
+  - Yule
   time_ratio: 1
   year_offset: -998
