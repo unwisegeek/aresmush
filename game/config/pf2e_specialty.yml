@@ -294,9 +294,8 @@ pf2e_specialty:
         feat:
         - Bardic Lore
         magic_stats:
-          addspell:
-            1:
-              True Strike
+          repertoire:
+            1: True Strike
     Maestro:
       chargen:
         action: []
@@ -305,7 +304,7 @@ pf2e_specialty:
         feat:
         - Lingering Composition
         magic_stats:
-          addspell:
+          repertoire:
             1: Soothe
     Polymath:
       chargen:
@@ -315,7 +314,7 @@ pf2e_specialty:
         feat:
         - Versatile Performance
         magic_stats:
-          addspell:
+          repertoire:
             1: Unseen Servant
     Warrior:
       chargen:
@@ -325,7 +324,7 @@ pf2e_specialty:
         feat:
         - Martial Performance
         magic_stats:
-          addspell:
+          repertoire:
             1: Fear
   Champion:
     Paladin:
@@ -342,8 +341,9 @@ pf2e_specialty:
         reaction:
         - Retributive Strike
         magic_stats:
-          devotion:
-            addspell:
+          focus_pool: 1
+          focus_spell:
+            devotion:
             - Lay On Hands
         skills: []
     Redeemer:
@@ -360,8 +360,9 @@ pf2e_specialty:
         reaction:
         - Glimpse of Redemption
         magic_stats:
-          devotion:
-            addspell:
+          focus_pool: 1
+          focus_spell:
+            devotion:
             - Lay On Hands
         skills: []
     Liberator:
@@ -380,8 +381,9 @@ pf2e_specialty:
         reaction:
         - Liberating Step
         magic_stats:
-          devotion:
-            addspell:
+          focus_pool: 1
+          focus_spell:
+            devotion:
             - Lay On Hands
         skills: []
   Cleric:

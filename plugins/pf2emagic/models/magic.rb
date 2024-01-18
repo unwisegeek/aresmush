@@ -50,9 +50,17 @@ module AresMUSH
             magic.tradition[charclass] = [ trad, prof ]
           end
         when "spells_per_day"
+          # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
+          spells_per_day = magic.spells_per_day
+          spd_for_class = spells_per_day[charclass] ? spells_per_day[charclass] : {}
+
           value.each_pair do |level, num|
-            magic.spells_per_day[level] = num
+            spd_for_class[level] = num
           end
+
+          spells_per_day[charclass] = spd_for_class
+
+          magic.update(spells_per_day: spells_per_day)
         when "focus_pool"
           pool = magic.focus_pool
           add = value
@@ -61,10 +69,63 @@ module AresMUSH
           pool["max"] = new_max_pool
           magic.focus_pool = pool
         when "repertoire"
+          # Spells need to be chosen, redirect to to_assign
+
+          to_assign = char.pf2_to_assign
+
+          assignment_list = {}
+          value.each_pair do |level, num|
+            ary = Array.new(num, "open")
+            assignment_list[level] = ary
+          end
+
+          to_assign["repertoire spells"] = assignment_list
+
+          char.update(pf2_to_assign: to_assign)
         when "focus_spell"
+          # focus spell structure: { "devotion" => [spell, spell, spell], "revelation" => [spell] }
+
+          focus_spells = magic.focus_spells
+
+          value.each_pair do |fstype, spell_list|
+            fs_by_type = focus_spells[stype] ? focus_spells[stype] : []
+            fs_by_type = (fs_by_type + spell_list).uniq
+            focus_spells[fstype] = fs_by_type
+          end
+
+          magic.update(focus_spells: focus_spells)
         when "focus_cantrip"
+            # Structure identical to focus_spells, kept separate because they are cast differently.
+
+            focus_cantrips = magic.focus_cantrips
+
+            value.each_pair do |fstype, spell_list|
+              fs_by_type = focus_cantrips[stype] ? focus_cantrips[stype] : []
+              fs_by_type = (fs_by_type + spell_list).uniq
+              focus_cantrips[fstype] = fs_by_type
+            end
+
+            magic.update(focus_cantrips: focus_cantrips)
+        when "spellbook"
+            # Spells need to be chosen, redirect to to_assign
+
+            to_assign = char.pf2_to_assign
+
+            assignment_list = {}
+            value.each_pair do |level, num|
+              ary = Array.new(num, "open")
+              assignment_list[level] = ary
+            end
+
+            to_assign["spellbook spells"] = assignment_list
+
+            char.update(pf2_to_assign: to_assign)
         when "addspell"
-          # Addspell means add a spell to the spellbook.
+          # Addspell means to add a specific spell to the spellbook. Adding spells to be chosen
+          # should be the "spellbook" key.
+
+
+
         when "signature_spells"
         else
           client.emit_ooc "Unknown key #{key} in update_magic_for_class. Please inform staff."
