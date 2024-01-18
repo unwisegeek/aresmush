@@ -42,9 +42,19 @@ module AresMUSH
           return
         end
 
-
-
-
+       if return_msg["is_signature"]
+        client.emit_success t('spell_prepare_as_signature_ok',
+          :name => return_msg["name"],
+          :level => return_msg["level"]
+          )
+       else
+        client.emit_success t('pf2e_magic.spell_prepare_ok',
+          :name => return_msg["name"],
+          :level => return_msg["level"],
+          :as => return_msg["caster class"]
+          )
+       end
+      end
 
     end
   end

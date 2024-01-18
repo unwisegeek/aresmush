@@ -295,10 +295,18 @@ module AresMUSH
         combat.update(unarmed_attacks: unarmed_attacks.compact)
 
         # Starting Magic
-        magic_stats = class_features_info['magic_stats']
 
-        # This needs work, commenting out for now
-        # PF2Magic.update_magic_stats(enactor,magic_stats) if magic_stats
+        class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
+        subclass_mstats = subclass_features_info['magic_stats'] ? subclass_features_info['magic_stats'] : {}
+
+        magic_stats = class_mstats.merge(subclass_mstats)
+
+        if magic_stats.empty?
+          client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
+        else
+          PF2Magic.update_magic_for_class(enactor, charclass, magic_stats)
+          client.emit_ooc "Setting up magic..."
+        end
 
         # Languages
         languages = enactor.pf2_lang

@@ -65,11 +65,19 @@ module AresMUSH
         make_signature = is_in_spellbook[1]
       end
 
+      return_msg = {
+        "level" => spell_level,
+        "name" => spell,
+        "caster class" => cc,
+        "is_signature" => make_signature
+     }
+
       if make_signature
-        signature_spells = obj.signature_spells
+        signature_spells = magic.signature_spells
         signature_spells["Arcane Evolution"] = [ spell ]
-        obj.update(signature_spells: signature_spells)
-        return
+        magic.update(signature_spells: signature_spells)
+
+        return return_msg
       end
 
       spell_trad = spell_details['tradition']
@@ -86,11 +94,12 @@ module AresMUSH
       if use_arcane_evo
         repertoire = obj.repertoire
         repertoire['Arcane Evolution'] = [ spell ]
-        obj.update(repertoire: repertoire)
-        return
+        magic.update(repertoire: repertoire)
+
+        return return_msg
       end
 
-      spell_list_for_level = obj.spells_prepared[level]
+      spell_list_for_level = magic.spells_prepared[level]
 
       return t('pf2emagic.cant_prepare_level') unless spell_list_for_level
 
@@ -100,18 +109,12 @@ module AresMUSH
 
       # If all checks succeed, prepare the spell and return a hash.
 
-      return_msg = {
-         "level" => spell_level,
-         "name" => spell,
-         "caster class" => cc
-         "is_signature" => make_signature,
-      }
-
       spell_list_for_level[open_slot] = spell
 
-      obj.spells_prepared[level] = spell_list_for_level
+      magic.spells_prepared[level] = spell_list_for_level
+      magic.save
 
-      obj.save && return return_msg
+      return_msg
 
     end
 

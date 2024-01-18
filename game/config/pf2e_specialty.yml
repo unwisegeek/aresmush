@@ -821,7 +821,6 @@ pf2e_specialty:
       skills: []
   Rogue:
     Eldritch Trickster:
-      init_magic: true
       choose:
         choice_name: Magical Archetype
         choice_description: Choose which spellcasting class you are dedicated in.
@@ -1789,7 +1788,6 @@ pf2e_specialty:
         - Occultism
         action: []
         reaction: []
-        skills: []
         magic_stats:
           tradition:
             occult: trained
