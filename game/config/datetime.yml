@@ -4,5 +4,5 @@ datetime:
   date_entry_format_help: MMM DD YYYY
   long_date_format: "%A, %B %d, %Y %l:%M%p"
   server_timezone: EST
-  short_date_format: "%b %d %Y"
+  short_date_format: "%B %d, %Y"
   time_format: "%l:%M%p"
