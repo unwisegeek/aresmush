@@ -15,6 +15,10 @@ module AresMUSH
         super File.dirname(__FILE__) + "/spelldisplayone_template.erb"
       end
 
+      def textline(title)
+        @client.screen_reader ? title : line_with_text(title)
+      end
+
       def spell
         @spell
       end
