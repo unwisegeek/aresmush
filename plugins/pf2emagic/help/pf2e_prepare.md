@@ -1,12 +1,12 @@
 ---
 toc: Pathfinder Second Edition
-summary: Preparing spells. 
+summary: Preparing spells.
 aliases:
 - prepare
 - unprepare
 ---
 
-# Preparing Spells in Pathfinder Second
+# Preparing Spells in Pathfinder Second Edition
 
 Some classes are required to, or may wish to, record spells in a spellbook.
 
