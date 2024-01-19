@@ -373,9 +373,9 @@ module AresMUSH
       end
 
       def format_spell_dc(charclass, trad_info)
-        dc = Pf2eMagic.get_spell_dc(@char, charclass)
+        dc = PF2Magic.get_spell_dc(@char, charclass)
         trad = Pf2e.pretty_string(trad_info[0])
-        atk = Pf2emagic.get_spell_attack_bonus(@char, charclass)
+        atk = PF2Magic.get_spell_attack_bonus(@char, charclass)
 
         "#{item_color}#{charclass}: Tradition - #{trad} Spell Attack Roll: #{atk} Spell DC: #{dc}"
       end
