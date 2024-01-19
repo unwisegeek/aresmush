@@ -152,6 +152,7 @@ en:
     unassigned_title: "Unassigned Character Options: %{name}"
     unassigned_class_feat: "%xrYou still need to choose a class feat.%xn"
     unassigned_ancestry_feat: "%xrYou still need to choose an ancestry feat.%xn"
+    use_focus_keyword: "The named class grants focus spells. Use the 'focus' keyword."
 
     xp_awarded: "You award %{award} XP to %{awardee}."
 

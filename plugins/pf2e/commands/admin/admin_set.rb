@@ -24,7 +24,7 @@ module AresMUSH
       end
 
       def check_valid_item
-        valid_items = [ "feat", "skill", "feature", "spell", "ability" ]
+        valid_items = [ "feat", "skill", "feature", "spell", "ability", "focus" ]
 
         return nil if valid_items.include?(self.item)
         return t('pf2e.not_modifiable', :item => self.item)
@@ -108,6 +108,11 @@ module AresMUSH
           client.emit_success t('pf2e.skill_updated_ok', :name => skill.name, :char => char.name)
 
         when "feature"
+          # Expected structure of self.value: `[add|delete] <feature name>`
+          # This keyword does not validate whether the character meets prerequisites for or is of the 
+          # appropriate class to take the named feature. It validates only that <feature> exists for <character class>.
+
+
         when "spell"
           # Expected structure of self.value: <charclass> [add|delete] <spell name> <spell level>
 
@@ -126,16 +131,16 @@ module AresMUSH
           # Spells for prepared casters go in a spellbook.
           if (Global.read_config("pf2e_magic", "prepared_casters").include? castclass)
 
+
           # Spells for spontaneous casters go in a repertoire.
           elsif (Global.read_config("pf2e_magic", "spontaneous_casters").include? castclass)
 
           # If they're not one of these two, the correct keyword is "focus". End.
           else
+            client.emit_failure t('pf2e.use_focus_keyword')
+            return
           end
-
-
-
-
+          
         when "ability"
           # Expected structure of self.value: <ability name> <new score>
 
@@ -159,6 +164,7 @@ module AresMUSH
           abil_obj.update(base_val: score)
 
           client.emit_success t('pf2e.abil_update_ok', :char => char.name, :name => abil_obj.name)
+        when "focus"
         end 
 
 
