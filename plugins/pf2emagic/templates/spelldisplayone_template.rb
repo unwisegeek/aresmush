@@ -1,17 +1,18 @@
 module AresMUSH
-  module Pf2e
+  module Pf2emagic
 
-    class Pf2eDisplaySpellTemplate < ErbTemplateRenderer
+    class PF2DisplayOneSpellTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :spell
+      attr_accessor :spell, :client
 
-      def initialize(spell)
+      def initialize(spell, client)
         @spell = spell
+        @client = client
 
         @details = Global.read_config('pf2e_spells', spell)
 
-        super File.dirname(__FILE__) + "/spelldisplay_template.erb"
+        super File.dirname(__FILE__) + "/spelldisplayone_template.erb"
       end
 
       def spell
@@ -66,7 +67,7 @@ module AresMUSH
       def trads
         t = @details["tradition"]
 
-        trads = t.is_a?(Array) ? t.join(", ") : t
+        trads = t.is_a?(Array) ? t.sort.join(", ") : t
       end
 
       def effect

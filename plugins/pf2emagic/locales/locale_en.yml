@@ -7,7 +7,10 @@ en:
 
     does_not_prepare: "Specified class does not prepare spells."
 
+    multiple_matches: "More than one %{item} matches your search. Please choose:"
+
     no_available_slots: "No available slots at specified level."
+    no_match: "I didn't find any %{item} matching your terms."
     no_such_spell: "Spell not available on this game."
     not_caster: "This character has no magical ability."
     not_casting_class: "Cannot cast as %{cc}."

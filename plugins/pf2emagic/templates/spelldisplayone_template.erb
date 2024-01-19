@@ -1,0 +1,17 @@
+<%= textline("Spell Details:" spell) %>
+<%= left("#{item_color}Base Level:%xn #{base_level}",25) -%>
+<%= left("#{item_color}Traditions:%xn #{trads}",53) %>
+<%= left("#{item_color}Actions to Cast:%xn #{actions}",39) -%>
+<%= left("#{item_color}Casting Requirements:%xn #{cast}",39) %>
+<%= left("#{item_color}Range:%xn #{range}",19) -%>
+<%= left("#{item_color}Area:%xn #{area}",19) -%>
+<%= left("#{item_color}Duration:%xn #{duration}",19) -%>
+<%= left("#{item_color}Save:%xn #{save}",22) %>
+<%= "#{item_color}Spell Effect:%xn #{effect}" %>
+<% if heighten %>
+<%= textline("Heightened Effects") %>
+<%= "This spell has heightened effects:" %>
+<%= heighten %>
+<% end %>
+
+<%= footer %>
