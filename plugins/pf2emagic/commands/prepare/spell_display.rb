@@ -21,7 +21,7 @@ module AresMUSH
 
         spell_list = Global.read_config('pf2e_spells').keys
 
-        spells = spell_list.select {|spell| spell.match? self.search_term }
+        spells = spell_list.select {|spell| spell.downcase.match? self.search_term }
 
         client.emit spell_list
 
