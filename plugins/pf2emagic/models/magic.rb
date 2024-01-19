@@ -43,12 +43,17 @@ module AresMUSH
       info.each_pair do |key, value|
         case key
         when "spell_abil"
-          magic.spell_abil[charclass] = value
+          spell_abil = magic.spell_abil
+          spell_abil[charclass] = value
+          magic.update(spell_abil: spell_abil)
         when "tradition"
           # magic.tradition structure: { charclass => [ trad, prof ] }
+          tradition = magic.tradition
           value.each_pair do |trad, prof|
-            magic.tradition[charclass] = [ trad, prof ]
+            tradition[charclass] = [ trad, prof ]
           end
+
+          magic.update(tradition: tradition)
         when "spells_per_day"
           # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
           spells_per_day = magic.spells_per_day
