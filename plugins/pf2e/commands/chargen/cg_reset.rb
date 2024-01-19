@@ -53,10 +53,11 @@ module AresMUSH
         # Reset money and gear if that plugin is installed.
         Pf2egear.reset_gear(enactor) if AresMUSH.const_defined?("Pf2egear")
 
-        enactor.abilities&.each { |a| a.delete }
-        enactor.skills&.each { |s| s.delete }
-        enactor.hp&.delete
-        enactor.combat&.delete
+        # All characters have all objects except magic, so to minimize DB bloat, reuse existing objects.
+        Pf2eAbilities.factory_default(enactor)
+        Pf2eSkills.factory_default(enactor)
+        Pf2eHP.factory_default(enactor)
+        Pf2eCombat.factory_default(enactor)
         enactor.magic&.delete
 
         enactor.pf2_reset = false

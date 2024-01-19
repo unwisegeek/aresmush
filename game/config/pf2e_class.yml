@@ -24,7 +24,6 @@ pf2e_class:
           fortitude: expert
           reflex: expert
           will: trained
-      magic_stats: {}
       skills:
       - Crafting
       - open
@@ -186,7 +185,6 @@ pf2e_class:
           fortitude: expert
           reflex: trained
           will: expert
-      magic_stats: {}
       skills:
       - Athletics
       - open
@@ -371,7 +369,6 @@ pf2e_class:
       - open
       - open
       magic_stats:
-        max_spell_level: 1
         tradition:
           occult: trained
         spells_per_day:
@@ -379,9 +376,13 @@ pf2e_class:
         repertoire:
           cantrip: 5
           1: 2
-      composition:
-        cantrip: Inspire Courage
-        spell: Counter Performance
+        focus_pool: 1
+        focus_cantrip:
+          composition:
+          - Inspire Courage
+        focus_spell:
+          composition:
+          - Counter Performance
       action:
       - Cast a Spell
       reaction: []
@@ -409,7 +410,6 @@ pf2e_class:
           signature_spells:
             1: 1
             2: 1
-          max_spell_level: 2
         raise:
         - skill
       4:
@@ -434,7 +434,6 @@ pf2e_class:
             3: 2
           signature_spells:
             3: 1
-          max_spell_level: 3
       6:
         choose_feat:
         - charclass
@@ -458,7 +457,6 @@ pf2e_class:
             4: 2
           signature_spells:
             4: 1
-          max_spell_level: 4
       8:
         choose_feat:
         - charclass
@@ -486,7 +484,6 @@ pf2e_class:
             5: 2
           signature_spells:
             5: 1
-          max_spell_level: 5
       10:
         choose_feat:
         - charclass
@@ -516,7 +513,6 @@ pf2e_class:
             6: 2
           signature_spells:
             6: 1
-          max_spell_level: 6
       12:
         choose_feat:
         - charclass
@@ -543,7 +539,6 @@ pf2e_class:
             7: 2
           signature_spells:
             7: 1
-          max_spell_level: 7
       14:
         choose_feat:
         - charclass
@@ -569,7 +564,6 @@ pf2e_class:
             8: 2
           signature_spells:
             8: 1
-          max_spell_level: 8
       16:
         choose_feat:
         - charclass
@@ -596,7 +590,6 @@ pf2e_class:
             9: 2
           signature_spells:
             9: 1
-          max_spell_level: 9
       18:
         choose_feat:
         - charclass
@@ -618,7 +611,6 @@ pf2e_class:
             occult: legendary
           signature_spells:
             10: 1
-          max_spell_level: 10
       20:
         choose_feat:
         - charclass
@@ -825,8 +817,9 @@ pf2e_class:
         charclass:
         - Hero's Defiance
         magic_stats:
-          devotion:
-            spell: Hero's Defiance
+          focus_spell:
+            devotion:
+              spell: Hero's Defiance
         choose_feat:
         - general
         raise:
@@ -864,7 +857,6 @@ pf2e_class:
         spell_abil: Wisdom
         tradition:
           divine: trained
-        max_spell_level: 1
         spells_per_day:
           cantrip: 5
           1: 2
@@ -889,7 +881,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 2
-          max_spell_level: 2
       4:
         choose_feat:
         - charclass
@@ -910,7 +901,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             3: 2
-          max_spell_level: 3
       6:
         choose_feat:
         - charclass
@@ -926,7 +916,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             4: 2
-          max_spell_level: 4
       8:
         choose_feat:
         - charclass
@@ -947,7 +936,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 2
-          max_spell_level: 5
       10:
         raise:
         - ability
@@ -970,7 +958,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             6: 2
-          max_spell_level: 6
       12:
         choose_feat:
         - charclass
@@ -992,7 +979,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 2
-          max_spell_level: 6
       14:
         choose_feat:
         - charclass
@@ -1008,8 +994,7 @@ pf2e_class:
         - general
         magic_stats:
           spells_per_day:
-            8: 2
-        max_spell_level: 8
+            8: 28
       16:
         choose_feat:
         - charclass
@@ -1025,7 +1010,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             9: 2
-        max_spell_level: 9
       18:
         choose_feat:
         - charclass
@@ -1043,7 +1027,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             10: 1
-          max_spell_level: 10
       20:
         raise:
         - ability
@@ -1085,14 +1068,12 @@ pf2e_class:
         tradition:
           primal: trained
         spell_abil: wisdom
-        max_spell_level: 1
         spells_per_day:
           cantrip: 5
           1: 2
         focus_pool: 1
       action:
       - Cast a Spell
-      reaction: []
     anathema:
     - "Character must not teach the Druidic language to a non-druid."
     - "Character is not permitted to wear metal armor or carry metal shields."
@@ -1120,7 +1101,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 2
-          max_spell_level: 2
       4:
         choose_feat:
         - charclass
@@ -1142,7 +1122,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             3: 2
-          max_spell_level: 3
       6:
         choose_feat:
         - charclass
@@ -1160,7 +1139,6 @@ pf2e_class:
             4: 2
           tradition:
             primal: expert
-          max_spell_level: 4
         choose_feat:
         - general
       8:
@@ -1178,7 +1156,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 2
-          max_spell_level: 5
       10:
         raise:
         - ability
@@ -1205,7 +1182,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             6: 2
-          max_spell_level: 6
       12:
         choose_feat:
         - charclass
@@ -1229,7 +1205,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 2
-          max_spell_level: 7
       14:
         choose_feat:
         - charclass
@@ -1248,7 +1223,6 @@ pf2e_class:
             8: 2
           tradition:
             primal: master
-          max_spell_level: 8
         choose_feat:
         - general
       16:
@@ -1266,7 +1240,6 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             9: 2
-          max_spell_level: 9
       18:
         choose_feat:
         - charclass
@@ -1285,7 +1258,6 @@ pf2e_class:
             10: 1
           tradition:
             primal: legendary
-          max_spell_level: 10
         choose_feat:
         - general
       20:
@@ -1319,7 +1291,6 @@ pf2e_class:
           fortitude: expert
           reflex: expert
           will: trained
-      magic_stats: {}
       skills:
       - Acrobatics
       - Athletics
@@ -1540,7 +1511,6 @@ pf2e_class:
           fortitude: trained
           reflex: expert
           will: expert
-      magic_stats: {}
       action:
       - Pursue A Lead
       reaction:
@@ -1741,14 +1711,6 @@ pf2e_class:
       - Flurry of Blows
       - Powerful Fist
       reaction: []
-      magic_stats: {}
-    choose:
-      choice_name: Spell Tradition
-      choice_description: Do you draw ki spells from divine or occult magic?
-      choice_type: magic_stats
-      options:
-      - divine
-      - occult
     advance:
       2:
         choose_feat:
@@ -1928,7 +1890,6 @@ pf2e_class:
       magic_stats:
         tradition:
           divine: trained
-        max_spell_level: 1
         spell_abil: Charisma
         spells_per_day:
           1: 2
@@ -1963,7 +1924,6 @@ pf2e_class:
           signature_spells:
             1: 1
             2: 1
-          max_spell_level: 2
       4:
         choose_feat:
         - charclass
@@ -1986,7 +1946,6 @@ pf2e_class:
             3: 1
           repertoire:
             3: 2
-          max_spell_level: 3
       6:
         choose_feat:
         - charclass
@@ -2016,7 +1975,6 @@ pf2e_class:
             divine: expert
           repertoire:
             4: 2
-          max_spell_level: 4
       8:
         choose_feat:
         - charclass
@@ -2043,7 +2001,6 @@ pf2e_class:
             5: 1
           repertoire:
             5: 2
-          max_spell_level: 5
       10:
         choose_feat:
         - charclass
@@ -2074,7 +2031,6 @@ pf2e_class:
             6: 1
           repertoire:
             6: 2
-          max_spell_level: 6
       12:
         choose_feat:
         - charclass
@@ -2102,7 +2058,6 @@ pf2e_class:
             7: 1
           repertoire:
             7: 1
-          max_spell_level: 7
       14:
         choose_feat:
         - charclass
@@ -2129,7 +2084,6 @@ pf2e_class:
             8: 1
           repertoire:
             8: 2
-          max_spell_level: 8
       16:
         choose_feat:
         - charclass
@@ -2157,7 +2111,6 @@ pf2e_class:
             9: 1
           repertoire:
             9: 1
-          max_spell_level: 9
       18:
         choose_feat:
         - charclass
@@ -2182,7 +2135,6 @@ pf2e_class:
             10: 1
           repertoire:
             10: 2
-          max_spell_level: 10
       20:
         choose_feat:
         - charclass
@@ -2414,7 +2366,6 @@ pf2e_class:
           reflex: expert
           will: expert
         sneak_attack: 1d6
-      magic_stats: {}
       action: []
       reaction: []
     advance:
@@ -2617,7 +2568,6 @@ pf2e_class:
         repertoire:
           cantrip: 4
           1: 2
-        max_spell_level: 1
       action:
       - Cast a Spell
       reaction: []
@@ -2646,7 +2596,6 @@ pf2e_class:
           signature_spells:
             1: 1
             2: 1
-          max_spell_level: 2
       4:
         choose_feat:
         - charclass
@@ -2664,7 +2613,6 @@ pf2e_class:
             3: 2
           signature_spells:
             3: 1
-          max_spell_level: 3
         raise:
         - ability
         - skill
@@ -2698,7 +2646,6 @@ pf2e_class:
             4: 2
           signature_spells:
             4: 1
-          max_spell_level: 4
       8:
         choose_feat:
         - charclass
@@ -2722,7 +2669,6 @@ pf2e_class:
             5: 2
           signature_spells:
             5: 1
-          max_spell_level: 5
         combat_stats:
           saves:
             reflex: expert
@@ -2749,7 +2695,6 @@ pf2e_class:
             6: 2
           signature_spells:
             6: 1
-          max_spell_level: 6
         combat_stats:
           perception: expert
       12:
@@ -2776,7 +2721,6 @@ pf2e_class:
             7: 2
           signature_spells:
             7: 1
-          max_spell_level: 7
         combat_stats:
           armor_prof:
             unarmored: expert
@@ -2804,7 +2748,6 @@ pf2e_class:
             8: 2
           signature_spells:
             8: 1
-          max_spell_level: 8
       16:
         choose_feat:
         - charclass
@@ -2826,7 +2769,6 @@ pf2e_class:
             9: 2
           signature_spells:
             9: 1
-          max_spell_level: 9
       18:
         choose_feat:
         - charclass
@@ -2851,7 +2793,6 @@ pf2e_class:
             10: 2
           signature_spells:
             10: 1
-          max_spell_level: 10
       20:
         choose_feat:
         - charclass
@@ -2881,7 +2822,6 @@ pf2e_class:
           reflex: trained
           will: expert
       magic_stats:
-        max_spell_level: 1
         spell_abil: Intelligence
         spells_per_day:
           cantrip: 5
@@ -2912,7 +2852,6 @@ pf2e_class:
           spells_per_day:
             2: 2
           spellbook: 2
-          max_spell_level: 2
       4:
         choose_feat:
         - charclass
@@ -2933,7 +2872,6 @@ pf2e_class:
           spells_per_day:
             3: 2
           spellbook: 2
-          max_spell_level: 3
         combat_stats:
           saves:
             fortitude: expert
@@ -2956,7 +2894,6 @@ pf2e_class:
           spells_per_day:
             4: 2
           spellbook: 2
-          max_spell_level: 4
       8:
         choose_feat:
         - charclass
@@ -2976,7 +2913,6 @@ pf2e_class:
           spells_per_day:
             5: 2
           spellbook: 2
-          max_spell_level: 5
       10:
         choose_feat:
         - charclass
@@ -2997,7 +2933,6 @@ pf2e_class:
           spells_per_day:
             6: 2
           spellbook: 2
-          max_spell_level: 6
         combat_stats:
           perception: expert
           weapon_prof:
@@ -3023,7 +2958,6 @@ pf2e_class:
           spells_per_day:
             7: 2
           spellbook: 2
-          max_spell_level: 7
         combat_stats:
           armor_prof:
             unarmored: expert
@@ -3047,7 +2981,6 @@ pf2e_class:
           spells_per_day:
             8: 2
           spellbook: 2
-          max_spell_level: 8
       16:
         choose_feat:
         - charclass
@@ -3067,7 +3000,6 @@ pf2e_class:
           spells_per_day:
             9: 2
           spellbook: 2
-          max_spell_level: 9
         combat_stats:
           saves:
             will: master
@@ -3091,7 +3023,6 @@ pf2e_class:
           spells_per_day:
             10: 1
           spellbook: 2
-          max_spell_level: 10
       20:
         choose_feat:
         - charclass
@@ -3131,7 +3062,6 @@ pf2e_class:
         spellbook:
           cantrip: 10
           1: 5
-        max_spell_level: 1
       action:
       - Drain Bonded Item
       - Cast a Spell
@@ -3154,7 +3084,6 @@ pf2e_class:
           spells_per_day:
             2: 2
           spellbook: 2
-          max_spell_level: 2
       4:
         choose_feat:
         - charclass
@@ -3175,7 +3104,6 @@ pf2e_class:
           spells_per_day:
             3: 2
           spellbook: 2
-          max_spell_level: 3
         combat_stats:
           saves:
             reflex: expert
@@ -3204,7 +3132,6 @@ pf2e_class:
           spellbook: 2
           signature_spells:
             4: 1
-          max_spell_level: 4
       8:
         choose_feat:
         - charclass
@@ -3224,7 +3151,6 @@ pf2e_class:
           spells_per_day:
             5: 2
           spellbook: 2
-          max_spell_level: 5
         combat_stats:
           saves:
             fortitude: expert
@@ -3247,7 +3173,6 @@ pf2e_class:
           spells_per_day:
             6: 2
           spellbook: 2
-          max_spell_level: 6
         combat_stats:
           perception: expert
           weapon_prof:
@@ -3272,7 +3197,6 @@ pf2e_class:
           spells_per_day:
             7: 2
           spellbook: 2
-          max_spell_level: 7
         combat_stats:
           armor_prof:
             unarmored: expert
@@ -3298,7 +3222,6 @@ pf2e_class:
           spells_per_day:
             8: 2
           spellbook: 2
-          max_spell_level: 8
       16:
         choose_feat:
         - charclass
@@ -3318,7 +3241,6 @@ pf2e_class:
           spells_per_day:
             9: 2
           spellbook: 2
-          max_spell_level: 9
         combat_stats:
           saves:
             will: master
@@ -3344,7 +3266,6 @@ pf2e_class:
           spells_per_day:
             10: 1
           spellbook: 2
-          max_spell_level: 10
       20:
         choose_feat:
         - charclass

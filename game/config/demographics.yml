@@ -55,19 +55,19 @@ demographics:
       desc: What region does your character call home?
       wiki: theme:regions
       values:
-        Stormgard: The rugged north.
+        Sturmvargd: The rugged north.
         Dran: Harsh, wind-swept steppes.
         Alexandros: The Phoenix Kingdom.
         Empire-Myrddion: The kingdoms of the western Empire.
         Empire-Bludgun: The nation of goblin-kin.
         Empire-Charn: The stygian domain of the Eastern Empire.
         Empire-Desolation: Home of an endless magical storm.
-        Veyshan: Ancient republics of the dune seas.
+        Veyshan: Home of the desert nomads and the city-states of the One-Hundred and Four.
         Dragonier: The nation of the dragon kings.
-        Jade Islands: The home of the Cerenzans.
+        Jade Islands: The remains of a shattered land, populated by the Kaltoi and merchant-circles.
         Greatwoods: The ancient sildanyari kingdoms.
-        Khazad Duin: The great citadel of the khazad and its environs.
-        Am'shere: Jungles and the Makari are your home and its people.
+        Khazad Duin: The great citadel of the khazadi and its environs.
+        Am'shere: The far-away jungles where the makari dwell.
         Vast: Endless, wind-swept plains of ancient magic.
         Rune: The eccentric nation of wizards.
     Faith:

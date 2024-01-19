@@ -174,7 +174,7 @@ module AresMUSH
         scase = 1
       end
 
-      #### Success modifiers happen only if the first item in the list is a 1d20. 
+      #### Success modifiers happen only if the first item in the list is a 1d20.
 
       succ_mod = 0
       whirldice = ""
@@ -239,6 +239,30 @@ module AresMUSH
       profs = %w{untrained trained expert master legendary}
 
       best_prof = array.sort_by{ |a,b| profs.index(a) <=> profs.index(b) }.pop
+    end
+
+    def self.cannot_respec(char)
+      msg = []
+
+      # Characters cannot respec if they're in any scenes still in progress, because they will be unapproved
+      # in the process of the respec.
+      open_scenes = Scene.all.select { |s| s.completed && (s.participants.include?(char) || s.owner == char) }
+
+      msg << t('pf2e.respec_refused_scenes') unless open_scenes.empty?
+
+      # Only approved characters can respec, otherwise just reset.
+
+      msg << t('pf2e.respec_refused_approval') unless char.is_approved?
+
+      return msg unless msg.empty?
+      return nil
+    end
+
+    def self.respec_character(char)
+      # A respec does not delete XP, level, or character wealth, but does clear all stats and inventory.
+
+
+
     end
 
   end

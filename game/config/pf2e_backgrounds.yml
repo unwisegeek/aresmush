@@ -24,15 +24,103 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Animal Whisperer:
+  Animal Whisperer (Aquatic Terrain):
     abl_boosts:
-    - [ Constitution, Intelligence ]
+    - [ Wisdom, Charisma ]
     - open
     skills:
-    - Society
-    - Architecture Lore
+    - Nature
+    - Aquatic Terrain Lore
     feat:
-    - Additional Lore
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Arctic Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Aquatic Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Desert Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Desert Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Forest Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Forest Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Mountain Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Mountain Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Plains Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Plains Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Sky Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Sky Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Swamp Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Swamp Terrain Lore
+    feat:
+    - Train Animal
+    action: []
+    reaction: []
+  Animal Whisperer (Underground Terrain):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Nature
+    - Underground Terrain Lore
+    feat:
+    - Train Animal
     action: []
     reaction: []
   Artisan:
@@ -59,14 +147,109 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Bandit:
+  Bandit (Aquatic Terrain):
     abl_boosts:
     - [ Dexterity, Charisma ]
     - open
     skills:
     - Intimidation
-    lores:
-    - terrain
+    - Aquatic Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Arctic Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Arctic Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Desert Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Desert Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Forest Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Forest Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Mountain Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Mountain Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Plains Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Plains Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Sky Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Sky Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Swamp Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Swamp Terrain Lore
+    feat:
+    - Group Coercion
+    special: []
+    action: []
+    reaction: []
+  Bandit (Underground Terrain):
+    abl_boosts:
+    - [ Dexterity, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Underground Terrain Lore
     feat:
     - Group Coercion
     special: []
@@ -108,13 +291,255 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Blessed:
+  Blessed (Althean):
     abl_boosts:
     - [ Wisdom, Charisma ]
     - open
-    lores:
-    - deity
+    skills:
+    - Althean Lore
     feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Angorite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Angorite Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Animusian):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Animusian Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Caracorothan):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Caracorothan Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Ceinaran):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Ceinaran Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Daeusite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Daeusite Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Danan):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Danan Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Deimosian):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Deimosian Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Elunan):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Elunan Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Gileadean):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Gileadean Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Gunakharan):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Gunakharan Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Illothan):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Illothan Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Korite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Korite Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Maugrimite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Maugrimite Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Navosian):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Navosian Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Radan):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Radan Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Reosian):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Reosian Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Serrielite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Serrielite Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Taaran):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Taaran Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Tarienite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Tarienite Lore
+    feat: []
+    special:
+    - Blessed
+    rare: true
+    action: []
+    reaction: []
+  Blessed (Thulite):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Thulite Lore
+    feat: []
+    special:
+    - Blessed
     rare: true
     action: []
     reaction: []
@@ -164,14 +589,73 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Courier:
+  Courier (Alexandria):
     abl_boosts:
     - [ Dexterity, Intelligence ]
     - open
     skills:
     - Society
-    lores:
-    - city
+    - Alexandria Lore
+    feat:
+    - Glean Contents
+    special: []
+    action: []
+    reaction: []
+  Courier (Bryn Myridorn):
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
+    skills:
+    - Society
+    - Bryn Myridorn Lore
+    feat:
+    - Glean Contents
+    special: []
+    action: []
+    reaction: []
+  Courier (Dun Mordren):
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
+    skills:
+    - Society
+    - Dun Mordren Lore
+    feat:
+    - Glean Contents
+    special: []
+    action: []
+    reaction: []
+  Courier (Tashraan):
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
+    skills:
+    - Society
+    - Tashraan Lore
+    feat:
+    - Glean Contents
+    special: []
+    action: []
+    reaction: []
+  Courier (Hextus):
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
+    skills:
+    - Society
+    - Hextus Lore
+    feat:
+    - Glean Contents
+    special: []
+    action: []
+    reaction: []
+  Courier (Vandalheim):
+    abl_boosts:
+    - [ Dexterity, Intelligence ]
+    - open
+    skills:
+    - Society
+    - Vandalheim Lore
     feat:
     - Glean Contents
     special: []
@@ -189,14 +673,253 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Cultist:
+  Cultist (Althean):
     abl_boosts:
     - [ Intelligence, Charisma ]
     - open
     skills:
     - Occultism
-    lores:
-    - deity
+    - Althean Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Angorite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Angorite Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Animusian):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Animusian Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Caracorothan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Caracorothan Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Ceinaran):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Ceinaran Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Daeusite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Daeusite Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Danan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Danan Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Deimosian):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Deimosian Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Elunan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Elunan Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Gileadean):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Gileadean Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Gunakharan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Gunakharan Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Illothan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Illothan Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Korite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Korite Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Maugrimite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Maugrimite Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Navosian):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Navosian Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Radan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Radan Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Reosian):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Reosian Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Serrielite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Serrielite Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Taaran):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Taaran Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Tarienite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Tarienite Lore
+    feat:
+    - Schooled In Secrets
+    special: []
+    action: []
+    reaction: []
+  Cultist (Thulite):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Occultism
+    - Thulite Lore
     feat:
     - Schooled In Secrets
     special: []
@@ -226,14 +949,73 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Emissary:
+  Emissary (Alexandria):
     abl_boosts:
     - [ Intelligence, Charisma ]
     - open
     skills:
     - Society
-    lores:
-    - city
+    - Alexandria Lore
+    feat:
+    - Multilingual
+    special: []
+    action: []
+    reaction: []
+  Emissary (Bryn Myridorn):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Society
+    - Bryn Myridorn Lore
+    feat:
+    - Multilingual
+    special: []
+    action: []
+    reaction: []
+  Emissary (Dun Mordren):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Society
+    - Dun Mordren Lore
+    feat:
+    - Multilingual
+    special: []
+    action: []
+    reaction: []
+  Emissary (Tashraan):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Society
+    - Tashraan Lore
+    feat:
+    - Multilingual
+    special: []
+    action: []
+    reaction: []
+  Emissary (Hextus):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Society
+    - Hextus Lore
+    feat:
+    - Multilingual
+    special: []
+    action: []
+    reaction: []
+  Emissary (Vandalheim):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Society
+    - Vandalheim Lore
     feat:
     - Multilingual
     special: []
@@ -309,7 +1091,7 @@ pf2e_background:
     - Occultism
     - Fortune-Telling Lore
     feat:
-    - Lie To Me
+    - Oddity Identification
     special: []
   Gambler:
     abl_boosts:
@@ -357,42 +1139,6 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Harrow-Led (Occultism):
-    abl_boost:
-    - open
-    skills:
-    - Occultism
-    - Harrow Lore
-    feat:
-    - Dubious Knowledge
-    special:
-    - Harrow
-    action: []
-    reaction: []
-  Harrow-Led (Performance):
-    abl_boost:
-    - open
-    skills:
-    - Performance
-    - Harrow Lore
-    feat:
-    - Dubious Knowledge
-    special:
-    - Harrow
-    action: []
-    reaction: []
-  Harrow-Led (Society):
-    abl_boost:
-    - open
-    skills:
-    - Society
-    - Harrow Lore
-    feat:
-    - Dubious Knowledge
-    special:
-    - Harrow
-    action: []
-    reaction: []
   Haunted:
     abl_boosts:
     - [ Wisdom, Charisma ]
@@ -414,32 +1160,6 @@ pf2e_background:
     - Herbalism Lore
     feat:
     - Natural Medicine
-    special: []
-    action: []
-    reaction: []
-  Hermit (Nature):
-    abl_boosts:
-    - [ Constitution, Intelligence ]
-    - open
-    skills:
-    - Nature
-    lores:
-    - terrain
-    feat:
-    - Dubious Knowledge
-    special: []
-    action: []
-    reaction: []
-  Hermit (Occultism):
-    abl_boosts:
-    - [ Constitution, Intelligence ]
-    - open
-    skills:
-    - Occultism
-    lores:
-    - terrain
-    feat:
-    - Dubious Knowledge
     special: []
     action: []
     reaction: []
@@ -488,7 +1208,6 @@ pf2e_background:
     - Warfare Lore
     feat:
     - Cat Fall
-    - Quick Jump
     special: []
     action: []
     reaction: []
@@ -500,7 +1219,6 @@ pf2e_background:
     - Athletics
     - Warfare Lore
     feat:
-    - Cat Fall
     - Quick Jump
     special: []
     action: []
@@ -513,7 +1231,7 @@ pf2e_background:
     - Diplomacy
     - Mercantile Lore
     feat:
-    - Bargain Hunter
+    - Eye for Numbers
     special: []
     action: []
     reaction: []
@@ -525,11 +1243,11 @@ pf2e_background:
     - Survival
     - Mining Lore
     feat:
-    - Terrain Expertise/Underground
+    - Terrain Expertise (Underground)
     special: []
     action: []
     reaction: []
-  Noble:
+  Noble (Genealogy Lore):
     abl_boosts:
     - [ Intelligence, Charisma ]
     - open
@@ -541,16 +1259,123 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Nomad:
+  Noble (Heraldry Lore):
+    abl_boosts:
+    - [ Intelligence, Charisma ]
+    - open
+    skills:
+    - Society
+    - Heraldry Lore
+    feat:
+    - Courtly Graces
+    special: []
+    action: []
+    reaction: []
+  Nomad (Aquatic Terrain Lore):
     abl_boosts:
     - [ Constitution, Wisdom ]
     - open
     skills:
     - Survival
-    lores:
-    - terrain
+    - Aquatic Terrain Lore
     feat:
-    - Assurance/Survival
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Arctic Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Arctic Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Desert Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Desert Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Forest Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Forest Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Mountain Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Mountain Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Plains Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Plains Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Sky Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Sky Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Swamp Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Swamp Terrain Lore
+    feat:
+    - Assurance (Survival)
+    special: []
+    action: []
+    reaction: []
+  Nomad (Underground Terrain Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Underground Terrain Lore
+    feat:
+    - Assurance (Survival)
     special: []
     action: []
     reaction: []
@@ -560,18 +1385,299 @@ pf2e_background:
     - open
     skills:
     - Nature
-    - Plains Lore
+    - Plains Terrain Lore
     feat:
     - Express Rider
     special: []
     action: []
     reaction: []
-  Pilgrim:
+  Pilgrim (Althean Lore):
     abl_boosts:
     - [ Wisdom, Charisma ]
     - open
     skills:
     - Religion
+    - Althean Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Angorite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Angorite Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Animusian Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Animusian Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Caracorothan Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Caracorothan Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Ceinaran Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Ceinaran Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Daeusite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Daeusite Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Danan Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Danan Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Deimosian Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Deimosian Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Elunan Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Elunan Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Gileadean Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Gileadean Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Gunakharan Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Gunakharan Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Illothan Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Illothan Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Korite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Korite Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Maugrimite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Maugrimite Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Navosian Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Navosian Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Radan Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Radan Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Reosian Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Reosian Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Serrielite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Serrielite Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Taaran Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Taaran Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Tarienite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Tarienite Lore
+    lores:
+    - deity
+    feat:
+    - "Pilgrim's Token"
+    special: []
+    action: []
+    reaction: []
+  Pilgrim (Thulite Lore):
+    abl_boosts:
+    - [ Wisdom, Charisma ]
+    - open
+    skills:
+    - Religion
+    - Thulite Lore
     lores:
     - deity
     feat:
@@ -591,14 +1697,181 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Refugee:
+  Refugee (Alexandros Lore):
     abl_boosts:
     - [ Constitution, Wisdom ]
     - open
     skills:
     - Society
-    lores:
-    - city
+    - Alexandros Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Am'shere Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Am'shere Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Bludgun Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Bludgun Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Charn Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Charn Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Dragonier Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Dragonier Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Dran Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Dran Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Desolation Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Desolation Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Greatwoods Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Greatwoods Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Jade Islands Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Jade Islands Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Khazad Duin Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Khazad Duin Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Myrddion Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Myrddion Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Rune Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Rune Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Sturmvargd Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Sturmvargd Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Vast Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Vast Lore
+    feat:
+    - Streetwise
+    special: []
+    action: []
+    reaction: []
+  Refugee (Veyshan Lore):
+    abl_boosts:
+    - [ Constitution, Wisdom ]
+    - open
+    skills:
+    - Society
+    - Veyshan Lore
     feat:
     - Streetwise
     special: []
@@ -609,10 +1882,9 @@ pf2e_background:
     - [ Constitution, Wisdom ]
     - open
     skills: 
-    - Boneyard Lore
+    - Great Halls Lore
     feat:
     - Diehard
-    - Additional Lore/Boneyard Lore
     special: []
     rare: true
     action: []
@@ -638,18 +1910,184 @@ pf2e_background:
     - Sailing Lore
     feat:
     - Underwater Marauder
-    - Cat Fall
     special: []
     action: []
     reaction: []
-  Scavenger:
+  Scavenger (Alexandros Lore):
     abl_boosts:
     - [ Intelligence, Wisdom ]
     - open
     skills:
     - Survival
-    lores:
-    - city
+    - Alexandros Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Am'shere Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Am'shere Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Bludgun Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Bludgun Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Charn Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Charn Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Dragonier Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Dragonier Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Dran Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Dran Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Desolation Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Desolation Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Greatwoods Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Greatwoods Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Jade Islands Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Jade Islands Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Khazad Duin Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Khazad Duin Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Myrddion Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Myrddion Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Rune Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Rune Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Sturmvargd Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Sturmvargd Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Vast Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Vast Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scavenger (Veyshan Lore):
+    abl_boosts:
+    - [ Intelligence, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Veyshan Lore
     feat:
     - Forager
     special: []
@@ -662,7 +2100,8 @@ pf2e_background:
     skills:
     - Arcana
     - Academia Lore
-    feat: []
+    feat:
+    - Assurance (Arcana)
     special: []
     action: []
     reaction: []
@@ -673,7 +2112,8 @@ pf2e_background:
     skills:
     - Nature
     - Academia Lore
-    feat: []
+    feat:
+    - Assurance (Nature)
     special: []
     action: []
     reaction: []
@@ -684,7 +2124,8 @@ pf2e_background:
     skills:
     - Occultism
     - Academia Lore
-    feat: []
+    feat:
+    - Assurance (Occultism)
     special: []
     action: []
     reaction: []
@@ -695,18 +2136,102 @@ pf2e_background:
     skills:
     - Religion
     - Academia Lore
-    feat: []
+    feat:
+    - Assurance (Religion)
     special: []
     action: []
     reaction: []
-  Scout:
+  Scout (Aquatic Terrain Lore):
     abl_boosts:
     - [ Dexterity, Wisdom ]
     - open
     skills:
     - Survival
-    lores:
-    - terrain
+    - Aquatic Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Arctic Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Arctic Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Desert Terrain Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Desert Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Forest Terrain Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Forest Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Mountain Terrain Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Mountain Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Plains Terrain Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Plains Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Sky Terrain Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Sky Terrain Lore
+    feat:
+    - Forager
+    special: []
+    action: []
+    reaction: []
+  Scout (Swamp Terrain Lore):
+    abl_boosts:
+    - [ Dexterity, Wisdom ]
+    - open
+    skills:
+    - Survival
+    - Swamp Terrain Lore
     feat:
     - Forager
     special: []
@@ -721,30 +2246,6 @@ pf2e_background:
     - Labor Lore
     feat:
     - Read Lips
-    special: []
-    action: []
-    reaction: []
-  Spell Seeker (Arcana):
-    abl_boosts:
-    - [ Intelligence, Wisdom ]
-    - open
-    skills:
-    - Arcana
-    - Library Lore
-    feat:
-    - Recognize Spell
-    special: []
-    action: []
-    reaction: []
-  Spell Seeker (Occultism):
-    abl_boosts:
-    - [ Intelligence, Wisdom ]
-    - open
-    skills:
-    - Occultism
-    - Library Lore
-    feat:
-    - Recognize Spell
     special: []
     action: []
     reaction: []
@@ -772,27 +2273,253 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Street Urchin:
+  Street Urchin (Alexandria Lore):
     abl_boosts:
     - [ Dexterity, Constitution ]
     - open
     skills:
     - Thievery
-    lores:
-    - city
+    - Alexandria Lore
     feat:
     - Pickpocket
     special: []
     action: []
     reaction: []
-  Tax Collector:
+  Street Urchin (Bryn Myridorn Lore):
+    abl_boosts:
+    - [ Dexterity, Constitution ]
+    - open
+    skills:
+    - Thievery
+    - Bryn Myridorn Lore
+    feat:
+    - Pickpocket
+    special: []
+    action: []
+    reaction: []
+  Street Urchin (Dun Mordren Lore):
+    abl_boosts:
+    - [ Dexterity, Constitution ]
+    - open
+    skills:
+    - Thievery
+    - Dun Mordren Lore
+    feat:
+    - Pickpocket
+    special: []
+    action: []
+    reaction: []
+  Street Urchin (Tashraan Lore):
+    abl_boosts:
+    - [ Dexterity, Constitution ]
+    - open
+    skills:
+    - Thievery
+    - Tashraan Lore
+    feat:
+    - Pickpocket
+    special: []
+    action: []
+    reaction: []
+  Street Urchin (Hextus Lore):
+    abl_boosts:
+    - [ Dexterity, Constitution ]
+    - open
+    skills:
+    - Thievery
+    - Hextus Lore
+    feat:
+    - Pickpocket
+    special: []
+    action: []
+    reaction: []
+  Street Urchin (Vandalheim Lore):
+    abl_boosts:
+    - [ Dexterity, Constitution ]
+    - open
+    skills:
+    - Thievery
+    - Vandalheim Lore
+    feat:
+    - Pickpocket
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Alexandros Lore):
     abl_boosts:
     - [ Strength, Charisma ]
     - open
     skills:
     - Intimidation
-    lores:
-    - city
+    - Alexandros Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Am'shere Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Am'shere Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Bludgun Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Bludgun Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Charn Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Charn Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Dragonier Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Dragonier Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Dran Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Dran Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Desolation Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Desolation Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Greatwoods Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Greatwoods Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Jade Islands Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Jade Islands Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Khazad Duin Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Khazad Duin Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Myrddion Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Myrddion Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Rune Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Rune Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Sturmvargd Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Sturmvargd Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Vast Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Vast Lore
+    feat:
+    - Quick Coercion
+    special: []
+    action: []
+    reaction: []
+  Tax Collector (Veyshan Lore):
+    abl_boosts:
+    - [ Strength, Charisma ]
+    - open
+    skills:
+    - Intimidation
+    - Veyshan Lore
     feat:
     - Quick Coercion
     special: []

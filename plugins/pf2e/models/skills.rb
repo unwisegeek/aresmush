@@ -75,5 +75,12 @@ module AresMUSH
       return msgs
     end
 
+    def self.factory_default(char)
+      char.skills.each do |skill|
+        skill.update(prof_level: 'untrained')
+        skill.update(cg_skill: false)
+      end
+    end
+
   end
 end

@@ -88,7 +88,7 @@ module AresMUSH
       dbonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, 'Dexterity')).clamp(-99, dex_cap)
 
       ac = 10 + abonus + pbonus + ibonus + dbonus
-    end 
+    end
 
     def self.get_equipped_armor(char)
       char.armor&.select { |a| a.equipped }.first
@@ -229,6 +229,23 @@ module AresMUSH
       dmg_mod = abil_mod + striking_rune
 
       "#{number_of_dice}#{base_damage}+#{dmg_mod}"
+    end
+
+    def self.factory_default(char)
+      # This may or may not exist, nothing to do if not.
+      combat = char.combat
+      return unless combat
+
+      combat.saves = {}
+      combat.perception = 'untrained'
+      combat.class_dc = 'untrained'
+      combat.key_abil = nil
+
+      combat.armor_prof = {}
+      combat.weapon_prof = {}
+      combat.unarmed_attacks = {}
+
+      combat.save
     end
   end
 end
