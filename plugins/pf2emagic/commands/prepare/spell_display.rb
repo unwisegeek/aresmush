@@ -23,10 +23,6 @@ module AresMUSH
 
         spells = spell_list.select {|spell| spell.downcase.match? self.search_term }
 
-        client.emit spell_list
-
-        client.emit spells
-
         if spells.size > 1
           template = PF2DisplayManySpellTemplate.new(spells, client)
         elsif spells.empty?
