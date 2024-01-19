@@ -305,7 +305,7 @@ module AresMUSH
           list << format_spell_dc(key, value)
         end
 
-        list.join
+        list
       end
 
       def known_for
