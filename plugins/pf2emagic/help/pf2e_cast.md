@@ -1,10 +1,12 @@
 ---
-toc: Pathfinder Second Edition
+toc: Magic In Pathfinder Second Edition
 summary: Casting spells.
 aliases:
 - spells
 - cast
 - refocus
+- focus
+- innate
 ---
 
 # Casting Spells in Pathfinder Second Edition
@@ -19,7 +21,7 @@ Commands for casting:
 * `<level>`, if present, is an integer, or the word _cantrip_. If the spell is to be cast at its base level, you may omit this term. 
 * The `<metamagic>` switch denotes the use of a metamagic feat immediately prior to the spell casting.
 
-`cast/focus <type>/<level> = <spell name>[ at <target>]`: Casts a focus spell. `<type>` depends on the class.
-`cast/innate <level> = <spell name>[ at <target>]`: Casts an innate spell, if you have one.
+`focus[/c] <type>= <spell name>[ at <target>]`: Casts a focus spell. `<type>` depends on the class. Add the `/c` switch if it is a focus cantrip, which are handled differently.
+`innate <level> = <spell name>[ at <target>]`: Casts an innate spell, if you have one.
 
 `refocus`: Runs the code for the Refocus activity. This may be done only your focus pool is zero, and then only once an hour in OOC time. 
