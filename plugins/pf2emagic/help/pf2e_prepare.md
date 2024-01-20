@@ -1,5 +1,5 @@
 ---
-toc: Pathfinder Second Edition
+toc: Magic In Pathfinder Second Edition
 summary: Preparing spells.
 aliases:
 - prepare
@@ -12,7 +12,7 @@ Some classes are required to, or may wish to, record spells in a spellbook.
 
 `prepare <caster class>[/<level>] = <spell name>`: Prepares `<spell name>` at `<level>`. Preparing at a higher level than a spell's base level heightens the spell to that level. See the PRD rules on heightening for how this works.
 `unprepare <caster class>[/<level>] = <spell name>`: Removes a spell from your prepared list.
-`prepare/list`: Shows your currently prepared spell list. (Alias: 'spells/prepared')
+`prepare/list`: Shows your currently prepared spell list. (Alias: `prepared`)
 
 Prepared casters may also choose to prepare standard sets, or many spells at once.
 
