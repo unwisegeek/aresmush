@@ -49,7 +49,7 @@ module AresMUSH
             fstype = Global.read_config('pf2emagic', 'focus_type_by_class', charclass)
             spell_list = focus_spells[fstype]
             cantrip_list = focus_cantrips[fstype]
-            list << format_focus_spells(@char, fstype, trad_info, spell_list, cantrip_list)
+            list << format_focus_spells(@char, charclass, fstype, trad_info, spell_list, cantrip_list)
           end
         end
 
@@ -96,7 +96,7 @@ module AresMUSH
         "#{trad_string}#{level_displ.join("%b%b%b")}%r#{splist_displ.join("%b%b%b")}"
       end
 
-      def format_focus_spells(char, fstype, trad_info, spell_list=nil, cantrip_list=nil)
+      def format_focus_spells(char, charclass, fstype, trad_info, spell_list=nil, cantrip_list=nil)
         # Stat Block
         trad = Pf2e.pretty_string(trad_info[0])
         prof = Pf2e.pretty_string(trad_info[1].slice(0).upcase)
