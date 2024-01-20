@@ -11,7 +11,7 @@ module AresMUSH
         @client = client
         @magic = magic
 
-        super File.dirname(__FILE__) + "/spell_display_one.erb"
+        super File.dirname(__FILE__) + "/magic_display.erb"
       end
 
       def textline(title)

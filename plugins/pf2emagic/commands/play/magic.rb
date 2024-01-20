@@ -27,7 +27,7 @@ module AresMUSH
         magic = char.magic
 
         if !magic 
-          client.emit_failure t('pf2emagic.not_caster')
+          client.emit_failure t('pf2emagic.char_not_caster')
           return
         end
       
