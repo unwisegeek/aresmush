@@ -43,7 +43,7 @@ module AresMUSH
 
             list << format_spont_spells(@char, charclass, spell_list, trad_info)
           else 
-            fstype = Global.read_config('pf2emagic', 'focus_type_by_class', charclass)
+            fstype = Global.read_config('pf2e_magic', 'focus_type_by_class', charclass)
             spell_list = focus_spells[fstype]
             cantrip_list = focus_cantrips[fstype]
             list << format_focus_spells(@char, charclass, fstype, trad_info, spell_list, cantrip_list)
