@@ -23,7 +23,7 @@ module AresMUSH
     ##### CLASS METHODS #####
 
     def self.get_magic_obj(char)
-      obj = char.magic
+      char.magic
     end
 
     def self.get_create_magic_obj(char)
@@ -72,7 +72,7 @@ module AresMUSH
 
           new_max_pool = (pool["max"] + add).clamp(1,3)
           pool["max"] = new_max_pool
-          magic.focus_pool = pool
+          magic.update(focus_pool: pool)
         when "repertoire"
           # Spells need to be chosen, redirect to to_assign
 
@@ -100,31 +100,31 @@ module AresMUSH
 
           magic.update(focus_spells: focus_spells)
         when "focus_cantrip"
-            # Structure identical to focus_spells, kept separate because they are cast differently.
+          # Structure identical to focus_spells, kept separate because they are cast differently.
 
-            focus_cantrips = magic.focus_cantrips
+          focus_cantrips = magic.focus_cantrips
 
-            value.each_pair do |fstype, spell_list|
-              fs_by_type = focus_cantrips[stype] ? focus_cantrips[stype] : []
-              fs_by_type = (fs_by_type + spell_list).uniq
-              focus_cantrips[fstype] = fs_by_type
-            end
+          value.each_pair do |fstype, spell_list|
+            fs_by_type = focus_cantrips[stype] ? focus_cantrips[stype] : []
+            fs_by_type = (fs_by_type + spell_list).uniq
+            focus_cantrips[fstype] = fs_by_type
+          end
 
-            magic.update(focus_cantrips: focus_cantrips)
+          magic.update(focus_cantrips: focus_cantrips)
         when "spellbook"
-            # Spells need to be chosen, redirect to to_assign
+          # Spells need to be chosen, redirect to to_assign
 
-            to_assign = char.pf2_to_assign
+          to_assign = char.pf2_to_assign
 
-            assignment_list = {}
-            value.each_pair do |level, num|
-              ary = Array.new(num, "open")
-              assignment_list[level] = ary
-            end
+          assignment_list = {}
+          value.each_pair do |level, num|
+            ary = Array.new(num, "open")
+            assignment_list[level] = ary
+          end
 
-            to_assign["spellbook spells"] = assignment_list
+          to_assign["spellbook spells"] = assignment_list
 
-            char.update(pf2_to_assign: to_assign)
+          char.update(pf2_to_assign: to_assign)
         when "addspell"
           # Addspell means to add a specific spell to the spellbook. Adding spells to be chosen
           # should be the "spellbook" key.
@@ -137,9 +137,6 @@ module AresMUSH
         end
       end
 
-      magic.save
-
-      return magic
     end
 
     def self.get_spell_dc(char, charclass, is_focus=false)
@@ -178,6 +175,28 @@ module AresMUSH
       )
 
       abil_mod + prof_bonus
+    end
+
+    def self.factory_default(char)
+
+      magic = char.magic
+
+      magic.focus_cantrips = {}
+      magic.focus_spells = {}
+      magic.focus_pool = { "max"=>0, "current"=>0 }
+      magic.innate_spells = {}
+      magic.signature_spells = {}
+      magic.repertoire = {}
+      magic.spell_abil = {}
+      magic.spellbook = {}
+      magic.spells_per_day = {}
+      magic.spells_prepared = {}
+      magic.spells_today = {}
+      magic.tradition = {}
+      magic.prepared_lists = {}
+
+      magic.save
+
     end
 
   end

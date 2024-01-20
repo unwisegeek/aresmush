@@ -328,6 +328,10 @@ module AresMUSH
         magic_stats = class_mstats.merge(subclass_mstats)
 
         if magic_stats.empty?
+          # Most characters will be casters in some capacity at some point in their development,
+          # so everyone gets one to avoid create/delete repeatedly.
+          
+          PF2Magic.get_create_magic_obj(enactor)
           client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
         else
           PF2Magic.update_magic_for_class(enactor, charclass, magic_stats, client)

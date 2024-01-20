@@ -1,6 +1,13 @@
 module AresMUSH
   module Pf2emagic
 
+    def self.is_caster?(char)
+      magic = char.magic
+      return false unless magic
+      return false if magic.tradition.empty?
+      return true
+    end
+
     def generate_spells_today(obj, charclass)
       # Function assumes that calling code has already validated the magic object.
 
@@ -36,9 +43,10 @@ module AresMUSH
 
     def prepare_spell(spell, char, castclass, level, use_arcane_evo=false)
       # All validations are done in the helper.
-      magic = char.magic
 
-      return t('pf2emagic.not_caster') if !magic
+      return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
+
+      magic = char.magic
 
       cc = castclass.downcase
       tradition = magic.tradition[cc]
@@ -120,9 +128,9 @@ module AresMUSH
 
     def unprepare_spell(spell, char, castclass, level=nil)
       # All validations are done in the helper.
-      magic = char.magic
+      return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
 
-      return t('pf2emagic.not_caster') if !magic
+      magic = char.magic
 
       cc = castclass.downcase
       tradition = magic.tradition[cc]

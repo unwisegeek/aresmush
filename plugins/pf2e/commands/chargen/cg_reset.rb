@@ -58,7 +58,7 @@ module AresMUSH
         Pf2eSkills.factory_default(enactor)
         Pf2eHP.factory_default(enactor)
         Pf2eCombat.factory_default(enactor)
-        enactor.magic&.delete
+        PF2Magic.factory_default(enactor)
 
         enactor.pf2_reset = false
 
