@@ -31,12 +31,13 @@ module AresMUSH
         focus_spells = @magic.focus_spells
         focus_cantrips = @magic.focus_cantrips
 
+        list = []
+
         charclass_list.each do |charclass|
           trad_info = tradition[charclass]
 
           caster_type = Pf2emagic.get_caster_type(charclass)
 
-          list = []
           if caster_type == 'prepared'
             spell_list = spells_today[charclass]
 
