@@ -60,7 +60,7 @@ module AresMUSH
         prof = Pf2e.pretty_string(trad_info[1].slice(0).upcase)
         atk = PF2Magic.get_spell_attack_bonus(char, charclass)
 
-        trad_string = "%b%b#{item_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r"
+        trad_string = "#{title_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r%r"
 
         # Spell List Block
         list = []
@@ -78,7 +78,7 @@ module AresMUSH
         prof = Pf2e.pretty_string(trad_info[1].slice(0).upcase)
         atk = PF2Magic.get_spell_attack_bonus(char, charclass)
 
-        trad_string = "%b%b#{item_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r"
+        trad_string = "#{title_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r%r"
 
         # Spell List Block
         level_displ = []
@@ -99,13 +99,13 @@ module AresMUSH
         prof = Pf2e.pretty_string(trad_info[1].slice(0).upcase)
         atk = PF2Magic.get_spell_attack_bonus(char, charclass)
 
-        trad_string = "%b%b#{item_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r"
+        trad_string = "%#{title_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r%r"
 
         # Spell List Block
 
         cantrips = cantrip_list ? "#{item_color}Cantrips (#{fstype.capitalize}):%xn #{cantrip_list.sort.join(", ")}%r" : ""
 
-        spells = spell_list ? "#{item_color}Focus Spells (#{fstype.capitalize}):%xn #{spell_list.sort.join(", ")}%r" : ""
+        spells = spell_list ? "#{item_color}Focus Spells (#{fstype.capitalize}):%xn #{spell_list.sort.join(", ")}" : ""
 
         "#{trad_string}#{cantrips}#{spells}"
       end
