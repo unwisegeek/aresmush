@@ -14,10 +14,6 @@ module AresMUSH
         super File.dirname(__FILE__) + "/magic_display.erb"
       end
 
-      def textline(title)
-        @client.screen_reader ? title : line_with_text(title)
-      end
-
       def name
         @char.name
       end
