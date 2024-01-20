@@ -34,7 +34,7 @@ module AresMUSH
         charclass_list.each do |charclass|
           trad_info = tradition[charclass]
 
-          caster_type = get_caster_type(charclass)
+          caster_type = Pf2emagic.get_caster_type(charclass)
 
           list = []
           if caster_type == 'prepared'
