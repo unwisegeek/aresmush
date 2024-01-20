@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2e
 
-    class Pf2eCastSpellTemplate < ErbTemplateRenderer
+    class PF2CastSpellTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
       attr_accessor :caster, :spell, :tradition, :level, :target
@@ -16,7 +16,7 @@ module AresMUSH
 
         @details = Global.read_config('pf2e_spells', spell)
 
-        super File.dirname(__FILE__) + "/spellcast_template.erb"
+        super File.dirname(__FILE__) + "/cast_spell.erb"
       end
 
       def textline(title)
@@ -67,7 +67,7 @@ module AresMUSH
 
         heighten = @level - base_level
 
-        damage = d.is_a?(Array) ? d[heighten] : d
+        d.is_a?(Array) ? d[heighten] : d
       end
 
       def dam_roll
@@ -97,7 +97,7 @@ module AresMUSH
           Pf2eAbilities.get_score @caster, spell_abil
         )
 
-        dc = 10 + abil_mod + prof_bonus
+        10 + abil_mod + prof_bonus
       end
 
     end

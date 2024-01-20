@@ -15,6 +15,8 @@ module AresMUSH
       case cmd.root
       when "spell"
         return PF2DisplaySpellCmd
+      when "magic"
+        return PF2MagicDisplayCmd
       end
     end
 

@@ -179,5 +179,15 @@ module AresMUSH
       Global.read_config('pf2e_magic', 'focus_casting_stat', stype)
     end
 
+    def self.get_caster_type(charclass)
+      prepared = Global.read_config('pf2e_magic', 'prepared_casters')
+      spont = Global.read_config('pf2e_magic', 'spontaneous_casters')
+
+      return 'prepared' if prepared.include charclass
+      return 'spontaneous' if spont.include charclass
+      return nil
+
+    end
+
   end
 end

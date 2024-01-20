@@ -12,7 +12,7 @@ module AresMUSH
 
         @details = Global.read_config('pf2e_spells', spell)
 
-        super File.dirname(__FILE__) + "/spelldisplayone_template.erb"
+        super File.dirname(__FILE__) + "/spell_display_one.erb"
       end
 
       def textline(title)

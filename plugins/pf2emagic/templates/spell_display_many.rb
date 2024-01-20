@@ -10,7 +10,7 @@ module AresMUSH
         @spell_list = spell_list
         @client = client
 
-        super File.dirname(__FILE__) + "/spelldisplaymany_template.erb"
+        super File.dirname(__FILE__) + "/spell_display_many.erb"
       end
 
       def textline(title)

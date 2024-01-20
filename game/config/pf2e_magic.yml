@@ -263,5 +263,16 @@ pf2e_magic:
     revelation: Charisma
     school: Intelligence  
     warden: Wisdom
+  focus_type_by_class:
+    Bard: composition
+    Champion: devotion
+    Cleric: domain
+    Druid: order
+    Monk: ki
+    Oracle: revelation
+    Ranger: warden
+    Sorcerer: bloodline
+    Witch: hex
+    Wizard: school
 
 
