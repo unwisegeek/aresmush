@@ -78,8 +78,9 @@ module AresMUSH
           list << format_focus_spells(@char, charclass, fs, trad_info, spell_list, cantrip_list)
         end
 
+        list
+
       end
-      
 
       def format_prepared_spells(char, charclass, spell_list, trad_info)
         # Stat Block
@@ -136,7 +137,6 @@ module AresMUSH
 
         "#{trad_string}#{cantrips}#{spells}"
       end
-
 
 
     end
