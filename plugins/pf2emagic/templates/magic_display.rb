@@ -75,7 +75,7 @@ module AresMUSH
           trad_info = tradition[charclass]
           spell_list = focus_spells[fs]
           cantrip_list = focus_cantrips[fs]
-          list << format_focus_spells(@char, charclass, fstype, trad_info, spell_list, cantrip_list)
+          list << format_focus_spells(@char, charclass, fs, trad_info, spell_list, cantrip_list)
         end
 
       end
