@@ -79,6 +79,7 @@ module AresMUSH
         end
 
       end
+      
 
       def format_prepared_spells(char, charclass, spell_list, trad_info)
         # Stat Block
