@@ -17,6 +17,8 @@ en:
     not_prepared: "Spell not currently prepared."
     not_prepared_at_level: "Spell not prepared at specified level."
 
+    revelation_locked: "%xrYour revelation spells are currently locked by your curse.%xn"
+
     specify_level: "You have that spell prepared at more than one level. Specify which level to replace."
     spell_prepare_ok: "You prepare %{name} as a %{as} at level %{level}."
     spell_prepare_as_signature_ok: "You prepare %{name} as a signature spell at level %{level}."

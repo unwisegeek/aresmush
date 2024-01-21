@@ -79,7 +79,22 @@ module AresMUSH
         end
 
         list
+      end
 
+      def has_signature_spells
+        !(@magic.signature_spells.empty?)
+      end
+
+      def has_innate_spells
+        !(@magic.innate_spells.empty?)
+      end
+
+      def revelation_locked
+        @magic.focus_spells["revelation"] && @magic.revelation_locked
+      end
+
+      def revelation_lock_msg
+        t('pf2e_magic.revelation_locked')
       end
 
       def format_prepared_spells(char, charclass, spell_list, trad_info)

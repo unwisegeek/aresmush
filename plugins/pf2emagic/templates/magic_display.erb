@@ -6,9 +6,9 @@
 <% end %>
 <% if has_focus_spells %>
 <%= textline("Focus Spells") %>
+<%= revelation_lock_msg if revelation_locked %>
 <% focus_spells.each do |fs| %>
 <%= fs %>
-<%= divider %>
 <% end %>
 <% end %>
 <%= footer %>
