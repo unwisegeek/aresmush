@@ -4,4 +4,10 @@
 <% spell_details_by_charclass.each do |charclass| %>
 <%= charclass %>
 <% end %>
+<% if has_focus_spells %>
+<%= textline("Focus Spells") %>
+<% focus_spells.each do |fs| %>
+<%= fs %>
+<% end %>
+<% end %>
 <%= footer %>

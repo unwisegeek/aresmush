@@ -18,14 +18,16 @@ module AresMUSH
         @char.name
       end
 
+      def textline(title)
+        @client.screen_reader ? title : line_with_text(title)
+      end
+
       def spell_details_by_charclass
         tradition = @magic.tradition
 
         charclass_list = tradition.keys.sort
 
         spells_today = @magic.spells_today
-        focus_spells = @magic.focus_spells
-        focus_cantrips = @magic.focus_cantrips
 
         list = []
 
@@ -42,15 +44,39 @@ module AresMUSH
             spell_list = spells_today[charclass]
 
             list << format_spont_spells(@char, charclass, spell_list, trad_info)
-          else 
-            fstype = Global.read_config('pf2e_magic', 'focus_type_by_class', charclass)
-            spell_list = focus_spells[fstype]
-            cantrip_list = focus_cantrips[fstype]
-            list << format_focus_spells(@char, charclass, fstype, trad_info, spell_list, cantrip_list)
+          else next
           end
         end
 
         list
+
+      end
+
+      def has_focus_spells
+        focus_spells = @magic.focus_spells
+        focus_cantrips = @magic.focus_cantrips
+
+        !((focus_spells.keys + focus_cantrips.keys).empty?)
+      end
+
+      def focus_spells 
+        tradition = @magic.tradition
+
+        fstype_to_cc = Global.read_config('pf2e_magic', 'focus_type_by_class').invert
+
+        focus_spells = @magic.focus_spells
+        focus_cantrips = @magic.focus_cantrips
+
+        fs = (focus_spells.keys + focus_cantrips.keys).uniq.sort
+
+        list = []
+        fs.each do |fs|
+          charclass = fstype_to_cc[fs]
+          trad_info = tradition[charclass]
+          spell_list = focus_spells[fs]
+          cantrip_list = focus_cantrips[fs]
+          list << format_focus_spells(@char, charclass, fstype, trad_info, spell_list, cantrip_list)
+        end
 
       end
 
