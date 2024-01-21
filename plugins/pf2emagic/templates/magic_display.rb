@@ -94,7 +94,7 @@ module AresMUSH
       end
 
       def revelation_lock_msg
-        t('pf2e_magic.revelation_locked')
+        t('pf2e_magic.revelation_locked') + "%r"
       end
 
       def format_prepared_spells(char, charclass, spell_list, trad_info)
