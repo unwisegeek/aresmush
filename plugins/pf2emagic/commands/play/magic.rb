@@ -26,7 +26,7 @@ module AresMUSH
 
 
 
-        if !(Pf2ehagic.is_caster?)
+        if !(Pf2emagic.is_caster?)
           client.emit_failure t('pf2emagic.not_caster')
           return
         end
