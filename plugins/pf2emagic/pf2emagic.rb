@@ -13,6 +13,10 @@ module AresMUSH
 
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
+      when "prepare"
+        return PF2PrepareSpellCmd
+      when "unprepare"
+        return PF2UnprepareSpellCmd
       when "spell"
         return PF2DisplaySpellCmd
       when "magic"

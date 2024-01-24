@@ -3,6 +3,8 @@ module AresMUSH
     class PF2PrepareSpellCmd
       include CommandHandler
 
+      attr_accessor :caster_class, :spell_level, :spell_name
+
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
 

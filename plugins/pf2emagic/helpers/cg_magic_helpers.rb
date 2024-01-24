@@ -164,7 +164,8 @@ module AresMUSH
 
       magic.prepared_spells[castclass] = prepared_spells
 
-      magic.save && return
+      magic.update(prepared_spells: prepared_spells)
+      return nil
     end
 
     def spellbook_check(obj, spell)

@@ -22,3 +22,4 @@ en:
     specify_level: "You have that spell prepared at more than one level. Specify which level to replace."
     spell_prepare_ok: "You prepare %{name} as a %{as} at level %{level}."
     spell_prepare_as_signature_ok: "You prepare %{name} as a signature spell at level %{level}."
+    spell_unprepare_ok: "You unprepare %{name} from your %{as} spell list."
