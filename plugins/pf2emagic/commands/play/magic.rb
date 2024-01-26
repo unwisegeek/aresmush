@@ -32,7 +32,6 @@ module AresMUSH
         end
 
         magic = char.magic
-      
 
         template = PF2MagicDisplayTemplate.new(char, magic, client)
 
