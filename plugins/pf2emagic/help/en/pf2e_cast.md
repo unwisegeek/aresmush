@@ -1,8 +1,7 @@
 ---
 toc: Magic In Pathfinder Second Edition
-summary: Casting spells.
+summary: Commands used to actually cast spells.
 aliases:
-- spells
 - cast
 - refocus
 - focus
@@ -24,4 +23,4 @@ Commands for casting:
 `focus[/c] <type>= <spell name>[ at <target>]`: Casts a focus spell. `<type>` depends on the class. Add the `/c` switch if it is a focus cantrip, which are handled differently.
 `innate <level> = <spell name>[ at <target>]`: Casts an innate spell, if you have one.
 
-`refocus`: Runs the code for the Refocus activity. This may be done only your focus pool is zero, and then only once an hour in OOC time. 
+`refocus`: Runs the code for the Refocus activity. This may be done only if your focus pool is zero, and then only once an hour in OOC time. 

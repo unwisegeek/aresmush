@@ -4,7 +4,7 @@ module AresMUSH
     attribute :pf2_abilities_locked, :type => DataType::Boolean
     attribute :pf2_reset, :type => DataType::Boolean
     attribute :advancing, :type => DataType::Boolean
-    attribute :pf2_last_refresh
+    attribute :pf2_last_refresh, :type => DataType::Time
 
     attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"", 'specialize_info'=>""}
     attribute :pf2_level, :type => DataType::Integer, :default => 1
@@ -28,6 +28,7 @@ module AresMUSH
     attribute :pf2_award_history, :type => DataType::Hash, :default => { 'xp'=>{}, 'money'=>{} }
     attribute :pf2_is_dead, :type => DataType::Boolean
     attribute :pf2_known_for, :type => DataType::Array, :default => []
+
 
 
     ### Only some characters will have these attributes, so nil check these.

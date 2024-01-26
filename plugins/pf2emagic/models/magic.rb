@@ -5,6 +5,7 @@ module AresMUSH
     attribute :focus_cantrips, :type => DataType::Hash, :default => {}
     attribute :focus_spells, :type => DataType::Hash, :default => {}
     attribute :focus_pool, :type => DataType::Hash, :default => { "max"=>0, "current"=>0 }
+    attribute :last_refocus, :type => DataType::Time
     attribute :innate_spells, :type => DataType::Hash, :default => {}
     attribute :revelation_locked, :type => DataType::Boolean
     attribute :signature_spells, :type => DataType::Hash, :default => {}
