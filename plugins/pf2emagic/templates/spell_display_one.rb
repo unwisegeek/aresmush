@@ -27,6 +27,10 @@ module AresMUSH
         @details["actions"]
       end
 
+      def traits 
+        @details["traits"].sort.join(", ")
+      end 
+
       def cast
         @details["cast"].join(", ")
       end
