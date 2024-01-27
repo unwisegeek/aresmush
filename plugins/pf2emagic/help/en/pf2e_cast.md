@@ -24,3 +24,5 @@ Commands for casting:
 `innate <level> = <spell name>[ at <target>]`: Casts an innate spell, if you have one.
 
 `refocus`: Runs the code for the Refocus activity. This may be done only if your focus pool is zero, and then only once an hour in OOC time. 
+
+Admins can run this command as `refocus <character>`, to reset another character's focus pool. Admins may do this at any time, without time or pool size restrictions. 
