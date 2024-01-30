@@ -85,12 +85,16 @@ module AresMUSH
         !(@magic.signature_spells.empty?)
       end
 
+      def signature_spells
+
+      end
+
       def has_innate_spells
         !(@magic.innate_spells.empty?)
       end
 
       def revelation_locked
-        @magic.focus_spells["revelation"] && @magic.revelation_locked
+        @magic.revelation_locked
       end
 
       def revelation_lock_msg

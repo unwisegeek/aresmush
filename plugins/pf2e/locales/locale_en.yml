@@ -49,6 +49,7 @@ en:
     cg_reset_ok: "Your sheet has been cleared."
     char_has_code: "%xhEdicts:%xn%r%{edicts}%r%r%xhAnathema%xn:%r%{anathema}"
     char_not_found: "I didn't find a character by that name."
+    char_not_all_found: "Not all characters in your list were found. Please check your spelling."
     condition_not_found: "That is not a valid condition. Valid options: %{options}"
     condition_needs_value: "This condition requires that a value be associated with it."
     condition_set_ok: "Condition %{condition} set on %{target}."
@@ -126,6 +127,7 @@ en:
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
 
     player_added: "%{player} can now view the following section of your sheet: %{section}."
+    prp_rewarded_ok: "You reward a %{ptype} PRP to %{ttype}"
 
     reset_first: "Type cg/reset before using this command."
     reset_ok: "Reset of %{element} '%{option}' complete."

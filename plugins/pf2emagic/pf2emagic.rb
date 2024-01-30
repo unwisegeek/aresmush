@@ -21,6 +21,8 @@ module AresMUSH
         return PF2DisplaySpellCmd
       when "magic"
         return PF2MagicDisplayCmd
+      when "refocus"
+        return PF2RefocusCmd
       end
     end
 

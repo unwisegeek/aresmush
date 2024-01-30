@@ -71,7 +71,7 @@ module AresMUSH
       capacity_bonus = bag.bulk_bonus ? bag.bulk_bonus : 0
       bag_bulk = bag.bulk
 
-      char_bulk = (load + bag_bulk - capacity_bonus).to_i.clamp(0,100)
+      (load + bag_bulk - capacity_bonus).to_i.clamp(0,100)
     end
 
     def self.calculate_bag_load(bag)
