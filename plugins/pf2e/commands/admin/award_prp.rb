@@ -70,9 +70,10 @@ module AresMUSH
 
         ttype = self.target_type == "player" ? self.target_type + "s" : self.target_type
         ptype = self.prp_type == "dc" ? self.prp_type.upcase : self.prp_type
+        names = target.map { |t| t.name }.sort.join(", ")
 
         client.emit_success t('pf2e.prp_rewarded_ok', 
-          :targets => targets.sort.join(", "), 
+          :targets => names,
           :ptype => ptype, 
           :ttype => ttype
           )
