@@ -39,6 +39,8 @@ module AresMUSH
       def handle
         string = self.prp_type + "_" + self.target_type
 
+        client.emit string
+
         reward_hash = Global.read_config('pf2e_rewards', 'prp_reward_types', string)
 
         client.emit reward_hash
@@ -56,7 +58,11 @@ module AresMUSH
         targets.each do |t|
           level = t.pf2_level
 
+          client.emit "Level for #{t.name}: #{level}"
+
           rewards = reward_hash[level]
+
+          client.emit "Rewards: #{rewards}"
 
           Pf2e.award_xp(t, rewards["xp"])
           Pf2egear.pay_player(t, rewards["money"])
