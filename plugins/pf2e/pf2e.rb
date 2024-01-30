@@ -28,6 +28,8 @@ module AresMUSH
         case cmd.switch
         when "xp"
           return PF2AwardXPCmd
+        when "prp"
+          return PF2AwardPRPCmd
         end
       when "cg"
         case cmd.switch
