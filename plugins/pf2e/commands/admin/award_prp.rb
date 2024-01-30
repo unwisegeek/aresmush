@@ -41,9 +41,9 @@ module AresMUSH
 
         client.emit string
 
-        reward_hash = Global.read_config('pf2e_rewards', 'prp_reward_types', string)
+        reward_list = Global.read_config('pf2e_rewards', 'prp_reward_types', string)
 
-        client.emit reward_hash
+        reward_hash = Global.read_config('pf2e_rewards', reward_list)
 
         # Find all the character objects and warn the admin if any not found.
 
