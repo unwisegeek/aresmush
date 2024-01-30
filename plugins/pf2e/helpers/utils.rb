@@ -95,7 +95,7 @@ module AresMUSH
     end
 
     def self.roll_dice(amount=1, sides=20)
-      result = amount.to_i.times.collect { |t| rand(1..sides.to_i) }
+      amount.to_i.times.collect { |t| rand(1..sides.to_i) }
     end
 
     def self.character_has?(array, element)
@@ -191,7 +191,7 @@ module AresMUSH
       end
 
       success_case = (scase + succ_mod).clamp(0,3)
-      degree = degrees[success_case] + whirldice
+      degrees[success_case] + whirldice
     end
 
     def self.pretty_string(string)
@@ -238,7 +238,7 @@ module AresMUSH
     def self.select_best_prof(array)
       profs = %w{untrained trained expert master legendary}
 
-      best_prof = array.sort_by{ |a,b| profs.index(a) <=> profs.index(b) }.pop
+      array.sort_by{ |a,b| profs.index(a) <=> profs.index(b) }.pop
     end
 
     def self.cannot_respec(char)

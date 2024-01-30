@@ -58,8 +58,14 @@ module AresMUSH
 
           rewards = reward_hash[level]
 
-          Pf2e.award_xp(t, rewards["xp"])
-          Pf2egear.pay_player(t, rewards["money"])
+          xp = rewards["xp"]
+          money = rewards['money']
+
+          Pf2e.award_xp(t, xp)
+          Pf2egear.pay_player(t, money)
+
+          Pf2e.record_history(t, "xp", enactor.name, xp, "PRP Award")
+          Pf2e.record_history(t, "money", enactor.name, money, "PRP Award")
         end
 
         ttype = self.target_type == "player" ? self.target_type + "s" : self.target_type
