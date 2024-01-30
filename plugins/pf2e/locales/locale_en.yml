@@ -127,7 +127,7 @@ en:
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."
 
     player_added: "%{player} can now view the following section of your sheet: %{section}."
-    prp_rewarded_ok: "You reward a %{ptype} PRP to %{ttype}"
+    prp_rewarded_ok: "You reward a %{ptype} PRP to %{ttype}: %{targets}."
 
     reset_first: "Type cg/reset before using this command."
     reset_ok: "Reset of %{element} '%{option}' complete."
