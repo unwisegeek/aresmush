@@ -2,10 +2,10 @@
 <%= header_line %>
 <%= divider %>
 <% page_items.each do |item| %>
-  <%= left(time(item),18) -%>
+  <%= left(time(item),20) -%>
   <%= left(awarded_by(item),15) -%>
-  <%= right(award(item),13) -%>
-  <%= left(reason(item),32) %>
+  <%= right(award(item),8) -%>
+  <%= left(reason(item),35) %>
 <% end %>
 
 <%= page_footer %>

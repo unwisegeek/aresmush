@@ -31,7 +31,7 @@ module AresMUSH
       end
 
       def header_line
-        "%b%b#{item_color}#{left("Date", 18)}#{left("Awarder", 15)}#{left("Award", 13)}#{left("Reason", 32)}"
+        "%b%b#{item_color}#{left("Date", 20)}%b#{left("Awarder", 15)}%b#{left("Award", 8)}%b#{left("Reason", 35)}"
       end
 
       def time(item)
@@ -45,7 +45,7 @@ module AresMUSH
       end
 
       def award(item)
-        Pf2egear.display_money(item[2])
+        item[2].to_s
       end
 
       def reason(item)
