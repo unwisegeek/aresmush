@@ -4,7 +4,7 @@
 <% page_items.each do |item| %>
   <%= left(time(item),20) -%>
   <%= left(awarded_by(item),15) -%>
-  <%= right(award(item),8) -%>
+  <%= left(award(item),8) -%>
   <%= left(reason(item),35) %>
 <% end %>
 
