@@ -38,6 +38,8 @@ module AresMUSH
 
         client.emit template.render
 
+      end
+
     end
   end
 end
