@@ -27,6 +27,7 @@ en:
     items_invested_ok: "Successful. %{count} items successfully invested."
     items_uninvested_ok: "Successful. %{count} items successfully uninvested."
 
+    money_history_title: "Money History for %{char}"
     money_paid_ok: "You pay %{value} %{cointype} to %{payee}."
     money_taken_ok: "You take %{value} %{cointype} from %{payer}."
     money_totals: "%{name} has the following money totals: %{money}"

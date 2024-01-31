@@ -41,7 +41,7 @@ module AresMUSH
       end
 
       def award(item)
-        item[2].to_s
+        Pf2egear.display_money(item[2])
       end
 
       def reason(item)

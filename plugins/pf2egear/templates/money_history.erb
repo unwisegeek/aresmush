@@ -3,8 +3,8 @@
 <% page_items.each do |item| %>
   <%= left(time(item),18) -%>
   <%= left(awarded_by(item),20) -%>
-  <%= right(award(item),3) -%>
-  <%= left(reason(item),37) %>
+  <%= right(award(item),8) -%>
+  <%= left(reason(item),32) %>
 <% end %>
 
 <%= page_footer %>
