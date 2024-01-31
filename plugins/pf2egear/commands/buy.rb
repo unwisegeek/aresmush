@@ -68,7 +68,7 @@ module AresMUSH
           item_info = item.values.first
         end
 
-        #  If it's gear or a consumable, multiples are allowed, otherwise only one. 
+        #  If it's gear or a consumable, multiples are allowed, otherwise only one.
 
         case self.category
         when "weapons", "weapon", "armor", "shields", "shield", "bags", "magicitem"
@@ -87,13 +87,13 @@ module AresMUSH
           return
         end
 
-        # Create the item. 
+        # Create the item.
 
         Pf2egear.create_item(enactor, self.category, item_name, q, item_info)
 
         enactor.update(pf2_money: (purse - cost))
 
-        Pf2e.record_history(enactor, 'money', 'Item Vendor', -cost, "Purchase #{item_name}")
+        Pf2egear.record_money_history(enactor, 'Item Vendor', -cost, "Purchase #{item_name}")
 
         client.emit_success t('pf2egear.item_bought_ok', :item => item_name, :cost => Pf2egear.display_money(cost), :quantity => q)
 

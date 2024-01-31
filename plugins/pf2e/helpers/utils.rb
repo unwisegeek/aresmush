@@ -218,6 +218,17 @@ module AresMUSH
       char.update(pf2_award_history: full_list)
     end
 
+    def self.record_xp_history(char, awarded_by, amount, reason)
+      timestamp = Time.now.to_i
+
+      xp_history = char.pf2_xp_history
+
+      # History is displayed in reverse chrono, so prepending makes more sense
+      xp_history.unshift [ timestamp, awarded_by, amount, reason ]
+
+      char.update(pf2_xp_history: xp_history)
+    end
+
     def self.is_proficient?(char, category, name)
 
       return true if char.is_admin?

@@ -171,6 +171,17 @@ module AresMUSH
       client.emit_ooc dest_msg
     end
 
+    def self.record_money_history(char, awarded_by, amount, reason)
+      timestamp = Time.now.to_i
+
+      money_history = char.pf2_money_history
+
+      # History is displayed in reverse chrono, so prepending makes more sense
+      money_history.unshift [ timestamp, awarded_by, amount, reason ]
+
+      char.update(pf2_money_history: money_history)
+    end
+
 
   end
 end
