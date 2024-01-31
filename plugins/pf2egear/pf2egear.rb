@@ -62,6 +62,8 @@ module AresMUSH
         end
       when "use"
         return PF2UseItemCmd
+      when "listmoney"
+        return PF2ListMoneyCmd
       end
 
       nil
