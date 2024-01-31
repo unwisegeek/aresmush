@@ -30,6 +30,10 @@ module AresMUSH
         @paginator.page_footer
       end
 
+      def header_line
+        "%b%b#{item_color}#{left("Date", 18)}#{left("Awarder", 15)}#{left("Award", 13)}#{left("Reason", 32)}"
+      end
+
       def time(item)
         converted_time = Time.at(item[0])
 
