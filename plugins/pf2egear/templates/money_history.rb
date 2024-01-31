@@ -31,7 +31,7 @@ module AresMUSH
       end
 
       def header_line
-        "%b%b#{item_color}#{left("Date", 20)}%b#{left("Awarder", 15)}%b#{left("Award", 8)}%b#{left("Reason", 35)}"
+        "%b%b#{item_color}#{left("Date", 20)}%b%b#{left("Awarder", 15)}%b%b#{left("Award", 8)}%b%b#{left("Reason", 35)}"
       end
 
       def time(item)
