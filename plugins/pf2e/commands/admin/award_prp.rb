@@ -64,21 +64,21 @@ module AresMUSH
           Pf2e.award_xp(t, xp)
           Pf2egear.pay_player(t, money)
 
-          Pf2e.record_history(t, "xp", enactor.name, xp, "PRP Award")
-          Pf2e.record_history(t, "money", enactor.name, money, "PRP Award")
+          Pf2e.record_xp_history(t, enactor.name, xp, "PRP Award")
+          Pf2egear.record_money_history(t, enactor.name, money, "PRP Award")
         end
 
         ttype = self.target_type == "player" ? self.target_type + "s" : self.target_type
         ptype = self.prp_type == "dc" ? self.prp_type.upcase : self.prp_type
         names = targets.map { |t| t.name }.sort.join(", ")
 
-        client.emit_success t('pf2e.prp_rewarded_ok', 
+        client.emit_success t('pf2e.prp_rewarded_ok',
           :targets => names,
-          :ptype => ptype, 
+          :ptype => ptype,
           :ttype => ttype
           )
 
-        
+
       end
 
     end
