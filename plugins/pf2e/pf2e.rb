@@ -142,6 +142,8 @@ module AresMUSH
         when "set"
           return PF2AdminSetCmd
         end
+      when "listxp"
+        return PF2ListXPCmd
       end
 
       nil
