@@ -8,7 +8,7 @@ aliases:
 ---
 # Pathfinder 2E Chargen - Character Options
 
-The first thing you'll need to do is set your basic character information. You will only be able to use this command in chargen, and nothing you set here can be changed after approval. To set a property:
+The first thing you'll need to do is set your basic character information. You will only be able to use this command in chargen, and nothing you set here can be changed after approval without staff assistance. To set a property:
 
 `cg/set <element> = <value>`: Sets basic character information.
 
@@ -24,7 +24,7 @@ The first thing you'll need to do is set your basic character information. You w
 * alignment%xy*%xn: Your character's alignment, expressed as a two-letter code. See [PRD](https://2e.aonprd.com/Rules.aspx?ID=95) for how alignment works in PF2E.
 * deity: Does your character venerate a specific deity above all others?
 
-_An element marked with the * character is a mandatory element._ Note that some other elements may be mandatory depending on game configuration and on the options chosen.
+**An element marked with the * character is a mandatory element.** Note that some other elements may be mandatory depending on game configuration and on the options chosen.
 
 `cg/info <element>`: This command lists the options available to you, based on either all items available or on the choices you have already made. 
 

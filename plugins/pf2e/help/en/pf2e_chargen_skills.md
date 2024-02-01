@@ -2,9 +2,12 @@
 toc: Pathfinder Second Edition
 summary: Starting character generation - choosing skills and lores.
 order: 4
+aliases:
+- skill
+- skills
 ---
 
-# Pathfinder 2E Chargen - Skills and Lores
+# Pathfinder 2E Chargen - Skills
 
 Next, choose your open skills. Your choice of ancestry, heritage, character class, and background will have offered you a set of base skills. Things to remember:
 
@@ -21,7 +24,4 @@ Next, choose your open skills. Your choice of ancestry, heritage, character clas
 `skill/set <type>=<skill>`: Sets an open skill. Types are **background** or **free**.
 `skill/unset <type>=<skill>`: Deletes a skill selected with `skill/set`. You cannot delete skills granted by your base info.
 
-### Lores
-`lore/set <type>=<skill>`: Selects a lore. If <type> is **free**, it draws from your open pool of skills. If <type> is **background**, it sets which lore you get from your background, if you have this option.
-`lore/unset <type>=<skill>`: Deletes a skill selected with `lore/set`. You cannot delete lores granted by your base info.
-`lore/info [<type>]`: Shows what lores are available. If you specify a type, it will show you only lores under that category. Types are _deity_, _creature_, _city_, _terrain_, _crafting_, or _general_. If <type> is not specified, it will show all available lores.
+
