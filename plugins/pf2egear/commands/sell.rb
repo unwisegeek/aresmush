@@ -18,11 +18,11 @@ module AresMUSH
         [ self.category, self.item_num ]
       end
 
-      # def check_permissions
-        # return nil if enactor.is_approved?
-        # return nil if enactor.is_admin?
-        # return t('pf2egear.approved_players_only')
-      # end
+      def check_permissions
+        return nil if enactor.is_approved?
+        return nil if enactor.is_admin?
+        return t('dispatcher.not_allowed')
+      end
 
       def check_valid_quantity
         return nil if !self.quantity

@@ -2,6 +2,7 @@
 toc: Pathfinder Second Edition
 summary: Inventory - Buying and Selling Equipment
 aliases:
+- browse
 - buy
 - sell
 ---
@@ -22,7 +23,7 @@ Emblem of Ea's inventory system allows characters to buy and sell items from and
 
 `browse <category>`: Browses items purchasable in <category>.
 
-**You need to have committed your base info and abilities before you can use these commands.** We recommend waiting until after app approval to purchase gear.
+**You need to be approved for play to buy or sell gear.** This is to prevent money issues associated to app rejection and rework requirements. You will be able to buy gear once you are approved for play.
 
 `buy <category> = <name>[/<quantity>]`: Buys item in <category> named <name>. Quantity is optional, default is 1.
 `sell <category> = <name>[/quantity>]`: Sells item in <category> named <name> for half of its purchase price. Quantity is optional, default is 1.

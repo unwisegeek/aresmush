@@ -16,11 +16,11 @@ module AresMUSH
         [ self.category, self.item_name ]
       end
 
-      # def check_permissions
-        # return nil if enactor.pf2_abilities_locked && pf2_baseinfo_locked
-        # return nil if enactor.is_admin?
-        # return t('pf2e.lock_abil_first')
-      # end
+      def check_permissions
+        return nil if enactor.is_approved?
+        return nil if enactor.is_admin?
+        return t('dispatcher.not_allowed')
+      end
 
       def check_valid_quantity
         return nil if !self.quantity
