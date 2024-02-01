@@ -1,7 +1,7 @@
 ---
 toc: Pathfinder Second Edition
 summary: Admin commands to manipuate the character sheet.
-aliases: 
+aliases:
 - pf2e staff
 - pf2 staff
 - pf2 admin
