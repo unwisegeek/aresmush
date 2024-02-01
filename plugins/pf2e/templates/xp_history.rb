@@ -19,7 +19,7 @@ module AresMUSH
       end
 
       def title
-        t('pf2egear.xp_history_title', :char => @char.name)
+        t('pf2e.xp_history_title', :char => @char.name)
       end
 
       def page_items

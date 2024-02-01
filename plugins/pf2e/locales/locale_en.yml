@@ -157,6 +157,7 @@ en:
     use_focus_keyword: "The named class grants focus spells. Use the 'focus' keyword."
 
     xp_awarded: "You award %{award} XP to %{awardee}."
+    xp_history_title: "Experience Awards for %{char}"
 
     your_init: "It is your turn in encounter %{id}. The organizer may skip you if you do not respond."
 
