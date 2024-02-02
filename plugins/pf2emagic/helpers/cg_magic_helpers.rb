@@ -30,3 +30,12 @@ module AresMUSH
 
   end
 end
+module AresMUSH
+  module Pf2emagic
+
+    def self.select_spell(char, type, charclass, old_spell, new_spell)
+
+
+    end
+  end
+end
