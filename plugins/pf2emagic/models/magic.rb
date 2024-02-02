@@ -129,10 +129,27 @@ module AresMUSH
         when "addspell"
           # Addspell means to add a specific spell to the spellbook. Adding spells to be chosen
           # should be the "spellbook" key.
+          # Structure of value for addspell key: { level => [ spell ] }
 
+          spellbook = magic.spellbook
 
+          # Initialize spellbook for class if not already present.
+          csb = spellbook[charclass] ? spellbook[charclass] : {}
 
+          value.each do |level, spell_list|
+            list = csb[level] ? csb[level] : []
+
+            spell_list.each { |s| list << s }
+
+            csb[level] = list
+          end
+
+          spellbook[charclass] = csb
+          magic.update(spellbook: spellbook)
         when "signature_spells"
+          # This key means that the character needs to pick a spell from their repertoire as a signature spell. 
+          # Structure of value: { level to pick from => number of spells to add }
+          # Use to_assign["signature spell"]
         else
           client.emit_ooc "Unknown key #{key} in update_magic_for_class. Please inform staff."
         end

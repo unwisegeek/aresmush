@@ -12,7 +12,7 @@ module AresMUSH
         self.caster_class = trim_arg(args.arg1)
         self.spell_level = trim_arg(args.arg2)
 
-        spells = trimmed_list_arg(args.arg3, /)
+        spells = trimmed_list_arg(args.arg3, "/")
 
         if spells[1]
           self.new_spell = spells[1]
@@ -35,6 +35,10 @@ module AresMUSH
       end
 
       def handle
+
+        spell_list = Global.read_config('pf2e_spells').keys
+
+        
 
       end
 
