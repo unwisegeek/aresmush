@@ -63,6 +63,12 @@ module AresMUSH
       
       Scenes.new_scene_activity(scene, :status_changed, nil)  
       Global.dispatcher.queue_event SceneSharedEvent.new(scene.id)
+
+      # Custom add: RPP award for Emblem of Ea - 1 for sharing a scene
+
+      scene.participants.each do |char|
+        Player.award_rpp(char, 1, scene.title)
+      end
             
       return true
     end

@@ -85,7 +85,7 @@ module AresMUSH
             assignment_list[level] = ary
           end
 
-          to_assign["repertoire spells"] = assignment_list
+          to_assign["repertoire"] = assignment_list
 
           char.update(pf2_to_assign: to_assign)
         when "focus_spell"
@@ -123,7 +123,7 @@ module AresMUSH
             assignment_list[level] = ary
           end
 
-          to_assign["spellbook spells"] = assignment_list
+          to_assign["spellbook"] = assignment_list
 
           char.update(pf2_to_assign: to_assign)
         when "addspell"
@@ -149,7 +149,7 @@ module AresMUSH
         when "signature_spells"
           # This key means that the character needs to pick a spell from their repertoire as a signature spell. 
           # Structure of value: { level to pick from => number of spells to add }
-          # Use to_assign["signature spell"]
+          # Use to_assign["signature"]
         else
           client.emit_ooc "Unknown key #{key} in update_magic_for_class. Please inform staff."
         end

@@ -111,7 +111,7 @@ module AresMUSH
     end
 
     def self.get_level_tier(level)
-      1 + (level / 5)
+      1 + (level / 4)
     end
 
     def self.parse_roll_string(target,list)

@@ -4,14 +4,12 @@ module AresMUSH
     class PF2ChargenSpellsCmd
       include CommandHandler
 
-      attr_accessor :caster_class, :spell_level, :new_spell, :old_spell, :spell_type
+      attr_accessor :caster_class, :spell_level, :new_spell, :old_spell
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
 
-        typing = trimmed_list_arg(args.arg1, "/")
         self.caster_class = titlecase_arg(typing[1])
-        self.spell_type = downcase_arg(typing[0])
         self.spell_level = integer_arg(args.arg2)
 
         spells = trimmed_list_arg(args.arg3, "/")
@@ -31,7 +29,9 @@ module AresMUSH
 
       def handle
 
-        msg = Pf2emagic.select_spell(char, self.spell_type, self.caster_class, self.old_spell, self.new_spell)
+        level = self.spell_level.zero? ? "cantrip" : self.spell_level
+
+        msg = Pf2emagic.select_spell(char, self.caster_class, level, self.old_spell, self.new_spell, true)
 
         if msg
           client.emit_failure msg
