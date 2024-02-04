@@ -21,15 +21,18 @@ module AresMUSH
     attribute :pf2_viewsheet, :type => DataType::Hash, :default => {}
     attribute :pf2_to_assign, :type => DataType::Hash, :default => {}
     attribute :pf2_cg_assigned, :type => DataType::Hash, :default => {}
+    attribute :pf2_adv_assigned, :type => DataType::Hash, :default => {}
     attribute :pf2_size, :default => ""
     attribute :pf2_movement, :type => DataType::Hash, :default => {}
     attribute :pf2_roll_aliases, :type => DataType::Hash, :default => {}
     attribute :pf2_actions, :type => DataType::Hash, :default => {}
-    # DEPRECATED please use pf2_xp_history for XP, money is handled in the gear plugin
-    attribute :pf2_award_history, :type => DataType::Hash, :default => {}
     attribute :pf2_xp_history, :type => DataType::Array, :default => []
     attribute :pf2_is_dead, :type => DataType::Boolean
     attribute :pf2_known_for, :type => DataType::Array, :default => []
+    # DEPRECATED please use pf2_xp_history for XP, money is handled in the gear plugin
+    attribute :pf2_award_history, :type => DataType::Hash, :default => {}
+
+
 
 
 

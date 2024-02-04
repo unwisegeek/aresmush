@@ -17,6 +17,7 @@ module AresMUSH
     attribute :spells_today, :type => DataType::Hash, :default => {}
     attribute :tradition, :type => DataType::Hash, :default => {}
     attribute :prepared_lists, :type => DataType::Hash, :default => {}
+    attribute :divine_font
 
     reference :character, "AresMUSH::Character"
 

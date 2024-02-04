@@ -91,7 +91,8 @@ module AresMUSH
         if dfont_choice.size > 1
           to_assign['divine font'] = dfont_choice
         else
-          # Do this code when spells are done, this should be tied to spells
+          magic = char.magic
+          magic.update(divine_font: dfont_choice)
         end
       else
         nil
@@ -99,6 +100,8 @@ module AresMUSH
     end
 
     def self.update_sheet(char, info)
+      # This is called by the advancement code and should be called by commit info. Fix commit info to do this.
+
       info.each_pair do |key, value|
         case key
         when "choose_feat"
@@ -127,6 +130,18 @@ module AresMUSH
           client.emit_ooc "Unknown key in update_sheet: #{key}. Please raise this to code staff."
         end
       end
+    end
+
+    def self.assignments_complete?(char)
+      # Assignments are incomplete if any value is "open".
+      to_assign = char.pf2_to_assign
+
+      to_assign.each_pair do |k,v|
+        next unless v.include? "open"
+        return false
+      end
+
+      return true
     end
 
   end

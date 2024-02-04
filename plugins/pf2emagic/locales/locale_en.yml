@@ -3,7 +3,7 @@ en:
   pf2emagic: 
     cant_cast_as_class: "Cannot cast magic as the specified class."
     cant_prepare_trad: "Cannot prepare that spell as a %{cc}."
-    cant_prepare_level: "Base level higher than specified level."
+    cant_prepare_level: "The base level of the spell is higher than the level you specified."
     cant_refocus_pool: "Your current focus pool must be empty to refocus."
     cant_refocus_time: "You last refocused at %{time} and can only refocus once per hour. Wait longer."
     char_not_caster: "%{char} is not a spellcaster and should not be requesting spells in a job."
@@ -16,9 +16,12 @@ en:
     no_available_slots: "No available slots at specified level."
     no_focus_pool: "This character does not have focus spells."
     no_match: "I didn't find any %{item} matching your terms."
+    no_new_spells: "This character class does not get new spells at this level."
+    no_new_spells_at_level: "You have no new spells to learn at the level you specified."
     no_such_spell: "Spell not available on this game."
     not_caster: "This character has no magical ability."
     not_casting_class: "Cannot cast as %{cc}."
+    not_in_list: "The spell you specified is not in your current list."
     not_prepared: "Spell not currently prepared."
     not_prepared_at_level: "Spell not prepared at specified level."
 
