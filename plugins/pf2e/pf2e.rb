@@ -155,8 +155,16 @@ module AresMUSH
 
     def self.get_web_request_handler(request)
       case request.cmd
-      when "pf2Feats"
-        return PF2FeatsHandler
+      when "pf2CharclassFeats"
+        return PF2CharclassFeatsHandler
+      when "pf2AncestryFeats"
+        return PF2AncestryFeatsHandler
+      when "pf2GeneralFeats"
+        return PF2GeneralFeatsHandler
+      when "pf2SkillFeats"
+        return PF2SkillFeatsHandler
+      when "pf2DedicationFeats"
+        return PF2DedicationFeatsHandler
       end
 
       nil
