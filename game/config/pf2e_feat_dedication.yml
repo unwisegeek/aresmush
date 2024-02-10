@@ -10,7 +10,8 @@ pf2e_feats:
     shortdesc: Become a multiclass alchemist.
     prereq:
       level: 2
-      ability: Intelligence/14
+      ability: 
+      - Intelligence/14
   Barbarian Dedication:
     assoc_charclass:
     - Barbarian
@@ -21,8 +22,9 @@ pf2e_feats:
     shortdesc: Become a multiclass barbarian.
     prereq:
       level: 2
-      ability: Strength/14
-      ability: Constitution/14
+      ability: 
+      - Strength/14
+      - Constitution/14
   Bard Dedication:
     assoc_charclass:
     - Bard
@@ -33,7 +35,8 @@ pf2e_feats:
     shortdesc: Become a multiclass bard.
     prereq:
       level: 2
-      ability: Charisma/14
+      ability: 
+      - Charisma/14
   Champion Dedication:
     assoc_charclass:
     - Champion
@@ -44,8 +47,9 @@ pf2e_feats:
     shortdesc: You become a multiclass champion.
     prereq:
       level: 2
-      ability: Strength/14
-      ability: Charisma/14
+      ability: 
+      - Strength/14
+      - Charisma/14
   Cleric Dedication:
     assoc_charclass:
     - Cleric
@@ -56,7 +60,8 @@ pf2e_feats:
     shortdesc: You become a multiclass cleric.
     prereq:
       level: 2
-      ability: Wisdom/14
+      ability: 
+      - Wisdom/14
   Druid Dedication:
     assoc_charclass:
     - Druid
@@ -67,7 +72,8 @@ pf2e_feats:
     shortdesc: You become a multiclass druid.
     prereq:
       level: 2
-      ability: Wisdom/14
+      ability: 
+      - Wisdom/14
   Fighter Dedication:
     assoc_charclass:
     - Fighter
@@ -78,8 +84,9 @@ pf2e_feats:
     shortdesc: You become trained in simple weapons and martial weapons.
     prereq:
       level: 2
-      ability: Strength/14
-      ability: Dexterity/14
+      ability: 
+      - Strength/14
+      - Dexterity/14
   Investigator Dedication:
     assoc_charclass:
     - Investigator
@@ -90,7 +97,8 @@ pf2e_feats:
     shortdesc: You gain the on the case class feature, which grants you both the Pursue a Lead activity and Clue In reaction.
     prereq:
       level: 2
-      ability: Intelligence/14
+      ability: 
+      - Intelligence/14
   Monk Dedication:
     assoc_charclass:
     - Monk
@@ -101,8 +109,9 @@ pf2e_feats:
     shortdesc: You become a multiclass monk.
     prereq:
       level: 2
-      ability: Strength/14
-      ability: Dexterity/14
+      ability: 
+      - Strength/14
+      - Dexterity/14
   Oracle Dedication:
     assoc_charclass:
     - Oracle
@@ -113,7 +122,8 @@ pf2e_feats:
     shortdesc: You become a multiclass oracle.
     prereq:
       level: 2
-      ability: Charisma/14
+      ability: 
+      - Charisma/14
   Ranger Dedication:
     assoc_charclass:
     - Ranger
@@ -124,7 +134,8 @@ pf2e_feats:
     shortdesc: You become a multiclass ranger.
     prereq:
       level: 2
-      ability: Dexterity/14
+      ability: 
+      - Dexterity/14
   Rogue Dedication:
     assoc_charclass:
     - Rogue
@@ -135,7 +146,8 @@ pf2e_feats:
     shortdesc: You become a multiclass rogue.
     prereq:
       level: 2
-      ability: Dexterity/14
+      ability: 
+      - Dexterity/14
   Sorcerer Dedication:
     assoc_charclass:
     - Sorcerer
@@ -146,7 +158,8 @@ pf2e_feats:
     shortdesc: You become a multiclass sorcerer.
     prereq:
       level: 2
-      ability: Charisma/14
+      ability: 
+      - Charisma/14
   Witch Dedication:
     assoc_charclass:
     - Witch
@@ -157,7 +170,8 @@ pf2e_feats:
     shortdesc: You cast spells like a witch.
     prereq:
       level: 2
-      ability: Intelligence/14
+      ability: 
+      - Intelligence/14
   Wizard Dedication:
     assoc_charclass:
     - Witch
@@ -168,4 +182,5 @@ pf2e_feats:
     shortdesc: You become a multiclass wizard
     prereq:
       level: 2
-      ability: Intelligence/14
+      ability: 
+      - Intelligence/14

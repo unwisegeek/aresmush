@@ -815,7 +815,8 @@ pf2e_feats:
     shortdesc: Become trained in a skill.
     prereq:
       level: 1
-      ability: Intelligence/12
+      ability: 
+      - Intelligence/12
   Snare Crafting:
     feat_type: 
     - Skill
@@ -1336,7 +1337,8 @@ pf2e_feats:
     prereq:
       level: 2
       skill: Intimidation/expert
-      ability: Strength/16
+      ability: 
+      - Strength/16
   Lasting Coercion:
     feat_type: 
     - Skill

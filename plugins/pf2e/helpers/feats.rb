@@ -106,8 +106,15 @@ module AresMUSH
 
           msg << "level" if prereqs['level'] > level
         when "ability"
-          char_score = Pf2eAbilities.get_score(char, factor)
-          msg << "ability" if char_score < minimum.to_i
+          # There can be more than one ability prereq, so required is passed as an array. 
+          required.each_with_index do |item, i|
+            string = item.split("/")
+            factor = string[0]
+            minimum = string[1]
+
+            char_score = Pf2eAbilities.get_score(char, factor)
+            msg << "ability#{i}" if char_score < minimum.to_i
+          end
         when "skill"
           char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
           min_prof = Pf2e.get_prof_bonus(char, minimum)
