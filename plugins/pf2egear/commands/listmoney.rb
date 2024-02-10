@@ -19,14 +19,7 @@ module AresMUSH
 
       def handle
 
-        # If no argument, code assumes reference is to self.
-
-        char = self.character ? Character.find_one_by_name(self.character) : enactor
-
-        if !char
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
+        char = sPf2e.get_character(self.target, enactor)
 
         paginator = Paginator.paginate(char.pf2_money_history, cmd.page, 10)
         if (paginator.out_of_bounds?)

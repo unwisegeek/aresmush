@@ -17,14 +17,7 @@ module AresMUSH
       end
 
       def handle
-        char = self.character ? Character.find_one_by_name(self.character) : enactor
-
-        if !char
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
-
-
+        char = Pf2e.get_character(self.target, enactor)
 
         if !(Pf2emagic.is_caster?(char))
           client.emit_failure t('pf2emagic.not_caster')

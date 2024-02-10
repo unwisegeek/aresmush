@@ -15,7 +15,7 @@ module AresMUSH
     attribute :spells_per_day, :type => DataType::Hash, :default => {}
     attribute :spells_prepared, :type => DataType::Hash, :default => {}
     attribute :spells_today, :type => DataType::Hash, :default => {}
-    attribute :tradition, :type => DataType::Hash, :default => {}
+    attribute :tradition, :type => DataType::Hash, :default => { "innate"=>"trained" }
     attribute :prepared_lists, :type => DataType::Hash, :default => {}
     attribute :divine_font
 
@@ -39,7 +39,7 @@ module AresMUSH
       return obj
     end
 
-    def self.update_magic_for_class(char, charclass, info, client)
+    def self.update_magic(char, charclass, info, client)
       magic = get_create_magic_obj(char)
 
       info.each_pair do |key, value|
@@ -151,8 +151,18 @@ module AresMUSH
           # This key means that the character needs to pick a spell from their repertoire as a signature spell. 
           # Structure of value: { level to pick from => number of spells to add }
           # Use to_assign["signature"]
+        when "innate_spell"
+          # Structure of innate spells: {spell name => { 'level' => <level>, 'tradition' => tradition, 'cast_stat' => cast_stat}}
+
+          ilist = magic.innate_spells
+          key = value.delete('name')
+        
+          ilist[key] = value
+
+          magic.update(innate_spells: ilist)
+
         else
-          client.emit_ooc "Unknown key #{key} in update_magic_for_class. Please inform staff."
+          client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
       end
 

@@ -93,6 +93,18 @@ module AresMUSH
         !(@magic.innate_spells.empty?)
       end
 
+      def innate_spells
+        spell_list = @magic.innate_spells
+        prof = @magic.tradition['innate']
+
+        list = []
+
+        list << format_innate_spells(char, spell_list, prof)
+
+        list.join("%r")
+
+      end
+
       def revelation_locked
         @magic.revelation_locked
       end

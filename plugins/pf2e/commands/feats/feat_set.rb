@@ -3,7 +3,7 @@ module AresMUSH
     class PF2FeatSetCmd
       include CommandHandler
 
-      attr_accessor :feat_type, :feat_name
+      attr_accessor :feat_type, :feat_name, :feat_details
       
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
@@ -35,9 +35,9 @@ module AresMUSH
       end
 
       def check_valid_feat
-        feat_details = Pf2e.get_feat_details(self.feat_name)
+        self.feat_details = Pf2e.get_feat_details(self.feat_name)
 
-        if !feat_details
+        if !self.feat_details
           client.emit_failure t('pf2e.bad_feat_name', :name => self.feat_name)
           return nil
         end
@@ -102,12 +102,23 @@ module AresMUSH
 
         enactor.update(pf2_feats: feat_list)
 
-
         client.emit_success t('pf2e.feat_set_ok', :name => self.feat_name, :type => self.feat_type)
+
+        # Some feats grant magic of some sort. Handle here. 
+
+        magic_stats = self.feat_details['magic_stats']
+
+        if magic_stats
+          client.emit_ooc 'This feat has magic details. Adding.'
+
+          # Dedication feats should use the class associated to the dedication, otherwise use the base class. 
+          charclass = nil ? 'fix_me_for_dedications': enactor.pf2_base_info['charclass']
+          PF2Magic.update_magic(enactor, charclass, magic_stats, client)
+        end
 
         # Does this feat leave you with something else to assign? 
 
-        cascade = Global.read_config('pf2e_feats', self.feat_name, 'assign')
+        cascade = self.feat_details['assign']
 
         if cascade
           assign_key = cascade[0]

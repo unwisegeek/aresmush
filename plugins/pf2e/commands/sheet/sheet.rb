@@ -12,19 +12,16 @@ module AresMUSH
       end
 
       def check_can_view
-        return nil if !self.target
+        return nil unless self.target
         return nil if Global.read_config('pf2e','open_sheets')
         return nil if enactor.has_permission?("view_sheets")
         return t('pf2e.cannot_view_sheet')
       end
 
       def handle
-        char = self.target ? Character.find_one_by_name(self.target) : enactor
+        char = Pf2e.get_character(self.target, enactor)
 
-        if !char
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        elsif char.is_admin?
+        if char.is_admin?
           client.emit_failure t('pf2e.admin_no_sheet')
           return
         elsif !char.pf2_baseinfo_locked

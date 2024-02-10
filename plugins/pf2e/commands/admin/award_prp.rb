@@ -45,11 +45,7 @@ module AresMUSH
 
         # Find all the character objects and warn the admin if any not found.
 
-        targets = self.target_list.map { |c| Character.find_one_by_name(c) }
-
-        char_not_found = targets.include? nil
-
-        client.emit_ooc t('pf2e.char_not_all_found') if char_not_found
+        targets = self.target_list.map { |c| Pf2e.get_character(c, enactor) }
 
         targets = targets.compact
 

@@ -28,12 +28,7 @@ module AresMUSH
       end
 
       def handle
-        awardee = Character.find_one_by_name(self.target)
-
-        if !awardee
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
+        awardee = Pf2e.get_character(self.target, enactor)
 
         Pf2e.award_xp(awardee, self.award)
 

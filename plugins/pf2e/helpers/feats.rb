@@ -4,8 +4,7 @@ module AresMUSH
     include CommonTemplateFields
 
     def self.get_feat_details(name)
-
-      feat_info = Global.read_config('pf2e_feats', name)
+      Global.read_config('pf2e_feats', name)
     end
 
     def self.search_feats(search_type, term, operator='=')

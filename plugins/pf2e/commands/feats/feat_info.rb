@@ -22,12 +22,7 @@ module AresMUSH
 
         # If a name was entered, does that player exist?
 
-        char = self.target ? Character.find_one_by_name(self.target) : enactor
-
-        if !char
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
+        char = Pf2e.get_character(self.target, enactor)
 
         # Does this character have feats to view? 
 
