@@ -276,5 +276,16 @@ module AresMUSH
 
     end
 
+    def self.get_character(name=false, enactor, client)
+      # Because Faraday can go fuck a cactus if she thinks I'm typing this ten thousand times.
+
+      return enactor unless name
+
+      ClassTargetFinder.with_a_character(name, client) do |model|
+        return model
+      end
+
+    end
+
   end
 end
