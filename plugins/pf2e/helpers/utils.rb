@@ -276,7 +276,7 @@ module AresMUSH
 
     end
 
-    def self.get_character(name=false, enactor, client)
+    def self.get_character(name, enactor, client)
       # Because Faraday can go fuck a cactus if she thinks I'm typing this ten thousand times.
 
       return enactor unless name
