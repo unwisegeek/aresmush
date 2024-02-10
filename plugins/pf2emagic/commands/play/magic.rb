@@ -17,7 +17,7 @@ module AresMUSH
       end
 
       def handle
-        char = Pf2e.get_character(self.target, enactor)
+        char = Pf2e.get_character(self.character, enactor)
 
         if !(Pf2emagic.is_caster?(char))
           client.emit_failure t('pf2emagic.not_caster')
