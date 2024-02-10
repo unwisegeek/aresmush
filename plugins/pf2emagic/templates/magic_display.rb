@@ -99,10 +99,11 @@ module AresMUSH
 
         list = []
 
-        list << format_innate_spells(char, spell_list, prof)
+        spell_list.each_pair do |name, values|
+          list << format_innate_spells(@char, name, values, prof)
+        end
 
         list.join("%r")
-
       end
 
       def revelation_locked
@@ -167,6 +168,21 @@ module AresMUSH
         spells = spell_list ? "%b%b#{item_color}Focus Spells (#{fstype.capitalize}):%xn #{spell_list.sort.join(", ")}" : ""
 
         "#{trad_string}#{cantrips}#{spells}"
+      end
+
+      def format_innate_spells(char, name, values, prof)
+        pbonus = Pf2e.get_prof_bonus(char, prof)
+        p_short = prof.slice[0].upcase
+
+        level = values['level']
+        name = Pf2e.pretty_string(name)
+        trad = Pf2e.pretty_string(values['tradition'])
+
+        amod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score char, values['cast_stat'])
+
+        atk_bonus = amod + pbonus
+
+        "%b%b#{item_color}#{name}%xn: %xhLevel%xn: #{level} %xhTradition%xn: #{trad} (#{p_short}) %xhBonus%xn: #{atk_bonus}"
       end
 
 
