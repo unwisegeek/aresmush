@@ -281,10 +281,13 @@ module AresMUSH
 
       return enactor unless name
 
+      list = []
+
       ClassTargetFinder.with_a_character(name, client) do |model|
-        return model
+        list << model
       end
 
+      list.first
     end
 
   end
