@@ -8,7 +8,7 @@ module AresMUSH
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
 
-        self.feat_type = titlecase_arg(args.arg1)
+        self.feat_type = downcase_arg(args.arg1)
         self.feat_name = titlecase_arg(args.arg2)
       end
       
@@ -27,7 +27,7 @@ module AresMUSH
       end
 
       def check_valid_feat_type
-        feat_types = [ "General", "Skill", "Archetype", "Dedication", "Charclass", "Ancestry"]
+        feat_types = [ "general", "skill", "archetype", "dedication", "charclass", "ancestry"]
 
         return nil if feat_types.include?(self.feat_type)
 
@@ -35,12 +35,15 @@ module AresMUSH
       end
 
       def check_valid_feat
-        self.feat_details = Pf2e.get_feat_details(self.feat_name)
+        feat_check = Pf2e.get_feat_details(self.feat_name)
 
-        if !self.feat_details
-          client.emit_failure t('pf2e.bad_feat_name', :name => self.feat_name)
-          return nil
+        if feat_check.is_a?(String)
+          return t('pf2e.multiple_matches', :element => 'feat') if (self.feat_details == 'ambiguous')
+          return t('pf2e.bad_feat_name', :name => self.feat_name)
         end
+
+        self.feat_name = feat_check[0].first
+        self.feat_details = feat_check[1]
       end
 
       def handle
@@ -48,8 +51,6 @@ module AresMUSH
         ##### VALIDATION SECTION START #####
 
         # Does the enactor already have this feat? 
-
-        ftype = self.feat_type.downcase
 
         feat_list = enactor.pf2_feats
 
@@ -78,14 +79,22 @@ module AresMUSH
           return nil
         end
 
-        ##### VALIDATION SECTION END #####
-        # Do it.
-
+        # If the feat slot is granted by another feat, that feat may be restricted. Check for that.
         old_value = to_assign[key]
-        # Modify the key in to_assign
+
+        if old_value.match? "Basic"
+
+        elsif old_value.match? "Expert"
+
+        elsif old_value.match? "Master"
+
+        end
+
+        ##### VALIDATION SECTION END #####
+
         # Do I need to replace the feat in the list or add to the list? 
 
-        replace = old_value == 'unassigned' ? false : true
+        replace = old_value.match?('unassigned') ? false : true
         
         sublist = feat_list[ftype]
 
@@ -93,6 +102,13 @@ module AresMUSH
           index = sublist.index(old_value)
 
           sublist.delete_at index if index
+
+          # If the old feat had any magic stats, those need to be scrubbed. 
+          old_magic_stats = Pf2e.get_feat_details(self.feat_name)['magic_stats']
+          
+          if old_magic_stats
+            PF2Magic.delete_magic_stats(enactor, old_value, old_magic_stats)
+          end
         end
 
         sublist << self.feat_name
@@ -108,11 +124,13 @@ module AresMUSH
 
         magic_stats = self.feat_details['magic_stats']
 
+        use_diff_charclass = self.feat_details['assoc_charclass']
+
         if magic_stats
           client.emit_ooc 'This feat has magic details. Adding.'
 
           # Dedication feats should use the class associated to the dedication, otherwise use the base class. 
-          charclass = nil ? 'fix_me_for_dedications': enactor.pf2_base_info['charclass']
+          charclass = use_diff_charclass ? use_diff_charclass : enactor.pf2_base_info['charclass']
           PF2Magic.update_magic(enactor, charclass, magic_stats, client)
         end
 
@@ -121,9 +139,11 @@ module AresMUSH
         cascade = self.feat_details['assign']
 
         if cascade
-          assign_key = cascade[0]
-          to_assign[assign_key] = cascade[1]
+          cascade.each do |item|
+          assign_key = item
+          to_assign[assign_key] = 'unassigned/' + self.feat_name
           client.emit_ooc t('pf2e.feat_grants_addl', :element => assign_key)
+          end
         end
 
         enactor.update(pf2_to_assign: to_assign)

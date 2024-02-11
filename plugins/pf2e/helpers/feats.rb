@@ -4,7 +4,16 @@ module AresMUSH
     include CommonTemplateFields
 
     def self.get_feat_details(name)
-      Global.read_config('pf2e_feats', name)
+      feats =  Global.read_config('pf2e_feats')
+
+      keys = feats.keys
+
+      match = keys.select { |f| f.upcase == name.upcase }
+
+      return 'no_match' if match.empty?
+      return 'ambiguous' if match.size > 1
+
+      return [ match, feats[match] ]
     end
 
     def self.search_feats(search_type, term, operator='=')
@@ -78,7 +87,12 @@ module AresMUSH
       prereqs = details["prereq"]
 
       if prereqs 
-        meets_prereqs = Pf2e.meets_prereqs?(char, prereqs)
+        # Some feats use non-default character level for purposes of prereq checks. 
+        cl = char.pf2_level
+        cl = 2 if Global.read_config('pf2e','basic_mc_feats').include? feat
+        cl = cl/2 if Global.read_config('pf2e','adv_mc_feats').include? feat
+
+        meets_prereqs = Pf2e.meets_prereqs?(char, prereqs, cl)
       else
         meets_prereqs = true
       end
@@ -89,7 +103,7 @@ module AresMUSH
       return false
     end
 
-    def self.meets_prereqs?(char, prereqs)
+    def self.meets_prereqs?(char, prereqs, cl)
       msg = []
 
       prereqs.each_pair do |ptype, required|
@@ -102,9 +116,7 @@ module AresMUSH
 
         case ptype
         when "level"
-          level = char.pf2_level
-
-          msg << "level" if prereqs['level'] > level
+          msg << "level" if prereqs['level'] > cl
         when "ability"
           # There can be more than one ability prereq, so required is passed as an array. 
           required.each_with_index do |item, i|
