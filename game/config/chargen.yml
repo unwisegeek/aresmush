@@ -112,7 +112,7 @@ chargen:
       text: You've completed chargen! Review your app one more time, and use `app/submit
         [<optional notes>]` to submit your character when ready. The admins will
         make sure it's a good fit for the game's theme, that your sheet is in line
-        with your background, and that you have not minmaxed or "dumpstatted". See
+        with your prologue, and that you have not minmaxed or "dumpstatted". See
         `help apps` for additional help on the app review process.
   welcome_message: |-
     Welcome to Emblem of Ea, %{name}! 
