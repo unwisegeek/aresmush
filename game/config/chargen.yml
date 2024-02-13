@@ -25,7 +25,7 @@ chargen:
     direction for the character's story. That direction is not set in stone, and can
     change as your story progresses.
   demographics_blurb: "Demographics record your basic character info. Don't worry about 
-    class,  level, or ancestry here; you'll set that when you do your sheet."
+    class, level, or ancestry here; you'll set that when you do your sheet."
   desc_blurb: You can set both your main description, visible when people look at
     you, and a short description that shows your character at a glance. Like your
     prologue,  this does not have to be (and shouldn't be) a novel, just enough to
@@ -93,6 +93,8 @@ chargen:
       help: pf2e_chargen_skills
     sheet_languages:
       help: pf2e_chargen_languages
+    sheet_magic:
+      help: pf2e_chargen_magic
     desc:
       help: descriptions
     hooks:
