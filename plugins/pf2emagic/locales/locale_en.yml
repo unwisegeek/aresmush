@@ -6,10 +6,14 @@ en:
     cant_prepare_level: "The base level of the spell is higher than the level you specified."
     cant_refocus_pool: "Your current focus pool must be empty to refocus."
     cant_refocus_time: "You last refocused at %{time} and can only refocus once per hour. Wait longer."
+    cg_magic_ok: "%xgNo issues seen with magic options.%xn"
     char_not_caster: "%{char} is not a spellcaster and should not be requesting spells in a job."
-    class_does_not_get_spell: "The character class you specified does not have access to that spell."
+    class_does_not_get_spell: "The character class you specified does not have access to that spell."    
+    config_error: "%xrYour magic is not configured correctly. Please see staff. Code: %{code}%xn"
 
     does_not_prepare: "Specified class does not prepare spells."
+
+    has_pending_magic: "%xcThe following items grant you magic changes that will appear on your sheet when completed: %{items}%xn"
 
     multiple_matches: "More than one %{item} matches your search. Please choose one."
 

@@ -31,6 +31,8 @@ module AresMUSH
         @to_assign = @char.pf2_to_assign
         @boosts = @char.pf2_boosts_working
 
+        @magic = @char.magic
+
         super File.dirname(__FILE__) + "/cg_review_locked.erb"
       end
 
@@ -79,7 +81,7 @@ module AresMUSH
       end
 
       def is_devotee
-        alert = use_deity ? " %xh%xy(REQ)%xn" : ""
+        use_deity ? " %xh%xy(REQ)%xn" : ""
       end
 
       def alignment
@@ -126,11 +128,11 @@ module AresMUSH
                       @heritage_info['ancestry_HP'] :
                       @ancestry_info["HP"]
 
-        ahp = ancestry_hp ? ancestry_hp : 0
+        ancestry_hp ? ancestry_hp : 0
       end
 
       def chp
-        class_hp = @charclass_info["HP"] ? @charclass_info["HP"] : 0
+        @charclass_info["HP"] ? @charclass_info["HP"] : 0
       end
 
       def size
@@ -146,7 +148,7 @@ module AresMUSH
         h_traits = @heritage_info["traits"] ? @heritage_info["traits"] : []
         c_traits = @charclass_info ? [ @charclass.downcase ] : []
 
-        traits = a_traits + h_traits + c_traits.uniq.difference([ "" ]).sort
+        a_traits + h_traits + c_traits.uniq.difference([ "" ]).sort
       end
 
       def free_boosts
@@ -193,11 +195,11 @@ module AresMUSH
       end
 
       def con_mod
-        con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Constitution"))
+        Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Constitution"))
       end
 
       def int_mod
-        int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
+        Pf2eAbilities.abilmod(Pf2eAbilities.get_score(@char, "Intelligence"))
       end
 
       def specials
@@ -287,6 +289,19 @@ module AresMUSH
         else
           messages << t('pf2e.feats_are_ok')
         end
+
+        # Magic
+
+        magic_msgs = Pf2emagic.cg_magic_warnings(@magic)
+
+        if magic_msgs
+          magic_msgs.each do |msg|
+            messages << msg
+          end
+        else
+          messages << t('pf2emagic.cg_magic_ok')
+        end
+
 
         messages.join("%r")
       end

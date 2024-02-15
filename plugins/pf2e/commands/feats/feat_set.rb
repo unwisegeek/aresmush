@@ -104,10 +104,9 @@ module AresMUSH
           sublist.delete_at index if index
 
           # If the old feat had any magic stats, those need to be scrubbed. 
-          old_magic_stats = Pf2e.get_feat_details(self.feat_name)['magic_stats']
           
-          if old_magic_stats
-            PF2Magic.delete_magic_stats(enactor, old_value, old_magic_stats)
+          if Pf2e.get_feat_details(self.feat_name)['magic_stats']
+            PF2Magic.delete_magic_stats(enactor, old_value)
           end
         end
 
@@ -127,11 +126,11 @@ module AresMUSH
         use_diff_charclass = self.feat_details['assoc_charclass']
 
         if magic_stats
-          client.emit_ooc 'This feat has magic details. Adding.'
+          client.emit_ooc 'This feat has magic details.'
 
           # Dedication feats should use the class associated to the dedication, otherwise use the base class. 
           charclass = use_diff_charclass ? use_diff_charclass : enactor.pf2_base_info['charclass']
-          PF2Magic.update_magic(enactor, charclass, magic_stats, client)
+          PF2Magic.add_pending_magic(enactor, charclass, magic_stats)
         end
 
         # Does this feat leave you with something else to assign? 

@@ -17,6 +17,7 @@ module AresMUSH
     attribute :spells_today, :type => DataType::Hash, :default => {}
     attribute :tradition, :type => DataType::Hash, :default => { "innate"=>"trained" }
     attribute :prepared_lists, :type => DataType::Hash, :default => {}
+    attribute :magic_to_apply, :type => DataType::Hash, :default => {}
     attribute :divine_font
 
     reference :character, "AresMUSH::Character"
@@ -37,6 +38,19 @@ module AresMUSH
       char.update(magic: obj)
 
       return obj
+    end
+
+    def self.add_pending_magic(char, keyname, info)
+      # This helper adds a key to pending magic adds. This is done because of the difficulty of erasing magic changes.
+
+      magic = char.magic 
+      return nil unless magic
+
+      pending_changes = magic.magic_to_apply
+
+      pending_changes[keyname] = info
+
+      magic.update(magic_to_apply: pending_changes)
     end
 
     def self.update_magic(char, charclass, info, client)
@@ -147,7 +161,7 @@ module AresMUSH
 
           spellbook[charclass] = csb
           magic.update(spellbook: spellbook)
-        when "signature_spells"
+        when "signature_spell"
           # This key means that the character needs to pick a spell from their repertoire as a signature spell. 
           # Structure of value: { level to pick from => number of spells to add }
           # Use to_assign["signature"]
@@ -165,6 +179,24 @@ module AresMUSH
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
       end
+
+    end
+
+    def self.delete_magic_stats(char, feat_name)
+      # This helper is called when a character changes their mind about taking a feat that grants magic.
+
+      magic = get_magic_obj(char)
+
+      # This should never happen but it keeps the helper from crashing if it does.
+      return nil unless magic
+
+      # All this helper does is scrub magic_to_apply for this feat. 
+
+      pending_changes = magic.magic_to_apply
+
+      removed_change = pending_changes.delete(feat_name)
+
+      magic.update(magic_to_apply: removed_change)
 
     end
 

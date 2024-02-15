@@ -95,5 +95,21 @@ module AresMUSH
     def self.find_common_spells 
       Global.read_config('pf2e_spells').select { |k,v| v['traits'].include? 'common' }
     end
+
+    def self.cg_magic_warnings(magic)
+
+      msg = []
+
+      # Should yell if the magic object did not get created.
+      msg << t('pf2emagic.config_error', :code => "NO OBJECT") unless magic
+
+      pending_magic = magic.magic_to_apply
+
+      # This is a heads-up, not an issue - they may have items that grant additional magic that should apply to their sheet on approval.
+      msg << t('pf2emagic.has_pending_magic', :items => pending_magic.keys.sort.join(", ")) unless pending_magic.empty?
+
+      msg
+
+    end
   end
 end
