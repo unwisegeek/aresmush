@@ -6,10 +6,10 @@ module AresMUSH
 
       def handle
 
-        prep_ok = PF2e.do_daily_prep(enactor)
+        prep_error = PF2e.do_daily_prep(enactor)
 
-        if !prep_ok
-          client.emit_failure t('pf2e.daily_prep_error')
+        if prep_error
+          client.emit_failure prep_error
           return
         end
 

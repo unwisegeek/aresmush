@@ -2,9 +2,21 @@ module AresMUSH
   module Pf2e
 
     def self.do_daily_prep(char)
-      return nil unless char.is_approved? 
+      return t('pf2e.not_approved') unless char.is_approved? 
 
-      magic = char.magic 
+      # Check for 24h since last refresh
+      last_refresh = char.pf2_last_refresh
+      current_time = Time.now
+
+      elapsed = (current_time - last_refresh).to_i
+
+      if elapsed < 86400
+        next_refresh = OOCTime.local_long_timestr(char, Time.at(last_refresh + 86400))
+
+        return t('pf2e.cannot_rest_time', :next => next_refresh)
+      end
+
+      magic = char.magic
 
       # Healing
       Pf2eHP.modify_damage(char, char.pf2_level, true)
@@ -25,7 +37,7 @@ module AresMUSH
 
       char.update(pf2_last_refresh: Time.now)
 
-      return true
+      return nil
     end
 
     def self.do_refresh(char)

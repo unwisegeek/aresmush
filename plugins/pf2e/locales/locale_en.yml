@@ -39,6 +39,7 @@ en:
     cannot_cast_spell_level: "You cannot cast spells of that level."
     cannot_damage_pc: "You must be a DM or the organizer of an active combat to run this command."
     cannot_find_cginfo: "You must choose %{prereq} before you can see options for %{element}."
+    cannot_rest_time: "You can rest again at %{next}."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
     cg_abilities_locked: "Your abilities are already locked. If you need to change them, you will need to cg/reset."
     cg_info: "The following options are available for %{element}: %{options}"
@@ -59,7 +60,6 @@ en:
     class_requires_deity: "%xrYour class requires a deity, but none is set.%xn"
     combat_something_wrong: "Something went wrong when updating your combat stats. Contact a staffer for assistance."
 
-    daily_prep_error: "Something went wrong with your daily preparations. Please send a request to staff."
     daily_prep_ok: "You rest and refresh your resources."
     damage_applied_ok: "You damage %{list} for %{amount}."
     dc_must_be_integer: "The DC, if provided, must be an integer between 5 and 50."

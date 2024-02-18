@@ -5,7 +5,8 @@ module AresMUSH
     attribute :available_rpp, :type => DataType::Integer, :default => 0
     attribute :rpp_history, :type => DataType::Array, :default => []
     attribute :rpp_spent_by_char, :type => DataType::Hash, :default => {}
-
+    attribute :nomlist, :type => DataType::Array, :default => []
+    attribute :totalnoms, :type => DataType::Integer, :default => 0
 
     ##### CLASS METHODS FOR RPP #####
 
