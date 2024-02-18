@@ -104,10 +104,25 @@ module AresMUSH
           sublist.delete_at index if index
 
           # If the old feat had any magic stats, those need to be scrubbed. 
-          
-          if Pf2e.get_feat_details(self.feat_name)['magic_stats']
-            PF2Magic.delete_magic_stats(enactor, old_value)
+
+          old_fd = Pf2e.get_feat_details(old_value)
+
+          old_magic_stats = old_fd['magic_stats']
+
+          old_use_diff_charclass = old_fd['assoc_charclass']
+
+          if old_magic_stats
+            charclass = old_use_diff_charclass ? old_use_diff_charclass : enactor.pf2_base_info['charclass']
+            PF2Magic.update_magic(enactor, charclass, old_magic_stats, client, true)
           end
+
+          # A very few feats modify reagents. Handle these. 
+          reagents = old_fd['reagents']
+
+          if reagents
+            Pf2e.update_reagents(char, reagents, true)
+          end
+
         end
 
         sublist << self.feat_name
@@ -128,10 +143,19 @@ module AresMUSH
         if magic_stats
           client.emit_ooc 'This feat has magic details.'
 
-          # Dedication feats should use the class associated to the dedication, otherwise use the base class. 
+          # If it is a dedication feat, the key should indicate the character 
+          # class to be used. Otherwise, the key is the name of the feat.
+
           charclass = use_diff_charclass ? use_diff_charclass : enactor.pf2_base_info['charclass']
-          PF2Magic.add_pending_magic(enactor, charclass, magic_stats)
+          PF2Magic.update_magic(enactor, charclass, magic_stats, client)
         end
+
+        # Handle reagents if necessary. 
+          reagents = self.feat_details['reagents']
+
+          if reagents
+            Pf2e.update_reagents(char, reagents)
+          end
 
         # Does this feat leave you with something else to assign? 
 

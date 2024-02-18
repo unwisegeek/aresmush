@@ -33,36 +33,7 @@ module AresMUSH
           return nil
         end
 
-        enactor.pf2_baseinfo_locked = false
-        enactor.pf2_abilities_locked = false
-
-        enactor.pf2_base_info = { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
-        enactor.pf2_xp = 0
-        enactor.pf2_conditions = {}
-        enactor.pf2_features = []
-        enactor.pf2_traits = []
-        enactor.pf2_feats = { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
-        enactor.pf2_faith = { 'deity'=>"", 'alignment'=>"" }
-        enactor.pf2_special = []
-        enactor.pf2_boosts_working = { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[] }
-        enactor.pf2_boosts = {}
-        enactor.pf2_to_assign = {}
-        enactor.pf2_lang = []
-        enactor.pf2_movement = {}
-
-        # Reset money and gear if that plugin is installed.
-        Pf2egear.reset_gear(enactor) if AresMUSH.const_defined?("Pf2egear")
-
-        # All characters have all objects except magic, so to minimize DB bloat, reuse existing objects.
-        Pf2eAbilities.factory_default(enactor)
-        Pf2eSkills.factory_default(enactor)
-        Pf2eHP.factory_default(enactor)
-        Pf2eCombat.factory_default(enactor)
-        PF2Magic.factory_default(enactor)
-
-        enactor.pf2_reset = false
-
-        enactor.save
+        Pf2e.reset_character(enactor)
 
         client.emit_success t('pf2e.cg_reset_ok')
 

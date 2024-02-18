@@ -13,7 +13,7 @@ module AresMUSH
       return 'no_match' if match.empty?
       return 'ambiguous' if match.size > 1
 
-      return [ match, feats[match] ]
+      return [ match.first, feats[match] ]
     end
 
     def self.search_feats(search_type, term, operator='=')

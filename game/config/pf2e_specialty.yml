@@ -6,28 +6,28 @@ pf2e_specialty:
         action: []
         reaction: []
         formula_book:
-          bombs: 2
+          Bombs: 2
         skills: []
     Chirurgeon:
       chargen:
         action: []
         reaction: []
         formula_book:
-          healing: 2
+          Healing: 2
         skills: []
     Mutagenist:
       chargen:
         action: []
         reaction: []
         formula_book:
-          mutagen: 2
+          Mutagen: 2
         skills: []
     Toxicologist:
       chargen:
         action: []
         reaction: []
         formula_book:
-          poison: 2
+          Poison: 2
         skills: []
   Barbarian:
     Animal:

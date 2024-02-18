@@ -33,7 +33,12 @@ module AresMUSH
       end
 
       def handle
-        subject = Pf2e.get_character(self.target, enactor,)
+        subject = Pf2e.get_character(self.character, enactor)
+
+        if !subject
+          client.emit_failure t('pf2e.not_found')
+          return
+        end
 
         roll = Pf2e.parse_roll_string(subject,self.mods)
         list = roll['list']

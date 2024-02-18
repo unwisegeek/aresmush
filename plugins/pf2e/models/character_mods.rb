@@ -29,15 +29,11 @@ module AresMUSH
     attribute :pf2_xp_history, :type => DataType::Array, :default => []
     attribute :pf2_is_dead, :type => DataType::Boolean
     attribute :pf2_known_for, :type => DataType::Array, :default => []
+    attribute :pf2_formula_book, :type => DataType::Hash, :default => {}
+    attribute :pf2_reagents, :type => DataType::Hash, :default => {}
+    attribute :pf2_alloc_reagents, :type => DataType::Integer, :default => 0
     # DEPRECATED please use pf2_xp_history for XP, money is handled in the gear plugin
     attribute :pf2_award_history, :type => DataType::Hash, :default => {}
-
-
-
-
-
-    ### Only some characters will have these attributes, so nil check these.
-    attribute :pf2_formula_book, :type => DataType::Hash
 
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"

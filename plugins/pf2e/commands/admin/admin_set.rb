@@ -23,15 +23,13 @@ module AresMUSH
         return t('dispatcher.not_allowed')
       end
 
-      def check_valid_item
-        valid_items = [ "feat", "skill", "feature", "spell", "ability", "focus" ]
-
-        return nil if valid_items.include?(self.item)
-        return t('pf2e.not_modifiable', :item => self.item)
-      end
-
       def handle
-        char = Pf2e.get_character(self.character, enactor, client)
+        char = Pf2e.get_character(self.character, enactor)
+
+        if !char
+          client.emit_failure t('pf2e.not_found')
+          return
+        end
 
         case self.item
         when "feat"
@@ -39,19 +37,16 @@ module AresMUSH
 
           feat_type = self.value[0].downcase
           instruction = self.value[1].downcase
-          feat_name = self.value[2]
+          details = Pf2e.get_feat_details(self.value[2])
 
-          valid_feat_types = %w(ancestry charclass skill general archetype dedication)
+          return t('pf2e.not_unique') if details.is_a? String
+
+          feat_name = details.first
+
+          valid_feat_types = Global.read_config('pf2e', 'valid_feat_types')
 
           if !(valid_feat_types.include? feat_type)
             client.emit_failure t('pf2e.bad_value', :item => 'feat type')
-            return
-          end
-
-          feat_list = Global.read_config('pf2e_feats').keys
-
-          if !(feat_list.include? feat_name)
-            client.emit_failure t('pf2e.bad_value', :item => 'feat name')
             return
           end
 
@@ -100,14 +95,32 @@ module AresMUSH
           end
 
           skill.update(prof_level: new_prof)
-          client.emit_success t('pf2e.skill_updated_ok', :name => skill.name, :char => char.name)
+          client.emit_success t('pf2e.updated_ok', :element => skill.name, :char => char.name)
 
         when "feature"
           # Expected structure of self.value: `[add|delete] <feature name>`
-          # This keyword does not validate whether the character meets prerequisites for or is of the 
-          # appropriate class to take the named feature. It validates only that <feature> exists for <character class>.
+          # No validation of the feature in question is done. 
 
+          features = char.pf2_features
+          instruction = value[0]
+          ftoadd = titlecase_arg(value[1])
 
+          if instruction == "add"
+            features << ftoadd
+          elsif instruction == "delete"
+            i = features.each {|f| f.upcase}.index(ftoadd.upcase)
+
+            if !i
+              client.emit_failure t('pf2e.not_in_list', :option => ftoadd)
+              return
+            end
+
+            features.delete_at(i)
+          end
+
+          char.update(pf2_features: features.sort)
+        
+          client.emit_success t('pf2e.updated_ok', :element => "Feature", :char => char.name)
         when "spell"
           # Expected structure of self.value: <charclass> [add|delete] <spell name> <spell level>
 
@@ -158,10 +171,10 @@ module AresMUSH
 
           abil_obj.update(base_val: score)
 
-          client.emit_success t('pf2e.abil_update_ok', :char => char.name, :name => abil_obj.name)
-        when "focus"
+          client.emit_success t('pf2e.updated_ok', :char => char.name, :element => abil_obj.name)
+        else 
+          client.emit_failure t('pf2e.bad_value', :item => 'keyword')
         end 
-
 
       end
 

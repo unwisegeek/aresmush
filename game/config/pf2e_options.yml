@@ -101,3 +101,10 @@ pf2e:
   - Advanced Blood Potency
   - Advanced Witchcraft
   - Advanced Arcana
+  valid_feat_types:
+  - ancestry
+  - charclass
+  - skill
+  - general
+  - archetype
+  - dedication

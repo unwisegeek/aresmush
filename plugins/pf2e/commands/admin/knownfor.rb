@@ -26,6 +26,11 @@ module AresMUSH
 
         char = Pf2e.get_character(self.character, enactor)
 
+        if !char
+          client.emit_failure t('pf2e.not_found')
+          return
+        end
+
         char_is_known_for = char.pf2_known_for ? char.pf2_known_for : []
 
         char_is_known_for << self.blurb

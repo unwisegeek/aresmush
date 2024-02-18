@@ -33,6 +33,8 @@ pf2e_class:
       - Alchemical Crafting
       action: []
       reaction: []
+      reagents: 
+        alchemist: [0, 0, 0]
     advance:
       2:
         choose_feat:

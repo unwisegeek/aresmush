@@ -141,9 +141,17 @@ module AresMUSH
         case cmd.switch
         when "set"
           return PF2AdminSetCmd
+        when "reset"
+          return PF2AdminResetCmd
+        when "respec"
+          return PF2AdminRespecCmd
         end
       when "listxp"
         return PF2ListXPCmd
+      when "refresh"
+        return PF2ForceRefreshCmd
+      when "rest"
+        return PF2DailyPrepCmd
       end
 
       nil

@@ -21,9 +21,12 @@ module AresMUSH
       end
 
       def handle
-        char = Pf2e.get_character(self.target, enactor)
+        char = Pf2e.get_character(self.character, enactor)
 
-        if char.is_admin?
+        if !char
+          client.emit_failure t('pf2e.not_found')
+          return
+        elsif char.is_admin?
           client.emit_failure t('pf2e.admin_no_sheet')
           return nil
         end
