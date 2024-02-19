@@ -30,6 +30,7 @@ pf2e:
     listalias: roll/listalias
     rollfor: roll/for
     csheet: sheet/combat
+    formulalist: formulas/list
   allowed_alignments:
   - LG
   - NG

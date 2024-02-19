@@ -83,6 +83,8 @@ en:
     feat_grants_addl: "This feat grants an additional %{element}."
     feats_are_ok: "%xgYou have no unassigned feats."
     feat_set_ok: "Feat %{name} added to list %{type}."
+    formula_char_title: "Formulas Known By %{char}"
+    formula_disp_title: "Available Formulas"
 
     has_code: "This character is required to abide by a code of behavior. See profile for details."
     heritage_not_set: "You cannot set a lineage until you set your heritage."
@@ -123,6 +125,7 @@ en:
     not_unique: "The selected argument is not valid or has more than one valid match."
     nothing_to_assign: "You have no character options left unassigned."
     nothing_to_display: "No %{elements} matched your search."
+    nothing_to_do: "Nothing to do."
 
     only_in_chargen: "This command can only be used in chargen."
     option_set: "You set your %{element} to %{option}. Remember that this might reset other options."

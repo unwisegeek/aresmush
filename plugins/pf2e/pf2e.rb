@@ -152,6 +152,15 @@ module AresMUSH
         return PF2ForceRefreshCmd
       when "rest"
         return PF2DailyPrepCmd
+      when "formulas"
+        case cmd.switch
+        when "add"
+          return PF2FormulaAddCmd
+        when "remove"
+          return PF2FormulaRemoveCmd
+        else
+          return PF2DisplayFormulasCmd
+        end
       end
 
       nil
