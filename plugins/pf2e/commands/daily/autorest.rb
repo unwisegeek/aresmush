@@ -5,7 +5,7 @@ module AresMUSH
       include CommandHandler
 
       def handle
-        value = toggle_auto_refresh(enactor)
+        value = Pf2e.toggle_auto_refresh(enactor)
 
         setting = value ? "ON" : "OFF"
 

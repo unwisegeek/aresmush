@@ -94,7 +94,7 @@ module AresMUSH
       magic.update(focus_pool: fp)
     end
 
-    def toggle_auto_refresh(char)
+    def self.toggle_auto_refresh(char)
       autorest = !char.pf2_auto_refresh
 
       char.update(pf2_auto_refresh: autorest)
