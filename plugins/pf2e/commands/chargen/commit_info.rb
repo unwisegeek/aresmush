@@ -141,8 +141,8 @@ module AresMUSH
 
         heritage_skills = heritage_info['skills']
         class_skills = class_features_info['skills']
-        subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
-        subclassopt_skills = subclassopt_features_info['skills'] ? subclassopt_features_info['skills'] : []
+        subclass_skills = subclass_features_info.blank? ? [] : subclass_features_info['skills']
+        subclassopt_skills = subclassopt_features_info.blank? ? [] : subclassopt_features_info['skills']
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills + subclassopt_skills
 
@@ -198,9 +198,9 @@ module AresMUSH
         end
 
         class_feats = class_features_info["feat"] ? class_features_info["feat"] : []
-        subclass_feats = subclass_features_info["feat"] ? subclass_features_info["feat"] : []
+        subclass_feats = subclass_features_info.blank? ? [] : subclass_features_info["feat"]
         heritage_feats = heritage_info["feat"] ? heritage_info["feat"] : []
-        subclass_info_feats = subclassopt_features_info["feat"] ? subclassopt_features_info["feat"] : []
+        subclass_info_feats = subclassopt_features_info.blank? ? [] : subclassopt_features_info["feat"]
 
         feats['general'] = bg_feats
         feats['ancestry'] = heritage_feats
@@ -327,7 +327,7 @@ module AresMUSH
         magic = PF2Magic.get_create_magic_obj(enactor)
 
         class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
-        subclass_mstats = subclass_features_info['magic_stats'] ? subclass_features_info['magic_stats'] : {}
+        subclass_mstats = subclass_features_info.blank? ? {} : subclass_features_info['magic_stats']
 
         magic_stats = class_mstats.merge(subclass_mstats)
 
@@ -399,8 +399,8 @@ module AresMUSH
         c_actions = class_features_info['action']
         c_reactions = class_features_info['reaction']
 
-        s_actions = subclass_info.empty? ? {} : subclass_features_info['action'] 
-        s_reactions = subclass_info.empty? ? {} : subclass_features_info['reaction']
+        s_actions = subclass_features_info.blank? ? {} : subclass_features_info['action'] 
+        s_reactions = subclass_features_info.blank? ? {} : subclass_features_info['reaction']
 
         actions = h_actions + b_actions + c_actions + s_actions.uniq.sort
         reactions = h_reactions + b_reactions + c_reactions + s_reactions.uniq.sort
