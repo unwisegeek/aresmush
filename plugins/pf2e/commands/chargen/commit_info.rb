@@ -91,9 +91,7 @@ module AresMUSH
         # Check for subclass override of key ability
         # Key ability can have multiple options, if it does, slate for assignment
 
-        key_ability = subclass_info['key_abil'] ?
-          subclass_info['key_abil'] :
-          charclass_info['key_abil']
+        key_ability = subclass_info['key_abil'] ? subclass_info['key_abil'] : charclass_info['key_abil']
 
         boosts['charclass'] = key_ability
 

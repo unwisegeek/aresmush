@@ -574,6 +574,7 @@ pf2e_specialty:
         action:
         - Pointed Question
         reaction: []
+  Monk: {}
   Oracle:
     Ancestors:
       chargen:
