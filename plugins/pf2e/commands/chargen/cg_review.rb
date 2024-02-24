@@ -21,7 +21,7 @@ module AresMUSH
       end
 
       def handle
-        char = Pf2e.get_character(self.character, enactor)
+        char = Pf2e.get_character(self.target, enactor)
 
         if !char
           client.emit_failure t('pf2e.not_found')
@@ -31,7 +31,7 @@ module AresMUSH
           return nil
         end
 
-        template = self.target.pf2_baseinfo_locked ?
+        template = char.pf2_baseinfo_locked ?
           PF2CGReviewLockDisplay.new(char, client) :
           PF2CGReviewUnlockDisplay.new(char, client)
 
