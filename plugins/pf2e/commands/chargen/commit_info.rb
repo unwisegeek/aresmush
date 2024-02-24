@@ -53,7 +53,6 @@ module AresMUSH
         heritage_info = Global.read_config('pf2e_heritage', heritage)
         background_info = Global.read_config('pf2e_background', background)
         charclass_info = Global.read_config('pf2e_class', charclass)
-        # Subclass_info can be nil
         subclass_info = Global.read_config('pf2e_specialty', charclass, subclass)
         subclass_option_info = subclass_option.blank? ?
                                nil :
@@ -61,6 +60,9 @@ module AresMUSH
         class_features_info = charclass_info["chargen"]
         subclass_features_info = subclass_info ? subclass_info["chargen"] : {}
         subclassopt_features_info = subclass_option_info ? subclass_option_info['chargen'] : {}
+
+        # Moved from above to here to allow subclass_features_info to assign properly
+        subclass_info = {} unless subclass_info
 
         to_assign = enactor.pf2_to_assign
 
@@ -91,9 +93,7 @@ module AresMUSH
         # Check for subclass override of key ability
         # Key ability can have multiple options, if it does, slate for assignment
 
-        key_ability = subclass_info['key_abil'] ?
-          subclass_info['key_abil'] :
-          charclass_info['key_abil']
+        key_ability = subclass_info['key_abil'] ? subclass_info['key_abil'] : charclass_info['key_abil']
 
         boosts['charclass'] = key_ability
 
@@ -141,8 +141,8 @@ module AresMUSH
 
         heritage_skills = heritage_info['skills']
         class_skills = class_features_info['skills']
-        subclass_skills = subclass_features_info['skills'] ? subclass_features_info['skills'] : []
-        subclassopt_skills = subclassopt_features_info['skills'] ? subclassopt_features_info['skills'] : []
+        subclass_skills = subclass_features_info.blank? ? [] : subclass_features_info['skills']
+        subclassopt_skills = subclassopt_features_info.blank? ? [] : subclassopt_features_info['skills']
 
         skills = bg_skills + heritage_skills + class_skills + subclass_skills + subclassopt_skills
 
@@ -198,9 +198,9 @@ module AresMUSH
         end
 
         class_feats = class_features_info["feat"] ? class_features_info["feat"] : []
-        subclass_feats = subclass_features_info["feat"] ? subclass_features_info["feat"] : []
+        subclass_feats = subclass_features_info.blank? ? [] : subclass_features_info["feat"]
         heritage_feats = heritage_info["feat"] ? heritage_info["feat"] : []
-        subclass_info_feats = subclassopt_features_info["feat"] ? subclassopt_features_info["feat"] : []
+        subclass_info_feats = subclassopt_features_info.blank? ? [] : subclassopt_features_info["feat"]
 
         feats['general'] = bg_feats
         feats['ancestry'] = heritage_feats
@@ -327,7 +327,7 @@ module AresMUSH
         magic = PF2Magic.get_create_magic_obj(enactor)
 
         class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
-        subclass_mstats = subclass_features_info['magic_stats'] ? subclass_features_info['magic_stats'] : {}
+        subclass_mstats = subclass_features_info.blank? ? {} : subclass_features_info['magic_stats']
 
         magic_stats = class_mstats.merge(subclass_mstats)
 
@@ -399,8 +399,8 @@ module AresMUSH
         c_actions = class_features_info['action']
         c_reactions = class_features_info['reaction']
 
-        s_actions = subclass_features_info['action']
-        s_reactions = subclass_features_info['reaction']
+        s_actions = subclass_features_info.blank? ? {} : subclass_features_info['action'] 
+        s_reactions = subclass_features_info.blank? ? {} : subclass_features_info['reaction']
 
         actions = h_actions + b_actions + c_actions + s_actions.uniq.sort
         reactions = h_reactions + b_reactions + c_reactions + s_reactions.uniq.sort

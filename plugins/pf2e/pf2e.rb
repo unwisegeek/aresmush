@@ -161,6 +161,8 @@ module AresMUSH
         else
           return PF2DisplayFormulasCmd
         end
+      when "autorest"
+        return PF2AutoDailyPrepCmd
       end
 
       nil

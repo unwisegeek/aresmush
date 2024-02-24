@@ -5,6 +5,7 @@ module AresMUSH
     attribute :pf2_reset, :type => DataType::Boolean
     attribute :advancing, :type => DataType::Boolean
     attribute :pf2_last_refresh, :type => DataType::Time
+    attribute :pf2_auto_refresh, :type => DataType::Boolean
 
     attribute :pf2_base_info, :type => DataType::Hash, :default => { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"", 'specialize_info'=>""}
     attribute :pf2_level, :type => DataType::Integer, :default => 1

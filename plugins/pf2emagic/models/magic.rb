@@ -39,17 +39,14 @@ module AresMUSH
       return obj
     end
 
-    def self.add_pending_magic(char, keyname, info)
-      # This helper adds a key to pending magic adds. This is done because of the difficulty of erasing magic changes.
+    def self.find_spell_by_name(name)
+      term = name.upcase
 
-      magic = char.magic 
-      return nil unless magic
+      list = Global.read_config('pf2e_spells').keys.select { |s| s.upcase.match? term }
 
-      pending_changes = magic.magic_to_apply
-
-      pending_changes[keyname] = info
-
-      magic.update(magic_to_apply: pending_changes)
+      return t('pf2e.multiple_matches', :element => 'spell') if list.size > 1
+      return t('pf2e.nothing_to_display', :elements => 'spells') if list.empty?
+      return list
     end
 
     def self.update_magic(char, charclass, info, client, cleanup=false)
