@@ -21,10 +21,10 @@ module AresMUSH
 
         # If no argument, code assumes reference is to self.
 
-        char = self.character ? Character.find_one_by_name(self.character) : enactor
+        char = Pf2e.get_character(self.character, enactor)
 
         if !char
-          client.emit_failure t('pf2e.char_not_found')
+          client.emit_failure t('pf2e.not_found')
           return
         end
 

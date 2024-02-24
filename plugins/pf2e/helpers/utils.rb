@@ -272,7 +272,140 @@ module AresMUSH
     def self.respec_character(char)
       # A respec does not delete XP, level, or character wealth, but does clear all stats and inventory.
 
+      if char.is_approved?
+        char.update(approval_job: nil)
+        char.update(chargen_locked: false)
+        Roles.remove_role(char, "approved")
+      end
 
+      # I am aware of Faraday's suggestion for using .update, but when I am changing many things at once, 
+      # I may as well do one DB write instead of two dozen. 
+
+      char.pf2_baseinfo_locked = false
+      char.pf2_abilities_locked = false
+      char.pf2_reset = false
+
+      char.pf2_base_info = { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
+      char.pf2_conditions = {}
+      char.pf2_features = []
+      char.pf2_traits = []
+      char.pf2_feats = { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
+      char.pf2_faith = { 'deity'=>"", 'alignment'=>"" }
+      char.pf2_special = []
+      char.pf2_boosts_working = { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[] }
+      char.pf2_boosts = {}
+      char.pf2_to_assign = {}
+      char.pf2_lang = []
+      char.pf2_movement = {}
+      char.pf2_reagents = {}
+      char.pf2_formula_book = {}
+      char.advancing = nil
+      char.pf2_last_refresh = nil
+      char.pf2_cg_assigned = {}
+      char.pf2_adv_assigned = {}
+      char.pf2_size = ""
+      char.pf2_roll_aliases = {}
+      char.pf2_actions = {}
+      char.pf2_is_dead = nil
+      char.pf2_known_for = []
+      char.pf2_alloc_reagents = 0
+
+      # Reset money and gear if that plugin is installed. Respec preserves money.
+      Pf2egear.reset_gear(char, true) if AresMUSH.const_defined?("Pf2egear")
+
+      # All characters have all objects except magic, so to minimize DB bloat, reuse existing objects.
+      Pf2eAbilities.factory_default(char)
+      Pf2eSkills.factory_default(char)
+      Pf2eHP.factory_default(char)
+      Pf2eCombat.factory_default(char)
+      PF2Magic.factory_default(char)
+ 
+      char.save
+    end
+
+    def self.reset_character(char)
+      # This undoes all approvals and takes the character back to the very beginning. 
+
+      if char.is_approved?
+        char.update(approval_job: nil)
+        char.update(chargen_locked: false)
+        Roles.remove_role(char, "approved")
+      end
+
+      char.pf2_baseinfo_locked = false
+      char.pf2_abilities_locked = false
+      char.pf2_reset = false
+
+      char.pf2_base_info = { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
+      char.pf2_xp = 0
+      char.pf2_conditions = {}
+      char.pf2_features = []
+      char.pf2_traits = []
+      char.pf2_feats = { "ancestry"=>[], "charclass"=>[], "skill"=>[], "general"=>[] }
+      char.pf2_faith = { 'deity'=>"", 'alignment'=>"" }
+      char.pf2_special = []
+      char.pf2_boosts_working = { 'free'=>[], 'ancestry'=>[], 'background'=>[], 'charclass'=>[] }
+      char.pf2_boosts = {}
+      char.pf2_to_assign = {}
+      char.pf2_lang = []
+      char.pf2_movement = {}
+      char.pf2_reagents = {}
+      char.pf2_formula_book = {}
+      char.advancing = nil
+      char.pf2_last_refresh = nil
+      char.pf2_level = 1
+      char.pf2_viewsheet = {}
+      char.pf2_cg_assigned = {}
+      char.pf2_adv_assigned = {}
+      char.pf2_size = ""
+      char.pf2_roll_aliases = {}
+      char.pf2_actions = {}
+      char.pf2_xp_history = []
+      char.pf2_is_dead = nil
+      char.pf2_known_for = []
+      char.pf2_alloc_reagents = 0
+
+      # Reset money and gear if that plugin is installed.
+      Pf2egear.reset_gear(char) if AresMUSH.const_defined?("Pf2egear")
+
+      # All characters have all objects except magic, so to minimize DB bloat, reuse existing objects.
+      Pf2eAbilities.factory_default(char)
+      Pf2eSkills.factory_default(char)
+      Pf2eHP.factory_default(char)
+      Pf2eCombat.factory_default(char)
+      PF2Magic.factory_default(char)
+
+      char.save
+    end
+
+    def self.get_character(name, enactor)
+      # Because Faraday can go fuck a cactus if she thinks I'm typing this ten thousand times.
+
+      return enactor unless name
+      
+      result = ClassTargetFinder.find(name, Character, enactor)
+      if (result.found?)
+        return result.target
+      else
+        return nil
+      end
+    end
+
+    def self.update_reagents(char, info, cleanup=false)
+
+      reagents = char.pf2_reagents
+
+      if cleanup
+        info.each_pair do |k,v|
+          reagents.delete[k]
+        end
+      else
+        info.each_pair do |k,v|
+          reagents[k] = v
+        end
+      end
+
+      char.update(pf2_reagents: reagents)
 
     end
 

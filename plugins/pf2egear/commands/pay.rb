@@ -45,14 +45,7 @@ module AresMUSH
 
         taking_money = self.value.negative?
 
-        target_char = Character.find_one_by_name(self.target)
-
-        # Is the target a valid character?
-
-        if !target_char
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
+        target_char = Pf2e.get_character(self.target, enactor, client)
 
         if taking_money
           payer = target_char

@@ -8,22 +8,31 @@ module AresMUSH
       return true
     end
 
-    def generate_spells_today(obj, charclass)
-      # Function assumes that calling code has already validated the magic object.
+    def self.generate_spells_today(char)
 
-      caster_class = charclass.downcase
+      magic = char.magic 
 
-      case caster_class
-      when "wizard", "druid", "cleric", "witch"
-        prepared_list = obj.spells_prepared
+      return t('pf2emagic.not_caster') unless magic
 
-        obj.update(spells_today: prepared_list)
-      when "bard", "oracle", "sorcerer"
-        spells_today = generate_blank_spell_list(obj)
+      pclass = magic.spells_prepared.keys.map { |c| c.downcase }
 
-        obj.update(spells_today: spells_today)
-      else
-        return nil
+      sclass = magic.repertoire.keys.map { |c| c.downcase }
+
+      class_list = (pclass + sclass).uniq
+
+      class_list.each do |cc|
+        case cc
+        when "wizard", "druid", "cleric", "witch"
+          prepared_list = magic.spells_prepared
+
+          magic.update(spells_today: prepared_list)
+        when "bard", "oracle", "sorcerer"
+          spells_today = generate_blank_spell_list(magic)
+
+          magic.update(spells_today: spells_today)
+        else
+          return nil
+        end
       end
 
     end
@@ -62,6 +71,45 @@ module AresMUSH
       magic.update(last_refocus: Time.now)
 
       return nil
+    end
+
+    def self.get_max_focus_pool(char, change)
+      magic = char.magic
+
+      return 0 unless magic
+
+      # Calculate all the focus pool points that the character could have available.
+      # From character class
+
+      mstat_class = Global.read_config('pf2e_class', char.pf2_base_info['charclass'], chargen)['magic_stats']
+
+      if mstat_class
+        fp_from_charclass = mstat_class['focus_pool'] ? mstat_class['focus_pool'] : 0
+      else 
+        fp_from_charclass = 0
+      end
+
+      # From feats
+      all_feats = char.pf2_feats.values.flatten.uniq
+
+      values = []
+
+      all_feats.each do |feat|
+        details = Pf2e.get_feat_details(feat)
+        (values << 0 && next) if details.is_a? String
+          
+        mstats = details[1]['magic_stats']
+        (values << 0 && next) unless mstats
+
+        feat_fp = mstats['focus_pool']
+        (values << 0 && next) unless feat_fp
+
+        values << feat_fp
+      end
+
+      fp_from_feats = values.sum
+
+      (fp_from_charclass + fp_from_feats + change).clamp(0,3)
     end
 
   end

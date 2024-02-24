@@ -322,21 +322,23 @@ module AresMUSH
 
         # Starting Magic
 
+        # Most characters will be casters in some capacity at some point in their development,
+        # so everyone gets one to avoid create/delete repeatedly.
+        magic = PF2Magic.get_create_magic_obj(enactor)
+
         class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
         subclass_mstats = subclass_features_info['magic_stats'] ? subclass_features_info['magic_stats'] : {}
 
         magic_stats = class_mstats.merge(subclass_mstats)
 
         if magic_stats.empty?
-          # Most characters will be casters in some capacity at some point in their development,
-          # so everyone gets one to avoid create/delete repeatedly.
-          
-          PF2Magic.get_create_magic_obj(enactor)
           client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
         else
-          PF2Magic.update_magic_for_class(enactor, charclass, magic_stats, client)
+          PF2Magic.update_magic(enactor, charclass, magic_stats, client)
           client.emit_ooc "Setting up magic..."
         end
+
+        magic.save
 
         # Languages
         languages = enactor.pf2_lang

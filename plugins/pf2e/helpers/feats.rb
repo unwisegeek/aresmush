@@ -4,8 +4,16 @@ module AresMUSH
     include CommonTemplateFields
 
     def self.get_feat_details(name)
+      feats =  Global.read_config('pf2e_feats')
 
-      feat_info = Global.read_config('pf2e_feats', name)
+      keys = feats.keys
+
+      match = keys.select { |f| f.upcase == name.upcase }
+
+      return 'no_match' if match.empty?
+      return 'ambiguous' if match.size > 1
+
+      return [ match.first, feats[match] ]
     end
 
     def self.search_feats(search_type, term, operator='=')
@@ -79,7 +87,12 @@ module AresMUSH
       prereqs = details["prereq"]
 
       if prereqs 
-        meets_prereqs = Pf2e.meets_prereqs?(char, prereqs)
+        # Some feats use non-default character level for purposes of prereq checks. 
+        cl = char.pf2_level
+        cl = 2 if Global.read_config('pf2e','basic_mc_feats').include? feat
+        cl = cl/2 if Global.read_config('pf2e','adv_mc_feats').include? feat
+
+        meets_prereqs = Pf2e.meets_prereqs?(char, prereqs, cl)
       else
         meets_prereqs = true
       end
@@ -90,7 +103,7 @@ module AresMUSH
       return false
     end
 
-    def self.meets_prereqs?(char, prereqs)
+    def self.meets_prereqs?(char, prereqs, cl)
       msg = []
 
       prereqs.each_pair do |ptype, required|
@@ -103,12 +116,17 @@ module AresMUSH
 
         case ptype
         when "level"
-          level = char.pf2_level
-
-          msg << "level" if prereqs['level'] > level
+          msg << "level" if prereqs['level'] > cl
         when "ability"
-          char_score = Pf2eAbilities.get_score(char, factor)
-          msg << "ability" if char_score < minimum.to_i
+          # There can be more than one ability prereq, so required is passed as an array. 
+          required.each_with_index do |item, i|
+            string = item.split("/")
+            factor = string[0]
+            minimum = string[1]
+
+            char_score = Pf2eAbilities.get_score(char, factor)
+            msg << "ability#{i}" if char_score < minimum.to_i
+          end
         when "skill"
           char_prof = Pf2e.get_prof_bonus(char, Pf2eSkills.get_skill_prof(char, factor))
           min_prof = Pf2e.get_prof_bonus(char, minimum)

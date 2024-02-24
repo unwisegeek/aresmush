@@ -20,12 +20,7 @@ module AresMUSH
 
       def handle
 
-        char = self.character ? Character.find_one_by_name(self.character) : enactor
-
-        if !char
-          client.emit_failure t('pf2e.char_not_found')
-          return
-        end
+        char = Pf2e.get_character(self.target, enactor)
 
         msg = Pf2emagic.do_refocus(char, enactor)
 

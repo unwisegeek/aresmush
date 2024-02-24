@@ -33,7 +33,7 @@ module AresMUSH
 
         penalty = @armor ? @armor.speed_penalty : 0
 
-        speed = base_speed + penalty
+        base_speed + penalty
       end
 
       def movement

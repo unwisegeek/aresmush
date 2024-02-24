@@ -33,10 +33,10 @@ module AresMUSH
       end
 
       def handle
-        subject = Character.find_one_by_name(self.target)
+        subject = Pf2e.get_character(self.character, enactor)
 
         if !subject
-          client.emit_failure t('pf2e.char_not_found')
+          client.emit_failure t('pf2e.not_found')
           return
         end
 

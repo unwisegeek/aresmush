@@ -33,8 +33,6 @@ module AresMUSH
     def self.missing_base_info(ancestry, heritage, background, charclass, faith_info)
       if ancestry.blank? || heritage.blank? || background.blank? || charclass.blank?
         error = t('pf2e.missing_base_info')
-      else
-        nil
       end
     end
 

@@ -8,8 +8,15 @@
 <%= textline("Focus Spells") %>
 <%= revelation_lock_msg if revelation_locked -%>
 
-<% focus_spells.each do |fs| %>
-<%= fs %>
+<% focus_spells.each do |spell| %>
+<%= spell %>
+
+<% end %>
+<% end %>
+<% if has_innate_spells %>
+<%= textline("Innate Spells") %>
+<% innate_spells.each do |spell| %>
+<%= spell %>
 
 <% end %>
 <% end %>

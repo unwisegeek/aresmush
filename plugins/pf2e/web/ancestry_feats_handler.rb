@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2e
-    class PF2FeatsHandler
+    class PF2AncestryFeatsHandler
       def handle(request)
 
         error = WebHelpers.check_login(request, true)
@@ -8,8 +8,12 @@ module AresMUSH
 
         request.log_request
 
+        hash = Global.read_config('pf2e_feats')
+
+        result = hash.select {|k,v| v['feat_type'].include? "Ancestry"}
+
         { 
-          result: Global.read_config('pf2e_feats', 'charclass')
+          result: result
         }
 
       end

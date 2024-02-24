@@ -43,7 +43,8 @@ pf2e_feats:
     shortdesc: Regain more HP from rest, recover faster from disease and poisons.
     prereq:
       level: 1
-      ability: Constitution/14
+      ability: 
+      - Constitution/14
   Feather Step:
     feat_type: 
     - General
@@ -51,7 +52,8 @@ pf2e_feats:
     shortdesc: Step into difficult terrain.
     prereq:
       level: 1
-      ability: Dexterity/14
+      ability: 
+      - Dexterity/14
   Fleet:
     feat_type: 
     - General
@@ -109,7 +111,8 @@ pf2e_feats:
     shortdesc: Hirelings gain +2 to skill checks.
     prereq:
       level: 3
-      ability: Charisma/14
+      ability: 
+      - Charisma/14
   Improvised Repair:
     feat_type: 
     - General
@@ -131,7 +134,8 @@ pf2e_feats:
     shortdesc: Your group can Hustle for up to 20 minutes longer.
     prereq:
       level: 3
-      ability: Constitution/14
+      ability: 
+      - Constitution/14
   Skitter:
     feat_type: 
     - General
@@ -141,7 +145,8 @@ pf2e_feats:
       level: 3
       feat: 
       - Fleet
-      ability: Dexterity/16
+      ability: 
+      - Dexterity/16
   Thorough Search:
     feat_type: 
     - General

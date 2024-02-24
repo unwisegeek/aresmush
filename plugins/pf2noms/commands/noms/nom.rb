@@ -34,12 +34,9 @@ module AresMUSH
 
 
         self.list.each do |item|
-          char = Character.find_one_by_name(item)
-
-          if !char
-            client.emit_ooc t('pf2noms.target_not_found', :target=>item)
-            next
-          elsif !(char.player)
+          char = Pf2e.get_character(item, enactor)
+          
+          if !(char.player)
             client.emit_ooc t('pf2noms.target_bad_player', :target=>char.name)
             next
           elsif !(char.is_approved?)

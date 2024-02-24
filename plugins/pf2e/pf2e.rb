@@ -141,9 +141,26 @@ module AresMUSH
         case cmd.switch
         when "set"
           return PF2AdminSetCmd
+        when "reset"
+          return PF2AdminResetCmd
+        when "respec"
+          return PF2AdminRespecCmd
         end
       when "listxp"
         return PF2ListXPCmd
+      when "refresh"
+        return PF2ForceRefreshCmd
+      when "rest"
+        return PF2DailyPrepCmd
+      when "formulas"
+        case cmd.switch
+        when "add"
+          return PF2FormulaAddCmd
+        when "remove"
+          return PF2FormulaRemoveCmd
+        else
+          return PF2DisplayFormulasCmd
+        end
       end
 
       nil
@@ -155,8 +172,16 @@ module AresMUSH
 
     def self.get_web_request_handler(request)
       case request.cmd
-      when "pf2Feats"
-        return PF2FeatsHandler
+      when "pf2CharclassFeats"
+        return PF2CharclassFeatsHandler
+      when "pf2AncestryFeats"
+        return PF2AncestryFeatsHandler
+      when "pf2GeneralFeats"
+        return PF2GeneralFeatsHandler
+      when "pf2SkillFeats"
+        return PF2SkillFeatsHandler
+      when "pf2DedicationFeats"
+        return PF2DedicationFeatsHandler
       end
 
       nil

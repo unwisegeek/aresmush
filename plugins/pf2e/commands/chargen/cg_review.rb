@@ -6,7 +6,7 @@ module AresMUSH
       attr_accessor :target
 
       def parse_args
-        self.target = cmd.args ? Character.find_one_by_name(cmd.args) : enactor
+        self.target = trim_arg(cmd.args)
       end
 
       def check_in_chargen
@@ -21,17 +21,19 @@ module AresMUSH
       end
 
       def handle
-        if !self.target
-          client.emit_failure t('pf2e.char_not_found')
-          return nil
-        elsif self.target.is_admin?
+        char = Pf2e.get_character(self.character, enactor)
+
+        if !char
+          client.emit_failure t('pf2e.not_found')
+          return
+        elsif char.is_admin?
           client.emit_failure t('pf2e.admin_no_sheet')
           return nil
         end
 
         template = self.target.pf2_baseinfo_locked ?
-          PF2CGReviewLockDisplay.new(self.target, client) :
-          PF2CGReviewUnlockDisplay.new(self.target, client)
+          PF2CGReviewLockDisplay.new(char, client) :
+          PF2CGReviewUnlockDisplay.new(char, client)
 
         client.emit template.render
       end

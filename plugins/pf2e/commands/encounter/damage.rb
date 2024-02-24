@@ -26,7 +26,7 @@ module AresMUSH
 
         # Validate that the enactor has the right to run this command in this situation.
 
-        target_list = self.target.map { |t| Character.find_one_by_name(t).name }.compact
+        target_list = self.target.map { |t| Pf2e.get_character(t, enactor).name }.compact
 
         can_damage_pc = Pf2e.can_damage_pc?(enactor, target_list)
 

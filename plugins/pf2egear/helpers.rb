@@ -38,9 +38,9 @@ module AresMUSH
       char.update(pf2_money: purse + amount)
     end
 
-    def self.reset_gear(char)
+    def self.reset_gear(char, preserve_money=false)
       char.pf2_gear = {'consumables' => {}, 'gear' => {}}
-      char.pf2_money = 1500
+      char.pf2_money = 1500 unless preserve_money
 
       char.weapons&.each { |i| i.delete }
       char.armor&.each { |i| i.delete }
@@ -67,7 +67,6 @@ module AresMUSH
     end
 
     def self.bag_effective_bulk(bag, load)
-      max_capacity = bag.capacity
       capacity_bonus = bag.bulk_bonus ? bag.bulk_bonus : 0
       bag_bulk = bag.bulk
 

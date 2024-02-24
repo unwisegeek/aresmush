@@ -986,7 +986,8 @@ pf2e_feats:
     feat_type:
       - Charclass
     prereq:
-      ability: Strength/14
+      ability: 
+      - Strength/14
       feat:
         - Wild Shape
       level: 4
