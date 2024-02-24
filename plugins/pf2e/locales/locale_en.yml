@@ -17,6 +17,7 @@ en:
     ancestry_not_set: "You cannot set your heritage until you set your ancestry."
     are_you_sure: "Are you sure? This command will wipe your entire character sheet. Type 'cg/reset confirm' to confirm that you want to do this."
     assignment_ok: "Open option %{type} assigned to %{value}."
+    autorest_set_ok: "Your automatic daily prep setting is now: %{setting}."
 
     bad_ability: "That is not a valid ability for %{char}."
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
