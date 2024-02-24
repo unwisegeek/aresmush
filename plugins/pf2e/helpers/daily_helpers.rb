@@ -10,7 +10,8 @@ module AresMUSH
 
       elapsed = (current_time - last_refresh).to_i
 
-      if elapsed < 86400
+      # Using one minute less than 24 hours to avoid a race condition w/ the autorest cron
+      if elapsed < 86340
         next_refresh = OOCTime.local_long_timestr(char, Time.at(last_refresh + 86400))
 
         return t('pf2e.cannot_rest_time', :next => next_refresh)
