@@ -272,7 +272,6 @@ pf2e_spells:
     - 9d12
     - 10d12
     - 11d12
-    - 12d12
     base_level: 3
     save: Reflex
     school: Evocation
@@ -292,9 +291,8 @@ pf2e_spells:
     duration: 1 minute
     effect: "You create a black, rumbling storm cloud and call down one lightning bolt within the spell's area. The bolt is a vertical line from the top of the storm cloud to the ground below, dealing 4d12 electricity damage to creatures in the line (basic Reflex save). On subsequent rounds, the first time you Sustain the Spell each round, you can call another lightning bolt within the area. If you Cast this Spell outdoors, you can create two non-overlapping clouds instead of one, though you can still call down only one bolt per turn."
     heighten:
-    - 5: 5d12
-    - 7: 6d12
-    - 9: 7d12
+    - 7: 5d12
+    - 9: 6d12
     base_level: 5
     range: 120 feet
     save: Reflex
@@ -323,10 +321,7 @@ pf2e_spells:
     cast:
     - verbal
     duration: 1 round
-    effect: "Your litany rails against the sin of sloth, interfering with the target\u2019\
-      s ability to react."
-    heighten_level:
-    - 5
+    effect: "Your litany rails against the sin of sloth, interfering with the target's ability to react. The target must attempt a Will save. A particularly slothful creature, such as a Sloth Demon, uses the outcome one degree of success worse than the result of its saving throw. The target becomes temporarily immune to all of your litanies for 1 minute.%r**Critical Success** The target is unaffected.%r**Success** The target can't use reactions.%r**Failure** The target can't use reactions and is slowed 1.%r**Critical Failure** The target can't use reactions and is slowed 2."
     base_level: 5
     range: 30 feet
     save: Will
@@ -343,19 +338,15 @@ pf2e_spells:
     cast:
     - verbal
     duration: 1 round
-    effect: Your litany rails against the sin of wrath, punishing the target for attacking
-      good creatures.
+    effect: "Your litany rails against the sin of wrath, punishing the target for attacking good creatures. The target must attempt a Will save. A particularly wrathful creature, such as a wrath demon, uses the outcome one degree of success worse than the result of its saving throw. The target then becomes temporarily immune to all of your litanies for 1 minute.%r**Critical Success** The target is unaffected.%r**Success** The first time the target uses an action that deals damage to at least one good creature, the target takes 3d6 good damage.%r**Failure** Each time the target uses an action that deals damage to at least one good creature, the target takes 3d6 good damage.%r**Critical Failure** The target is enfeebled 2. Each time it uses an action that deals damage to at least one good creature, the target takes 3d6 good damage."
     heighten:
-    - '+1'
-    heighten_level:
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
+    - 4d6
+    - 5d6
+    - 6d6
+    - 7d6
+    - 8d6
+    - 9d6
+    - 10d6
     base_level: 3
     range: 30 feet
     save: Will
@@ -367,19 +358,18 @@ pf2e_spells:
     - good
     - litany
     - uncommon
+    damage: 3d6
+    damage_type: good
   Litany of Depravity:
     actions: 1
     cast:
     - verbal
     duration: 1 round
-    effect: Your litany calls into question the morals your foe claims to hold dear.
+    effect: "Your litany calls into question the morals your foe claims to hold dear. The target gains weakness 7 to evil, then becomes temporarily immune to all your litanies for 1 minute."
     heighten:
-    - '+1'
-    heighten_level:
-    - 7
-    - 8
-    - 9
-    - 10
+    - The weakness to evil increases to 8.
+    - The weakness to evil increases to 9.
+    - The weakness to evil increases to 10.
     base_level: 7
     range: 30 feet
     school: Evocation
@@ -395,15 +385,11 @@ pf2e_spells:
     cast:
     - verbal
     duration: 1 round
-    effect: Your litany denounces an evildoer, rendering it susceptible to the powers
-      of good.
+    effect: "Your litany denounces an evildoer, rendering it susceptible to the powers of good. The target gains weakness 7 to good. The target then becomes temporarily immune to all of your litanies for 1 minute."
     heighten:
-    - '+1'
-    heighten_level:
-    - 7
-    - 8
-    - 9
-    - 10
+    - The weakness to good increases to 8.
+    - The weakness to good increases to 9.
+    - The weakness to good increases to 10.
     base_level: 7
     range: 30 feet
     school: Evocation
@@ -419,13 +405,9 @@ pf2e_spells:
     cast:
     - verbal
     duration: 1 round
-    effect: You give a speech that fills your target with a drive to improve themself
-      to the exclusion of assisting others.
+    effect: "You give a speech that fills your target with a drive to improve themself to the exclusion of assisting others. A creature that wants to gain the benefit of this spell and doesn't care about its limitations can voluntarily fail the save. The target then becomes temporarily immune to all your litanies for 1 minute.%r**Success** The target is unaffected.%r**Failure** The target gains a +2 status bonus to attack rolls, Perception checks, saving throws, and skill checks. The target can't Aid other creatures, consider any creature an ally, or use spells or abilities that directly benefit another creature (as determined by the GM), even if they also benefit the target. Other creatures allied with the spell's target can still consider the target an ally and affect it accordingly."
     heighten:
-    - 8th
-    heighten_level:
-    - 5
-    - 8
+    - 8: The status bonus increases to +3.
     base_level: 5
     range: 30 feet
     save: Will
@@ -444,17 +426,14 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    effect: You shake the earth, toppling nearby creatures.
+    effect: "You shake the earth, toppling nearby creatures. Choose whether the spell's area is a 15-foot emanation or a 15-foot cone when you cast it. Each creature in the area standing on solid ground may take 4d6 bludgeoning damage and must attempt a Reflex saving throw.%r**Critical Success** The creature is unaffected.%r**Success** The creature takes half damage.%r**Failure** The creature takes full damage and falls prone.%r**Critical Failure** The creature takes double damage and falls prone."
     heighten:
-    - '+1'
-    heighten_level:
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
+    - 6d6
+    - 8d6
+    - 10d6
+    - 12d6
+    - 14d6
+    - 16d6
     base_level: 4
     save: Reflex
     school: Transmutation
@@ -463,18 +442,17 @@ pf2e_spells:
     - earth
     - transmutation
     - uncommon
+    damage: 4d6
+    damage_type: bludgeoning
   Locate:
     actions: 10 minutes
     cast:
     - material
     - somatic
     - verbal
-    effect: Learn the direction to an object.
+    effect: "You learn the direction to the target (if you picked a specific object, such as 'my mother's sword') or the nearest target (if you picked a type of object, such as 'swords'). If the target is a specific object, you must have observed it directly with your own senses. If it's a type of object, you still need to have an accurate mental image of the type of object. If there's lead or running water between you and the target, this spell can't locate the object. This means you might find a type of object farther away if the nearest one is behind lead or running water."
     heighten:
-    - 5th
-    heighten_level:
-    - 3
-    - 5
+    - 5: You can target a specific creature or ancestry instead of an object, but you must have met or seen up close the creature or ancestry you want to target.
     base_level: 3
     range: 500 feet
     school: Divination
