@@ -470,12 +470,9 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    effect: Make a lock hard to open.
+    effect: "The target's latch mechanism clinks shut, held fast by unseen magical restraints. When you magically lock a target, you set an Athletics and Thievery DC to open it equal to your spell DC or the base lock DC with a +4 status bonus, whichever is higher. Any key or combination that once opened a lock affected by this spell does not do so for the duration of the spell, though the key or combination does grant a +4 circumstance bonus to checks to open the door.%rIf the target is opened, the spell ends. Assuming the target is not barred or locked in some additional way, you can unlock and open it with an Interact action during which you touch the target. This does not end the spell. You can Dismiss this spell at any time and from any distance."
     heighten:
-    - 2nd
-    heighten_level:
-    - 1
-    - 2
+    - 2: The duration increases to unlimited, but you must expend 6 gp worth of gold dust as an additional cost.
     base_level: 1
     range: touch
     school: Abjuration
@@ -490,10 +487,7 @@ pf2e_spells:
     actions: free
     cast:
     - somatic
-    effect: "You call upon your muse\u2019s deep mysteries, granting the target a greater\
-      \ ability to think and recall information. "
-    heighten_level:
-    - 1
+    effect: "You call upon your muse's deep mysteries, granting the target a greater ability to think and recall information. Roll the triggering Recall Knowledge skill check twice and use the better result."
     base_level: 1
     range: 30 feet
     school: Divination
@@ -510,12 +504,9 @@ pf2e_spells:
     - somatic
     - verbal
     duration: 1 hour
-    effect: Increase your Speed for an hour.
+    effect: You lengthen your stride beyond what should be possible. You gain a +10-foot status bonus to your Speed.
     heighten:
-    - 2nd
-    heighten_level:
-    - 1
-    - 2
+    - 2: The duration increases to 8 hours.
     base_level: 1
     school: Transmutation
     tradition:
@@ -527,9 +518,7 @@ pf2e_spells:
     actions: reaction
     cast:
     - verbal
-    effect: Reroll a failed saving throw and use the better result.
-    heighten_level:
-    - 4
+    effect: Reroll the saving throw and use the better result. You then become temporarily immune for 10 minutes.
     base_level: 4
     school: Divination
     traits:
