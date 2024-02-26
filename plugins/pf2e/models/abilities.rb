@@ -59,11 +59,6 @@ module AresMUSH
       a = []
       boosts.each_pair do |k,v|
         free_unassigned = v.include?("open")
-
-        # Next code block is expected an array, but charclass key_ability can sometimes 
-        # be a string. A one-time recast seems most eligant
-        v = v.is_a?(String) ? v = Array(v) : v
- 
         choice_not_made = v.any? { |v| v.is_a?(Array) }
 
         a << k if free_unassigned || choice_not_made

@@ -3032,7 +3032,8 @@ pf2e_class:
         raise:
         - ability
   Wizard:
-    key_abil: Intelligence
+    key_abil: 
+    - Intelligence
     HP: 6
     chargen:
       skills:
