@@ -45,6 +45,11 @@ module AresMUSH
           term = self.search_term[0].upcase
         end
 
+        if self.search_type == 'classlevel' && self.value == nil
+          client.emit_failure t('pf2e.feat_search_classlevel_wrong_number_of_variables')
+          return
+        end
+
         match = Pf2e.search_feats(self.search_type, term, operator)
 
         if match.empty?

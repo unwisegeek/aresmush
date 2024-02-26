@@ -84,6 +84,7 @@ en:
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
     feat_grants_addl: "This feat grants an additional %{element}."
     feats_are_ok: "%xgYou have no unassigned feats."
+    feat_search_classlevel_wrong_number_of_variables: "Wrong number of variables. Example: feat/search classlevel = Fighter < 2"
     feat_set_ok: "Feat %{name} added to list %{type}."
     formula_char_title: "Formulas Known By %{char}"
     formula_disp_title: "Available Formulas"
