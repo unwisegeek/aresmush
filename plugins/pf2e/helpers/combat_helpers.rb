@@ -13,21 +13,21 @@ module AresMUSH
 
       usable_init_stat = valid_init_stat.map { |s| s.match? init_stat }
 
-      return false if usable_init_stat.size != 1
-      return true 
+      return false unless usable_init_stat.size == 1
+      return true
     end
 
     def self.can_join_encounter?(char, encounter)
-      scene = encounter.scene 
+      scene = encounter.scene
       active_encounter = PF2Encounter.in_active_encounter? char
       is_participant = scene.participants.include? char
       encounter_is_active = encounter.is_active
 
-      !active_encounter & is_participant & encounter_is_active
+      !active_encounter && is_participant && encounter_is_active
     end
 
     def self.can_damage_pc?(char, target_list)
-      
+
       encounter = PF2e.active_encounter(char)
       is_dm = enactor.has_permission?('kill_pc')
 
