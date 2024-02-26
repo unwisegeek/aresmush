@@ -573,18 +573,14 @@ pf2e_spells:
     - somatic
     - verbal
     duration: 1 minute
-    effect: You embed a seed of negative energy in an undead creature, restoring its
-      unnatural vigor.
+    effect: You embed a seed of negative energy in an undead creature, restoring its unnatural vigor. The target gains fast healing 7. This healing comes from negative energy, so it heals the undead rather than damaging it.
     heighten:
-    - '+1'
-    heighten_level:
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
+    - Target gains fast healing 9.
+    - Target gains fast healing 11.
+    - Target gains fast healing 13.
+    - Target gains fast healing 15.
+    - Target gains fast healing 17.
+    - Target gains fast healing 19.
     base_level: 4
     range: touch
     school: Necromancy
@@ -596,22 +592,16 @@ pf2e_spells:
     - uncommon
   Mage Armor:
     actions: 2
-    bloodline:
+    bloodline: wyrmblessed
     cast:
     - somatic
     - verbal
-    effect: Ward yourself with magical armor.
+    effect: You ward yourself with shimmering magical energy, gaining a +1 item bonus to AC and a maximum Dexterity modifier of +5. While wearing mage armor, you use your unarmored proficiency to calculate your AC.
     heighten:
-    - 4th
-    - 6th
-    - 8th
-    - 10th
-    heighten_level:
-    - 1
-    - 4
-    - 6
-    - 8
-    - 10
+    - 4: You gain a +1 item bonus to saving throws.
+    - 6: The item bonus to AC increases to +2, and you gain a +1 item bonus to saving throws.
+    - 8: The item bonus to AC increases to +2, and you gain a +2 item bonus to saving throws.
+    - 10: The item bonus to AC increases to +3, and you gain a +3 item bonus to saving throws.
     base_level: 1
     school: Abjuration
     tradition:
@@ -624,16 +614,11 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    effect: Command a floating hand to move an object.
+    effect: You create a single magical hand, either invisible or ghostlike, that grasps the target object and moves it slowly up to 20 feet. Because you're levitating the object, you can move it in any direction. When you Sustain the Spell, you can move the object an additional 20 feet. If the object is in the air when the spell ends, the object falls.
     heighten:
-    - 3rd
-    - 5th
-    - 7th
-    heighten_level:
-    - 1
-    - 3
-    - 5
-    - 7
+    - 3: You can target an unattended object with a Bulk of 1 or less.
+    - 5: The range increases to 60 feet, and you can target an unattended object with a Bulk of 1 or less.
+    - 7: The range increases to 60 feet, and you can target an unattended object with a Bulk of 2 or less. 
     base_level: 1
     range: 30 feet
     school: Evocation
@@ -650,12 +635,9 @@ pf2e_spells:
     - material
     - somatic
     - verbal
-    effect: Change how an item's magic appears to detecting spells.
+    effect: "You alter the appearance of an item's magic aura. You can choose to have the target's aura appear as that of a common magic item of twice magic aura's level or lower, or to have it register as being under the effects of a spell of your choice of magic aura's level or lower. If the target is magical, you can instead choose to have it appear as entirely non-magical.%rA caster using detect magic or read aura of an equal or higher spell level can attempt to disbelieve the illusion from magic aura. Magic aura doesn't mask the aura of spells that are 9th level or higher or of items that are 19th level or higher."
     heighten:
-    - 3rd
-    heighten_level:
-    - 1
-    - 3
+    - 3: "You can target a creature instead of an object. When you do, you can either conceal the auras of all magic items it has or have that creature's aura appear as if it were under the effect of a spell you know."
     base_level: 1
     range: touch
     school: Illusion
@@ -672,9 +654,7 @@ pf2e_spells:
     - somatic
     - verbal
     duration: 1 minute
-    effect: Make a creature's unarmed attacks magical temporarily.
-    heighten_level:
-    - 1
+    effect: "Choose one of the target's unarmed attacks. You cause that unarmed attack to shine with primal energy. The unarmed attack becomes a +1 striking unarmed attack, gaining a +1 item bonus to attack rolls and increasing the number of damage dice to two if it had only one."
     base_level: 1
     range: touch
     school: Transmutation
@@ -688,10 +668,7 @@ pf2e_spells:
     cast:
     - somatic
     duration: 1 minute
-    effect: Your animal companion grows a thicker hide, matted fur, or a harder shell,
-      granting it a +1 status bonus to AC.
-    heighten_level:
-    - 1
+    effect: Your animal companion grows a thicker hide, matted fur, or a harder shell, granting it a +1 status bonus to AC.
     base_level: 1
     range: 30 feet
     school: Abjuration
@@ -710,15 +687,12 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    effect: Pelt creatures with unerring bolts of magical force.
+    effect: You send a dart of force streaking toward a creature that you can see. It automatically hits and deals 1d4+1 force damage. For each additional action you use when Casting the Spell, increase the number of missiles you shoot by one, to a maximum of three missiles for 3 actions. You choose the target for each missile individually. If you shoot more than one missile at the same target, combine the damage before applying bonuses or penalties to damage, resistances, weaknesses, and so forth.
     heighten:
-    - '+2'
-    heighten_level:
-    - 1
-    - 3
-    - 5
-    - 7
-    - 9
+    - 3: You shoot two missiles per action spent.
+    - 5: You shoot three missiles per action spent.
+    - 7: You shoot four missiles per action spent.
+    - 9: You shoot five missiles per action spent.
     base_level: 1
     range: 120 feet
     school: Evocation
@@ -729,14 +703,14 @@ pf2e_spells:
     traits:
     - evocation
     - force
+    damage: 1d4+1
+    damage_type: force
   Magic Mouth:
     actions: 2
     cast:
     - somatic
     - verbal
-    effect: Make an illusory mouth appear to speak a message.
-    heighten_level:
-    - 2
+    effect: You specify a trigger and a message up to 25 words long. When the specified trigger occurs within 30 feet of the target, an illusory mouth appears on the target and speaks the message, and the magic mouth spell ends.
     base_level: 2
     range: touch
     school: Illusion
@@ -757,10 +731,7 @@ pf2e_spells:
     - verbal
     - somatic
     duration: 1 minute
-    effect: Make ordinary stones into magical sling bullets that are especially dangerous
-      to undead.
-    heighten_level:
-    - 1
+    effect: You pour positive energy into ordinary stones, granting them temporary magical properties. You can target 1 non-magical stone or sling bullet for every action you use Casting this Spell. The stones must be unattended or carried by you or a willing ally. The stones become +1 striking disrupting sling bullets. Each stone can be used only once, after which it crumbles to dust.
     base_level: 1
     range: touch
     school: Necromancy
@@ -777,9 +748,7 @@ pf2e_spells:
     - somatic
     - verbal
     duration: 1 minute
-    effect: Make a weapon temporarily magical.
-    heighten_level:
-    - 1
+    effect: The weapon glimmers with magic and energy. The target becomes a +1 striking weapon, gaining a +1 item bonus to attack rolls and increasing the number of weapon damage dice to two.
     base_level: 1
     range: touch
     school: Transmutation
@@ -795,9 +764,7 @@ pf2e_spells:
     cast:
     - somatic
     duration: 1 minute
-    effect: A creature becomes a receptacle for pure magical energy sent by your deity.
-    heighten_level:
-    - 1
+    effect: A creature becomes a receptacle for pure magical energy sent by your deity. The target gains a +1 status bonus to saving throws. Each time you Cast a Spell from your spell slots, you automatically Sustain this Spell and grant its target resistance to damage from spells until the start of your next turn. This resistance is equal to the level of the spell you cast.
     base_level: 1
     range: touch
     school: Enchantment
