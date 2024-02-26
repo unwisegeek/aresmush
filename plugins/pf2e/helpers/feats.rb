@@ -45,7 +45,7 @@ module AresMUSH
       when 'description', 'desc'
         match = feat_info.select { |k,v| v['shortdesc'].upcase.match? term.upcase }
       when 'classlevel'
-        feats_by_class = feat_info.select { |k,v| v['assoc_charclass']&.include? term.capitalize }
+        feats_by_class = feat_info.select { |k,v| v['assoc_charclass']&.include? operator.capitalize }
         match = feats_by_class.select { |k,v| v['prereq']['level'] == term.to_i }
       end
 
