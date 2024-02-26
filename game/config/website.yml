@@ -222,10 +222,6 @@ website:
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home
-  permissions:
-    manage_theme: Edit web portal CSS, colors, and theme images.
-    manage_wiki: Create and delete restricted wiki pages and override folder and file
-      upload limits.
   wiki_export_cron:
     hour:
     - 3
