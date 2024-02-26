@@ -34,7 +34,7 @@ module AresMUSH
         when nil
           return AppCmd
         end
-      when "bg"
+      when "prologue"
         case cmd.switch  
         when "edit"
           return BgEditCmd 
