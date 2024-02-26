@@ -47,7 +47,6 @@ module AresMUSH
       when 'classlevel'
         feats_by_class = feat_info.select { |k,v| v['assoc_charclass']&.include? term.capitalize }
         match = feats_by_class.select { |k,v| v['prereq']['level'] == term.to_i }
-        end
       end
 
       match
