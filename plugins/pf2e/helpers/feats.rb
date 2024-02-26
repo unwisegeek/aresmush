@@ -53,6 +53,7 @@ module AresMUSH
           match = feats_by_class.select { |k,v| v['prereq']['level'] > term.to_i }
         else 
           match = feats_by_class.select { |k,v| v['prereq']['level'] == term.to_i }
+        end
       end
 
       match
