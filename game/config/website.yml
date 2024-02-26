@@ -36,6 +36,8 @@ website:
       route: play
     - title: Active Scenes
       route: scenes-live
+    - title: Unshared Scenes
+      route: scenes-unshared
     - title: Start New Scene
       route: scene-create
     - divider: true
@@ -45,6 +47,8 @@ website:
       route: forum
     - title: Mail
       route: mail
+    - title: Events
+      route: events
     - divider: true
     - title: Web Client
       route: client
@@ -105,9 +109,6 @@ website:
     - target: blank
       title: AON PRD <i class="fa fa-external-link-alt" aria-hidden="true">
       url: https://2e.aonprd.com/
-    - target: blank
-      title: D20 PFSRD <i class="fa fa-external-link-alt" aria-hidden="true">
-      url: https://pf2.d20pfsrd.com/
   - title: Wiki
     menu:
     - title: Home
@@ -151,10 +152,73 @@ website:
     - target: blank
       title: MUSH 101 Tutorial <i class="fa fa-external-link-alt" aria-hidden="true">
       url: https://aresmush.com/mush-101/
+  - title: Admin
+    roles:
+    - admin
+    - coder
+    menu:
+    - title: Jobs
+      route: jobs
+    - title: Setup
+      route: setup
+    - title: Manage
+      route: manage
+    - title: Logs
+      route: logs
+    - title: Files
+      route: files
+    - title: Roles
+      route: roles
+    - title: Server
+      route: server-info
+  - title: Code
+    roles:
+    - coder
+    menu:
+    - title: Tinker
+      route: tinker
+    - title: Custom Code
+      route: custom-code
+  - title: Theme
+    roles:
+    - admin
+    menu:
+    - title: Theme Colors
+      route: setup-colors
+    - title: Custom Styles
+      route: textfile
+      ids:
+      - style
+      - custom_style.scss
+    - title: Files
+      route: files
+    - title: Home Page Text
+      route: textfile
+      ids:
+      - text
+      - website.txt
+  - title: "<i class='fas fa-magnifying-glass'/>"
+    menu:
+    - title: Search Characters
+      route: search-chars
+    - title: Search Scenes
+      route: search-scenes
+    - title: Search Locations
+      route: search-locations
+    - title: Search Wiki
+      route: search-wiki
+    - title: Search Help
+      route: search-help
+    - title: Search Forum
+      route: search-forum
+    - title: Search Jobs/Requests
+      route: search-jobs
   uploadable_extensions:
   - ".jpg"
   - ".png"
   - ".gif"
+  - ".jpeg"
+  auto_wiki_export: true
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home
@@ -163,4 +227,7 @@ website:
     - 3
     minute:
     - 37
-  hide_searchbox: false
+  shortcuts:
+    wiki: website
+    website/archive: website/export
+  hide_searchbox: true
