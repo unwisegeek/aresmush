@@ -41,8 +41,8 @@ module AresMUSH
           return t('pf2e.multiple_matches', :element => 'feat') if (self.feat_details == 'ambiguous')
           return t('pf2e.bad_feat_name', :name => self.feat_name)
         end
-
-        self.feat_name = feat_check[0].first
+        
+        self.feat_name = feat_check[0]
         self.feat_details = feat_check[1]
       end
 
