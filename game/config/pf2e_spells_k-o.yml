@@ -534,9 +534,7 @@ pf2e_spells:
     - somatic
     - verbal
     duration: 1 minute
-    effect: Monkey spirits make mischief.
-    heighten_level:
-    - 3
+    effect: "Magical monkey spirits fill the area as they pile and climb on top of one another. Because the monkeys are magical spirits, they can't be attacked or hurt. Casting calm emotions or a similar effect over the monkeys makes them docile, causing them to cease making mischief for the duration of mad monkeys.%rChoose the kind of mischief your monkeys make when you Cast the Spell. They produce the effect listed for that mischief when you Cast the Spell and the first time each round when you Sustain the Spell. The first time each round when you Sustain the Spell, you can move the area of the monkeys by 5 feet.%r- **Flagrant Burglary** The monkeys try to Steal any one item from one creature in the area. Use your spell DC – 10 as the monkeys' Thievery modifier. Their attempt relies more on distraction than subtlety, so the victim knows what item the monkeys were trying to take and whether it was taken. Getting a stolen item from the monkeys— even for the caster—requires Stealing it from them or Disarming them, using your spell DC. When the spell ends, any stolen items fall to the ground in any square of the spell's area you choose.%r- **Raucous Din** The monkeys screech loudly, potentially deafening creatures in the spell's area. Each creature in the spell's area must attempt a Fortitude save.%r**Critical Success** The creature is unaffected and is temporarily immune for 10 minutes.%r**Success** The creature is unaffected.%r**Failure** The creature is deafened for 1 round.%r**Critical Failure** The creature is deafened for 1 minute.%r- **Tumultuous Gymnastics** The monkeys jump and climb all over creatures in the spell's area, interfering with complex movements. Each creature in the spell's area must attempt a Reflex save.%r**Critical Success** The creature is unaffected and is temporarily immune for 10 minutes.%r**Success** The creature is unaffected.%r**Failure** For 1 round, the creature must succeed at a DC 5 flat check whenever it attempts a manipulate action. If it fails this check, the creature loses that action.%r**Critical Failure** As failure, but the monkeys cling to the creature tenaciously, and the effect lasts until the spell ends, even if the creature leaves the spell's area."
     base_level: 3
     range: 30 feet
     school: Conjuration
@@ -549,17 +547,14 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    duration: 1 minute
-    effect: You reshape the target's shadow into a deadly form, such as strangling hands,
-      a dangerous weapon, harrying runes, or the like, and command it to attack the
-      target.
+    duration: sustained up to 1 minute
+    effect: "You reshape the target's shadow into a deadly form, such as strangling hands, a dangerous weapon, harrying runes, or the like, and command it to attack the target. When you Cast the Spell, and each time you Sustain the Spell, the shadow makes a Strike against the target. The shadow moves along with the foe, always remaining within reach. If you Sustain the Spell multiple times in a round, you gain this effect each time. The shadow uses and contributes to your multiple attack penalty.%r%rThe shadow's Strikes are melee spell attacks. Regardless of its shape, the shadow's Strikes deal damage equal to 1d10 plus your spellcasting ability modifier. You choose the type of damage when you Cast the Spell, choosing from bludgeoning, piercing, or slashing damage. The shadow doesn't take up space, grant flanking, or have any other attributes a creature would. The shadow can't make any attacks other than its Strike.%rThe shadow vanishes if the target moves into an area of complete darkness or enters an area with light from all directions such that the target doesn't cast a shadow. If another effect is controlling the target's shadow when you cast malicious shadow, you can attempt to counteract that effect to temporarily take control of the shadow, but the original effect resumes when malicious shadow ends."
     heighten:
     - '+2'
     heighten_level:
-    - 3
-    - 5
-    - 7
-    - 9
+    - 5: The Stike damage increases to 2d10 + Spell Modifier
+    - 7: The Stike damage increases to 3d10 + Spell Modifier
+    - 9: The Stike damage increases to 4d10 + Spell Modifier
     base_level: 3
     range: 30 feet
     school: Evocation
@@ -570,6 +565,8 @@ pf2e_spells:
     - shadow
     - uncommon
     - witch
+    damage: 1d10 + Spell Modifier
+    damage_type: See text
   Malignant Sustenance:
     actions: 2
     cast:
