@@ -6,6 +6,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
         formula_book:
           Bombs: 2
         skills: []
@@ -14,6 +15,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
         formula_book:
           Healing: 2
         skills: []
@@ -22,6 +24,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
         formula_book:
           Mutagen: 2
         skills: []
@@ -30,6 +33,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
         formula_book:
           Poison: 2
         skills: []
@@ -39,6 +43,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
         skills: []
       choose:
         choice_name: Spirit Animal
@@ -233,6 +238,8 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
+        feat: []
+        magic_stats: {}
       choose:
         choice_name: "Dragon Color"
         choice_description: "Color dragon this instinct applies to."
@@ -551,6 +558,7 @@ pf2e_specialty:
     Alchemical Sciences:
       chargen:
         reaction: []
+        magic_stats: {}
         skills:
         - Crafting
         feat:
@@ -565,6 +573,7 @@ pf2e_specialty:
         action:
         - Expeditious Inspection
         reaction: []
+        magic_stats: {}
     Forensic Medicine:
       chargen:
         skills:
@@ -574,6 +583,7 @@ pf2e_specialty:
         - Battle Medicine
         action: []
         reaction: []
+        magic_stats: {}
     Interrogation:
       chargen:
         skills:
@@ -583,6 +593,7 @@ pf2e_specialty:
         action:
         - Pointed Question
         reaction: []
+        magic_stats: {}
   Monk: {}
   Oracle:
     Ancestors:
@@ -840,6 +851,7 @@ pf2e_specialty:
       reaction: []
       feat: []
       skills: []
+      magic_stats: {}
   Rogue:
     Eldritch Trickster:
       choose:
@@ -904,6 +916,7 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
+        magic_stats: {}
     Mastermind:
       chargen:
         skills:
@@ -911,6 +924,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
       choose:
         choice_name: Second Trained Skill
         choice_description: Your racket grants Society and one other skill as class skills. Choose the second.
@@ -932,6 +946,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
       key_abil:
       - Dexterity
       - Strength
@@ -943,6 +958,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
       key_abil:
       - Dexterity
       - Charisma
@@ -953,6 +969,7 @@ pf2e_specialty:
         action: []
         reaction: []
         feat: []
+        magic_stats: {}
   Sorcerer:
     Aberrant:
       chargen:
