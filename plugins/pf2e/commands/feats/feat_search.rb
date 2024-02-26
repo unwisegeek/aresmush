@@ -24,7 +24,6 @@ module AresMUSH
           'feat_type', 
           'level', 
           'class', 
-          'classlevel',
           'ancestry', 
           'skill',
           'description',
