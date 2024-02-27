@@ -12,6 +12,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Intelligence/14
+    feat_type: 
+    - Dedication
   Barbarian Dedication:
     assoc_charclass:
     - Barbarian
@@ -25,6 +27,8 @@ pf2e_feats:
       ability: 
       - Strength/14
       - Constitution/14
+    feat_type: 
+    - Dedication
   Bard Dedication:
     assoc_charclass:
     - Bard
@@ -37,6 +41,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Charisma/14
+    feat_type: 
+    - Dedication
   Champion Dedication:
     assoc_charclass:
     - Champion
@@ -50,6 +56,8 @@ pf2e_feats:
       ability: 
       - Strength/14
       - Charisma/14
+    feat_type: 
+    - Dedication
   Cleric Dedication:
     assoc_charclass:
     - Cleric
@@ -62,6 +70,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Wisdom/14
+    feat_type: 
+    - Dedication
   Druid Dedication:
     assoc_charclass:
     - Druid
@@ -74,6 +84,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Wisdom/14
+    feat_type: 
+    - Dedication
   Fighter Dedication:
     assoc_charclass:
     - Fighter
@@ -87,6 +99,8 @@ pf2e_feats:
       ability: 
       - Strength/14
       - Dexterity/14
+    feat_type: 
+    - Dedication
   Investigator Dedication:
     assoc_charclass:
     - Investigator
@@ -99,6 +113,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Intelligence/14
+    feat_type: 
+    - Dedication
   Monk Dedication:
     assoc_charclass:
     - Monk
@@ -112,6 +128,8 @@ pf2e_feats:
       ability: 
       - Strength/14
       - Dexterity/14
+    feat_type: 
+    - Dedication
   Oracle Dedication:
     assoc_charclass:
     - Oracle
@@ -124,6 +142,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Charisma/14
+    feat_type: 
+    - Dedication
   Ranger Dedication:
     assoc_charclass:
     - Ranger
@@ -136,6 +156,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Dexterity/14
+    feat_type: 
+    - Dedication
   Rogue Dedication:
     assoc_charclass:
     - Rogue
@@ -148,6 +170,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Dexterity/14
+    feat_type: 
+    - Dedication
   Sorcerer Dedication:
     assoc_charclass:
     - Sorcerer
@@ -160,6 +184,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Charisma/14
+    feat_type: 
+    - Dedication
   Witch Dedication:
     assoc_charclass:
     - Witch
@@ -172,6 +198,8 @@ pf2e_feats:
       level: 2
       ability: 
       - Intelligence/14
+    feat_type: 
+    - Dedication
   Wizard Dedication:
     assoc_charclass:
     - Witch
@@ -184,3 +212,5 @@ pf2e_feats:
       level: 2
       ability: 
       - Intelligence/14
+    feat_type: 
+    - Dedication

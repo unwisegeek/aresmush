@@ -22,7 +22,7 @@ module AresMUSH
 
         # If a name was entered, does that player exist?
 
-        char = Pf2e.get_character(self.character, enactor)
+        char = Pf2e.get_character(self.target, enactor)
 
         if !char
           client.emit_failure t('pf2e.not_found')

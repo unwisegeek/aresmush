@@ -5,6 +5,8 @@ pf2e_specialty:
       chargen:
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
         formula_book:
           Bombs: 2
         skills: []
@@ -12,6 +14,8 @@ pf2e_specialty:
       chargen:
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
         formula_book:
           Healing: 2
         skills: []
@@ -19,6 +23,8 @@ pf2e_specialty:
       chargen:
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
         formula_book:
           Mutagen: 2
         skills: []
@@ -26,6 +32,8 @@ pf2e_specialty:
       chargen:
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
         formula_book:
           Poison: 2
         skills: []
@@ -34,6 +42,8 @@ pf2e_specialty:
       chargen:
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
         skills: []
       choose:
         choice_name: Spirit Animal
@@ -228,6 +238,8 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
+        feat: []
+        magic_stats: {}
       choose:
         choice_name: "Dragon Color"
         choice_description: "Color dragon this instinct applies to."
@@ -340,6 +352,7 @@ pf2e_specialty:
         action: []
         reaction:
         - Retributive Strike
+        feat: []
         magic_stats:
           focus_pool: 1
           focus_spell:
@@ -359,6 +372,7 @@ pf2e_specialty:
         action: []
         reaction:
         - Glimpse of Redemption
+        feat: []
         magic_stats:
           focus_pool: 1
           focus_spell:
@@ -380,6 +394,7 @@ pf2e_specialty:
         action: []
         reaction:
         - Liberating Step
+        feat: []
         magic_stats:
           focus_pool: 1
           focus_spell:
@@ -439,6 +454,7 @@ pf2e_specialty:
           - Shield Block
           reaction:
           - Shield Block
+          feat: []
           charclass:
           - 'First Doctrine (Warpriest)'
           skills: []
@@ -542,6 +558,7 @@ pf2e_specialty:
     Alchemical Sciences:
       chargen:
         reaction: []
+        magic_stats: {}
         skills:
         - Crafting
         feat:
@@ -556,6 +573,7 @@ pf2e_specialty:
         action:
         - Expeditious Inspection
         reaction: []
+        magic_stats: {}
     Forensic Medicine:
       chargen:
         skills:
@@ -565,6 +583,7 @@ pf2e_specialty:
         - Battle Medicine
         action: []
         reaction: []
+        magic_stats: {}
     Interrogation:
       chargen:
         skills:
@@ -574,6 +593,7 @@ pf2e_specialty:
         action:
         - Pointed Question
         reaction: []
+        magic_stats: {}
   Monk: {}
   Oracle:
     Ancestors:
@@ -607,6 +627,7 @@ pf2e_specialty:
         curse: Ancestral Meddling
         action: []
         reaction: []
+        feat: []
     Battle:
       chargen:
         skills:
@@ -621,6 +642,7 @@ pf2e_specialty:
         curse: Hero's Burden
         action: []
         reaction: []
+        feat: []
         combat_stats:
           armor_prof:
             medium: trained
@@ -654,6 +676,7 @@ pf2e_specialty:
         curse: Living Death
         action: []
         reaction: []
+        feat: []
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -683,6 +706,7 @@ pf2e_specialty:
         curse: Sky's Call
         action: []
         reaction: []
+        feat: []
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -710,6 +734,7 @@ pf2e_specialty:
         curse: Engulfing Flames
         action: []
         reaction: []
+        feat: []
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -741,6 +766,7 @@ pf2e_specialty:
         curse: Outpouring Life
         action: []
         reaction: []
+        feat: []
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -770,6 +796,7 @@ pf2e_specialty:
         curse: Torrential Knowledge
         action: []
         reaction: []
+        feat: []
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -799,6 +826,7 @@ pf2e_specialty:
           curse: Perpetual Storm
         action: []
         reaction: []
+        feat: []
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
@@ -821,7 +849,9 @@ pf2e_specialty:
     chargen:
       action: []
       reaction: []
+      feat: []
       skills: []
+      magic_stats: {}
   Rogue:
     Eldritch Trickster:
       choose:
@@ -886,12 +916,15 @@ pf2e_specialty:
         action: []
         reaction: []
         skills: []
+        magic_stats: {}
     Mastermind:
       chargen:
         skills:
         - Society
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
       choose:
         choice_name: Second Trained Skill
         choice_description: Your racket grants Society and one other skill as class skills. Choose the second.
@@ -912,6 +945,8 @@ pf2e_specialty:
             medium: trained
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
       key_abil:
       - Dexterity
       - Strength
@@ -922,6 +957,8 @@ pf2e_specialty:
         - Diplomacy
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
       key_abil:
       - Dexterity
       - Charisma
@@ -931,6 +968,8 @@ pf2e_specialty:
         - Thievery
         action: []
         reaction: []
+        feat: []
+        magic_stats: {}
   Sorcerer:
     Aberrant:
       chargen:
@@ -948,6 +987,7 @@ pf2e_specialty:
         - Occultism
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1005,6 +1045,7 @@ pf2e_specialty:
         - Religion
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1062,6 +1103,7 @@ pf2e_specialty:
         - Religion
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1119,6 +1161,7 @@ pf2e_specialty:
         - Religion
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1189,6 +1232,7 @@ pf2e_specialty:
         - Intimidation
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1254,6 +1298,7 @@ pf2e_specialty:
         - Intimidation
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1311,6 +1356,7 @@ pf2e_specialty:
         - Deception
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1377,6 +1423,7 @@ pf2e_specialty:
         - Deception
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1431,6 +1478,7 @@ pf2e_specialty:
         - Deception
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1488,6 +1536,7 @@ pf2e_specialty:
         - Society
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1545,6 +1594,7 @@ pf2e_specialty:
         - Nature
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1602,6 +1652,7 @@ pf2e_specialty:
         - Religion
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1659,6 +1710,7 @@ pf2e_specialty:
         - Stealth
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1716,6 +1768,7 @@ pf2e_specialty:
         - Religion
         action: []
         reaction: []
+        feat: []
       advance:
         3:
           magic_stats:
@@ -1791,6 +1844,7 @@ pf2e_specialty:
         - Occultism
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             occult: trained
@@ -1818,6 +1872,7 @@ pf2e_specialty:
         - Occultism
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             occult: trained
@@ -1845,6 +1900,7 @@ pf2e_specialty:
         - Religion
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             divine: trained
@@ -1872,6 +1928,7 @@ pf2e_specialty:
         - Occultism
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             occult: trained
@@ -1899,6 +1956,7 @@ pf2e_specialty:
         - Arcana
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             arcane: trained
@@ -1926,6 +1984,7 @@ pf2e_specialty:
         - Nature
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             primal: trained
@@ -1958,6 +2017,7 @@ pf2e_specialty:
         - Nature
         action: []
         reaction: []
+        feat: []
         magic_stats:
           tradition:
             primal: trained

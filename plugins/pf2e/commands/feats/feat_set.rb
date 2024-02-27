@@ -42,7 +42,7 @@ module AresMUSH
           return t('pf2e.bad_feat_name', :name => self.feat_name)
         end
 
-        self.feat_name = feat_check[0].first
+        self.feat_name = feat_check[0]
         self.feat_details = feat_check[1]
       end
 
@@ -63,7 +63,7 @@ module AresMUSH
 
         to_assign = enactor.pf2_to_assign
 
-        key = ftype + " feat"
+        key = self.feat_type + " feat"
 
         if !to_assign[key]
           client.emit_failure t('pf2e.no_free', :element => key)
@@ -96,7 +96,7 @@ module AresMUSH
 
         replace = old_value.match?('unassigned') ? false : true
         
-        sublist = feat_list[ftype]
+        sublist = feat_list[self.feat_type]
 
         if replace
           index = sublist.index(old_value)
@@ -128,7 +128,7 @@ module AresMUSH
         sublist << self.feat_name
         to_assign[key] = self.feat_name
 
-        feat_list[ftype] = sublist
+        feat_list[self.feat_type] = sublist
 
         enactor.update(pf2_feats: feat_list)
 
