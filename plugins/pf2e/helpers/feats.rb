@@ -25,13 +25,13 @@ module AresMUSH
       when 'traits'
         match = feat_info.select { |k,v| v['traits'].include? term.downcase }
       when 'level'
-        # Invalid operator defaults to =.
+        # Invalid operator defaults to ==.
         case operator
         when '<'
           match = feat_info.select { |k,v| v['prereq']['level'] < term.to_i }
         when '>'
           match = feat_info.select { |k,v| v['prereq']['level'] > term.to_i }
-        else 
+        else
           match = feat_info.select { |k,v| v['prereq']['level'] == term.to_i }
         end
       when 'feat_type'
@@ -59,7 +59,6 @@ module AresMUSH
         return false
       end
 
-
       # Ancestry and character class checks
       # Dedication check for class feats is not done in this function.
 
@@ -86,8 +85,8 @@ module AresMUSH
 
       prereqs = details["prereq"]
 
-      if prereqs 
-        # Some feats use non-default character level for purposes of prereq checks. 
+      if prereqs
+        # Some feats use non-default character level for purposes of prereq checks.
         cl = char.pf2_level
         cl = 2 if Global.read_config('pf2e','basic_mc_feats').include? feat
         cl = cl/2 if Global.read_config('pf2e','adv_mc_feats').include? feat
@@ -118,7 +117,7 @@ module AresMUSH
         when "level"
           msg << "level" if prereqs['level'] > cl
         when "ability"
-          # There can be more than one ability prereq, so required is passed as an array. 
+          # There can be more than one ability prereq, so required is passed as an array.
           required.each_with_index do |item, i|
             string = item.split("/")
             factor = string[0]
@@ -185,7 +184,7 @@ module AresMUSH
           msg << "feat" unless req.any? { |f| feats.include? f }
         when "orheritage"
           heritage = char.pf2_base_info["heritage"]
-          
+
           msg << "heritage" unless required.include? heritage
         when "orskill"
           check = []
@@ -210,7 +209,7 @@ module AresMUSH
       return true if msg.empty?
       return false
     end
-   
+
 
     def self.has_feat?(char, feat)
       feat_list = char.pf2_feats.values.flatten.map { |f| f.upcase }
@@ -259,7 +258,7 @@ module AresMUSH
 
       fmt_name = "%x172#{feat}%xn"
       feat_type = "%x229Feat Type:%xn #{details['feat_type'].sort.join(", ")}"
-      
+
       # Depending on feat type, this may be different keys with different formats.
 
       if details.has_key? 'assoc_charclass'
@@ -273,11 +272,11 @@ module AresMUSH
       end
 
       traits = "%x229Traits:%xn #{details['traits'].sort.join(", ")}"
-      
+
       # Prerequisites needs its own level of formatting.
 
       prereq_list = []
-      
+
       details['prereq'].each_pair do |k,v|
         prereq_list << "%r%t%xh%xw#{k.capitalize}:%xn #{v}"
       end
@@ -293,10 +292,10 @@ module AresMUSH
       msgs = []
       to_assign = char.pf2_to_assign
 
-      if to_assign['charclass feat'] 
+      if to_assign['charclass feat']
         msgs << t('pf2e.unassigned_class_feat') if to_assign['charclass feat'] == 'unassigned'
       end
-      
+
       if to_assign['ancestry feat']
         msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'] == 'unassigned'
       end
