@@ -61,7 +61,7 @@ module AresMUSH
     def self.can_take_feat?(char, feat)
       msg = []
 
-      details = Pf2e.get_feat_details(feat)
+      details = Pf2e.get_feat_details(feat)[1]
 
       if !details
         return false
