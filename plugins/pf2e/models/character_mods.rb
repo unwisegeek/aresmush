@@ -35,6 +35,7 @@ module AresMUSH
     attribute :pf2_alloc_reagents, :type => DataType::Integer, :default => 0
     # DEPRECATED please use pf2_xp_history for XP, money is handled in the gear plugin
     attribute :pf2_award_history, :type => DataType::Hash, :default => {}
+    attribute :pf2_cnotes, :type => DataType::Hash, :default => {}
 
     collection :abilities, "AresMUSH::Pf2eAbilities"
     collection :skills, "AresMUSH::Pf2eSkills"
