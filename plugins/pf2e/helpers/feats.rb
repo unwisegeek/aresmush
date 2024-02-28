@@ -3,17 +3,21 @@ module AresMUSH
 
     include CommonTemplateFields
 
-    def self.get_feat_details(name)
-      feats =  Global.read_config('pf2e_feats')
+    def self.get_feat_details(term)
+      feats = Global.read_config('pf2e_feats')
 
       keys = feats.keys
 
-      match = keys.select { |f| f.upcase == name.upcase }
+      # Give me an array of all the feats that match the term.
+      match = keys.select { |f| f.upcase == term.upcase }
 
       return 'no_match' if match.empty?
       return 'ambiguous' if match.size > 1
 
-      return [ match.first, feats[match] ]
+      name = match.first
+
+      # First is the name of the feat matched, the second is the details for the feat.
+      return [ name, feats[name] ]
     end
 
     def self.search_feats(search_type, term, operator='=')
