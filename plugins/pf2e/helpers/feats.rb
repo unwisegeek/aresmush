@@ -14,6 +14,7 @@ module AresMUSH
       return 'no_match' if match.empty?
       return 'ambiguous' if match.size > 1
 
+      # Pull the unique feat name out of the array so it can be used as a key to get the feat deets.
       name = match.first
 
       # First is the name of the feat matched, the second is the details for the feat.
