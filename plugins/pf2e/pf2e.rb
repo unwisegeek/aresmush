@@ -163,6 +163,17 @@ module AresMUSH
         end
       when "autorest"
         return PF2AutoDailyPrepCmd
+      when "cnote"
+        case cmd.switch 
+        when "add"
+          return PF2AddCnoteCmd
+        when "remove"
+          return PF2RemoveCnoteCmd
+        else 
+          return PF2ViewOneCnoteCmd
+        end
+      when "cnotes"
+        return PF2ViewAllCnotesCmd
       end
 
       nil
