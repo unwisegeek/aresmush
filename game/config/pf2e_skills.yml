@@ -46,9 +46,9 @@ pf2e_skills:
   Angorite Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Animusian Lore: 
-    key_abil: Intelligence
-    recall_knowledge: true
+#  Animusian Lore: SPOILER
+#    key_abil: Intelligence
+#    recall_knowledge: true
   Caracorothan Lore: 
     key_abil: Intelligence
     recall_knowledge: true
@@ -159,10 +159,7 @@ pf2e_skills:
   Rune Lore:
     key_abil: Intelligence
     recall_knowledge: true
-  Sturmvargd Lore:
-    key_abil: Intelligence
-    recall_knowledge: true
-  Vast Lore:
+  Skyhaldborg Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Veyshan Lore:

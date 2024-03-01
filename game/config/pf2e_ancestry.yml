@@ -9,7 +9,7 @@ pf2e_ancestry:
     - open
     languages:
     - Tradespeak
-    - Goblin
+    - Yrch
     traits:
     - arvek
     - humanoid
@@ -53,7 +53,7 @@ pf2e_ancestry:
     - open
     languages:
     - Tradespeak
-    - Bassin
+    - Bassini
     traits:
     - bassin
     - humanoid
@@ -266,7 +266,7 @@ pf2e_ancestry:
     - open
     languages:
     - Tradespeak
-    - Goblin
+    - Yrch
     traits:
     - goblin
     - humanoid
@@ -364,7 +364,7 @@ pf2e_ancestry:
     - open
     languages:
     - Tradespeak
-    - Kailli
+    - Kaillin
     traits:
     - uncommon
     - humanoid
@@ -376,12 +376,12 @@ pf2e_ancestry:
     - Ashen One
     - Changeling
     - Dar
-    - Deep Rat
-    - Desert Rat
-    - Longsnout Rat
+    - Deep Kailli
+    - Desert
+    - Longsnout
     - Niasa
-    - Sewer Rat
-    - Shadow Rat
+    - Sewer
+    - Shadow
     feats:
       1:
       - Cheek Pouches
@@ -477,7 +477,7 @@ pf2e_ancestry:
     - Badlands
     - Changeling
     - Dar
-    - Deep
+    - Deep Oruch
     - Hold-Scarred
     - Niasa
     - Rainfall

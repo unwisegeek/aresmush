@@ -2028,6 +2028,8 @@ pf2e_feats:
       skill: Crafting/expert
     shortdesc: You specialize in creating quick traps to obstruct your enemies on the battlefield.
     traits: []
+    reagents:
+    snares: [0, 0]
   Solid Lead:
     assoc_charclass:
       - Investigator
