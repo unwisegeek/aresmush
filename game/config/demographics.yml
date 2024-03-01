@@ -55,26 +55,25 @@ demographics:
       desc: What region does your character call home?
       wiki: theme:regions
       values:
-        Sturmvargd: The rugged north.
+        Skyhaldborg: The rugged north.
         Dran: Harsh, wind-swept steppes.
         Alexandros: The Phoenix Kingdom.
-        Empire-Myrddion: The kingdoms of the western Empire.
-        Empire-Bludgun: The nation of goblin-kin.
-        Empire-Charn: The stygian domain of the Eastern Empire.
-        Empire-Desolation: Home of an endless magical storm.
-        Veyshan: Home of the desert nomads and the city-states of the One-Hundred and Four.
+        Myrddion: The kingdoms of Myrddion. # SPOILER: The kingdoms of the western Empire. 
+        Bludgun: The nation of goblin-kin.
+        Charn: The stygian domain of Charn. # SPOILER: The stygian domain of the Eastern Empire.
+        Desolation: Home of an endless magical storm.
+        Veyshan: Home of the desert nomads and the desert kingdoms. # SPOILER: Home of the desert nomads and the city-states of the One-Hundred and Four.
         Dragonier: The nation of the dragon kings.
-        Jade Islands: The remains of a shattered land, populated by the Kaltoi and merchant-circles.
+        Jade Islands: The remains of a shattered land. # SPOILER: The remains of a shattered land, populated by the Kaltoi and merchant-circles
         Greatwoods: The ancient sildanyari kingdoms.
         Khazad Duin: The great citadel of the khazadi and its environs.
-        Am'shere: The far-away jungles where the makari dwell.
-        Vast: Endless, wind-swept plains of ancient magic.
+        Am'shere: The far-away jungles where the ciith dwell.
         Rune: The eccentric nation of wizards.
     Faith:
       desc: World philosophy your character ascribes to.
       wiki: 'theme:faiths'
       values:
-        Holy Order of Ea: The teachings of the Millennial Empire and its nations.
+        Holy Order of Ea: The teachings of the descendant faiths of the Aiglosian Empire's religion. # SPOILER: The teachings of the Millennial Empire and its nations.
         Green Word: The teachings of the peoples of the Greatwoods.
         Dragonlords: The tales and teachings of the dragons.
         Other: You have your own ideas on the world and how it works.
@@ -88,7 +87,7 @@ demographics:
     birthdate: "%xcbirthdate <mm/dd/yyy>%xn or %xcage <years>%xn"
     full name: "%xcfullname <name>%xn - Your character's full name."
   max_age: 1000
-  min_age: 10
+  min_age: 18
   nickname_field: ''
   nickname_format: "%{name} (%{nickname})"
   permissions:

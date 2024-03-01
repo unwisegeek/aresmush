@@ -315,18 +315,18 @@ pf2e_background:
     rare: true
     action: []
     reaction: []
-  Blessed (Animusian):
-    abl_boosts:
-    - [ Wisdom, Charisma ]
-    - open
-    skills:
-    - Animusian Lore
-    feat: []
-    special:
-    - Blessed
-    rare: true
-    action: []
-    reaction: []
+#  Blessed (Animusian): SPOILER
+#    abl_boosts:
+#    - [ Wisdom, Charisma ]
+#    - open
+#    skills:
+#    - Animusian Lore
+#    feat: []
+#    special:
+#    - Blessed
+#    rare: true
+#    action: []
+#    reaction: []
   Blessed (Caracorothan):
     abl_boosts:
     - [ Wisdom, Charisma ]
@@ -697,18 +697,18 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Cultist (Animusian):
-    abl_boosts:
-    - [ Intelligence, Charisma ]
-    - open
-    skills:
-    - Occultism
-    - Animusian Lore
-    feat:
-    - Schooled In Secrets
-    special: []
-    action: []
-    reaction: []
+#  Cultist (Animusian): SPOILER
+#    abl_boosts:
+#    - [ Intelligence, Charisma ]
+#    - open
+#    skills:
+#    - Occultism
+#    - Animusian Lore
+#    feat:
+#    - Schooled In Secrets
+#    special: []
+#    action: []
+#    reaction: []
   Cultist (Caracorothan):
     abl_boosts:
     - [ Intelligence, Charisma ]
@@ -1043,20 +1043,6 @@ pf2e_background:
     feat:
     - Assurance (Athletics)
     special: []
-    action: []
-    reaction: []
-  Feral Child:
-    abl_boosts:
-    - [ Strength, Dexterity, Constitution ]
-    skills:
-    - Nature
-    - Survival
-    feat:
-    - Forager
-    special:
-    - Low-Light Vision
-    - Imprecise Scent
-    rare: true
     action: []
     reaction: []
   Feybound:
@@ -1419,20 +1405,20 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Pilgrim (Animusian Lore):
-    abl_boosts:
-    - [ Wisdom, Charisma ]
-    - open
-    skills:
-    - Religion
-    - Animusian Lore
-    lores:
-    - deity
-    feat:
-    - "Pilgrim's Token"
-    special: []
-    action: []
-    reaction: []
+#  Pilgrim (Animusian Lore): SPOILER
+#    abl_boosts:
+#    - [ Wisdom, Charisma ]
+#    - open
+#    skills:
+#    - Religion
+#    - Animusian Lore
+#    lores:
+#    - deity
+#    feat:
+#    - "Pilgrim's Token"
+#    special: []
+#    action: []
+#    reaction: []
   Pilgrim (Caracorothan Lore):
     abl_boosts:
     - [ Wisdom, Charisma ]
@@ -1841,25 +1827,13 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Refugee (Sturmvargd Lore):
+  Refugee (Skyhaldborg Lore):
     abl_boosts:
     - [ Constitution, Wisdom ]
     - open
     skills:
     - Society
-    - Sturmvargd Lore
-    feat:
-    - Streetwise
-    special: []
-    action: []
-    reaction: []
-  Refugee (Vast Lore):
-    abl_boosts:
-    - [ Constitution, Wisdom ]
-    - open
-    skills:
-    - Society
-    - Vast Lore
+    - Skyhaldborg Lore
     feat:
     - Streetwise
     special: []
@@ -2057,25 +2031,13 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Scavenger (Sturmvargd Lore):
+  Scavenger (Skyhaldborg Lore):
     abl_boosts:
     - [ Intelligence, Wisdom ]
     - open
     skills:
     - Survival
-    - Sturmvargd Lore
-    feat:
-    - Forager
-    special: []
-    action: []
-    reaction: []
-  Scavenger (Vast Lore):
-    abl_boosts:
-    - [ Intelligence, Wisdom ]
-    - open
-    skills:
-    - Survival
-    - Vast Lore
+    - Skyhaldborg Lore
     feat:
     - Forager
     special: []
@@ -2489,25 +2451,13 @@ pf2e_background:
     special: []
     action: []
     reaction: []
-  Tax Collector (Sturmvargd Lore):
+  Tax Collector (Skyhaldborg Lore):
     abl_boosts:
     - [ Strength, Charisma ]
     - open
     skills:
     - Intimidation
-    - Sturmvargd Lore
-    feat:
-    - Quick Coercion
-    special: []
-    action: []
-    reaction: []
-  Tax Collector (Vast Lore):
-    abl_boosts:
-    - [ Strength, Charisma ]
-    - open
-    skills:
-    - Intimidation
-    - Vast Lore
+    - Skyhaldborg Lore
     feat:
     - Quick Coercion
     special: []
@@ -2558,29 +2508,6 @@ pf2e_background:
     - Engineering Lore
     feat:
     - Specialty Crafting
-    special: []
-    action: []
-    reaction: []
-  Trailblazer:
-    abl_boosts:
-    - [ Constitution, Wisdom ]
-    - open
-    skills:
-    - Survival
-    - Cartography Lore
-    feat: []
-    special: []
-    action: []
-    reaction: []
-  Translator:
-    abl_boosts:
-    - [ Intelligence, Charisma ]
-    - open
-    skills:
-    - Society
-    - Scribing Lore
-    feat:
-    - Multilingual
     special: []
     action: []
     reaction: []
