@@ -100,7 +100,7 @@ pf2e_spells:
     - detection
     - divination
   Know the Enemy:
-    actions: Reaction
+    actions: reaction
     cast:
     - somatic
     effect: "Use a Recall Knowledge action, rolling the appropriate skill check to identify the triggering creature's abilities. You can roll your check twice and use the better result."
@@ -248,7 +248,7 @@ pf2e_spells:
     - positive
     - uncommon
   Life Siphon:
-    actions: Reaction
+    actions: reaction
     cast:
     - verbal
     effect: "You use some of the spell's magic to heal yourself, regaining 1d8 Hit Points per level of the spell."
@@ -541,7 +541,7 @@ pf2e_spells:
     traits:
     - transmutation
   Lucky Break:
-    actions: Reaction
+    actions: reaction
     cast:
     - verbal
     effect: Reroll the saving throw and use the better result. You then become temporarily immune for 10 minutes.
@@ -1480,7 +1480,7 @@ pf2e_spells:
     - conjuration
     cast:
     - verbal
-    actions: Reaction
+    actions: reaction
     trigger: You make a promise or deal.
     duration: 1 hour
     effect: A magical indicator assures a creature that you've upheld your end of a bargain. When you Cast the Spell, you create a bracelet, flower, or other such trinket. If, while the spell persists, you complete the terms of the promise or deal you made, the trinket fades away with a pleasant chime; if you violate the terms instead, the trinket breaks with a dissonant crash.
@@ -1543,7 +1543,7 @@ pf2e_spells:
     - conjuration
     - water
   Ode to Ouroboros:
-    actions: Reaction
+    actions: reaction
     cast:
     - verbal
     effect: Your ode temporarily staves off death. The target's dying condition remains 1 below the value at which it dies. This doesn't help prevent death from effects that kill the target without increasing its dying condition, such as _disintegrate_ and death effects.
