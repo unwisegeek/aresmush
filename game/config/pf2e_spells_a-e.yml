@@ -333,7 +333,7 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    actions: Reaction
+    actions: reaction
     trigger: A creature performs an act anathema to your deity.
     range: 30 feet
     target: the triggering creature
