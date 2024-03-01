@@ -11,7 +11,7 @@ chargen:
   app_review_commands:
   - app %{name}
   - profile %{name}
-  - bg %{name}
+  - prologue %{name}
   - hooks %{name}
   - cg/review %{name}
   - sheet %{name}
@@ -19,17 +19,17 @@ chargen:
     to go forth and RP. Don't forget to customize your character profile on the webpage and upload
     a character icon, if you have not already done so.
   arrivals_category: New Arrivals
-  bg_blurb: The prologue is your character's story up to the point where they seek out or find 
-    the Illuminators. It does not need to be a novel, but should identify key themes, tie
+  prologue_blurb: The prologue is your character's story up to the point where they join the 
+    Illuminators. It does not need to be a novel, but should identify key themes, tie
     your ancestry, heritage, background, and class together, and suggest a possible
-    direction for the character's story. That direction is not set in stone, and can
+    direction for the character's story. That direction is not set in stone and can
     change as your story progresses.
   demographics_blurb: "Demographics record your basic character info. Don't worry about 
     class, level, or ancestry here; you'll set that when you do your sheet."
   desc_blurb: You can set both your main description, visible when people look at
     you, and a short description that shows your character at a glance. Like your
-    prologue,  this does not have to be (and shouldn't be) a novel, just enough to
-    get a  sense of what your character looks like.
+    prologue, this does not have to be (and shouldn't be) a novel, just enough to
+    get a sense of what your character looks like.
   groups_blurb: Groups determine your character's affiliations.
   hooks_blurb: RP Hooks are interesting things about your character that others can
     hook into for RP. This could be an odd personality quirk, a reputation your character
@@ -52,9 +52,9 @@ chargen:
   registration_blurb: This game requires that players disclose their alts privately
     to game admins. See `help register` for more information.
   rejection_message: Sorry, your character could not be approved at the present time
-    for the reasons described below. Please see %xhhelp app%xn for help making changes
-    and resubmitting, and contact the person handling your application if you have
-    any questions.
+    for the reasons described in the following text. Please see %xhhelp app%xn for 
+    help making changes and resubmitting, and contact the person handling your 
+    application if you have any questions.
   shortcuts:
     chargen: cg
     cg/back: cg/prev
@@ -71,11 +71,11 @@ chargen:
         the necessary steps. You can go back and forth through the steps of chargen
         as much as you want using %xccg/next%xn and %xccg/prev%xn.%r%rAt this time, 
         Emblem of Ea does not support sheet generation on the web; you'll need to log into 
-        the game to do that part. 
+        the game in a supported client to do that part.
     app:
       title: App Review
       text: The `app` command is your friend during chargen. It will alert you to
-        things you may have forgotten to set. %xrred%xn issues will almost certainly
+        things you may have forgotten to set. %xrRed%xn issues will almost certainly
         prevent your character from being approved (like forgetting to set your eye
         color). %xyYellow%xn issues are warnings; they might actually be OK if it
         fits the character concept.
@@ -84,7 +84,7 @@ chargen:
     groups:
       help: groups
     prologue:
-      help: backgrounds
+      help: prologue
     sheet_basic:
       help: pf2e_chargen
     sheet_abilities:
