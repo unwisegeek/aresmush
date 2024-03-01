@@ -63,7 +63,12 @@ module AresMUSH
     def self.can_take_feat?(char, feat)
       msg = []
 
-      details = Pf2e.get_feat_details(feat)[1]
+      find_feat = Pf2e.get_feat_details(feat)
+
+      # This will come back as a string if the feat name is bad or not unique.
+      return false if find_feat.is_a? String
+
+      details = find_feat[1]
 
       if !details
         return false
