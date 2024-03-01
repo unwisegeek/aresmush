@@ -4,6 +4,8 @@ module AresMUSH
     include CommonTemplateFields
 
     def self.get_feat_details(term)
+      return "no_term" unless term.is_a? String
+
       feats = Global.read_config('pf2e_feats')
 
       keys = feats.keys
