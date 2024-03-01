@@ -4,7 +4,7 @@ module AresMUSH
       include CommandHandler
 
       def check_in_chargen
-        return nil if enactor.chargen_stage > 0
+        return nil if enactor.chargen_stage > 0 && !(enactor.is_approved?)
         return t('pf2e.only_in_chargen')
       end
 
@@ -399,7 +399,7 @@ module AresMUSH
         c_actions = class_features_info['action']
         c_reactions = class_features_info['reaction']
 
-        s_actions = subclass_features_info.blank? ? {} : subclass_features_info['action'] 
+        s_actions = subclass_features_info.blank? ? {} : subclass_features_info['action']
         s_reactions = subclass_features_info.blank? ? {} : subclass_features_info['reaction']
 
         actions = h_actions + b_actions + c_actions + s_actions.uniq.sort
