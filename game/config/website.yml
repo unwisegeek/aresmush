@@ -212,7 +212,6 @@ website:
   - ".png"
   - ".gif"
   - ".jpeg"
-  auto_wiki_export: true
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home

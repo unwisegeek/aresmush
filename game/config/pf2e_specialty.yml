@@ -454,7 +454,6 @@ pf2e_specialty:
           - Shield Block
           reaction:
           - Shield Block
-          feat: []
           charclass:
           - 'First Doctrine (Warpriest)'
           skills: []

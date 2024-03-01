@@ -1,10 +1,7 @@
 ---
 pf2e_spells:
   Ki Blast:
-    actions:
-    - 1
-    - 2
-    - 3
+    actions: 3
     area: See text
     cast:
     - somatic
@@ -705,10 +702,7 @@ pf2e_spells:
     - ranger
     - uncommon
   Magic Missile:
-    actions:
-    - 1
-    - 2
-    - 3
+    actions: 3
     bloodline:
     - imperial
     cast:
@@ -750,10 +744,7 @@ pf2e_spells:
     - illusion
     - visual
   Magic Stone:
-    actions:
-    - 1
-    - 2
-    - 3
+    actions: 3
     cast:
     - verbal
     - somatic

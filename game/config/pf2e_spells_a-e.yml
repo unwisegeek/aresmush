@@ -164,7 +164,7 @@ pf2e_spells:
     traits:
     - abjuration
     - cleric
-   cast:
+    cast:
     - somatic
     actions: reaction
     trigger: You take acid, cold, electricity, fire, or sonic damage.
@@ -333,7 +333,7 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    actions: Reaction
+    actions: reaction
     trigger: A creature performs an act anathema to your deity.
     range: 30 feet
     target: the triggering creature
@@ -594,7 +594,8 @@ pf2e_spells:
     area: 10-foot burst
     range: 120 feet
     duration: 1 minute
-    damage: 2d10 (initial), 1d10 (subsequent) B
+    damage: 2d10 (initial), 1d10 (subsequent)
+    damage_type: bludgeoning
     save: basic Reflex
     effect: "You use your mind to manipulate unattended objects in the area, temporarily animating them to attack. The objects hover in the air, then hurl themselves at nearby creatures in a chaotic flurry of debris. This assault deals 2d10 bludgeoning damage (basic Reflex save) to each creature in the area. On subsequent rounds, the first time each round you Sustain this Spell, it deals 1d10 bludgeoning damage (basic Reflex save) to each creature in the area."
     heighten:
