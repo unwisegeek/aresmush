@@ -69,8 +69,7 @@ pf2e_spells:
     - somatic
     - verbal
     actions: 2
-    area: 5-foot-wide, 10-foot-tall, 10-foot deep section of wooden, plaster, or stone
-    wall
+    area: 5-foot-wide, 10-foot-tall, 10-foot deep section of wooden, plaster, or stone wall
     range: touch
     duration: 1 hour
     effect: You create a visible tunnel through the wall in the chosen area, replacing the area with empty space. If the wall is thicker than 10 feet, the tunnel ends 10 feet in. Even a small layer of metal in the wall prevents this spell from functioning. This spell doesn't reduce the integrity of the structure. When the spell ends, anyone inside the tunnel is shunted to the nearest exit.
@@ -86,7 +85,7 @@ pf2e_spells:
     - uncommon
     cast:
     - somatic
-    actions: reaction
+    actions: Reaction
     trigger: You fail a saving throw against a morph, petrification, or polymorph effect.
     effect: Reroll the saving throw and use the better result.
   Perfected Mind:
@@ -292,7 +291,7 @@ pf2e_spells:
     - witch
     cast:
     - somatic
-    actions: reaction
+    actions: Reaction
     trigger: Your familiar would take damage.
     range: 60 feet
     target: your familiar
@@ -731,7 +730,7 @@ pf2e_spells:
     - uncommon
     - wizard
   Protector's Sacrifice:
-    actions: reaction
+    actions: Reaction
     cast:
     - somatic
     effect: You protect your ally by suffering in their stead. Reduce the damage the triggering ally would take by 3. You redirect this damage to yourself, but your immunities, weaknesses, resistances and so on do not apply.%r %rYou aren't subject to any conditions or other effects of whatever damaged your ally (such as poison from a venomous bite). Your ally is still subject to those effects even if you redirect all of the triggering damage to yourself.
@@ -1078,7 +1077,7 @@ pf2e_spells:
     - material
     - somatic
     - verbal
-    effect: "You attempt to learn more about the target's fate in the short term, usually within the next day for most prosaic creatures, or the next hour or less for someone likely to have multiple rapid experiences, such as someone actively adventuring.%r %rYou learn a single enigmatic word connected to the creature's fate in that time frame. Fate is notoriously inscrutable, and the word isn't necessarily meant to be taken at face value, so the meaning is often clear only in hindsight. The GM rolls a secret DC 6 flat check. If the creature's fate is too uncertain, or on a failed flat check, the spell yields the word "inconclusive." Either way, the creature is then temporarily immune for 24 hours."
+    effect: "You attempt to learn more about the target's fate in the short term, usually within the next day for most prosaic creatures, or the next hour or less for someone likely to have multiple rapid experiences, such as someone actively adventuring.%r %rYou learn a single enigmatic word connected to the creature's fate in that time frame. Fate is notoriously inscrutable, and the word isn't necessarily meant to be taken at face value, so the meaning is often clear only in hindsight. The GM rolls a secret DC 6 flat check. If the creature's fate is too uncertain, or on a failed flat check, the spell yields the word 'inconclusive.' Either way, the creature is then temporarily immune for 24 hours."
     heighten_level:
     - 1
     base_level: 1
@@ -1126,10 +1125,7 @@ pf2e_spells:
     - light
     - necromancy
   Rebuke Death:
-    actions:
-    - 1
-    - 2
-    - 3
+    actions: 3
     area: 20-foot emanation
     cast:
     - somatic
@@ -1435,7 +1431,7 @@ pf2e_spells:
     - healing
     - necromancy
   Retributive Pain:
-    actions: reaction
+    actions: Reaction
     cast:
     - somatic
     effect: You vengefully reflect your pain upon your tormentor. The target takes mental damage equal to half the amount it dealt to you when it triggered the spell.
@@ -1679,7 +1675,7 @@ pf2e_spells:
     damage: 1d4 plus 1d4
     damage_type: mental plus persistent mental
   Scholarly Recollection:
-    actions: reaction
+    actions: Reaction
     cast:
     - verbal
     effect: Speaking a short prayer as you gather your thoughts, you're blessed to find that your deity gave you just the right bit of information for your situation. Roll the triggering check twice and use the better result.
@@ -1711,7 +1707,7 @@ pf2e_spells:
     - incapacitation
     - visual
   Scintillating Safeguard:
-    actions: reaction
+    actions: Reaction
     cast:
     - somatic
     effect: A sparkling magical barrier envelops each target, shielding them against the triggering effect. Choose one type of physical or energy damage the triggering effect deals. Each target gains resistance 10 against that damage type for the triggering effect. The resistance applies only against the initial damage, not against any persistent damage or other lingering effects of the effect.
@@ -1950,7 +1946,7 @@ pf2e_spells:
     damage: 5d8
     damage_type: varies
   Shadow Siphon:
-    actions: reaction
+    actions: Reaction
     bloodline:
     - shadow
     cast:
@@ -2062,7 +2058,7 @@ pf2e_spells:
     - mental
     cast:
     - somatic
-    actions: reaction
+    actions: Reaction
     trigger: An ally within 30 feet is about to attempt a saving throw against a harmful emotion effect, and you would not otherwise have to save against the effect.
     target: You and the triggering ally.
     effect: You shoulder some of your ally's pain. Both you and your ally use the outcome one degree of success better than the result of your ally's saving throw, even if the triggering effect usually affects only one target.
@@ -2112,7 +2108,7 @@ pf2e_spells:
     damage: 2d10
     damage_type: sonic
   Shepherd of Souls:
-    actions: reaction
+    actions: Reaction
     area: 1 creature
     bloodline:
     - psychopomp
@@ -2791,6 +2787,7 @@ pf2e_spells:
     - verbal
     duration: 10 minutes
     effect: You form a spiritual link with another creature, allowing you to take in its pain. When you Cast this Spell and at the start of each of your turns, if the target is below maximum Hit Points, it regains 2 Hit Points (or the difference between its current and maximum Hit Points, if that's lower). You lose as many Hit Points as the target regained.%r %rThis is a spiritual transfer, so no effects apply that would increase the Hit Points the target regains or decrease the Hit Points you lose. This transfer also ignores any temporary Hit Points you or the target have. Since this effect doesn't involve positive or negative energy, *spirit link* works even if you or the target is undead. While the duration persists, you gain no benefit from regeneration or fast healing. You can Dismiss this spell, and if you're ever at 0 Hit Points, *spirit link* ends automatically.
+    heighten:
       2: The number of Hit Points transferred each time increases to 4.
       3: The number of Hit Points transferred each time increases to 6.
       4: The number of Hit Points transferred each time increases to 8.
@@ -3267,7 +3264,7 @@ pf2e_spells:
     damage: 2d10
     damage_type: negative
   Sudden Shift:
-    actions: reaction
+    actions: Reaction
     cast:
     - somatic
     effect: You swiftly move from a dangerous spot and veil yourself. You Step and become concealed.
@@ -3580,10 +3577,7 @@ pf2e_spells:
     damage: 8d10 plus 8d10
     damage_type: fire plus positive
   Swamp of Sloth:
-    actions:
-    - 1
-    - 2
-    - 3
+    actions: 3
     area: 5-foot burst or more
     bloodline:
     - demonic
@@ -3871,7 +3865,7 @@ pf2e_spells:
     duration: 10 minutes
     effect: You can communicate telepathically with creatures within 30 feet. Once you establish a connection by communicating with a creature, the communication is two-way. You can communicate only with creatures that share a language with you.
     heighten:
-      6: *Telepathy* loses the linguistic trait. You can communicate telepathically with creatures using shared mental imagery even if you don't share a language.
+      6: _Telepathy_ loses the linguistic trait. You can communicate telepathically with creatures using shared mental imagery even if you don't share a language.
     base_level: 4
     school: Divination
     tradition:
@@ -3987,7 +3981,7 @@ pf2e_spells:
     damage: 1d4 plus 1d4
     damage_type: bludgeoning plus cold
   Tempt Fate:
-    actions: reaction
+    actions: Reaction
     cast:
     - somatic
     effect: You twist the forces of fate to make a moment dire or uneventful, with no in-between. The target gains a +1 status bonus to the triggering saving throw. If the saving throw's result is a success, it becomes a critical success. If it's a failure, it becomes a critical failure, and the critical failure can't be reduced by abilities that usually reduce critical failure, such as improved evasion.%r %rIf the triggering ability did not have both a critical success and critical failure condition, *tempt fate* fails, but you don't expend the Focus Point for Casting this Spell.

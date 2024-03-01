@@ -742,10 +742,7 @@ pf2e_spells:
     - incapacitation
     - mental
   Warped Terrain:
-    actions:
-    - 1
-    - 2
-    - 3
+    actions: 3
     area: 5-foot burst or more
     cast:
     - somatic
@@ -974,9 +971,7 @@ pf2e_spells:
     - transmutation
     - uncommon
   Wild Morph:
-    actions:
-    - 1
-    - 2
+    actions: 2
     cast:
     - somatic
     - verbal
