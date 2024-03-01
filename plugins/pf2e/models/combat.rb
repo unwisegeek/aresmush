@@ -87,7 +87,7 @@ module AresMUSH
       dex_cap = armor ? armor.dex_cap : 99
       dbonus = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, 'Dexterity')).clamp(-99, dex_cap)
 
-      ac = 10 + abonus + pbonus + ibonus + dbonus
+      10 + abonus + pbonus + ibonus + dbonus
     end
 
     def self.get_equipped_armor(char)
@@ -152,7 +152,7 @@ module AresMUSH
       prof_list = prof_list.compact
 
       # Of everything we've accumulated, the character's proficiency with that weapon is the best one in the list.
-      prof = Pf2e.select_best_prof(prof_list)
+      Pf2e.select_best_prof(prof_list)
 
     end
 
@@ -164,7 +164,7 @@ module AresMUSH
 
       armor_cat = Global.read_config('pf2e_armor', name, 'category')
 
-      prof = char_armor_prof[armor_cat] ? char_armor_prof[armor_cat] : 'untrained'
+      char_armor_prof[armor_cat] ? char_armor_prof[armor_cat] : 'untrained'
 
     end
 

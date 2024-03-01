@@ -34,6 +34,9 @@ module AresMUSH
       if ancestry.blank? || heritage.blank? || background.blank? || charclass.blank?
         error = t('pf2e.missing_base_info')
       end
+
+      return error if error
+      return nil
     end
 
     def self.chargen_messages(ancestry, heritage, background, charclass, specialize, faith, subclass_info, to_assign=nil)
