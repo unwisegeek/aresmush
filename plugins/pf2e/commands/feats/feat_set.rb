@@ -74,7 +74,9 @@ module AresMUSH
 
         qualify = Pf2e.can_take_feat?(enactor, self.feat_name)
 
-        client.emit qualify
+        client.emit self.feat_name
+
+        client.emit enactor.name
 
         unless qualify
           client.emit_failure t('pf2e.does_not_qualify')
