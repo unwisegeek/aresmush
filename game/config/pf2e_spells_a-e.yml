@@ -13,10 +13,7 @@ pf2e_spells:
     - aberrant
     cast:
     - verbal
-    actions:
-    - '1'
-    - '2'
-    - '3'
+    actions: 3
     area: 5-foot emanation or more
     duration: 1 round
     target: each foe in the area
@@ -220,7 +217,7 @@ pf2e_spells:
     - primal
     cast:
     - verbal
-    actions: reactioneaction
+    actions: reaction
     trigger: A creature within range enters an environment where it cannot breathe.
     range: 60 feet
     target: The triggering creature
@@ -307,7 +304,7 @@ pf2e_spells:
     cast:
     - somatic
     - verbal
-    actions: reactioneaction
+    actions: Reaction
     trigger: A creature performs an act anathema to your deity.
     range: 30 feet
     target: the triggering creature
@@ -568,8 +565,7 @@ pf2e_spells:
     area: 10-foot burst
     range: 120 feet
     duration: 1 minute
-    damage: 2d10 (initial), 1d10 (subsequent)
-    damage: bludgeoning
+    damage: 2d10 (initial), 1d10 (subsequent) B
     save: basic Reflex
     effect: "You use your mind to manipulate unattended objects in the area, temporarily animating them to attack. The objects hover in the air, then hurl themselves at nearby creatures in a chaotic flurry of debris. This assault deals 2d10 bludgeoning damage (basic Reflex save) to each creature in the area. On subsequent rounds, the first time each round you Sustain this Spell, it deals 1d10 bludgeoning damage (basic Reflex save) to each creature in the area."
     heighten:
@@ -1296,7 +1292,7 @@ pf2e_spells:
     - witch
     cast:
     - verbal
-    actions: free
+    actions: 0
     effect: With a quick burst of laughter, you prolong a magical effect you created. You Sustain a Spell.
   Call of the Grave:
     base_level: 1
