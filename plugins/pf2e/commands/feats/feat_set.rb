@@ -43,23 +43,19 @@ module AresMUSH
         feat_check = Pf2e.get_feat_details(self.feat_name)
 
         if feat_check.is_a?(String)
-          return t('pf2e.multiple_matches', :element => 'feat') if (self.feat_details == 'ambiguous')
-          return t('pf2e.bad_feat_name', :name => self.feat_name)
+          msg = feat_check == 'ambiguous' ? t('pf2e.multiple_matches', :element => 'feat') : t('pf2e.bad_feat_name', :name => self.feat_name)
+          client.emit_failure msg
+          return
         end
 
         fname = feat_check[0]
         fdeets = feat_check[1]
 
-        client.emit fname
-        client.emit fdeets
-
-        return
-
         # Does the enactor already have this feat?
 
         feat_list = enactor.pf2_feats
 
-        if feat_list.include?(self.feat_name)
+        if feat_list.include?(fname)
           client.emit_failure t('pf2e.already_has', :item => 'feat')
           return nil
         end
@@ -77,7 +73,7 @@ module AresMUSH
 
         # Does the enactor qualify to take this feat?
 
-        qualify = Pf2e.can_take_feat?(enactor, self.feat_name)
+        qualify = Pf2e.can_take_feat?(enactor, fname)
 
         unless qualify
           client.emit_failure t('pf2e.does_not_qualify')
@@ -130,20 +126,20 @@ module AresMUSH
 
         end
 
-        sublist << self.feat_name
-        to_assign[key] = self.feat_name
+        sublist << fname
+        to_assign[key] = fname
 
         feat_list[self.feat_type] = sublist
 
         enactor.update(pf2_feats: feat_list)
 
-        client.emit_success t('pf2e.feat_set_ok', :name => self.feat_name, :type => self.feat_type)
+        client.emit_success t('pf2e.feat_set_ok', :name => fname, :type => self.feat_type)
 
         # Some feats grant magic of some sort. Handle here.
 
-        magic_stats = self.feat_details['magic_stats']
+        magic_stats = fdeets['magic_stats']
 
-        use_diff_charclass = self.feat_details['assoc_charclass']
+        use_diff_charclass = fdeets['assoc_charclass']
 
         if magic_stats
           client.emit_ooc 'This feat has magic details.'
@@ -156,7 +152,7 @@ module AresMUSH
         end
 
         # Handle reagents if necessary.
-          reagents = self.feat_details['reagents']
+          reagents = fdeets['reagents']
 
           if reagents
             Pf2e.update_reagents(char, reagents)
@@ -164,12 +160,12 @@ module AresMUSH
 
         # Does this feat leave you with something else to assign?
 
-        cascade = self.feat_details['assign']
+        cascade = fdeets['assign']
 
         if cascade
           cascade.each do |item|
           assign_key = item
-          to_assign[assign_key] = 'unassigned/' + self.feat_name
+          to_assign[assign_key] = 'unassigned/' + fname
           client.emit_ooc t('pf2e.feat_grants_addl', :element => assign_key)
           end
         end
