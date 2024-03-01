@@ -3,7 +3,7 @@ module AresMUSH
     class PF2FeatSetCmd
       include CommandHandler
 
-      attr_accessor :feat_type, :feat_name, :feat_details, :feat_fullname
+      attr_accessor :feat_type, :feat_name
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
@@ -34,7 +34,12 @@ module AresMUSH
         return t('pf2e.bad_feat_type', :type => self.feat_type, :keys => feat_types.sort.join(", "))
       end
 
-      def check_valid_feat
+      def handle
+
+        ##### VALIDATION SECTION START #####
+
+        # Is this actually a feat?
+
         feat_check = Pf2e.get_feat_details(self.feat_name)
 
         if feat_check.is_a?(String)
@@ -42,13 +47,13 @@ module AresMUSH
           return t('pf2e.bad_feat_name', :name => self.feat_name)
         end
 
-        self.feat_fullname = feat_check[0]
-        self.feat_details = feat_check[1]
-      end
+        fname = feat_check[0]
+        fdeets = feat_check[1]
 
-      def handle
+        client.emit fname
+        client.emit fdeets
 
-        ##### VALIDATION SECTION START #####
+        return
 
         # Does the enactor already have this feat?
 
@@ -73,9 +78,6 @@ module AresMUSH
         # Does the enactor qualify to take this feat?
 
         qualify = Pf2e.can_take_feat?(enactor, self.feat_name)
-
-        client.emit self.feat_name
-        client.emit self.feat_fullname
 
         unless qualify
           client.emit_failure t('pf2e.does_not_qualify')
