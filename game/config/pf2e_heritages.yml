@@ -84,7 +84,6 @@ pf2e_heritage:
     feat: []
     reaction: []
     skills: []
-    special: []
     traits: []
   Nomadic:
     choose:
