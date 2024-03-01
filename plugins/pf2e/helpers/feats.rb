@@ -113,8 +113,6 @@ module AresMUSH
 
       msg << "prerequisites" if !meets_prereqs
 
-      return msg
-
       return true if msg.empty?
       return false
     end
