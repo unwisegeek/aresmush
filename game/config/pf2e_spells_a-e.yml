@@ -1,6 +1,6 @@
 ---
 pf2e_spells:
-  Aberrant Whispers: # Multi-Action Spell
+  Aberrant Whispers:
     base_level: 3
     school: Enchantment
     traits:
@@ -14,9 +14,9 @@ pf2e_spells:
     cast:
     - verbal
     actions:
-    - '1'
-    - '2'
-    - '3'
+    - 1
+    - 2
+    - 3
     area: 5-foot emanation or more
     duration: 1 round
     target: each foe in the area

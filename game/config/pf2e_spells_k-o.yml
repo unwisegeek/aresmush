@@ -2,9 +2,9 @@
 pf2e_spells:
   Ki Blast:
     actions:
-    - '1'
-    - '2'
-    - '3'
+    - 1
+    - 2
+    - 3
     area: See text
     cast:
     - somatic
