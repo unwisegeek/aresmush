@@ -19,7 +19,7 @@ en:
         
         background_title: "Prologue for %{name}"
         
-        not_started: "You haven't starget chargen yet.  Use chargen/start first."
+        not_started: "You haven't started chargen yet.  Use cg/start first."
         cant_go_back: "You are already on the first stage of Chargen."
         chargen_complete: "You have completed Chargen!"
         prev_page_footer: "<-- cg/prev"
@@ -28,7 +28,7 @@ en:
         
         abilities_review_title:  "Abilities (help abilities)"
         demographics_review_title: "Demographics (help demographics)"
-        misc_review_title: "Miscellaneous (help bg, help desc, help rank, help hooks)"
+        misc_review_title: "Miscellaneous (help prologue, help desc, help hooks)"
         groups_review_title: "Groups (help groups)"
         app_review_title: "Review (help apps)"
         goals_review_title: "Goals (help goals)"
