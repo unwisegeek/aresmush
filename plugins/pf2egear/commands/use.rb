@@ -3,7 +3,7 @@ module AresMUSH
     class PF2UseItemCmd
       include CommandHandler
 
-      attr_accessor :category, :item_num, :use_options
+      attr_accessor :category, :item_num, :use_option
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_arg2)
@@ -11,7 +11,7 @@ module AresMUSH
         self.category = downcase_arg(args.arg1)
         second_parse = trimmed_list_arg(args.arg2, "=")
         self.item_num = second_parse ? integer_arg(second_parse[0]) : nil
-        self.option = second_parse ? trim_arg(second_parse[1]) : nil
+        self.use_option = second_parse ? trim_arg(second_parse[1]) : nil
 
         @numcheck = trim_arg(second_parse[0]) if second_parse
       end
@@ -31,7 +31,7 @@ module AresMUSH
       end
 
       def handle
-        # Start by finding the item to be used. 
+        # Start by finding the item to be used.
 
         case self.category
         when "weapon", "weapons"
@@ -42,7 +42,7 @@ module AresMUSH
           item_list = Pf2egear.items_in_inventory(enactor.armor.to_a)
         when "magicitem"
           item_list = Pf2egear.items_in_inventory(enactor.weapons.to_a)
-        else 
+        else
           client.emit_failure t('pf2egear.bad_category')
           return
         end
@@ -56,7 +56,7 @@ module AresMUSH
           return
         end
 
-        # Is this a usable item? 
+        # Is this a usable item?
 
         use = item.use
 
@@ -66,7 +66,7 @@ module AresMUSH
         end
 
         # For armor and weapons, you can only use it if it's equipped.
-        # Magic items can only be used if they are invested first. 
+        # Magic items can only be used if they are invested first.
 
         case self.category
         when "weapon", "weapons", "armor"
@@ -81,7 +81,7 @@ module AresMUSH
           end
         end
 
-        # Consumables get their own, much simpler, handling. 
+        # Consumables get their own, much simpler, handling.
 
         if item.instance_of? PF2Consumable
 
@@ -106,21 +106,21 @@ module AresMUSH
           return
         end
 
-        # Some items have more than one use. Expect a valid self.option if this is the case. 
+        # Some items have more than one use. Expect a valid self.use_option if this is the case.
 
         uses = use.keys
 
-        if uses.size > 1 && !self.option
+        if uses.size > 1 && !self.use_option
           client.emit_failure t('pf2egear.needs_use_option', :options => uses.keys.sort.join(", "))
           return
         end
 
-        if !(uses.include? self.option)
+        if !(uses.include? self.use_option)
           client.emit_failure t('pf2egear.bad_use')
           return
         end
 
-        selected_use = self.option ? uses[self.option] : uses.first
+        selected_use = self.use_option ? uses[self.use_option] : uses.first
 
         details = use[selected_use]
 
@@ -141,7 +141,7 @@ module AresMUSH
 
           if charges.zero?
             use.delete(selected_use)
-          else 
+          else
             details['charges'] = charges
             use[selected_use] = details
           end
@@ -149,7 +149,7 @@ module AresMUSH
           item.update(use: use)
 
           if use.empty?
-            Pf2egear.destroy_item(item, client, enactor) 
+            Pf2egear.destroy_item(item, client, enactor)
           end
 
         end
