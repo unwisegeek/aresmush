@@ -31,6 +31,7 @@ pf2e:
     rollfor: roll/for
     csheet: sheet/combat
     formulalist: formulas/list
+    boog: boost # Just for Whirlpool
   allowed_alignments:
   - LG
   - NG
