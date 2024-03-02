@@ -353,6 +353,7 @@ module AresMUSH
       return nil unless magic
 
       spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+      spell_abil = "Charisma" unless spell_abil
 
       trad = magic.tradition[charclass]
       prof = trad[1]
