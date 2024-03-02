@@ -157,7 +157,7 @@ module AresMUSH
       end
 
       def format_unarmed(char, atk_name, atk_info, unarmed_prof)
-        damage = atk_info['damage'] + atk_info['damage_type']
+        damage = atk_info['damage'] + "%b" + atk_info['damage_type']
 
         abilmod = Pf2eCombat.abilmod_with_finesse(char)
         prof = Pf2e.get_prof_bonus(char, unarmed_prof)
@@ -167,7 +167,7 @@ module AresMUSH
 
         traits = atk_info['traits'].join(", ")
 
-        "#{item_color}#{atk_name}:%xn #{bonus} (#{p_str})%b#{damage}\n%b%b#{item_color}Traits:%xn #{traits}"
+        "#{item_color}#{atk_name}:%xn #{bonus} (#{p_str})%b#{damage}\n%b#{item_color}Traits:%xn #{traits}"
       end
 
       def format_condition(condition, value)
