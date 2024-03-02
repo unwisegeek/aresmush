@@ -112,11 +112,11 @@ module AresMUSH
           traits = traits.delete 'Nonlethal'
         end
 
-        traits = traits.join(",")
+        traits = traits.join(", ")
 
         p_str = unarmed_prof[0].upcase
 
-        "%b%b#{item_color}#{name}:%xn #{bonus} (#{p_str}), Damage 1d4 B\n%b%b#{item_color}Traits:%xn #{traits}"
+        "#{item_color}#{name}:%xn #{bonus} (#{p_str}), Damage 1d4 B\n#{item_color}Traits:%xn #{traits}"
       end
 
       def has_unarmed_specials
