@@ -418,13 +418,12 @@ module AresMUSH
         # Check for and handle weird edge cases
         Pf2e.cg_edge_cases(enactor, charclass, heritage, background)
 
-        # Put everything together, lock it, and save to database
+        # Put everything together, lock it, record the checkpoint, and save to database
         enactor.pf2_to_assign = to_assign
-        # pf2_cg_assigned is the reset point for skills, feats, etc
-        enactor.pf2_cg_assigned = to_assign
         enactor.pf2_boosts_working = boosts
-        # pf2_boosts is the reset point for boosts
-        enactor.pf2_boosts = boosts
+
+        Pf2e.record_checkpoint(enactor, 'info')
+
         enactor.pf2_baseinfo_locked = true
 
         enactor.save

@@ -145,5 +145,21 @@ module AresMUSH
       return true
     end
 
+    def self.record_checkpoint(char, checkpoint)
+      case checkpoint
+      when "info" # Used by commit info
+        to_assign = char.pf2_to_assign
+        char.update(pf2_cg_assigned: to_assign)
+
+        boosts = char.pf2_boosts_working
+        char.update(pf2_boosts: boosts)
+      when "abilities"
+      when "skills"
+      when "advance"
+      else
+        return nil
+      end
+    end
+
   end
 end
