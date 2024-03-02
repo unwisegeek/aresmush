@@ -304,7 +304,7 @@ module AresMUSH
         # A monk's fist does lethal damage, but everyone else is nonlethal with a fist.
 
         fist_traits = %w(agile finesse unarmed)
-        fist_traits << 'nonlethal' unless Pf2e.treat_as_charclass?(char, "Monk")
+        fist_traits << 'nonlethal' unless Pf2e.treat_as_charclass?(enactor, "Monk")
 
         unarmed_attacks = {
           'Fist' => {
