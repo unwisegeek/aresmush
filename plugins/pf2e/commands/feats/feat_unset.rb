@@ -28,7 +28,18 @@ module AresMUSH
             return
           end
 
-
+          fname = feat_check[0]
+          fdeets = feat_check[1]
+  
+          # Does the enactor already have this feat?
+  
+          feat_list = enactor.pf2_feats
+  
+          if !feat_list.include?(fname)
+            client.emit_failure t('pf2e.does_not_have', :item => 'feat')
+            return nil
+          end
+  
 
           # Step 2: Verify the feat exists on sheet
 
