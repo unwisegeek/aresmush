@@ -8,6 +8,7 @@ pf2e_gear_options:
     unequip: gear/unequip
     bag/put: bag/store
     bag/get: bag/retrieve
+    gear/view: item/view
   use_encumbrance: true
   item_classes:
     weapons: PF2Weapon
