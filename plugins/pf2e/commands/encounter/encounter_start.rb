@@ -11,16 +11,16 @@ module AresMUSH
       end
 
       def check_is_approved
-        return nil if enactor.is_approved? 
+        return nil if enactor.is_approved?
         return t('dispatcher.not_allowed')
       end
 
       def handle
-        # Demand that the organizer be in a scene. 
+        # Demand that the organizer be in a scene.
 
         scene = enactor_room.scene
 
-        if !scene 
+        if !scene
           client.emit_failure t('pf2e.must_be_in_scene')
           return
         end
@@ -39,7 +39,7 @@ module AresMUSH
 
         valid_init_stat = Pf2e.is_valid_init_stat?(init_stat)
 
-        if !valid_init_stat 
+        if !valid_init_stat
           client.emit_failure t('pf2e.not_unique')
           return
         end
@@ -57,15 +57,15 @@ module AresMUSH
 
         message = template.render
 
-        # Emit to the room. 
+        # Emit to the room.
         enactor_room.emit message
 
-        # Log the init start in the encounter. 
+        # Log the init start in the encounter.
         PF2Encounter.send_to_encounter(encounter, message)
 
-        # Log the initiative message to the scene as an OOC message. 
+        # Log the initiative message to the scene as an OOC message.
         Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
-        
+
         # Notify all participants that an encounter has started.
         Global.notifier.notify_ooc(:pf2_combat, message) do |char|
           char && scene.participants.include?(char)
