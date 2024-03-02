@@ -22,16 +22,14 @@ module AresMUSH
       magic = char.magic
 
       # Healing
-      con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Constitution")).clamp(0,99)
-
-      healing = con_mod * char.pf2_level
+      healing = get_daily_healing(char)
       Pf2eHP.modify_damage(char, healing, true)
 
       # Focus Pool
-      Pf2e.daily_refresh_focus_pool(magic) if magic
+      daily_refresh_focus_pool(magic) if magic
 
       # Reagents
-      Pf2e.daily_refresh_reagents(char)
+      daily_refresh_reagents(char)
 
       # Spells
       Pf2emagic.generate_spells_today(char) if magic
@@ -46,6 +44,14 @@ module AresMUSH
       char.update(pf2_last_refresh: Time.now)
 
       return nil
+    end
+
+    def self.get_daily_healing(char)
+      con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Constitution")).clamp(0,99)
+
+      bonuses = 0
+
+      ((con_mod * char.pf2_level) + bonuses).clamp(1,999)
     end
 
     def self.do_refresh(char)

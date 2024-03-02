@@ -240,7 +240,7 @@ module AresMUSH
 
             assignment_list = {}
             value.each_pair do |level, num|
-              ary = Array.new(num, "open")
+              ary = Array.new(num.to_i, "open")
               assignment_list[level] = ary
             end
 
