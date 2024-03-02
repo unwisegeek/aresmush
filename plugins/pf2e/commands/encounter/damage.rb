@@ -3,7 +3,7 @@ module AresMUSH
     class PF2DamagePlayerCmd
       include CommandHandler
 
-      attr_accessor :target, :damage
+      attr_accessor :target, :damage, :is_ndc
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
