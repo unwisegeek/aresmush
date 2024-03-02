@@ -339,7 +339,7 @@ module AresMUSH
         if class_mstats.empty?
           client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
         else
-          PF2Magic.update_magic(enactor, charclass, magic_stats, client)
+          PF2Magic.update_magic(enactor, charclass, class_mstats, client)
           client.emit_ooc "Setting up magic..."
         end
 
