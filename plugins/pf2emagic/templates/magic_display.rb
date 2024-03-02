@@ -59,7 +59,7 @@ module AresMUSH
         !((focus_spells.keys + focus_cantrips.keys).empty?)
       end
 
-      def focus_spells 
+      def focus_spells
         tradition = @magic.tradition
 
         fstype_to_cc = Global.read_config('pf2e_magic', 'focus_type_by_class').invert
@@ -95,7 +95,7 @@ module AresMUSH
 
       def innate_spells
         spell_list = @magic.innate_spells
-        prof = @magic.tradition['innate']
+        prof = @magic.tradition['innate'][1]
 
         list = []
 

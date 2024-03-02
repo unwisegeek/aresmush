@@ -1,18 +1,460 @@
 ---
 pf2e_heritage:
-  Aasimar:
-    rare: true
-    traits:
-    - aasimar
+# Arvek Heritages
+  Elfbane:
+    reaction:
+    - Resist Elf Magic
+    action: []
+    defense: {}
+    feat: []
+    skills: []
+    special: []
+    traits: []
+    attack: {}
+  Runtboss:
+    feat:
+    - Group Coercion
     special:
-    - Low-Light Vision
-    change_vision: true
+    - Runtboss Arvek
     action: []
     attack: {}
+    defense: {}
     reaction: []
+    skills: []
+    traits: []
+  Smokeworker:
+    defense:
+      resistances:
+        fire: 1
+    special:
+    - Smokeworker Arvek
+    action: []
+    attack: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Warmarch:
+    special:
+    - Warmarch Arvek
+    action: []
+    attack: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Warrenbred:
+    special:
+    - Warrenbred Arvek
+    action: []
+    attack: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+# Bassin Heritages
+  Gutsy:
+    special:
+    - Gutsy Bassin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Hillock:
+    rest_HP_bonus: true
+    special:
+    - Hillock Bassin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Jinxed-bassin:
+    special:
+    - Jinxed Bassin
+    action:
+    - Jinx
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Nomadic:
+    choose:
+      language:
+      - open
+      - open
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+  Twilight:
+    special:
+    - Low-Light Vision
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Wildwood:
+    special:
+    - Wildwood Bassin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+# Ciith Heritage Feats
+  Cliffscale:
+    feat:
+    - Combat Climber
+    special:
+    - Cliffscale Ciith
+    traits: []
+    skills: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
+  Frilled:
+    special:
+    - Frilled Ciith
+    action:
+    - Threatening Approach
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Makar:
+    movement:
+      Swim: 15
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+  Sandstrider:
+    defense:
+      resistances:
+        fire: 1
+    special:
+    - Sandstrider Ciith
+    action: []
+    attack: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Unseen:
+    circumstance: true
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+# Egalrin Heritage Feats
+  Jinxed-egalrin:
+    special:
+    - Jinxed Egalrin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Mountainkeeper:
+    magic:
+      innate_spell:
+        cantrip:
+        - 'Disrupt Undead'
+        spell_trad: primal
+    special:
+    - Mountainkeeper Egalrin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Skyborn:
+    special:
+    - Skyborn Egalrin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Stormtossed:
+    defense:
+      resistances:
+        electricity: 1
+    special:
+    - Stormtossed Egalrin
+    action: []
+    attack: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Taloned:
+    attack:
+      Talons:
+        damage: d4
+        damage_type: S
+        traits:
+        - agile
+        - finesse
+        - unarmed
+        - versatile_P
+    action: []
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+# Gnome Heritage Feats
+  Chameleon:
+    circumstance: true
+    traits: []
+    special: []
     skills: []
     feat: []
     defense: {}
+    action: []
+    reaction: []
+    attack: {}
+  Fey-Touched:
+    traits:
+    - fey
+    magic:
+      choose:
+        cantrip:
+        - [ 'primal' ]
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+  Sensate:
+    special:
+    - Sensate Gnome
+    circumstance: true
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Umbral:
+    special:
+    - Darkvision
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Wellspring:
+    magic:
+      choose:
+        cantrip:
+        - [ 'arcane', 'divine', 'occult' ]
+    change_spell_trad: true
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+# Goblin Heritage Feats
+  Charhide:
+    defense:
+      resistances:
+        fire: 1
+    special:
+    - Charhide Goblin
+    traits: []
+    skills: []
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+  Irongut:
+    special:
+    - Irongut Goblin
+    circumstance: true
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+  Razortooth:
+    attack:
+      Jaws:
+        damage: d6
+        damage_type: P
+        traits:
+        - finesse
+        - unarmed
+    action: []
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+  Snow:
+    defense:
+      resistances:
+        cold: 1
+    action: []
+    attack: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+  Unbreakable:
+    ancestry_HP: 10
+    special:
+    - Unbreakable Goblin
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    traits: []
+# Human Heritages
+  Half-Oruch:
+    traits:
+    - oruch
+    - half-oruch
+    special:
+    - Low-Light Vision
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+  Half-Sil:
+    traits:
+    - half-sil
+    - sildanyar
+    special:
+    - Low-Light Vision
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+  Skilled:
+    skills:
+    - open
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    special: []
+    traits: []
+  Versatile:
+    feat:
+    - ancestry
+    action: []
+    attack: {}
+    defense: {}
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+# Kailli Heritages
+  Deep Kailli:
+    traits: []
+    special:
+    - Darkvision
+    skills: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
+  Desert:
+    defense:
+      resistances:
+        fire: 1
+    traits: []
+    special: []
+    skills: []
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+  Longsnout:
+    traits: []
+    special:
+    - Scent (imprecise)
+    skills: []
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+  Sewer:
+    traits: []
+    special:
+    - Sewer Kailli
+    skills:
+    - Intimidation
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+  Shadow:
+    traits: []
+    special:
+    - Shadow Kailli
+    skills: []
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+# Khazad Heritages
   Ancient-Blooded:
     reaction: 'Call On Ancient Blood'
     action: []
@@ -35,111 +477,6 @@ pf2e_heritage:
     reaction: []
     defense: {}
     attack: {}
-  Arctic:
-    traits: []
-    defense:
-      resistances:
-        cold: 1
-    circumstance: true
-    special: []
-    skills: []
-    feat: []
-    action: []
-    reaction: []
-    attack: {}
-  Ashen One:
-    rare: true
-    traits:
-    - Ashen One
-    special:
-    - Low-Light Vision
-    defense: {}
-    change_vision: true
-    skills: []
-    feat: []
-    action: []
-    reaction: []
-    attack: {}
-  Badlands:
-    traits: []
-    special:
-    - Badlands Oruch
-    skills: []
-    feat: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-  Cavern:
-    traits: []
-    special:
-    - Darkvision
-    skills: []
-    feat: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-  Chameleon:
-    circumstance: true
-    traits: []
-    special: []
-    skills: []
-    feat: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-  Changeling:
-    rare: true
-    traits:
-    - changeling
-    special:
-    - Low-Light Vision
-    skills: []
-    feat: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-    change_vision: true
-  Charhide:
-    defense:
-      resistances:
-        fire: 1
-    special:
-    - Charhide Goblin
-    traits: []
-    skills: []
-    feat: []
-    action: []
-    reaction: []
-    attack: {}
-  Cliffscale:
-    feat:
-    - Combat Climber
-    special:
-    - Cliffscale Lizardfolk
-    traits: []
-    skills: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-  Dar:
-    rare: true
-    traits:
-    - Dar
-    special:
-    - Low-Light Vision
-    - Negative Healing
-    change_vision: true
-    skills: []
-    feat: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
   Death Warden:
     circumstance: true
     traits: []
@@ -150,240 +487,12 @@ pf2e_heritage:
     action: []
     reaction: []
     attack: {}
-  Deep:
-    feat:
-    - Terrain Expertise/Underground
-    - Combat Climber
-    traits: []
-    special: []
-    skills: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-  Desert:
-    defense:
-      resistances:
-        fire: 1
-    traits: []
-    special: []
-    skills: []
-    feat: []
-    action: []
-    reaction: []
-    attack: {}
-  Elemental Heart:
-    action:
-    - Energy Emanation
-    traits: []
-    special: []
-    skills: []
-    feat: []
-    defense: {}
-    action: []
-    reaction: []
-    attack: {}
-  Elfbane:
-    reaction:
-    - Resist Elf Magic
-    action: []
-    defense: {}
-    feat: []
-    skills: []
-    special: []
-    traits: []
-    attack: {}
-  Fey-Touched:
-    traits:
-    - fey
-    magic:
-      choose:
-        cantrip:
-        - [ 'primal' ]
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
   Forge:
     defense:
       resistances:
         fire: 1
     action: []
     attack: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Frilled:
-    special:
-    - Frilled Lizardfolk
-    action:
-    - Threatening Approach
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Gutsy:
-    special:
-    - Gutsy Lucht
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Half-Sil:
-    traits:
-    - half-sil
-    - sildanyar
-    special:
-    - Low-Light Vision
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-  Half-Oruch:
-    traits:
-    - oruch
-    - half-oruch
-    special:
-    - Low-Light Vision
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-  Hillock:
-    rest_HP_bonus: true
-    special:
-    - Hillock Lucht
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Hold-Scarred:
-    ancestry_HP: 12
-    feat:
-    - Diehard
-    action: []
-    attack: {}
-    defense: {}
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Irongut:
-    special:
-    - Irongut Goblin
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Jinxed-egalrin:
-    special:
-    - Jinxed Egalrin
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Jinxed-lucht:
-    action:
-    - Jinx
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Mountainkeeper:
-    magic:
-      innate_spell:
-        cantrip:
-        - 'Disrupt Undead'
-        spell_trad: primal
-    special:
-    - Mountainkeeper Egalrin
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Nomadic:
-    choose:
-      language:
-      - open
-      - open
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Oathkeeper:
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Observant:
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Rainfall:
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Razortooth:
-    attack:
-      Jaws:
-        damage: d6
-        damage_type: P
-        traits:
-        - finesse
-        - unarmed
-    action: []
-    defense: {}
     feat: []
     reaction: []
     skills: []
@@ -399,29 +508,84 @@ pf2e_heritage:
     skills: []
     special: []
     traits: []
-  Runtboss:
-    feat:
-    - Group Coercion
-    special:
-    - Runtboss Arvek
-    action: []
-    attack: {}
-    defense: {}
-    reaction: []
-    skills: []
-    traits: []
-  Sandstrider:
+  Strong-Blooded:
     defense:
       resistances:
-        fire: 1
-    special:
-    - Sandstrider Lizardfolk
+        poison: 1
+    circumstance: true
     action: []
     attack: {}
     feat: []
     reaction: []
     skills: []
+    special: []
     traits: []
+# Oruch Heritages
+  Badlands:
+    traits: []
+    special:
+    - Badlands Oruch
+    skills: []
+    feat: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
+  Deep Oruch:
+    feat:
+    - Terrain Expertise/Underground
+    - Combat Climber
+    traits: []
+    special: []
+    skills: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
+  Hold-Scarred:
+    ancestry_HP: 12
+    feat:
+    - Diehard
+    action: []
+    attack: {}
+    defense: {}
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+  Rainfall:
+    circumstance: true
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []
+    special: []
+    traits: []
+# Sildanyar Heritages
+  Arctic:
+    traits: []
+    defense:
+      resistances:
+        cold: 1
+    circumstance: true
+    special: []
+    skills: []
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+  Cavern:
+    traits: []
+    special:
+    - Darkvision
+    skills: []
+    feat: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
   Seer:
     magic:
       innate_spell:
@@ -439,269 +603,11 @@ pf2e_heritage:
     skills: []
     special: []
     traits: []
-  Sensate:
-    special:
-    - Sensate Gnome
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Shortshanks:
-    feat:
-    - Ride
-    special:
-    - Shortshanks Arvek
-    action: []
-    attack: {}
-    defense: {}
-    reaction: []
-    skills: []
-    traits: []
-  Makari:
-    movement:
-      Swim: 15
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Skilled:
-    skills:
-    - open
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    special: []
-    traits: []
-  Skyborn:
-    special:
-    - Skyborn Egalrin
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Smokeworker:
-    defense:
-      resistances:
-        fire: 1
-    special:
-    - Smokeworker Arvek
-    action: []
-    attack: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Snow:
-    defense:
-      resistances:
-        cold: 1
-    action: []
-    attack: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Steelskin:
-    special:
-    - Steelskin Arvek
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Stormtossed:
-    defense:
-      resistances:
-        electricity: 1
-    special:
-    - Stormtossed Egalrin
-    action: []
-    attack: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Strong-Blooded:
-    defense:
-      resistances:
-        poison: 1
-    circumstance: true
-    action: []
-    attack: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Tailed:
-    feat:
-    - Combat Climber
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Taloned:
-    attack:
-      Talons:
-        damage: d4
-        damage_type: S
-        traits:
-        - agile
-        - finesse
-        - unarmed
-        - versatile_P
-    action: []
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Tiefling:
-    rare: true
-    traits:
-    - tiefling
-    special:
-    - Low-Light Vision
-    change_vision: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-  Treedweller:
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Twilight:
-    special:
-    - Low-Light Vision
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Umbral:
-    special:
-    - Darkvision
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Unbreakable:
-    ancestry_HP: 10
-    special:
-    - Unbreakable Goblin
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Unseen:
-    circumstance: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Versatile:
-    feat:
-    - ancestry
-    action: []
-    attack: {}
-    defense: {}
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Vivacious:
-    defense:
-      resistances:
-        negative: 1
-    action: []
-    attack: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Wellspring:
-    magic:
-      choose:
-        cantrip:
-        - [ 'arcane', 'divine', 'occult' ]
-    change_spell_trad: true
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
   Whisper:
     circumstance: true
     action: []
     attack: {}
     defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    special: []
-    traits: []
-  Wildwood:
-    special:
-    - Wildwood Lucht
-    action: []
-    attack: {}
-    defense: {}
-    feat: []
-    reaction: []
-    skills: []
-    traits: []
-  Wintertouched:
-    defense:
-      resistance:
-        cold: 1
-    action: []
-    attack: {}
     feat: []
     reaction: []
     skills: []
@@ -717,3 +623,70 @@ pf2e_heritage:
     skills: []
     special: []
     traits: []
+# Versatile Heritages
+  Aesa:
+    rare: true
+    traits:
+    - aesa
+    special:
+    - Low-Light Vision
+    change_vision: true
+    action: []
+    attack: {}
+    reaction: []
+    skills: []
+    feat: []
+    defense: {}
+  Ashen One:
+    rare: true
+    traits:
+    - ashen one
+    special:
+    - Low-Light Vision
+    defense: {}
+    change_vision: true
+    skills: []
+    feat: []
+    action: []
+    reaction: []
+    attack: {}
+  Changeling:
+    rare: true
+    traits:
+    - changeling
+    special:
+    - Low-Light Vision
+    skills: []
+    feat: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
+    change_vision: true
+  Dar:
+    rare: true
+    traits:
+    - Dar
+    special:
+    - Low-Light Vision
+    - Negative Healing
+    change_vision: true
+    skills: []
+    feat: []
+    defense: {}
+    action: []
+    reaction: []
+    attack: {}
+  Niasa:
+    rare: true
+    traits:
+    - niasa
+    special:
+    - Low-Light Vision
+    change_vision: true
+    action: []
+    attack: {}
+    defense: {}
+    feat: []
+    reaction: []
+    skills: []

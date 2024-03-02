@@ -74,37 +74,31 @@ website:
     - divider: true
     - title: Files
       route: files
-  - title: The World of Ea
-    menu:
-    - title: World Map
-      route: wiki-page
-      id: theme:world_map
-    - title: Ea's History
-      route: wiki-page
-      id: theme:world_history
-    - title: Timeline
-      route: wiki-page
-      id: theme:timeline
-    - title: Languages of Ea
-      route: wiki-page
-      id: theme:languages
-    - title: Deities
-      route: wiki-page
-      id: theme:deities
-    - title: Regions
-      route: wiki-page
-      id: theme:regions
+#  - title: The World of Ea
+#    menu:
+#    - title: World Map
+#      route: wiki-page
+#      id: theme:world_map
+#    - title: Ea's History
+#      route: wiki-page
+#      id: theme:world_history
+#    - title: Timeline
+#      route: wiki-page
+#      id: theme:timeline
+#    - title: Languages of Ea
+#      route: wiki-page
+#      id: theme:languages
+#    - title: Deities
+#      route: wiki-page
+#      id: theme:deities
+#    - title: Regions
+#      route: wiki-page
+#      id: theme:regions
   - title: System
     menu:
-    - title: Ancestries
+    - title: Playtest Overview
       route: wiki-page
-      id: rules:ancestries
-    - title: Classes
-      route: wiki-page
-      id: rules:classes
-    - title: Feat List
-    - title: Gear List
-    - title: Spells List
+      id: rules:playtest-overview
     - divider: true
     - target: blank
       title: AON PRD <i class="fa fa-external-link-alt" aria-hidden="true">
@@ -218,7 +212,6 @@ website:
   - ".png"
   - ".gif"
   - ".jpeg"
-  auto_wiki_export: true
   website_code_path: "/home/ares/ares-webportal"
   wiki_aliases:
     main: home

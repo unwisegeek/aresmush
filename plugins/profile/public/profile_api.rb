@@ -37,21 +37,20 @@ module AresMUSH
       when 'handle'
         char.handle ? "@#{char.handle.name}" : ""
 
-      when 'ancestry'
-        char.is_admin? ? "" : char.pf2_base_info['ancestry']
+      when 'ancestry', 'charclass', 'heritage'
+        no_info = char.is_admin? || !(char.pf2_base_info) ? true : false
 
-      when 'charclass'
-        char.is_admin? ? "" : char.pf2_base_info['charclass']
-
-      when 'heritage'
-        char.is_admin? ? "" : char.pf2_base_info['heritage']
+        no_info ? "-" : char.pf2_base_info[field_type]
 
       when 'level'
-        char.pf2_level
-        
+        no_info = char.is_admin? || !(char.pf2_base_info) ? true : false
+
+        no_info ? "-" : char.pf2_level
+
       when 'tier'
-        level = char.pf2_level
-        char.is_admin? ? '-' : Pf2e.get_level_tier(level)
+        no_info = char.is_admin? || !(char.pf2_base_info) ? true : false
+
+        no_info ? '-' : Pf2e.get_level_tier(char.pf2_level)
       else
         nil
       end

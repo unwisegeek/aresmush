@@ -15,7 +15,7 @@ module AresMUSH
     attribute :spells_per_day, :type => DataType::Hash, :default => {}
     attribute :spells_prepared, :type => DataType::Hash, :default => {}
     attribute :spells_today, :type => DataType::Hash, :default => {}
-    attribute :tradition, :type => DataType::Hash, :default => { "innate"=>"trained" }
+    attribute :tradition, :type => DataType::Hash, :default => { "innate"=>["innate", "trained"] }
     attribute :prepared_lists, :type => DataType::Hash, :default => {}
     attribute :divine_font
 
@@ -52,7 +52,7 @@ module AresMUSH
     def self.update_magic(char, charclass, info, client, cleanup=false)
       magic = get_create_magic_obj(char)
 
-      if cleanup 
+      if cleanup
         # The cleanup flag is specified when the direction is to remove the magic from the character.
 
         info.each_pair do |key, value|
@@ -90,7 +90,7 @@ module AresMUSH
             rep = magic.repertoire
             rep_c = rep['charclass']
 
-            # Remove any spells already assigned for repertoire. 
+            # Remove any spells already assigned for repertoire.
 
             to_assign['repertoire'].each_pair do |level, item|
               ary = rep[level]
@@ -139,7 +139,7 @@ module AresMUSH
             sb = magic.spellbook
             sb_c = sb['charclass']
 
-            # Remove any spells already assigned. 
+            # Remove any spells already assigned.
 
             to_assign['spellbook'].each_pair do |level, item|
               ary = sb[level]
@@ -167,7 +167,7 @@ module AresMUSH
             spellbook = magic.spellbook
 
             # Initialize spellbook for class if not already present.
-            csb = spellbook[charclass] 
+            csb = spellbook[charclass]
 
             value.each do |level, spell_list|
               list = csb[level]
@@ -182,7 +182,7 @@ module AresMUSH
             spellbook[charclass] = csb
             magic.update(spellbook: spellbook)
           when "signature_spell"
-            # This key means that the character needs to pick a spell from their repertoire as a signature spell. 
+            # This key means that the character needs to pick a spell from their repertoire as a signature spell.
             # Structure of value: { level to pick from => number of spells to add }
             # Use to_assign["signature"]
           when "innate_spell"
@@ -190,7 +190,7 @@ module AresMUSH
 
             ilist = magic.innate_spells
             key = value.delete('name')
-          
+
             ilist[key] = value
 
             magic.update(innate_spells: ilist)
@@ -199,8 +199,8 @@ module AresMUSH
             client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
           end
         end
-      else 
-        # Do this if the direction is to add. 
+      else
+        # Do this if the direction is to add.
         info.each_pair do |key, value|
           case key
           when "spell_abil"
@@ -306,7 +306,7 @@ module AresMUSH
             spellbook[charclass] = csb
             magic.update(spellbook: spellbook)
           when "signature_spell"
-            # This key means that the character needs to pick a spell from their repertoire as a signature spell. 
+            # This key means that the character needs to pick a spell from their repertoire as a signature spell.
             # Structure of value: { level to pick from => number of spells to add }
             # Use to_assign["signature"]
           when "innate_spell"
@@ -314,7 +314,7 @@ module AresMUSH
 
             ilist = magic.innate_spells
             key = value.delete('name')
-          
+
             ilist[key] = value
 
             magic.update(innate_spells: ilist)
@@ -335,7 +335,7 @@ module AresMUSH
       # This should never happen but it keeps the helper from crashing if it does.
       return nil unless magic
 
-      # All this helper does is scrub magic_to_apply for this feat. 
+      # All this helper does is scrub magic_to_apply for this feat.
 
       pending_changes = magic.magic_to_apply
 
@@ -352,9 +352,16 @@ module AresMUSH
       magic = char.magic
       return nil unless magic
 
-      spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+      if charclass == "innate"
+        spell_abil = "Charisma"
+      elsif is_focus
+        spell_abil = get_focus_casting_stat(is_focus)
+      else
+        spell_abil = magic.spell_abil[charclass]
+      end
 
-      prof = magic.tradition[charclass][1]
+      trad = magic.tradition[charclass]
+      prof = trad[1]
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
       abil_mod = Pf2eAbilities.abilmod(
@@ -371,9 +378,16 @@ module AresMUSH
       magic = char.magic
       return nil unless magic
 
-      spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+      if charclass == "innate"
+        spell_abil = "Charisma"
+      elsif is_focus
+        spell_abil = get_focus_casting_stat(is_focus)
+      else
+        spell_abil = magic.spell_abil[charclass]
+      end
 
-      prof = magic.tradition[charclass][1]
+      trad = magic.tradition[charclass]
+      prof = trad[1]
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
       abil_mod = Pf2eAbilities.abilmod(

@@ -219,12 +219,12 @@ module AresMUSH
       end
 
       def features
-        flist = @char.pf2_features.sort.join(", ")
+        @char.pf2_features.sort.join(", ")
       end
 
       def languages
         lang = @char.pf2_lang
-        list = lang.empty? ? "None set." : lang.sort.join(", ")
+        lang.empty? ? "None set." : lang.sort.join(", ")
       end
 
       def base_speed
@@ -358,7 +358,6 @@ module AresMUSH
       def format_profs(name, prof, i)
         fmt_name = "%xh#{name.capitalize}%xn"
         fmt_prof = prof[0].upcase
-        linebreak = i % 4 == 0 ? "%r" : ""
 
         "#{fmt_name}: #{fmt_prof}"
       end
@@ -379,7 +378,7 @@ module AresMUSH
       def format_spell_dc(charclass, trad_info)
         dc = PF2Magic.get_spell_dc(@char, charclass)
         trad = Pf2e.pretty_string(trad_info[0])
-        prof=Pf2e.pretty_string(trad_info[1].slice(0).upcase)
+        prof = Pf2e.pretty_string(trad_info[1].slice(0).upcase)
         atk = PF2Magic.get_spell_attack_bonus(@char, charclass)
 
         "%b%b#{left(charclass,15)}#{left(trad,14)}#{left(prof, 8)}#{left(atk,22)}#{left(dc, 16)}"

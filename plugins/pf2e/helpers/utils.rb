@@ -3,6 +3,7 @@ module AresMUSH
 
     # p can be passed to this method as nil
     def self.get_prof_bonus(char, p="untrained")
+      p = "untrained" unless p
       level = p == "untrained" ? 0 : char.pf2_level
 
       allow_untrained_improv = Global.read_config('pf2e', 'use_untrained_improv')
@@ -15,7 +16,7 @@ module AresMUSH
       end
 
       profs = { "untrained"=>0, "trained"=>2, "expert"=>4, "master"=>6, "legendary"=>8 }
-      bonus = profs[p] + level
+      profs[p] + level
     end
 
     def self.get_linked_attr_mod(char, value, type=nil)
@@ -278,8 +279,8 @@ module AresMUSH
         Roles.remove_role(char, "approved")
       end
 
-      # I am aware of Faraday's suggestion for using .update, but when I am changing many things at once, 
-      # I may as well do one DB write instead of two dozen. 
+      # I am aware of Faraday's suggestion for using .update, but when I am changing many things at once,
+      # I may as well do one DB write instead of two dozen.
 
       char.pf2_baseinfo_locked = false
       char.pf2_abilities_locked = false
@@ -319,12 +320,12 @@ module AresMUSH
       Pf2eHP.factory_default(char)
       Pf2eCombat.factory_default(char)
       PF2Magic.factory_default(char)
- 
+
       char.save
     end
 
     def self.reset_character(char)
-      # This undoes all approvals and takes the character back to the very beginning. 
+      # This undoes all approvals and takes the character back to the very beginning.
 
       if char.is_approved?
         char.update(approval_job: nil)
@@ -382,7 +383,7 @@ module AresMUSH
       # Because Faraday can go fuck a cactus if she thinks I'm typing this ten thousand times.
 
       return enactor unless name
-      
+
       result = ClassTargetFinder.find(name, Character, enactor)
       if (result.found?)
         return result.target

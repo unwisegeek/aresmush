@@ -4,7 +4,7 @@ module AresMUSH
       include CommandHandler
 
       def check_in_chargen
-        return nil if enactor.chargen_stage > 0
+        return nil if enactor.chargen_stage > 0 && !(enactor.is_approved?)
         return t('pf2e.only_in_chargen')
       end
 
@@ -48,7 +48,7 @@ module AresMUSH
         client.emit_success t('pf2e.abil_lock_ok')
 
       end
-      
+
     end
   end
 end

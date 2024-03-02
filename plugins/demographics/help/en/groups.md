@@ -4,12 +4,11 @@ summary: Viewing and setting character groups/affiliations.
 ---
 # Groups
 
-During chargen, you can assign your character to various groups, like faction or department. The specific list will vary by game.
+During chargen, you can assign your character to groups of affiliation. You can more about groups in the [Demographics and Groups Tutorial](/help/demographics_tutorial).
 
-> Learn about groups in the [Demographics and Groups Tutorial](/help/demographics_tutorial).
-  
+Group Commands (in-client):
 `groups` - List all group types.
 `group <type>` - Shows options available for a group type.
 `group/set <group type>=<option>` - Sets your group option for a group type.
 
-> **Tip:** Most games will have shortcuts set up for the different group types.  For example, if there's a faction group there will be a `factions` command to see faction options and a `faction <name>` command to set your faction.
+Currently, Emblem of Ea has two groups: Faith and Region. In your MU client, you can input `group faith` and `group region` to see the Faiths and Regions lists. You can set your character's Faith with `group/set Faith=<faith>`, and you can set your character's Region with `group/set Region=<region>`.

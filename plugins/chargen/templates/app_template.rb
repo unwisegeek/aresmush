@@ -11,8 +11,7 @@ module AresMUSH
       end
 
       def section_title(title)
-        title = " #{title} ".center(78, '-')
-        "%x!%xh#{title}%xH%xn%r"
+        line_with_text(title)
       end
 
       def show_abilities
