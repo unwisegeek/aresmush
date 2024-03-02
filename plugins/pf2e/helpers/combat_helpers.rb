@@ -29,12 +29,12 @@ module AresMUSH
     def self.can_damage_pc?(char, target_list)
 
       encounter = PF2Encounter.active_encounter(char)
-      is_dm = enactor.has_permission?('kill_pc')
+      is_dm = char.has_permission?('kill_pc')
 
       if is_dm
         can_damage_pc = true
       elsif encounter
-        is_organizer = encounter.organizer == enactor.name
+        is_organizer = encounter.organizer == char.name
         participants = encounter.participants.collect { |p| p[1] }
         targets_in_encounter = target_list.all? { |t| participants.include? t }
 
