@@ -28,7 +28,7 @@ module AresMUSH
 
     def self.can_damage_pc?(char, target_list)
 
-      encounter = Pf2e.active_encounter(char)
+      encounter = PF2Encounter.active_encounter(char)
       is_dm = enactor.has_permission?('kill_pc')
 
       if is_dm
