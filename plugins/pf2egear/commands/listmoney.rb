@@ -19,7 +19,7 @@ module AresMUSH
 
       def handle
 
-        char = sPf2e.get_character(self.target, enactor)
+        char = Pf2e.get_character(self.character, enactor)
 
         paginator = Paginator.paginate(char.pf2_money_history, cmd.page, 10)
         if (paginator.out_of_bounds?)
