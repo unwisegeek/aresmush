@@ -330,9 +330,11 @@ module AresMUSH
         magic = PF2Magic.get_create_magic_obj(enactor)
 
         class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
-        subclass_mstats = subclass_features_info.blank? ? {} : subclass_features_info['magic_stats']
+        if subclass_features_info
+          subclass_mstats = subclass_features_info['magic_stats']
 
-        magic_stats = class_mstats.merge(subclass_mstats)
+          magic_stats = class_mstats.merge(subclass_mstats) if subclass_mstats
+        end
 
         if magic_stats.empty?
           client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
