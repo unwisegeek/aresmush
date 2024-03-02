@@ -59,7 +59,7 @@ module AresMUSH
           client.emit_ooc t('pf2e.bad_value_in_list', :items => 'characters', :list => bad_char_list.sort.join(", "))
         end
 
-        client.emit_success t('pf2e.damage_applied_ok', :list => ok_char_list.sort.join(", "))
+        client.emit_success t('pf2e.damage_applied_ok', :list => ok_char_list.sort.join(", "), :amount => self.damage)
 
       end
 
