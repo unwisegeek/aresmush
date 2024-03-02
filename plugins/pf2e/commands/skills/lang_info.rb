@@ -17,7 +17,7 @@ module AresMUSH
         types = %w(common uncommon secret)
 
         return nil if types.include?(self.type)
-        return t('bad_option', :element=>'language type', :options=>types.join(", "))
+        return t('pf2e.bad_option', :element=>'language type', :options=>types.join(", "))
       end
 
       def handle
