@@ -45,7 +45,7 @@ module AresMUSH
 
         taking_money = self.value.negative?
 
-        target_char = Pf2e.get_character(self.target, enactor, client)
+        target_char = Pf2e.get_character(self.target, enactor)
 
         if taking_money
           payer = target_char
