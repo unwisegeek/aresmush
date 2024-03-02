@@ -38,7 +38,7 @@ module AresMUSH
         # Check for the /ndc switch, which has no meaning unless the enactor is a DM or admin.
         # /ndc dictates whether the code invokes the Dead condition.
 
-        is_dc = self.is_ndc ? false : is_dm
+        is_dc = self.is_ndc ? false : enactor.has_permission?("kill_pc")
 
         ok_char_list = []
         bad_char_list = []
