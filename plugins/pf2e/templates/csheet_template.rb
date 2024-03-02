@@ -171,7 +171,7 @@ module AresMUSH
 
         traits = traits.join(", ")
 
-        "#{item_color}#{atk_name}:%xn #{bonus} (#{p_str}) #{damage}\n#{item_color}Traits:%xn #{traits}"
+        "#{item_color}#{atk_name}:%xn #{bonus} (#{p_str}) #{damage}\n#{item_color}Traits:%xn #{traits}%r"
       end
 
       def format_condition(condition, value)

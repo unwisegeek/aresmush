@@ -12,7 +12,7 @@ module AresMUSH
       def check_permissions
         # Any character may view their own; only people who can see alts can see others'.
 
-        return nil if !self.character
+        return nil if !self.target
         return nil if enactor.has_permission?('manage_alts')
         return t('dispatcher.not_allowed')
       end
