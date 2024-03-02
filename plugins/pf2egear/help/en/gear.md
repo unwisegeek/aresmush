@@ -9,6 +9,7 @@ aliases:
 - equip
 - unequip
 - invest
+- use
 ---
 
 # Pathfinder 2E Inventory - Managing Your Gear
@@ -30,7 +31,7 @@ There are six categories of gear in Emblem of Ea's inventory system.
 `gear/equip <category> = <item number>`: Equips the identified item in <category>. (Alias: `unequip`)
 `gear/unequip <category> = <item number>`: Unequips the identified item in <category>. (Alias: `equip`)
 `invest <list>`: Sets a specified list of items for investment at next daily refresh. <list> should be in the format <category>/<number>. Valid for any weapon, armor, or magic item with the _invested_ trait. Note that some magic items are treated as weapons or armor.
-`item/view <category> = <item number>`: See more details about a weapon, armor, shield, or magic item.
+`item/view <category> = <item number>`: See more details about a weapon, armor, shield, or magic item. (Alias: `gear/view`)
 
 Please note that you cannot equip or invest gear that is in a bag, it must be in your main inventory.
 
@@ -41,3 +42,9 @@ These commands are specifically related to managing bags. You must buy a bag bef
 `bag <#>`: View the contents of bag <#>.
 `bag/store <category>/<item number> = <#>`: Stores <item> in <category> from your inventory in bag number <#>. (Alias: `bag/put`)
 `bag/retrieve <category>/<item number> = <#>`: Retrieves <item> in <category> from bag number <#> and places it in your inventory. (Alias: `bag/get`)
+
+## Using Items
+
+Using items in PF2 is not limited to consumables. Not all items can be used. If you think an item should be usable and is not, bring it to the attention of the game admins. 
+
+`use <category> = <item number>[/<option>]`: Uses an item in your inventory. <option> should only be specified if there is more than one possible use for the item, which is true of some weapons and magic items. `item/view` should tell you whether this is the case.
