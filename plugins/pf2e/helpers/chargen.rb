@@ -147,14 +147,32 @@ module AresMUSH
 
     def self.record_checkpoint(char, checkpoint)
       case checkpoint
-      when "info" # Used by commit info
+      when "info", "abilities" # Used by commit info
         to_assign = char.pf2_to_assign
         char.update(pf2_cg_assigned: to_assign)
 
         boosts = char.pf2_boosts_working
         char.update(pf2_boosts: boosts)
-      when "abilities"
+      when "abilities" # Used by commit abilities
+        to_assign = char.pf2_to_assign
+        char.update(pf2_cg_assigned: to_assign)
+
+        boosts = char.pf2_boosts_working
+        char.update(pf2_boosts: boosts)
+
+        char.abilities.each do |ability|
+          cp_state = {}
+          cp_state['base_val'] = ability.base_val
+          cp_state['mod_val'] = false
+          ability.update(checkpoint: cp_state)
+        end
       when "skills"
+        char.skills.each do |skill|
+          cp_state = {}
+          cp_state['prof_level'] = skill.prof_level
+          cp_state['cg_skill'] = true
+          skill.update(checkpoint: cp_state)
+        end
       when "advance"
       else
         return nil

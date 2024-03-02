@@ -7,6 +7,8 @@ module AresMUSH
     attribute :name_upcase
     attribute :prof_level
     attribute :cg_skill, :type => DataType::Boolean
+    attribute :checkpoint, :type=> DataType::Hash, :default => {}
+
     index :name_upcase
 
     before_save :set_upcase_name

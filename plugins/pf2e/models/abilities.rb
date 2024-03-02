@@ -8,6 +8,8 @@ module AresMUSH
     attribute :shortname
     attribute :base_val, :type => DataType::Integer, :default => 10
     attribute :mod_val, :default => false
+    attribute :checkpoint, :type=> DataType::Hash, :default => {}
+
     index :name_upcase
 
     before_save :set_upcase_name

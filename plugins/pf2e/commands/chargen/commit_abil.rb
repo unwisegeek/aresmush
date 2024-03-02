@@ -45,6 +45,8 @@ module AresMUSH
 
         enactor.save
 
+        Pf2e.record_checkpoint(enactor, "abilities")
+
         client.emit_success t('pf2e.abil_lock_ok')
 
       end

@@ -421,12 +421,11 @@ module AresMUSH
         # Put everything together, lock it, record the checkpoint, and save to database
         enactor.pf2_to_assign = to_assign
         enactor.pf2_boosts_working = boosts
-
-        Pf2e.record_checkpoint(enactor, 'info')
-
         enactor.pf2_baseinfo_locked = true
 
         enactor.save
+
+        Pf2e.record_checkpoint(enactor, 'info')
 
         client.emit_success t('pf2e.chargen_committed')
       end
