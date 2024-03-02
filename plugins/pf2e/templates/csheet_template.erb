@@ -9,7 +9,9 @@
 <%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
 
-<%= unarmed_attacks %>
+<% unarmed_attacks.each do |atk| %>
+<%= atk %>
+<% end %>
 
 <% weapons.each do |weapon| %>
 <%= weapon %>

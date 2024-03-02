@@ -97,38 +97,10 @@ module AresMUSH
       end
 
       def unarmed_attacks
-        name = "Fist (Unarmed)"
-        # This is just what you can do with your bare fist.
-        unarmed_prof = combat_stats.weapon_prof['unarmed']
-        prof = Pf2e.get_prof_bonus(@char, unarmed_prof)
-        abil = Pf2eCombat.abilmod_with_finesse(@char)
-        bonus = prof + abil
-
-        # This is the default set of traits for a fist.
-        traits = %w(Agile Finesse Nonlethal Unarmed)
-
-        # Monks' fists count as lethal weapons. Reflect here.
-        if Pf2e.treat_as_charclass?(@char, "Monk")
-          traits = traits.delete 'Nonlethal'
-        end
-
-        traits = traits.join(", ")
-
-        p_str = unarmed_prof[0].upcase
-
-        "#{item_color}#{name}:%xn #{bonus} (#{p_str}), Damage 1d4 B\n#{item_color}Traits:%xn #{traits}"
-      end
-
-      def has_unarmed_specials
-        !(combat_stats.unarmed_attacks.empty?)
-      end
-
-      def unarmed_specials
-
         unarmed_prof = combat_stats.weapon_prof['unarmed']
         list = []
 
-        attack_list = combat_stats.unarmed_attacks.sort
+        attack_list = combat_stats.unarmed_attacks
 
         attack_list.each do |atk, info|
           list << format_unarmed(@char, atk, info, unarmed_prof)
@@ -185,8 +157,17 @@ module AresMUSH
       end
 
       def format_unarmed(char, atk_name, atk_info, unarmed_prof)
+        damage = atk_info['damage'] + atk_info['damage_type']
 
-        # UNFINISHED
+        abilmod = Pf2eCombat.abilmod_with_finesse(char)
+        prof = Pf2e.get_prof_bonus(char, unarmed_prof)
+
+        bonus = abilmod + prof
+        p_str = unarmed_prof[0].upcase
+
+        traits = atk_info['traits'].join(", ")
+
+        "#{item_color}#{atk_name}:%xn #{bonus} (#{p_str})%b#{damage}\n%b%b#{item_color}Traits:%xn #{traits}"
       end
 
       def format_condition(condition, value)
