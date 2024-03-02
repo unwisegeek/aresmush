@@ -25,15 +25,17 @@ module AresMUSH
       Pf2eHP.modify_damage(char, char.pf2_level, true)
 
       # Focus Pool
-      daily_refresh_focus_pool(magic) if magic
+      Pf2e.daily_refresh_focus_pool(magic) if magic
 
       # Reagents
-      daily_refresh_reagents(char)
+      Pf2e.daily_refresh_reagents(char)
 
       # Spells
       Pf2emagic.generate_spells_today(char) if magic
 
       # Handle Swaps
+
+      # Invest items
 
       # Reset revelations
       magic.update(revelation_locked: false) if magic
@@ -49,7 +51,7 @@ module AresMUSH
       char.update(pf2_last_refresh: reset)
     end
 
-    def daily_refresh_reagents(char)
+    def self.daily_refresh_reagents(char)
       # Reagents structure:
       # For alchemists, alchemist: [total, allocated, remaining]
       # For snares, snares: [total, remaining]
@@ -87,7 +89,7 @@ module AresMUSH
 
     end
 
-    def daily_refresh_focus_pool(magic)
+    def self.daily_refresh_focus_pool(magic)
       fp = magic.focus_pool
 
       current = fp['max']
