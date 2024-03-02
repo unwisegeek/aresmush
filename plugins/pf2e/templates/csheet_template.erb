@@ -8,13 +8,11 @@
 <% end %>
 <%= left("#{item_color}Class DC%xn: #{class_dc}",39) -%>
 <%= left("#{item_color}Perception%xn: #{perception}",39) %>
-
-<%= divider %>
+<%= section_line("Unarmed Attacks") %>
 <% unarmed_attacks.each do |atk| %>
 <%= atk %>
 <% end %>
-<%= divider %>
-
+<%= section_line("Weapons") %>
 <% weapons.each do |weapon| %>
 <%= weapon %>
 <% end %>
