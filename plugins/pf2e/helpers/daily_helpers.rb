@@ -22,7 +22,10 @@ module AresMUSH
       magic = char.magic
 
       # Healing
-      Pf2eHP.modify_damage(char, char.pf2_level, true)
+      con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Constitution")).clamp(0,99)
+
+      healing = con_mod * char.pf2_level
+      Pf2eHP.modify_damage(char, healing, true)
 
       # Focus Pool
       Pf2e.daily_refresh_focus_pool(magic) if magic
