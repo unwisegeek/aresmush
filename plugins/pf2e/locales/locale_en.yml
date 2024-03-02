@@ -103,7 +103,7 @@ en:
     lock_abil_first: "This command cannot be used until you have set and committed your ability scores."
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"
-    missing_subclass: "xrYour class requires a specialization, please choose one.%xn"
+    missing_subclass: "%xrYour class requires a specialization, please choose one.%xn"
     missing_subclass_info: "%xrYour specialty requires an additional choice that you have not yet set.%xn"
     msg_cglock: "Your base info is committed. You can now assign abilities."
     msg_cgandabil_lock: "Your base info and abilities are locked. You can now assign skills, languages, feats, etc."
