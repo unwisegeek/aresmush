@@ -245,16 +245,16 @@ pf2e_specialty:
         choice_description: "Color dragon this instinct applies to."
         choice_type: subclass_info
         options:
-        - Black
-        - Blue
-        - Green
-        - Red
-        - White
-        - Brass
-        - Bronze
-        - Copper
-        - Silver
-        - Gold
+          Black:
+          Blue:
+          Green:
+          Red:
+          White:
+          Brass:
+          Bronze:
+          Copper:
+          Silver:
+          Gold:
       anathema:
       - "Cannot let a personal insult slide."
       - "If character respects their dragon type, they may not defy one."
@@ -928,10 +928,10 @@ pf2e_specialty:
         choice_name: Second Trained Skill
         choice_description: Your racket grants Society and one other skill as class skills. Choose the second.
         options:
-        - Arcana
-        - Nature
-        - Occultism
-        - Religion
+          Arcana:
+          Nature:
+          Occultism:
+          Religion:
       key_abil:
       - Dexterity
       - Intelligence
@@ -1207,16 +1207,16 @@ pf2e_specialty:
         choice_name: Dragon Type
         choice_description: Choose the dragon type to which you are linked.
         options:
-        - Brass
-        - Bronze
-        - Copper
-        - Silver
-        - Gold
-        - Black
-        - Blue
-        - Green
-        - Red
-        - White
+          Brass:
+          Bronze:
+          Copper:
+          Silver:
+          Gold:
+          Black:
+          Blue:
+          Green:
+          Red:
+          White:
       chargen:
         magic_stats:
           tradition:
@@ -1278,10 +1278,10 @@ pf2e_specialty:
         choice_name: Elemental Affinity
         choice_description: Choose the element you have an affinity for.
         options:
-        - Fire
-        - Air
-        - Earth
-        - Water
+          Fire:
+          Air:
+          Earth:
+          Water:
       chargen:
         magic_stats:
           tradition:
@@ -1402,11 +1402,11 @@ pf2e_specialty:
         choice_name: Genie Origins
         choice_description: Choose which genie type is in your blood.
         options:
-        - Janni
-        - Djinni
-        - Efreeti
-        - Marid
-        - Shaitan
+          Janni:
+          Djinni:
+          Efreeti:
+          Marid:
+          Shaitan:
       chargen:
         magic_stats:
           tradition:
@@ -2000,8 +2000,8 @@ pf2e_specialty:
         choice_description: Your patron grants you a choice of granted spells.
         choice_type: spell
         options:
-        - Summon Animal
-        - Summon Plant or Fungus
+          Summon Animal:
+          Summon Plant or Fungus:
       advance:
         7:
           magic_stats:
