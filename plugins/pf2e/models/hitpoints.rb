@@ -22,8 +22,8 @@ module AresMUSH
 
       return "---" if !hp
 
-      current = get_current_hp(char)
-      max = get_max_hp(char)
+      current = Pf2eHP.get_current_hp(char)
+      max = Pf2eHP.get_max_hp(char)
       percent = max.zero? ? 0 : (current / max) * 100.floor
       hp_color = "%xg" if percent > 75
       hp_color = "%xc" if percent.between?(50,75)
