@@ -386,7 +386,7 @@ module AresMUSH
         spell_abil = magic.spell_abil[charclass]
       end
 
-      trad = magic.tradition [charclass]
+      trad = magic.tradition[charclass]
       prof = trad[1]
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
