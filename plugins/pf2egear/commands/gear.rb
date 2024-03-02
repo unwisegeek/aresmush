@@ -9,16 +9,22 @@ module AresMUSH
         self.target = trim_arg(cmd.args)
       end
 
-      def check_can_view
-        return nil if !self.target
-        return nil if Global.read_config('pf2e','open_sheets')
-        return nil if enactor.has_permission?("view_sheets")
-        return t('pf2e.cannot_view_sheet')
+      def check_permissions
+        # Any character may view their own; only people who can see alts can see others'.
+
+        return nil if !self.character
+        return nil if enactor.has_permission?('manage_alts')
+        return t('dispatcher.not_allowed')
       end
 
       def handle
 
         char = Pf2e.get_character(self.target, enactor)
+
+        if !char
+          client.emit_failure t('pf2e.not_found')
+          return
+        end
 
         if !(char.pf2_baseinfo_locked)
           client.emit_failure t('pf2e.lock_info_first')
