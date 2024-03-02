@@ -410,5 +410,20 @@ module AresMUSH
 
     end
 
+    def self.treat_as_charclass?(char, charclass, dedication_gets=true)
+      # Determine whether a class' features apply to this character.
+      charclass = charclass.upcase
+
+      return true if char.pf2_base_info['charclass'].upcase == charclass
+
+      if dedication_gets
+        dedication_feat = charclass + "Dedication"
+
+        return true if Pf2e.has_feat?(char, dedication_feat)
+      end
+
+      return false
+    end
+
   end
 end

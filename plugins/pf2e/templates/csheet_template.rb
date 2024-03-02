@@ -97,6 +97,33 @@ module AresMUSH
       end
 
       def unarmed_attacks
+        name = "Fist (Unarmed)"
+        # This is just what you can do with your bare fist.
+        unarmed_prof = combat_stats.weapon_prof['unarmed']
+        prof = Pf2e.get_prof_bonus(@char, unarmed_prof)
+        abil = Pf2eCombat.abilmod_with_finesse(@char)
+        bonus = prof + abil
+
+        # This is the default set of traits for a fist.
+        traits = %w(Agile Finesse Nonlethal Unarmed)
+
+        # Monks' fists count as lethal weapons. Reflect here.
+        if Pf2e.treat_as_charclass?(@char, "Monk")
+          traits = traits.delete 'Nonlethal'
+        end
+
+        traits = traits.join(",")
+
+        p_str = unarmed_prof[0].upcase
+
+        "%b%b#{item_color}#{name}:%xn #{bonus} (#{p_str}), Damage 1d4 B\n%b%b#{item_color}Traits:%xn #{traits}"
+      end
+
+      def has_unarmed_specials
+        !(combat_stats.unarmed_attacks.empty?)
+      end
+
+      def unarmed_specials
 
         unarmed_prof = combat_stats.weapon_prof['unarmed']
         list = []
