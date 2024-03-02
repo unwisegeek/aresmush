@@ -352,12 +352,16 @@ module AresMUSH
       magic = char.magic
       return nil unless magic
 
-      spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+      if charclass == "innate"
+        spell_abil = "Charisma"
+      elsif is_focus
+        spell_abil = get_focus_casting_stat(is_focus)
+      else
+        spell_abil = magic.spell_abil[charclass]
+      end
 
       trad = magic.tradition[charclass]
       prof = trad[1]
-      # Innate spells will default to Charisma.
-      spell_abil = "Charisma" if trad[0] == "innate"
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
       abil_mod = Pf2eAbilities.abilmod(
@@ -374,9 +378,16 @@ module AresMUSH
       magic = char.magic
       return nil unless magic
 
-      spell_abil = is_focus ? get_focus_casting_stat(is_focus) : magic.spell_abil[charclass]
+      if charclass == "innate"
+        spell_abil = "Charisma"
+      elsif is_focus
+        spell_abil = get_focus_casting_stat(is_focus)
+      else
+        spell_abil = magic.spell_abil[charclass]
+      end
 
-      prof = magic.tradition[charclass][1]
+      trad = magic.tradition [charclass]
+      prof = trad[1]
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
       abil_mod = Pf2eAbilities.abilmod(
