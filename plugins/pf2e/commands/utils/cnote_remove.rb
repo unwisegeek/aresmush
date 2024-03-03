@@ -57,7 +57,7 @@ module AresMUSH
 
         char.update(pf2_cnotes: cnotes)
 
-        client.emit_success t('pf2e.cnote_removed')
+        client.emit_success t('pf2e.cnote_removed', :name => note, :char => char.name)
 
       end
     end
