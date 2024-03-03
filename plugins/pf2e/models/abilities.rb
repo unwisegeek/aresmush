@@ -92,6 +92,44 @@ module AresMUSH
       return messages
     end
 
+    def self.cg_lock_abilities(enactor)
+      # Did they do this already?
+      return t('pf2e.cg_locked', :cp => 'abilities') if enactor.pf2_abilities_locked
+
+      # Any issues that would stop them from locking?
+      errors = Pf2eAbilities.abilities_messages(enactor)
+
+      return t('pf2e.abil_issues') if errors
+
+      # Identify anything else they need to set.
+      to_assign = enactor.pf2_to_assign
+
+      open_skills = to_assign['open skills']
+      open_languages = to_assign.has_key?('open languages') ? to_assign['open languages'] : []
+      int_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(enactor, 'Intelligence'))
+
+      int_mod = 0 if int_mod < 1
+
+      # If int_mod is positive, add that many open skills and languages
+
+      if int_mod.positive?
+        ary = []
+        int_extras = ary.fill("open", nil, int_mod)
+
+        to_assign['open skills'] = open_skills + int_extras
+        to_assign['open languages'] = open_languages + int_extras
+
+        enactor.pf2_to_assign = to_assign
+      end
+
+      # Take the key and lock 'em up ./~
+      enactor.pf2_abilities_locked = true
+      enactor.save
+
+      Pf2e.record_checkpoint(enactor, "abilities")
+      return nil
+    end
+
     def self.factory_default(char)
       char.abilities.each do |abil|
         abil.update(base_val: 10)

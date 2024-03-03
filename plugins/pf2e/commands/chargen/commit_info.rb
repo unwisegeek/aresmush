@@ -10,7 +10,7 @@ module AresMUSH
 
       def handle
         if enactor.pf2_baseinfo_locked
-          client.emit_failure t('pf2e.cg_options_locked')
+          client.emit_failure t('pf2e.cg_locked', :cp => 'base options')
           return
         end
 

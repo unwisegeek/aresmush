@@ -30,8 +30,15 @@ module AresMUSH
         return nil
       end
 
+      # This will be implemented when commit test is done.
+      # def check_skill_lock
+        # return t('pf2e.cg_locked', :cp => 'skills') if enactor.pf2_skills_locked
+        # return nil
+      # end
+
       def handle
         ##### VALIDATION SECTION #####
+
         # Verify that there are things to be assigned that this command handles.
 
         skill_types = { 'background'=>'bgskill', 'free'=>'open skills' }
@@ -48,7 +55,9 @@ module AresMUSH
         all_skills = Global.read_config('pf2e_skills').keys
 
         if !all_skills.include?(self.value)
-          client.emit_failure t('pf2e.bad_option', :element=>'skill name', :options=>all_skills.join(", "))
+          # The list is long and spammy. Divert lores into their own list.
+          option_msg = Pf2e.easter_scrub(all_skills).join(", ")
+          client.emit_failure t('pf2e.bad_option', :element=>'skill name', :options=>option_msg)
           return
         end
 

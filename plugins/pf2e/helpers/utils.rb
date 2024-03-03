@@ -335,6 +335,8 @@ module AresMUSH
 
       char.pf2_baseinfo_locked = false
       char.pf2_abilities_locked = false
+      char.pf2_skills_locked = false
+      char.pf2_checkpoint = 'start'
       char.pf2_reset = false
 
       char.pf2_base_info = { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
@@ -423,6 +425,17 @@ module AresMUSH
       end
 
       return false
+    end
+
+    def self.easter_scrub(ary)
+      # This is used to scrub Easter egg options out of any array.
+      # Use for option output to players.
+
+      return ary unless ary.is_a? Array
+
+      scrubs = Global.read_config('pf2e', 'hidden_options') || []
+
+      ary - scrubs
     end
 
   end

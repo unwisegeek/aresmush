@@ -77,6 +77,22 @@ module AresMUSH
       return msgs
     end
 
+    def self.cg_lock_skills(enactor)
+      # Did they do this already?
+      return t('pf2e.cg_locked', :cp => 'skills') if enactor.pf2_skills_locked
+
+      # Any errors that would stop them from locking?
+      errors = Pf2eSkills.skills_messages(enactor)
+
+      # Take the key and lock 'em up ./~
+      return t('pf2e.skill_issues') if errors
+
+      enactor.update(pf2_skills_locked: true)
+
+      Pf2e.record_checkpoint(enactor, "skills")
+      return nil
+    end
+
     def self.factory_default(char)
       char.skills.each do |skill|
         skill.update(prof_level: 'untrained')
