@@ -3,7 +3,7 @@ en:
   pf2e:
     abil_lock_ok: "%xgYour abilities are completed and locked.%xn"
     abil_options_ok: "%xgNo issues detected with your abilities.%xn"
-    abil_issues: "Your abilities are not yet complete. Use cg/review to see what is missing."
+    abil_issues: "Your abilities are not yet complete. Use %x172cg/review%xn to see what is missing."
     ability_too_high: "%xrAt least one of your ability scores is too high. Too high: %{score}%xn"
     add_ok: "You add %{item} to your %{list}."
     admin_no_sheet: "That character is a game admin and does not have a sheet."
@@ -43,7 +43,7 @@ en:
     cannot_find_cginfo: "You must choose %{prereq} before you can see options for %{element}."
     cannot_rest_time: "You can rest again at %{next}."
     cannot_view_sheet: "That character has not granted you permission to view their sheet."
-    cg_abilities_locked: "Your abilities are already locked. If you need to change them, you will need to cg/reset."
+    cg_locked: "Your %{cp} are already locked. If you need to change them, you will need to cg/reset."
     cg_info: "The following options are available for %{element}: %{options}"
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
@@ -153,6 +153,7 @@ en:
 
     show_skills_list: "Your base info grants you %{open} open skills plus these skills: %{defined}"
     skill_options_ok: "%xgNo issues detected with your skills.%xn"
+    skill_issues: "Your skills are not yet complete. Use %x172cg/review%xn to see what is missing."
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."

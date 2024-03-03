@@ -120,7 +120,7 @@ module AresMUSH
           return PF2EncounterEndCmd
         when "restart"
           return PF2EncounterRestartCmd
-        else 
+        else
           return PF2InitiateCombatCmd
         end
       when "tinit"
@@ -164,16 +164,18 @@ module AresMUSH
       when "autorest"
         return PF2AutoDailyPrepCmd
       when "cnote"
-        case cmd.switch 
+        case cmd.switch
         when "add"
           return PF2AddCnoteCmd
         when "remove"
           return PF2RemoveCnoteCmd
-        else 
+        else
           return PF2ViewOneCnoteCmd
         end
       when "cnotes"
         return PF2ViewAllCnotesCmd
+      when "committest"
+        return PF2CommitCmd
       end
 
       nil

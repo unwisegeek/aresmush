@@ -17,7 +17,7 @@ module AresMUSH
 
       def handle
         if enactor.pf2_abilities_locked
-          client.emit_failure t('pf2e.cg_abilities_locked')
+          client.emit_failure t('pf2e.cg_locked', :cp => 'abilities')
           return
         end
 

@@ -335,6 +335,8 @@ module AresMUSH
 
       char.pf2_baseinfo_locked = false
       char.pf2_abilities_locked = false
+      char.pf2_skills_locked = false
+      char.pf2_checkpoint = 'start'
       char.pf2_reset = false
 
       char.pf2_base_info = { 'ancestry'=>"", 'heritage'=>"", 'background'=>"", 'charclass'=>"", "specialize"=>"" }
