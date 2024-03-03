@@ -48,7 +48,9 @@ module AresMUSH
         all_skills = Global.read_config('pf2e_skills').keys
 
         if !all_skills.include?(self.value)
-          client.emit_failure t('pf2e.bad_option', :element=>'skill name', :options=>all_skills.join(", "))
+          # The list is long and spammy. Divert lores into their own list.
+          option_msg = Pf2e.easter_scrub(all_skills).join(", ")
+          client.emit_failure t('pf2e.bad_option', :element=>'skill name', :options=>option_msg)
           return
         end
 

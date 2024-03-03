@@ -2,8 +2,12 @@ module AresMUSH
   class Character
     attribute :pf2_baseinfo_locked, :type => DataType::Boolean
     attribute :pf2_abilities_locked, :type => DataType::Boolean
+    attribute :pf2_skills_locked, :type => DataType::Boolean
+    attribute :pf2_checkpoint
     attribute :pf2_reset, :type => DataType::Boolean
     attribute :advancing, :type => DataType::Boolean
+
+    # Used for daily refresh
     attribute :pf2_last_refresh, :type => DataType::Time
     attribute :pf2_auto_refresh, :type => DataType::Boolean
 

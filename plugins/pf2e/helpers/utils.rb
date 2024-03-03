@@ -425,5 +425,16 @@ module AresMUSH
       return false
     end
 
+    def self.easter_scrub(ary)
+      # This is used to scrub Easter egg options out of any array.
+      # Use for option output to players.
+
+      return ary unless ary.is_a? Array
+
+      scrubs = Global.read_config('pf2e', 'hidden_options') || []
+
+      ary - scrubs
+    end
+
   end
 end

@@ -67,6 +67,8 @@ pf2e:
     Wounded: '%xy'
     Drained: '%xh%xx'
     Doomed: '%x172'
+  hidden_options:
+  - Fey Bullshit Lore
   permissions:
     modify_sheet: Modify character sheets.
     view_sheets: View other people's character sheets (if sheets are closed).
