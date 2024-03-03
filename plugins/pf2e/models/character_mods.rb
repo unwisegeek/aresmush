@@ -51,12 +51,12 @@ module AresMUSH
     before_delete :delete_pf2
 
     def delete_pf2
-      self.abilities&.each { |a| a.delete } if self.abilities
-      self.skills&.each { |s| s.delete } if self.skills
-      self.hp&.delete
-      self.combat&.delete
-      self.magic&.delete
-      self.encounters&.delete
+      self.abilities.each { |a| a.delete } if self.abilities
+      self.skills.each { |s| s.delete } if self.skills
+      self.hp.delete if self.hp
+      self.combat.delete if self.combat
+      self.magic.delete if self.magic
+      self.encounters.each {|e| e.delete self}
     end
 
   end
