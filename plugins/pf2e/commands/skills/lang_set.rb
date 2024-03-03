@@ -74,7 +74,7 @@ module AresMUSH
           loc = open_languages.index("open")
 
           if !(loc)
-            client.emit_failure t('pf2e.no_free', :element=>self.type)
+            client.emit_failure t('pf2e.no_free', :element=>'open languages')
             return
           end
 
