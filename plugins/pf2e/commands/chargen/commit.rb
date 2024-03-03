@@ -38,13 +38,20 @@ module AresMUSH
       def handle
         case self.commit
         when 'info'
-          client.emit_ooc "You got to the commit info stuff."
+          commit = Pf2e.cg_lock_base_options(enactor, client)
         when 'abilities'
-          client.emit_ooc "You got to the commit abilities stuff."
+          commit = Pf2eAbilities.cg_lock_abilities(enactor)
         when 'skills'
-          client.emit_ooc "You got to the commit skills stuff."
+          commit = Pf2eSkills.cg_lock_skills(enactor, client)
         else
           client.emit_failure "To go back to the beginning, type %x172cg/reset%xn."
+        end
+
+        # Commit will return a string if it went sideways and nil if it's okay.
+        if commit
+          client.emit_failure t('pf2e.cg_commit_failed', :msg => commit, :option => self.commit)
+        else
+          client.emit_success t('pf2e.cg_commit_ok', :option => self.commit)
         end
       end
 

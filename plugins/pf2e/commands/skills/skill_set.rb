@@ -30,8 +30,15 @@ module AresMUSH
         return nil
       end
 
+      # This will be implemented when commit test is done.
+      # def check_skill_lock
+        # return t('pf2e.cg_locked', :cp => 'skills') if enactor.pf2_skills_locked
+        # return nil
+      # end
+
       def handle
         ##### VALIDATION SECTION #####
+
         # Verify that there are things to be assigned that this command handles.
 
         skill_types = { 'background'=>'bgskill', 'free'=>'open skills' }
