@@ -24,7 +24,7 @@ module AresMUSH
 
       current = get_current_hp(char)
       max = get_max_hp(char)
-      percent = max.zero? ? 0 : (current / max) * 100.floor
+      percent = max.zero? ? 0 : ((current.to_f / max.to_f) * 100).to_i
       hp_color = "%xg" if percent > 75
       hp_color = "%xc" if percent.between?(50,75)
       hp_color = "%xy" if percent.between?(25,50)
@@ -62,7 +62,7 @@ module AresMUSH
 
       # Deduct from temp_hp first, if any, overflow goes to HP.
 
-      temp_hp = hp_obj.temp_hp
+      temp_hp = hp.temp_hp
 
       # Amount expects an integer, conversion not required.
 
@@ -78,16 +78,15 @@ module AresMUSH
         new_damage = existing_damage + extra_damage
 
         # Check to see if this damage puts the character in Dying.
-        if (new_damage >= max_hp)
+        if (new_damage >= max_hp && is_dc)
           hp.damage = max_hp
-          previous_value = char.pf2e_conditions['Dying'] ? Pf2e.get_condition_value(char, 'Dying') : 1
+          dying_value = char.pf2e_conditions['Dying'] ? Pf2e.get_condition_value(char, 'Dying') : 1
           wounded_value = Pf2e.get_condition_value(char, 'Wounded')
-          dying_value = get_dying_value(char)
           doomed_value = Pf2e.get_condition_value(char, 'Doomed')
 
           if dying_value >= (4 - doomed_value)
             # If this is true, the character is dead.
-            if is_dm
+            if is_dc
               char.update(pf2_is_dead: true)
             end
 
@@ -106,7 +105,7 @@ module AresMUSH
     end
 
     def self.get_hp_obj(char)
-      obj = char.hp
+      char.hp
     end
 
     def self.get_max_hp(char)
@@ -119,7 +118,7 @@ module AresMUSH
       # For right now, until I do conditions, it's just 0
       drain_value = 0
 
-      max_hp = (charclass_hp + con_mod - drain_value) * level + ancestry_hp
+      (charclass_hp + con_mod - drain_value) * level + ancestry_hp
     end
 
     def self.get_current_hp(char)
@@ -127,7 +126,7 @@ module AresMUSH
       max_hp = get_max_hp(char)
       damage = hp.damage
 
-      cur_hp = max_hp - damage
+      max_hp - damage
     end
 
     def self.factory_default(char)

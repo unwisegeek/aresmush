@@ -2,10 +2,12 @@ module AresMUSH
   module Pf2e
 
     def self.do_daily_prep(char)
-      return t('pf2e.not_approved') unless char.is_approved? 
+      return t('pf2e.not_approved') unless char.is_approved?
 
       # Check for 24h since last refresh
       last_refresh = char.pf2_last_refresh
+      # The first time a character rests, this value is not set, so check for that.
+      last_refresh = Time.at(0) unless last_refresh
       current_time = Time.now
 
       elapsed = (current_time - last_refresh).to_i
@@ -20,7 +22,8 @@ module AresMUSH
       magic = char.magic
 
       # Healing
-      Pf2eHP.modify_damage(char, char.pf2_level, true)
+      healing = get_daily_healing(char)
+      Pf2eHP.modify_damage(char, healing, true)
 
       # Focus Pool
       daily_refresh_focus_pool(magic) if magic
@@ -28,17 +31,27 @@ module AresMUSH
       # Reagents
       daily_refresh_reagents(char)
 
-      # Spells 
+      # Spells
       Pf2emagic.generate_spells_today(char) if magic
 
-      # Handle Swaps 
+      # Handle Swaps
 
-      # Reset revelations 
+      # Invest items
+
+      # Reset revelations
       magic.update(revelation_locked: false) if magic
 
       char.update(pf2_last_refresh: Time.now)
 
       return nil
+    end
+
+    def self.get_daily_healing(char)
+      con_mod = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, "Constitution")).clamp(0,99)
+
+      bonuses = 0
+
+      ((con_mod * char.pf2_level) + bonuses).clamp(1,999)
     end
 
     def self.do_refresh(char)
@@ -47,8 +60,8 @@ module AresMUSH
       char.update(pf2_last_refresh: reset)
     end
 
-    def daily_refresh_reagents(char)
-      # Reagents structure: 
+    def self.daily_refresh_reagents(char)
+      # Reagents structure:
       # For alchemists, alchemist: [total, allocated, remaining]
       # For snares, snares: [total, remaining]
 
@@ -85,7 +98,7 @@ module AresMUSH
 
     end
 
-    def daily_refresh_focus_pool(magic)
+    def self.daily_refresh_focus_pool(magic)
       fp = magic.focus_pool
 
       current = fp['max']

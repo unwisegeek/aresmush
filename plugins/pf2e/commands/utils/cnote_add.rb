@@ -7,10 +7,10 @@ module AresMUSH
 
       def parse_args
         # Argument pattern: [character/]notename=text
-        # I don't use Faraday's parser because the first argument is optional, which makes hers break. 
-        # Instead, I do it myself. args should resolve to a flat array. 
+        # I don't use Faraday's parser because the first argument is optional, which makes hers break.
+        # Instead, I do it myself. args should resolve to a flat array.
 
-        args = split(split(cmd.args,"="),"/").flatten
+        args = cmd.args ? trimmed_list_arg(cmd.args,"/").map {|e| e.split("=")}.flatten : []
 
         char_specified = args[2] ? true : false
 
@@ -23,7 +23,7 @@ module AresMUSH
         [ self.notename, self.text ]
       end
 
-      def 
+      def
 
       def check_permissions
         # Any character may modify their own; only people who can see alts can modify others'.
@@ -44,11 +44,11 @@ module AresMUSH
           return
         end
 
-        # No validation for presence of keyname deemed necessary, onus is on the user not to duplicate keys. 
+        # No validation for presence of keyname deemed necessary, onus is on the user not to duplicate keys.
         # They may do so intentionally for purposes of updating the key, if desired.
 
         cnotes = char.pf2_cnotes
-        
+
         client.emit_ooc t('pf2e.cnote_updated', name => self.notename) if cnotes[self.notename]
 
         cnotes[self.notename] = self.text

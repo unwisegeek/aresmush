@@ -11,7 +11,9 @@ aliases:
 Some classes are required to, or may wish to, record spells in a spellbook.
 
 `prepare <caster class>[/<level>] = <spell name>`: Prepares `<spell name>` at `<level>`. Preparing at a higher level than a spell's base level heightens the spell to that level. See the PRD rules on heightening for how this works.
-`unprepare <caster class>[/<level>] = <spell name>`: Removes a spell from your prepared list.
+`unprepare <caster class>[/<level>] = <spell name>`: Removes `<spell name>` from your prepared list.
+`prepare <caster class>/<cantrip> = <spell name>`: Prepares the cantrip `<spell name>`.
+`unprepare <caster class>/<cantrip> = <spell name>`: Removes the cantrip `<spell name>` from your prepared list.
 `prepare/list`: Shows your currently prepared spell list. (Alias: `prepared`)
 
 Prepared casters may also choose to prepare standard sets, or many spells at once.

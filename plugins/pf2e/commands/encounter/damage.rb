@@ -3,7 +3,7 @@ module AresMUSH
     class PF2DamagePlayerCmd
       include CommandHandler
 
-      attr_accessor :target, :damage
+      attr_accessor :target, :damage, :is_ndc
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
@@ -38,7 +38,7 @@ module AresMUSH
         # Check for the /ndc switch, which has no meaning unless the enactor is a DM or admin.
         # /ndc dictates whether the code invokes the Dead condition.
 
-        is_dc = self.is_ndc ? false : is_dm
+        is_dc = self.is_ndc ? false : enactor.has_permission?("kill_pc")
 
         ok_char_list = []
         bad_char_list = []
@@ -47,7 +47,7 @@ module AresMUSH
           char = ClassTargetFinder.find(item, Character, enactor)
 
           if (char.found?)
-            Pf2eHP.modify_damage(char.target, self.damage, is_dc)
+            Pf2eHP.modify_damage(char.target, self.damage, false, is_dc)
             ok_char_list << char.target.name
             Login.notify char.target,:pf2_damage, t('pf2e.you_took_damage', :amount => self.damage, :source => enactor.name), 0
           else
@@ -59,7 +59,7 @@ module AresMUSH
           client.emit_ooc t('pf2e.bad_value_in_list', :items => 'characters', :list => bad_char_list.sort.join(", "))
         end
 
-        client.emit_success t('pf2e.damage_applied_ok', :list => ok_char_list.sort.join(", "))
+        client.emit_success t('pf2e.damage_applied_ok', :list => ok_char_list.sort.join(", "), :amount => self.damage)
 
       end
 
