@@ -24,7 +24,8 @@ module AresMUSH
         checkpoints = %w(start info abilities skills)
 
         index = checkpoints.index(self.commit)
-        syntax_msg = t('pf2e.bad_option', :element => 'commit', :options => checkpoints.shift(1).join(", "))
+        options = (checkpoints - ['start']).join(", ")
+        syntax_msg = t('pf2e.bad_option', :element => 'commit', :options => options)
         return syntax_msg unless index
 
         # Enforce checkpoint order.
