@@ -21,7 +21,7 @@ module AresMUSH
 
       def check_can_commit
         # Is the argument valid?
-        checkpoints = %w(start info abilities skills)
+        checkpoints = %w{start info abilities skills}
 
         index = checkpoints.index(self.commit)
         syntax_msg = t('pf2e.bad_option', :element => 'commit', :options => checkpoints.delete('start').join(", "))
