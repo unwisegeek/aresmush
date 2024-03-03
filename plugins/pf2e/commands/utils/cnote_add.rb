@@ -10,15 +10,17 @@ module AresMUSH
         # I don't use Faraday's parser because the first argument is optional, which makes hers break.
         # Instead, I do it myself. args should resolve to a flat array.
 
-        args = cmd.args&.split("/").map {|e| e.split("=")}.flatten
+        args = trimmed_list_arg(cmd.args,("/"))
 
         args = [] unless args
 
-        char_specified = args[2] ? true : false
+        arg_list = args.map {|e| e.split("=")}.flatten
 
-        self.character = char_specified ? downcase_arg(args[0]) : nil
-        self.notename = char_specified ? titlecase_arg(args[1]) : titlecase_arg(args[0])
-        self.text = char_specified ? trim_arg(args[2]) : trim_arg(args[1])
+        char_specified = arg_list[2] ? true : false
+
+        self.character = char_specified ? downcase_arg(arg_list[0]) : nil
+        self.notename = char_specified ? titlecase_arg(arg_list[1]) : titlecase_arg(arg_list[0])
+        self.text = char_specified ? trim_arg(arg_list[2]) : trim_arg(arg_list[1])
       end
 
       def required_args
