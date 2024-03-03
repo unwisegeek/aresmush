@@ -412,7 +412,7 @@ module AresMUSH
       magic.spells_per_day = {}
       magic.spells_prepared = {}
       magic.spells_today = {}
-      magic.tradition = {}
+      magic.tradition = { "innate"=>["innate", "trained"] }
       magic.prepared_lists = {}
 
       magic.save
