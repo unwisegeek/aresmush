@@ -10,7 +10,7 @@ module AresMUSH
         # I don't use Faraday's parser because the first argument is optional, which makes hers break.
         # Instead, I do it myself. args should resolve to a flat array.
 
-        args = cmd.args ? trimmed_list_arg(cmd.args,("/")).map {|e| e.split("=")}.flatten : []
+        args = cmd.args ? trimmed_list_arg(cmd.args,"/").map {|e| e.split("=")}.flatten : []
 
         char_specified = args[2] ? true : false
 

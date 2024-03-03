@@ -31,7 +31,7 @@ module AresMUSH
 
         level = self.spell_level.zero? ? "cantrip" : self.spell_level
 
-        msg = Pf2emagic.select_spell(char, self.caster_class, level, self.old_spell, self.new_spell, true)
+        msg = Pf2emagic.select_spell(enactor, self.caster_class, level, self.old_spell, self.new_spell, true)
 
         if msg
           client.emit_failure msg
