@@ -53,7 +53,7 @@ module AresMUSH
 
         note = note_list.first
 
-        cnotes.delete[note]
+        cnotes.delete(note)
 
         char.update(pf2_cnotes: cnotes)
 
