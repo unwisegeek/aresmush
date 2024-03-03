@@ -1875,7 +1875,6 @@ pf2e_class:
       - open
       - open
       - open
-      - open
       combat_stats:
         weapon_prof:
           simple: trained
