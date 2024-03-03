@@ -9,11 +9,11 @@ aliases:
 
 # Pathfinder 2E Chargen - Skills
 
-Next, choose your open skills. Your choice of ancestry, heritage, character class, and background will have offered you a set of base skills. Things to remember:
+In this step, you will choose your open skills. Your choice of ancestry, heritage, character class, and background have already given you a set of skills, but depending on your Intelligence score modifier, you may get more skills to assign. Here are some helpful tips to keep in mind:
 
-1. Some backgrounds will offer a choice of skills. You may want to make this selection before you assign your open skills, so that you do not duplicate skills.
-2. If you get the same skill from multiple sources, you will still only be trained in it at chargen. Instead, you will be able to select another open skill to replace the duplicate.
-3. Lores (knowledges) count towards your skills pool, but will be chosen separately (see below).
+1. Some backgrounds offer a choice of skills. If you chose a background with a choice of skills, you may want to make this selection before you assign your open skills, so that you do not duplicate or double-up on skills.
+2. If you get the same skill from multiple sources, such as from your background and your class, you must pick another skill to become trained in. 
+3. Lore skills count as skills.
 
 ## Commands
 
