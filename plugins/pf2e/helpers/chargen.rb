@@ -179,5 +179,9 @@ module AresMUSH
       end
     end
 
+    def self.restore_checkpoint(char, checkpoint)
+
+    end
+
   end
 end
