@@ -1062,8 +1062,7 @@ pf2e_class:
       charclass:
       - Wild Empathy
       feat:
-        general:
-        - Shield Block
+      - Shield Block
       reaction:
       - Shield Block
       magic_stats:
@@ -1294,14 +1293,11 @@ pf2e_class:
           reflex: expert
           will: trained
       skills:
-      - Acrobatics
-      - Athletics
       - open
       - open
       - open
       feat:
-        general:
-        - Shield Block
+      - Shield Block
       reaction:
       - Attack of Opportunity
       - Shield Block
