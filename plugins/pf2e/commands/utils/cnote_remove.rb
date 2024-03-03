@@ -19,7 +19,7 @@ module AresMUSH
         [ self.notename ]
       end
 
-      def 
+      def
 
       def check_permissions
         # Any character may view their own; only people who can see alts can see others'.
@@ -43,8 +43,8 @@ module AresMUSH
         # This time, I need to make sure that the notename in question exists and is unique.
 
         cnotes = char.pf2_cnotes
-        
-        note_list = cnotes.keys.select { |note| note.downcase = self.notename }
+
+        note_list = cnotes.keys.select { |note| note.downcase == self.notename }
 
         unless note_list.size == 1
           client.emit_failure t('pf2e.not_unique')
