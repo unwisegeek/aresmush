@@ -107,7 +107,7 @@ module AresMUSH
           # Initial/advanced/greater bloodline spells are focus spells and handled by that key.
           # Expected structure of value: { <level> => <spell> }
           repertoire = magic.repertoire
-          rep_for_class = repertoire[charclass]
+          rep_for_class = repertoire[charclass] || {}
 
           value.each_pair do |level, spell|
             list = rep_for_class[level] || []
