@@ -986,6 +986,8 @@ pf2e_specialty:
         reaction: []
         feat: []
         magic_stats: {}
+      key_abil:
+        - Dexterity
   Sorcerer:
     Aberrant:
       chargen:
