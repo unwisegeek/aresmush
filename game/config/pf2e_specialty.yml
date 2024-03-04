@@ -995,8 +995,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Daze
             1: Spider Sting
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Tentacular Limbs
         skills:
         - Intimidation
@@ -1053,8 +1053,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Light
             1: Heal
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Angelic Halo
         skills:
         - Diplomacy
@@ -1111,8 +1111,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Acid Splash
             1: Fear
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Glutton's Law
         skills:
         - Intimidation
@@ -1169,8 +1169,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Produce Flame
             1: Charm
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Diabolic Edict
         skills:
         - Deception
@@ -1241,8 +1241,9 @@ pf2e_specialty:
           repertoire:
             cantrip: Shield
             1: True Strike
-          bloodline:
-          - Dragon Claws
+          focus_spell:
+            bloodline:
+            - Dragon Claws
         skills:
         - Arcana
         - Intimidation
@@ -1306,8 +1307,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Produce Flame
             1: Burning Hands
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Elemental Toss
         skills:
         - Nature
@@ -1364,8 +1365,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Ghost Sound
             1: Charm
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Faerie Dust
         skills:
         - Nature
@@ -1431,8 +1432,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Detect Magic
             1: Illusory Disguise
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Genie's Veil
         skills:
         - Arcana
@@ -1486,8 +1487,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Daze
             1: Illusory Disguise
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Jealous Hex
         skills:
         - Occultism
@@ -1544,8 +1545,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Detect Magic
             1: Magic Missile
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Ancestral Memories
         skills:
         - Arcana
@@ -1602,8 +1603,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Tanglefoot
             1: Charm
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Nymph's Token
         skills:
         - Diplomacy
@@ -1660,8 +1661,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Disrupt Undead
             1: Heal
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Sepulchral Mask
         skills:
         - Intimidation
@@ -1718,8 +1719,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Chill Touch
             1: Grim Tendrils
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Dim the Light
         skills:
         - Occultism
@@ -1776,8 +1777,8 @@ pf2e_specialty:
           repertoire:
             cantrip: Chill Touch
             1: Harm
-          bloodline:
-            repertoire:
+          focus_spell:
+            bloodline:
             - Undeath's Blessing
         skills:
         - Intimidation
