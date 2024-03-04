@@ -80,7 +80,7 @@ module AresMUSH
           spells_per_day[charclass] = spd_for_class
 
           magic.update(spells_per_day: spells_per_day)
-        when "addrepertoire"
+        when "repertoire"
           # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
           # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
           # for the repertoire.
@@ -103,7 +103,7 @@ module AresMUSH
           new_max_pool = Pf2emagic.get_max_focus_pool(char, value)
           pool["max"] = new_max_pool
           magic.update(focus_pool: pool)
-        when "repertoire"
+        when "addrepertoire"
           # This key is called for spells added to the repertoire by bloodlines, mysteries, etc.
           # Initial/advanced/greater bloodline spells are focus spells and handled by that key.
           # Expected structure of value: { <level> => <spell> }
@@ -184,8 +184,8 @@ module AresMUSH
           to_assign["spellbook"] = assignment_list
 
           char.update(pf2_to_assign: to_assign)
-        when "addspell"
-          # Addspell means to add a specific spell to the spellbook. Adding spells to be chosen
+        when "addspellbook"
+          # Addspellbook means to add a specific spell to the spellbook. Adding spells to be chosen
           # should be the "spellbook" key.
           # Structure of value for addspell key: { level => [ spell ] }
 

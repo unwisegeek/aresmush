@@ -385,16 +385,15 @@ module AresMUSH
       combat.update(key_abil: key_ability) if key_ability.is_a?(String)
 
       # Collate and record unarmed attacks. Everyone starts with a fist.
-      # A monk's fist does lethal damage, but everyone else is nonlethal with a fist.
+      # A monk's fist does 1d6, everyone else's does 1d4.
 
-      fist_traits = %w(agile finesse unarmed)
-      fist_traits << 'nonlethal' unless Pf2e.treat_as_charclass?(enactor, "Monk")
+      fist_damage = Pf2e.treat_as_charclass?(enactor, "Monk") ? '1d6' : '1d4'
 
       unarmed_attacks = {
         'Fist' => {
-            'damage' => '1d4',
+            'damage' => fist_damage,
             'damage_type' => 'B',
-            'traits' => fist_traits.sort
+            'traits' => %w(agile finesse nonlethal unarmed)
         }
       }
 
