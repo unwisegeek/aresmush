@@ -49,299 +49,190 @@ module AresMUSH
       return list
     end
 
-    def self.update_magic(char, charclass, info, client, cleanup=false)
+    def self.update_magic(char, charclass, info, client)
       magic = get_create_magic_obj(char)
 
-      if cleanup
-        # The cleanup flag is specified when the direction is to remove the magic from the character.
-
-        info.each_pair do |key, value|
-          case key
-          when "spell_abil"
-            spell_abil = magic.spell_abil
-            spell_abil.delete charclass
-            magic.update(spell_abil: spell_abil)
-          when "tradition"
-            # magic.tradition structure: { charclass => [ trad, prof ] }
-            tradition = magic.tradition
-            value.each_pair do |trad, prof|
-              tradition.delete charclass
-            end
-
-            magic.update(tradition: tradition)
-          when "spells_per_day"
-            # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
-            spells_per_day = magic.spells_per_day
-
-            value.each_pair do |level, num|
-              new_num = (spells_per_day[level] - num).clamp(0,999)
-              spells_per_day.delete(level) if new_num.zero?
-            end
-
-            magic.update(spells_per_day: spells_per_day)
-          when "focus_pool"
-            pool = magic.focus_pool
-
-            new_max_pool = Pf2emagic.get_max_focus_pool(char, -value)
-            pool["max"] = new_max_pool
-            magic.update(focus_pool: pool)
-          when "repertoire"
-            to_assign = char.pf2_to_assign
-            rep = magic.repertoire
-            rep_c = rep['charclass']
-
-            # Remove any spells already assigned for repertoire.
-
-            to_assign['repertoire'].each_pair do |level, item|
-              ary = rep[level]
-
-              item.each do |s|
-                next if s == "open"
-                ary.delete s
-              end
-
-              rep_c[level] = ary
-
-            end
-
-            rep = rep_c['charclass']
-            magic.update(repertoire: rep)
-
-            to_assign.delete "repertoire"
-
-            char.update(pf2_to_assign: to_assign)
-          when "focus_spell"
-            # focus spell structure: { "devotion" => [spell, spell, spell], "revelation" => [spell] }
-
-            focus_spells = magic.focus_spells
-
-            value.each_pair do |fstype, spell_list|
-              fs_by_type = focus_spells[fstype] ? focus_spells[fstype] : []
-              fs_by_type = (fs_by_type - spell_list).uniq
-              focus_spells[fstype] = fs_by_type
-            end
-
-            magic.update(focus_spells: focus_spells)
-          when "focus_cantrip"
-            # Structure identical to focus_spells, kept separate because they are cast differently.
-
-            focus_cantrips = magic.focus_cantrips
-
-            value.each_pair do |fstype, spell_list|
-              fs_by_type = focus_cantrips[fstype] ? focus_cantrips[fstype] : []
-              fs_by_type = (fs_by_type - spell_list).uniq
-              focus_cantrips[fstype] = fs_by_type
-            end
-
-            magic.update(focus_cantrips: focus_cantrips)
-          when "spellbook"
-            to_assign = char.pf2_to_assign
-            sb = magic.spellbook
-            sb_c = sb['charclass']
-
-            # Remove any spells already assigned.
-
-            to_assign['spellbook'].each_pair do |level, item|
-              ary = sb[level]
-
-              item.each do |s|
-                next if s == "open"
-                ary.delete s
-              end
-
-              sb_c[level] = ary
-
-            end
-
-            sb = sb_c['charclass']
-            magic.update(spellbook: sb)
-
-            to_assign.delete "spellbook"
-
-            char.update(pf2_to_assign: to_assign)
-          when "addspell"
-            # Addspell means to add a specific spell to the spellbook. Adding spells to be chosen
-            # should be the "spellbook" key.
-            # Structure of value for addspell key: { level => [ spell ] }
-
-            spellbook = magic.spellbook
-
-            # Initialize spellbook for class if not already present.
-            csb = spellbook[charclass]
-
-            value.each do |level, spell_list|
-              list = csb[level]
-
-              spell_list.each do |item|
-                list.delete item
-              end
-
-              csb[level] = list
-            end
-
-            spellbook[charclass] = csb
-            magic.update(spellbook: spellbook)
-          when "signature_spell"
-            # This key means that the character needs to pick a spell from their repertoire as a signature spell.
-            # Structure of value: { level to pick from => number of spells to add }
-            # Use to_assign["signature"]
-          when "innate_spell"
-            # Structure of innate spells: {spell name => { 'level' => <level>, 'tradition' => tradition, 'cast_stat' => cast_stat}}
-
-            ilist = magic.innate_spells
-            key = value.delete('name')
-
-            ilist[key] = value
-
-            magic.update(innate_spells: ilist)
-
-          else
-            client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
+      info.each_pair do |key, value|
+        case key
+        when "spell_abil"
+          spell_abil = magic.spell_abil
+          spell_abil[charclass] = value
+          magic.update(spell_abil: spell_abil)
+        when "tradition"
+          # magic.tradition structure: { charclass => [ trad, prof ] }
+          tradition = magic.tradition
+          value.each_pair do |trad, prof|
+            tradition[charclass] = [ trad, prof ]
           end
-        end
-      else
-        # Do this if the direction is to add.
-        info.each_pair do |key, value|
-          case key
-          when "spell_abil"
-            spell_abil = magic.spell_abil
-            spell_abil[charclass] = value
-            magic.update(spell_abil: spell_abil)
-          when "tradition"
-            # magic.tradition structure: { charclass => [ trad, prof ] }
-            tradition = magic.tradition
-            value.each_pair do |trad, prof|
-              tradition[charclass] = [ trad, prof ]
-            end
 
-            magic.update(tradition: tradition)
-          when "spells_per_day"
-            # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
-            spells_per_day = magic.spells_per_day
-            spd_for_class = spells_per_day[charclass] ? spells_per_day[charclass] : {}
+          magic.update(tradition: tradition)
+        when "spells_per_day"
+          # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
+          # This key grants spells per day.
 
-            value.each_pair do |level, num|
-              spd_for_class[level] = num
-            end
+          spells_per_day = magic.spells_per_day
+          spd_for_class = spells_per_day[charclass] ? spells_per_day[charclass] : {}
 
-            spells_per_day[charclass] = spd_for_class
-
-            magic.update(spells_per_day: spells_per_day)
-          when "focus_pool"
-            pool = magic.focus_pool
-
-            new_max_pool = Pf2emagic.get_max_focus_pool(char, value)
-            pool["max"] = new_max_pool
-            magic.update(focus_pool: pool)
-          when "repertoire"
-            # Spells need to be chosen, redirect to to_assign
-
-            to_assign = char.pf2_to_assign
-
-            assignment_list = {}
-            value.each_pair do |level, num|
-              ary = Array.new(num.to_i, "open")
-              assignment_list[level] = ary
-            end
-
-            to_assign["repertoire"] = assignment_list
-
-            char.update(pf2_to_assign: to_assign)
-          when "focus_spell"
-            # focus spell structure: { "devotion" => [spell, spell, spell], "revelation" => [spell] }
-
-            focus_spells = magic.focus_spells
-
-            value.each_pair do |fstype, spell_list|
-              fs_by_type = focus_spells[fstype] ? focus_spells[fstype] : []
-              fs_by_type = (fs_by_type + spell_list).uniq
-              focus_spells[fstype] = fs_by_type
-            end
-
-            magic.update(focus_spells: focus_spells)
-          when "focus_cantrip"
-            # Structure identical to focus_spells, kept separate because they are cast differently.
-
-            focus_cantrips = magic.focus_cantrips
-
-            value.each_pair do |fstype, spell_list|
-              fs_by_type = focus_cantrips[fstype] ? focus_cantrips[fstype] : []
-              fs_by_type = (fs_by_type + spell_list).uniq
-              focus_cantrips[fstype] = fs_by_type
-            end
-
-            magic.update(focus_cantrips: focus_cantrips)
-          when "spellbook"
-            # Spells need to be chosen, redirect to to_assign
-
-            to_assign = char.pf2_to_assign
-
-            assignment_list = {}
-            value.each_pair do |level, num|
-              ary = Array.new(num, "open")
-              assignment_list[level] = ary
-            end
-
-            to_assign["spellbook"] = assignment_list
-
-            char.update(pf2_to_assign: to_assign)
-          when "addspell"
-            # Addspell means to add a specific spell to the spellbook. Adding spells to be chosen
-            # should be the "spellbook" key.
-            # Structure of value for addspell key: { level => [ spell ] }
-
-            spellbook = magic.spellbook
-
-            # Initialize spellbook for class if not already present.
-            csb = spellbook[charclass] ? spellbook[charclass] : {}
-
-            value.each do |level, spell_list|
-              list = csb[level] ? csb[level] : []
-
-              spell_list.each { |s| list << s }
-
-              csb[level] = list
-            end
-
-            spellbook[charclass] = csb
-            magic.update(spellbook: spellbook)
-          when "signature_spell"
-            # This key means that the character needs to pick a spell from their repertoire as a signature spell.
-            # Structure of value: { level to pick from => number of spells to add }
-            # Use to_assign["signature"]
-          when "innate_spell"
-            # Structure of innate spells: {spell name => { 'level' => <level>, 'tradition' => tradition, 'cast_stat' => cast_stat}}
-
-            ilist = magic.innate_spells
-            key = value.delete('name')
-
-            ilist[key] = value
-
-            magic.update(innate_spells: ilist)
-
-          else
-            client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
+          value.each_pair do |level, num|
+            spd_for_class[level] = num
           end
+
+          spells_per_day[charclass] = spd_for_class
+
+          magic.update(spells_per_day: spells_per_day)
+        when "repertoire"
+          # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
+          # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
+          # for the repertoire.
+
+          to_assign = char.pf2_to_assign
+
+          assignment_list = {}
+          value.each_pair do |level, num|
+            ary = Array.new(num, "open")
+            assignment_list[level] = ary
+          end
+
+          to_assign["repertoire"] = assignment_list
+
+          char.update(pf2_to_assign: to_assign)
+
+        when "focus_pool"
+          pool = magic.focus_pool
+
+          new_max_pool = Pf2emagic.get_max_focus_pool(char, value)
+          pool["max"] = new_max_pool
+          magic.update(focus_pool: pool)
+        when "addrepertoire"
+          # This key is called for spells added to the repertoire by bloodlines, mysteries, etc.
+          # Initial/advanced/greater bloodline spells are focus spells and handled by that key.
+          # Expected structure of value: { <level> => <spell> }
+          repertoire = magic.repertoire
+          rep_for_class = repertoire[charclass] || {}
+
+          value.each_pair do |level, spell|
+            list = rep_for_class[level] || []
+            list << spell
+            rep_for_class[level] = list
+          end
+
+          repertoire[charclass] = rep_for_class
+
+          magic.update(repertoire: repertoire)
+        when "get_genie_repertoire"
+          # Value of this key is an integer that corresponds to the level of the spell.
+          # It works like repertoire, but what this bloodline gets depends on their genie ancestry.
+
+          genie = char.pf2_base_info['specialize_info']
+          spells = Global.read_config('pf2e_subclass', 'get_genie_spell', genie)
+
+          # Do nothing if genie not found.
+          next unless spells
+
+          # Grab the spell corresponding to value.
+          spell = spells[value]
+
+          next unless spell
+
+          repertoire = magic.repertoire
+          rep_for_class = repertoire[charclass]
+
+          rep_at_level = rep_for_class[value] || []
+
+          rep_at_level << spell
+
+          rep_for_class[value] = rep_at_level
+
+          repertoire[charclass] = rep_for_class
+
+          magic.update(repertoire: repertoire)
+        when "focus_spell"
+          # focus spell structure: { "devotion" => [spell, spell, spell], "revelation" => [spell] }
+
+          focus_spells = magic.focus_spells
+
+          value.each_pair do |fstype, spell_list|
+            fs_by_type = focus_spells[fstype] ? focus_spells[fstype] : []
+            fs_by_type = (fs_by_type + spell_list).uniq
+            focus_spells[fstype] = fs_by_type
+          end
+
+          magic.update(focus_spells: focus_spells)
+        when "focus_cantrip"
+          # Structure identical to focus_spells, kept separate because they are cast differently.
+
+          focus_cantrips = magic.focus_cantrips
+
+          value.each_pair do |fstype, spell_list|
+            fs_by_type = focus_cantrips[fstype] ? focus_cantrips[fstype] : []
+            fs_by_type = (fs_by_type + spell_list).uniq
+            focus_cantrips[fstype] = fs_by_type
+          end
+
+          magic.update(focus_cantrips: focus_cantrips)
+        when "spellbook"
+          # Spells need to be chosen, redirect to to_assign
+
+          to_assign = char.pf2_to_assign
+
+          assignment_list = {}
+          value.each_pair do |level, num|
+            ary = Array.new(num, "open")
+            assignment_list[level] = ary
+          end
+
+          to_assign["spellbook"] = assignment_list
+
+          char.update(pf2_to_assign: to_assign)
+        when "addspellbook"
+          # Addspellbook means to add a specific spell to the spellbook. Adding spells to be chosen
+          # should be the "spellbook" key.
+          # Structure of value for addspell key: { level => [ spell ] }
+
+          spellbook = magic.spellbook
+
+          # Initialize spellbook for class if not already present.
+          csb = spellbook[charclass] ? spellbook[charclass] : {}
+
+          value.each do |level, spell_list|
+            list = csb[level] ? csb[level] : []
+
+            spell_list.each { |s| list << s }
+
+            csb[level] = list
+          end
+
+          spellbook[charclass] = csb
+          magic.update(spellbook: spellbook)
+        when "signature_spell"
+          # This key means that the character needs to pick a spell from their repertoire as a signature spell.
+          # Structure of value: { level to pick from => number of spells to add }
+          # Use to_assign["signature"]
+          to_assign = char.pf2_to_assign
+
+          assignment_list = {}
+          value.each_pair do |level, num|
+            ary = Array.new(num, "open")
+            assignment_list[level] = ary
+          end
+
+          to_assign["signature"] = assignment_list
+
+          char.update(pf2_to_assign: to_assign)
+        when "innate_spell"
+          # Structure of innate spells: {spell name => { 'level' => <level>, 'tradition' => tradition, 'cast_stat' => cast_stat}}
+
+          ilist = magic.innate_spells
+          key = value.delete('name')
+
+          ilist[key] = value
+
+          magic.update(innate_spells: ilist)
+
+        else
+          client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
       end
-
-    end
-
-    def self.delete_magic_stats(char, feat_name)
-      # This helper is called when a character changes their mind about taking a feat that grants magic.
-
-      magic = get_magic_obj(char)
-
-      # This should never happen but it keeps the helper from crashing if it does.
-      return nil unless magic
-
-      # All this helper does is scrub magic_to_apply for this feat.
-
-      pending_changes = magic.magic_to_apply
-
-      removed_change = pending_changes.delete(feat_name)
-
-      magic.update(magic_to_apply: removed_change)
 
     end
 

@@ -42,13 +42,6 @@ module AresMUSH
         when "info"
           return PF2ChargenInfoCmd
         end
-      when "commit"
-        case cmd.args
-        when "info"
-          return PF2CommitInfoCmd
-        when "abilities"
-          return PF2CommitAbilCmd
-        end
       when "roll"
         case cmd.switch
         when nil, "me"
@@ -174,7 +167,7 @@ module AresMUSH
         end
       when "cnotes"
         return PF2ViewAllCnotesCmd
-      when "committest"
+      when "commit"
         return PF2CommitCmd
       end
 

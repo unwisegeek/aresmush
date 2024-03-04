@@ -6,21 +6,21 @@ module AresMUSH
     def self.plugin_dir
       File.dirname(__FILE__)
     end
- 
+
     def self.shortcuts
       Global.read_config("chargen", "shortcuts")
     end
-    
+
     def self.achievements
       Global.read_config('chargen', 'achievements')
     end
- 
+
     def self.get_cmd_handler(client, cmd, enactor)
       case cmd.root
       when "app"
         case cmd.switch
         when "approve"
-          return AppApproveCmd 
+          return AppApproveCmd
         when "reject"
           return AppRejectCmd
         when "review"
@@ -34,10 +34,10 @@ module AresMUSH
         when nil
           return AppCmd
         end
-      when "prologue"
-        case cmd.switch  
+      when "bg"
+        case cmd.switch
         when "edit"
-          return BgEditCmd 
+          return BgEditCmd
         when "set"
           return BgSetCmd
         when nil
@@ -46,9 +46,9 @@ module AresMUSH
       when "cg"
         case cmd.switch
         when "prev", "next", nil
-          return ChargenPrevNextCmd 
+          return ChargenPrevNextCmd
         when "start"
-          return ChargenStartCmd        
+          return ChargenStartCmd
         end
       when "hook"
         case cmd.switch
@@ -60,10 +60,10 @@ module AresMUSH
           return HooksViewCmd
         end
       end
-      
-      return nil    
+
+      return nil
     end
-    
+
     def self.get_web_request_handler(request)
       case request.cmd
       when "chargenChar"
@@ -91,7 +91,7 @@ module AresMUSH
       end
       nil
     end
-    
+
     def self.check_config
       validator = ChargenConfigValidator.new
       validator.validate

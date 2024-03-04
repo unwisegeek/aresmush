@@ -62,6 +62,7 @@ chargen:
     hooks: hook
     hook/delete: hook/remove
     hook/add: hook/set
+    prologue: bg
   stages:
     start:
       title: Chargen Commands

@@ -34,6 +34,11 @@ module AresMUSH
         return t('pf2e.bad_feat_type', :type => self.feat_type, :keys => feat_types.sort.join(", "))
       end
 
+      def check_skill_lock
+        return t('pf2e.lock_skills_first') unless enactor.pf2_skills_locked
+        return nil
+      end
+
       def handle
 
         ##### VALIDATION SECTION START #####
