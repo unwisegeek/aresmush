@@ -80,7 +80,7 @@ module AresMUSH
       abonus = armor ? armor.ac_bonus : 0
       a_cat = armor ? armor.category : "unarmored"
       prof_with_armor = char.combat.armor_prof[a_cat]
-      pbonus = Pf2e.get_prof_bonus(prof_with_armor)
+      pbonus = Pf2e.get_prof_bonus(char, prof_with_armor)
 
       ibonus = Pf2egear.get_rune_value(armor, 'fundamental', 'potency')
 
