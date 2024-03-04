@@ -98,38 +98,7 @@ module AresMUSH
 
         ##### VALIDATION SECTION END #####
 
-        # Do I need to replace the feat in the list or add to the list?
-
-        replace = old_value.match?('unassigned') ? false : true
-
         sublist = feat_list[self.feat_type]
-
-        if replace
-          index = sublist.index(old_value)
-
-          sublist.delete_at index if index
-
-          # If the old feat had any magic stats, those need to be scrubbed.
-
-          old_fd = Pf2e.get_feat_details(old_value)
-
-          old_magic_stats = old_fd['magic_stats']
-
-          old_use_diff_charclass = old_fd['assoc_charclass']
-
-          if old_magic_stats
-            charclass = old_use_diff_charclass ? old_use_diff_charclass : enactor.pf2_base_info['charclass']
-            PF2Magic.update_magic(enactor, charclass, old_magic_stats, client, true)
-          end
-
-          # A very few feats modify reagents. Handle these.
-          reagents = old_fd['reagents']
-
-          if reagents
-            Pf2e.update_reagents(char, reagents, true)
-          end
-
-        end
 
         sublist << fname
         to_assign[key] = fname
@@ -140,42 +109,17 @@ module AresMUSH
 
         client.emit_success t('pf2e.feat_set_ok', :name => fname, :type => self.feat_type)
 
-        # Some feats grant magic of some sort. Handle here.
+        # Some feats grant other things. Handle those here.
 
-        magic_stats = fdeets['magic_stats']
+        granted_by_feat = fdeets['grants']
 
-        use_diff_charclass = fdeets['assoc_charclass']
+        charclass = fdeets['assoc_charclass'] ? fdeets['assoc_charclass'] : enactor.pf2_base_info['charclass']
 
-        if magic_stats
-          client.emit_ooc 'This feat has magic details.'
-
-          # If it is a dedication feat, the key should indicate the character
-          # class to be used. Otherwise, the key is the name of the feat.
-
-          charclass = use_diff_charclass ? use_diff_charclass : enactor.pf2_base_info['charclass']
-          PF2Magic.update_magic(enactor, charclass, magic_stats, client)
+        if granted_by_feat
+          grant_message = Pf2e.do_feat_grants(enactor, granted_by_feat, charclass, client)
+          grant_message.each {|msg| client.emit_ooc msg }
         end
 
-        # Handle reagents if necessary.
-          reagents = fdeets['reagents']
-
-          if reagents
-            Pf2e.update_reagents(char, reagents)
-          end
-
-        # Does this feat leave you with something else to assign?
-
-        cascade = fdeets['assign']
-
-        if cascade
-          cascade.each do |item|
-          assign_key = item
-          to_assign[assign_key] = 'unassigned/' + fname
-          client.emit_ooc t('pf2e.feat_grants_addl', :element => assign_key)
-          end
-        end
-
-        enactor.update(pf2_to_assign: to_assign)
       end
 
     end
