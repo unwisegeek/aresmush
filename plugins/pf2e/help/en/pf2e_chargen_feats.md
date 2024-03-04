@@ -6,10 +6,9 @@ order: 5
 
 # Pathfinder 2E Chargen - Feats
 
-Next, choose your open feats. Feats in Pathfinder are special abilities that are tied to a character's development and offer customization of a character's abilities. Your choice of ancestry, heritage, character class, and background will have offered you a set of base feats. Things to remember:
+Now that you have locked your skills, choose your open feats. Feats in Pathfinder are special abilities that are tied to a character's development and offer customization of a character's abilities. Your choice of ancestry, heritage, character class, and background will have offered you a set of base feats. 
 
-1. Some backgrounds will offer a choice of feats. You may want to make this selection before you assign your open feats, so that you do not duplicate feats.
-2. If you get the same feat from multiple sources, you will need to contact staff to work out how to assign duplicate feats.
+Many feats grant other things. They may grant attacks, daily healing changes, another feat, spells, and more. 
 
 ## Commands
 
@@ -17,7 +16,6 @@ Next, choose your open feats. Feats in Pathfinder are special abilities that are
 `feat <name>`: Lists details of a feat.
 `feat/info`: Shows the details of all feats that you have so far. Be aware that this command paginates, there may be more than one page!
 `feat/set <type>=<feat>`: Sets an open feat.
-`feat/choose <type>=<feat>`: If you have a choice of feats from <type> source, select which one you want.
-`feat/unset <type>=<feat>`: Deletes a feat selected with feat/set. You cannot delete feats granted by your base info.
-`feat/clear`: Clears all feat choices.
 `sheet`: Shows your sheet so far.
+
+It is not possible to unset a feat at this time.
