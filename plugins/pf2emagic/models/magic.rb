@@ -68,8 +68,7 @@ module AresMUSH
           magic.update(tradition: tradition)
         when "spells_per_day"
           # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
-          # This key grants both spells per day and spells to be chosen.
-          # Spells to be chosen go into to_assign.
+          # This key grants spells per day.
 
           spells_per_day = magic.spells_per_day
           spd_for_class = spells_per_day[charclass] ? spells_per_day[charclass] : {}
@@ -81,8 +80,10 @@ module AresMUSH
           spells_per_day[charclass] = spd_for_class
 
           magic.update(spells_per_day: spells_per_day)
-
-          # Assemble to_assign for the spells that need to be picked.
+        when "addrepertoire"
+          # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
+          # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
+          # for the repertoire.
 
           to_assign = char.pf2_to_assign
 
@@ -102,8 +103,8 @@ module AresMUSH
           new_max_pool = Pf2emagic.get_max_focus_pool(char, value)
           pool["max"] = new_max_pool
           magic.update(focus_pool: pool)
-        when "repertoire", "bloodline"
-          # This key is called for repertoire spells (bloodline key is used for granted spells).
+        when "repertoire"
+          # This key is called for spells added to the repertoire by bloodlines, mysteries, etc.
           # Initial/advanced/greater bloodline spells are focus spells and handled by that key.
           # Expected structure of value: { <level> => <spell> }
           repertoire = magic.repertoire

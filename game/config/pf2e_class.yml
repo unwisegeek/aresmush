@@ -375,7 +375,7 @@ pf2e_class:
           occult: trained
         spells_per_day:
           1: 2
-        repertoire:
+        addrepertoire:
           cantrip: 5
           1: 2
         focus_pool: 1
@@ -396,7 +396,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             1: 3
-          repertoire:
+          addrepertoire:
             1: 1
       3:
         choose_feat:
@@ -407,7 +407,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 2
-          repertoire:
+          addrepertoire:
             2: 2
           signature_spells:
             1: 1
@@ -421,7 +421,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 3
-          repertoire:
+          addrepertoire:
             2: 1
       5:
         raise:
@@ -432,7 +432,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             3: 2
-          repertoire:
+          addrepertoire:
             3: 2
           signature_spells:
             3: 1
@@ -443,7 +443,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             3: 3
-          repertoire:
+          addrepertoire:
             3: 1
       7:
         tradition:
@@ -455,7 +455,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             4: 2
-          repertoire:
+          addrepertoire:
             4: 2
           signature_spells:
             4: 1
@@ -466,7 +466,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             4: 3
-          repertoire:
+          addrepertoire:
             4: 1
       9:
         combat_stats:
@@ -482,7 +482,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 2
-          repertoire:
+          addrepertoire:
             5: 2
           signature_spells:
             5: 1
@@ -495,7 +495,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 3
-          repertoire:
+          addrepertoire:
             5: 1
       11:
         choose_feat:
@@ -511,7 +511,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             6: 2
-          repertoire:
+          addrepertoire:
             6: 2
           signature_spells:
             6: 1
@@ -522,7 +522,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             6: 3
-          repertoire:
+          addrepertoire:
             6: 1
       13:
         combat_stats:
@@ -537,7 +537,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 2
-          repertoire:
+          addrepertoire:
             7: 2
           signature_spells:
             7: 1
@@ -548,7 +548,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 3
-          repertoire:
+          addrepertoire:
             7: 1
       15:
         choose_feat:
@@ -562,7 +562,7 @@ pf2e_class:
             occult: master
           spells_per_day:
             8: 2
-          repertoire:
+          addrepertoire:
             8: 2
           signature_spells:
             8: 1
@@ -573,7 +573,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             8: 3
-          repertoire:
+          addrepertoire:
             8: 1
       17:
         charclass:
@@ -588,7 +588,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             9: 2
-          repertoire:
+          addrepertoire:
             9: 2
           signature_spells:
             9: 1
@@ -607,7 +607,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             10: 1
-          repertoire:
+          addrepertoire:
             10: 2
           tradition:
             occult: legendary
@@ -1890,7 +1890,7 @@ pf2e_class:
         spell_abil: Charisma
         spells_per_day:
           1: 2
-        repertoire:
+        addrepertoire:
           cantrip: 5
           1: 2
         focus_pool: 2
@@ -1905,7 +1905,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             1: 3
-          repertoire:
+          addrepertoire:
             1: 1
       3:
         choose_feat:
@@ -1916,7 +1916,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 2
-          repertoire:
+          addrepertoire:
             2: 2
           signature_spells:
             1: 1
@@ -1928,7 +1928,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 3
-          repertoire:
+          addrepertoire:
             2: 1
       5:
         raise:
@@ -1941,7 +1941,7 @@ pf2e_class:
             3: 2
           signature_spells:
             3: 1
-          repertoire:
+          addrepertoire:
             3: 2
       6:
         choose_feat:
@@ -1950,7 +1950,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             3: 3
-          repertoire:
+          addrepertoire:
             3: 1
       7:
         choose_feat:
@@ -1970,7 +1970,7 @@ pf2e_class:
             4: 1
           tradition:
             divine: expert
-          repertoire:
+          addrepertoire:
             4: 2
       8:
         choose_feat:
@@ -1979,7 +1979,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             4: 3
-          repertoire:
+          addrepertoire:
             4: 1
       9:
         choose_feat:
@@ -1996,7 +1996,7 @@ pf2e_class:
             5: 2
           signature_spells:
             5: 1
-          repertoire:
+          addrepertoire:
             5: 2
       10:
         choose_feat:
@@ -2005,7 +2005,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 3
-          repertoire:
+          addrepertoire:
             5: 1
       11:
         choose_feat:
@@ -2026,7 +2026,7 @@ pf2e_class:
             6: 2
           signature_spells:
             6: 1
-          repertoire:
+          addrepertoire:
             6: 2
       12:
         choose_feat:
@@ -2053,7 +2053,7 @@ pf2e_class:
             7: 2
           signature_spells:
             7: 1
-          repertoire:
+          addrepertoire:
             7: 1
       14:
         choose_feat:
@@ -2062,7 +2062,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 3
-          repertoire:
+          addrepertoire:
             7: 1
       15:
         raise:
@@ -2079,7 +2079,7 @@ pf2e_class:
             8: 2
           signature_spells:
             8: 1
-          repertoire:
+          addrepertoire:
             8: 2
       16:
         choose_feat:
@@ -2088,7 +2088,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             8: 3
-          repertoire:
+          addrepertoire:
             8: 1
       17:
         choose_feat:
@@ -2106,7 +2106,7 @@ pf2e_class:
             9: 2
           signature_spells:
             9: 1
-          repertoire:
+          addrepertoire:
             9: 1
       18:
         choose_feat:
@@ -2115,7 +2115,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             9: 3
-          repertoire:
+          addrepertoire:
             9: 1
       19:
         choose_feat:
@@ -2130,7 +2130,7 @@ pf2e_class:
             divine: legendary
           spells_per_day:
             10: 1
-          repertoire:
+          addrepertoire:
             10: 2
       20:
         choose_feat:
@@ -2562,7 +2562,7 @@ pf2e_class:
         spell_abil: Charisma
         spells_per_day:
           1: 3
-        repertoire:
+        addrepertoire:
           cantrip: 4
           1: 2
       action:
@@ -2576,7 +2576,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             1: 4
-          repertoire:
+          addrepertoire:
             1: 1
       3:
         choose_feat:
@@ -2588,7 +2588,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 3
-          repertoire:
+          addrepertoire:
             2: 2
           signature_spells:
             1: 1
@@ -2600,13 +2600,13 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             2: 4
-          repertoire:
+          addrepertoire:
             2: 1
       5:
         magic_stats:
           spells_per_day:
             3: 3
-          repertoire:
+          addrepertoire:
             3: 2
           signature_spells:
             3: 1
@@ -2627,7 +2627,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             3: 4
-          repertoire:
+          addrepertoire:
             3: 1
       7:
         choose_feat:
@@ -2639,7 +2639,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             4: 3
-          repertoire:
+          addrepertoire:
             4: 2
           signature_spells:
             4: 1
@@ -2650,7 +2650,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             4: 4
-          repertoire:
+          addrepertoire:
             4: 1
       9:
         choose_feat:
@@ -2662,7 +2662,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 3
-          repertoire:
+          addrepertoire:
             5: 2
           signature_spells:
             5: 1
@@ -2676,7 +2676,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             5: 4
-          repertoire:
+          addrepertoire:
             5: 1
       11:
         choose_feat:
@@ -2688,7 +2688,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             6: 3
-          repertoire:
+          addrepertoire:
             6: 2
           signature_spells:
             6: 1
@@ -2701,7 +2701,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             6: 4
-          repertoire:
+          addrepertoire:
             6: 1
       13:
         choose_feat:
@@ -2714,7 +2714,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 3
-          repertoire:
+          addrepertoire:
             7: 2
           signature_spells:
             7: 1
@@ -2728,7 +2728,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             7: 4
-          repertoire:
+          addrepertoire:
             7: 1
       15:
         raise:
@@ -2741,7 +2741,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             8: 3
-          repertoire:
+          addrepertoire:
             8: 2
           signature_spells:
             8: 1
@@ -2752,7 +2752,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             8: 4
-          repertoire:
+          addrepertoire:
             8: 1
       17:
         choose_feat:
@@ -2762,7 +2762,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             9: 3
-          repertoire:
+          addrepertoire:
             9: 2
           signature_spells:
             9: 1
@@ -2773,7 +2773,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             9: 4
-          repertoire:
+          addrepertoire:
             9: 1
       19:
         choose_feat:
@@ -2786,7 +2786,7 @@ pf2e_class:
         magic_stats:
           spells_per_day:
             10: 1
-          repertoire:
+          addrepertoire:
             10: 2
           signature_spells:
             10: 1
@@ -3125,7 +3125,7 @@ pf2e_class:
             arcane: expert
           spells_per_day:
             4: 2
-          repertoire:
+          addrepertoire:
             4: 2
           spellbook: 2
           signature_spells:
