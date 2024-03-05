@@ -422,7 +422,11 @@ module AresMUSH
       if class_mstats.empty?
         client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
       else
-        PF2Magic.update_magic(enactor, charclass, class_mstats, client)
+        # An unfortunate consequence of update_magic is taking to_assign out behind the toolshed and giving it
+        # the Ol' Yeller. Luckily, this is a computer and not a traumatic Disney movie. We can save Ol' Yeller
+        # to a temporary variable and merge it back in with the results of update_magic.
+        to_assign_pre_update_magic = to_assign
+        to_assign = to_assign_pre_update_magic.merge(PF2Magic.update_magic(enactor, charclass, class_mstats, client))
         client.emit_ooc "Setting up magic..."
       end
 
