@@ -103,8 +103,6 @@ module AresMUSH
         sublist << fname
         to_assign[key] = fname
 
-        enactor.update(pf2_to_assign: to_assign)
-
         feat_list[self.feat_type] = sublist
 
         enactor.update(pf2_feats: feat_list)
