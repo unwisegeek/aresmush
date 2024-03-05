@@ -9,12 +9,14 @@ module AresMUSH
 
       valid_init_stat = abilities + skills + combat_stats
 
+      return valid_init_stat
+
       # Is there a unique match? Error if no match or multiple matches
 
       usable_init_stat = valid_init_stat.map { |s| s.match? stat }
 
-      return false unless usable_init_stat.size == 1
-      return true
+      # return false unless usable_init_stat.size == 1
+      # return true
     end
 
     def self.can_join_encounter?(char, encounter)
