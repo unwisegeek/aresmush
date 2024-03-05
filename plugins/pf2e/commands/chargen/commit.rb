@@ -51,7 +51,7 @@ module AresMUSH
         if commit
           client.emit_failure t('pf2e.cg_commit_failed', :msg => commit, :option => self.commit)
         else
-          client.emit_success t('pf2e.cg_commit_ok', :option => self.commit)
+          client.emit_success t('pf2e.chargen_committed')
         end
       end
 
