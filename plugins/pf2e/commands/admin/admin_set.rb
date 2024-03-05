@@ -42,6 +42,7 @@ module AresMUSH
           return t('pf2e.not_unique') if details.is_a? String
 
           feat_name = details.first
+          fdeets = details[1]
 
           valid_feat_types = Global.read_config('pf2e', 'valid_feat_types')
 
@@ -54,10 +55,10 @@ module AresMUSH
           feat_sublist = char_feat_list[feat_type]
 
           if instruction == 'add'
-            feat_sublist << feat_name 
+            feat_sublist << feat_name
           elsif instruction == 'delete'
             feat_sublist.delete(feat_name)
-          else 
+          else
             client.emit_failure t('pf2e.bad_value', :item => 'instruction')
             return
           end
@@ -67,6 +68,13 @@ module AresMUSH
 
           client.emit_success t('pf2e.feat_set_ok', :name => feat_name, :type => feat_type)
 
+          feat_grants_stuff = fdeets['grants']
+
+          if feat_grants_stuff
+            charclass = fdeets['assoc_charclass'] ? fdeets['assoc_charclass'] : char.pf2_base_info['charclass']
+            Pf2e.do_feat_grants(enactor, feat_grants_stuff, charclass, client)
+            client.emit_ooc "The assigned feat grants extra stuff. Processing."
+          end
         when "skill"
           # Expected structure of self.value: `<skill name> <proficiency level>`
           skname = self.value[0]
@@ -81,9 +89,9 @@ module AresMUSH
             return
           end
 
-          # Skill object can be nil! Attempt to create if not found. 
+          # Skill object can be nil! Attempt to create if not found.
 
-          if !skill 
+          if !skill
             skill_list = Global.read_config('pf2e_skills').keys
 
             if !(skill_list.include? skname)
@@ -99,7 +107,7 @@ module AresMUSH
 
         when "feature"
           # Expected structure of self.value: `[add|delete] <feature name>`
-          # No validation of the feature in question is done. 
+          # No validation of the feature in question is done.
 
           features = char.pf2_features
           instruction = value[0]
@@ -119,7 +127,7 @@ module AresMUSH
           end
 
           char.update(pf2_features: features.sort)
-        
+
           client.emit_success t('pf2e.updated_ok', :element => "Feature", :char => char.name)
         when "spell"
           # Expected structure of self.value: <charclass> [add|delete] <spell name> <spell level>
@@ -136,7 +144,7 @@ module AresMUSH
           spell = self.value[2]
           spell_level = self.value[3].downcase
 
-          
+
           if caster_type == 'prepared'
             # Spells for prepared casters go in a spellbook.
 
@@ -148,7 +156,7 @@ module AresMUSH
 
         when "focus"
           # Expected structure of value: add|delete <cantrip or spell> <spell name>
-          
+
         when "ability"
           # Expected structure of self.value: <ability name> <new score>
 
@@ -160,9 +168,9 @@ module AresMUSH
           if !abil_obj
             client.emit_failure t('pf2e.bad_ability', :char => char.name)
             return
-          end 
+          end
 
-          # Score validation for the admin command only makes sure it's a positive integer. 
+          # Score validation for the admin command only makes sure it's a positive integer.
           # Game admins are responsible for ensuring that the new value is reasonable. :)
           if !(score > 0)
             client.emit_failure t('pf2e.bad_value', :item => 'ability score')
@@ -172,9 +180,9 @@ module AresMUSH
           abil_obj.update(base_val: score)
 
           client.emit_success t('pf2e.updated_ok', :char => char.name, :element => abil_obj.name)
-        else 
+        else
           client.emit_failure t('pf2e.bad_value', :item => 'keyword')
-        end 
+        end
 
       end
 
