@@ -104,7 +104,7 @@ module AresMUSH
           char.update(pf2_to_assign: to_assign)
 
           msg << char.pf2_to_assign
-          msg
+          client.emit msg.join("%r")
 
         when "focus_pool"
           pool = magic.focus_pool
