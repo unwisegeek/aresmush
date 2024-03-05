@@ -104,6 +104,7 @@ en:
 
     lock_info_first: "This command cannot be used until your base chargen options are committed."
     lock_abil_first: "This command cannot be used until you have set and committed your ability scores."
+    lock_skills_first: "This command cannot be used until you have set and committed your ability scores."
 
     missing_base_info: "%xrYour base info is not yet complete.%xn"
     missing_subclass: "%xrYour class requires a specialization, please choose one.%xn"
