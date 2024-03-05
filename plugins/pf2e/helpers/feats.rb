@@ -225,7 +225,6 @@ module AresMUSH
       return false
     end
 
-
     def self.has_feat?(char, feat)
       feat_list = char.pf2_feats.values.flatten.map { |f| f.upcase }
 
@@ -317,6 +316,50 @@ module AresMUSH
 
       return nil if msgs.empty?
       return msgs
+    end
+
+    def self.do_feat_grants(char, info, charclass, client)
+      # Processes cases where taking a feat grants something else.
+
+      return_msg = []
+      info.each_pair do |key, value|
+        case key
+        when 'magic_stats'
+          return_msg << "This feat grants magic."
+          error = PF2Magic.update_magic(char, charclass, value, client)
+          return_msg << error if error
+        when 'assign'
+          to_assign = char.pf2_to_assign
+
+          value.each do |item|
+            to_assign[item] = 'open'
+            return_msg << t('pf2e.feat_grants_addl', :element => assign_key)
+          end
+
+          char.update(pf2_to_assign: to_assign)
+        when 'feat'
+          feats = char.pf2_feats
+
+          value.each { |item| feats << item }
+
+          char.update(pf2_feats: feats.sort)
+        when 'reagents'
+          return_msg << "This feat grants reagents."
+          Pf2e.update_reagents(char, value)
+        when 'attack'
+          combat = Pf2eCombat.get_create_combat_obj(char)
+          unarmed_attacks = combat.unarmed_attacks
+
+          value.each_pair do |attack, info|
+            unarmed_attacks[attack] = info
+          end
+
+          combat.update(unarmed_attacks: unarmed_attacks)
+          return_msg << "This feat grants an unarmed attack."
+        else
+          return_msg << "Unknown key '#{key}' in do_feat_grants. Please inform code staff."
+        end
+      end
     end
 
   end
