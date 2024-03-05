@@ -186,7 +186,7 @@ pf2e_heritage:
     skills: []
     traits: []
   Mountainkeeper:
-    magic:
+    magic_stats:
       innate_spell:
         cantrip:
         - 'Disrupt Undead'
