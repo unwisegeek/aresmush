@@ -52,16 +52,13 @@ module AresMUSH
     def self.update_magic(char, charclass, info, client)
       magic = get_create_magic_obj(char)
 
-      msg = []
-
       info.each_pair do |key, value|
         case key
         when "spell_abil"
           spell_abil = magic.spell_abil
           spell_abil[charclass] = value
-          magic.update(spell_abil: spell_abil)
+          magic.spell_abil = spell_abil
 
-          msg << key
         when "tradition"
           # magic.tradition structure: { charclass => [ trad, prof ] }
           tradition = magic.tradition
@@ -69,8 +66,7 @@ module AresMUSH
             tradition[charclass] = [ trad, prof ]
           end
 
-          magic.update(tradition: tradition)
-          msg << key
+          magic.tradition = tradition
         when "spells_per_day"
           # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
           # This key grants spells per day.
@@ -84,8 +80,7 @@ module AresMUSH
 
           spells_per_day[charclass] = spd_for_class
 
-          magic.update(spells_per_day: spells_per_day)
-          msg << key
+          magic.spells_per_day = spells_per_day
         when "repertoire"
           # Structure: { "cantrip" => 5, 1 => 3, 2 => 1 }
           # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
@@ -101,14 +96,14 @@ module AresMUSH
 
           to_assign["repertoire"] = assignment_list
 
-          char.update(pf2_to_assign: to_assign)
-          msg << key
+          char.pf2_to_assign = to_assign
+
         when "focus_pool"
           pool = magic.focus_pool
 
           new_max_pool = Pf2emagic.get_max_focus_pool(char, value)
           pool["max"] = new_max_pool
-          magic.update(focus_pool: pool)
+          magic.focus_pool = pool
         when "addrepertoire"
           # This key is called for spells added to the repertoire by bloodlines, mysteries, etc.
           # Initial/advanced/greater bloodline spells are focus spells and handled by that key.
@@ -124,8 +119,7 @@ module AresMUSH
 
           repertoire[charclass] = rep_for_class
 
-          magic.update(repertoire: repertoire)
-          msg << key
+          magic.repertoire = repertoire
         when "get_genie_repertoire"
           # Value of this key is an integer that corresponds to the level of the spell.
           # It works like repertoire, but what this bloodline gets depends on their genie ancestry.
@@ -152,8 +146,7 @@ module AresMUSH
 
           repertoire[charclass] = rep_for_class
 
-          magic.update(repertoire: repertoire)
-          msg << key
+          magic.repertoire = repertoire
         when "focus_spell"
           # focus spell structure: { "devotion" => [spell, spell, spell], "revelation" => [spell] }
 
@@ -165,8 +158,7 @@ module AresMUSH
             focus_spells[fstype] = fs_by_type
           end
 
-          magic.update(focus_spells: focus_spells)
-          msg << key
+          magic.focus_spells = focus_spells
         when "focus_cantrip"
           # Structure identical to focus_spells, kept separate because they are cast differently.
 
@@ -178,8 +170,7 @@ module AresMUSH
             focus_cantrips[fstype] = fs_by_type
           end
 
-          magic.update(focus_cantrips: focus_cantrips)
-          msg << key
+          magic.focus_cantrips = focus_cantrips
         when "spellbook"
           # Spells need to be chosen, redirect to to_assign
 
@@ -193,8 +184,7 @@ module AresMUSH
 
           to_assign["spellbook"] = assignment_list
 
-          char.update(pf2_to_assign: to_assign)
-          msg << key
+          char.pf2_to_assign = to_assign
         when "addspellbook"
           # Addspellbook means to add a specific spell to the spellbook. Adding spells to be chosen
           # should be the "spellbook" key.
@@ -214,8 +204,7 @@ module AresMUSH
           end
 
           spellbook[charclass] = csb
-          magic.update(spellbook: spellbook)
-          msg << key
+          magic.spellbook = spellbook
         when "signature_spell"
           # This key means that the character needs to pick a spell from their repertoire as a signature spell.
           # Structure of value: { level to pick from => number of spells to add }
@@ -230,8 +219,7 @@ module AresMUSH
 
           to_assign["signature"] = assignment_list
 
-          char.update(pf2_to_assign: to_assign)
-          msg << key
+          char.pf2_to_assign = to_assign
         when "innate_spell"
           # Structure of innate spells: {spell name => { 'level' => <level>, 'tradition' => tradition, 'cast_stat' => cast_stat}}
 
@@ -240,15 +228,15 @@ module AresMUSH
 
           ilist[key] = value
 
-          magic.update(innate_spells: ilist)
-          msg << key
+          magic.innate_spells = ilist
         else
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
 
       end
 
-      msg.join(", ")
+      magic.save
+      char.save
 
     end
 
