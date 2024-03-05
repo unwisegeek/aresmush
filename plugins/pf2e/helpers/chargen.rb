@@ -419,6 +419,8 @@ module AresMUSH
         class_mstats = class_mstats.merge(subclass_mstats) if subclass_mstats
       end
 
+      client.emit "%xr%xh CLASS_MSTATS #{class_mstats}"
+
       if class_mstats.empty?
         client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
       else
