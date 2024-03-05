@@ -9,8 +9,9 @@ module AresMUSH
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
 
+        # Make command return sanely even if you forget args.
         self.string = trim_arg(args.arg1)
-        self.mods = trimmed_list_arg(args.arg1.gsub("-", "+-").gsub("--","-"),"+") || []
+        self.mods = trimmed_list_arg(args.arg1&.gsub("-", "+-")&.gsub("--","-"),"+")
         self.dc = args.arg2 ? args.arg2.to_i : nil
       end
 
@@ -29,8 +30,8 @@ module AresMUSH
 
       def handle
 
-        client.emit self.mods
         roll = Pf2e.parse_roll_string(enactor,self.mods)
+        client.emit roll
         list = roll['list']
         result = roll['result']
         total = roll['total']
