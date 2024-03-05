@@ -49,7 +49,6 @@ module AresMUSH
                   :degree => degree
                 )
 
-        client.emit roll_msg
         if cmd.switch == "me"
           client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
