@@ -419,6 +419,8 @@ module AresMUSH
         class_mstats = class_mstats.merge(subclass_mstats) if subclass_mstats
       end
 
+      client.emit "%xh%xrCLASS_MSTATS EVAL, line 415 chargen.rb:%xn #{class_mstats}"
+
       if class_mstats.empty?
         client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
       else

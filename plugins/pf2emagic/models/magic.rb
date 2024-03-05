@@ -85,13 +85,7 @@ module AresMUSH
           # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
           # for the repertoire.
 
-          msg = []
-
-          msg << value
-
           to_assign = char.pf2_to_assign
-
-          msg << to_assign
 
           assignment_list = {}
           value.each_pair do |level, num|
@@ -99,13 +93,9 @@ module AresMUSH
             assignment_list[level] = ary
           end
 
-          msg << assignment_list
-
           to_assign["repertoire"] = assignment_list
 
           char.update(pf2_to_assign: to_assign)
-
-          msg << char.pf2_to_assign
 
         when "focus_pool"
           pool = magic.focus_pool
@@ -243,9 +233,6 @@ module AresMUSH
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
       end
-
-      return msg if msg
-      return "No message."
 
     end
 
