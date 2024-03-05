@@ -10,9 +10,7 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
 
         self.string = trim_arg(args.arg1)
-        mod_list = args.arg1.gsub("-", "+-").gsub("--","-").split("+")
-        self.mods = trimmed_list_arg(mod_list)
-
+        self.mods = trimmed_list_arg(args.arg1.gsub("-", "+-").gsub("--","-"),"+")
         self.dc = args.arg2 ? args.arg2.to_i : nil
       end
 
@@ -52,7 +50,7 @@ module AresMUSH
         if cmd.switch == "me"
           client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
-          # Send it to the room, and to the room scene if there is one. 
+          # Send it to the room, and to the room scene if there is one.
           enactor_room.emit roll_msg
 
           scene = enactor_room.scene
