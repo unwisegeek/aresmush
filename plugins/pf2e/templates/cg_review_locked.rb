@@ -321,7 +321,7 @@ module AresMUSH
           if sbook
             slist = []
             sbook.each_pair do |k,v|
-              slist << "#{key}: #{v.count("open")}"
+              slist << "#{k}: #{v.count("open")}"
             end
             scount = slist.join(", ")
 
