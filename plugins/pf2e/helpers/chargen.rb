@@ -84,9 +84,10 @@ module AresMUSH
 
     end
 
-    def self.cg_edge_cases(char, charclass, heritage, background)
+    def self.cg_edge_cases(char, charclass, heritage, background, deity_info)
       case charclass
       when "Cleric"
+
         dfont_choice = deity_info['divine_font']
 
         if dfont_choice.size > 1
@@ -410,7 +411,7 @@ module AresMUSH
       # Most characters will be casters in some capacity at some point in their development,
       # so everyone gets one to avoid create/delete repeatedly.
       client.emit_ooc "Checking for magic..."
-      magic = PF2Magic.get_create_magic_obj(enactor)
+      PF2Magic.get_create_magic_obj(enactor)
 
       class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
       if subclass_features_info
@@ -431,6 +432,8 @@ module AresMUSH
       end
 
       # Languages
+
+      client.emit_ooc "Assessing languages...."
       languages = enactor.pf2_lang
 
       ancestry_info['languages'].each { |l| languages << l }
@@ -501,7 +504,7 @@ module AresMUSH
       enactor.pf2_actions = char_actions
 
       # Check for and handle weird edge cases
-      Pf2e.cg_edge_cases(enactor, charclass, heritage, background)
+      Pf2e.cg_edge_cases(enactor, charclass, heritage, background, deity_info)
 
       # Put everything together, lock it, record the checkpoint, and save to database
       enactor.pf2_to_assign = to_assign
