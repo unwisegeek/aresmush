@@ -87,6 +87,8 @@ module AresMUSH
 
           msg = []
 
+          msg << value
+
           to_assign = char.pf2_to_assign
 
           msg << to_assign
@@ -104,7 +106,6 @@ module AresMUSH
           char.update(pf2_to_assign: to_assign)
 
           msg << char.pf2_to_assign
-          client.emit msg.join("%r")
 
         when "focus_pool"
           pool = magic.focus_pool
@@ -242,6 +243,9 @@ module AresMUSH
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
       end
+
+      return msg if msg
+      return "No message."
 
     end
 
