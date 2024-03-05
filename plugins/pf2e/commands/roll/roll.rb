@@ -10,8 +10,12 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_slash_optional_arg2)
 
         self.string = trim_arg(args.arg1)
-        self.mods = trimmed_list_arg(args.arg1.gsub("-", "+-").gsub("--","-"),"+")
+        self.mods = trimmed_list_arg(args.arg1.gsub("-", "+-").gsub("--","-"),"+") || []
         self.dc = args.arg2 ? args.arg2.to_i : nil
+      end
+
+      def required_args
+        [ self.string ]
       end
 
       def check_valid_dc
@@ -23,11 +27,9 @@ module AresMUSH
         end
       end
 
-      def required_args
-        [ self.mods ]
-      end
-
       def handle
+
+        client.emit self.mods
         roll = Pf2e.parse_roll_string(enactor,self.mods)
         list = roll['list']
         result = roll['result']
