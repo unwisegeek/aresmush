@@ -71,7 +71,7 @@ module AresMUSH
 
         key = self.feat_type + " feat"
 
-        if !to_assign[key]
+        if !(to_assign[key] == 'open')
           client.emit_failure t('pf2e.no_free', :element => key)
           return
         end
