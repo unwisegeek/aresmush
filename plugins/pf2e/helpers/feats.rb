@@ -60,7 +60,7 @@ module AresMUSH
 
     end
 
-    def self.can_take_feat?(char, feat)
+    def self.can_take_feat?(char, feat)                                                                                                             
       msg = []
 
       find_feat = Pf2e.get_feat_details(feat)
@@ -90,6 +90,12 @@ module AresMUSH
 
         ancestry << cinfo['ancestry']
         ancestry << cinfo['adopted ancestry'] if cinfo['adopted ancestry']
+      
+        # # Add allowances for Half-Sil and Half-Oruch
+        ancestry << "Sildanyar" if cinfo['heritage'].include? "Half-Sil"
+        ancestry << "Oruch" if cinfo['heritage'].include? "Half-Oruch"
+
+        Global.logger.debug ancestry
 
         allowed_ancestry = details['assoc_ancestry']
 
