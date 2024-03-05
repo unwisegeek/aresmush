@@ -430,8 +430,6 @@ module AresMUSH
         client.emit_ooc "Setting up magic..."
       end
 
-      magic.save
-
       # Languages
       languages = enactor.pf2_lang
 
