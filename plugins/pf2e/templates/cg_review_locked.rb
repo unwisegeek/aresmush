@@ -307,7 +307,7 @@ module AresMUSH
           if rep
             rlist = []
             rep.each_pair do |k,v|
-              rlist << "#{key}: #{v.count("open")}"
+              rlist << "#{k}: #{v.count("open")}"
             end
             rcount = rlist.join(", ")
 
