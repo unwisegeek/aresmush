@@ -31,7 +31,6 @@ module AresMUSH
       def handle
 
         roll = Pf2e.parse_roll_string(enactor,self.mods)
-        client.emit roll
         list = roll['list']
         result = roll['result']
         total = roll['total']
@@ -50,6 +49,7 @@ module AresMUSH
                   :degree => degree
                 )
 
+        client.emit roll_msg
         if cmd.switch == "me"
           client.emit "(%xgPRIVATE%xn) " + roll_msg
         else
