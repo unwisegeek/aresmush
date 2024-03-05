@@ -52,6 +52,9 @@ module AresMUSH
     def self.update_magic(char, charclass, info, client)
       magic = get_create_magic_obj(char)
 
+      # Race condition with to_assign requires that to_assign be assembled and returned by the function for a merge.
+      to_assign = {}
+
       info.each_pair do |key, value|
         case key
         when "spell_abil"
@@ -85,8 +88,6 @@ module AresMUSH
           # Structure: { "cantrip" => 5, 1 => 3, 2 => 1 }
           # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
           # for the repertoire.
-
-          to_assign = char.pf2_to_assign
 
           assignment_list = {}
           value.each_pair do |level, num|
@@ -174,8 +175,6 @@ module AresMUSH
         when "spellbook"
           # Spells need to be chosen, redirect to to_assign
 
-          to_assign = char.pf2_to_assign
-
           assignment_list = {}
           value.each_pair do |level, num|
             ary = Array.new(num, "open")
@@ -209,7 +208,6 @@ module AresMUSH
           # This key means that the character needs to pick a spell from their repertoire as a signature spell.
           # Structure of value: { level to pick from => number of spells to add }
           # Use to_assign["signature"]
-          to_assign = char.pf2_to_assign
 
           assignment_list = {}
           value.each_pair do |level, num|
@@ -237,6 +235,8 @@ module AresMUSH
 
       magic.save
       char.save
+
+      to_assign
 
     end
 
