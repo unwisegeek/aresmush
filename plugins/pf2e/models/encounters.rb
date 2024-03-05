@@ -65,7 +65,7 @@ module AresMUSH
     end
 
     def self.is_organizer?(char, encounter)
-      char == encounter.organizer
+      char.name == encounter.organizer
     end
 
   end
