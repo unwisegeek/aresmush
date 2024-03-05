@@ -81,11 +81,15 @@ module AresMUSH
 
           magic.update(spells_per_day: spells_per_day)
         when "repertoire"
-          # Structure: { charclass => {"cantrip" => 5, 1 => 3, 2 => 1} }
+          # Structure: { "cantrip" => 5, 1 => 3, 2 => 1 }
           # This key gets dumped into to_assign as repertoire and represents spells that need to be chosen
           # for the repertoire.
 
+          msg = []
+
           to_assign = char.pf2_to_assign
+
+          msg << to_assign
 
           assignment_list = {}
           value.each_pair do |level, num|
@@ -93,9 +97,14 @@ module AresMUSH
             assignment_list[level] = ary
           end
 
+          msg << assignment_list
+
           to_assign["repertoire"] = assignment_list
 
           char.update(pf2_to_assign: to_assign)
+
+          msg << char.pf2_to_assign
+          msg
 
         when "focus_pool"
           pool = magic.focus_pool
