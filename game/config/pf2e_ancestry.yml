@@ -48,7 +48,7 @@ pf2e_ancestry:
     HP: 6
     Size: S
     Speed: 25
-    able_boosts:
+    abl_boosts:
     - open
     - open
     languages:
