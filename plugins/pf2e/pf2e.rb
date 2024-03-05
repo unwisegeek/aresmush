@@ -169,6 +169,8 @@ module AresMUSH
         return PF2ViewAllCnotesCmd
       when "commit"
         return PF2CommitCmd
+      when "heal"
+        return PF2HealPlayerCmd
       end
 
       nil

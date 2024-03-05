@@ -11,7 +11,7 @@ module AresMUSH
 
       # Is there a unique match? Error if no match or multiple matches
 
-      usable_init_stat = valid_init_stat.map { |s| s.match? stat }
+      usable_init_stat = valid_init_stat.select { |s| s.match? stat }
 
       return false unless usable_init_stat.size == 1
       return true
