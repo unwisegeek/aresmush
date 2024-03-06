@@ -26,8 +26,6 @@ module AresMUSH
         "#{linebreak}#{left(item, 25)}%b"
       end
 
-      end
-
     end
   end
 end
