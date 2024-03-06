@@ -23,6 +23,18 @@ module AresMUSH
         end
       end
 
+      def check_in_chargen
+        if enactor.is_approved? || enactor.chargen_locked || enactor.is_admin?
+          return t('pf2e.only_in_chargen')
+        elsif enactor.pf2_baseinfo_locked
+          return t('pf2e.cg_options_locked')
+        elsif enactor.chargen_stage.zero?
+          return t('chargen.not_started')
+        else
+          return nil
+        end
+      end
+
       def required_args
         [ self.caster_class, self.spell_level, self.new_spell]
       end

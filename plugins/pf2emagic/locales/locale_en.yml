@@ -14,6 +14,7 @@ en:
     config_error: "%xrYour magic is not configured correctly. Please see staff. Code: %{code}%xn"
 
     does_not_prepare: "Specified class does not prepare spells."
+    dfont_updated: "You set your divine font to %{font}."
 
     has_pending_magic: "%xcThe following items grant you magic changes that will appear on your sheet when completed: %{items}%xn"
 
