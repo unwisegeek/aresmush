@@ -84,23 +84,6 @@ module AresMUSH
 
     end
 
-    def self.cg_edge_cases(char, charclass, heritage, background, deity_info)
-      case charclass
-      when "Cleric"
-
-        dfont_choice = deity_info['divine_font']
-
-        if dfont_choice.size > 1
-          to_assign['divine font'] = dfont_choice
-        else
-          magic = char.magic
-          magic.update(divine_font: dfont_choice)
-        end
-      else
-        nil
-      end
-    end
-
     def self.cg_lock_base_options(enactor, client)
       # Did they do this already?
       return t('pf2e.cg_locked', :cp => 'base options') if enactor.pf2_baseinfo_locked
@@ -420,6 +403,13 @@ module AresMUSH
         class_mstats = class_mstats.merge(subclass_mstats) if subclass_mstats
       end
 
+      # Handle clerics' divine font if necessary.
+      if charclass == 'Cleric'
+        deity_mstats = deity_info['magic_stats']
+
+        class_mstats.merge(deity_mstats) if deity_mstats
+      end
+
       if class_mstats.empty?
         client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
       else
@@ -502,9 +492,6 @@ module AresMUSH
       char_actions['reactions'] = reactions
 
       enactor.pf2_actions = char_actions
-
-      # Check for and handle weird edge cases
-      Pf2e.cg_edge_cases(enactor, charclass, heritage, background, deity_info)
 
       # Put everything together, lock it, record the checkpoint, and save to database
       enactor.pf2_to_assign = to_assign
@@ -608,12 +595,6 @@ module AresMUSH
 
     def self.restore_checkpoint(char, checkpoint)
 
-    end
-
-    def self.format_cginfo_options(option,i)
-      linebreak = i % 3 == 0 ? "%r" : ""
-
-      "#{linebreak}#{left(option, 25)}%b"
     end
 
   end

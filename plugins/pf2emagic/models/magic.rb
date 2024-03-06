@@ -227,6 +227,13 @@ module AresMUSH
           ilist[key] = value
 
           magic.innate_spells = ilist
+        when "divine_font"
+          if value.size > 1
+
+            to_assign['divine font'] = value
+          else
+            magic.update(divine_font: value)
+          end
         else
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end
