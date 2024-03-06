@@ -407,7 +407,7 @@ module AresMUSH
       if charclass == 'Cleric'
         deity_mstats = deity_info['magic_stats']
 
-        class_mstats.merge(deity_mstats) if deity_mstats
+        class_mstats = class_mstats.merge(deity_mstats) if deity_mstats
       end
 
       if class_mstats.empty?
