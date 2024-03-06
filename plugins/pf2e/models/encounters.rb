@@ -27,8 +27,8 @@ module AresMUSH
       scene.encounters.select { |e| e.is_active }.first
     end
 
-    def self.get_encounter_ID(char, scene=nil)
-      return nil if !scene
+    def self.get_encounter_id(char, scene=nil)
+      return nil unless scene
       return nil unless scene.participants.include? char
       scene_active_encounter(scene)
     end
@@ -45,6 +45,8 @@ module AresMUSH
 
     def self.add_to_initiative(encounter, name, roll, is_adversary=false)
       list = encounter.participants
+
+      return unless list
 
       adversary_mod = is_adversary ? 0.2 : 0
 
