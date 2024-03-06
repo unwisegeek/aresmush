@@ -610,5 +610,11 @@ module AresMUSH
 
     end
 
+    def self.format_cginfo_options(option,i)
+      linebreak = i % 3 == 0 ? "%r" : ""
+
+      "#{linebreak}#{left(option, 25)}%b"
+    end
+
   end
 end
