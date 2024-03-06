@@ -292,7 +292,7 @@ module AresMUSH
 
         # Magic
 
-        magic_msgs = Pf2emagic.cg_magic_warnings(@magic)
+        magic_msgs = Pf2emagic.cg_magic_warnings(@magic, @to_assign)
 
         if magic_msgs
           magic_msgs.each do |msg|

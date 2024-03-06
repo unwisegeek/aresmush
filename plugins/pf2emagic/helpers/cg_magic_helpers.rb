@@ -96,12 +96,14 @@ module AresMUSH
       Global.read_config('pf2e_spells').select { |k,v| v['traits'].include? 'common' }
     end
 
-    def self.cg_magic_warnings(magic)
+    def self.cg_magic_warnings(magic, to_assign)
 
       msg = []
 
       # Should yell if the magic object did not get created.
       msg << t('pf2emagic.config_error', :code => "NO OBJECT") unless magic
+
+      msg << t('pf2emagic.choose_divine_font') if to_assign['divine font']
 
     end
   end
