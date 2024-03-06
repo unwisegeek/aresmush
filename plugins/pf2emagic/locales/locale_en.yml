@@ -23,6 +23,7 @@ en:
 
     no_available_slots: "No available slots at specified level."
     no_focus_pool: "This character does not have focus spells."
+    no_font_option: "You do not need to choose your divine font."
     no_match: "I didn't find any %{item} matching your terms."
     no_new_spells: "This character class does not get new spells at this level."
     no_new_spells_at_level: "You have no new spells to learn at the level you specified."
