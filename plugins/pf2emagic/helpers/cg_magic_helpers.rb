@@ -93,7 +93,7 @@ module AresMUSH
     end
 
     def self.find_common_spells
-      Global.read_config('pf2e_spells').select { |k,v| v['traits'].include? 'common' }
+      Global.read_config('pf2e_spells').select { |k,v| !v['traits'].include? 'uncommon' or !v['traits'].include? 'rare' or !v['traits'].include? 'unique' }
     end
 
     def self.cg_magic_warnings(magic, to_assign)
