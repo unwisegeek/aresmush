@@ -65,17 +65,22 @@ module AresMUSH
       # OR in the character's personal list.
 
       spbl = deets["base_level"].to_i
-      new_spells_for_level = new_spells_to_assign[level]
+      new_spells_for_level = new_spells_to_assign[level.to_s]
+      
 
       return t('pf2emagic.cant_prepare_level') if spbl > level.to_i
       return t('pf2emagic.no_new_spells_at_level') unless new_spells_for_level
 
+      # Do they already have that spell on their list of to_assign
+      return t('pf2emagic.cg_spell_spell_already_on_list_to_assign') if new_spells_to_assign[level.to_s].include? to_add
+
       # At this point, the spell choice is deemed valid. If old_spell is true, they're swapping. Can they do that?
 
       if old_spell
+        list = hash.keys
         to_replace = old_spell.upcase
-        to_remove = list.select { |s| s == to_replace }
-        i = new_spells_for_level.index to_remove
+        to_remove = list.select { |s| s.upcase == to_replace.upcase }
+        i = new_spells_for_level.index to_remove.first
         return t('pf2emagic.not_in_list') unless i
       else
         i = new_spells_for_level.index "open"
