@@ -847,7 +847,7 @@ pf2e_spells:
     heighten:
       3: The range increases to 60 feet.
       5: The range increases to 120 feet.
-    base_level: 1
+    base_level: cantrip
     range: 30 feet
     school: Illusion
     tradition:

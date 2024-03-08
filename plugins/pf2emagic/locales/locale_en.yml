@@ -8,6 +8,7 @@ en:
     cant_refocus_time: "You last refocused at %{time} and can only refocus once per hour. Wait longer."
     cg_magic_ok: "%xgNo issues seen with magic options.%xn"
     cg_rep_spells: "%xcYou have repertoire spells. Left to choose: %{rcount}%xn"
+    cg_spell_select_ok: "Spell added successfully."
     cg_spellbook_spells: "%xcYou have spells to put in your spellbook. Left to choose: %{scount}%xn"
     char_not_caster: "%{char} is not a spellcaster and should not be requesting spells in a job."
     choose_divine_font: "%xrYou need to choose your divine font."

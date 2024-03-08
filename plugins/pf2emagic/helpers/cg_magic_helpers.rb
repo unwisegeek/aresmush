@@ -22,8 +22,8 @@ module AresMUSH
       prepared = Global.read_config('pf2e_magic', 'prepared_casters')
       spont = Global.read_config('pf2e_magic', 'spontaneous_casters')
 
-      return 'prepared' if prepared.include? charclass
-      return 'spontaneous' if spont.include? charclass
+      return 'prepared' if prepared.include? charclass.downcase
+      return 'spontaneous' if spont.include? charclass.downcase
       return nil
 
     end
@@ -42,15 +42,14 @@ module AresMUSH
       # Only common spells are available in cg/advancement, set last argument to true to enforce
 
       hash = common_only ? find_common_spells : Global.read_config('pf2e_spells')
-      list = hash.keys.map { |s| s.upcase }
-      to_find = new_spell.upcase
-      match = list.select { |s| s == to_find }
+      match = hash.keys.select { |s| s.downcase == new_spell.downcase }
 
       return t('pf2emagic.no_such_spell') if match.empty?
       return t('pf2emagic.multiple_matches', :item => 'spell') if (match.size > 1)
 
       to_add = match.first
       deets = hash[to_add]
+
 
       # Can the class they specified cast the spell they want?
       magic = char.magic
@@ -66,17 +65,22 @@ module AresMUSH
       # OR in the character's personal list.
 
       spbl = deets["base_level"].to_i
-      new_spells_for_level = new_spells_to_assign[level]
+      new_spells_for_level = new_spells_to_assign[level.to_s]
+      
 
       return t('pf2emagic.cant_prepare_level') if spbl > level.to_i
       return t('pf2emagic.no_new_spells_at_level') unless new_spells_for_level
 
+      # Do they already have that spell on their list of to_assign
+      return t('pf2emagic.cg_spell_spell_already_on_list_to_assign') if new_spells_to_assign[level.to_s].include? to_add
+
       # At this point, the spell choice is deemed valid. If old_spell is true, they're swapping. Can they do that?
 
       if old_spell
+        list = hash.keys
         to_replace = old_spell.upcase
-        to_remove = list.select { |s| s == to_replace }
-        i = new_spells_for_level.index to_remove
+        to_remove = list.select { |s| s.upcase == to_replace.upcase }
+        i = new_spells_for_level.index to_remove.first
         return t('pf2emagic.not_in_list') unless i
       else
         i = new_spells_for_level.index "open"
@@ -84,7 +88,9 @@ module AresMUSH
       end
 
       # Okay. Do the swap or assignment.
-      new_spells_for_level.delete_at(i).push(to_add).sort
+      # new_spells_for_level.delete_at(i).push(to_add).sort
+      new_spells_for_level[i] = to_add
+      new_spells_for_level.sort
       new_spells_to_assign[level] = new_spells_for_level
       to_assign[sp_list_type] = new_spells_to_assign
       char.update(pf2_to_assign: to_assign)
@@ -93,7 +99,7 @@ module AresMUSH
     end
 
     def self.find_common_spells
-      Global.read_config('pf2e_spells').select { |k,v| v['traits'].include? 'common' }
+      Global.read_config('pf2e_spells').select { |k,v| !v['traits'].include? 'uncommon' or !v['traits'].include? 'rare' or !v['traits'].include? 'unique' }
     end
 
     def self.cg_magic_warnings(magic, to_assign)
