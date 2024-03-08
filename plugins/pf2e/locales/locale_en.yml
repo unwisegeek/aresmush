@@ -80,6 +80,7 @@ en:
     encounter_start_title: "*** ENCOUNTER STARTED ***"
     encounter_complete: "*** END OF ENCOUNTER %{id} ***"
     encounter_add_ok: "You add %{name} to encounter %{encounter} at initiative %{roll}."
+    encounter_paused: "Encounter %{id} %{status}."
     encounter_remove_ok: "You remove %{name} from encounter %{encounter}."
     encounter_restarted: "*** ENCOUNTER %{id} RESTARTED ***"
     encounter_joined_ok: "%{name} joins encounter %{encounter} at initiative %{roll}."
