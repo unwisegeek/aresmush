@@ -325,7 +325,7 @@ module AresMUSH
             end
             scount = slist.join(", ")
 
-            messages << t('pf2emagic.cg_spellbook_spells', :rcount => scount)
+            messages << t('pf2emagic.cg_spellbook_spells', :scount => scount)
           end
 
         end
