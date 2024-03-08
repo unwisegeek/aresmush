@@ -18,8 +18,6 @@ en:
     does_not_prepare: "Specified class does not prepare spells."
     dfont_updated: "You set your divine font to %{font}."
 
-    has_pending_magic: "%xcThe following items grant you magic changes that will appear on your sheet when completed: %{items}%xn"
-
     multiple_matches: "More than one %{item} matches your search. Please choose one."
 
     no_available_slots: "No available slots at specified level."

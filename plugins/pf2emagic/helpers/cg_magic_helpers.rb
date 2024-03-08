@@ -14,10 +14,6 @@ module AresMUSH
       prepared_list
     end
 
-    def get_focus_casting_stat(stype)
-      Global.read_config('pf2e_magic', 'focus_casting_stat', stype)
-    end
-
     def self.get_caster_type(charclass)
       prepared = Global.read_config('pf2e_magic', 'prepared_casters')
       spont = Global.read_config('pf2e_magic', 'spontaneous_casters')
@@ -66,7 +62,7 @@ module AresMUSH
 
       spbl = deets["base_level"].to_i
       new_spells_for_level = new_spells_to_assign[level.to_s]
-      
+
 
       return t('pf2emagic.cant_prepare_level') if spbl > level.to_i
       return t('pf2emagic.no_new_spells_at_level') unless new_spells_for_level
@@ -100,6 +96,18 @@ module AresMUSH
 
     def self.find_common_spells
       Global.read_config('pf2e_spells').select { |k,v| !v['traits'].include? 'uncommon' or !v['traits'].include? 'rare' or !v['traits'].include? 'unique' }
+    end
+
+    def self.get_spells_by_name(term)
+      spell_list = Global.read_config('pf2e_spells').keys
+
+      # Return an exact match if found.
+      exact_match = spell_list.index {|spell| spell.downcase == term.downcase}
+
+      return spell_list[exact_match] if exact_match
+
+      # If not, return a list of partial matches.
+      spell_list.select {|spell| spell.downcase.match? term.downcase}
     end
 
     def self.cg_magic_warnings(magic, to_assign)
