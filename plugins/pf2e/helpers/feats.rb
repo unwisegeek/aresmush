@@ -394,7 +394,10 @@ module AresMUSH
         else
           return_msg << "Unknown key '#{key}' in do_feat_grants. Please inform code staff."
         end
+
       end
+
+      return_msg
     end
 
   end
