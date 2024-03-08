@@ -22,8 +22,8 @@ module AresMUSH
       prepared = Global.read_config('pf2e_magic', 'prepared_casters')
       spont = Global.read_config('pf2e_magic', 'spontaneous_casters')
 
-      return 'prepared' if prepared.include? charclass
-      return 'spontaneous' if spont.include? charclass
+      return 'prepared' if prepared.include? charclass.downcase
+      return 'spontaneous' if spont.include? charclass.downcase
       return nil
 
     end
@@ -42,15 +42,14 @@ module AresMUSH
       # Only common spells are available in cg/advancement, set last argument to true to enforce
 
       hash = common_only ? find_common_spells : Global.read_config('pf2e_spells')
-      list = hash.keys.map { |s| s.upcase }
-      to_find = new_spell.upcase
-      match = list.select { |s| s == to_find }
+      match = hash.keys.select { |s| s.downcase == new_spell.downcase }
 
       return t('pf2emagic.no_such_spell') if match.empty?
       return t('pf2emagic.multiple_matches', :item => 'spell') if (match.size > 1)
 
       to_add = match.first
       deets = hash[to_add]
+
 
       # Can the class they specified cast the spell they want?
       magic = char.magic
@@ -84,7 +83,9 @@ module AresMUSH
       end
 
       # Okay. Do the swap or assignment.
-      new_spells_for_level.delete_at(i).push(to_add).sort
+      # new_spells_for_level.delete_at(i).push(to_add).sort
+      new_spells_for_level[i] = to_add
+      new_spells_for_level.sort
       new_spells_to_assign[level] = new_spells_for_level
       to_assign[sp_list_type] = new_spells_to_assign
       char.update(pf2_to_assign: to_assign)
