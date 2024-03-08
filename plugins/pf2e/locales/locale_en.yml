@@ -50,6 +50,7 @@ en:
     cg_issues: "There is a problem with your choices. Review and resolve the messages in `cg/review` before running this command."
     cg_options_locked: "Your chargen options are already locked. Use `cg/reset` to clear your sheet if you need to make changes."
     cg_options_ok: "%xgNo errors or issues detected with your CG options."
+    cg_reset_ok_cuddles: "Cuddles the Otyugh wanders up and munches your sheet, then gives you a big hug and leaves you to start over."
     cg_reset_ok: "Your sheet has been cleared."
     char_has_code: "%xhEdicts:%xn%r%{edicts}%r%r%xhAnathema%xn:%r%{anathema}"
     char_not_all_found: "Not all characters in your list were found. Please check your spelling."

@@ -60,7 +60,7 @@ module AresMUSH
 
     end
 
-    def self.can_take_feat?(char, feat)                                                                                                             
+    def self.can_take_feat?(char, feat)
       msg = []
 
       find_feat = Pf2e.get_feat_details(feat)
@@ -90,7 +90,7 @@ module AresMUSH
 
         ancestry << cinfo['ancestry']
         ancestry << cinfo['adopted ancestry'] if cinfo['adopted ancestry']
-      
+
         # # Add allowances for Half-Sil and Half-Oruch
         ancestry << "Sildanyar" if cinfo['heritage'].include? "Half-Sil"
         ancestry << "Oruch" if cinfo['heritage'].include? "Half-Oruch"
@@ -362,6 +362,35 @@ module AresMUSH
 
           combat.update(unarmed_attacks: unarmed_attacks)
           return_msg << "This feat grants an unarmed attack."
+        when "skill"
+          # The value of the skill subkey is an array.
+          # Skills should check to see if the character already has training in that skill and grant a
+          # free one if so.
+
+          value.each do |skill|
+            has_skill = Pf2eSkills.get_skill_prof(char, skill) == 'untrained' ? false : true
+
+            if has_skill
+              if (char.advancing || !char.is_approved?)
+                to_assign = char.pf2_to_assign
+                open_skills = to_assign['open skills'] || []
+                open_skills << 'open'
+                to_assign['open skills'] = open_skills
+                char.update(pf2_to_assign: to_assign)
+                return_msg << "You already had a skill granted by this feat, so you have another free skill to assign."
+              else
+                return_msg << "#{char.name} needs to choose a free skill."
+              end
+            else
+              skill_obj = Pf2eSkills.find_skill(skill, char)
+
+              Pf2eSkills.create_skill_for_char(skill, char) if !skill_obj
+
+              Pf2eSkills.update_skill_for_char(skill, char, 'trained')
+              return_msg << "This feat grants the skill #{skill}."
+            end
+
+          end
         else
           return_msg << "Unknown key '#{key}' in do_feat_grants. Please inform code staff."
         end
