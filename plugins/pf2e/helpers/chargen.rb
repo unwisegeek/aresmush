@@ -411,7 +411,7 @@ module AresMUSH
       elsif charclass == 'Wizard'
         # Note: The universalist wizard will overwrite the existing 'spellbook' key from the class.
         # This is planned behavior.
-        school_mstats = subclass_option_info('magic_stats')
+        school_mstats = subclass_option_info['magic_stats']
 
         class_mstats = class_mstats.merge(school_mstats) if school_mstats
       end
