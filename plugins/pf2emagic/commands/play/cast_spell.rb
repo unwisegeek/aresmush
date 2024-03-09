@@ -29,6 +29,8 @@ module AresMUSH
       def handle
         # Can they cast as this class?
 
+        Pf2emagic.get_spells_by_name(self.spell)
+
 
 
 

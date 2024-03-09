@@ -104,7 +104,7 @@ module AresMUSH
       # Return an exact match if found.
       exact_match = spell_list.index {|spell| spell.downcase == term.downcase}
 
-      return spell_list[exact_match] if exact_match
+      return [ spell_list[exact_match] ] if exact_match
 
       # If not, return a list of partial matches.
       spell_list.select {|spell| spell.downcase.match? term.downcase}

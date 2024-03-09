@@ -164,7 +164,7 @@ module AresMUSH
 
           spell_level = self.value[3].downcase
           spell_list = Global.read_config('pf2e_spells').keys
-          spell = spell_list.select { |s| s.upcase.match? self.value[2].upcase }
+          spell = Pf2emagic.get_spells_by_name(self.value[2])
 
           unless spell.size == 1
             client.emit_failure t('pf2e.not_unique')
@@ -198,7 +198,7 @@ module AresMUSH
 
           spell_level = self.value[3].to_i.zero? ? 'cantrip' : self.value[3].to_i
           spell_list = Global.read_config('pf2e_spells').keys
-          spell = spell_list.select { |s| s.upcase.match? self.value[2].upcase }
+          spell = Pf2emagic.get_spells_by_name(self.value[2])
 
           unless spell.size == 1
             client.emit_failure t('pf2e.not_unique')
