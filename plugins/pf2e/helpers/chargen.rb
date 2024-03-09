@@ -411,7 +411,8 @@ module AresMUSH
       elsif charclass == 'Wizard'
         # Note: The universalist wizard will overwrite the existing 'spellbook' key from the class.
         # This is planned behavior.
-        school_mstats = subclass_option_info['magic_stats']
+        wizard_school = Global.read_config('pf2e_subclass', 'wizard_school_spells', subclass_option)
+        school_mstats = wizard_school&.fetch('magic_stats')
 
         class_mstats = class_mstats.merge(school_mstats) if school_mstats
       end
