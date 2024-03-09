@@ -103,6 +103,9 @@ pf2e_subclass:
         school_spell: transmutation
     Universalist:
       magic_stats:
-        spellbook: 3
+      # This key overwrites the base wizard class key for this, this is intentional
+        spellbook:
+          cantrip: 10
+          1: 6
         school_feat: true
 
