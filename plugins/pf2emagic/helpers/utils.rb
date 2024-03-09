@@ -4,7 +4,14 @@ module AresMUSH
     def self.is_caster?(char)
       magic = char.magic
       return false unless magic
-      return false if magic.tradition.empty?
+
+      trad = magic.tradition
+      trad = trad.delete('innate')
+      innate_only = trad.empty?
+
+      innate_spells = magic.innate_spells
+
+      return false if innate_only && innate_spells.empty?
       return true
     end
 
