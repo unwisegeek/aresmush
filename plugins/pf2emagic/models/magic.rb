@@ -237,7 +237,7 @@ module AresMUSH
         when 'school_feat'
           # This is called only for universalist wizards.
 
-          to_assign["school feat"] = 'open'
+          to_assign["school feat"] = [ 'open' ]
         else
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end

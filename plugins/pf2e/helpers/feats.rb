@@ -120,7 +120,7 @@ module AresMUSH
       msg << "prerequisites" if !meets_prereqs
 
       return true if msg.empty?
-      return msg
+      return false
     end
 
     def self.meets_prereqs?(char, prereqs, cl)
@@ -321,7 +321,7 @@ module AresMUSH
       end
 
       if to_assign['school feat']
-        msgs << t('pf2e.unassigned_school_feat') if to_assign['school feat'] == 'open'
+        msgs << t('pf2e.unassigned_school_feat') if to_assign['school feat'].include? 'open'
       end
 
       return nil if msgs.empty?

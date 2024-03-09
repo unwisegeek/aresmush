@@ -42,7 +42,6 @@ module AresMUSH
       def handle
 
         ##### VALIDATION SECTION START #####
-
         # Is this actually a feat?
 
         feat_check = Pf2e.get_feat_details(self.feat_name)
@@ -71,7 +70,7 @@ module AresMUSH
 
         key = self.feat_type + " feat"
 
-        if !(to_assign[key] == 'open')
+        if !(to_assign[key].include? 'open')
           client.emit_failure t('pf2e.no_free', :element => key)
           return
         end
