@@ -98,11 +98,11 @@ module AresMUSH
         # If the feat slot is granted by another feat, that feat may be restricted. Check for that.
         old_value = to_assign[key]
 
-        if old_value.match? "Basic"
+        if old_value.include? "Basic"
 
-        elsif old_value.match? "Expert"
+        elsif old_value.include? "Expert"
 
-        elsif old_value.match? "Master"
+        elsif old_value.include? "Master"
 
         end
 

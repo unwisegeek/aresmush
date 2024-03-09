@@ -342,7 +342,10 @@ module AresMUSH
           to_assign = char.pf2_to_assign
 
           value.each do |item|
-            to_assign[item] = 'open'
+            to_assign_subitem = to_assign[item] ? to_assign[item] : []
+            to_assign_subitem << 'open'
+            to_assign[item] = to_assign_subitem
+
             return_msg << t('pf2e.feat_grants_addl', :element => assign_key)
           end
 
