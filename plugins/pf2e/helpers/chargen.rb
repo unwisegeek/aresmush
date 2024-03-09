@@ -408,7 +408,7 @@ module AresMUSH
         deity_mstats = deity_info['magic_stats']
 
         class_mstats = class_mstats.merge(deity_mstats) if deity_mstats
-      elsif clarclass == 'Wizard'
+      elsif charclass == 'Wizard'
         # Note: The universalist wizard will overwrite the existing 'spellbook' key from the class.
         # This is planned behavior.
         school_mstats = subclass_option_info('magic_stats')
