@@ -320,7 +320,7 @@ module AresMUSH
         msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'].include? 'open'
       end
 
-      if to_assign['school']
+      if to_assign['school feat']
         msgs << t('pf2e.unassigned_school_feat') if to_assign['school feat'] == 'open'
       end
 
