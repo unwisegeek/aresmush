@@ -234,7 +234,7 @@ module AresMUSH
           # Value in this case is sent to to_assign as { school spell => school }
 
           to_assign["school spell"] = value['school_spell']
-        when 'wizard_feat'
+        when 'school_feat'
           # This is called only for universalist wizards.
 
           to_assign["school feat"] = 'open'
