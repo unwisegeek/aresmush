@@ -108,7 +108,7 @@ module AresMUSH
 
         ##### VALIDATION SECTION END #####
 
-        sublist = feat_list[self.feat_type]
+        sublist = feat_list[self.feat_type] || []
 
         sublist << fname
         to_assign[key] = fname
