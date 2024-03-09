@@ -35,7 +35,8 @@ module AresMUSH
           caster_type = Pf2emagic.get_caster_type(charclass)
 
           if caster_type == 'prepared'
-            spell_list = spells_today[charclass]
+            # Can be blank prior to first rest.
+            spell_list = spells_today[charclass] || {}
 
             list << format_prepared_spells(@char, charclass, spell_list, trad_info)
           elsif caster_type == 'spontaneous'
@@ -157,7 +158,7 @@ module AresMUSH
           splist_displ << "#{item_color}#{level.capitalize}:%xn #{splist.sort.join(", ")}"
         end
 
-        "#{trad_string}#{remaining_msg} #{remaining.join("%b%b")}%r#{splist_displ.join("%r")}"
+        "#{trad_string}#{remaining_msg} #{remaining.join("%b%b")}%r%r%b%b#{splist_displ.join("%r%b%b")}"
       end
 
       def format_focus_spells(char, charclass, fstype, trad_info, spell_list=nil, cantrip_list=nil)
