@@ -120,7 +120,7 @@ module AresMUSH
       msg << "prerequisites" if !meets_prereqs
 
       return true if msg.empty?
-      return false
+      return msg
     end
 
     def self.meets_prereqs?(char, prereqs, cl)
