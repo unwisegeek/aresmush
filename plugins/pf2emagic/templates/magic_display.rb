@@ -26,9 +26,7 @@ module AresMUSH
         tradition = @magic.tradition
 
         charclass_list = tradition.keys.sort
-
         spells_today = @magic.spells_today
-
         list = []
 
         charclass_list.each do |charclass|
@@ -37,13 +35,15 @@ module AresMUSH
           caster_type = Pf2emagic.get_caster_type(charclass)
 
           if caster_type == 'prepared'
+
             spell_list = spells_today[charclass]
 
             list << format_prepared_spells(@char, charclass, spell_list, trad_info)
           elsif caster_type == 'spontaneous'
-            spell_list = spells_today[charclass]
+            repertoire = @magic.repertoire
+            spell_list = repertoire[charclass]
 
-            list << format_spont_spells(@char, charclass, spell_list, trad_info)
+            list << format_spont_spells(@char, charclass, spell_list, spells_today, trad_info)
           else next
           end
         end
@@ -132,13 +132,22 @@ module AresMUSH
         "#{trad_string}#{list.join("%r")}"
       end
 
-      def format_spont_spells(char, charclass, spell_list, trad_info)
+      def format_spont_spells(char, charclass, spell_list, spells_today, trad_info)
         # Stat Block
         trad = Pf2e.pretty_string(trad_info[0])
         prof = Pf2e.pretty_string(trad_info[1].slice(0).upcase)
         atk = PF2Magic.get_spell_attack_bonus(char, charclass)
 
         trad_string = "#{title_color}#{charclass}%xn: #{trad} (#{prof})%b%b%bBonus: #{atk}%r%r"
+
+        # Spells Remaining Block
+        remaining = []
+
+        today_list = spells_today[charclass]
+
+        today_list.each_pair do |level, amt|
+          remaining << "%xh#{level}:%xn #{amt}"
+        end
 
         # Spell List Block
         level_displ = []
@@ -150,7 +159,7 @@ module AresMUSH
 
         end
 
-        "#{trad_string}#{level_displ.join("%b%b%b")}%r#{splist_displ.join("%b%b%b")}"
+        "#{trad_string}%r#{remaining.join("%b%b")}%r#{level_displ.join("%b%b%b")}%r#{splist_displ.join("%b%b%b")}"
       end
 
       def format_focus_spells(char, charclass, fstype, trad_info, spell_list=nil, cantrip_list=nil)
