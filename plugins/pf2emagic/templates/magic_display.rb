@@ -141,6 +141,7 @@ module AresMUSH
 
         # Spells Remaining Block
         remaining = []
+        remaining_msg = "#{item_color}Remaining Today:%xn"
 
         # Spells_today can be an empty hash prior to first rest / approval.
         today_list = spells_today[charclass] || {}
@@ -150,16 +151,13 @@ module AresMUSH
         end
 
         # Spell List Block
-        level_displ = []
         splist_displ = []
 
         spell_list.each_pair do |level, splist|
-          level_displ << "#{item_color}#{level}"
-          splist_displ << splist
-
+          splist_displ << "#{item_color}#{level.capitalize}:%xn #{splist.sort.join(", ")}"
         end
 
-        "#{trad_string}%r#{remaining.join("%b%b")}%r#{level_displ.join("%b%b%b")}%r#{splist_displ.join("%b%b%b")}"
+        "#{trad_string}%r#{remaining_msg} #{remaining.join("%b%b")}%r#{splist_displ.join("%b%b%b")}"
       end
 
       def format_focus_spells(char, charclass, fstype, trad_info, spell_list=nil, cantrip_list=nil)
