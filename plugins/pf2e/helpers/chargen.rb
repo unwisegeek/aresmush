@@ -201,14 +201,16 @@ module AresMUSH
 
       ## Determine what skills come with the character's base info, and set those.
 
-      bg_skills = background_info["skills"] ? background_info["skills"] : []
+      bg_skills = background_info["skills"] || []
 
       if bg_skills.size == 0
         client.emit_ooc t('pf2e.bg_no_options', :element => "skills")
       end
 
-      heritage_skills = heritage_info['skills']
-      class_skills = class_features_info['skills']
+      # Allowing for any of these to potentially be empty.
+
+      heritage_skills = heritage_info['skills'] || []
+      class_skills = class_features_info['skills'] || []
       subclass_skills = subclass_features_info.blank? ? [] : subclass_features_info['skills']
       subclassopt_skills = subclassopt_features_info.blank? ? [] : subclassopt_features_info['skills']
 
