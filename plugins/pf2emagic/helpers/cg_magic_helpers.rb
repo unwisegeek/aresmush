@@ -18,8 +18,8 @@ module AresMUSH
       prepared = Global.read_config('pf2e_magic', 'prepared_casters')
       spont = Global.read_config('pf2e_magic', 'spontaneous_casters')
 
-      return 'prepared' if prepared.include? charclass.downcase
-      return 'spontaneous' if spont.include? charclass.downcase
+      return 'prepared' if prepared.include? charclass.capitalize
+      return 'spontaneous' if spont.include? charclass.capitalize
       return nil
 
     end

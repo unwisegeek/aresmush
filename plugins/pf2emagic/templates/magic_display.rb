@@ -25,7 +25,7 @@ module AresMUSH
       def spell_details_by_charclass
         tradition = @magic.tradition
 
-        charclass_list = tradition.keys.sort
+        charclass_list = tradition.keys.sort - [ 'innate ']
         spells_today = @magic.spells_today
         list = []
 
@@ -35,7 +35,6 @@ module AresMUSH
           caster_type = Pf2emagic.get_caster_type(charclass)
 
           if caster_type == 'prepared'
-
             spell_list = spells_today[charclass]
 
             list << format_prepared_spells(@char, charclass, spell_list, trad_info)
