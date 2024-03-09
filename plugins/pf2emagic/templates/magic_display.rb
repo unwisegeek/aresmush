@@ -157,7 +157,7 @@ module AresMUSH
           splist_displ << "#{item_color}#{level.capitalize}:%xn #{splist.sort.join(", ")}"
         end
 
-        "#{trad_string}%r#{remaining_msg} #{remaining.join("%b%b")}%r#{splist_displ.join("%b%b%b")}"
+        "#{trad_string}#{remaining_msg} #{remaining.join("%b%b")}%r#{splist_displ.join("%r")}"
       end
 
       def format_focus_spells(char, charclass, fstype, trad_info, spell_list=nil, cantrip_list=nil)
