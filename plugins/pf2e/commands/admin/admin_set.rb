@@ -223,6 +223,7 @@ module AresMUSH
             magic.update(repertoire: repertoire)
           end
 
+          client.emit_success t('pf2e.updated_ok', :char => char.name, :element => 'Repertoire')
         when "focus"
           # Expected structure of value: add|delete <charclass> cantrip|spell <spell name>
 
@@ -265,6 +266,8 @@ module AresMUSH
               magic.update(focus_cantrips: focus_list)
             end
           end
+
+          client.emit_success t('pf2e.updated_ok', :char => char.name, :element => key.capitalize.gsub("_", " "))
         when "ability"
           # Expected structure of self.value: <ability name> <new score>
 
@@ -288,6 +291,14 @@ module AresMUSH
           abil_obj.update(base_val: score)
 
           client.emit_success t('pf2e.updated_ok', :char => char.name, :element => abil_obj.name)
+        when 'divine font'
+          # Expected structure of self.value = 'heal' or 'harm'
+
+          font_info = { 'divine_font' => [ self.value ]}
+
+          PF2Magic.update_magic(char, 'charclass', font_info, client)
+
+          client.emit_success t('pf2e.updated_ok', :char => char.name, :element => 'Divine font')
         else
           client.emit_failure t('pf2e.bad_value', :item => 'keyword')
         end

@@ -232,7 +232,7 @@ module AresMUSH
 
             to_assign['divine font'] = value
           else
-            magic.update(divine_font: value)
+            magic.update(divine_font: value.first)
           end
         else
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
