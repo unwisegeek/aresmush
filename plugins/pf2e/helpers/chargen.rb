@@ -403,11 +403,17 @@ module AresMUSH
         class_mstats = class_mstats.merge(subclass_mstats) if subclass_mstats
       end
 
-      # Handle clerics' divine font if necessary.
+      # Handle class specific junk.
       if charclass == 'Cleric'
         deity_mstats = deity_info['magic_stats']
 
         class_mstats = class_mstats.merge(deity_mstats) if deity_mstats
+      elsif clarclass == 'Wizard'
+        # Note: The universalist wizard will overwrite the existing 'spellbook' key from the class.
+        # This is planned behavior.
+        school_mstats = subclass_option_info('magic_stats')
+
+        class_mstats = class_mstats.merge(school_mstats) if school_mstats
       end
 
       client.emit class_mstats
