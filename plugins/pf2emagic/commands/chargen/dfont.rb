@@ -51,7 +51,7 @@ module AresMUSH
 
         # Do it. Remove the divine_font from to_assign once done.
 
-        to_assign.delete 'divine font'
+        to_assign['divine font'] = self.font
         enactor.update(pf2_to_assign: to_assign)
 
         magic.update divine_font: self.font
