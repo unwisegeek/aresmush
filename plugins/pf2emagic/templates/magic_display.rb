@@ -142,7 +142,8 @@ module AresMUSH
         # Spells Remaining Block
         remaining = []
 
-        today_list = spells_today[charclass]
+        # Spells_today can be an empty hash prior to first rest / approval.
+        today_list = spells_today[charclass] || {}
 
         today_list.each_pair do |level, amt|
           remaining << "%xh#{level}:%xn #{amt}"
