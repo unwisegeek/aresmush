@@ -27,7 +27,7 @@ module AresMUSH
       end
 
       def check_valid_feat_type
-        feat_types = [ "general", "skill", "archetype", "dedication", "charclass", "ancestry"]
+        feat_types = [ "general", "skill", "archetype", "dedication", "charclass", "ancestry", "school" ]
 
         return nil if feat_types.include?(self.feat_type)
 
@@ -74,6 +74,17 @@ module AresMUSH
         if !(to_assign[key] == 'open')
           client.emit_failure t('pf2e.no_free', :element => key)
           return
+        end
+
+        # A school feat has to be a charclass feat for wizards.
+
+        if self.feat_type == 'school'
+          is_wizard_charclass_feat = fdeets['assoc_charclass']&.include? 'Wizard'
+
+          unless is_wizard_charclass_feat
+            client.emit_failure t('pf2e.feat_wrong_type')
+            return
+          end
         end
 
         # Does the enactor qualify to take this feat?
