@@ -12,6 +12,8 @@ module AresMUSH
 
       magic = char.magic
 
+      spells_today = {}
+
       return t('pf2emagic.not_caster') unless magic
 
       pclass = magic.spells_prepared.keys.map { |c| c.downcase }
@@ -22,17 +24,19 @@ module AresMUSH
 
       class_list.each do |cc|
         case cc
-        when "wizard", "druid", "cleric", "witch"
+        when "Wizard", "Druid", "Cleric", "Witch"
           prepared_list = magic.spells_prepared
 
-          magic.update(spells_today: prepared_list)
-        when "bard", "oracle", "sorcerer"
-          spells_today = generate_blank_spell_list(magic)
+          spells_today[cc] = prepared_list
+        when "Bard", "Oracle", "Sorcerer"
+          spontlist = generate_blank_spell_list(magic)
 
-          magic.update(spells_today: spells_today)
+          spells_today[cc] = spontlist
         else
           return nil
         end
+
+        magic.update(spells_today: spells_today)
       end
 
     end
