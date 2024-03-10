@@ -234,10 +234,13 @@ module AresMUSH
           # Value in this case is sent to to_assign as { school spell => school }
 
           to_assign["school spell"] = value['school_spell']
-        when 'school_feat'
-          # This is called only for universalist wizards.
+        when 'gated_feat'
+          # Gated or special feats can be acquired by wizard schools and so can be populated under magic stats.
+          list = to_assign["special feat"] || []
 
-          to_assign["school feat"] = [ 'open' ]
+          value << list
+
+          to_assign['special feat'] = list
         else
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end

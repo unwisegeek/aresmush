@@ -284,6 +284,25 @@ module AresMUSH
 
       enactor.pf2_feats = feats
 
+      # Check for gated feats.
+      # I use an array for this because there could be more than one in play at a time.
+
+      gated_feats = []
+      class_gated_feats = class_features_info["gated_feat"]
+      subclass_gated_feats = subclass_features_info.blank? ? nil : subclass_features_info["gated_feat"]
+      subclass_info_gated_feats = subclassopt_features_info.blank? ? nil : subclassopt_features_info["gated_feat"]
+
+      gated_feats << class_gated_feats if class_gated_feats
+      gated_feats << subclass_gated_feats if subclass_gated_feats
+      gated_feats << subclass_info_gated_feats if subclass_info_gated_feats
+
+      unless gated_feats.empty?
+        client.emit_ooc t('pf2e.has_gated_feats', :options => gated_feats.sort.join(", "))
+
+        to_assign['special feat'] = gated_feats
+      end
+
+
       # Calculate and set base HP excluding CON mod
       # Final HP is calculated and set on chargen lock
 

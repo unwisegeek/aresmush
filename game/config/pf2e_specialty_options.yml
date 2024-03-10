@@ -107,5 +107,5 @@ pf2e_subclass:
         spellbook:
           cantrip: 10
           1: 6
-        school_feat: true
+        gated_feat: universalist
 
