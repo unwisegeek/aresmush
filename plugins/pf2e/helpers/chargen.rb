@@ -419,8 +419,6 @@ module AresMUSH
         class_mstats = class_mstats.merge(school_mstats) if school_mstats
       end
 
-      client.emit class_mstats
-
       if class_mstats.empty?
         client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
       else
@@ -437,13 +435,19 @@ module AresMUSH
       client.emit_ooc "Assessing languages...."
       languages = enactor.pf2_lang
 
+      client.emit ancestry_info['languages']
+
       ancestry_info['languages'].each { |l| languages << l }
 
       clang = class_features_info['languages']
 
+      client.emit clang
+
       clang.each { |l| languages << l } if clang
 
       unique_lang = languages.uniq
+
+      client.emit unique_lang
 
       enactor.pf2_lang = languages.uniq
 
