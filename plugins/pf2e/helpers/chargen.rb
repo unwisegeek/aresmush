@@ -435,19 +435,13 @@ module AresMUSH
       client.emit_ooc "Assessing languages...."
       languages = enactor.pf2_lang
 
-      client.emit ancestry_info['languages']
-
       ancestry_info['languages'].each { |l| languages << l }
 
       clang = class_features_info['languages']
 
-      client.emit clang
-
       clang.each { |l| languages << l } if clang
 
       unique_lang = languages.uniq
-
-      client.emit unique_lang
 
       enactor.pf2_lang = languages.uniq
 
@@ -497,8 +491,8 @@ module AresMUSH
       c_actions = class_features_info['action']
       c_reactions = class_features_info['reaction']
 
-      s_actions = subclass_features_info.blank? ? {} : subclass_features_info['action'] || []
-      s_reactions = subclass_features_info.blank? ? {} : subclass_features_info['reaction'] || []
+      s_actions = subclass_features_info.blank? ? [] : subclass_features_info['action'] || []
+      s_reactions = subclass_features_info.blank? ? [] : subclass_features_info['reaction'] || []
 
       actions = (h_actions + b_actions + c_actions + s_actions).uniq.sort
       reactions = (h_reactions + b_reactions + c_reactions + s_reactions).uniq.sort
