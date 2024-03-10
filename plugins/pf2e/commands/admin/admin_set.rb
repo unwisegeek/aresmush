@@ -76,21 +76,29 @@ module AresMUSH
           char_feat_list[feat_type] = feat_sublist.sort
           char.update(pf2_feats: char_feat_list)
 
-          client.emit_success t('pf2e.feat_set_ok', :name => feat_name, :type => feat_type)
+          client.emit_success t('pf2e.updated_ok', :element => "Feat #{feat_name}", :char => char.name)
 
           feat_grants_stuff = fdeets['grants']
 
           if feat_grants_stuff
-            charclass = fdeets['assoc_charclass'] ? fdeets['assoc_charclass'] : char.pf2_base_info['charclass']
-            Pf2e.do_feat_grants(enactor, feat_grants_stuff, charclass, client)
-            client.emit_ooc "The assigned feat grants extra stuff. Processing."
+            if instruction == 'add'
+              charclass = fdeets['assoc_charclass'] ? fdeets['assoc_charclass'] : char.pf2_base_info['charclass']
+              Pf2e.do_feat_grants(enactor, feat_grants_stuff, charclass, client)
+              client.emit_ooc "The assigned feat grants extra stuff. Processing."
+            else
+              client.emit_ooc "The assigned feat grants other things. You may need to do manual cleanup on the sheet."
+            end
           end
         when "skill"
           # Expected structure of self.value: `<skill name> <proficiency level>`
-          skname = self.value[0]
+
+          # Skills can be multi-word names, but prof is always the last word, so pop it off the end and the rest
+          # is the skill name.
+
+          new_prof = self.value.pop
+          skname = self.value.join
 
           skill = Pf2eSkills.find_skill(skname, char)
-          new_prof = self.value[1].downcase
 
           levels = %w(untrained trained expert master legendary)
 
@@ -163,7 +171,6 @@ module AresMUSH
           end
 
           spell_level = self.value[3].downcase
-          spell_list = Global.read_config('pf2e_spells').keys
           spell = Pf2emagic.get_spells_by_name(self.value[2])
 
           unless spell.size == 1
@@ -197,7 +204,6 @@ module AresMUSH
           end
 
           spell_level = self.value[3].to_i.zero? ? 'cantrip' : self.value[3].to_i
-          spell_list = Global.read_config('pf2e_spells').keys
           spell = Pf2emagic.get_spells_by_name(self.value[2])
 
           unless spell.size == 1
@@ -206,8 +212,6 @@ module AresMUSH
           end
 
           spell = spell.first
-
-          # Now it's time to do the adding.
 
           if instruction == 'add'
             info = { 'addrepertoire' => { spell_level => spell }}
