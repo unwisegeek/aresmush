@@ -43,7 +43,7 @@ module AresMUSH
         scene = encounter.scene
 
         if (scene.completed)
-          client.emit_failure t('pf2e.encounter_cant_restart', :id => encounter.id, :reason => "Scene not running"))
+          client.emit_failure t('pf2e.encounter_cant_restart', :id => encounter.id, :reason => "Scene not running")
           return
         end
 
