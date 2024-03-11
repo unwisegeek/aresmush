@@ -31,12 +31,21 @@ module AresMUSH
           return
         end
 
+        # You cannot restart an encounter that is already running.
+
+        if encounter.is_active
+          client.emit_failure t('pf2e.encounter_cant_restart', :id => encounter.id, :reason => "Already running")
+          return
+        end
+
         # You cannot restart an encounter if the scene to which it is tied is not running.
 
         scene = encounter.scene
 
-        if scene.completed
-          client.emit_failure t('pf2e.encounter_cant_restart')
+        client.emit "Scene ID: #{scene.id} Completed? #{scene.completed}"
+
+        if (scene.completed)
+          client.emit_failure t('pf2e.encounter_cant_restart', :id => encounter.id, :reason => t('scenes.scene_not_running'))
           return
         end
 

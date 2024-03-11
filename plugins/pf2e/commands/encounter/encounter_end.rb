@@ -30,6 +30,13 @@ module AresMUSH
           return
         end
 
+        # It shouldn't allow an encounter that has already ended to end again.
+
+        unless encounter.is_active
+          client.emit_failure t('pf2e.encounter_already_ended', :id => encounter.id)
+          return
+        end
+
         # Do it.
 
         encounter.update(is_active: false)
