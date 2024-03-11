@@ -18,11 +18,16 @@ module AresMUSH
     end
 
     def self.can_join_encounter(char, encounter)
-      scene = encounter.scene
+
+      is_organizer = char.name == encounter.organizer
+
+      return "You are the organizer" if is_organizer
+
       active_encounter = PF2Encounter.in_active_encounter? char
 
       return "In another encounter" if active_encounter
 
+      scene = encounter.scene
       is_participant = scene.participants.include? char
 
       return "Not a scene participant" unless is_participant
