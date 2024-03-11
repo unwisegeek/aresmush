@@ -46,10 +46,11 @@ module AresMUSH
           return
         end
 
-        # Enactor needs to be the organizer for the encounter in question.
+        # Verify that this character can modify the encounter.
 
-        if !PF2Encounter.is_organizer?(enactor, encounter)
-          client.emit_failure t('pf2e.not_organizer')
+        cannot_modify = Pf2e.can_modify_encounter(enactor, encounter)
+        if cannot_modify
+          client.emit_failure cannot_modify
           return
         end
 
