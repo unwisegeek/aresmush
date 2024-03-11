@@ -19,7 +19,9 @@ module AresMUSH
 
     def self.can_join_encounter(char, encounter)
 
-      return "Encounter ended" unless encounter.is_active
+      encounter_is_active = encounter.is_active
+
+      return "Not an active encounter" unless encounter_is_active
 
       is_organizer = char.name == encounter.organizer
 
@@ -33,10 +35,6 @@ module AresMUSH
       is_participant = scene.participants.include? char
 
       return "Not a scene participant" unless is_participant
-
-      encounter_is_active = encounter.is_active
-
-      return "Not an active encounter" unless encounter_is_active
       return nil
     end
 
