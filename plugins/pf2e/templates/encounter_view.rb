@@ -21,7 +21,7 @@ module AresMUSH
       end
 
       def header_line
-        "%b%b#{left("Init", 5)}%b%b#{left("Name", 25)}%b%b#{left("Conditions".sort.join(","), 40)}"
+        "%b%b#{left("Init", 5)}%b%b#{left("Name", 25)}%b%b#{left("Conditions", 40)}"
       end
 
       def initiative_list
