@@ -39,6 +39,8 @@ module AresMUSH
       def bonuses
         bonus_list = encounter.bonuses
 
+        return [] if bonus_list.empty?
+
         list = []
 
         bonus_list.each_pair do |bonus, people|
@@ -54,6 +56,8 @@ module AresMUSH
 
       def penalties
         penalty_list = encounter.penalties
+
+        return [] if penalty_list.empty?
 
         list = []
 
