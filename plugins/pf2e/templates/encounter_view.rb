@@ -28,7 +28,7 @@ module AresMUSH
 
         list = []
 
-        encounter.participants.each do |p|
+        @encounter.participants.each do |p|
           list << format_init_list_item(p)
         end
 
@@ -37,7 +37,7 @@ module AresMUSH
       end
 
       def bonuses
-        bonus_list = encounter.bonuses
+        bonus_list = @encounter.bonuses
 
         return [] if bonus_list.empty?
 
@@ -55,7 +55,7 @@ module AresMUSH
       end
 
       def penalties
-        penalty_list = encounter.penalties
+        penalty_list = @encounter.penalties
 
         return [] if penalty_list.empty?
 

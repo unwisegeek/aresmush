@@ -31,7 +31,7 @@ module AresMUSH
         cannot_join = Pf2e.can_join_encounter(enactor, encounter)
 
         if cannot_join
-          client.emit_failure t('pf2e.cannot_join_encounter', :reason => cannot_join)
+          client.emit_failure t('pf2e.cannot_join_encounter', :reason => cannot_join, :id => self.encounter_id)
           return
         end
 
