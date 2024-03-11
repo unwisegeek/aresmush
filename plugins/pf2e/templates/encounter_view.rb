@@ -44,7 +44,7 @@ module AresMUSH
         list = []
 
         bonus_list.each_pair do |bonus, people|
-          list < format_bonus_item(bonus, people)
+          list << format_bonus_penalty_item(bonus, people)
         end
 
         list
@@ -62,7 +62,7 @@ module AresMUSH
         list = []
 
         penalty_list.each_pair do |penalty, people|
-          list < format_penalty_item(penalty, people)
+          list << format_bonus_penalty_item(penalty, people)
         end
 
         list
@@ -80,11 +80,7 @@ module AresMUSH
         "%b%b#{left(initiative, 5)}%b%b#{left(name, 25)}%b%b#{left(conditions.sort.join(","), 40)}"
       end
 
-      def format_bonus_item(name, people_list)
-        "%b%b#{item_color}#{name.capitalize}:%xn #{people_list.sort.join(", ")}"
-      end
-
-      def format_penalty_item(name, people_list)
+      def format_bonus_penalty_item(name, people_list)
         "%b%b#{item_color}#{name.capitalize}:%xn #{people_list.sort.join(", ")}"
       end
 
