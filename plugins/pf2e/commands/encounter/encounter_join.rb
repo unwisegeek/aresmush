@@ -57,7 +57,7 @@ module AresMUSH
         enactor.encounters.add encounter
         encounter.characters.add enactor
 
-        @ message = t('pf2e.encounter_joined_ok',
+        @message = t('pf2e.encounter_joined_ok',
           :roll => initiative,
           :encounter => encounter.id,
           :name => enactor.name
