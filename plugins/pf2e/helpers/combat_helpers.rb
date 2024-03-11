@@ -19,6 +19,8 @@ module AresMUSH
 
     def self.can_join_encounter(char, encounter)
 
+      return "Encounter ended" unless encounter.is_active
+
       is_organizer = char.name == encounter.organizer
 
       return "You are the organizer" if is_organizer
