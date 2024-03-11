@@ -11,5 +11,10 @@
 <%= bonus %>
 <% end %>
 <% end %>
-
+<% if has_penalties %>
+<%= section_line("Applicable Pens")%>
+<% penalties.each do |item| %>
+<%= item %>
+<% end %>
+<% end %>
 <%= footer %>
