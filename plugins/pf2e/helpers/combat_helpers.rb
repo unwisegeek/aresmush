@@ -18,18 +18,23 @@ module AresMUSH
     end
 
     def self.can_join_encounter(char, encounter)
-      scene = encounter.scene
-      active_encounter = PF2Encounter.in_active_encounter? char
-
-      return "In another encounter" if active_encounter
-
-      is_participant = scene.participants.include? char
-
-      return "Not a scene participant" unless is_participant
 
       encounter_is_active = encounter.is_active
 
       return "Not an active encounter" unless encounter_is_active
+
+      is_organizer = char.name == encounter.organizer
+
+      return "You are the organizer" if is_organizer
+
+      active_encounter = PF2Encounter.in_active_encounter? char
+
+      return "In another encounter" if active_encounter
+
+      scene = encounter.scene
+      is_participant = scene.participants.include? char
+
+      return "Not a scene participant" unless is_participant
       return nil
     end
 
@@ -46,6 +51,20 @@ module AresMUSH
       targets_in_encounter = target_list.all? { |t| participants.include? t }
 
       is_organizer && targets_in_encounter
+    end
+
+    def self.can_modify_encounter(char, encounter)
+      # Enactor needs to be the organizer for the encounter in question.
+      return t('pf2e.not_organizer') unless !PF2Encounter.is_organizer?(char, encounter)
+
+      # You cannot modify an encounter if its associated scene is completed.
+      scene = encounter.scene
+      return t('pf2e.encounter_cant_restart', :id => encounter.id, :reason => "Scene not running") if (scene.completed)
+
+      # Encounter should not be modifiable if not active.
+      return t('pf2e.encounter_already_ended', :id => encounter.id) unless encounter.is_active
+
+      return nil
     end
 
   end

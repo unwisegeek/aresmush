@@ -113,23 +113,11 @@ module AresMUSH
           return PF2EncounterEndCmd
         when "restart"
           return PF2EncounterRestartCmd
+        when "bonus", "penalty"
+          return PF2EncounterBonusPenaltyCmd
         else
           return PF2InitiateCombatCmd
         end
-      when "tinit"
-        return PF2InitViewCmd
-      when "ninit"
-        return PF2EncounterNextCmd
-      when "pinit"
-        return PF2EncounterPrevCmd
-      when "rminit"
-        return PF2EncounterRemoveCmd
-      when "jinit"
-        return PF2EncounterAddCmd
-      when "tscan"
-        return PF2EncounterScanCmd
-      when "resume"
-        return PF2EncounterEndCmd
       when "admin"
         case cmd.switch
         when "set"
