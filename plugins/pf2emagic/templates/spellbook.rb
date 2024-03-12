@@ -21,12 +21,9 @@ module AresMUSH
   
         def spellbook_list
           list = []
-          Global.logger.debug @spellbook
-          Global.logger.debug @charclass
           
           @spellbook[@charclass].each_pair do |spell_level, spell_list|
-            # spells = spellbook[@charclass][spell_level].join(", ")
-            spells = spell_list.join(", ")
+            spells = spellbook[@charclass][spell_level].join(", ")
             list << "#{item_color}#{spell_level}:%xn #{spells}"
           end
   
