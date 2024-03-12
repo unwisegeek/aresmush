@@ -24,6 +24,11 @@ module AresMUSH
 
     end
 
+    def deep_merge(second)
+      merger = proc { |_, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : Array === v1 && Array === v2 ? v1 | v2 : [:undefined, nil, :nil].include?(v2) ? v1 : v2 }
+      merge(second.to_h, &merger)
+    end
+
     def self.select_spell(char, charclass, level, old_spell, new_spell, common_only=false)
       # Do they get to pick a spell for this class at this time?
       to_assign = char.pf2_to_assign
@@ -47,8 +52,7 @@ module AresMUSH
       deets = hash[to_add]
 
       # Is new_spell of the level specified in level?
-
-      return t('pf2emagic.incorrect_spelllevel_specified', :spell => to_add, :level => level ) if deets["base_level"].to_i != level
+      return t('pf2emagic.incorrect_spelllevel_specified', :spell => to_add, :level => level ) if !deets["base_level"].to_i == level.to_i
 
       # Can the class they specified cast the spell they want?
       magic = char.magic
@@ -96,11 +100,15 @@ module AresMUSH
 
       # Also add to magic spellbook object
       csb = char.magic.spellbook
-
+      old_csb = char.magic.spellbook
       Global.logger.debug csb
+      Global.logger.debug old_csb
+
+
       # Build spellbook, if needed.
       csb[charclass].nil? ? csb = { charclass => {} } : {}
       csb[charclass][level].nil? ? csb[charclass] = { level => [] } : {}
+    
 
       # If spell already exists within the level, send it packing
       if old_spell
@@ -111,10 +119,20 @@ module AresMUSH
       end
 
       # Add the spell to the level in spellbook
-      csb[charclass][level].append(to_add)
+      current_spells_at_level = csb[charclass][level]
+      current_spells_at_level.append(to_add)
+      current_spells_at_level.sort
+      csb[charclass][level] = current_spells_at_level
+
+      # Create the new spellbook
+      Global.logger.debug csb
+      Global.logger.debug old_csb
+    
+      new_spellbook = old_csb.deep_merge(csb)
+      Global.logger.debug new_spellbook
 
       # Commit the change to the character
-      char.magic.update(spellbook: csb)
+      char.magic.update(spellbook: new_spellbook)
       return nil
     end
 
