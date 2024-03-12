@@ -46,6 +46,9 @@ module AresMUSH
       to_add = match.first
       deets = hash[to_add]
 
+      # Is new_spell of the level specified in level?
+
+      return t('pf2emagic.incorrect_spelllevel_specified', :spell => to_add, :level => level ) if deets["base_level"].to_i != level
 
       # Can the class they specified cast the spell they want?
       magic = char.magic
@@ -91,6 +94,27 @@ module AresMUSH
       to_assign[sp_list_type] = new_spells_to_assign
       char.update(pf2_to_assign: to_assign)
 
+      # Also add to magic spellbook object
+      csb = char.magic.spellbook
+
+      Global.logger.debug csb
+      # Build spellbook, if needed.
+      csb[charclass].nil? ? csb = { charclass => {} } : {}
+      csb[charclass][level].nil? ? csb[charclass] = { level => [] } : {}
+
+      # If spell already exists within the level, send it packing
+      if old_spell
+          list = hash.keys
+          to_replace = old_spell.upcase
+          to_remove = list.select { |s| s.upcase == to_replace.upcase }
+          csb[charclass][level].delete(to_remove.first)
+      end
+
+      # Add the spell to the level in spellbook
+      csb[charclass][level].append(to_add)
+
+      # Commit the change to the character
+      char.magic.update(spellbook: csb)
       return nil
     end
 

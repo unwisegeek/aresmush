@@ -30,8 +30,13 @@ module AresMUSH
                     if ("0".."10").include? v
                         self.spell_level = v
                     end
-                    if charclasses.include? v
-                        self.charclass = v
+                    # if charclasses v.downcase
+                    #     self.charclass = v.capitalize
+                    # end
+                    charclasses.each do |c|
+                        if !v.nil? and c.downcase ==  v.downcase
+                            self.charclass = v.capitalize
+                        end
                     end
                 end
 
