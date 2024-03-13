@@ -124,6 +124,7 @@ module AresMUSH
             return
           else
             selected_option = selected_option.first
+          end
         end
 
         case selected_element
