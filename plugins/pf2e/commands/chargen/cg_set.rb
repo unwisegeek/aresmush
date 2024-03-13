@@ -103,12 +103,27 @@ module AresMUSH
           file = 'pf2e_' + "#{selected_element}"
           section = Global.read_config(file)
           options = section.keys.sort
-          selected_option = options.find { |o| o.downcase.include? self.value.downcase }
+          # If the specified term is an exact match, take that first.
+          selected_option = options.find { |o| o.downcase == self.value.downcase }
+
+          # If no exact match, return options.
+          unless selected_option
+            selected_option = options.select { |o| o.downcase.include? self.value.downcase }
+          end
         end
 
         if !selected_option
           client.emit_failure t('pf2e.bad_option', :element => selected_element, :options => options.join(", "))
           return
+        elsif selected_option.is_a? Array
+          if selected_option.empty?
+            client.emit_failure t('pf2e.bad_option', :element => selected_element, :options => options.join(", "))
+            return
+          elsif selected_option.size > 1
+            client.emit_failure t('pf2e.multiple_matches', :element => self.element)
+            return
+          else
+            selected_option = selected_option.first
         end
 
         case selected_element
