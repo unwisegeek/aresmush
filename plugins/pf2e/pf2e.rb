@@ -91,6 +91,11 @@ module AresMUSH
         end
       when "knownfor"
         return PF2KnownForCmd
+      when "condition"
+        case cmd.switch
+        when "set"
+          return PF2ConditionSetCmd
+        end
       when "encounter", "initiative", "init"
         case cmd.switch
         when "start"

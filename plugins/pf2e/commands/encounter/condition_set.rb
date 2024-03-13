@@ -14,7 +14,7 @@ module AresMUSH
 
       def required_args
         [ self.target, self.condition ]
-      end 
+      end
 
       def check_valid_condition
         condition_list = Global.read_config('pf2e_conditions').keys
@@ -27,12 +27,11 @@ module AresMUSH
         return nil if !self.value
         return nil if self.value.between?(1,5)
         return t('pf2e.bad_value', :item => 'a condition')
-      end 
+      end
 
       def handle
 
         # You must be either a DM / staffer or the organizer of an active encounter in which the targets are participating.
-
 
         can_damage_pc = Pf2e.can_damage_pc?(enactor, target_list)
 
@@ -44,13 +43,13 @@ module AresMUSH
         # This should already be nil-checked in the checks above, so I don't bother.
 
         condition_details = Global.read_config('pf2e_conditions', self.condition)
-        
+
         if condition_details['value'] && !self.value
           client.emit_failure t('pf2e.condition_needs_value')
           return
         end
 
-        # Do all of the targets exist as PC's? 
+        # Do all of the targets exist as PC's?
 
         target_list = []
         not_found_list = []
@@ -59,21 +58,21 @@ module AresMUSH
           result = ClassTargetFinder.find(char, Character, enactor)
           if result.found?
             target_list << result.target
-          else 
+          else
             not_found_list << char
           end
-        end 
+        end
 
         if !not_found_list.empty?
           client.emit_ooc t('pf2e.bad_value_in_list', :items => 'names', :list => not_found_list.join(', '))
-        end 
-        
+        end
+
 
         target_list.each do |char|
           Pf2e.set_condition(char, self.condition, self.value)
         end
 
-        client.emit_success t('pf2e.condition_set_ok', 
+        client.emit_success t('pf2e.condition_set_ok',
           :condition => self.condition,
           :target => target_list.map { |t| t.name }.sort.join(", ")
         )

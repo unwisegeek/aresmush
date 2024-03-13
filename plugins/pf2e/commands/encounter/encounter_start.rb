@@ -30,7 +30,7 @@ module AresMUSH
         active_encounter = PF2Encounter.scene_active_encounter(scene)
 
         if active_encounter
-          client.emit_failure t('pf2e.scene_has_active_encounter')
+          client.emit_failure t('pf2e.scene_has_active_encounter', :id => active_encounter.id)
           return
         end
 

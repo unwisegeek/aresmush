@@ -167,7 +167,8 @@ en:
     rollalias_title: "Roll Aliases for %{name}"
 
     show_skills_list: "Your base info grants you %{open} open skills plus these skills: %{defined}"
-    skill_options_ok: "%xgNo issues detected with your skills.%xn"
+    scene_has_active_encounter: "This scene already has encounter %{id} active. Please end this encounter before starting another."
+    skill_options_ok: "%xgNo issues detected with your skills.%xn" 
     skill_issues: "Your skills are not yet complete. Use %x172cg/review%xn to see what is missing."
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
