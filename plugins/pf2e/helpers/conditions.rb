@@ -15,8 +15,12 @@ module AresMUSH
     def self.set_condition(char, condition, value=0, duration=false)
       list = char.pf2_conditions
 
-      list[condition]['value'] = value
-      list[condition]['duration'] = duration
+      condition = list[condition] || {}
+
+      condition['value'] = value
+      condition['duration'] = duration
+
+      list[condition] = condition
 
       char.update(pf2_conditions: list)
     end
