@@ -47,5 +47,5 @@ Any approved player may use a heal command at any time. To damage a player, you 
 
 `heal <player list> = <amount>`: Heals each character in `<player list>` for `<amount>`, up to their maximum HP.
 `damage[/ndc] <player list> = <amount>`: Damages each character in `<player list>` for `<amount>`. The optional `/ndc` is for DM's and admins only, and disables the check to see if a character is dead. It has no effect for organizers without admin or DM roles.
-`condition/set <player>=<condition>[/<value>]`: Sets `<condition>` on `<player>`.
+`condition/set <player>=<condition>[/<value>]`: Sets `<condition>` on `<player>`. `<value>` can be 1-5 to set it. Setting value to 0 for any condition clears it. 
 
