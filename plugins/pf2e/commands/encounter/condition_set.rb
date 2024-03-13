@@ -33,7 +33,7 @@ module AresMUSH
 
         # You must be either a DM / staffer or the organizer of an active encounter in which the targets are participating.
 
-        can_damage_pc = Pf2e.can_damage_pc?(enactor, target_list)
+        can_damage_pc = Pf2e.can_damage_pc?(enactor, self.target)
 
         if !can_damage_pc
           client.emit_failure t('pf2e.cannot_damage_pc')
