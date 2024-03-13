@@ -5,46 +5,73 @@ module AresMUSH
       Global.read_config('pf2e_magic', 'focus_casting_stat', stype)
     end
 
-    def self.cast_prepared_spell(char, magic_obj, charclass, spell, level=nil)
-      caster_stats = get_caster_stats(char, magic_obj, charclass)
+    def self.cast_spell(char, charclass, level=nil, spell, target_list, spell_type)
+      return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
 
+      cc = (charclass == 'innate') ? charclass : charclass.capitalize
+      caster_type = nil
+
+      # Spell_type can be 'focus', 'focusc', 'signature', or false. If false,
+      # the code expects a full casting class.
+      case spell_type
+      when false
+        caster_type = Pf2emagic.get_caster_type(cc)
+
+        caster_stats = get_caster_stats(char, cc)
+      when 'focus', 'focusc'
+        # If this is true, is_focus is the type of spell and is determined by charclass
+
+        is_focus = Global.read_config('pf2e_magic', 'focus_type_by_class', cc)
+        caster_stats = get_caster_stats(char, cc, is_focus)
+      when 'signature'
+        caster_stats = get_caster_stats(char, cc)
+      else
+        return t('pf2e.bad_switch', :cmd => 'cast')
+      end
+
+      # get_caster_stats returns a Hash if successful, a string if not
       return caster_stats if caster_stats.is_a? String
 
-      char_spells_today = magic.prepared_spells[charclass]
+      spell_result = Pf2emagic.get_spells_by_name(spell)
 
-      spells = get_spells_by_name(spell)
+      return t('pf2emagic.no_match', :item => "spells") if spell_result.empty?
+      return t('pf2e.multiple_matches', :element => 'spell') if spell_result.size > 1
 
-      # if the spell name is ambiguous and the level is not specified, the command will fail.
-      # If level is specified, the code will try to find a spell matching the string at that level in the
-      # prepared list. If that fails, the command will fail.
+      spell_name = spell_result.first
 
-      if spells.is_a? Array
-        return t('pf2emagic.no_such_spell') if spells.empty?
-        return t('pf2emagic.multiple_matches', :item => 'spell') if (spells.size > 1 && !level)
-        find_spell_at_level = spells && char_spells_today[level]
+      # Does the character have this spell available to cast today?
 
-        # This is where you left off. Determine whether there is a single spell in find_spell_at_level and take
-        # that if there is.
+      case caster_type
+      when 'prepared'
+      when 'spontaneous'
+      else
       end
+
 
 
 
     end
 
-    def self.get_caster_stats(char, magic_obj, charclass)
+    def self.get_caster_stats(char, charclass, is_focus=false)
+      magic = char.magic
 
       # Can this character cast as this class?
-      cast_stats = magic_obj.tradition[charclass]
 
+      cast_stats = magic.tradition[charclass]
       return t('pf2emagic.not_casting_class', :cc => charclass) unless cast_stats
+
+      spell_abil = PF2Magic.get_spell_abil(char, charclass, is_focus)
+      tradition = cast_stats[0]
+      prof_level = cast_stats[1]
+      modifier = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, spell_abil))
 
       # Return a hash of all the pieces of their casting stats for that class.
 
       {
-        'tradition' => cast_stats.keys.first,
-        'prof_level' => cast_stats.values.first,
-        'spell_abil' => magic_obj.spell_abil[charclass],
-        'modifier' => Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char, spell_abil))
+        'tradition' => tradition,
+        'prof_level' => prof_level,
+        'spell_abil' => spell_abil,
+        'modifier' => modifier
       }
 
     end

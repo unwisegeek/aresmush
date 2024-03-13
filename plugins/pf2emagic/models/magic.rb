@@ -39,16 +39,6 @@ module AresMUSH
       return obj
     end
 
-    def self.find_spell_by_name(name)
-      term = name.upcase
-
-      list = Global.read_config('pf2e_spells').keys.select { |s| s.upcase.match? term }
-
-      return t('pf2e.multiple_matches', :element => 'spell') if list.size > 1
-      return t('pf2e.nothing_to_display', :elements => 'spells') if list.empty?
-      return list
-    end
-
     def self.update_magic(char, charclass, info, client)
       magic = get_create_magic_obj(char)
 
@@ -252,10 +242,17 @@ module AresMUSH
     def self.get_spell_dc(char, charclass, is_focus=false)
 
       # is_focus should be the focus spell type if given.
+      caster_stats = Pf2emagic.get_caster_stats(char, charclass, is_focus)
 
-      magic = char.magic
-      return nil unless magic
+      prof = caster_stats['prof_level']
+      prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
+      abil_mod = caster_stats['modifier']
+
+      10 + abil_mod + prof_bonus
+    end
+
+    def self.get_spell_abil(char, charclass, is_focus=false)
       if charclass == "innate"
         spell_abil = "Charisma"
       elsif is_focus
@@ -263,40 +260,17 @@ module AresMUSH
       else
         spell_abil = magic.spell_abil[charclass]
       end
-
-      trad = magic.tradition[charclass]
-      prof = trad[1]
-      prof_bonus = Pf2e.get_prof_bonus(char, prof)
-
-      abil_mod = Pf2eAbilities.abilmod(
-        Pf2eAbilities.get_score char, spell_abil
-      )
-
-      10 + abil_mod + prof_bonus
     end
 
     def self.get_spell_attack_bonus(char, charclass, is_focus=false)
 
       # is_focus should be the focus spell type if given.
+      caster_stats = Pf2emagic.get_caster_stats(char, charclass, is_focus)
 
-      magic = char.magic
-      return nil unless magic
-
-      if charclass == "innate"
-        spell_abil = "Charisma"
-      elsif is_focus
-        spell_abil = get_focus_casting_stat(is_focus)
-      else
-        spell_abil = magic.spell_abil[charclass]
-      end
-
-      trad = magic.tradition[charclass]
-      prof = trad[1]
+      prof = caster_stats['prof_level']
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
 
-      abil_mod = Pf2eAbilities.abilmod(
-        Pf2eAbilities.get_score char, spell_abil
-      )
+      abil_mod = caster_stats['modifier']
 
       abil_mod + prof_bonus
     end

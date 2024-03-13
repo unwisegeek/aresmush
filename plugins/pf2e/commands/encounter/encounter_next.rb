@@ -76,7 +76,7 @@ module AresMUSH
         if current_is_char
           @init_msg = t('pf2e.your_init', :id => encounter.id)
           Global.notifier.notify_ooc(:char_init, @init_msg) do |c|
-            c & c == current_is_char
+            c && c == current_is_char
           end
         end
 

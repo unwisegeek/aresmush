@@ -18,7 +18,7 @@ module AresMUSH
 
       def check_valid_condition
         condition_list = Global.read_config('pf2e_conditions').keys
-        return nil if condition_list.include? self.condition_list
+        return nil if condition_list.include? self.condition
         return t('pf2e.condition_not_found', :options => condition_list.sort.join(", "))
       end
 

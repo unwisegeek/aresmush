@@ -112,6 +112,7 @@ module AresMUSH
           end
         end
 
+        # Selected option might be nil or an empty array.
         if !selected_option
           client.emit_failure t('pf2e.bad_option', :element => selected_element, :options => options.join(", "))
           return

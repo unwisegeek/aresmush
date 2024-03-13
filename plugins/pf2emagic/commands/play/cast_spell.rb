@@ -9,12 +9,12 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
 
         classlevel = trimmed_list_arg(args.arg1, "/")
-        self.charclass = titlecase_arg(classlevel[0])
+        self.charclass = downcase_arg(classlevel[0])
         self.level = classlevel[1]
 
         spelltarget = trimmed_list_arg(args.arg2, "at")
         self.spell = spelltarget[0]
-        self.target = spelltarget[1].split
+        self.target = spelltarget[1] ? spelltarget[1].split : []
       end
 
       def required_args
@@ -27,13 +27,18 @@ module AresMUSH
       end
 
       def handle
-        # Can they cast as this class?
 
-        Pf2emagic.get_spells_by_name(self.spell)
+        spell_type = cmd.switch || false
 
+        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.level, self.spell, self.target, spell_type)
 
-
-
+        if msg.is_a? String
+          client.emit_failure msg
+          return
+        # if it's successful, it's a hash.
+        else
+          # Need to work out hash processing and put it here.
+        end
 
       end
 
