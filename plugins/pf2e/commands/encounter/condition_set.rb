@@ -25,7 +25,7 @@ module AresMUSH
       def check_valid_value
         # If self.value is set, it should be 1-5.
         return nil if !self.value
-        return nil if self.value.between?(1,5)
+        return nil if self.value.between?(0,5)
         return t('pf2e.bad_value', :item => 'a condition')
       end
 
