@@ -6,8 +6,9 @@ module AresMUSH
 
       attr_accessor :encounter
 
-      def initialize(encounter)
+      def initialize(encounter, client)
         @encounter = encounter
+        @client = client
 
         super File.dirname(__FILE__) + "/encounter_view.erb"
       end
