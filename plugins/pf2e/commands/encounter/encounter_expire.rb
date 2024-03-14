@@ -11,7 +11,6 @@ module AresMUSH
 
         if args.arg2
           self.encounter_id = integer_arg(args.arg1)
-          list = trimmed_list_arg(args.arg2, "/")
           self.term = downcase_arg(args.arg2)
         else
           self.encounter_id = nil
