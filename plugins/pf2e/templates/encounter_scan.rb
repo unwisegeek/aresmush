@@ -16,7 +16,7 @@ module AresMUSH
       end
 
       def header_line
-        "%b#{item_color}#{left("Name", 20)}%b#{left("Class", 15)}%b#{left("HP", 10)}%b#{left("AC", 4)} \
+        "%b#{item_color}#{left("Name", 20)}%b#{left("Class", 10)}%b#{left("HP", 10)}%b#{left("AC", 8)} \
         %b#{left("Per", 4)}%b#{left("Fort", 4)}%b#{left("Ref", 4)}%b#{left("Will", 4)} \
         %b#{left("AOO?", 4)}%xn"
       end
@@ -43,7 +43,7 @@ module AresMUSH
         will = Pf2eCombat.get_save_bonus(char, "will")
         aoo = Pf2e.has_feat?(char, "Attack of Opportunity") ? "Y" : "N"
 
-        "%b#{left(name, 20)}%b#{left(charclass, 15)}%b#{left(hp, 10)}%b#{left(ac, 4)} \
+        "%b#{left(name, 20)}%b#{left(charclass, 10)}%b#{left(hp, 10)}%b#{left(ac, 8)} \
         %b#{left(perception, 4)}%b#{left(fortitude, 4)}%b#{left(reflex, 4)}%b#{left(will, 4)} \
         %b#{left(aoo, 4)}"
       end
