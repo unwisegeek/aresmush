@@ -41,7 +41,7 @@ module AresMUSH
         fortitude = Pf2eCombat.get_save_bonus(char, "fortitude")
         reflex = Pf2eCombat.get_save_bonus(char, "reflex")
         will = Pf2eCombat.get_save_bonus(char, "will")
-        aoo = PF2e.has_feat?(char, "Attack of Opportunity") ? "Y" : "N"
+        aoo = Pf2e.has_feat?(char, "Attack of Opportunity") ? "Y" : "N"
 
         "%b#{left(name, 20)}%b#{left(charclass, 15)}%b#{left(hp, 10)}%b#{left(ac, 4)} \
         %b#{left(perception, 4)}%b#{left(fortitude, 4)}%b#{left(reflex, 4)}%b#{left(will, 4)} \
