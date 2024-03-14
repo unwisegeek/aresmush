@@ -260,6 +260,8 @@ module AresMUSH
       else
         spell_abil = magic.spell_abil[charclass]
       end
+
+      spell_abil
     end
 
     def self.get_spell_attack_bonus(char, charclass, is_focus=false)
