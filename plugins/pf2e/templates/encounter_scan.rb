@@ -12,14 +12,14 @@ module AresMUSH
       end
 
       def title
-        t('pf2e.encounter_table_title', :id => encounter.id)
-      end 
+        t('pf2e.encounter_table_title', :id => @encounter.id)
+      end
 
       def header_line
         "%b#{item_color}#{left("Name", 20)}%b#{left("Class", 15)}%b#{left("HP", 10)}%b#{left("AC", 4)} \
         %b#{left("Per", 4)}%b#{left("Fort", 4)}%b#{left("Ref", 4)}%b#{left("Will", 4)} \
-        %b#{left("AOO?", 4)}"
-      end 
+        %b#{left("AOO?", 4)}%xn"
+      end
 
       def player_list
         list = []
@@ -30,7 +30,7 @@ module AresMUSH
 
         list
 
-      end 
+      end
 
       def format_player(char)
         name = char.name
@@ -47,8 +47,8 @@ module AresMUSH
         %b#{left(perception, 4)}%b#{left(fortitude, 4)}%b#{left(reflex, 4)}%b#{left(will, 4)} \
         %b#{left(aoo, 4)}"
       end
-       
-      
+
+
     end
   end
 end
