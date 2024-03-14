@@ -64,7 +64,7 @@ module AresMUSH
         encounter.update(bonuses: bonuses)
         encounter.update(penalties: penalties)
 
-        client.emit_success client.emit_success t('pf2e.encounter_notes_ok', :mod => 'Updated', :id => encounter.id)
+        client.emit_success t('pf2e.encounter_notes_ok', :mod => 'Updated', :id => encounter.id)
 
       end
     end
