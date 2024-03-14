@@ -24,7 +24,7 @@ module AresMUSH
       def player_list
         list = []
 
-        @encounter.characters.sort_by! { |c| c.name }.each do |char|
+        @encounter.characters.sort_by{ |c| c.name }.each do |char|
           list << format_player(char)
         end
 
