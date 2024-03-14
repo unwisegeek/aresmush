@@ -336,8 +336,17 @@ module AresMUSH
         case key
         when 'magic_stats'
           return_msg << "This feat grants magic."
-          error = PF2Magic.update_magic(char, charclass, value, client)
-          return_msg << error if error
+          update = PF2Magic.update_magic(char, charclass, value, client)
+          return_msg << update if update.is_a? String
+
+          # Update_magic returns a hash intended to be stuffed into pf2_to_assign. Do that.
+          if update.is_a? Hash && !(update.empty?)
+            return_msg << t('pf2e.feat_grants_addl', :element => 'magic')
+            to_assign = char.pf2_to_assign.merge(update)
+
+            char.update(pf2_to_assign: to_assign)
+          end
+
         when 'assign'
           to_assign = char.pf2_to_assign
 

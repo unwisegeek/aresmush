@@ -236,6 +236,7 @@ module AresMUSH
       magic.save
       char.save
 
+      # The return of this function should be merged into pf2_to_assign.
       to_assign
     end
 
@@ -243,6 +244,8 @@ module AresMUSH
 
       # is_focus should be the focus spell type if given.
       caster_stats = Pf2emagic.get_caster_stats(char, charclass, is_focus)
+
+      return 0 if caster_stats.is_a? String
 
       prof = caster_stats['prof_level']
       prof_bonus = Pf2e.get_prof_bonus(char, prof)
@@ -268,6 +271,8 @@ module AresMUSH
 
       # is_focus should be the focus spell type if given.
       caster_stats = Pf2emagic.get_caster_stats(char, charclass, is_focus)
+
+      return 0 if caster_stats.is_a? String
 
       prof = caster_stats['prof_level']
       prof_bonus = Pf2e.get_prof_bonus(char, prof)

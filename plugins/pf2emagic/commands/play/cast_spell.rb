@@ -9,7 +9,7 @@ module AresMUSH
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
 
         classlevel = trimmed_list_arg(args.arg1, "/")
-        self.charclass = downcase_arg(classlevel[0])
+        self.charclass = titlecase_arg(classlevel[0])
         self.level = classlevel[1]
 
         spelltarget = trimmed_list_arg(args.arg2, "at")
@@ -28,9 +28,7 @@ module AresMUSH
 
       def handle
 
-        spell_type = cmd.switch || false
-
-        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.level, self.spell, self.target, spell_type)
+        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.level, self.spell, self.target, cmd.switch)
 
         if msg.is_a? String
           client.emit_failure msg
