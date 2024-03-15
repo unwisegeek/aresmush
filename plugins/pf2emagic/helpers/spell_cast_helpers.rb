@@ -178,7 +178,7 @@ module AresMUSH
       spname = find_spell[0]
       spdeets = find_spell[1]
 
-      base = spdeets['base_level']
+      base = spdeets['base_level'].to_i
 
       splevel = level ? level : base
 
