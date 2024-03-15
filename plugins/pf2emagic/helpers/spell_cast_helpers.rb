@@ -94,7 +94,11 @@ module AresMUSH
       # level in between.
       cc_spells = magic.spells_today
       cc_spells_2day = cc_spells[charclass]
+      return t('pf2emagic.no_available_slots') unless cc_spells_2day
+
       slots = cc_spells_2day[splevel]
+      return t('pf2emagic.no_available_slots') unless slots
+
       signature_spells = magic.signature_spells[charclass]
       lvceil = signature_spells.invert[spell_name]
 
@@ -143,8 +147,12 @@ module AresMUSH
 
       # Is that spell available at that level today?
       cc_spells = magic.spells_today
-      cc_spells_2day = cc_spells[charclass] || {}
+      cc_spells_2day = cc_spells[charclass]
+      return t('pf2emagic.no_available_slots') unless cc_spells_2day
+
       splist = cc_spells_2day[splevel]
+      return t('pf2emagic.no_available_slots') unless splist
+
       available = splist.include? spname
       return t('pf2emagic.not_prepared_at_level') unless available
 
@@ -188,9 +196,13 @@ module AresMUSH
       splevel = 'cantrip' if splevel.zero?
 
       # Got a spell open at that level?
-      cc_spells = magic.spells_today {}
-      cc_spells_2day = cc_spells[charclass] || {}
-      slots = cc_spells_2day[splevel].to_i
+      cc_spells = magic.spells_today
+      cc_spells_2day = cc_spells[charclass]
+      return t('pf2emagic.no_available_slots') unless cc_spells_2day
+
+      slots = cc_spells_2day[splevel]
+      return t('pf2emagic.no_available_slots') unless slots
+
       available = (slots > 0)
       return t('pf2emagic.no_available_slots') unless available
 
