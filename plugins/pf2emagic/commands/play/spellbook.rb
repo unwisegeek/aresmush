@@ -10,30 +10,31 @@ module AresMUSH
 
         args = cmd.args ? cmd.args.split("=").map {|e| e.split("/")} : []
 
-        client.emit args
-
         # Use the size of the arrays to work out what args were supplied.
         if args.size == 2
           self.character = trim_arg(args[0])
+
           classlevel = args[1]
 
+          self.charclass = classlevel
+
           # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
-          self.charclass = titlecase_arg(classlevel[0])
-          self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
+          # self.charclass = titlecase_arg(classlevel[0])
+          # self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
         elsif args.size == 1
-          unknown = args[0]
+
+          self.character = args
+          # unknown = args[0]
           # Unknown will be an array if it is class and level, or the character if it is a string.
-          if unknown.is_a? Array
-            self.charclass = titlecase_arg(classlevel[0])
-            self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
-            self.character = nil
-          else
-            self.character = downcase_arg(args[0])
-            self.charclass = nil
-            self.spell_level = nil
-          end
-        else
-          self.noargs = true
+          # if unknown.is_a? Array
+          #   self.charclass = titlecase_arg(classlevel[0])
+          #   self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
+          #   self.character = nil
+          # else
+          #   self.character = downcase_arg(args[0])
+          #   self.charclass = nil
+          #   self.spell_level = nil
+          # end
         end
       end
 
@@ -44,6 +45,10 @@ module AresMUSH
       end
 
       def handle
+
+        client.emit self.character
+        client.emit self.charclass
+        return
         # If character came out of the argparsing, get that character, else get the enactor's character
         char = Pf2e.get_character(self.character, enactor)
 
