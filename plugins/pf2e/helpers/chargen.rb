@@ -421,6 +421,9 @@ module AresMUSH
       if subclass_features_info
         subclass_mstats = subclass_features_info['magic_stats']
 
+        client.emit subclass_features_info
+        client.emit subclass_mstats
+
         class_mstats = class_mstats.merge(subclass_mstats) if subclass_mstats
       end
 
@@ -437,8 +440,6 @@ module AresMUSH
 
         class_mstats = class_mstats.merge(school_mstats) if school_mstats
       end
-
-      client.emit class_mstats
 
       if class_mstats.empty?
         client.emit_ooc "This combination of options does not have magical abilities to set up. Continuing."
