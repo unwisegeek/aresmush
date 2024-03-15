@@ -189,7 +189,7 @@ module AresMUSH
 
       # Got a spell open at that level?
       cc_spells_2day = magic.spells_today[charclass]
-      slots = cc_spells_2day[splevel]
+      slots = cc_spells_2day[splevel].to_i
       available = (slots > 0)
       return t('pf2emagic.no_available_slots') unless available
 
