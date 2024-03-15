@@ -264,7 +264,7 @@ module AresMUSH
         msg = cast_focus_cantrip(char, focus_type, spell, target_list)
       when 'focus'
         # Focus spells need a special check for Oracle's curse lock.
-        revelation_lock = charclass == 'Oracle' ? magic.revelation_locked : false
+        revelation_lock = charclass == 'Oracle' ? char.magic.revelation_locked : false
 
         return t('pf2emagic.revelation_locked') if revelation_lock
 
