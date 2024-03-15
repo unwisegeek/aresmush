@@ -429,8 +429,6 @@ module AresMUSH
       if subclassopt_features_info
         subclassopt_mstats = subclassopt_features_info['magic_stats']
 
-        client.emit subclassopt_mstats
-
         class_mstats = class_mstats.merge(subclassopt_mstats) if subclassopt_mstats
       end
 
