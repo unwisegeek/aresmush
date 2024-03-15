@@ -143,7 +143,7 @@ module AresMUSH
 
       # Is that spell available at that level today?
       cc_spells = magic.spells_today
-      cc_spells_2day = cc_spells[charclass]
+      cc_spells_2day = cc_spells[charclass] || {}
       splist = cc_spells_2day[splevel]
       available = splist.include? spname
       return t('pf2emagic.not_prepared_at_level') unless available
@@ -182,15 +182,14 @@ module AresMUSH
 
       splevel = level ? level : base
 
-      return "#{splevel} / #{base}"
-
       # If specified, level must be at least the base level of the spell. Level is an integer here.
       return t('pf2emagic.invalid_level') if splevel < base
 
       splevel = 'cantrip' if splevel.zero?
 
       # Got a spell open at that level?
-      cc_spells_2day = magic.spells_today[charclass]
+      cc_spells = magic.spells_today {}
+      cc_spells_2day = cc_spells[charclass] || {}
       slots = cc_spells_2day[splevel].to_i
       available = (slots > 0)
       return t('pf2emagic.no_available_slots') unless available
