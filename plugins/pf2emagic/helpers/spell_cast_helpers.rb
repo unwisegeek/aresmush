@@ -42,7 +42,7 @@ module AresMUSH
       caster_stats
     end
 
-    def self.cast_focus_cantrip(char, focus_type, spell, target_list)
+    def self.cast_focus_cantrip(char, charclass, focus_type, spell, target_list)
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
       magic = char.magic
 
@@ -261,7 +261,7 @@ module AresMUSH
       when 'focusc'
         focus_type = Global.read_config('pf2e_magic', 'focus_type_by_class', charclass)
 
-        msg = cast_focus_cantrip(char, focus_type, spell, target_list)
+        msg = cast_focus_cantrip(char, charclass, focus_type, spell, target_list)
       when 'focus'
         # Focus spells need a special check for Oracle's curse lock.
         revelation_lock = charclass == 'Oracle' ? char.magic.revelation_locked : false
@@ -269,7 +269,7 @@ module AresMUSH
         return t('pf2emagic.revelation_locked') if revelation_lock
 
         focus_type = Global.read_config('pf2e_magic', 'focus_type_by_class', charclass)
-        msg = cast_focus_spell(char, focus_type, spell, target_list)
+        msg = cast_focus_spell(char, charclass, focus_type, spell, target_list)
       when 'innate'
         msg = cast_innate_spell(char, spell, target_list)
       when 'signature'
