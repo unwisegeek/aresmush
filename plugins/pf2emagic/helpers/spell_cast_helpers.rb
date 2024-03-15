@@ -5,7 +5,7 @@ module AresMUSH
       Global.read_config('pf2e_magic', 'focus_casting_stat', stype)
     end
 
-    def self.cast_focus_spell(char, charclass, focus_type, spell, target_list=[])
+    def self.cast_focus_spell(char, charclass, focus_type, spell, target_list)
       magic = char.magic
 
       caster_stats = get_caster_stats(char, charclass, focus_type)
@@ -42,7 +42,7 @@ module AresMUSH
       caster_stats
     end
 
-    def self.cast_focus_cantrip(char, focus_type, spell, target_list=[])
+    def self.cast_focus_cantrip(char, focus_type, spell, target_list)
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
       magic = char.magic
 
@@ -66,7 +66,7 @@ module AresMUSH
       caster_stats
     end
 
-    def self.cast_signature_spell(char, charclass, level=nil, spell, target_list=[])
+    def self.cast_signature_spell(char, charclass, spell, level=nil, target_list)
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
       magic = char.magic
 
@@ -117,7 +117,7 @@ module AresMUSH
       caster_stats
     end
 
-    def self.cast_prepared_spell(char, charclass, level=nil, spell, target_list=[])
+    def self.cast_prepared_spell(char, charclass, spell, level=nil, target_list)
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
       magic = char.magic
 
@@ -163,7 +163,7 @@ module AresMUSH
       caster_stats
     end
 
-    def self.cast_spont_spell(char, charclass, level=nil, spell, target_list)
+    def self.cast_spont_spell(char, charclass, spell, level=nil, target_list)
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
       magic = char.magic
 
@@ -227,9 +227,25 @@ module AresMUSH
       # Is that spell name in their list of innate spells?
 
       innate_spells = magic.innate_spells
+      splist = innate_spells.keys
+
+      return t('pf2emagic.not_in_innate_list', :name => spname) unless splist.include? spname
+
+      # Innate spells are structured a little differently and may overwrite base caster stats.
+      spinfo = innate_spells[spname]
+      caster_stats['tradition'] = spinfo['tradition']
+      caster_stats['spell level'] = spinfo['level']
+      caster_stats['spell type'] = 'innate'
+      caster_stats['spell_abil'] = spinfo['cast_stat']
+      caster_stats['modifier'] = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char,spinfo['cast_stat']))
+      caster_stats['targets'] = target_list unless target_list.empty?
+      caster_stats['spell name'] = spname
+      caster_stats['spell details'] = spdeets
+
+      caster_stats
     end
 
-    def self.cast_spell(char, charclass, level=nil, spell, target_list, switch=nil)
+    def self.cast_spell(char, charclass, spell, target_list, level=nil, switch=nil)
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
 
       # Spell type is either specified in the switch or determined by character class.
@@ -240,10 +256,11 @@ module AresMUSH
 
       # Spell_type can be 'focus', 'focusc', 'signature', 'prepared', 'spontaneous', or 'innate'. Anything
       # else should throw back an error.
+
       case spell_type
       when 'focusc'
-        return "Spellcasting for a focus cantrip."
         focus_type = Global.read_config('pf2e_magic', 'focus_type_by_class', charclass)
+
         msg = cast_focus_cantrip(char, focus_type, spell, target_list)
       when 'focus'
         # Focus spells need a special check for Oracle's curse lock.
@@ -251,21 +268,16 @@ module AresMUSH
 
         return t('pf2emagic.revelation_locked') if revelation_lock
 
-        return "Spellcasting for a focus spell."
         focus_type = Global.read_config('pf2e_magic', 'focus_type_by_class', charclass)
         msg = cast_focus_spell(char, focus_type, spell, target_list)
       when 'innate'
-        return "Spellcasting for an innate spell."
         msg = cast_innate_spell(char, spell, target_list)
       when 'signature'
-        return "Spellcasting for a signature spell."
-        msg = cast_signature_spell(char, charclass, level, spell, target_list)
+        msg = cast_signature_spell(char, charclass, spell, level, target_list)
       when 'prepared'
-        return "Spellcasting for prepared casters."
-        msg = cast_prepared_spell(char, charclass, level, spell, target_list)
+        msg = cast_prepared_spell(char, charclass, spell, level, target_list)
       when 'spontaneous'
-        return "Spellcasting from a repertoire."
-        msg = cast_spont_spell(char, charclass, level, spell, target_list)
+        msg = cast_spont_spell(char, charclass, spell, level, target_list)
       else
         return t('pf2e.bad_switch', :cmd => 'cast')
       end

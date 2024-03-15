@@ -28,14 +28,13 @@ module AresMUSH
 
       def handle
 
-        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.level, self.spell, self.target, cmd.switch)
+        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.spell, self.target, self.level, cmd.switch)
 
         if msg.is_a? String
           client.emit_failure msg
           return
-        # if it's successful, it's a hash.
         else
-          # Need to work out hash processing and put it here.
+          client.emit msg
         end
 
       end
