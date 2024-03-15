@@ -418,13 +418,20 @@ module AresMUSH
       PF2Magic.get_create_magic_obj(enactor)
 
       class_mstats = class_features_info['magic_stats'] ? class_features_info['magic_stats'] : {}
+
+      # Some classes will have stuff in specialty_options. too.
       if subclass_features_info
         subclass_mstats = subclass_features_info['magic_stats']
 
-        client.emit subclass_features_info
-        client.emit subclass_mstats
-
         class_mstats = class_mstats.merge(subclass_mstats) if subclass_mstats
+      end
+
+      if subclassopt_features_info
+        subclassopt_mstats = subclassopt_features_info['magic_stats']
+
+        client.emit subclassopt_mstats
+
+        class_mstats = class_mstats.merge(subclassopt_mstats) if subclassopt_mstats
       end
 
       # Handle class specific junk.

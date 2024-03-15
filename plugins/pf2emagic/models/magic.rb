@@ -136,7 +136,7 @@ module AresMUSH
           repertoire[charclass] = rep_for_class
 
           magic.repertoire = repertoire
-        when "focus_spell"
+        when "focus_spell", "domain_focus_spell"
           # focus spell structure: { "devotion" => [spell, spell, spell], "revelation" => [spell] }
 
           focus_spells = magic.focus_spells

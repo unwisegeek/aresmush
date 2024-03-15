@@ -626,7 +626,7 @@ pf2e_specialty:
             revelation:
             - Ancestral Touch
       choose:
-        choice_name: Associated Domain
+        choice_name: Associated Oracle Domain
         choice_description: "Choose the domain your second revelation spell comes from."
         choice_type: subclass_info
         options:
@@ -713,29 +713,33 @@ pf2e_specialty:
         skills:
         - Nature
         magic_stats:
-        addrepertoire:
-          cantrip:
-          - Dancing Lights
-        focus_spell:
-          revelation:
-          - Spray of Stars
+          addrepertoire:
+            cantrip:
+            - Dancing Lights
+          focus_spell:
+            revelation:
+            - Spray of Stars
         curse: Sky's Call
         action: []
         reaction: []
-        feat: []
+        feat: [] 
       choose:
         choice_name: Associated Domain
         choice_description: "Choose the domain your second revelation spell comes from."
         choice_type: subclass_info
         options:
           Darkness:
-            magic_stats:
-              revelation:
-              - Cloak of Shadow
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Cloak of Shadow
           Moon:
-            magic_stats:
-              revelation:
-              - Moonbeam
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Moonbeam
     Flames:
       chargen:
         skills:
@@ -789,15 +793,17 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Death:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - "Death's Call"
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - "Death's Call"
           Healing:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - "Healer's Blessing"
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - "Healer's Blessing"
     Lore:
       chargen:
         skills:
