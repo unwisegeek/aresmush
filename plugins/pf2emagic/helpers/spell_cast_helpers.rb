@@ -182,7 +182,7 @@ module AresMUSH
 
       splevel = level ? level : base
 
-      return splevel.class
+      return "#{splevel} / #{base}"
 
       # If specified, level must be at least the base level of the spell. Level is an integer here.
       return t('pf2emagic.invalid_level') if splevel < base
