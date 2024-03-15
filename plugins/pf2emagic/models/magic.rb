@@ -261,6 +261,7 @@ module AresMUSH
       elsif is_focus
         spell_abil = get_focus_casting_stat(is_focus)
       else
+        magic = char.magic
         spell_abil = magic.spell_abil[charclass]
       end
 
