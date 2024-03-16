@@ -21,7 +21,7 @@ module AresMUSH
             # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
             self.charclass = titlecase_arg(classlevel[0])
             self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : nil
-            self.spell_level = 'cantrip' if self.spell_level.zero?
+            self.spell_level = 'cantrip' if (self.spell_level && self.spell_level.zero?)
           else
             # Args could be a character name or a class/level split with or without the level in this case.
             # Work out which.
