@@ -131,7 +131,7 @@ module AresMUSH
           csb_level << to_add
         end
 
-        csb_cc[level] = csb_level
+        csb_cc[level] = csb_level.flatten
         csb[charclass] = csb_cc
         magic.update(repertoire: csb_cc)
       end
