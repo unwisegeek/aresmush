@@ -614,8 +614,7 @@ pf2e_specialty:
   Oracle:
     Ancestors:
       chargen:
-        choose_feat:
-        - ancestry
+        gated_feat: ancestry
         skills:
         - Society
         magic_stats:
@@ -631,10 +630,11 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Death:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - "Death's Call"
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - "Death's Call"
           Family:
             magic_stats:
               focus_spell:
