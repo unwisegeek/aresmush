@@ -362,7 +362,20 @@ module AresMUSH
         when 'feat'
           feats = char.pf2_feats
 
-          value.each { |item| feats << item }
+          value.each do |item|
+            feat_info = get_feat_details(item)
+
+            next if feat_info.is_a? String
+
+            feat_type = feat_info[1][feat_type].first
+
+            list = feats[feat_type] || []
+
+            qualify = Pf2e.can_take_feat?(char, item)
+
+            list << item if qualify
+            feats[feat_type] = list
+          end
 
           char.update(pf2_feats: feats.sort)
         when 'gated_feat'
@@ -448,6 +461,16 @@ module AresMUSH
         traits = fdeets['traits'].map {|t| t.downcase }
 
         passes_gate = traits.include? 'metamagic'
+      when "natural ambition"
+        level = fdeets['prereq']['level'] == 1
+
+        char_base_class = char.pf2_base_info['charclass']
+
+        feat_type = fdeets['feat_type']&.include? 'Charclass'
+
+        feat_charclass = fdeets['assoc_charclass']&.include? char_base_class
+
+        passes_gate = level && feat_type && feat_charclass
       else
         # If it doesn't recognize the key for the gate, fail it.
         passes_gate = false
