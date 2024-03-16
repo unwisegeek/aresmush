@@ -13,12 +13,12 @@ module AresMUSH
           self.encounter_id = integer_arg(args.arg1)
           list = trimmed_list_arg(args.arg2, "/")
           self.bonus = list[0]
-          self.target_list = list[1]&.split
+          self.target_list = list[1]
         else
           self.encounter_id = nil
           list = trimmed_list_arg(args.arg1, "/")
           self.bonus = list[0]
-          self.target_list = list[1]&.split(",")
+          self.target_list = list[1]
         end
       end
 
