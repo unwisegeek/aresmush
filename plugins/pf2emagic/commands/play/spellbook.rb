@@ -71,7 +71,7 @@ module AresMUSH
         # This check catches the intuitive but invalid syntax `spellbook <character>/<class>`
         return nil if self.character
         return nil if self.charclasses.include? self.charclass
-        return t('pf2e.bad_charclass', :bad_item => self.charclass)
+        return t('pf2emagic.spellbook_invalid_class', :invalid_class => self.charclass)
       end
 
       def handle
@@ -111,6 +111,11 @@ module AresMUSH
         cc = self.charclass ? self.charclass : 'invalid'
 
         book = book[self.spell_level] if self.spell_level
+
+        unless book
+          client.emit_failure t('pf2emagic.spellbook_no_spells_at_level', :options => book.keys)
+          return
+        end
 
         template = PF2SpellbookTemplate.new(char, cc, book, client)
 

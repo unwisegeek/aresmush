@@ -49,7 +49,7 @@ en:
     spell_prepare_as_signature_ok: "You prepare %{name} as a signature spell at level %{level}."
     spell_unprepare_ok: "You unprepare %{name} from your %{as} spell list."
     spellbook_no_args: "You must specify a class and, optionally, a spell level. Possible options are: %{options}"
-    spellbook_invalid_class: "No spellbook exists for %{invalid_class}"
+    spellbook_invalid_class: "No spellbook exists for %{invalid_class}."
     spellbook_invalid_level: "Invalid spell levels. Please choose a spell level betwen 0 and 10."
     spellbook_no_spells_at_level: "No spells at that level for this spellbook. Options: %{options}"
     spellbook_title: "Spellbook for %{name}"

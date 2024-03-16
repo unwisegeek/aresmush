@@ -21,7 +21,7 @@ en:
     autorest_done: "Daily rest done at %{time}."
 
     bad_ability: "That is not a valid ability for %{char}."
-    bad_charclass: "%{bad_item} is not a valid character class on this game."
+    bad_charclass: "%{cc} is not a valid character class on this game."
     bad_element: "'%{invalid}' cannot be set with this command. Choose one of: %{options}"
     bad_feat_name: "I didn't find a feat named %{name} in my list. Check to be sure that you have the correct spelling."
     bad_feat_type: "Invalid feat type '%{type}''. Choose one of: %{keys}"
