@@ -51,11 +51,11 @@ module AresMUSH
 
         if cmd.switch_is? "bonus"
           list = encounter.bonuses
-          list[self.bonus] = targets
+          list[self.bonus] = self.target_list
           encounter.update(bonuses: list)
         elsif cmd.switch_is? "penalty"
           list = encounter.penalties
-          list[self.bonus] = targets
+          list[self.bonus] = self.target_list
           encounter.update(penalties: list)
         else
           # Do nothing.
