@@ -7,7 +7,7 @@ module AresMUSH
 
       def parse_args
         # Usage: spellbook [character=][class/level]
-        # Faraday's argparser is useless for this one, so we roll our own.
+        # Faraday's argparser isn't going to touch this one, so we roll our own.
 
         if cmd.args
           # Use the size of the arrays to work out what args were supplied.
@@ -47,8 +47,12 @@ module AresMUSH
               end
             end
           end
-        end
 
+          # If no args, the enactor is asking to see their whole spellbook.
+          self.character = nil
+          self.charclass = nil
+          self.spell_level = 'all'
+        end
       end
 
       def check_permissions
