@@ -26,7 +26,6 @@ module AresMUSH
 
     def self.select_spell(char, charclass, level, old_spell, new_spell, common_only=false)
 
-      msg = []
       # This command is only used by full spellcasting classes.
       caster_type = get_caster_type(charclass)
 

@@ -22,12 +22,6 @@ module AresMUSH
           self.old_spell = false
         end
 
-        client.emit spells[1]
-        client.emit self.new_spell
-
-        has_old_spell = self.old_spell ? self.old_spell : "self.old_spell is nil"
-
-        client.emit has_old_spell
       end
 
       def check_in_chargen
