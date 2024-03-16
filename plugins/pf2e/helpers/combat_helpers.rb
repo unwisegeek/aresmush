@@ -23,7 +23,7 @@ module AresMUSH
 
       return "Not an active encounter" unless encounter_is_active
 
-      is_organizer = Pf2e.is_organizer?(char, encounter)
+      is_organizer = PF2Encounter.is_organizer?(char, encounter)
 
       return "You are the organizer" if is_organizer
 
@@ -49,7 +49,7 @@ module AresMUSH
       participants = encounter.participants.collect { |p| p[1] }
       targets_in_encounter = target_list.all? { |t| participants.include? t }
 
-      Pf2e.is_organizer?(char, encounter) && targets_in_encounter
+      PF2Encounter.is_organizer?(char, encounter) && targets_in_encounter
     end
 
     def self.can_modify_encounter(char, encounter)
