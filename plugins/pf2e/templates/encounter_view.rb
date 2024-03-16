@@ -29,6 +29,8 @@ module AresMUSH
 
         list = []
 
+        return list if @encounter.participants.empty?
+
         @encounter.participants.each do |p|
           list << format_init_list_item(p)
         end
@@ -73,7 +75,7 @@ module AresMUSH
         !(penalties.empty?)
       end
 
-      def format_init_list_item(participant=[])
+      def format_init_list_item(participant)
         initiative = participant[0].to_i
         name = participant[1]
         conditions = Character.named(name) ? Character.named(name).pf2_conditions : []
