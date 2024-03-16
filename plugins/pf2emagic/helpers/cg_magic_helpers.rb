@@ -25,6 +25,7 @@ module AresMUSH
     end
 
     def self.select_spell(char, charclass, level, old_spell, new_spell, common_only=false)
+      msg << []
       # This command is only used by full spellcasting classes.
       caster_type = get_caster_type(charclass)
 
@@ -118,8 +119,11 @@ module AresMUSH
         magic.update(spellbook: csb_cc)
       else
         csb = magic.repertoire
+        msg << csb
         csb_cc = csb[charclass] || {}
+        msg << csb_cc
         csb_level = csb_cc[level] || []
+        msg << csb_level
 
         if old_spname
           csb_i = csb_level.index old_spname
@@ -131,8 +135,12 @@ module AresMUSH
           csb_level << to_add
         end
 
-        csb_cc[level] = csb_level.flatten
+        csb_cc[level] = csb_level
+        msg << csb_cc
         csb[charclass] = csb_cc
+        msg << csb_cc
+
+        return msg.join("%r")
         magic.update(repertoire: csb_cc)
       end
 
