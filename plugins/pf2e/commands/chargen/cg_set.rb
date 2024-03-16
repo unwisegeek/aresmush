@@ -55,7 +55,7 @@ module AresMUSH
             return nil
           end
 
-          options = Global.read_config('pf2e_heritages', heritage, 'lineages').sort
+          options = Global.read_config('pf2e_heritages', heritage)['lineages']
 
           if !options
             client.emit_failure t('pf2e.no_lineages')
