@@ -636,10 +636,11 @@ pf2e_specialty:
                   revelation:
                   - "Death's Call"
           Family:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - Soothing Words
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Soothing Words
         curse: Ancestral Meddling
         action: []
         reaction: []
@@ -669,15 +670,17 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Might:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - Athletic Rush
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Athletic Rush
           Zeal:
-            magic_stats:
-              focus_spell:  
-                revelation:
-                - Weapon Surge
+            chargen:
+              magic_stats:
+                domain_focus_spell:  
+                  revelation:
+                  - Weapon Surge
     Bones:
       chargen:
         skills:
@@ -699,15 +702,17 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Death:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - "Death's Call"
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - "Death's Call"
           Undeath:
-            magic_stats:
-              focus_spell:
-                revelation:
-                - Touch of Undeath
+          chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Touch of Undeath
     Cosmos:
       chargen:
         skills:
@@ -825,15 +830,17 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Knowledge:
-            magic_stats:
-              domain_focus_spell:
-                revelation:
-                - Scholarly Recollection
+          chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Scholarly Recollection
           Truth:
-            magic_stats:
-              domain_focus_spell:
-                revelation:
-                - Word of Truth
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Word of Truth
     Tempest:
       chargen:
         skills:
@@ -855,15 +862,17 @@ pf2e_specialty:
         choice_type: subclass_info
         options:
           Air:
-            magic_stats:
-              domain_focus_spell:
-                revelation:
-                - Pushing Gust
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Pushing Gust
           Water:
-            magic_stats:
-              domain_focus_spell:
-                revelation:
-                - Tidal Surge
+            chargen:
+              magic_stats:
+                domain_focus_spell:
+                  revelation:
+                  - Tidal Surge
   Ranger:
     Flurry: {}
     Outwit: {}
