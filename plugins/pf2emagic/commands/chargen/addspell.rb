@@ -43,8 +43,6 @@ module AresMUSH
         [ self.caster_class, self.spell_level, self.new_spell]
       end
 
-
-
       def handle
 
         level = self.spell_level.zero? ? "cantrip" : self.spell_level
