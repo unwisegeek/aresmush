@@ -8,7 +8,7 @@ module AresMUSH
       def parse_args
         # Usage: spellbook [character=][class/level]
 
-        args = cmd.args ? cmd.args.split("=").map {|e| e.split("/")} : []
+        args = cmd.args ? cmd.args.split("=").map {|e| e.split("/")}.flatten : []
 
         # Use the size of the arrays to work out what args were supplied.
         if args.size == 2
