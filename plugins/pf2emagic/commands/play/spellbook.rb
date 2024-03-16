@@ -13,6 +13,8 @@ module AresMUSH
           # Use the size of the arrays to work out what args were supplied.
           args = cmd.args.split("=")
 
+          client.emit args
+
           if args.size == 2
             self.character = trim_arg(args[0])
 
