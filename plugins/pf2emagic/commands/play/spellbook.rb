@@ -18,7 +18,9 @@ module AresMUSH
           if args.size == 2
             self.character = trim_arg(args[0])
 
-            classlevel = args[1].split("/")
+            classlevel = args[1].split("/").flatten
+
+            client.emit "You got classlevel: #{classlevel}"
 
             # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
             self.charclass = titlecase_arg(classlevel[0])
@@ -28,7 +30,7 @@ module AresMUSH
             # Work out which.
             unknown = args[0].split("/").flatten
 
-            client.emit unknown
+            client.emit "You got unknown. #{unknown}"
 
             # If unknown splits here, we can assume it's a class/level split and that character name is absent.
             if unknown[1]
