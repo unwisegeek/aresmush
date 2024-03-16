@@ -108,9 +108,11 @@ module AresMUSH
         # If a spell level was specified, send just that level. Remember that self.charclass
         # has been validated as a charclass at this point in the code.
 
+        cc = self.charclass ? self.charclass : 'invalid'
+
         book = book[self.spell_level] if self.spell_level
 
-        template = PF2SpellbookTemplate.new(char, book, client)
+        template = PF2SpellbookTemplate.new(char, cc, book, client)
 
         client.emit template.render
       end

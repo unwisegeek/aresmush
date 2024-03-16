@@ -52,4 +52,4 @@ en:
     spellbook_invalid_class: "No spellbook exists for %{invalid_class}"
     spellbook_invalid_level: "Invalid spell levels. Please choose a spell level betwen 0 and 10."
     spellbook_no_spells_at_level: "No spells at that level for this spellbook. Options: %{options}"
-    spellbook_title: "%{charclass} Spellbook of %{name}"
+    spellbook_title: "Spellbook for %{name}"
