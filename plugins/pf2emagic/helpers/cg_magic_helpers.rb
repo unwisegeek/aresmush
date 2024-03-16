@@ -113,7 +113,7 @@ module AresMUSH
           csb_level << to_add
         end
 
-        csb_cc[level] = csb_level
+        csb_cc[level] = csb_level.flatten # This shouldn't be necessary :(
         csb[charclass] = csb_cc
         magic.update(spellbook: csb_cc)
       else
