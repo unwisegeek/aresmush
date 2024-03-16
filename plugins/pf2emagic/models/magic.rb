@@ -102,7 +102,7 @@ module AresMUSH
 
           value.each_pair do |level, spell|
             list = rep_for_class[level] || []
-            list << spell
+            spell.each { |s| list << s }
             rep_for_class[level] = list
           end
 
