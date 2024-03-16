@@ -120,10 +120,12 @@ module AresMUSH
       else
         csb = magic.repertoire
         msg << csb
+        msg << charclass
         csb_cc = csb[charclass] || {}
         msg << csb_cc
         csb_level = csb_cc[level] || []
         msg << csb_level
+        msg << (csb_level.is_a? Array)
 
         if old_spname
           csb_i = csb_level.index old_spname
