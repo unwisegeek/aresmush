@@ -49,9 +49,6 @@ module AresMUSH
           return
         end
 
-        # Process the target list for names.
-        targets = self.target_list.map { |target| titlecase_arg(target) }.sort
-
         if cmd.switch_is? "bonus"
           list = encounter.bonuses
           list[self.bonus] = targets
