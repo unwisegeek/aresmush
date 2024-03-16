@@ -73,11 +73,15 @@ module AresMUSH
       return t('pf2emagic.spell_already_on_list_to_assign') if new_spells_to_assign[level].include? to_add
 
       # At this point, the spell choice is deemed valid. If old_spell is true, they're swapping. Can they do that?
+      # You crafty bastard. Is old_spell coming through blank?
 
+      msg << "Blank old_spell" if old_spell.blank?
       if old_spell
         # Find the correct name for the old spell.
         # This will fall to not_in_list if they got the wrong match due to lack of specificity.
         old_spname = get_spells_by_name(old_spell).first
+
+        msg << "Blank old_spname" if old_spname.blank?
         return t('pf2emagic.spell_to_delete_not_found') unless old_spname
 
         i = new_spells_for_level.index old_spname
@@ -126,6 +130,8 @@ module AresMUSH
           csb_i = csb_level.index old_spname
           # Probably an unnecessary check, but it flags if spells are not being added properly.
           return t('pf2emagic.spell_to_delete_not_found') unless csb_i
+
+          msg << i
 
           csb_level[csb_i] = to_add
         else
