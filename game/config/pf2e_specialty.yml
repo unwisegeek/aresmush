@@ -138,8 +138,8 @@ pf2e_specialty:
                 - trip
                 - unarmed
       anathema:
-      - "May not show flagrant disrespect to an animal of its chosen kind."
-      - "May not use weapons while raging."
+      - "Show flagrant disrespect to an animal of its chosen kind."
+      - "Use weapons while raging."
       instinct_ability: Bestial Rage
       rage_ability:
         Ape:
@@ -269,7 +269,7 @@ pf2e_specialty:
       rage_resistance: Fury Resistance
     Giant:
       anathema:
-      - "May not fail to face a personal challenge of strength."
+      - "Fail to face a personal challenge of strength."
       instinct_ability: Titan Mauler
       rage_resistance:
         damage_type: ["B"]
@@ -291,8 +291,8 @@ pf2e_specialty:
                 fire: 1
     Spirit:
       anathema:
-        - "May not defile or show disrespect to corpses or spirits."
-        - "May defend themselves against undead."
+        - "Defile or show disrespect to corpses or spirits."
+        - "Defend themselves against undead."
       instinct_ability: Spirit Rage
       rage_resistance:
         damage_type: negative
@@ -343,11 +343,11 @@ pf2e_specialty:
       allowed_alignments:
       - LG
       anathema:
-      - "Must not willingly commit an evil act."
-      - "Must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      - "Must not lie, cheat, or take advantage of others."
+      - "Willingly commit an evil act."
+      - "Knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Lie, cheat, or take advantage of others."
       edicts:
-      - "Must respect the authority of legitimate leadership wherever they go, and obey its laws."
+      - "Respect the authority of legitimate leadership wherever they go, and obey its laws."
       chargen:
         action: []
         reaction:
@@ -363,11 +363,11 @@ pf2e_specialty:
       allowed_alignments:
       - NG
       edicts:
-      - "Must attempt to redeem those who commit evil acts before punishing them or killing them."
-      - "Must show compassion for all, without regard to other factors."
+      - "Attempt to redeem those who commit evil acts before punishing them or killing them."
+      - "Show compassion for all, without regard to other factors."
       anathema:
-      - "Must not willingly commit an evil act."
-      - "Must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Willingly commit an evil act."
+      - "Knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
       chargen:
         action: []
         reaction:
@@ -383,13 +383,13 @@ pf2e_specialty:
       allowed_alignments:
       - CG
       edicts:
-      - "Must honor decisions made by others over their own lives."
-      - "Must demand and fight for others' freedom to make their own decisions."
+      - "Honor decisions made by others over their own lives."
+      - "Demand and fight for others' freedom to make their own decisions."
       anathema:
-      - "Must not willingly commit an evil act."
-      - "Must not knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
-      - "Must not force someone to act in a particular way or threaten them if they refuse."
-      - "Must not accept or countenance slavery or tyranny."
+      - "Willingly commit an evil act."
+      - "Knowingly harm an innocent or allow harm to come to one through inaction if they know they can prevent it."
+      - "Force someone to act in a particular way or threaten them if they refuse."
+      - "Accept or countenance slavery or tyranny."
       chargen:
         action: []
         reaction:
@@ -498,7 +498,7 @@ pf2e_specialty:
         feat:
         - Animal Companion
         anathema:
-        - "Must not kill an animal needlessly or commit wanton cruelty to one."
+        - "Kill an animal needlessly or commit wanton cruelty to one."
         magic_stats:
           focus_pool: 1
           focus_spell:
@@ -519,7 +519,7 @@ pf2e_specialty:
             - Goodberry
           focus_pool: 1
         anathema:
-        - "Must not kill a plant needlessly or commit wanton cruelty to one."
+        - "Kill a plant needlessly or commit wanton cruelty to one."
         familiar: Leshy
     Storm:
       chargen:
@@ -535,9 +535,9 @@ pf2e_specialty:
             order:
             - Tempest Surge
         edicts:
-        - "Must punish those who cause major air pollution or climate shifts."
+        - "Punish those who cause major air pollution or climate shifts."
         anathema:
-        - "Must not pollute the air."
+        - "Pollute the air."
     Wild:
       chargen:
         action: []
@@ -552,7 +552,7 @@ pf2e_specialty:
             order:
             - Wild Morph
         anathema:
-        - "Must not become reliant on the temptations of civilization."
+        - "Become reliant on the temptations of civilization."
   Fighter:
     Acrobatic:
       chargen:
@@ -763,13 +763,13 @@ pf2e_specialty:
           Fire:
             chargen:
               magic_stats:
-                focus_spell:
+                domain_focus_spell:
                   revelation:
                   - Fire Ray
           Sun:
             chargen:
               magic_stats:
-                focus_spell:
+                domain_focus_spell:
                   revelation:
                   - Dazzling Flash
     Life:
@@ -826,12 +826,12 @@ pf2e_specialty:
         options:
           Knowledge:
             magic_stats:
-              focus_spell:
+              domain_focus_spell:
                 revelation:
                 - Scholarly Recollection
           Truth:
             magic_stats:
-              focus_spell:
+              domain_focus_spell:
                 revelation:
                 - Word of Truth
     Tempest:
@@ -856,12 +856,12 @@ pf2e_specialty:
         options:
           Air:
             magic_stats:
-              focus_spell:
+              domain_focus_spell:
                 revelation:
                 - Pushing Gust
           Water:
             magic_stats:
-              focus_spell:
+              domain_focus_spell:
                 revelation:
                 - Tidal Surge
   Ranger:
