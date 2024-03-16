@@ -55,6 +55,8 @@ module AresMUSH
           end
 
           # If no args, the enactor is asking to see their whole spellbook.
+
+          client.emit "You got noargs."
           self.character = nil
           self.charclass = nil
           self.spell_level = 'all'
@@ -71,6 +73,7 @@ module AresMUSH
 
         client.emit "Character: #{self.character}"
         client.emit "Charclass: #{self.charclass}"
+        client.emit "Spell level: #{self.spell_level}"
         return
         # If character came out of the argparsing, get that character, else get the enactor's character
         char = Pf2e.get_character(self.character, enactor)
