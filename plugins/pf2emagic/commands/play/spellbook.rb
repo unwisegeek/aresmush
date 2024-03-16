@@ -20,7 +20,8 @@ module AresMUSH
 
             # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
             self.charclass = titlecase_arg(classlevel[0])
-            self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
+            self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : nil
+            self.spell_level = 'cantrip' if self.spell_level.zero?
           else
             # Args could be a character name or a class/level split with or without the level in this case.
             # Work out which.
@@ -33,7 +34,7 @@ module AresMUSH
               self.character = nil
             else
               # If not, unknown[0] is either a character class or a character name, and spell_level is 'all'.
-              self.spell_level = 'all'
+              self.spell_level = nil
               charclasses = Global.read_config('pf2e_class').keys
 
               cc_test = titlecase_arg(unknown[0])
@@ -53,7 +54,7 @@ module AresMUSH
 
           self.character = nil
           self.charclass = nil
-          self.spell_level = 'all'
+          self.spell_level = nil
         end
       end
 
@@ -92,9 +93,14 @@ module AresMUSH
           return
         end
 
-        book_to_send = self.charclass ? csb[self.charclass] : csb
+        book = self.charclass ? csb[self.charclass] : csb
 
-        template = PF2SpellbookTemplate.new(char, book_to_send, client)
+        # If a spell level was specified, send just that level. Remember that self.charclass
+        # has been validated as a charclass at this point in the code.
+
+        book = book[self.spell_level] if self.spell_level
+
+        template = PF2SpellbookTemplate.new(char, book, client)
 
         client.emit template.render
       end
