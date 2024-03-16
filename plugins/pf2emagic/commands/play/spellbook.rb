@@ -28,6 +28,8 @@ module AresMUSH
             # Work out which.
             unknown = args[0].split("/").flatten
 
+            client.emit unknown
+
             # If unknown splits here, we can assume it's a class/level split and that character name is absent.
             if unknown[1]
               self.spell_level = integer_arg(unknown[1])

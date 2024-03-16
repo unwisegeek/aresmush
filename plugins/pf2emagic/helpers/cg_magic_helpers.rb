@@ -100,8 +100,8 @@ module AresMUSH
 
       if caster_type == "prepared"
         csb = magic.spellbook
-        csb_cc = csb[charclass]
-        csb_level = csb_cc[level]
+        csb_cc = csb[charclass] || {}
+        csb_level = csb_cc[level] || []
         # There might be a spell swap.
         if old_spname
           csb_i = csb_level.index old_spname
@@ -118,8 +118,8 @@ module AresMUSH
         magic.update(spellbook: csb_cc)
       else
         csb = magic.repertoire
-        csb_cc = csb[charclass]
-        csb_level = csb_cc[level]
+        csb_cc = csb[charclass] || {}
+        csb_level = csb_cc[level] || []
 
         if old_spname
           csb_i = csb_level.index old_spname
