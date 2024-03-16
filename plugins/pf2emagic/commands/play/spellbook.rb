@@ -56,6 +56,10 @@ module AresMUSH
           self.charclass = nil
           self.spell_level = nil
         end
+
+        client.emit "Character #{self.character}"
+        client.emit "Charclass #{self.charclass}"
+        client.emit "Spell level #{self.spell_level}"
       end
 
       def check_permissions
