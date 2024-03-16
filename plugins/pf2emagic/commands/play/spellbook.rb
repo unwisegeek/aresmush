@@ -26,7 +26,7 @@ module AresMUSH
           else
             # Args could be a character name or a class/level split with or without the level in this case.
             # Work out which.
-            unknown = args[0].split("/")
+            unknown = args[0].split("/").flatten
 
             # If unknown splits here, we can assume it's a class/level split and that character name is absent.
             if unknown[1]
