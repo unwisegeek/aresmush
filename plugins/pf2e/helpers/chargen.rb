@@ -282,6 +282,10 @@ module AresMUSH
         to_assign['charclass feat'] = 'open'
       end
 
+      if class_features_info['choose_feat']&.include? 'skill'
+        to_assign['skill feat'] = 'open'
+      end
+
       enactor.pf2_feats = feats
 
       # Check for gated feats.
