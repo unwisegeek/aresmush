@@ -25,6 +25,8 @@ module AresMUSH
     end
 
     def self.select_spell(char, charclass, level, old_spell, new_spell, common_only=false)
+
+      msg = []
       # This command is only used by full spellcasting classes.
       caster_type = get_caster_type(charclass)
 
@@ -134,7 +136,7 @@ module AresMUSH
 
         csb_cc[level] = csb_level
         csb[charclass] = csb_cc
-        magic.update(repertoire: csb_cc)
+        magic.update(repertoire: csb)
       end
 
       # The calling handler should interpret a nil response as a successful add and a String as a failure.

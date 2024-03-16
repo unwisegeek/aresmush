@@ -14,8 +14,6 @@ module AresMUSH
 
         spells = trimmed_list_arg(args.arg3, "/")
 
-
-
         if spells[1]
           self.new_spell = spells[1]
           self.old_spell = spells[0]
