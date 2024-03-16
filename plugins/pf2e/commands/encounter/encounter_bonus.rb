@@ -26,11 +26,6 @@ module AresMUSH
         [ self.bonus, self.target_list ]
       end
 
-      def check_good_target_list
-        return nil if self.target_list.is_a? Array
-        return t('pf2e.bad_target_list')
-      end
-
       def handle
 
         # If they didn't specify the encounter ID, go get it.
