@@ -33,30 +33,21 @@ module AresMUSH
             if unknown[1]
               self.spell_level = integer_arg(unknown[1])
               self.charclass = titlecase_arg(unknown[0])
-              self.character = nil
             else
               # If not, unknown[0] is either a character class or a character name, and spell_level is 'all'.
-              self.spell_level = nil
-
 
               cc_test = titlecase_arg(unknown[0])
 
               if charclasses.include? cc_test
                 self.charclass = cc_test
-                self.character = nil
               else
                 self.character = cc_test
-                self.charclass = nil
               end
             end
           end
 
         else
-          # If no args, the enactor is asking to see their whole spellbook.
-
-          self.character = nil
-          self.charclass = nil
-          self.spell_level = nil
+          # If no args, the enactor is asking to see their whole spellbook. All three are nil.
         end
 
       end
@@ -93,13 +84,13 @@ module AresMUSH
 
         # Cut the music if there is nothing in the spellbook at all.
         if csb.empty?
-          client.emit_failure t('pf2emagic.spellbook_empty')
+          client.emit_failure t('pf2emagic.no_spellbook', :item => char.name)
           return
         end
 
         # If a charclass was specified, is there anything in the spellbook for that charclass?
         if self.charclass && !(csb.keys.include? self.charclass)
-          client.emit_failure t('pf2emagic.spellbook_invalid_class', :invalid_class => self.charclass)
+          client.emit_failure t('pf2emagic.no_spellbook', :item => self.charclass)
           return
         end
 
@@ -108,11 +99,9 @@ module AresMUSH
         # If a spell level was specified, send just that level. Remember that self.charclass
         # has been validated as a charclass at this point in the code.
 
-        cc = self.charclass ? self.charclass : 'invalid'
-
         if self.spell_level
           # If they specified level, check to make sure they have spells at the specified level.
-          levelbook = book[self.spell_level]
+          levelbook = book[self.spell_level.to_s]
 
           unless levelbook
             client.emit_failure t('pf2emagic.spellbook_no_spells_at_level', :options => book.keys.join(", "))
