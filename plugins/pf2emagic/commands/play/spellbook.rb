@@ -110,11 +110,16 @@ module AresMUSH
 
         cc = self.charclass ? self.charclass : 'invalid'
 
-        book = book[self.spell_level] if self.spell_level
+        if self.spell_level
+          # If they specified level, check to make sure they have spells at the specified level.
+          levelbook = book[self.spell_level]
 
-        unless book
-          client.emit_failure t('pf2emagic.spellbook_no_spells_at_level', :options => book.keys)
-          return
+          unless levelbook
+            client.emit_failure t('pf2emagic.spellbook_no_spells_at_level', :options => book.keys)
+            return
+          end
+
+          book = levelbook
         end
 
         template = PF2SpellbookTemplate.new(char, cc, book, client)
