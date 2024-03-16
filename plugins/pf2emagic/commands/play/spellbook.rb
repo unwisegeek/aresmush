@@ -13,6 +13,8 @@ module AresMUSH
           # Use the size of the arrays to work out what args were supplied.
           args = cmd.args.split("=")
 
+          self.charclasses = Global.read_config('pf2e_class').keys
+
           if args.size == 2
             self.character = trim_arg(args[0])
 
@@ -35,7 +37,7 @@ module AresMUSH
             else
               # If not, unknown[0] is either a character class or a character name, and spell_level is 'all'.
               self.spell_level = nil
-              self.charclasses = Global.read_config('pf2e_class').keys
+
 
               cc_test = titlecase_arg(unknown[0])
 
