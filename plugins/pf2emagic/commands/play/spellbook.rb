@@ -3,7 +3,7 @@ module AresMUSH
     class PF2MagicSpellbookCmd
       include CommandHandler
 
-      attr_accessor :character, :charclass, :spell_level
+      attr_accessor :character, :charclass, :charclasses, :spell_level
 
       def parse_args
         # Usage: spellbook [character=][class/level]
@@ -35,7 +35,7 @@ module AresMUSH
             else
               # If not, unknown[0] is either a character class or a character name, and spell_level is 'all'.
               self.spell_level = nil
-              charclasses = Global.read_config('pf2e_class').keys
+              self.charclasses = Global.read_config('pf2e_class').keys
 
               cc_test = titlecase_arg(unknown[0])
 
@@ -66,6 +66,13 @@ module AresMUSH
         return nil if enactor.has_permission? "manage_alts"
         return nil unless self.character
         return t('dispatcher.not_allowed')
+      end
+
+      def check_invalid_admin_syntax
+        # This check catches the intuitive but invalid syntax `spellbook <character>/<class>`
+        return nil if self.character
+        return nil if self.charclasses.include? self.charclass
+        return t('pf2e.bad_charclass', :bad_item => self.charclass)
       end
 
       def handle
