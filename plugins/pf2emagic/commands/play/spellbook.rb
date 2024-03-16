@@ -13,14 +13,10 @@ module AresMUSH
           # Use the size of the arrays to work out what args were supplied.
           args = cmd.args.split("=")
 
-          client.emit args
-
           if args.size == 2
             self.character = trim_arg(args[0])
 
             classlevel = args[1].split("/").flatten
-
-            client.emit "You got classlevel: #{classlevel}"
 
             # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
             self.charclass = titlecase_arg(classlevel[0])
@@ -29,8 +25,6 @@ module AresMUSH
             # Args could be a character name or a class/level split with or without the level in this case.
             # Work out which.
             unknown = args[0].split("/").flatten
-
-            client.emit "You got unknown. #{unknown}"
 
             # If unknown splits here, we can assume it's a class/level split and that character name is absent.
             if unknown[1]
@@ -43,8 +37,6 @@ module AresMUSH
               charclasses = Global.read_config('pf2e_class').keys
 
               cc_test = titlecase_arg(unknown[0])
-
-              client.emit "Here's cc_test: #{cc_test}"
 
               if charclasses.include? cc_test
                 self.charclass = cc_test
@@ -59,7 +51,6 @@ module AresMUSH
         else
           # If no args, the enactor is asking to see their whole spellbook.
 
-          client.emit "You got noargs."
           self.character = nil
           self.charclass = nil
           self.spell_level = 'all'
@@ -73,11 +64,6 @@ module AresMUSH
       end
 
       def handle
-
-        client.emit "Character: #{self.character}"
-        client.emit "Charclass: #{self.charclass}"
-        client.emit "Spell level: #{self.spell_level}"
-        return
         # If character came out of the argparsing, get that character, else get the enactor's character
         char = Pf2e.get_character(self.character, enactor)
 
