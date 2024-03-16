@@ -48,6 +48,7 @@ module AresMUSH
         # Log the init start in the encounter.
         PF2Encounter.send_to_encounter(encounter, @message)
 
+        scene = encounter.scene
         # Log the initiative message to the scene as an OOC message.
         Scenes.add_to_scene(scene, @message, Game.master.system_character, false, true)
 
