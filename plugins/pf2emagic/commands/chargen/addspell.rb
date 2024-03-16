@@ -14,7 +14,7 @@ module AresMUSH
 
         spells = trimmed_list_arg(args.arg3, "/")
 
-        client.emit spells
+
 
         if spells[1]
           self.new_spell = spells[1]
@@ -23,6 +23,13 @@ module AresMUSH
           self.new_spell = spells[0]
           self.old_spell = false
         end
+
+        client.emit spells[1]
+        client.emit self.new_spell
+
+        has_old_spell = self.old_spell ? self.old_spell : "self.old_spell is nil"
+
+        client.emit has_old_spell
       end
 
       def check_in_chargen
