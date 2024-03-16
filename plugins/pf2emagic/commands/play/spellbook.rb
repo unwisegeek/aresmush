@@ -7,35 +7,48 @@ module AresMUSH
 
       def parse_args
         # Usage: spellbook [character=][class/level]
+        # Faraday's argparser is useless for this one, so we roll our own.
 
-        args = cmd.args ? cmd.args.split("=").map {|e| e.split("/")}.flatten : []
+        if cmd.args
+          # Use the size of the arrays to work out what args were supplied.
+          args = cmd.args.split("=")
 
-        # Use the size of the arrays to work out what args were supplied.
-        if args.size == 2
-          self.character = trim_arg(args[0])
+          if args.size == 2
+            self.character = trim_arg(args[0])
 
-          classlevel = args[1]
+            classlevel = args[1].split("/")
 
-          self.charclass = classlevel
+            # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
+            self.charclass = titlecase_arg(classlevel[0])
+            self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
+          else
+            # Args could be a character name or a class/level split with or without the level in this case.
+            # Work out which.
+            unknown = args[0].split("/")
 
-          # Coder decision: self.spell_level does not make sense without self.charclass, therefore disallow
-          # self.charclass = titlecase_arg(classlevel[0])
-          # self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
-        elsif args.size == 1
+            # If unknown splits here, we can assume it's a class/level split and that character name is absent.
+            if unknown[1]
+              self.spell_level = integer_arg(unknown[1])
+              self.charclass = titlecase_arg(unknown[0])
+              self.character = nil
+            else
+              # If not, unknown[0] is either a character class or a character name, and spell_level is 'all'.
+              self.spell_level = 'all'
+              charclasses = Global.read_config('pf2e_class').keys
 
-          self.character = args
-          # unknown = args[0]
-          # Unknown will be an array if it is class and level, or the character if it is a string.
-          # if unknown.is_a? Array
-          #   self.charclass = titlecase_arg(classlevel[0])
-          #   self.spell_level = classlevel[1] ? integer_arg(classlevel[1]) : "all"
-          #   self.character = nil
-          # else
-          #   self.character = downcase_arg(args[0])
-          #   self.charclass = nil
-          #   self.spell_level = nil
-          # end
+              cc_test = titlecase_arg(unknown[0])
+
+              if charclasses.include? cc_test
+                self.charclass = cc_test
+                self.character = nil
+              else
+                self.character = cc_test
+                self.charclass = nil
+              end
+            end
+          end
         end
+
       end
 
       def check_permissions
