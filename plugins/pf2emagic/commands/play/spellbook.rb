@@ -44,6 +44,8 @@ module AresMUSH
 
               cc_test = titlecase_arg(unknown[0])
 
+              client.emit "Here's cc_test: #{cc_test}"
+
               if charclasses.include? cc_test
                 self.charclass = cc_test
                 self.character = nil
@@ -54,6 +56,7 @@ module AresMUSH
             end
           end
 
+        else
           # If no args, the enactor is asking to see their whole spellbook.
 
           client.emit "You got noargs."
