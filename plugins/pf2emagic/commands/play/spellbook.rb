@@ -115,7 +115,7 @@ module AresMUSH
           levelbook = book[self.spell_level]
 
           unless levelbook
-            client.emit_failure t('pf2emagic.spellbook_no_spells_at_level', :options => book.keys)
+            client.emit_failure t('pf2emagic.spellbook_no_spells_at_level', :options => book.keys.join(", "))
             return
           end
 
