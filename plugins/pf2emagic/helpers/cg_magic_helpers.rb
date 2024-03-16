@@ -25,7 +25,6 @@ module AresMUSH
     end
 
     def self.select_spell(char, charclass, level, old_spell, new_spell, common_only=false)
-      msg = []
       # This command is only used by full spellcasting classes.
       caster_type = get_caster_type(charclass)
 
@@ -73,20 +72,18 @@ module AresMUSH
       return t('pf2emagic.spell_already_on_list_to_assign') if new_spells_to_assign[level].include? to_add
 
       # At this point, the spell choice is deemed valid. If old_spell is true, they're swapping. Can they do that?
-      # You crafty bastard. Is old_spell coming through blank?
 
-      msg << "Blank old_spell" if old_spell.blank?
-      if old_spell
+      if !(old_spell.blank?)
         # Find the correct name for the old spell.
         # This will fall to not_in_list if they got the wrong match due to lack of specificity.
         old_spname = get_spells_by_name(old_spell).first
 
-        msg << "Blank old_spname" if old_spname.blank?
         return t('pf2emagic.spell_to_delete_not_found') unless old_spname
 
         i = new_spells_for_level.index old_spname
         return t('pf2emagic.not_in_list') unless i
       else
+        old_spname = nil
         i = new_spells_for_level.index "open"
         return t('pf2emagic.no_available_slots') unless i
       end
@@ -118,20 +115,17 @@ module AresMUSH
           csb_level << to_add
         end
 
-        csb_cc[level] = csb_level.flatten # This shouldn't be necessary :(
+        csb_cc[level] = csb_level
         csb[charclass] = csb_cc
         magic.update(spellbook: csb_cc)
       else
         csb = magic.repertoire
         csb_cc = csb[charclass] || {}
         csb_level = csb_cc[level] || []
-        msg << old_spname ? old_spname : "No old spname"
         if old_spname
           csb_i = csb_level.index old_spname
           # Probably an unnecessary check, but it flags if spells are not being added properly.
           return t('pf2emagic.spell_to_delete_not_found') unless csb_i
-
-          msg << i
 
           csb_level[csb_i] = to_add
         else
@@ -139,11 +133,7 @@ module AresMUSH
         end
 
         csb_cc[level] = csb_level
-        msg << csb_cc
         csb[charclass] = csb_cc
-        msg << csb_cc
-
-        return msg.join("%r")
         magic.update(repertoire: csb_cc)
       end
 
