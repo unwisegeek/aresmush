@@ -9,11 +9,11 @@ module AresMUSH
         # Usage: spellbook [character=][class/level]
         # Faraday's argparser isn't going to touch this one, so we roll our own.
 
+        self.charclasses = Global.read_config('pf2e_class').keys
+
         if cmd.args
           # Use the size of the arrays to work out what args were supplied.
           args = cmd.args.split("=")
-
-          self.charclasses = Global.read_config('pf2e_class').keys
 
           if args.size == 2
             self.character = trim_arg(args[0])
