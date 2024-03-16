@@ -118,7 +118,7 @@ module AresMUSH
 
         csb_cc[level] = csb_level
         csb[charclass] = csb_cc
-        magic.update(spellbook: csb_cc)
+        magic.update(spellbook: csb)
       else
         csb = magic.repertoire
         csb_cc = csb[charclass] || {}
