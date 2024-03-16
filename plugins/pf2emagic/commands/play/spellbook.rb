@@ -60,9 +60,10 @@ module AresMUSH
 
       def check_invalid_admin_syntax
         # This check catches the intuitive but invalid syntax `spellbook <character>/<class>`
+        return nil unless enactor.has_permission? "manage_alts"
         return nil if self.character
         return nil if self.charclasses.include? self.charclass
-        return t('pf2emagic.spellbook_invalid_class', :invalid_class => self.charclass)
+        return t('pf2emagic.no_spellbook', :item => self.charclass)
       end
 
       def handle
