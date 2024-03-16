@@ -29,7 +29,7 @@ module AresMUSH
       # This command is only used by full spellcasting classes.
       caster_type = get_caster_type(charclass)
 
-      return t('pf2emagic.command_not_needed') unless caster_type
+      return t('pf2emagic.no_new_spells') unless caster_type
 
       # Do they get to pick a spell for this class at this time?
       to_assign = char.pf2_to_assign
