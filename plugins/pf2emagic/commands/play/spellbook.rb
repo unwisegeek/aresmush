@@ -46,8 +46,8 @@ module AresMUSH
 
       def handle
 
-        client.emit self.character
-        client.emit self.charclass
+        client.emit "Character: #{self.character}"
+        client.emit "Charclass: #{self.charclass}"
         return
         # If character came out of the argparsing, get that character, else get the enactor's character
         char = Pf2e.get_character(self.character, enactor)
