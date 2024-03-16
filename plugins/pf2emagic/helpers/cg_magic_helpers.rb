@@ -119,14 +119,9 @@ module AresMUSH
         magic.update(spellbook: csb_cc)
       else
         csb = magic.repertoire
-        msg << csb
-        msg << charclass
         csb_cc = csb[charclass] || {}
-        msg << csb_cc
         csb_level = csb_cc[level] || []
-        msg << csb_level
-        msg << (csb_level.is_a? Array)
-
+        msg << old_spname ? old_spname : "No old spname"
         if old_spname
           csb_i = csb_level.index old_spname
           # Probably an unnecessary check, but it flags if spells are not being added properly.
