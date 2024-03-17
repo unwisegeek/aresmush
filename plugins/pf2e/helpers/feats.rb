@@ -461,7 +461,7 @@ module AresMUSH
         traits = fdeets['traits'].map {|t| t.downcase }
 
         passes_gate = traits.include? 'metamagic'
-      when "natural ambition"
+      when "Natural Ambition"
         level = fdeets['prereq']['level'] == 1
 
         char_base_class = char.pf2_base_info['charclass']
