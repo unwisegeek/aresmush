@@ -286,7 +286,7 @@ module AresMUSH
       # Used for spells with limited choices.
       # Does the spell exist?
       spell = get_spell_details(term)
-      return false unless spell.is_a? Array
+      return 'bad_spell' unless spell.is_a? Array
 
       # Spell's valid. Assemble the details.
       spdeets = spell[1]
@@ -294,21 +294,21 @@ module AresMUSH
       # Can the character take that spell at that level?
       base_level = spdeets['base_level'].to_i
 
-      return false unless level.to_i >= base_level
+      return 'base_level' unless level.to_i >= base_level
 
       max_level_can_cast = ((char.pf2_level + 1) / 2).floor.clamp(1,10)
       max_level_can_cast = (max_level_can_cast / 2).floor.clamp(1,10) if is_dedication
 
-      return false unless max_level_can_cast >= level.to_i
+      return 'max_level' unless max_level_can_cast >= level.to_i
 
       # Tradition check
       magic = char.magic
 
       trad_info = magic.tradition[charclass]
-      return false unless trad_info
+      return 'trad_info' unless trad_info
 
       tradition = trad_info[0]
-      return false unless spdeets['traits'].include? tradition
+      return 'tradition' unless spdeets['traits'].include? tradition
 
       # Gate check
 
