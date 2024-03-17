@@ -163,7 +163,8 @@ module AresMUSH
 
       key_ability = subclass_info['key_abil'] ? subclass_info['key_abil'] : charclass_info['key_abil']
 
-      # Note that boosts['charclass'] only gets stashed if they need to pick it.
+      boosts['charclass'] = key_ability
+
       # If key ability has multiple options, I need a nested array for future checks.
       if key_ability.size > 1
         client.emit_ooc t('pf2e.multiple_options', :element=>"key ability")
