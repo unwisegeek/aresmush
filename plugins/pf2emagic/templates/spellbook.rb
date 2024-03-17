@@ -8,7 +8,6 @@ module AresMUSH
 
       def initialize(char, spellbook, client)
         @char = char
-        @charclass = charclass
         @spellbook = spellbook
         @client = client
 
