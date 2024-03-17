@@ -97,8 +97,8 @@ module AresMUSH
           # Skills can be multi-word names, but prof is always the last word, so pop it off the end and the rest
           # is the skill name.
 
-          new_prof = self.value.pop
-          skname = self.value.join
+          new_prof = self.value.pop.downcase
+          skname = self.value.join(" ")
 
           client.emit self.value
           client.emit skname
