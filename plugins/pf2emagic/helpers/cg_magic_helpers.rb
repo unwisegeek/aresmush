@@ -34,7 +34,7 @@ module AresMUSH
       # The name of the sublist in to_assign is the gate + "spell".
       to_assign = char.pf2_to_assign
       sp_list_type = gate + " spell"
-      return "Sp_list_type value: #{sp_list_type}"
+
       new_spells_to_assign = to_assign[sp_list_type]
 
       return t('pf2emagic.no_new_spells') unless new_spells_to_assign
