@@ -266,13 +266,18 @@ module AresMUSH
     end
 
     def self.cg_magic_warnings(magic, to_assign)
-
       msg = []
 
       # Should yell if the magic object did not get created.
       msg << t('pf2emagic.config_error', :code => "NO OBJECT") unless magic
 
-      msg << t('pf2emagic.choose_divine_font') if to_assign['divine font']
+      msg << t('pf2emagic.choose_divine_font') if to_assign['divine font'].is_a? Array
+
+      has_school_spell = to_assign['school spell']
+
+      if has_school_spell
+        msg << t('pf2emagic.choose_school_spell') if has_school_spell == 'school'
+      end
 
     end
 
