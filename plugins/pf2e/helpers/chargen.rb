@@ -163,8 +163,7 @@ module AresMUSH
 
       key_ability = subclass_info['key_abil'] ? subclass_info['key_abil'] : charclass_info['key_abil']
 
-      boosts['charclass'] = key_ability
-
+      # Note that boosts['charclass'] only gets stashed if they need to pick it.
       # If key ability has multiple options, I need a nested array for future checks.
       if key_ability.size > 1
         client.emit_ooc t('pf2e.multiple_options', :element=>"key ability")
@@ -391,7 +390,10 @@ module AresMUSH
       # Some classes have a choice of key ability
       # If so, set at ability commit, if not, set here
 
-      combat.update(key_abil: key_ability.first) if key_ability.size == 1
+      if key_ability.size == 1
+        combat.update(key_abil: key_ability.first)
+        Pf2eAbilities.update_base_score(char,key_ability.first)
+      end
 
       # Collate and record unarmed attacks. Everyone starts with a fist.
       # A monk's fist does 1d6, everyone else's does 1d4.
