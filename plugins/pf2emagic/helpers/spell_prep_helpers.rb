@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2emagic
 
-    def prepare_spell(spell, char, castclass, level, use_arcane_evo=false)
+    def self.prepare_spell(spell, char, castclass, level, use_arcane_evo=false)
       # All validations are done in the helper.
 
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
@@ -92,7 +92,7 @@ module AresMUSH
 
     end
 
-    def unprepare_spell(spell, char, castclass, level=nil)
+    def self.unprepare_spell(spell, char, castclass, level=nil)
       # All validations are done in the helper.
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
 

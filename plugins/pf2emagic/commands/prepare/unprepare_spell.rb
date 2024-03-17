@@ -25,7 +25,7 @@ module AresMUSH
 
       def handle
 
-        fail_msg = unprepare_spell(self.spell_name, enactor, self.caster_class, self.spell_level)
+        fail_msg = Pf2emagic.unprepare_spell(self.spell_name, enactor, self.caster_class, self.spell_level)
 
         if fail_msg
           client.emit_failure fail_msg
