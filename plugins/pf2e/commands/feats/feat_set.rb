@@ -104,7 +104,7 @@ module AresMUSH
           # These feats have an additional qualify check based on the specific gate.
           qualify = Pf2e.can_take_gated_feat?(enactor, fname, self.gate)
         else
-          unless (to_assign[key].include? 'open')
+          unless (to_assign[key] && to_assign[key].include?('open'))
             client.emit_failure t('pf2e.no_free', :element => key)
             return
           end
