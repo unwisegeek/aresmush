@@ -48,16 +48,11 @@ module AresMUSH
 
         level = self.spell_level.zero? ? 'cantrip' : self.spell_level.to_s
 
-        switch_check = cmd.switch.is_a?(String) ? "String" : "Nil"
-
-        client.emit switch_check
-        return
-
         # A switch on this command indicates a gate on the spell. Divert to different processing.
         if cmd.switch
           msg = Pf2emagic.select_gated_spell(enactor, self.caster_class, level, self.old_spell, self.new_spell, cmd.switch, false, true)
         else
-          msg = Pf2emagic.select_spell(enactor, self.caster_class, level, self.old_spell, self.new_spell, true)
+          msg = Pf2emagic.select_spell(enactor, self.caster_class, level, self.old_spell, self.new_spell, false, true)
         end
 
         if msg
