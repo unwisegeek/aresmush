@@ -67,7 +67,9 @@ module AresMUSH
           if instruction == 'add'
             feat_sublist << feat_name
           elsif instruction == 'delete'
-            feat_sublist.delete(feat_name)
+            # Feats can be duplicated, so it is necessary to delete only one at a time.
+            i = feat_sublist.index(feat_name)
+            feat_sublist.delete_at[i] if i
           else
             client.emit_failure t('pf2e.bad_value', :item => 'instruction')
             return
