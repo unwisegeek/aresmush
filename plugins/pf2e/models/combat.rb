@@ -13,6 +13,7 @@ module AresMUSH
     attribute :weapon_prof, :type => DataType::Hash, :default => {}
 
     attribute :unarmed_attacks, :type => DataType::Hash, :default => {}
+    attribute :defense, :type => DataType::Hash, :default => {}
 
     reference :character, "AresMUSH::Character"
 
