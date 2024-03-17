@@ -48,7 +48,7 @@ module AresMUSH
 
         level = self.spell_level.zero? ? 'cantrip' : self.spell_level.to_s
 
-        switch_check = cmd.switch.is_a? String ? "String" : "Nil"
+        switch_check = cmd.switch.is_a?(String) ? "String" : "Nil"
 
         client.emit switch_check
         return
