@@ -229,11 +229,8 @@ module AresMUSH
           to_assign['special feat'] = list
         when 'gated_spell'
           sublist_name = value + " spell"
-          list = to_assign[sublist_name] || []
 
-          list << value
-
-          to_assign[sublist_name] = list
+          to_assign[sublist_name] = value
         else
           client.emit_ooc "Unknown key #{key} in update_magic. Please inform staff."
         end

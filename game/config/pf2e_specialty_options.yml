@@ -64,7 +64,7 @@ pf2e_subclass:
         addspellbook: 
           1: 
           - Augment Summoning
-        ggated_spell: school
+        gated_spell: school
     Divination:
       magic_stats:
         addspellbook:
