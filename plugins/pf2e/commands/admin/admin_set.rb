@@ -100,6 +100,10 @@ module AresMUSH
           new_prof = self.value.pop
           skname = self.value.join
 
+          client.emit self.value
+          client.emit skname
+          client.emit new_prof
+
           skill = Pf2eSkills.find_skill(skname, char)
 
           levels = %w(untrained trained expert master legendary)
