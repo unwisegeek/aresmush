@@ -45,6 +45,7 @@ en:
     spell_exceeds_max_level: "That spell is of a higher level than you can cast."
     spell_already_on_list_to_assign: "You already picked that spell. Try another."
     spell_to_delete_not_found: "Spell specified for replacement not found in your list."
+    spell_not_eligible: "That spell does not meet the criteria for a %{gate} spell for you."
     spell_prepare_ok: "You prepare %{name} as a %{as} at level %{level}."
     spell_prepare_as_signature_ok: "You prepare %{name} as a signature spell at level %{level}."
     spell_unprepare_ok: "You unprepare %{name} from your %{as} spell list."
