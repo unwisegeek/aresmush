@@ -112,7 +112,7 @@ module AresMUSH
           book = levelbook
         end
 
-        template = PF2SpellbookTemplate.new(char, cc, book, client)
+        template = PF2SpellbookTemplate.new(char, book, client)
 
         client.emit template.render
       end
