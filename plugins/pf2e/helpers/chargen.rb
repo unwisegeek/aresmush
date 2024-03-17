@@ -392,7 +392,7 @@ module AresMUSH
 
       if key_ability.size == 1
         combat.update(key_abil: key_ability.first)
-        Pf2eAbilities.update_base_score(char,key_ability.first)
+        Pf2eAbilities.update_base_score(enactor, key_ability.first)
       end
 
       # Collate and record unarmed attacks. Everyone starts with a fist.
