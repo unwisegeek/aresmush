@@ -53,7 +53,8 @@ module AresMUSH
 
       # I don't validate level here because the gate check includes a level check.
 
-      new_spells_for_level = new_spells_to_assign[level.to_s]
+      return "Level #{level} is a Integer? #{level.is_a?(Integer)}"
+      new_spells_for_level = new_spells_to_assign[level]
 
       if !(old_spell.blank?)
         # Find the correct name for the old spell.
@@ -76,7 +77,7 @@ module AresMUSH
 
       new_spells_for_level[i] = to_add
       new_spells_for_level.sort
-      new_spells_to_assign[level] = new_spells_for_level
+      new_spells_to_assign[level.to_s] = new_spells_for_level
       to_assign[sp_list_type] = new_spells_to_assign
       char.update(pf2_to_assign: to_assign)
 
