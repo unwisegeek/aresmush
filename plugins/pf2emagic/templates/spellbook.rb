@@ -6,8 +6,9 @@ module AresMUSH
 
       attr_accessor :char, :spellbook, :client
 
-      def initialize(char, spellbook, client)
+      def initialize(char, charclass, spellbook, client)
         @char = char
+        @charclass = charclass
         @spellbook = spellbook
         @client = client
 

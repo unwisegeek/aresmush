@@ -95,6 +95,9 @@ module AresMUSH
           return
         end
 
+        # This will not be called in the template unless self.charclass is specified.
+
+        cc = self.charclass ? self.charclass : 'not specified'
         book = self.charclass ? csb[self.charclass] : csb
 
         # If a spell level was specified, send just that level. Remember that self.charclass
@@ -112,7 +115,7 @@ module AresMUSH
           book = levelbook
         end
 
-        template = PF2SpellbookTemplate.new(char, book, client)
+        template = PF2SpellbookTemplate.new(char, cc, book, client)
 
         client.emit template.render
       end
