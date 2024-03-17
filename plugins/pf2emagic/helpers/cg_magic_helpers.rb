@@ -53,7 +53,7 @@ module AresMUSH
 
       # I don't validate level here because the gate check includes a level check.
 
-      new_spells_for_level = new_spells_to_assign[level]
+      new_spells_for_level = new_spells_to_assign[level.to_s]
 
       if !(old_spell.blank?)
         # Find the correct name for the old spell.
