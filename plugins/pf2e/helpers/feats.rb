@@ -320,6 +320,10 @@ module AresMUSH
         msgs << t('pf2e.unassigned_ancestry_feat') if to_assign['ancestry feat'].include? 'open'
       end
 
+      if to_assign['skill feat']
+        msgs << t('pf2e.unassigned_skill_feat') if to_assign['skill feat'].include? 'open'
+      end
+
       if to_assign['special feat']
         msgs << t('pf2e.unassigned_gated_feat', :options => to_assign['special feat'].sort.join(", "))
       end
