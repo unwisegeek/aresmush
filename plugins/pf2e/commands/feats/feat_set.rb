@@ -57,6 +57,14 @@ module AresMUSH
         fname = feat_check[0]
         fdeets = feat_check[1]
 
+        # Is that feat of the type they asked for?
+        feat_type_list = fdeets['feat_type'].map { |f| f.downcase }
+
+        unless feat_type_list.include? self.feat_type
+          client.emit_failure t('pf2e.bad_feat_type', :type => self.feat_type, :keys => feat_type_list.sort.join(", "))
+          return
+        end
+
         # Does the enactor already have this feat?
 
         feat_list = enactor.pf2_feats
