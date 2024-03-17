@@ -37,7 +37,7 @@ module AresMUSH
       return "Sp_list_type value: #{sp_list_type}"
       new_spells_to_assign = to_assign[sp_list_type]
 
-      return t('pf2emagic.no_new_spells') unless new_spells_to_assign.include? gate
+      return t('pf2emagic.no_new_spells') unless new_spells_to_assign
 
       hash = common_only ? find_common_spells : Global.read_config('pf2e_spells')
       match = hash.keys.select { |s| s.downcase == new_spell.downcase }
