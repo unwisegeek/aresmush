@@ -80,6 +80,15 @@ module AresMUSH
       cinfo = char.pf2_base_info
       feat_type = details['feat_type']
 
+      # Lineage feats are explicitly for select heritages and can only be taken at level 1.
+      if feat_type.include? 'Lineage'
+
+        heritage = cinfo['heritage'].downcase
+        traits = details['traits']
+
+        msg << 'lineage' unless traits.include?(heritage) && (char.pf2_level == 1)
+      end
+
       if feat_type.include? 'Charclass'
         charclass = cinfo['charclass']
         allowed_charclasses = details['assoc_charclass']
@@ -94,8 +103,6 @@ module AresMUSH
         # # Add allowances for Half-Sil and Half-Oruch
         ancestry << "Sildanyar" if cinfo['heritage'].include? "Half-Sil"
         ancestry << "Oruch" if cinfo['heritage'].include? "Half-Oruch"
-
-        Global.logger.debug ancestry
 
         allowed_ancestry = details['assoc_ancestry']
 
