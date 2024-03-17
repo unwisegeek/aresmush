@@ -314,7 +314,7 @@ module AresMUSH
       case gate
       when 'school'
         # The school gate checks that the spell in question is of your specialist school.
-        char_school = char.pf2_base_info['specialty_info'].downcase
+        char_school = char.pf2_base_info['specialize_info'].downcase
 
         passes_gate = spdeets['traits'].include? char_school
       else
