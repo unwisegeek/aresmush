@@ -308,8 +308,7 @@ module AresMUSH
       return 'trad_info' unless trad_info
 
       tradition = trad_info[0]
-      return 'tradition' unless spdeets['traits'].include? tradition.downcase
-
+      return 'tradition' unless spdeets['tradition'].include? tradition
       # Gate check
 
       case gate
