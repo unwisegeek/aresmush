@@ -51,10 +51,17 @@ module AresMUSH
       pass_gate = can_take_gated_spell?(char, charclass, level, to_add, gate, is_dedication)
       return t('pf2emagic.spell_not_eligible', :gate => gate) unless pass_gate
 
-      # I don't validate level here because the gate check includes a level check.
+      # If we have reached this point, it's time to add the spell.
+      # Stuff into to_assign for tracking of what got bought when.
+      magic = char.magic
 
-      return "Level #{level} is a Integer? #{level.is_a?(Integer)}"
-      new_spells_for_level = new_spells_to_assign[level]
+      new_spells_to_assign = to_add
+      to_assign[sp_list_type] = new_spells_to_assign
+      char.update(pf2_to_assign: to_assign)
+
+      # Stuff into spellbook or repertoire as appropriate.
+      # Note that this function should not be used for uncommon or rare spells going in a spellbook.
+      # That is expected to be handled by admin/set.
 
       if !(old_spell.blank?)
         # Find the correct name for the old spell.
@@ -62,28 +69,7 @@ module AresMUSH
         old_spname = get_spells_by_name(old_spell).first
 
         return t('pf2emagic.spell_to_delete_not_found') unless old_spname
-
-        i = new_spells_for_level.index old_spname
-        return t('pf2emagic.not_in_list') unless i
-      else
-        old_spname = nil
-        i = new_spells_for_level.index "open"
-        return t('pf2emagic.no_available_slots') unless i
       end
-
-      # If we have reached this point, it's time to add the spell.
-      # Stuff into to_assign for tracking of what got bought when.
-      magic = char.magic
-
-      new_spells_for_level[i] = to_add
-      new_spells_for_level.sort
-      new_spells_to_assign[level.to_s] = new_spells_for_level
-      to_assign[sp_list_type] = new_spells_to_assign
-      char.update(pf2_to_assign: to_assign)
-
-      # Stuff into spellbook or repertoire as appropriate.
-      # Note that this function should not be used for uncommon or rare spells going in a spellbook.
-      # That is expected to be handled by admin/set.
 
       if caster_type == "prepared"
         csb = magic.spellbook
