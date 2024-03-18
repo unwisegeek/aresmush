@@ -29,7 +29,7 @@ module AresMUSH
       spell_name = spells[0]
       spell_details = spells[1]
 
-      needs_spellbook = spell_details['traits'].intersect?('rare', 'uncommon', 'unique')
+      needs_spellbook = spell_details['traits'].intersect?(['rare', 'uncommon', 'unique'])
       # Initialize make_signature
       make_signature = false
 
