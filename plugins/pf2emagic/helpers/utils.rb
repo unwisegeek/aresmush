@@ -200,7 +200,8 @@ module AresMUSH
 
       # Grab all the small stuff and assemble into a useful string.
       actions = ("%x229Actions%xn:" + details["actions"].to_s || "").ljust(39)
-      level = ("%x229Base Level%xn:" + details["base_level"].to_s).ljust(39)
+      base_level = details["base_level"]
+      level = ("%x229Base Level%xn:" + base_level.to_s).ljust(39)
       cast = ("%r%x229Casting%xn:" + details["cast"].join(", ")).ljust(39)
       area = ("%x229Area%xn:" + details["area"].to_s || "").ljust(39)
       range = ("%r%x229Range%xn:" + details["range"].to_s || "").ljust(39)
