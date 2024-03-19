@@ -27,9 +27,9 @@ module AresMUSH
         @details["actions"]
       end
 
-      def traits 
+      def traits
         @details["traits"].sort.join(", ")
-      end 
+      end
 
       def cast
         @details["cast"].join(", ")
@@ -74,6 +74,8 @@ module AresMUSH
 
       def trads
         t = @details["tradition"]
+
+        return nil unless t
 
         trads = t.is_a?(Array) ? t.sort.join(", ") : t
       end

@@ -136,5 +136,104 @@ module AresMUSH
       [ spell_name, spell_details ]
     end
 
+    def self.search_spells(search_type, term, operator='=')
+      spell_info = Global.read_config('pf2e_spells')
+
+      case search_type
+      when 'name'
+        match = spell_info.select { |k,v| k.upcase.match? term.upcase }
+      when 'traits'
+        match = spell_info.select { |k,v| v['traits'].include? term.downcase }
+      when 'level'
+        # Invalid operator defaults to ==.
+        case operator
+        when '<'
+          match = spell_info.select { |k,v| v['base_level'] < term.to_i }
+        when '>'
+          match = spell_info.select { |k,v| v['base_level'] > term.to_i }
+        else
+          match = spell_info.select { |k,v| v['base_level'] == term.to_i }
+        end
+      when 'tradition'
+        match = spell_info.select { |k,v| v['tradition']&.include? term.downcase }
+      when 'school'
+        match = spell_info.select { |k,v| v['school']&.include? term.capitalize }
+      when 'bloodline'
+        match = spell_info.select { |k,v| v['bloodline']&.include? term.downcase }
+      when 'cast'
+        match = spell_info.select { |k,v| v['cast']&.include? term.downcase }
+      when 'description', 'desc', 'effect'
+        match = spell_info.select { |k,v| v['effect'].upcase.match? term.upcase }
+      end
+
+      match
+
+    end
+
+    def self.get_spell_search_results(list)
+
+      fmt_list = []
+      list.each do |spell|
+        result = get_spell_details(spell)
+        name = result[0]
+        details = result[1]
+
+        fmt_list << format_spell(name, details)
+      end
+
+      fmt_list.sort
+
+    end
+
+    def self.format_spell(name, details)
+
+      return t('pf2emagic.spell_details_missing', :name => name.upcase) if !details
+
+      fmt_name = "%x172#{name}%xn"
+      trait_list = details['traits'].sort
+      is_uncommon = trait_list.include?('uncommon') ? "(%xyUNCOMMON%xn)" : ""
+      is_rare = trait_list.include?('rare') ? "(%xh%xmRARE%xn)" : ""
+      is_unique = trait_list.include?('unique') ? "(%xh%xrUNIQUE%xn)" : ""
+      hard_to_get = is_uncommon + is_rare + is_unique
+
+      traits = "%x229Traits:%xn #{trait_list.join(", ")}"
+
+      # Grab all the small stuff and assemble into a useful string.
+      actions = ()"%x229Actions%xn:" + details["actions"] || "").ljust(39)
+      level = ("%x229Base Level%xn:" + details["base_level"]).ljust(39)
+      cast = ("%r%x229Casting%xn:" + details["cast"].join(", ")).ljust(39)
+      area = ("%x229Area%xn:" + details["area"] || "").ljust(39)
+      range = ("%r%x229Range%xn:" + details["range"] || "").ljust(39)
+      save = ("%x229Save%xn:" + details["save"] || "").ljust(39)
+      duration = ("%r%x229Duration%xn:" + details["duration"] || "").ljust(78)
+
+      trads = details["tradition"] ? ("%r%x229Traditions%xn:" + details["tradition"].sort.join(", ") + "%r") : ""
+
+      little_junk = actions + level + cast + area + range + save + duration + trads
+      # Handle heightening processing.
+      heighten = details["heighten"]
+      if heighten
+
+        h = []
+        if heighten.is_a?(Hash)
+          string.each_pair do |k,v|
+            h << "#{k}: #{v}"
+          end
+        else
+          heighten.each_with_index do |v,i|
+            h << "#{i + base_level}: #{v}"
+          end
+        end
+
+        h.join("%r")
+      else
+        h = ""
+      end
+
+      desc = "%r%x229Description:%xn #{details['effect']}"
+
+      "#{fmt_name}%b#{hard_to_get}%r%r#{traits}%r#{little_junk}%r#{desc}%r#{h}"
+    end
+
   end
 end

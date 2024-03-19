@@ -150,6 +150,9 @@ module AresMUSH
 
       return t('pf2emagic.cant_cast_as_class') unless (charclass_trad && caster_type)
 
+      # A spell that does not have a tradition key cannot be put in a spellbook.
+      return t('pf2emagic.not_spellbook_eligible') unless deets['tradition']
+
       charclass_can_cast = deets['tradition'].include? charclass_trad[0]
 
       return t('pf2emagic.class_does_not_get_spell') unless charclass_can_cast

@@ -38,6 +38,7 @@ en:
     not_in_innate_list: "You do not have %{name} as an innate spell."
     not_prepared: "Spell not currently prepared."
     not_prepared_at_level: "Spell not prepared at specified level."
+    not_spellbook_eligible: "This spell is a focus or class spell and cannot be added to a spellbook or repertoire."
 
     refocus_ok: "You refocus yourself and refresh your focus pool."
     revelation_locked: "%xrYour revelation spells are currently locked by your curse.%xn"
