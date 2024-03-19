@@ -199,7 +199,7 @@ module AresMUSH
       traits = "%x229Traits:%xn #{trait_list.join(", ")}"
 
       # Grab all the small stuff and assemble into a useful string.
-      actions = ()"%x229Actions%xn:" + details["actions"] || "").ljust(39)
+      actions = ("%x229Actions%xn:" + details["actions"] || "").ljust(39)
       level = ("%x229Base Level%xn:" + details["base_level"]).ljust(39)
       cast = ("%r%x229Casting%xn:" + details["cast"].join(", ")).ljust(39)
       area = ("%x229Area%xn:" + details["area"] || "").ljust(39)
