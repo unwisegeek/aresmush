@@ -43,6 +43,7 @@ module AresMUSH
           # Operator has default defined in search_spells.
           term = self.search_term[0].upcase
           match = Pf2e.search_spells(self.search_type, term, operator)
+        end
 
         if match.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')
