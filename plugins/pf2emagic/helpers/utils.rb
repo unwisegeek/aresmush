@@ -216,7 +216,7 @@ module AresMUSH
 
         h = []
         if heighten.is_a?(Hash)
-          string.each_pair do |k,v|
+          heighten.each_pair do |k,v|
             h << "#{k}: #{v}"
           end
         else
