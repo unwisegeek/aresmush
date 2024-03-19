@@ -166,7 +166,7 @@ module AresMUSH
         match = spell_info.select { |k,v| v['effect'].upcase.match? term.upcase }
       end
 
-      match
+      match.keys
 
     end
 
