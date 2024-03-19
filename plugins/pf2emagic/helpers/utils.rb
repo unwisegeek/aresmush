@@ -202,9 +202,9 @@ module AresMUSH
       actions = ("%x229Actions%xn: " + details["actions"].to_s || "").ljust(39)
       base_level = details["base_level"].to_i
       level = ("%x229Base Level%xn: " + base_level.to_s).ljust(39)
-      cast = ("%r%x229Casting%xn: " + details["cast"].join(", ")).ljust(39)
+      cast = ("%r%x229Casting%xn: " + details["cast"].join(", ")).ljust(41)
       area = ("%x229Area%xn: " + details["area"].to_s || "").ljust(39)
-      range = ("%r%x229Range%xn: " + details["range"].to_s || "").ljust(39)
+      range = ("%r%x229Range%xn: " + details["range"].to_s || "").ljust(41)
       save = ("%x229Save%xn: " + details["save"].to_s || "").ljust(39)
       duration = ("%r%x229Duration%xn: " + details["duration"].to_s || "").ljust(78)
 
