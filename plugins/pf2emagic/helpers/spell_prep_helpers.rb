@@ -29,9 +29,17 @@ module AresMUSH
       spell_name = spells[0]
       spell_details = spells[1]
 
+<<<<<<< Updated upstream
       needs_spellbook = spell_details['traits'].intersect?(['rare', 'uncommon', 'unique'])
       # Initialize make_signature
       make_signature = false
+=======
+      # A spell that does not have a tradition key cannot be prepared - it's a focus spell or similar.
+
+      return t('pf2emagic.not_spellbook_eligible') unless spell_details['tradition']
+
+      needs_spellbook = spell_details['traits'].intersect?('rare', 'uncommon', 'unique')
+>>>>>>> Stashed changes
 
       if use_arcane_evo || needs_spellbook || castclass == 'wizard'
         is_in_spellbook = spellbook_check(magic, spell)
