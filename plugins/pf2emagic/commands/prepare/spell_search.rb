@@ -42,7 +42,7 @@ module AresMUSH
         else
           # Operator has default defined in search_spells.
           term = self.search_term[0].upcase
-          match = Pf2e.search_spells(self.search_type, term, operator)
+          match = Pf2emagic.search_spells(self.search_type, term, operator)
         end
 
         if match.empty?
