@@ -199,16 +199,16 @@ module AresMUSH
       traits = "%x229Traits:%xn #{trait_list.join(", ")}"
 
       # Grab all the small stuff and assemble into a useful string.
-      actions = ("%x229Actions%xn:" + details["actions"].to_s || "").ljust(39)
+      actions = ("%x229Actions%xn: " + details["actions"].to_s || "").ljust(39)
       base_level = details["base_level"].to_i
-      level = ("%x229Base Level%xn:" + base_level.to_s).ljust(39)
-      cast = ("%r%x229Casting%xn:" + details["cast"].join(", ")).ljust(39)
-      area = ("%x229Area%xn:" + details["area"].to_s || "").ljust(39)
-      range = ("%r%x229Range%xn:" + details["range"].to_s || "").ljust(39)
-      save = ("%x229Save%xn:" + details["save"].to_s || "").ljust(39)
-      duration = ("%r%x229Duration%xn:" + details["duration"].to_s || "").ljust(78)
+      level = ("%x229Base Level%xn: " + base_level.to_s).ljust(39)
+      cast = ("%r%x229Casting%xn: " + details["cast"].join(", ")).ljust(39)
+      area = ("%x229Area%xn: " + details["area"].to_s || "").ljust(39)
+      range = ("%r%x229Range%xn: " + details["range"].to_s || "").ljust(39)
+      save = ("%x229Save%xn: " + details["save"].to_s || "").ljust(39)
+      duration = ("%r%x229Duration%xn: " + details["duration"].to_s || "").ljust(78)
 
-      trads = details["tradition"] ? ("%r%x229Traditions%xn:" + details["tradition"].sort.join(", ") + "%r") : ""
+      trads = details["tradition"] ? ("%r%x229Traditions%xn: " + details["tradition"].sort.join(", ") + "%r") : ""
 
       little_junk = actions + level + cast + area + range + save + duration + trads
       # Handle heightening processing.
@@ -226,14 +226,14 @@ module AresMUSH
           end
         end
 
-        h.join("%r")
+        h_fmt = h.join("%r")
       else
-        h = ""
+        h_fmt = ""
       end
 
-      desc = "%r%x229Description:%xn #{details['effect']}"
+      desc = "%x229Description:%xn #{details['effect']}"
 
-      "#{fmt_name}%b#{hard_to_get}%r%r#{traits}%r#{little_junk}%r#{desc}%r#{h}"
+      "#{fmt_name}%b#{hard_to_get}%r%r#{traits}%r#{little_junk}%r#{desc}%r#{h_fmt}"
     end
 
   end
