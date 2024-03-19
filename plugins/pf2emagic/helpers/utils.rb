@@ -226,14 +226,14 @@ module AresMUSH
           end
         end
 
-        h_fmt = h.join("%r")
+        h_fmt = h.unshift("%r").join("%r")
       else
         h_fmt = ""
       end
 
       desc = "%x229Description:%xn #{details['effect']}"
 
-      "#{fmt_name}%b#{hard_to_get}%r%r#{traits}%r#{little_junk}%r#{desc}%r#{h_fmt}"
+      "#{fmt_name}%b#{hard_to_get}%r%r#{traits}%r#{little_junk}%r#{desc}#{h_fmt}"
     end
 
   end
