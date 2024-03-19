@@ -20,7 +20,12 @@ module AresMUSH
       when "unprepare"
         return PF2UnprepareSpellCmd
       when "spell"
-        return PF2DisplaySpellCmd
+        case cmd.switch
+        when "search"
+          return PF2SearchSpellCmd
+        when nil
+          return PF2DisplaySpellCmd
+        end
       when "magic"
         return PF2MagicDisplayCmd
       when "refocus"
