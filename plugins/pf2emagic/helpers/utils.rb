@@ -148,11 +148,11 @@ module AresMUSH
         # Invalid operator defaults to ==.
         case operator
         when '<'
-          match = spell_info.select { |k,v| v['base_level'] < term.to_i }
+          match = spell_info.select { |k,v| v['base_level'].to_i < term.to_i }
         when '>'
-          match = spell_info.select { |k,v| v['base_level'] > term.to_i }
+          match = spell_info.select { |k,v| v['base_level'].to_i > term.to_i }
         else
-          match = spell_info.select { |k,v| v['base_level'] == term.to_i }
+          match = spell_info.select { |k,v| v['base_level'].to_i == term.to_i }
         end
       when 'tradition'
         match = spell_info.select { |k,v| v['tradition']&.include? term.downcase }
@@ -165,6 +165,8 @@ module AresMUSH
       when 'description', 'desc', 'effect'
         match = spell_info.select { |k,v| v['effect'].upcase.match? term.upcase }
       end
+
+      return match if match.empty?
 
       match.keys
 
