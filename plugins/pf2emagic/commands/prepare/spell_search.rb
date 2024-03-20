@@ -47,10 +47,14 @@ module AresMUSH
           match = Pf2emagic.search_spells(self.search_type, term, operator)
         end
 
+        client.emit match
+
         if match.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')
           return
         end
+
+        client.emit "I did not die at match."
 
         list_details = Pf2emagic.get_spell_search_results(match)
 
