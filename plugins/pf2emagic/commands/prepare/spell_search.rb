@@ -44,10 +44,10 @@ module AresMUSH
         else
           # Operator has default defined in search_spells.
           term = self.search_term[0].upcase
-          match = Pf2emagic.search_spells(self.search_type, term, operator)
+          operator = nil
         end
 
-        client.emit match
+        match = Pf2emagic.search_spells(self.search_type, term, operator)
 
         if match.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')
