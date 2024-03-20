@@ -199,14 +199,14 @@ module AresMUSH
       traits = "%x229Traits:%xn #{trait_list.join(", ")}"
 
       # Grab all the small stuff and assemble into a useful string.
-      actions = ("%x229Actions%xn: " + details["actions"]&.to_s || "").ljust(39)
+      actions = ("%x229Actions%xn: " + details["actions"] || "").ljust(39)
       base_level = details["base_level"].to_i
       level = ("%x229Base Level%xn: " + base_level.to_s).ljust(39)
-      cast = ("%r%x229Casting%xn: " + details["cast"]&.join(", ")).ljust(41)
-      area = ("%x229Area%xn: " + details["area"]&.to_s || "").ljust(39)
-      range = ("%r%x229Range%xn: " + details["range"]&.to_s || "").ljust(41)
-      save = ("%x229Save%xn: " + details["save"]&.to_s || "").ljust(39)
-      duration = ("%r%x229Duration%xn: " + details["duration"]&.to_s || "").ljust(78)
+      cast = ("%r%x229Casting%xn: " + (details["cast"] || []).join(", ")).ljust(39)
+      area = ("%x229Area%xn: " + details["area"] || "").ljust(39)
+      range = ("%r%x229Range%xn: " + details["range"] || "").ljust(39)
+      save = ("%x229Save%xn: " + details["save"] || "").ljust(39)
+      duration = ("%r%x229Duration%xn: " + details["duration"] || "").ljust(78)
 
       trads = details["tradition"] ? ("%r%x229Traditions%xn: " + details["tradition"].sort.join(", ") + "%r") : ""
 
