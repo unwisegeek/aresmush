@@ -36,6 +36,8 @@ module AresMUSH
 
       def handle
 
+        client.emit self.search_term
+
         if self.search_term[1]
           term = self.search_term[1]
           operator = self.search_term[0]
