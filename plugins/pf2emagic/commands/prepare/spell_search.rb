@@ -47,27 +47,14 @@ module AresMUSH
           operator = nil
         end
 
-        match = Pf2emagic.search_spells(self.search_type, term, operator)
+        spells = Pf2emagic.search_spells(self.search_type, term, operator)
 
         if match.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')
           return
         end
 
-        client.emit "I did not die at match."
-
-        list_details = Pf2emagic.get_spell_search_results(match)
-
-        paginator = Paginator.paginate(list_details, cmd.page, 3)
-
-        if (paginator.out_of_bounds?)
-          client.emit_failure paginator.out_of_bounds_msg
-          return
-        end
-
-        title = "Spell Search Results (#{self.search_type}=#{operator} #{term})"
-
-        template = PF2SpellSearchResults.new(paginator, title)
+        template = PF2DisplayManySpellTemplate.new(spells, client)
 
         client.emit template.render
 
