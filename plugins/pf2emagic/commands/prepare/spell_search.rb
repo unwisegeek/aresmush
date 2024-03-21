@@ -69,8 +69,6 @@ module AresMUSH
 
         end
 
-        client.emit spells
-
         if spells.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')
           return
