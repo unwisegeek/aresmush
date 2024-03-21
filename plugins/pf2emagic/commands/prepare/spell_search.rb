@@ -38,7 +38,7 @@ module AresMUSH
         self.search.each { |t| check << valid_types.include?(t.first.downcase) }
 
         return nil if check.all?
-        return t('pf2emagic.bad_search_type', options => valid_types.sort)
+        return t('pf2emagic.bad_search_type', :options => valid_types.sort)
       end
 
       def handle
