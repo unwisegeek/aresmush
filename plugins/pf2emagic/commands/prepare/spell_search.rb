@@ -41,6 +41,17 @@ module AresMUSH
         return t('pf2emagic.bad_search_type', :options => valid_types.sort)
       end
 
+      def check_search_term
+        # Validate against funky-ass behavior when the parser is passed any separator other than a comma.
+
+        check = []
+
+        self.search.each { |t| check << (t[1].split.size <=2) }
+
+        return nil if check.all?
+        return t('pf2emagic.bad_search_term')
+      end
+
       def handle
 
         # Break down each search term and get results for it.
