@@ -64,7 +64,7 @@ module AresMUSH
         self.search.each do |argument|
 
           search_type = argument[0].downcase
-          termoperator = argument[1].split
+          termoperator = argument[1].split(" ")
 
           if termoperator[1]
             operator = termoperator[0]
