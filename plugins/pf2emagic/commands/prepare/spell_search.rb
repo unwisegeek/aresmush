@@ -3,18 +3,21 @@ module AresMUSH
     class PF2SearchSpellCmd
       include CommandHandler
 
-      attr_accessor :search_type, :search_term
+      attr_accessor :search
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+        if cmd.args
+          search_list = trimmed_list_arg(cmd.args, ", ")
 
-        self.search_type = downcase_arg(args.arg1)
-        self.search_term = trimmed_list_arg(args.arg2)
+          self.search = search_list.map { |term| term.split("=") }
+        else
+          self.search = nil
+        end
 
       end
 
       def required_args
-        [ self.search_type, self.search_term ]
+        [ self.search ]
       end
 
       def check_search_type
@@ -30,24 +33,43 @@ module AresMUSH
           'effect'
         ]
 
-        return nil if valid_types.include? self.search_type
-        return t('pf2e.bad_option', :options => valid_types.sort.join, :element => "search type")
+        check = []
+
+        self.search.each { |t| check << valid_types.include?(t.first.downcase) }
+
+        return nil if check.all?
+        return t('pf2emagic.bad_search_type', options => valid_types.sort)
       end
 
       def handle
 
-        client.emit self.search_term
+        # Break down each search term and get results for it.
 
-        if self.search_term[1]
-          term = self.search_term[1]
-          operator = self.search_term[0]
-        else
-          # Operator has default defined in search_spells.
-          term = self.search_term[0].upcase
-          operator = nil
+        # Start with a list of all spells.
+        spells = Global.read_config('pf2e_spells').keys
+
+        # Iterate through each term and narrow down the list with each search.
+        self.search.each do |argument|
+
+          search_type = argument[0].downcase
+          termoperator = argument[1].split
+
+          if termoperator[1]
+            term = termoperator[1]
+            operator = termoperator[0]
+          else
+            # Operator has default defined in search_spells.
+            term = termoperator[0].upcase
+            operator = nil
+          end
+
+          result = Pf2emagic.search_spells(search_type, term, operator)
+
+          spells = spells & result
+
         end
 
-        spells = Pf2emagic.search_spells(self.search_type, term, operator)
+        client.emit spells
 
         if spells.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')

@@ -21,6 +21,7 @@ en:
 
     invalid_level: "Base level of spell higher than level specified."
     invalid_signature_level: "You cannot cast that spell as a signature spell at that level."
+    invalid_search_type: "One or more of your search types is not recognized. Try one of: %{options}"
 
     multiple_matches: "More than one %{item} matches your search. Please choose one."
 
