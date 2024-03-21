@@ -45,8 +45,23 @@ module AresMUSH
 
         # Break down each search term and get results for it.
 
-        # Start with a list of all spells.
-        spells = Global.read_config('pf2e_spells').keys
+        # Start with the first list.
+
+        first = self.search.shift
+
+        search_type = first[0].downcase
+        termoperator = first[1].split
+
+        if termoperator[1]
+          term = termoperator[1]
+          operator = termoperator[0]
+        else
+          # Operator has default defined in search_spells.
+          term = termoperator[0].upcase
+          operator = nil
+        end
+
+        spells = Pf2emagic.search_spells(search_type, term, operator)
 
         # Iterate through each term and narrow down the list with each search.
         self.search.each do |argument|
