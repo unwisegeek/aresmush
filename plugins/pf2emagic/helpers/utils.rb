@@ -148,16 +148,16 @@ module AresMUSH
         # Invalid operator defaults to ==.
         case operator
         when '<'
-          match = spell_info.select { |k,v| (v['base_level'].to_i < term.to_i) }
+          match = spell_info.select { |k,v| (v['base_level'].to_i < term.to_i) && v['tradition'] }
         when '>'
-          match = spell_info.select { |k,v| (v['base_level'].to_i > term.to_i) }
+          match = spell_info.select { |k,v| (v['base_level'].to_i > term.to_i) && v['tradition'] }
         else
-          match = spell_info.select { |k,v| (v['base_level'].to_i == term.to_i) }
+          match = spell_info.select { |k,v| (v['base_level'].to_i == term.to_i) && v['tradition'] }
         end
       when 'tradition'
         match = spell_info.select { |k,v| v['tradition'] && (v['tradition'].include? term.downcase) }
       when 'school'
-        match = spell_info.select { |k,v| (v['school']&.include? term.capitalize) }
+        match = spell_info.select { |k,v| (v['school']&.include? term.capitalize) && v['tradition'] }
       when 'bloodline'
         match = spell_info.select { |k,v| v['bloodline']&.include? term.downcase }
       when 'cast'
