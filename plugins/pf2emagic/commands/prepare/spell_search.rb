@@ -64,16 +64,14 @@ module AresMUSH
         self.search.each do |argument|
 
           search_type = argument[0].downcase
-          termoperator = argument[1].split(//)
-
-          client.emit termoperator
+          termoperator = argument[1].split
 
           if termoperator[1]
-            term = termoperator.last
-            operator = termoperator.first
+            operator = termoperator.slice(0)
+            term = termoperator
           else
             # Operator has default defined in search_spells.
-            term = termoperator[0].upcase
+            term = termoperator[0]
             operator = nil
           end
 
