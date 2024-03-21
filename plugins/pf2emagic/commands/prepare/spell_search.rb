@@ -49,7 +49,7 @@ module AresMUSH
 
         spells = Pf2emagic.search_spells(self.search_type, term, operator)
 
-        if match.empty?
+        if spells.empty?
           client.emit_failure t('pf2e.nothing_to_display', :elements => 'spells')
           return
         end
