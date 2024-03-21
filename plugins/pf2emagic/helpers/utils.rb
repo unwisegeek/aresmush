@@ -143,27 +143,27 @@ module AresMUSH
       when 'name'
         match = spell_info.select { |k,v| k.upcase.match? term.upcase }
       when 'traits'
-        match = spell_info.select { |k,v| v['traits'].include? term.downcase }
+        match = spell_info.select { |k,v| (v['traits'].include? term.downcase) && v['tradition'] }
       when 'level'
         # Invalid operator defaults to ==.
         case operator
         when '<'
-          match = spell_info.select { |k,v| v['base_level'].to_i < term.to_i }
+          match = spell_info.select { |k,v| (v['base_level'].to_i < term.to_i) && v['tradition'] }
         when '>'
-          match = spell_info.select { |k,v| v['base_level'].to_i > term.to_i }
+          match = spell_info.select { |k,v| (v['base_level'].to_i > term.to_i) && v['tradition'] }
         else
-          match = spell_info.select { |k,v| v['base_level'].to_i == term.to_i }
+          match = spell_info.select { |k,v| (v['base_level'].to_i == term.to_i) && v['tradition'] }
         end
       when 'tradition'
-        match = spell_info.select { |k,v| v['tradition']&.include? term.downcase }
+        match = spell_info.select { |k,v| v['tradition'] && (v['tradition'].include? term.downcase) }
       when 'school'
-        match = spell_info.select { |k,v| v['school']&.include? term.capitalize }
+        match = spell_info.select { |k,v| (v['school']&.include? term.capitalize) && v['tradition'] }
       when 'bloodline'
         match = spell_info.select { |k,v| v['bloodline']&.include? term.downcase }
       when 'cast'
-        match = spell_info.select { |k,v| v['cast']&.include? term.downcase }
+        match = spell_info.select { |k,v| (v['cast']&.include? term.downcase) && v['tradition'] }
       when 'description', 'desc', 'effect'
-        match = spell_info.select { |k,v| v['effect'].upcase.match? term.upcase }
+        match = spell_info.select { |k,v| (v['effect'].upcase.match? term.upcase) && v['tradition'] }
       end
 
       match.keys
