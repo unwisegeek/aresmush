@@ -67,8 +67,8 @@ module AresMUSH
           termoperator = argument[1].split
 
           if termoperator[1]
-            operator = termoperator.slice(0)
-            term = termoperator
+            operator = termoperator[0]
+            term = termoperator[1]
           else
             # Operator has default defined in search_spells.
             term = termoperator[0]
