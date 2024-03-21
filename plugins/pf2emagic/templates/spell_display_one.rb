@@ -60,7 +60,7 @@ module AresMUSH
           end
         else
           string.each_with_index do |v,i|
-            h << "#{i + base_level}: #{v}"
+            h << "#{i + base_level.to_i}: #{v}"
           end
         end
 
@@ -77,7 +77,7 @@ module AresMUSH
 
         return nil unless t
 
-        trads = t.is_a?(Array) ? t.sort.join(", ") : t
+        t.sort.join(", ")
       end
 
       def effect
