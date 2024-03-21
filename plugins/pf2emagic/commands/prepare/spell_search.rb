@@ -49,7 +49,7 @@ module AresMUSH
         self.search.each { |t| check << (t[1].split.size <=2) }
 
         return nil if check.all?
-        return t('pf2emagic.bad_search_term')
+        return t('pf2emagic.bad_search_syntax')
       end
 
       def handle
@@ -76,8 +76,6 @@ module AresMUSH
           end
 
           result = Pf2emagic.search_spells(search_type, term, operator)
-
-          client.emit result
 
           spells = result.intersection(spells)
 
