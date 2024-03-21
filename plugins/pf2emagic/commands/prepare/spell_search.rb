@@ -66,6 +66,8 @@ module AresMUSH
           search_type = argument[0].downcase
           termoperator = argument[1].split(//)
 
+          client.emit termoperator
+
           if termoperator[1]
             term = termoperator.last
             operator = termoperator.first
