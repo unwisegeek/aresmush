@@ -66,7 +66,7 @@ module AresMUSH
 
           result = Pf2emagic.search_spells(search_type, term, operator)
 
-          spells = spells & result
+          spells = spells.intersection(result)
 
         end
 
