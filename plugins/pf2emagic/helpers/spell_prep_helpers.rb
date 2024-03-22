@@ -136,7 +136,7 @@ module AresMUSH
       return nil
     end
 
-    def spellbook_check(obj, spell)
+    def self.spellbook_check(obj, spell)
 
       # Some classes may have their repertoire automatically written in a spellbook.
       # This is sometimes treated differently if prepared.
