@@ -33,7 +33,7 @@ module AresMUSH
 
       return t('pf2emagic.not_spellbook_eligible') unless spell_details['tradition']
 
-      needs_spellbook = spell_details['traits'].intersect?('rare', 'uncommon', 'unique')
+      needs_spellbook = spell_details['traits'].intersect?(['rare', 'uncommon', 'unique'])
 
       if use_arcane_evo || needs_spellbook || castclass == 'wizard'
         is_in_spellbook = spellbook_check(magic, spell)
