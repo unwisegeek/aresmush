@@ -58,9 +58,7 @@ module AresMUSH
 
       spell_trad = spell_details['tradition']
 
-      return "Spell Deets: #{spell_trad}, Character Trad: #{tradition}"
-
-      return t('pf2emagic.cant_prepare_trad', :cc => cc) unless spell_trad.include? tradition[1].downcase
+      return t('pf2emagic.cant_prepare_trad', :cc => cc) unless spell_trad.include? tradition[0].downcase
 
       spell_level = spell_details['base_level']
 
