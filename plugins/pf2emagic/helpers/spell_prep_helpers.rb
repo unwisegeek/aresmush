@@ -154,9 +154,12 @@ module AresMUSH
 
       rep_spells_list = repertoire ? repertoire[level] || [] : []
 
-      prepare_ok = true if (book_spells_list + rep_spells_list).include? spell
+      is_in_book = book_spells_list.include? spell
+      is_in_rep = rep_spells_list.include? spell
 
-      make_signature = true if rep_spells_list.include? spell
+      prepare_ok = true if is_in_book
+
+      make_signature = true if (is_in_book && is_in_rep)
 
       [prepare_ok, make_signature]
     end
