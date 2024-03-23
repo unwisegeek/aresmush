@@ -36,13 +36,13 @@ module AresMUSH
       needs_spellbook = spell_details['traits'].intersect?(['rare', 'uncommon', 'unique'])
 
       if use_arcane_evo || needs_spellbook || castclass == 'wizard'
-        is_in_spellbook = spellbook_check(magic, spell)
+        is_in_spellbook = spellbook_check(magic, cc, level, spell)
         return t('pf2emagic.not_in_spellbook') unless is_in_spellbook[0]
         make_signature = is_in_spellbook[1]
       end
 
       return_msg = {
-        "level" => spell_level,
+        "level" => level,
         "name" => spell_name,
         "caster class" => cc,
         "is_signature" => make_signature
@@ -136,22 +136,27 @@ module AresMUSH
       return nil
     end
 
-    def self.spellbook_check(obj, spell)
+    def self.spellbook_check(obj, castclass, level, spell)
 
       # Some classes may have their repertoire automatically written in a spellbook.
       # This is sometimes treated differently if prepared.
 
-      spellbook = obj.spellbook
+      prepare_ok = false
+      make_signature = false
 
-      repertoire = obj.repertoire
+      spellbook = obj.spellbook[castclass]
 
-      book_spells_list = spellbook.values.first.values.flatten
+      return [false, false] unless spellbook
 
-      rep_spells_list = repertoire.values.first.values.flatten
+      repertoire = obj.repertoire[castclass]
+
+      book_spells_list = spellbook.values&.flatten
+
+      rep_spells_list = repertoire ? repertoire[level] || [] : []
 
       prepare_ok = true if (book_spells_list + rep_spells_list).include? spell
 
-      make_signature = true if rrep_spells_list.include? spell
+      make_signature = true if rep_spells_list.include? spell
 
       [prepare_ok, make_signature]
     end
