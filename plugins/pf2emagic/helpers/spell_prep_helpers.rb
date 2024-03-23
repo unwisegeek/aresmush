@@ -145,9 +145,9 @@ module AresMUSH
 
       repertoire = obj.repertoire
 
-      book_spells_list = spellbook.values.values.flatten
+      book_spells_list = spellbook.values.first.values.flatten
 
-      rep_spells_list = repertoire.values.values.flatten
+      rep_spells_list = repertoire.values.first.values.flatten
 
       prepare_ok = true if (book_spells_list + rep_spells_list).include? spell
 
