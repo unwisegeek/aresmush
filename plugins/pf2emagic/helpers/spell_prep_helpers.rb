@@ -145,9 +145,13 @@ module AresMUSH
 
       repertoire = obj.repertoire
 
-      prepare_ok = true if (spellbook + repertoire).include? spell
+      book_spells_list = spellbook.values.values.flatten
 
-      make_signature = true if repertoire.include? spell
+      rep_spells_list = repertoire.values.values.flatten
+
+      prepare_ok = true if (book_spells_list + rep_spells_list).include? spell
+
+      make_signature = true if rrep_spells_list.include? spell
 
       [prepare_ok, make_signature]
     end
