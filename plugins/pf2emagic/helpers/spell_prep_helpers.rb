@@ -65,7 +65,7 @@ module AresMUSH
       # Level can be passed as nil, if it is, default to the base level of the spell.
       level = spell_level unless level
 
-      return t('pf2emagic.cant_prepare_level') if spell_level > level
+      return t('pf2emagic.cant_prepare_level') if spell_level.to_i > level.to_i
 
       if use_arcane_evo
         repertoire = obj.repertoire
