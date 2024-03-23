@@ -35,8 +35,8 @@ module AresMUSH
 
       needs_spellbook = spell_details['traits'].intersect?(['rare', 'uncommon', 'unique'])
 
-      if use_arcane_evo || needs_spellbook || castclass == 'wizard'
-        is_in_spellbook = spellbook_check(magic, cc, level, spell)
+      if use_arcane_evo || needs_spellbook || cc == 'Wizard'
+        is_in_spellbook = spellbook_check(magic, cc, level, spell_name)
         return t('pf2emagic.not_in_spellbook') unless is_in_spellbook[0]
         make_signature = is_in_spellbook[1]
       end

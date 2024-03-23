@@ -17,8 +17,10 @@ Addspell can take select switches to process some character options. `cg/review`
 
 All spells selected must be common spells to be selected in character generation or advancement. Uncommon and rare spells require a request to the game admins.
 
-Clerics get a divine font. This is populated automagically for some deities, but clerics of select deities must choose. `cg/review` will tell you if you need to choose. To do so: 
+Clerics get a divine font, chosen at chargen. This is populated automagically for some deities, but clerics of select deities must choose. `cg/review` will tell you if you need to choose. To do so: 
 
 `dfont <heal or harm>`: Chooses your divine font.
 
-**Once you are done selecting spells, you will have to input `rest` to see your spells on the magic section of your sheet.** You cannot `rest` until your character is approved.
+**Once you are done selecting spells**, you will have to input `rest` to see your spells on the magic section of your sheet. You cannot `rest` until your character is approved.
+
+The `spell/search` command provides a robust search function to help you find spells for your character to learn. See `help spell search` for more information.
