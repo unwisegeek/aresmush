@@ -58,6 +58,9 @@ module AresMUSH
 
       spell_trad = spell_details['tradition']
 
+      client.emit spell_trad
+      client.emit tradition
+
       return t('pf2emagic.cant_prepare_trad', :cc => cc) unless spell_trad.include? tradition[1].downcase
 
       spell_level = spell_details['base_level']
