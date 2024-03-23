@@ -38,6 +38,7 @@ en:
     not_enough_focus_points: "You are out of focus points."
     not_in_list: "The spell you specified is not in your current list."
     not_in_innate_list: "You do not have %{name} as an innate spell."
+    not_in_spellbook: "You do not have that spell in your spellbook."
     not_prepared: "Spell not currently prepared."
     not_prepared_at_level: "Spell not prepared at specified level."
     not_spellbook_eligible: "This spell is a focus or class spell and cannot be added to a spellbook or repertoire."
