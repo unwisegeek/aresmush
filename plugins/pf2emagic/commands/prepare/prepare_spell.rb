@@ -40,7 +40,11 @@ module AresMUSH
           use_arcane_evo = false
         end
 
-        msg = Pf2emagic.prepare_spell(self.spell_name, enactor, self.caster_class, self.spell_level, use_arcane_evo)
+        # A spell level is either a cantrip or a number. Validate and normalize spell level expression.
+
+        level = self.spell_level.zero? ? "cantrip" : self.spell_level.to_s
+
+        msg = Pf2emagic.prepare_spell(self.spell_name, enactor, self.caster_class, level, use_arcane_evo)
 
         # If the prepare succeeded, msg will be a hash, if failure, it'll be a string.
         if msg.is_a?(String)
