@@ -24,13 +24,13 @@ module AresMUSH
       def spells
 
         list = []
+        sublist = []
 
         @spell_list.each_pair do |charclass, spells|
 
           sorted_spells = Pf2emagic.sort_level_spell_list(spells)
           daily_spells_for_charclass = spells_per_day[charclass]
 
-          sublist = []
           sublist << format_level_list(daily_spells_for_charclass, sorted_spells)
 
           list << format_class_spell_list(charclass, sublist)
