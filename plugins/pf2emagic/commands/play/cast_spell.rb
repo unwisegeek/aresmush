@@ -14,7 +14,7 @@ module AresMUSH
           self.level = classlevel ? classlevel[1]: nil
 
           self.spell = trim_arg(args.arg2)
-          self.target = trimmed_list_arg(args.arg3, ",") || []
+          self.target = titlecase_list_arg(args.arg3, ",") || []
         end
       end
 
