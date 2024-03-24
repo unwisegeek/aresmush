@@ -141,9 +141,9 @@ module AresMUSH
       splevel = level ? level : base
 
       # If specified, level must be at least the base level of the spell. Level is an integer here.
-      return t('pf2emagic.invalid_level') if splevel < base
+      return t('pf2emagic.invalid_level') if splevel.to_i < base
 
-      splevel = 'cantrip' if splevel.zero?
+      splevel = 'cantrip' if splevel.to_i.zero?
 
       # Is that spell available at that level today?
       cc_spells = magic.spells_today
@@ -191,7 +191,7 @@ module AresMUSH
       splevel = level ? level : base
 
       # If specified, level must be at least the base level of the spell. Level is an integer here.
-      return t('pf2emagic.invalid_level') if splevel < base
+      return t('pf2emagic.invalid_level') if splevel.to_i < base
 
       splevel = 'cantrip' if splevel.zero?
 
