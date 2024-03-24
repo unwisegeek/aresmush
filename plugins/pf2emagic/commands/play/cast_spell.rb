@@ -6,14 +6,16 @@ module AresMUSH
       attr_accessor :charclass, :level, :spell, :target
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_optional_arg3)
+        if cmd.args
+          args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_optional_arg3)
 
-        classlevel = trimmed_list_arg(args.arg1, "/")
-        self.charclass = titlecase_arg(classlevel[0])
-        self.level = classlevel[1]
+          classlevel = trimmed_list_arg(args.arg1, "/")
+          self.charclass = titlecase_arg(classlevel[0])
+          self.level = classlevel[1]
 
-        self.spell = trim_arg(args.arg2)
-        self.target = trimmed_list_arg(args.arg3) || []
+          self.spell = trim_arg(args.arg2)
+          self.target = trimmed_list_arg(args.arg3) || []
+        end
       end
 
       def required_args
