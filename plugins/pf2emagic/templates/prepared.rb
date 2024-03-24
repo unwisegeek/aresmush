@@ -36,6 +36,8 @@ module AresMUSH
             sublist << "#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join(", ")}"
           end
 
+          return sublist
+
           list << format_class_spell_list(charclass, sublist)
         end
 
