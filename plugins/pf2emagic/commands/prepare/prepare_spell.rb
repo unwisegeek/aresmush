@@ -53,12 +53,12 @@ module AresMUSH
         end
 
        if msg["is_signature"]
-        client.emit_success t('spell_prepare_as_signature_ok',
+        client.emit_success t('pf2emagic.spell_prepare_as_signature_ok',
           :name => msg["name"],
           :level => msg["level"]
           )
        else
-        client.emit_success t('pf2e_magic.spell_prepare_ok',
+        client.emit_success t('pf2emagic.spell_prepare_ok',
           :name => msg["name"],
           :level => msg["level"],
           :as => msg["caster class"]
