@@ -35,10 +35,6 @@ module AresMUSH
       spell_name = spells[0]
       spell_details = spells[1]
 
-      # A spell that does not have a tradition key cannot be prepared - it's a focus spell or similar.
-
-      return t('pf2emagic.not_spellbook_eligible') unless spell_details['tradition']
-
       needs_spellbook = spell_details['traits'].intersect?(['rare', 'uncommon', 'unique'])
 
       if use_arcane_evo || needs_spellbook || cc == 'Wizard'
