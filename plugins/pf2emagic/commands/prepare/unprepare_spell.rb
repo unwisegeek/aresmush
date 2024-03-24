@@ -21,6 +21,7 @@ module AresMUSH
 
       def check_is_approved
         return t('pf2e.not_approved') unless enactor.is_approved?
+        return nil
       end
 
       def handle

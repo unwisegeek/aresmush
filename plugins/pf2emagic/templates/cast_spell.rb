@@ -1,5 +1,5 @@
 module AresMUSH
-  module Pf2e
+  module Pf2emagic
 
     class PF2CastSpellTemplate < ErbTemplateRenderer
       include CommonTemplateFields

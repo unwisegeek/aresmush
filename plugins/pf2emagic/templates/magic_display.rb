@@ -38,10 +38,14 @@ module AresMUSH
             # Can be blank prior to first rest.
             spell_list = spells_today[charclass] || {}
 
+            spell_list = Pf2emagic.sort_level_spell_list(spell_list) unless spell_list.empty?
+
             list << format_prepared_spells(@char, charclass, spell_list, trad_info)
           elsif caster_type == 'spontaneous'
             repertoire = @magic.repertoire
             spell_list = repertoire[charclass] || {}
+
+            spell_list = Pf2emagic.sort_level_spell_list(spell_list) unless spell_list.empty?
 
             list << format_spont_spells(@char, charclass, spell_list, spells_today, trad_info)
           else next

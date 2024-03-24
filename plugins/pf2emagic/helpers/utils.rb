@@ -170,5 +170,10 @@ module AresMUSH
 
     end
 
+    def self.sort_level_spell_list(spells)
+      # This function takes a hash and sorts it by integer-converted key.
+      spells.sort {|a,b| a.first.to_i <=> b.first.to_i}.to_h
+    end
+
   end
 end
