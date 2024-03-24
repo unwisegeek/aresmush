@@ -119,7 +119,15 @@ module AresMUSH
       # Because it is possible to prep the same spell multiple times, duplicates are accepted. Therefore,
       # we need to be able to delete just one at a time.
 
-      index = prep_spells_level.index(spell)
+      # First, find the spell in question.
+
+      spell_result = get_spell_details(spell)
+
+      return spell_result if spell_result.is_a? String
+
+      spname = spell_result[0]
+
+      index = prep_spells_level.index(spname)
       return t('pf2emagic.not_prepared_at_level') unless index
 
       prep_spells_level.delete_at(index)
