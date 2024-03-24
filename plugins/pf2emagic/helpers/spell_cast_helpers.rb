@@ -181,12 +181,12 @@ module AresMUSH
 
       base = spdeets['base_level'].to_i
 
-      splevel = level ? level : base
+      splevel = level ? level.to_i : base
 
       # If specified, level must be at least the base level of the spell. Level is an integer here.
-      return t('pf2emagic.invalid_level') if splevel.to_i < base
+      return t('pf2emagic.invalid_level') if splevel < base
 
-      splevel = 'cantrip' if splevel.zero?
+      splevel = splevel.zero? ? 'cantrip' : splevel.to_s
 
       # Got a spell open at that level?
       cc_spells = magic.spells_today
