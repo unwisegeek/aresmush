@@ -18,7 +18,7 @@ module AresMUSH
       end
 
       def spells_per_day
-        @char.magic.spells_per_day
+
       end
 
       def spells
@@ -31,7 +31,7 @@ module AresMUSH
           sublist = []
 
           sorted_spells.each_pair do |level, list|
-            max_for_level = daily_spells[level]
+            max_for_level = daily_spells_for_charclass[level]
 
             sublist << "#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join(", ")}"
           end
