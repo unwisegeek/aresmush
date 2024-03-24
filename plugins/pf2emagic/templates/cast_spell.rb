@@ -18,6 +18,10 @@ module AresMUSH
         @client.screen_reader ? title : line_with_text(title)
       end
 
+      def caster_name
+        @caster.name
+      end
+
       def spell_name
         @spell_info['spell name']
       end
