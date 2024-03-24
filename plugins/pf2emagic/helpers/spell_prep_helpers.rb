@@ -87,7 +87,7 @@ module AresMUSH
 
       max_spells_per_day = max_spells_per_day(char, cc, level)
 
-      return "Spell List For Level: #{spell_list_for_level} Max: #{max_spells_per_day}"
+      return "#{char.name} / #{cc} / #{level} / Max: #{max_spells_per_day}"
 
       return t('pf2emagic.no_available_slots') unless spell_list_for_level.size < max_spells_per_day
 
