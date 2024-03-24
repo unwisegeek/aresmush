@@ -101,45 +101,33 @@ module AresMUSH
 
     end
 
-    def self.unprepare_spell(spell, char, castclass, level=nil)
+    def self.unprepare_spell(spell, char, castclass, level)
       # All validations are done in the helper.
       return t('pf2emagic.not_caster') unless Pf2emagic.is_caster?(char)
 
       magic = char.magic
+      cc = castclass.capitalize
 
-      cc = castclass.downcase
-      tradition = magic.tradition[cc]
+      prepared_spells = magic.prepared_spells
+      prep_spells_class = prepared_spells[cc]
 
-      return t('pf2emagic.not_casting_class', :cc => cc) if !tradition
+      return t('pf2emagic.no_prepared_spells_class', :cc => cc.downcase) unless prep_spells_class
 
-      prepared_cc_list = Global.read_config('pf2e_magic', 'prepared_casters')
+      prep_spells_level = prep_spells_class[level]
+      return t('pf2emagic.no_prepared_spells_level') unless prep_spells_level
 
-      return t('pf2emagic.does_not_prepare') if !(prepared_cc_list.include? cc)
+      # Because it is possible to prep the same spell multiple times, duplicates are accepted. Therefore,
+      # we need to be able to delete just one at a time.
 
-      prepared_spells = magic.prepared_spells[castclass]
+      index = prep_spells_level.index(spell)
+      return t('pf2emagic.not_prepared_at_level') unless index
 
-      prepared_levels = []
+      prep_spells_level.delete_at(index)
 
-      prepared_spells.each_pair do |level, list|
-        prepared_levels << level if list.include? spell
-      end
-
-      return t('pf2emagic.not_prepared') if prepared_levels.empty?
-      return t('pf2emagic.specify_level') if (prepared_levels.uniq[1] && !level)
-      return t('pf2emagic.not_prepared_at_level') if (level && (!prepared_levels.include? level))
-
-      level_to_mod = level ? level : prepared_levels[0]
-
-      spell_list = prepared_spells[level_to_mod]
-      index = spell_list.index(spell)
-
-      spell_list[index] = "open"
-
-      prepared_spells[level_to_mod] = spell_list
-
-      magic.prepared_spells[castclass] = prepared_spells
-
+      prep_spells_class[level] = prep_spells_level
+      prepared_spells[cc] = prep_spells_class
       magic.update(prepared_spells: prepared_spells)
+
       return nil
     end
 
