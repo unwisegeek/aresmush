@@ -27,6 +27,10 @@ module AresMUSH
 
       def handle
 
+        client.emit self.charclass
+        client.emit self.level
+        client.emit self.spell
+
         msg = Pf2emagic.cast_spell(enactor, self.charclass, self.spell, self.target, self.level, cmd.switch)
 
         if msg.is_a? String
