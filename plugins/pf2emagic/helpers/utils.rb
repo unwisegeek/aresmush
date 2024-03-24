@@ -23,11 +23,13 @@ module AresMUSH
 
       return t('pf2emagic.not_caster') unless magic
 
-      pclass = magic.spells_prepared.keys.map { |c| c.downcase }
+      pclass = magic.spells_prepared.keys
 
-      sclass = magic.repertoire.keys.map { |c| c.downcase }
+      sclass = magic.repertoire.keys
 
       class_list = (pclass + sclass).uniq
+
+      return class_list
 
       class_list.each do |cc|
         case cc
