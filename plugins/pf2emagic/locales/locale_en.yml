@@ -46,6 +46,7 @@ en:
     not_prepared_at_level: "Spell not prepared at specified level."
     not_spellbook_eligible: "This spell is a focus or class spell and cannot be added to a spellbook or repertoire."
 
+    prepared_spells_title: "Spells Prepared for %{name}"
     refocus_ok: "You refocus yourself and refresh your focus pool."
     revelation_locked: "%xrYour revelation spells are currently locked by your curse.%xn"
 

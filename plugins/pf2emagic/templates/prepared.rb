@@ -39,8 +39,11 @@ module AresMUSH
         list
       end
 
-      def format_class_spell_list(char, charclass, spells)
+      def format_class_spell_list(charclass, spells)
+        # Spells come to this function as an array of formatted level lists, so all we need to do is
+        # arrange by class.
 
+        "#{title_color}#{charclass} Spells%xn%r%r#{sublist.join("%r")}%r"
       end
 
       def format_level_list(daily_spells, spells)
@@ -50,7 +53,7 @@ module AresMUSH
         spells.each_pair do |level, list|
           max_for_level = daily_spells[level]
 
-          list << "#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join}"
+          list << "#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join(", ")}"
         end
 
         list

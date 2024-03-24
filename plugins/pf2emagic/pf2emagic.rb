@@ -15,6 +15,8 @@ module AresMUSH
       case cmd.root
       when "addspell"
         return PF2ChargenSpellsCmd
+      when "prepared"
+        return PF2DisplayPreparedCmd
       when "prepare"
         return PF2PrepareSpellCmd
       when "unprepare"
