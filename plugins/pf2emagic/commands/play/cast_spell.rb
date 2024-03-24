@@ -13,7 +13,7 @@ module AresMUSH
         self.level = classlevel[1]
 
         self.spell = trim_arg(args.arg2)
-        self.target = trimmed_list_arg(args.arg3)
+        self.target = trimmed_list_arg(args.arg3) || []
       end
 
       def required_args
@@ -27,7 +27,7 @@ module AresMUSH
 
       def handle
 
-        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.spell, self.target, self.level, cmd.switch)
+        msg = Pf2emagic.cast_spell(enactor, self.charclass, self.spell, target_list, self.level, cmd.switch)
 
         if msg.is_a? String
           client.emit_failure msg
