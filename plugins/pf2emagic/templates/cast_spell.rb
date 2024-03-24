@@ -46,12 +46,7 @@ module AresMUSH
       def targets
         return nil unless @spell_info['targets']
 
-        list = []
-        @spell_info['targets'].sort.each do |name|
-          list << name.split.map { |word| word.capitalize }.join
-        end
-
-        list.join(", ")
+        @spell_info['targets'].sort.join(", ")
       end
 
       def tradition
