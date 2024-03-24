@@ -27,8 +27,6 @@ module AresMUSH
 
       class_list.delete('innate')
 
-      return class_list
-
       class_list.each do |cc|
         case cc
         when "Wizard", "Druid", "Cleric", "Witch"
