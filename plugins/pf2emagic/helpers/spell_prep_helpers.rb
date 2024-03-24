@@ -21,6 +21,12 @@ module AresMUSH
         end
       end
 
+      # Can you prepare the level of spell you asked for?
+      max_level = max_spell_level_available(char, cc)
+      return t('pf2emagic.spell_exceeds_max_level') unless max_level
+
+      return t('pf2emagic.spell_exceeds_max_level') if max_level.to_i < level.to_i
+
       # Get the spell info.
       spells = get_spell_details(spell)
 
@@ -65,8 +71,6 @@ module AresMUSH
       # Level can be passed as nil, if it is, default to the base level of the spell.
       level = spell_level unless level
 
-      return "Level: #{level} / Spell Level: #{spell_level} / Compare #{(spell_level.to_i > level.to_i)}"
-
       return t('pf2emagic.cant_prepare_level') if (spell_level.to_i > level.to_i)
 
       if use_arcane_evo
@@ -77,20 +81,21 @@ module AresMUSH
         return return_msg
       end
 
-      spell_list_for_level = magic.spells_prepared[level]
+      spell_list = magic.spells_prepared
+      spell_list_for_class = spell_list[cc] || {}
+      spell_list_for_level = spell_list_for_class[level] || []
 
-      return t('pf2emagic.cant_prepare_level') unless spell_list_for_level
+      max_spells_per_day = max_spells_per_day(char, cc, level)
 
-      open_slot = spell_list_for_level.index["open"]
-
-      return t('pf2emagic.no_available_slots') unless open_slot
+      return t('pf2emagic.no_available_slots') unless spell_list_for_level.size < max_spells_per_day
 
       # If all checks succeed, prepare the spell and return a hash.
 
-      spell_list_for_level[open_slot] = spell_name
+      spell_list_for_level << spell_name
 
-      magic.spells_prepared[level] = spell_list_for_level
-      magic.save
+      spell_list_for_class[level] = spell_list_for_level.sort
+      spell_list[cc] = spell_list_for_class
+      magic.update(spells_prepared: spell_list)
 
       return_msg
 
@@ -164,6 +169,44 @@ module AresMUSH
       make_signature = true if (is_in_book && is_in_rep)
 
       [prepare_ok, make_signature]
+    end
+
+    def self.max_spells_per_day(char, charclass, level)
+      # Determines how many spells per day of that level the character can cast, for full spellcasting classes.
+      # Not useful for focus-only classes.
+      magic = char.magic
+      return 0 unless magic
+
+      # This will return nil for non-full casting classes.
+      type = get_caster_type(charclass)
+      return 0 unless type
+
+      # This is the same whether you're a prepared or spontcaster.
+      list = magic.spells_per_day[charclass]
+      return 0 unless list
+
+      sublist = list[level]
+
+      sublist ? sublist : 0
+    end
+
+    def self.max_spell_level_available(char, charclass)
+      # Determines max spell level available for full spellcasting classes.
+      # Not useful for focus-only classes.
+      magic = char.magic
+      return nil unless magic
+
+      # This will return nil for non-full casting classes.
+      type = get_caster_type(charclass)
+      return nil unless type
+
+      # This is the same whether you're a prepared or spontcaster.
+      list = magic.spells_per_day[charclass]
+      return nil unless list
+
+      levels_available = list.keys.sort { |a,b| a.to_i <=> b.to_i }
+
+      levels_available.pop
     end
 
   end
