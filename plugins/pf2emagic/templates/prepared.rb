@@ -33,7 +33,7 @@ module AresMUSH
           sorted_spells.each_pair do |level, list|
             max_for_level = daily_spells_for_charclass[level]
 
-            sublist << "#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join(", ")}"
+            sublist << "%b%b#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join(", ")}"
           end
 
           list << format_class_spell_list(charclass, sublist)
