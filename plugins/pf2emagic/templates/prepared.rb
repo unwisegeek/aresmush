@@ -18,7 +18,7 @@ module AresMUSH
       end
 
       def spells_per_day
-
+        @char.magic.spells_per_day
       end
 
       def spells
