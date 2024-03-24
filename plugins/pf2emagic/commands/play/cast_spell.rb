@@ -6,15 +6,14 @@ module AresMUSH
       attr_accessor :charclass, :level, :spell, :target
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_optional_arg3)
 
         classlevel = trimmed_list_arg(args.arg1, "/")
         self.charclass = titlecase_arg(classlevel[0])
         self.level = classlevel[1]
 
-        spelltarget = trimmed_list_arg(args.arg2, "at")
-        self.spell = spelltarget[0]
-        self.target = spelltarget[1] ? spelltarget[1].split : []
+        self.spell = trim_arg(args.arg2)
+        self.target = trimmed_list_arg(args.arg3)
       end
 
       def required_args
@@ -27,8 +26,6 @@ module AresMUSH
       end
 
       def handle
-
-        client.emit self.spell
 
         msg = Pf2emagic.cast_spell(enactor, self.charclass, self.spell, self.target, self.level, cmd.switch)
 
