@@ -134,8 +134,6 @@ module AresMUSH
 
       prep_spells_class[level] = prep_spells_level
       prepared_spells[cc] = prep_spells_class
-
-      return prepared_spells
       magic.update(prepared_spells: prepared_spells)
 
       return nil
