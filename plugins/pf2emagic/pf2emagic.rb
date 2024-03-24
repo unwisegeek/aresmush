@@ -36,6 +36,8 @@ module AresMUSH
         return PF2MagicSpellbookCmd
       when 'dfont'
         return PF2DivineFontCmd
+      when "cast"
+        return PF2CastSpellsCmd
       end
     end
 
