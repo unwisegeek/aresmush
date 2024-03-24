@@ -1,7 +1,7 @@
 module AresMUSH
   module Pf2emagic
 
-    def generate_blank_spell_list(obj, charclass)
+    def self.generate_blank_spell_list(obj, charclass)
       prepared_list = {}
       spells_per_day = obj.spells_per_day
       class_spells_per_day = spells_per_day[charclass]
