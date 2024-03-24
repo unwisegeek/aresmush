@@ -149,11 +149,13 @@ module AresMUSH
       available = splist.include? spname
       return t('pf2emagic.not_prepared_at_level') unless available
 
-      # Deduct the spell from today's prepared list and return a caster hash.
-      splist = splist - [ spname ]
-      cc_spells_2day[splevel] = splist
-      cc_spells[charclass] = cc_spells_2day
-      magic.update(spells_today: cc_spells)
+      # Unless it's a cantrip, deduct the spell from today's prepared list and return a caster hash.
+      unless splevel == 'cantrip'
+        splist = splist - [ spname ]
+        cc_spells_2day[splevel] = splist
+        cc_spells[charclass] = cc_spells_2day
+        magic.update(spells_today: cc_spells)
+      end
 
       caster_stats['spell level'] = splevel
       caster_stats['targets'] = target_list unless target_list.empty?
@@ -199,10 +201,12 @@ module AresMUSH
 
       # Do the cast and return a caster hash.
 
-      slots = slots - 1
-      cc_spells_2day[splevel] = slots
-      cc_spells[charclass] = cc_spells_2day
-      magic.update(spells_today: cc_spells)
+      unless splevel == 'cantrip'
+        slots = slots - 1
+        cc_spells_2day[splevel] = slots
+        cc_spells[charclass] = cc_spells_2day
+        magic.update(spells_today: cc_spells)
+      end
 
       caster_stats['spell level'] = splevel
       caster_stats['targets'] = target_list unless target_list.empty?

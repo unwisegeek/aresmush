@@ -10,8 +10,8 @@ module AresMUSH
           args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_optional_arg3)
 
           classlevel = trimmed_list_arg(args.arg1, "/")
-          self.charclass = titlecase_arg(classlevel[0])
-          self.level = classlevel[1]
+          self.charclass = classlevel ? titlecase_arg(classlevel[0]) : nil
+          self.level = classlevel ? classlevel[1]: nil
 
           self.spell = trim_arg(args.arg2)
           self.target = trimmed_list_arg(args.arg3) || []
