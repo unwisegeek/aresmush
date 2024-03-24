@@ -14,7 +14,7 @@ module AresMUSH
           self.level = classlevel ? classlevel[1]: nil
 
           self.spell = trim_arg(args.arg2)
-          self.target = trimmed_list_arg(args.arg3) || []
+          self.target = trimmed_list_arg(args.arg3, ",") || []
         end
       end
 
@@ -28,6 +28,7 @@ module AresMUSH
       end
 
       def handle
+        # If the cast is successful, it passes a hash to the template.
 
         msg = Pf2emagic.cast_spell(enactor, self.charclass, self.spell, self.target, self.level, cmd.switch)
 
@@ -35,7 +36,23 @@ module AresMUSH
           client.emit_failure msg
           return
         else
-          client.emit msg
+          template = PF2CastSpellTemplate.new(enactor, msg, client)
+
+          cast_msg = template.render
+
+          enactor_room.emit cast_msg
+          scene = enactor_room.scene
+
+          if scene
+            Scenes.add_to_scene(scene, cast_msg)
+
+            # Add to the encounter, if in an active encounter in the scene.
+            active_encounter = PF2Encounter.scene_active_encounter(scene)
+            if active_encounter
+              PF2Encounter.send_to_encounter(active_encounter, cast_msg)
+            end
+          end
+
         end
 
       end

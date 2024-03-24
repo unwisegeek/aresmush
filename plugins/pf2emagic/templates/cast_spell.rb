@@ -4,17 +4,12 @@ module AresMUSH
     class PF2CastSpellTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :caster, :spell, :tradition, :level, :target
+      attr_accessor :caster, :spell_info, :client
 
-      def initialize(caster, spell, tradition, level, target, client)
+      def initialize(caster, spell_info, client)
         @caster = caster
-        @spell = spell
-        @tradition = tradition
-        @level = level
-        @target = target
+        @spell_info = spell_info
         @client = client
-
-        @details = Global.read_config('pf2e_spells', spell)
 
         super File.dirname(__FILE__) + "/cast_spell.erb"
       end
@@ -23,82 +18,54 @@ module AresMUSH
         @client.screen_reader ? title : line_with_text(title)
       end
 
-      def caster_name
-        @caster.name
-      end
-
-      def spell
-        @spell
-      end
-
-      def cast_tradition
-        @tradition
+      def spell_name
+        @spell_info['spell name']
       end
 
       def cast_level
-        @level
+        @spell_info['spell level']
       end
 
-      def target
-        return nil if !@target
-        @target.split(",").map { |w| Pf2e.pretty_string(w) }.sort.join(", ")
+      def atk
+        prof = @spell_info['prof_level']
+        prof_bonus = Pf2e.get_prof_bonus(@caster, prof)
+
+        abil_mod = @spell_info['modifier']
+
+        abil_mod + prof_bonus
       end
 
-      def area
-        @details["area"]
+      def dc
+        atk + 10
       end
 
-      def range
-        @details["range"]
+      def targets
+        return nil unless @spell_info['targets']
+
+        list = []
+        @spell_info['targets'].sort.each do |name|
+          list << name.split.map { |word| word.capitalize }.join
+        end
+
+        list.join(", ")
       end
 
-      def duration
-        @details["duration"]
+      def tradition
+        @spell_info['tradition']
       end
 
-      def base_level
-        @details["base_level"]
+      def spell_type
+        @spell_info['spell type']
       end
 
-      def damage
-        d = @details["damage"]
-
-        return nil if !d
-
-        heighten = @level - base_level
-
-        d.is_a?(Array) ? d[heighten] : d
+      def is_focus_spell
+        @spell_info['spell type'].match? 'focus'
       end
 
-      def dam_roll
-        return nil if !damage
-        return damage if !(damage.match? "d")
-
-        roll = Pf2e.parse_roll_string(@caster, damage)
-
-        roll["total"]
+      def focus_type
+        @spell_info['focus type']
       end
 
-      def damage_type
-        @details["damage_type"]
-      end
-
-      def save
-        @details["save"]
-      end
-
-      def save_dc
-        magic = @caster.magic
-        spell_abil = magic.spell_abil[@tradition]
-        spell_prof = magic.spell_prof
-        prof_bonus = Pf2e.get_prof_bonus(@caster, spell_prof)
-
-        abil_mod = Pf2eAbilities.abilmod(
-          Pf2eAbilities.get_score @caster, spell_abil
-        )
-
-        10 + abil_mod + prof_bonus
-      end
 
     end
   end
