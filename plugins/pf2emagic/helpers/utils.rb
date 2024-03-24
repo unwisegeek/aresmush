@@ -23,11 +23,9 @@ module AresMUSH
 
       return t('pf2emagic.not_caster') unless magic
 
-      pclass = magic.spells_prepared.keys
+      class_list = magic.tradition.keys
 
-      sclass = magic.repertoire.keys
-
-      class_list = (pclass + sclass).uniq
+      class_list.delete('innate')
 
       return class_list
 
