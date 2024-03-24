@@ -36,8 +36,6 @@ module AresMUSH
             sublist << "#{item_color}#{level}%xn (max #{max_for_level}): #{list.sort.join(", ")}"
           end
 
-          return sublist
-
           list << format_class_spell_list(charclass, sublist)
         end
 
@@ -48,7 +46,7 @@ module AresMUSH
         # Spells come to this function as an array of formatted level lists, so all we need to do is
         # arrange by class.
 
-        "#{title_color}#{charclass} Spells%xn%r%r#{sublist.join("%r")}%r"
+        "#{title_color}#{charclass} Spells%xn%r%r#{spells.join("%r")}%r"
       end
 
     end
