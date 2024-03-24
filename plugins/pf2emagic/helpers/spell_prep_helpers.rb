@@ -108,7 +108,7 @@ module AresMUSH
       magic = char.magic
       cc = castclass.capitalize
 
-      prepared_spells = magic.prepared_spells
+      prepared_spells = magic.spells_prepared
       prep_spells_class = prepared_spells[cc]
 
       return t('pf2emagic.no_prepared_spells_class', :cc => cc.downcase) unless prep_spells_class
