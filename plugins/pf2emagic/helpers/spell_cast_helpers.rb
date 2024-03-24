@@ -116,7 +116,6 @@ module AresMUSH
       caster_stats['spell type'] = 'signature'
       caster_stats['targets'] = target_list unless target_list.empty?
       caster_stats['spell name'] = spname
-      caster_stats['spell details'] = spdeets
 
       caster_stats
     end
@@ -136,14 +135,7 @@ module AresMUSH
       spname = find_spell[0]
       spdeets = find_spell[1]
 
-      base = spdeets['base_level'].to_i
-
-      splevel = level ? level : base
-
-      # If specified, level must be at least the base level of the spell. Level is an integer here.
-      return t('pf2emagic.invalid_level') if splevel.to_i < base
-
-      splevel = 'cantrip' if splevel.to_i.zero?
+      splevel = level ? level : spdeets['base_level']
 
       # Is that spell available at that level today?
       cc_spells = magic.spells_today
@@ -163,10 +155,8 @@ module AresMUSH
       magic.update(spells_today: cc_spells)
 
       caster_stats['spell level'] = splevel
-      caster_stats['spell type'] = 'prepared'
       caster_stats['targets'] = target_list unless target_list.empty?
       caster_stats['spell name'] = spname
-      caster_stats['spell details'] = spdeets
 
       caster_stats
     end
@@ -214,10 +204,8 @@ module AresMUSH
       magic.update(spells_today: cc_spells)
 
       caster_stats['spell level'] = splevel
-      caster_stats['spell type'] = 'signature'
       caster_stats['targets'] = target_list unless target_list.empty?
       caster_stats['spell name'] = spname
-      caster_stats['spell details'] = spdeets
 
       caster_stats
     end
@@ -235,7 +223,6 @@ module AresMUSH
       return find_spell if find_spell.is_a? String
 
       spname = find_spell[0]
-      spdeets = find_spell[1]
 
       # Is that spell name in their list of innate spells?
 
@@ -253,7 +240,6 @@ module AresMUSH
       caster_stats['modifier'] = Pf2eAbilities.abilmod(Pf2eAbilities.get_score(char,spinfo['cast_stat']))
       caster_stats['targets'] = target_list unless target_list.empty?
       caster_stats['spell name'] = spname
-      caster_stats['spell details'] = spdeets
 
       caster_stats
     end
