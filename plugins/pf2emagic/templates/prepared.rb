@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2emagic
-    class PF2MagicDisplayTemplate < ErbTemplateRenderer
+    class PF2DisplayPreparedSpellsTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
       attr_accessor :char, :spell_list
