@@ -1,11 +1,12 @@
 module AresMUSH
   module Pf2emagic
 
-    def generate_blank_spell_list(obj)
+    def generate_blank_spell_list(obj, charclass)
       prepared_list = {}
       spells_per_day = obj.spells_per_day
+      class_spells_per_day = spells_per_day[charclass]
 
-      spells_per_day.each_pair do |level, count|
+      class_spells_per_day.each_pair do |level, count|
         list = Array.new(count, "open")
 
         prepared_list[level] = list

@@ -24,7 +24,6 @@ module AresMUSH
       return t('pf2emagic.not_caster') unless magic
 
       class_list = magic.tradition.keys
-
       class_list.delete('innate')
 
       class_list.each do |cc|
@@ -32,13 +31,13 @@ module AresMUSH
         when "Wizard", "Druid", "Cleric", "Witch"
           prepared_list = magic.spells_prepared
 
-          spells_today[cc] = prepared_list
+          spells_today[cc] = prepared_list[cc]
         when "Bard", "Oracle", "Sorcerer"
-          spontlist = generate_blank_spell_list(magic)
+          spontlist = generate_blank_spell_list(magic, cc)
 
           spells_today[cc] = spontlist
         else
-          return nil
+          next
         end
 
         magic.update(spells_today: spells_today)
