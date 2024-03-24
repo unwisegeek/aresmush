@@ -140,7 +140,7 @@ module AresMUSH
       # Is that spell available at that level today?
       cc_spells = magic.spells_today
       cc_spells_2day = cc_spells[charclass]
-      return cc_spells_2day
+
       return t('pf2emagic.no_available_slots') unless cc_spells_2day
 
       splist = cc_spells_2day[splevel]
