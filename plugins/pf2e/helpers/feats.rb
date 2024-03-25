@@ -89,6 +89,10 @@ module AresMUSH
         msg << 'lineage' unless traits.include?(heritage) && (char.pf2_level == 1)
       end
 
+      if feat_type.include? 'Dedication'
+        msg << 'dedication' unless !feat.downcase.include? cinfo['charclass'].downcase
+      end
+
       if feat_type.include? 'Charclass'
         charclass = cinfo['charclass']
         allowed_charclasses = details['assoc_charclass']
