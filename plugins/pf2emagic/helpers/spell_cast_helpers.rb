@@ -323,7 +323,7 @@ module AresMUSH
 
     def self.get_auto_heighten_level(char)
       # Some spells, such as cantrips, autoheighten to half the character's level.
-      (char.pf2_level / 2).ceil(0)
+      (char.pf2_level / 2).ceil(0).clamp(1,20)
     end
 
   end
