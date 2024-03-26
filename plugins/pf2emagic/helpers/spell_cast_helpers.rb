@@ -154,7 +154,7 @@ module AresMUSH
       if splevel == 'cantrip'
         # Oh, and, if it is a cantrip, don't forget to auto-heighten.
         hlevel = get_auto_heighten_level(char).to_s
-        splevel = splevel + "/ #{hlevel}"
+        splevel = splevel + "/#{hlevel}"
       else
         splist = splist - [ spname ]
         cc_spells_2day[splevel] = splist
@@ -208,7 +208,7 @@ module AresMUSH
 
       if splevel == 'cantrip'
         hlevel = get_auto_heighten_level(char).to_s
-        splevel = splevel + "/ #{hlevel}"
+        splevel = splevel + "/#{hlevel}"
       else
         slots = slots - 1
         cc_spells_2day[splevel] = slots
