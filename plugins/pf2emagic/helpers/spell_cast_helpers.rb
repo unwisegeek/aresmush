@@ -150,7 +150,12 @@ module AresMUSH
       return t('pf2emagic.not_prepared_at_level') unless available
 
       # Unless it's a cantrip, deduct the spell from today's prepared list and return a caster hash.
-      unless splevel == 'cantrip'
+
+      if splevel == 'cantrip'
+        # Oh, and, if it is a cantrip, don't forget to auto-heighten.
+        hlevel = get_auto_heighten_level(char).to_s
+        splevel = splevel + "/ #{hlevel}"
+      else
         splist = splist - [ spname ]
         cc_spells_2day[splevel] = splist
         cc_spells[charclass] = cc_spells_2day
@@ -199,9 +204,12 @@ module AresMUSH
       available = (slots > 0)
       return t('pf2emagic.no_available_slots') unless available
 
-      # Do the cast and return a caster hash.
+      # Do the cast and return a caster hash. Cantrip recalculates level for auto-heightening.
 
-      unless splevel == 'cantrip'
+      if splevel == 'cantrip'
+        hlevel = get_auto_heighten_level(char).to_s
+        splevel = splevel + "/ #{hlevel}"
+      else
         slots = slots - 1
         cc_spells_2day[splevel] = slots
         cc_spells[charclass] = cc_spells_2day
@@ -311,6 +319,11 @@ module AresMUSH
         'modifier' => modifier
       }
 
+    end
+
+    def self.get_auto_heighten_level(char)
+      # Some spells, such as cantrips, autoheighten to half the character's level.
+      (char.pf2_level / 2).ceil(0)
     end
 
   end

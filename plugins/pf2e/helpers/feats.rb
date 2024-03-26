@@ -89,8 +89,9 @@ module AresMUSH
         msg << 'lineage' unless traits.include?(heritage) && (char.pf2_level == 1)
       end
 
+      # No double-dipping on base class / dedication, per Paizo RAW.
       if feat_type.include? 'Dedication'
-        msg << 'dedication' unless !feat.downcase.include? cinfo['charclass'].downcase
+        msg << 'dedication' if feat.downcase.include? cinfo['charclass'].downcase
       end
 
       if feat_type.include? 'Charclass'
