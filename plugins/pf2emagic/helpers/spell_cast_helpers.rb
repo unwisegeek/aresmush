@@ -324,11 +324,11 @@ module AresMUSH
     def self.get_auto_heighten_level(char)
       # Some spells, such as cantrips, autoheighten to half the character's level.
 
-      # Because ceil() is wacktacular.
+      # Because what even is Ruby's rounding functions. :P
 
       half_level = char.pf2_level / 2
 
-      half_level.round(half: :up)
+      half_level.round(half: :up).clamp(1,20)
     end
 
   end
