@@ -14,7 +14,7 @@ module AresMUSH
           args.unshift(nil) unless args[2]
 
           self.encounter_id = args[0] ? integer_arg(args[0]) : nil
-          self.name = downcase_arg(args[1])
+          self.name = titlecase_arg(args[1])
           self.init = integer_arg(args[2])
         end
       end
@@ -47,7 +47,7 @@ module AresMUSH
 
         initlist = encounter.participants
 
-        index = initlist.index { |i| i[1].downcase.match? self.name }
+        index = initlist.index { |i| i[1].downcase.match? self.name.downcase }
 
         if !index
           client.emit_failure t('pf2e.not_found')
@@ -56,7 +56,7 @@ module AresMUSH
 
         PF2Encounter.remove_from_initiative(encounter, index)
 
-        PF2Encounter.add_to_initiative(encounter, enactor.name, self.init)
+        PF2Encounter.add_to_initiative(encounter, self.name, self.init)
 
         client.emit_success t('pf2e.encounter_mod_ok',
           :name => initlist[index][1],
