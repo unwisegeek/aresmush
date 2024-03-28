@@ -54,8 +54,6 @@ module AresMUSH
           return
         end
 
-        index = initlist.index(find)
-
         PF2Encounter.remove_from_initiative(encounter, index)
 
         PF2Encounter.add_to_initiative(encounter, enactor.name, self.init)
