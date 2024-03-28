@@ -47,10 +47,6 @@ module AresMUSH
 
         initlist = encounter.participants
 
-        client.emit initlist
-
-        return
-
         index = initlist.index { |i| i[1].downcase.match? self.name }
 
         if !find
