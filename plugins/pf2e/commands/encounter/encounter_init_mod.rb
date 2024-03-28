@@ -49,7 +49,7 @@ module AresMUSH
 
         index = initlist.index { |i| i[1].downcase.match? self.name }
 
-        if !find
+        if !index
           client.emit_failure t('pf2e.not_found')
           return
         end
