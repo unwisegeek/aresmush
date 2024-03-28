@@ -14,7 +14,7 @@ module AresMUSH
 
         self.encounter_id = integer_arg(args[0])
         self.name = downcase_arg(args[1])
-        self.init = integer_arg(args[2])
+        self.init = trim_arg(args[2])
       end
 
       def required_args

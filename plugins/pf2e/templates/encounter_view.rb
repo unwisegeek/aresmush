@@ -78,7 +78,7 @@ module AresMUSH
       def format_init_list_item(participant)
         initiative = participant[0].to_i
         name = participant[1]
-        pc = Pf2e.get_character(name)
+        pc = Character.find_one_by_name(name)
         conditions = pc ? pc.pf2_conditions : []
 
         "%b%b#{left(initiative, 5)}%b%b#{left(name, 25)}%b%b#{left(conditions.sort.join(","), 40)}"
