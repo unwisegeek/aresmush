@@ -29,7 +29,6 @@ module AresMUSH
 
     def self.get_encounter(char, scene=nil)
       return nil unless scene
-      return nil unless scene.participants.include? char
       scene_active_encounter(scene)
     end
 
@@ -48,9 +47,10 @@ module AresMUSH
 
       return unless list
 
+        # Float is used here to account for the Paizo RAW that if a PC and an adversary tie, tie adversary goes first.
       adversary_mod = is_adversary ? 0.2 : 0
 
-      init = roll + adversary_mod
+      init = (roll + adversary_mod).to_f
 
       list << [ init, name ]
 
