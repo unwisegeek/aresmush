@@ -59,11 +59,11 @@ module AresMUSH
 
     def self.remove_from_initiative(encounter,index)
 
-      new_list = encounter.participants.delete_at(index)
+      list = encounter.participants
 
-      return new_list
+      list.delete_at(index)
 
-      encounter.update(participants: new_list)
+      encounter.update(participants: list)
     end
 
     def self.is_organizer?(char, encounter)
