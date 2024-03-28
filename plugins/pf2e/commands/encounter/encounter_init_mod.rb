@@ -13,7 +13,7 @@ module AresMUSH
           # If only two args are given, encounter_id is the nil.
           args.unshift(nil) unless args[2]
 
-          self.encounter_id = integer_arg(args[0])
+          self.encounter_id = args[0] ? integer_arg(args[0]) : nil
           self.name = downcase_arg(args[1])
           self.init = integer_arg(args[2])
         end
@@ -47,12 +47,18 @@ module AresMUSH
 
         initlist = encounter.participants
 
+        client.emit initlist
+
+        return
+
         index = initlist.index { |i| i[1].downcase.match? self.name }
 
-        if !index
+        if !find
           client.emit_failure t('pf2e.not_found')
           return
         end
+
+        index = initlist.index(find)
 
         PF2Encounter.remove_from_initiative(encounter, index)
 
