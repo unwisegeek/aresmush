@@ -61,6 +61,8 @@ module AresMUSH
 
       new_list = encounter.participants.delete_at(index)
 
+      return new_list
+
       encounter.update(participants: new_list)
     end
 
