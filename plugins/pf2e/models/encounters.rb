@@ -43,9 +43,7 @@ module AresMUSH
     end
 
     def self.add_to_initiative(encounter, name, roll, is_adversary=false)
-      list = encounter.participants
-
-      return unless list
+      list = encounter.participants || []
 
         # Float is used here to account for the Paizo RAW that if a PC and an adversary tie, tie adversary goes first.
       adversary_mod = is_adversary ? 0.2 : 0
