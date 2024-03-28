@@ -7,14 +7,16 @@ module AresMUSH
       attr_accessor :encounter_id, :name, :init
 
       def parse_args
-        args = trimmed_list_arg(cmd.args, "=")
+        if cmd.args
+          args = trimmed_list_arg(cmd.args, "=")
 
-        # If only two args are given, encounter_id is the nil.
-        args.unshift(nil) unless args[2]
+          # If only two args are given, encounter_id is the nil.
+          args.unshift(nil) unless args[2]
 
-        self.encounter_id = integer_arg(args[0])
-        self.name = downcase_arg(args[1])
-        self.init = trim_arg(args[2])
+          self.encounter_id = integer_arg(args[0])
+          self.name = downcase_arg(args[1])
+          self.init = integer_arg(args[2])
+        end
       end
 
       def required_args
