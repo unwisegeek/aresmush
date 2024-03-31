@@ -27,3 +27,4 @@ Note that you cannot `advance` if you are in an active encounter. Scenes are fin
 `advance/spell <spell>`: Selects a new spell. 
 `advance/signature <spell>`: If advance/review indicates that this is needed, set a signature spell. 
 `advance/done`: Locks your choices, takes you out of advancement mode, and updates your sheet. 
+`advance/reset`: Backs out of advancement and discards all changes.
