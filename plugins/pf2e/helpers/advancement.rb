@@ -1,35 +1,33 @@
 module AresMUSH
   module Pf2e
 
-    def self.assess_advancement(char,info)
-
-      return_msg << []
-
-      # Are they in an active encounter?
-      active_encounter = PF2Encounter.in_active_encounter? char
-
-      if active_encounter
-        return_msg << t('pf2e.already_in_encounter')
-        return return_msg
-      end
-
-      # Can they level?
-      level = char.pf2_level
-
-      if level == Global.read_config('pf2e', 'max_level')
-        return_msg << t('pf2e.already_max_level')
-        return
-      end
+    def self.can_advance(char)
+      # Are they already advancing?
+      return ('pf2e.already_advancing') if char.advancing
 
       # Do they have enough XP?
       xp = char.pf2_xp
+      return t('pf2e.not_enough_xp') unless (xp >= 1000)
 
-      unless (xp >= 1000)
-        return_msg << t('pf2e.not_enough_xp')
-        return return_msg
-      end
+      # Are they in an active encounter?
+      active_encounter = PF2Encounter.in_active_encounter? char
+      return t('pf2e.already_in_encounter') if active_encounter
 
-      # From here, return_msg will show what they need to pick only. Everything else will just populate.
+      # Can they level?
+      level = char.pf2_level
+      return t('pf2e.already_max_level') if (level == Global.read_config('pf2e', 'max_level'))
+
+      return nil
+    end
+
+    def self.assess_advancement(char,info)
+      # Can the character advance?
+      advfail = Pf2e.can_advance(char)
+      return advfail if advfail
+
+      # Return_msg returns a list of what they need to choose as an array.
+      return_msg = []
+
       advancement = {}
       to_assign = char.pf2_to_assign || {}
 

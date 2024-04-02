@@ -18,6 +18,7 @@ en:
     alias_deleted_ok: "You delete %{alias}."
     already_has_skill: "You already have that skill. Pick another."
     already_has: "You already have that %{item}. Please choose another."
+    already_advancing: "You are already in advancement mode. Please see help advance for assistance."
     already_in_encounter: "This command cannot be used while you are in an active encounter."
     already_max_level: "You are at maximum level for this game and cannot advance further."
     ambiguous_target: "The option given is either not specific enough or was not found."
