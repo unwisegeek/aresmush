@@ -33,8 +33,6 @@ module AresMUSH
 
         # Send information for processing.
 
-        client.emit info
-        return
         msg = Pf2e.assess_advancement(enactor,info)
 
         # msg is an array of all the messages that indicate stuff to pick, so display that plus a success message.

@@ -37,7 +37,6 @@ module AresMUSH
           heading = key.gsub("charclass", "class").split.each {|word| word.capitalize}.join
 
           if value.is_a? Array
-
             list << "#{item_color}#{heading}:%xn #{value.sort.join(", ")}" unless value.empty?
           elsif value.is_a? Hash
             sublist = []
@@ -54,7 +53,7 @@ module AresMUSH
 
             list << sublist.join("%r")
           else
-            list << "#{item_color}#{heading}:%xn #{value}"
+            list << "#{item_color}#{heading}:%xn #{value.to_s}"
           end
         end
 
