@@ -55,7 +55,7 @@ module AresMUSH
 
           magic_options["repertoire"] = assignment_list
         when "spellbook"
-          ary = Array.new(num, "open")
+          ary = Array.new(value, "open")
 
           magic_options["spellbook"] = ary
         when "signature_spell"
