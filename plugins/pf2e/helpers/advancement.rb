@@ -44,7 +44,7 @@ module AresMUSH
 
             to_assign[key] = list
 
-            return_msg << t('pf2e.adv_item_feat', :value => value)
+            return_msg << t('pf2e.adv_item_feat', :value => feat)
           end
         when "magic_stats"
           assess_magic = PF2Magic.assess_magic_stats(char, value)
@@ -80,6 +80,7 @@ module AresMUSH
 
       char.update(pf2_to_assign: to_assign)
       char.update(pf2_advancement: advancement)
+      char.update(advancing: true)
 
       return_msg
     end
