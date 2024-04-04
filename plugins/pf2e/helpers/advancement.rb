@@ -3,7 +3,7 @@ module AresMUSH
 
     def self.can_advance(char)
       # Are they already advancing?
-      return ('pf2e.already_advancing') if char.advancing
+      return t('pf2e.already_advancing') if char.advancing
 
       # Do they have enough XP?
       xp = char.pf2_xp
@@ -29,7 +29,7 @@ module AresMUSH
       return_msg = []
 
       advancement = {}
-      to_assign = char.pf2_to_assign || {}
+      to_assign = {}
 
       info.each_pair do |key, value|
         case key
