@@ -6,10 +6,10 @@ module AresMUSH
       attr_accessor :category, :item_num, :use_option
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_slash_arg2)
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
 
         self.category = downcase_arg(args.arg1)
-        second_parse = trimmed_list_arg(args.arg2, "=")
+        second_parse = trimmed_list_arg(args.arg2, "/")
         self.item_num = second_parse ? integer_arg(second_parse[0]) : nil
         self.use_option = second_parse ? trim_arg(second_parse[1]) : nil
 
