@@ -10,7 +10,7 @@ module AresMUSH
 
         self.target = trim_arg(args.arg1)
         self.award = integer_arg(args.arg2)
-        self.reason = trim_arg(args.arg3).slice(0,50)
+        self.reason = trim_arg(args.arg3).slice(0,50) if args.arg3
       end
 
       def required_args
