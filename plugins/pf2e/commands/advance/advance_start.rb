@@ -23,7 +23,7 @@ module AresMUSH
 
         charclass = enactor.pf2_base_info['charclass']
 
-        charclass_adv_info = Global.read_config('pf2e_class', charclass, 'advance')['level']
+        charclass_adv_info = Global.read_config('pf2e_class', charclass, 'advance')[level]
 
         # Some specialties have their own peculiar advancement bits. Look for those and merge them in if present.
         subclass_adv_info = Global.read_config('pf2e_specialty', charclass, enactor.pf2_base_info['specialty'])['advance']
