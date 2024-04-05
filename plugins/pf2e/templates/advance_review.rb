@@ -83,7 +83,7 @@ module AresMUSH
           elsif value.is_a? Hash
             sublist = []
             value.each_pair do |subkey, subvalue|
-              subheading = subkey.gsub("charclass", "class").split("_").map {|word| word.capitalize}.join(" ")
+              subheading = subkey.gsub("charclass", "class").split.map {|word| word.capitalize}.join(" ")
               if subvalue.is_a? Array
                 sublist << "%b%b#{item_color}#{subheading}:%xn #{subvalue.sort.join(", ")}"
               # elsif subvalue.is_a? Hash
