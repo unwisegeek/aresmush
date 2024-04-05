@@ -100,7 +100,7 @@ module AresMUSH
           end
         end
 
-        list.join("%r")
+        list
       end
 
       def messages
