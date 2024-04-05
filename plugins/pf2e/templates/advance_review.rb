@@ -76,7 +76,7 @@ module AresMUSH
 
         @to_assign.each_pair do |key, value|
           # Process according to the data type of the key.
-          heading = key.gsub("charclass", "class").each {|word| word.capitalize}.join(" ")
+          heading = key.gsub("charclass", "class").split("_")each {|word| word.capitalize}.join(" ")
 
           if value.is_a? Array
             list << "#{item_color}#{heading}:%xn #{value.sort.join(", ")}" unless value.empty?
