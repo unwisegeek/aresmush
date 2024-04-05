@@ -195,7 +195,7 @@ module AresMUSH
           type = item.delete_suffix " feat"
 
           if info.include? "open"
-            msg << t('pf2e.adv_item_feat', :value => type)
+            msg << t('pf2e.adv_item_feat', :value => type.gsub("charclass", "class"))
           end
 
         when "raise skill", "raise ability"
@@ -205,10 +205,17 @@ module AresMUSH
           unless info
             msg << t('pf2e.adv_item_raise', :item => type)
           end
-        when "spellbook", "repertoire"
-          msg << t('pf2e.adv_item_magic', :options => item) if info.include? "open"
-        when "signature"
-          msg << t('pf2e.adv_item_magic', :options => item) unless info.values.first.zero?
+        when "magic options"
+          info.each_pair do |subitem, subinfo|
+            case subitem
+            when "spellbook", "repertoire"
+              msg << t('pf2e.adv_item_magic', :options => item) if subinfo.include? "open"
+            when "signature"
+              msg << t('pf2e.adv_item_magic', :options => item) unless subinfo.values.first.zero?
+            else
+              next
+            end
+          end
         when "grants"
 
         end
