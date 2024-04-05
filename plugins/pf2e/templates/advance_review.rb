@@ -65,6 +65,8 @@ module AresMUSH
           list
         end
 
+      end
+
       def has_options
         !@to_assign.empty?
       end
