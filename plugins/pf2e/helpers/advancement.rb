@@ -63,7 +63,7 @@ module AresMUSH
           value.each do |item|
             key = "raise " + item
 
-            to_assign[key]
+            to_assign[key] = "open"
             return_msg << t('pf2e.adv_item_raise', :item => item)
           end
         when "choose"
@@ -181,11 +181,6 @@ module AresMUSH
 
     def self.advancement_messages(char)
       msg = []
-
-      # This is a canary that advancement didn't populate properly when they ran the advance command.
-      # This error is never normal.
-      advancement = char.pf2_advancement
-      msg << t('pf2e.adv_wrong') if advancement.empty?
 
       to_assign = char.pf2_to_assign
 
