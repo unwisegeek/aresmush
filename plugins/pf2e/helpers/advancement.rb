@@ -192,14 +192,14 @@ module AresMUSH
       to_assign.each_pair do |item, info|
         case item
         when "charclass feat", "ancestry feat", "skill feat", "general feat"
-          type = item - " feat"
+          type = item.delete_suffix " feat"
 
           if info.include? "open"
             msg << t('pf2e.adv_item_feat', :value => type)
           end
 
         when "raise skill", "raise ability"
-          type = item - "raise "
+          type = item.delete_prefix "raise "
 
           # Info is blank if the item has not yet been selected.
           unless info
