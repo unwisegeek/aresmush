@@ -28,7 +28,7 @@ module AresMUSH
       end
 
       def advancement
-        hash = @char.pf2_advancement.to_h
+        hash = @char.pf2_advancement
 
         list = []
 
@@ -51,13 +51,13 @@ module AresMUSH
                   subsublist << "%b%b%b%b%xh#{subsubheading}:%xn #{subsubvalue}"
                 end
 
-                sublist << subsublist.join("%r")
+                sublist << "%b%b#{item_color}#{subheading}:%xn #{subsublist.join("%r")}"
               else
                 sublist << "%b%b#{item_color}#{subheading}:%xn #{subvalue}"
               end
             end
 
-            list << sublist.join("%r")
+            list << "#{item_color}#{heading}:%xn #{sublist.join("%r")}"
           else
             list << "#{item_color}#{heading}:%xn #{value}"
           end
@@ -76,10 +76,9 @@ module AresMUSH
 
         @to_assign.each_pair do |key, value|
           # Process according to the data type of the key.
-          heading = key.gsub("charclass", "class").split.each {|word| word.capitalize}.join(" ")
+          heading = key.gsub("charclass", "class").each {|word| word.capitalize}.join(" ")
 
           if value.is_a? Array
-
             list << "#{item_color}#{heading}:%xn #{value.sort.join(", ")}" unless value.empty?
           elsif value.is_a? Hash
             sublist = []
