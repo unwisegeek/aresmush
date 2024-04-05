@@ -28,11 +28,11 @@ module AresMUSH
       end
 
       def advancement
-        hash = @char.pf2_advancement
+        adv = @char.pf2_advancement
 
         list = []
 
-        hash.each_pair do |key, value|
+        adv.each_pair do |key, value|
           # Process according to the data type of the key.
           heading = key.gsub("charclass", "class").split("_").each {|word| word.capitalize}.join(" ")
 
