@@ -59,7 +59,7 @@ module AresMUSH
 
             list << sublist.join("%r")
           else
-            list << "#{item_color}#{heading}:%xn #{value.to_s}"
+            list << "#{item_color}#{heading}:%xn #{value}"
           end
         end
 

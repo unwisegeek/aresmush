@@ -37,7 +37,7 @@ module AresMUSH
 
         # msg is an array of all the messages that indicate stuff to pick, so display that plus a success message.
 
-        client.emit_ooc msg.join("%r")
+        client.emit_ooc msg.join("%r%%")
         client.emit_success t('pf2e.advance_started', :level => level, :charclass => charclass)
       end
 
