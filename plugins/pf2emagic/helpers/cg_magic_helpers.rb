@@ -1,6 +1,29 @@
 module AresMUSH
   module Pf2emagic
 
+    def self.generate_blank_spell_list(obj, charclass)
+
+      spells_per_day = obj.spells_per_day
+      class_spells_per_day = spells_per_day[charclass]
+
+      class_spells_per_day.each_pair do |level, count|
+        list = Array.new(count, "open")
+
+        prepared_list[level] = list
+      end
+
+    end
+
+    def self.get_caster_type(charclass)
+      prepared = Global.read_config('pf2e_magic', 'prepared_casters')
+      spont = Global.read_config('pf2e_magic', 'spontaneous_casters')
+
+      return 'prepared' if prepared.include? charclass.capitalize
+      return 'spontaneous' if spont.include? charclass.capitalize
+      return nil
+
+    end
+
     def self.select_gated_spell(char, charclass, level, old_spell, new_spell, gate, is_dedication=false, common_only=false, check_only=false)
       # Caster type check.
       caster_type = get_caster_type(charclass)
