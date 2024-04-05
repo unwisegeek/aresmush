@@ -61,10 +61,9 @@ module AresMUSH
           else
             list << "#{item_color}#{heading}:%xn #{value}"
           end
-        end
 
-        list.join("%r")
-      end
+          list
+        end
 
       def has_options
         !@to_assign.empty?
