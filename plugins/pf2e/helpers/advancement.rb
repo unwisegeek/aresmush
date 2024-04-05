@@ -209,9 +209,9 @@ module AresMUSH
           info.each_pair do |subitem, subinfo|
             case subitem
             when "spellbook", "repertoire"
-              msg << t('pf2e.adv_item_magic', :options => item) if subinfo.include? "open"
+              msg << t('pf2e.adv_item_magic', :options => subitem) if subinfo.include? "open"
             when "signature"
-              msg << t('pf2e.adv_item_magic', :options => item) unless subinfo.values.first.zero?
+              msg << t('pf2e.adv_item_magic', :options => subitem) unless subinfo.values.first.zero?
             else
               next
             end
