@@ -28,7 +28,7 @@ module AresMUSH
       end
 
       def advancement
-        hash = @char.pf2_advancement
+        hash = @char.pf2_advancement.to_h
 
         list = []
 
