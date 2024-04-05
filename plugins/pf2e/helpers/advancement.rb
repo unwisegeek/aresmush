@@ -50,10 +50,10 @@ module AresMUSH
           assess_magic = PF2Magic.assess_magic_stats(char, value)
 
           advancement[key] = assess_magic['magic_stats']
-          magic_options = assess_magic['options']
+          magic_options = assess_magic['magic_options']
 
           if magic_options
-            to_assign.merge(magic_options)
+            to_assign["magic options"] = magic_options
             return_msg << t('pf2e.adv_item_magic', :options => magic_options.keys.sort.join(", "))
           end
         when "raise"
