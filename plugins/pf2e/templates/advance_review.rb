@@ -76,7 +76,7 @@ module AresMUSH
 
         @to_assign.each_pair do |key, value|
           # Process according to the data type of the key.
-          heading = key.gsub("charclass", "class").split.each {|word| word.capitalize}.join
+          heading = key.gsub("charclass", "class").split.each {|word| word.capitalize}.join(" ")
 
           if value.is_a? Array
 
@@ -84,7 +84,7 @@ module AresMUSH
           elsif value.is_a? Hash
             sublist = []
             value.each_pair do |subkey, subvalue|
-              subheading = subkey.gsub("charclass", "class").split("_").each {|word| word.capitalize}.join
+              subheading = subkey.gsub("charclass", "class").split("_").each {|word| word.capitalize}.join(" ")
               if subvalue.is_a? Array
                 sublist << "%b%b#{item_color}#{subheading}:%xn #{subvalue.sort.join(", ")}"
               # elsif subvalue.is_a? Hash
