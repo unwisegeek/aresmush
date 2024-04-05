@@ -141,7 +141,7 @@ module AresMUSH
           # Value is the ability to be raised as a String.
         when "raise skill"
         when "charclass feat", "ancestry feat", "general feat", "skill feat"
-          type = key - " feat"
+          type = key.delete_suffix " feat"
 
           char_feats = char.pf2_feats
 
@@ -158,6 +158,8 @@ module AresMUSH
             char_feats[type] = char_feats_type
           end
 
+          # Remember to do grants.
+
           char.pf2_feats = char_feats
         when "Path to Perfection"
         when "spellbook"
@@ -173,6 +175,7 @@ module AresMUSH
 
       char.pf2_adv_assigned = advancement
       char.pf2_to_assign = {}
+      char.pf2_advancement = {}
 
       char.save
     end
