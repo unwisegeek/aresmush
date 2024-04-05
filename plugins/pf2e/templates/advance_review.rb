@@ -61,9 +61,9 @@ module AresMUSH
           else
             list << "#{item_color}#{heading}:%xn #{value}"
           end
-
-          list
         end
+
+        list
 
       end
 
