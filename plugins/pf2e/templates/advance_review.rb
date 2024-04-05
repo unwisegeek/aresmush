@@ -48,7 +48,7 @@ module AresMUSH
                 subsublist = []
                 subvalue.each_pair do |subsubkey, subsubvalue|
                   subsubheading = subsubkey.capitalize
-                  subsublist << "%b%b%b%b%xh#{subsubheading}:%xn #{subsubvalue}"
+                  subsublist << "%r%b%b%b%b%xh#{subsubheading}:%xn #{subsubvalue}"
                 end
 
                 sublist << "%b%b#{item_color}#{subheading}:%xn #{subsublist.join("%r")}"
