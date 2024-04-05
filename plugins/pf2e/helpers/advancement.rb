@@ -61,9 +61,7 @@ module AresMUSH
           # In this case, we put into to_assign what is to be raised as a key with an empty value.
 
           value.each do |item|
-            key = "raise " + item
-
-            to_assign[key] = "open"
+            to_assign["raise #{item}"] = "open"
             return_msg << t('pf2e.adv_item_raise', :item => item)
           end
         when "choose"
