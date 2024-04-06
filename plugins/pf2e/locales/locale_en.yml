@@ -14,7 +14,9 @@ en:
     adv_item_feat: "You have a %{value} feat to select."
     adv_item_magic: "You need to make magic choices for: %{options}"
     adv_item_grants: "Feat %{feat} grants something else that you need to choose."
+    adv_raise_selected: "You select %{name} to raise."
     adv_wrong: "Something is wrong with your advancement setup. Open a request to code staff for assistance."
+    adv_not_an_option: "You don't have that item to upgrade this level."
     admin_no_sheet: "That character is a game admin and does not have a sheet."
 
     alias_set_ok: "You set %{alias} to %{value}."

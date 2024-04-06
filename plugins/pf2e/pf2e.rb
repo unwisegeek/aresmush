@@ -142,6 +142,8 @@ module AresMUSH
           return PF2ADvancementStartCmd
         when "review"
           return PF2AdvanceReviewCmd
+        when "raise"
+          return PF2AdvanceRaiseCmd
         end
       when "listxp"
         return PF2ListXPCmd
