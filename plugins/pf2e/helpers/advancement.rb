@@ -144,18 +144,15 @@ module AresMUSH
 
           char_feats = char.pf2_feats
 
-          value.each do |feat|
+          # I have to do this here to account for the classification of a dedication feat.
+          type = "dedication" if value.include? "Dedication"
 
-            # I have to do this here to account for the classification of a dedication feat.
-            type = "dedication" if feat.include? "Dedication"
+          char_feats_type = char_feats[type]
 
-            char_feats_type = char_feats[type]
+          char_feats_type << value
+          char_feats_type.sort
 
-            char_feats_type << feat
-            char_feats_type.sort
-
-            char_feats[type] = char_feats_type
-          end
+          char_feats[type] = char_feats_type
 
           # Remember to do grants.
 
@@ -189,7 +186,7 @@ module AresMUSH
         when "charclass feat", "ancestry feat", "skill feat", "general feat"
           type = item.delete_suffix " feat"
 
-          if info.include? "open"
+          if info == "open"
             msg << t('pf2e.adv_item_feat', :value => type.gsub("charclass", "class"))
           end
 

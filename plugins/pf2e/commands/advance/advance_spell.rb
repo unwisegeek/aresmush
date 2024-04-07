@@ -4,13 +4,26 @@ module AresMUSH
     class PF2AdvanceSpellCmd
       include CommandHandler
 
-      attr_accessor :type, :value
+      attr_accessor :type, :level, :value, :old_value
 
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_equals_arg2)
+        args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_arg3)
 
         self.type = downcase_arg(args.arg1)
-        self.value = trim_arg(args.arg2)
+        self.level = trim_arg(args.arg2)
+        spells = trimmed_list_arg(args.arg3,"/")
+
+        if spells[1]
+          self.value = spells[1]
+          self.old_value = spells[0]
+        else
+          self.value = spells[0]
+        end
+
+      end
+
+      def required_args
+        [ self.type, self.level, self.value ]
       end
 
       def check_advancing
@@ -23,22 +36,58 @@ module AresMUSH
 
         to_assign = enactor.pf2_to_assign
 
-        magic_options = to_assign['magic options']
-
-        unless magic_options
-          client.emit_failure t('pf2e.adv_not_an_option')
-          return
-        end
-
-        type_option = magic_options[self.type]
+        type_option = to_assign[self.type]
 
         unless type_option
           client.emit_failure t('pf2e.adv_not_an_option')
           return
         end
 
+        # You can either replace the first open slot or specify a spell to replace.
+        # If you do neither, the command fails.
+        open_slot = type_option.index "open"
 
+        if open_slot
+          old = "open"
+        elsif self.old_value
+          old = type_option.select {|s| s.downcase.match? self.old_value.downcase}.first
 
+          unless old
+            client.emit_failure t('pf2e.not_in_list', :option => self.old_value)
+            return
+          end
+
+          open_slot = type_option.index old
+        else
+          client.emit_failure t('pf2e.no_free', :element => "#{self.type} slot")
+          return
+        end
+
+        charclass = enactor.pf2_base_info['charclass']
+        level = self.level.to_i.zero? ? 'cantrip' : self.level
+
+        # The final true on this makes it just a check to see if it's valid for what they have.
+        choice = Pf2emagic.select_spell(enactor, charclass, level, old, self.value, false, true, true)
+
+        if choice.is_a? String
+          client.emit_failure choice
+          return
+        end
+
+        spell = choice[0]
+
+        # because Ruby is stupid and doesn't let you replace at an index directly.
+        type_option.delete_at open_slot
+        type_option << spell
+        to_assign[self.type] = type_option.sort
+
+        advancement = enactor.pf2_advancement
+        advancement[self.type] = type_option.sort
+
+        enactor.pf2_advancement = advancement
+        enactor.pf2_to_assign = to_assign
+
+        client.emit_success t('pf2e.add_ok', :item => spell, :list => self.type)
       end
     end
   end

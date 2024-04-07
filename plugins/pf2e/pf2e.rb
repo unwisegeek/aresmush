@@ -148,6 +148,8 @@ module AresMUSH
           return PF2AdvanceResetCmd
         when "feat"
           return PF2AdvanceFeatCmd
+        when "spell"
+          return PF2AdvanceSpellCmd
         end
       when "listxp"
         return PF2ListXPCmd
