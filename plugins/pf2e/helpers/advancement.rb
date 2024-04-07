@@ -38,11 +38,7 @@ module AresMUSH
           value.each do |feat|
             key = feat + ' feat'
 
-            list = to_assign[key] || []
-
-            list << "open"
-
-            to_assign[key] = list
+            to_assign[key] = "open"
 
             return_msg << t('pf2e.adv_item_feat', :value => feat)
           end

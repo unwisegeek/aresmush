@@ -15,6 +15,7 @@ en:
     adv_item_magic: "You need to make magic choices for: %{options}"
     adv_item_grants: "Feat %{feat} grants something else that you need to choose."
     adv_raise_selected: "You select %{name} to raise."
+    adv_feat_selected: "You select %{feat} as a %{type}."
     adv_wrong: "Something is wrong with your advancement setup. Open a request to code staff for assistance."
     adv_not_an_option: "You don't have that item to upgrade this level."
     admin_no_sheet: "That character is a game admin and does not have a sheet."
@@ -111,6 +112,7 @@ en:
     
     feat_available_options: "You qualify to take the following feats in that category: %{options}"
     feat_details_missing: "%xrFEAT DETAILS MISSING FOR %{name} - SKIPPING"
+    feat_fails_gate: "Either you do not qualify for that feat, or the feat does not meet the specified requirement."
     feat_grants_addl: "This feat grants an additional %{element}."
     feats_are_ok: "%xgYou have no unassigned feats."
     feat_search_classlevel_wrong_number_of_variables: "Wrong number of variables. Example: feat/search classlevel = Fighter < 2"

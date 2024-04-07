@@ -27,9 +27,8 @@ module AresMUSH
         # Do they need to raise that this level?
         to_assign = enactor.pf2_to_assign
         key = "raise " + self.type
-        to_update = to_assign[key]
 
-        unless to_update
+        unless to_assign[key]
           client.emit_failure t('pf2e.adv_not_an_option')
           return
         end
