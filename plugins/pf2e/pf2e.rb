@@ -144,6 +144,8 @@ module AresMUSH
           return PF2AdvanceReviewCmd
         when "raise"
           return PF2AdvanceRaiseCmd
+        when "reset"
+          return PF2AdvanceResetCmd
         when "feat"
           return PF2AdvanceFeatCmd
         end

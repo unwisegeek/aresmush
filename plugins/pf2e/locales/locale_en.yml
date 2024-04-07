@@ -18,8 +18,8 @@ en:
     adv_feat_selected: "You select %{feat} as a %{type}."
     adv_wrong: "Something is wrong with your advancement setup. Open a request to code staff for assistance."
     adv_not_an_option: "You don't have that item to upgrade this level."
+    adv_reset_ok: "You back out of advancement."
     admin_no_sheet: "That character is a game admin and does not have a sheet."
-
     alias_set_ok: "You set %{alias} to %{value}."
     alias_deleted_ok: "You delete %{alias}."
     already_has_skill: "You already have that skill. Pick another."

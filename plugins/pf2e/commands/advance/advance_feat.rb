@@ -54,8 +54,8 @@ module AresMUSH
         fname = feat[0]
         fdetails = feat[1]
 
-        grants = to_assign['grants'] || {}
-        adv_grants = advancement['grants'] || {}
+        grants = to_assign[fname]  || {}
+        adv_grants = advancement[fname] || {}
 
         # Check the new feat for any grants.
         has_grants = fdetails['grants']
@@ -63,18 +63,18 @@ module AresMUSH
         if has_grants
           client.emit_ooc t('pf2e.feat_grants_addl', :element => 'item. Check advance/review for details')
           assess = Pf2e.assess_feat_grants(has_grants)
-          adv_grants[fname] = assess['advance'] unless assess['advance'].empty?
-          grants[fname] = assess['assign'] unless assess['assign'].empty?
+          adv_grants = assess['advance'] unless assess['advance'].empty?
+          grants = assess['assign'] unless assess['assign'].empty?
         end
 
         # Remove any old stuff and update the hashes.
 
         unless grants.empty?
-          grants.delete feat_slot if grants.has_key? feat_slot
+          to_assign.delete feat_slot if to_assign.has_key? feat_slot
         end
 
         unless adv_grants.empty?
-          adv_grants.delete feat_slot if adv_grants.has_key? feat_slot
+          advancement.delete feat_slot if advancement.has_key? feat_slot
         end
 
         to_assign[key] = fname
