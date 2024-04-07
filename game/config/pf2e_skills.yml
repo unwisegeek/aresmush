@@ -119,9 +119,6 @@ pf2e_skills:
   Chiuin Chathair Lore:
     key_abil: Intelligence
     recall_knowledge: true
-  Citadel of Potarakaumi Lore:
-    key_abil: Intelligence
-    recall_knowledge: true
   Duama Lore:
     key_abil: Intelligence
     recall_knowledge: true
@@ -159,6 +156,9 @@ pf2e_skills:
     key_abil: Intelligence
     recall_knowledge: true
   O'rondessa Lore:
+    key_abil: Intelligence
+    recall_knowledge: true
+  Potarakaumi Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Promise Lore:
