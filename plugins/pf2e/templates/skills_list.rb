@@ -1,6 +1,6 @@
 module AresMUSH
   module Pf2e
-    class F2SkillsListTemplate < ErbTemplateRenderer
+    class PF2SkillsListTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
       attr_accessor :paginator
