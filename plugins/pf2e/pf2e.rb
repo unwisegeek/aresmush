@@ -62,13 +62,13 @@ module AresMUSH
         when "unset"
           return PF2BoostUnsetCmd
         end
-      when "skill"
+      when "skill", "skills"
         case cmd.switch
         when "set"
           return PF2SkillSetCmd
         when "unset"
           return PF2SkillUnSetCmd
-        when "list"
+        when nil
           return PF2SkillListCmd
         end
       when "lang"
