@@ -10,7 +10,7 @@ module AresMUSH
       end
 
       def handle
-        skills_list = Global.read_config('pf2e_skills').keys
+        skills_list = Global.read_config('pf2e_skills').keys - Global.read_config('pf2e', 'hidden_options')
 
         if self.term
           skills_list = skills_list.filter { |skill| skill.downcase.match? self.term }
