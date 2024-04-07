@@ -86,8 +86,14 @@ module AresMUSH
               subheading = subkey.gsub("charclass", "class").split.map {|word| word.capitalize}.join(" ")
               if subvalue.is_a? Array
                 sublist << "#{item_color}#{subheading}:%xn #{subvalue.sort.join(", ")}"
-              # elsif subvalue.is_a? Hash
-              # I have a feeling I need this but let's make sure, will catch in testing if I need a third level.
+              elsif subvalue.is_a? Hash
+                subsublist = []
+                subvalue.each_pair do |subsubkey, subsubvalue|
+                  subsubheading = subsubkey.capitalize
+                  subsublist << "%r%b%b%xh#{subsubheading}:%xn #{subsubvalue}"
+                end
+
+                sublist << "#{item_color}#{subheading}:%xn #{subsublist.join}"
               else
                 sublist << "#{item_color}#{subheading}:%xn #{subvalue}"
               end
