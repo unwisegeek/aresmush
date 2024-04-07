@@ -43,26 +43,6 @@ module AresMUSH
           return
         end
 
-        # You can either replace the first open slot or specify a spell to replace.
-        # If you do neither, the command fails.
-        open_slot = type_option.index "open"
-
-        if open_slot
-          old = "open"
-        elsif self.old_value
-          old = type_option.select {|s| s.downcase.match? self.old_value.downcase}.first
-
-          unless old
-            client.emit_failure t('pf2e.not_in_list', :option => self.old_value)
-            return
-          end
-
-          open_slot = type_option.index old
-        else
-          client.emit_failure t('pf2e.no_free', :element => "#{self.type} slot")
-          return
-        end
-
         charclass = enactor.pf2_base_info['charclass']
         level = self.level.to_i.zero? ? 'cantrip' : self.level
 
@@ -76,13 +56,45 @@ module AresMUSH
 
         spell = choice[0]
 
-        # because Ruby is stupid and doesn't let you replace at an index directly.
-        type_option.delete_at open_slot
-        type_option << spell
-        to_assign[self.type] = type_option.sort
+        # Now we have to figure out if we have an open slot.
+
+        list = self.type == "spellbook" ? type_option : type_option[level]
+
+        open_slot = list.index "open"
+
+        if open_slot
+          old = "open"
+        elsif self.old_value
+          old = list.select {|s| s.downcase.match? self.old_value.downcase}.first
+
+          unless old
+            client.emit_failure t('pf2e.not_in_list', :option => self.old_value)
+            return
+          end
+
+          open_slot = list.index old
+        else
+          client.emit_failure t('pf2e.no_free', :element => "#{self.type} slot")
+          return
+        end
 
         advancement = enactor.pf2_advancement
-        advancement[self.type] = type_option.sort
+
+        # because Ruby is stupid and doesn't let you replace at an index directly.
+        list.delete_at open_slot
+        list << spell
+
+        # Because I was stupid and repertoire is a Hash and spellbook is an array.
+
+        if self.type == "spellbook"
+          to_assign[self.type] = list.sort
+          advancement[self.type] = list.sort
+        elsif self.type == "repertoire"
+          type_option[level] = list.sort
+
+          to_assign[self.type] = type_option
+          advancement[self.type] = type_option
+        end
 
         enactor.pf2_advancement = advancement
         enactor.pf2_to_assign = to_assign
