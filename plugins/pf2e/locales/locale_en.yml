@@ -189,6 +189,7 @@ en:
     scene_has_active_encounter: "This scene already has encounter %{id} active. Please end this encounter before starting another."
     skill_options_ok: "%xgNo issues detected with your skills.%xn" 
     skill_issues: "Your skills are not yet complete. Use %x172cg/review%xn to see what is missing."
+    skills_list_title: "Skills Available on Emblem of Ea"
     specialty_not_set: "You have not yet chosen a specialty."
     specialty_no_info: "Your specialty does not have further options, this command is not needed."
     spell_not_in_list: "That spell is not in the list of spells you have available today at that level."

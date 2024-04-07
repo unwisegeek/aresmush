@@ -68,6 +68,8 @@ module AresMUSH
           return PF2SkillSetCmd
         when "unset"
           return PF2SkillUnSetCmd
+        when "list"
+          return PF2SkillListCmd
         end
       when "lang"
         case cmd.switch
