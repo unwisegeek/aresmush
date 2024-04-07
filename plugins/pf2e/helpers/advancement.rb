@@ -49,7 +49,10 @@ module AresMUSH
           magic_options = assess_magic['magic_options']
 
           if magic_options
-            to_assign.merge magic_options
+            # Merge is acting funky, so we brute force.
+            magic_options.each_pair do |k,v|
+              to_assign[k] = v
+            end
             return_msg << t('pf2e.adv_item_magic', :options => magic_options.keys.sort.join(", "))
           end
         when "raise"
