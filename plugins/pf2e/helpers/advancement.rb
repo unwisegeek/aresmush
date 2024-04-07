@@ -200,19 +200,12 @@ module AresMUSH
           unless info
             msg << t('pf2e.adv_item_raise', :item => type)
           end
-        when "magic options"
-          info.each_pair do |subitem, subinfo|
-            case subitem
-            when "spellbook", "repertoire"
-              msg << t('pf2e.adv_item_magic', :options => subitem) if subinfo.include? "open"
-            when "signature"
-              msg << t('pf2e.adv_item_magic', :options => subitem) unless subinfo.values.first.zero?
-            else
-              next
-            end
-          end
-        when "grants"
-
+        when "spellbook", "repertoire"
+          msg << t('pf2e.adv_item_magic', :options => item) if info.include? "open"
+        when "signature"
+          msg << t('pf2e.adv_item_magic', :options => item) unless info.values.first.zero?
+        else
+          msg << t('pf2e.adv_item_other', :item => item)
         end
 
       end
