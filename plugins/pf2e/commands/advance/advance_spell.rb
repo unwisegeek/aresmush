@@ -13,11 +13,13 @@ module AresMUSH
         self.level = trim_arg(args.arg2)
         spells = trimmed_list_arg(args.arg3,"/")
 
-        if spells[1]
-          self.value = spells[1]
-          self.old_value = spells[0]
-        else
-          self.value = spells[0]
+        if spells
+          if spells[1]
+            self.value = spells[1]
+            self.old_value = spells[0]
+          else
+            self.value = spells[0]
+          end
         end
 
       end
