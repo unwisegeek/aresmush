@@ -116,7 +116,7 @@ pf2e_skills:
   Bryn Myridorn Lore: 
     key_abil: Intelligence
     recall_knowledge: true
-  Chiuin Chathair:
+  Chiuin Chathair Lore:
     key_abil: Intelligence
     recall_knowledge: true
   Citadel of Potarakaumi Lore:
