@@ -175,6 +175,11 @@ module AresMUSH
       # Do they already have that spell on their list of to_assign?
       return t('pf2emagic.spell_already_on_list_to_assign') if new_spells_to_assign[level].include? to_add
 
+      # Some uses of this handler are only checking to see if they're allowed to add the spell. In this case.
+      # select_spell returns the spell deets as an Array. This is the only case where this handler returns an array.
+
+      return [ to_add, deets ] if check_only
+
       # At this point, the spell choice is deemed valid. If old_spell is true, they're swapping. Can they do that?
 
       if !(old_spell.blank?)
@@ -191,11 +196,6 @@ module AresMUSH
         i = new_spells_for_level.index "open"
         return t('pf2emagic.no_available_slots') unless i
       end
-
-      # Some uses of this handler are only checking to see if they're allowed to add the spell. In this case.
-      # select_spell returns the spell deets as an Array. This is the only case where this handler returns an array.
-
-      return [ to_add, deets ] if check_only
 
       # If we have reached this point, it's time to add the spell.
       # Stuff into to_assign for tracking of what got bought when.
