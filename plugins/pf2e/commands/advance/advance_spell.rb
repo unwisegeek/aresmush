@@ -48,18 +48,6 @@ module AresMUSH
         charclass = enactor.pf2_base_info['charclass']
         level = self.level.to_i.zero? ? 'cantrip' : self.level
 
-        # The final true on this makes it just a check to see if it's valid for what they have.
-        choice = Pf2emagic.select_spell(enactor, charclass, level, old, self.value, false, true, true)
-
-        if choice.is_a? String
-          client.emit_failure choice
-          return
-        end
-
-        spell = choice[0]
-
-        # Now we have to figure out if we have an open slot.
-
         list = self.type == "spellbook" ? type_option : type_option[level]
 
         open_slot = list.index "open"
@@ -79,6 +67,19 @@ module AresMUSH
           client.emit_failure t('pf2e.no_free', :element => "#{self.type} slot")
           return
         end
+
+
+        # The final true on this makes it just a check to see if it's valid for what they have.
+        choice = Pf2emagic.select_spell(enactor, charclass, level, old, self.value, false, true, true)
+
+        if choice.is_a? String
+          client.emit_failure choice
+          return
+        end
+
+        spell = choice[0]
+
+        # Now we have to figure out if we have an open slot.
 
         advancement = enactor.pf2_advancement
 
