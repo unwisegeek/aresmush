@@ -59,29 +59,33 @@ module AresMUSH
         # Is this a usable item?
 
         use = item.use
-        # Consumables are always usable. Check other categories.
-
-        if use.empty? && !(self.category.match? 'consumable')
-          client.emit_failure t('pf2egear.not_usable')
-          return
-        end
 
         # For armor and weapons, you can only use it if it's equipped.
         # Magic items can only be used if they are invested first.
 
         case self.category
         when "weapon", "weapons", "armor"
+          if use.empty?
+            client.emit_failure t('pf2egear.not_usable')
+            return
+          end
+
           if !item.equipped
             client.emit_failure t('pf2egear.cannot_use_now', :action => 'equipped')
             return
           end
         when "magicitem"
+          if use.empty?
+            client.emit_failure t('pf2egear.not_usable')
+            return
+          end
+
           if !item.invested
             client.emit_failure t('pf2egear.cannot_use_now', :action => 'invested')
             return
           end
         else
-          # Consumables get their own, much simpler, handling.
+          # Consumables get their own, much simpler, handling, and do not require a use entry.
 
           template = PF2UseItemTemplate.new(enactor, item, {})
           message = template.render
