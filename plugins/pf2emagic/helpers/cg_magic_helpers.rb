@@ -170,15 +170,16 @@ module AresMUSH
       new_spells_for_level = new_spells_to_assign[level]
 
       return t('pf2emagic.cant_prepare_level') if spbl > level.to_i
+
+      # Some uses of this handler are only checking to see if this character can pick the spell in question.
+      # Advancement does its own checking for new spells.
+      return [ to_add, deets ] if check_only
+
+
       return t('pf2emagic.no_new_spells_at_level') unless new_spells_for_level
 
       # Do they already have that spell on their list of to_assign?
       return t('pf2emagic.spell_already_on_list_to_assign') if new_spells_to_assign[level].include? to_add
-
-      # Some uses of this handler are only checking to see if they're allowed to add the spell. In this case.
-      # select_spell returns the spell deets as an Array. This is the only case where this handler returns an array.
-
-      return [ to_add, deets ] if check_only
 
       # At this point, the spell choice is deemed valid. If old_spell is true, they're swapping. Can they do that?
 

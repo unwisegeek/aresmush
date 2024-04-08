@@ -19,6 +19,8 @@ module AresMUSH
         subclass = base_info['specialize']
         deity = faith_info['deity']
 
+        # This diversion to an optional paginator is defined because Emblem of Ea accepts approximately
+        # 3.84 metric fucktons of backgrounds. It's here in case anything else needs it later.
         needs_paginate = false
 
         case self.element
