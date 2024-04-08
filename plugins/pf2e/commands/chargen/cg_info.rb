@@ -84,7 +84,7 @@ module AresMUSH
         end
 
         if needs_paginate
-          paginator = Paginator.paginate(options, cmd.page, 30)
+          paginator = Paginator.paginate(options, cmd.page, 40)
           if (paginator.out_of_bounds?)
             client.emit_failure paginator.out_of_bounds_msg
             return
