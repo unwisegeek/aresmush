@@ -3,27 +3,32 @@ module AresMUSH
     class PF2CGInfoTemplate < ErbTemplateRenderer
       include CommonTemplateFields
 
-      attr_accessor :paginator, :option_list, :title
+      attr_accessor :paginator
 
-      def initialize(paginator, option_list, title)
+      def initialize(paginator)
         @paginator = paginator
-        @title = title
 
         super File.dirname(__FILE__) + "/cg_info.erb"
       end
 
       def title
-        @title
+        "Available Options"
       end
 
       def cg_info_list
+        list = []
 
+        @paginator.page_items.each_with_index do |item, i|
+          list << format_cginfo_options(item, i)
+        end
+
+        list
       end
 
       def format_cginfo_options(item, i)
-        linebreak = i % 3 == 0 ? "%r" : ""
+        linebreak = i % 2 == 0 ? "%r" : ""
 
-        "#{linebreak}#{left(item, 25)}%b"
+        "#{linebreak}#{left(string, 37)}%b"
       end
 
     end
