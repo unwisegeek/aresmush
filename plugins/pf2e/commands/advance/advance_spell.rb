@@ -68,9 +68,7 @@ module AresMUSH
           return
         end
 
-
-        # The final true on this makes it just a check to see if it's valid for what they have.
-        choice = Pf2emagic.select_spell(enactor, charclass, level, old, self.value, false, true, true)
+        choice = Pf2emagic.check_spell(enactor, charclass, level, self.value, true)
 
         if choice.is_a? String
           client.emit_failure choice
