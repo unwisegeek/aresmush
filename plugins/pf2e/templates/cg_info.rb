@@ -28,7 +28,7 @@ module AresMUSH
       def format_cginfo_options(item, i)
         linebreak = i % 2 == 0 ? "%r" : ""
 
-        "#{linebreak}#{left(string, 37)}%b"
+        "#{linebreak}#{left(item, 37)}%b"
       end
 
     end
