@@ -81,21 +81,17 @@ module AresMUSH
 
         advancement = enactor.pf2_advancement
 
-        client.emit open_slot
-
         # because Ruby is stupid and doesn't let you replace at an index directly.
         list.delete_at open_slot
         list << spell
 
-        client.emit list
-
         # Because I was stupid and repertoire is a Hash and spellbook is an array.
 
         if self.type == "spellbook"
-          to_assign[self.type] = list.sort
-          advancement[self.type] = list.sort
+          to_assign[self.type] = list
+          advancement[self.type] = list
         elsif self.type == "repertoire"
-          type_option[level] = list.sort
+          type_option[level] = list
 
           to_assign[self.type] = type_option
           advancement[self.type] = type_option
@@ -103,6 +99,8 @@ module AresMUSH
 
         enactor.pf2_advancement = advancement
         enactor.pf2_to_assign = to_assign
+
+        enactor.save
 
         client.emit_success t('pf2e.add_ok', :item => spell, :list => self.type)
       end
