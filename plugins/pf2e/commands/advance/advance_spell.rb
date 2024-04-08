@@ -50,6 +50,8 @@ module AresMUSH
 
         list = self.type == "spellbook" ? type_option : type_option[level]
 
+
+        # Now we have to figure out if we have an open slot.
         open_slot = list.index "open"
 
         if open_slot
@@ -77,13 +79,15 @@ module AresMUSH
 
         spell = choice[0]
 
-        # Now we have to figure out if we have an open slot.
-
         advancement = enactor.pf2_advancement
+
+        client.emit open_slot
 
         # because Ruby is stupid and doesn't let you replace at an index directly.
         list.delete_at open_slot
         list << spell
+
+        client.emit list
 
         # Because I was stupid and repertoire is a Hash and spellbook is an array.
 
