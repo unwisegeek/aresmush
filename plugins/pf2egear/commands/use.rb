@@ -56,39 +56,10 @@ module AresMUSH
           return
         end
 
-        # Is this a usable item?
+        # Consumables get their own, much simpler, handling, and do not require a use entry.
+        if self.category.match? "consumable"
 
-        use = item.use
-
-        # For armor and weapons, you can only use it if it's equipped.
-        # Magic items can only be used if they are invested first.
-
-        case self.category
-        when "weapon", "weapons", "armor"
-          if use.empty?
-            client.emit_failure t('pf2egear.not_usable')
-            return
-          end
-
-          if !item.equipped
-            client.emit_failure t('pf2egear.cannot_use_now', :action => 'equipped')
-            return
-          end
-        when "magicitem"
-          if use.empty?
-            client.emit_failure t('pf2egear.not_usable')
-            return
-          end
-
-          if !item.invested
-            client.emit_failure t('pf2egear.cannot_use_now', :action => 'invested')
-            return
-          end
-        else
-          # Consumables get their own, much simpler, handling, and do not require a use entry.
-
-          template = PF2UseItemTemplate.new(enactor, item, {})
-          message = template.render
+          message = t('pf2egear.item_use_ok', :name => enactor.name, :item => item.name)
 
           enactor_room.emit message
 
@@ -106,6 +77,31 @@ module AresMUSH
           end
 
           return
+        end
+
+        # Is this a usable item?
+
+        use = item.use
+
+        if use.empty?
+          client.emit_failure t('pf2egear.not_usable')
+          return
+        end
+
+        # For armor and weapons, you can only use it if it's equipped.
+        # Magic items can only be used if they are invested first.
+
+        case self.category
+        when "weapon", "weapons", "armor"
+          if !item.equipped
+            client.emit_failure t('pf2egear.cannot_use_now', :action => 'equipped')
+            return
+          end
+        when "magicitem"
+          if !item.invested
+            client.emit_failure t('pf2egear.cannot_use_now', :action => 'invested')
+            return
+          end
         end
 
         # Some items have more than one use. Expect a valid self.use_option if this is the case.
@@ -126,8 +122,10 @@ module AresMUSH
 
         details = use[selected_use]
 
-        template = PF2UseItemTemplate.new(enactor, item, details)
-        message = template.render
+        base_msg = t('pf2egear.item_use_ok', :name => char.name, :item => item.name)
+        use_option_msg = t('pf2egear.use_option', :use => selected_use)
+
+        message = base_msg + "%b" + use_option_msg
 
         enactor_room.emit message
 
